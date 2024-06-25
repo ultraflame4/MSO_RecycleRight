@@ -19,7 +19,7 @@ public class MeleeAttack : Behaviour
         if (hit == null) return;
         // add knockback to hit enemy
         hit.GetComponent<Rigidbody2D>()?
-            .AddForce((character.pointer.up - transform.position).normalized * knockback, ForceMode2D.Impulse);
+            .AddForce((character.pointer.position - transform.position).normalized * knockback, ForceMode2D.Impulse);
         // deal damage
     }
 
