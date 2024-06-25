@@ -38,6 +38,6 @@ public class PlayerDefaultState : State<PlayerController>
         }
 
         // set velocity based on movement input
-        rb.velocity = move_input * character.Data.movementSpeed * Time.deltaTime;
+        rb.velocity = move_input.normalized * character.Data.movementSpeed * Time.deltaTime;
     }
 }
