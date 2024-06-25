@@ -10,7 +10,7 @@ public class Behaviour : MonoBehaviour
     void Start()
     {
         // get reference to player controller
-        character.GetComponent<PlayerController>();
+        character = GetComponent<PlayerController>();
     }
 
     // methods to be overrided depending on the character

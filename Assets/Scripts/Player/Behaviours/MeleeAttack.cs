@@ -13,17 +13,20 @@ public class MeleeAttack : Behaviour
     {
         base.TriggerAttack();
         // use overlap sphere to detect enemies
-        Collider[] hits = Physics.OverlapSphere(character.pointer.position, attackRange);
+        Collider2D hit = Physics2D.OverlapCircle(character.pointer.position, attackRange);
         // check if detected any enemies
-        if (hits.Length <= 0) return;
+        if (hit == null) return;
         // add knockback to hit enemy
-        hits[0].GetComponent<Rigidbody2D>()?
-            .AddForce((hits[0].transform.position - transform.position).normalized * knockback, ForceMode2D.Impulse);
+        hit.GetComponent<Rigidbody2D>()?
+            .AddForce((hit.transform.position - transform.position).normalized * knockback, ForceMode2D.Impulse);
         // deal damage
     }
 
     void OnDrawGizmosSelected()
     {
+        // ensure character is not null
+        if (character == null) character = character = GetComponent<PlayerController>();
+        // show attack range
         Gizmos.DrawWireSphere(character.pointer.position, attackRange);
     }
 }
