@@ -15,9 +15,4 @@ public class PlayerCharacter : Character
     [field: Header("Animation Durations")]
     [field: SerializeField] public float attackDuration { get; private set; } = 1.5f;
     [field: SerializeField] public float skillDuration { get; private set; } = 2f;
-
-    // methods to be overrided depending on the character
-    public virtual void TriggerAttack() {}
-    public virtual void TriggerPassive() {}
-    public virtual void TriggerSkill() {}
 }

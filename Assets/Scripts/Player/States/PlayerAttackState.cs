@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerAttackState : CoroutineState<PlayerController>
 {
@@ -13,5 +14,7 @@ public class PlayerAttackState : CoroutineState<PlayerController>
     {
         base.Enter();
         // play attack animation
+        // trigger attack
+        character.CharacterAttack?.TriggerAttack();
     }
 }

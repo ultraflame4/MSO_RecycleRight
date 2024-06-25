@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : StateMachine<PlayerController>
 {
     #region Inspector Fields
-    [SerializeField] float attackRange = 1.5f;
-    [SerializeField] bool showGizmos = true;
+    [field: Header("Character Unique Behaviour Traits")]
+    [field: SerializeField] public Behaviour CharacterAttack { get; private set; }
+    [field: SerializeField] public Behaviour CharacterPassive { get; private set; }
+    [field: SerializeField] public Behaviour CharacterSkill { get; private set; }
     #endregion
 
     #region States
@@ -45,13 +47,6 @@ public class PlayerController : StateMachine<PlayerController>
     void OnCharacterChange(PlayerCharacter data)
     {
         Data = data;
-    }
-    #endregion
-
-    #region Gizmos
-    void OnDrawGizmosSelected() 
-    {
-        Gizmos.DrawWireSphere(pointer.position, attackRange);
     }
     #endregion
 }
