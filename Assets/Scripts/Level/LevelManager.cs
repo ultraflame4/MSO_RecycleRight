@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(0.3f);
-        current_zone.StardtZone();
+        current_zone.StartZone();
     }
 
     private void OnValidate()
