@@ -17,10 +17,11 @@ public class CharacterManager : MonoBehaviour
     /// </summary>
     public event Action<PlayerCharacter> CharacterChanged;
 
-    public void Awake()
+    public void Start()
     {
         placeholder.SetActive(false);
         character_instances = new PlayerCharacter[characters.Length];
+        // instantiate characters
         for (int i = 0; i < characters.Length; i++)
         {
             GameObject new_character = Instantiate(characters[i], container);
@@ -28,7 +29,15 @@ public class CharacterManager : MonoBehaviour
             new_character.SetActive(false);
         }
 
-        SwitchCharacter(0);
+        // ensure character instances is filled before setting first active character
+        if (character_instances.Length <= 0) return;
+
+        // set first character as active
+        for (int i = 0; i < character_instances.Length; i++)
+        {
+            PlayerCharacter character = character_instances[i];
+            character.SetSpawn(i == 0);
+        }
     }
 
     /// <summary>

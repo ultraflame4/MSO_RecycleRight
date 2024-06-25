@@ -24,16 +24,15 @@ public class PlayerController : StateMachine<PlayerController>
     #endregion
 
     #region Monobehaviour Callbacks
-    void Awake()
+    void Start()
     {
         // get componenets
         characterManager = GetComponent<CharacterManager>();
+        // set character data to first character instance
+        Data = characterManager.character_instances[0];
         // subscribe to character change event
         characterManager.CharacterChanged += OnCharacterChange;
-    }
 
-    void Start()
-    {
         // initialize states
         DefaultState = new PlayerDefaultState(this, this);
         AttackState = new PlayerAttackState(this, this);
