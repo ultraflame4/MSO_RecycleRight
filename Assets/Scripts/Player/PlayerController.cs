@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerController : StateMachine<PlayerController>
 {
     #region States
-    public PlayerIdleState IdleState { get; private set; }
-    public PlayerMoveState MoveState { get; private set; }
+    public PlayerDefaultState DefaultState { get; private set; }
     public PlayerAttackState AttackState { get; private set; }
     #endregion
 
@@ -30,11 +29,10 @@ public class PlayerController : StateMachine<PlayerController>
     void Start()
     {
         // initialize states
-        IdleState = new PlayerIdleState(this, this);
-        MoveState = new PlayerMoveState(this, this);
+        DefaultState = new PlayerDefaultState(this, this);
         AttackState = new PlayerAttackState(this, this);
         // initialize state machine
-        Initialize(IdleState);
+        Initialize(DefaultState);
     }
     #endregion
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackState : CoroutineState<PlayerController>
 {
     public PlayerAttackState(StateMachine<PlayerController> fsm, PlayerController character) : 
-        base(fsm, character, character.IdleState, character.Data.attackDuration)
+        base(fsm, character, character.DefaultState, character.Data.attackDuration)
     {
     }
 

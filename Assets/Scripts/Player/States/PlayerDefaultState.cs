@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveState : State<PlayerController>
+public class PlayerDefaultState : State<PlayerController>
 {
     Rigidbody2D rb;
     Vector2 move_input = Vector2.zero;
 
-    public PlayerMoveState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
+    public PlayerDefaultState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
     {
         // get reference to rigidbody component
         rb = character.GetComponent<Rigidbody2D>();
