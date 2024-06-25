@@ -1,11 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine<T> : MonoBehaviour
 {
-    State currentState;
+    protected State<T> currentState;
+
+    /// <summary>
+    /// Event callback
+    /// </summary>
+    /// <param name="prev">The previous state</param>
+    /// <param name="next">The next state</param>
+    public delegate void OnStateChanged(State<T> prev, State<T> next);
 
     /// <summary>
     /// This event is invoked when the state is changed.
@@ -13,66 +17,43 @@ public class StateMachine : MonoBehaviour
     public event OnStateChanged StateChanged;
 
     /// <summary>
-    /// Method to switch states
+    /// Method to initialize the state machine and enter the starting state. 
     /// </summary>
-    /// <param name="newState"></param>
-    public void SwitchState(State newState)
+    /// <param name="state">State to start in</param>
+    public void Initialize(State<T> state)
     {
-        currentState?.Exit();
-        currentState = newState;
+        currentState = state;
         currentState?.Enter();
     }
 
     /// <summary>
-    /// Event callback
+    /// Method to switch states. 
     /// </summary>
-    /// <param name="prev">The previous state</param>
-    /// <param name="next">The next state</param>
-    public delegate void OnStateChanged(State prev, State next);
-
-    
-    /// <summary>
-    /// Current active coroutine for the current state.
-    /// </summary>
-    public Coroutine currentStateCoroutine { get; private set; }
-
-
-    /// <summary>
-    /// Sets the initial state of the FSM. Subsequent calls are ignored!
-    /// </summary>
-    /// <param name="initialState">The initial state</param>
-    public void SetInitialState(State initialState)
+    /// <param name="nextState">State to transition into</param>
+    public void SwitchState(State<T> nextState)
     {
-        if (initialState == null) throw new NullReferenceException("The initial state cannot be null!");
-        // Only allow this method to set the initial state once.
-        if (currentState == null)
-        {
-            Transition(initialState);
-        }
-        else{
-            Debug.LogWarning("Initial state already set! Calls to the method are ignored after the initial call!");
-        }
-    }
-
-    /// <summary>
-    /// Transitions to another state. Note that calling this will immediately stop the current state
-    /// </summary>
-    /// <param name="nextState">The next state</param>
-    /// <exception cref="NullReferenceException">Do not attempt to set state to null!</exception>
-    public void Transition(State nextState)
-    {
-        if (nextState == null) throw new NullReferenceException("Attempted to transition to null state!");
-
-        var prev = currentState;
-        // Immediately stop current state coroutine (To break out of it)
-        if (currentStateCoroutine !=null) StopCoroutine(currentStateCoroutine);
-        // Null coalescing operator still needed because initial state is null.
+        // set previous state
+        State<T> prev = nextState;
+        // change state
         currentState?.Exit();
         currentState = nextState;
-        currentState.Enter();
+        currentState?.Enter();
         // Invoke event for side-effects.
         StateChanged?.Invoke(prev, nextState);
-        // Start coroutine for current state
-        currentStateCoroutine = StartCoroutine(currentState.Start());
     }
+
+    #region Monobehaviour Callbacks
+
+    void Update() 
+    {
+        currentState?.HandleInputs();
+        currentState?.LogicUpdate();
+    }
+
+    void FixedUpdate() 
+    {
+        currentState?.PhysicsUpdate();
+    }
+
+    #endregion
 }

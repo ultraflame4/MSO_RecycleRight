@@ -1,35 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class State
+public class State<T>
 {
-    protected StateMachine fsm;
-    Coroutine coroutine;
-    bool makeCoroutine;
+    protected StateMachine<T> fsm;
+    protected T character;
 
-    public State(StateMachine fsm, bool makeCoroutine = false)
+    public State(StateMachine<T> fsm, T character)
     {
         this.fsm = fsm;
-        this.makeCoroutine = makeCoroutine;
+        this.character = character;
     }
 
-    public virtual void Enter() 
-    {
-        coroutine = fsm.StartCoroutine();
-    }
-
+    public virtual void Enter() {}
+    public virtual void HandleInputs() {}
     public virtual void LogicUpdate() {}
     public virtual void PhysicsUpdate() {}
-
-    public virtual void Exit() 
-    {
-        if (coroutine == null) return;
-        fsm.StopCoroutine(coroutine);
-    }
-
-    IEnumerator WaitForState(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-    }
+    public virtual void Exit() {}
 }
