@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public LevelCamera camera { get; private set; }
 
     public bool debug_move_to_current_zone = false;
+    public LevelZone current_zone => zones[current_zone_index];
     public void Start()
     {
         zones = transform.GetComponentsInChildren<LevelZone>();
@@ -23,11 +25,24 @@ public class LevelManager : MonoBehaviour
     public void MoveToZone(int index)
     {
         current_zone_index = index;
-        camera.target_position = zones[index].transform.position;
-        player.ForceMoveTo(new Vector3(zones[index].player_startpos_x, player.transform.position.y, player.transform.position.z));
+        camera.target_position = current_zone.transform.position;
+        player.ForceMoveTo(new Vector3(current_zone.player_startpos_x, player.transform.position.y, player.transform.position.z));
+        StartCoroutine(ZoneStart_corountine());
     }
 
-    private void OnValidate() {
+    IEnumerator ZoneStart_corountine()
+    {
+        // Wait until player is within zone
+        while (!current_zone.PositionWithinZone(player.transform.position))
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.3f);
+        current_zone.StardtZone();
+    }
+
+    private void OnValidate()
+    {
         if (debug_move_to_current_zone)
         {
             debug_move_to_current_zone = false;
