@@ -12,13 +12,14 @@ public class MeleeAttack : Behaviour
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        // todo: add layer to enemy, and only detect enemy layer
         // use overlap sphere to detect enemies
         Collider2D hit = Physics2D.OverlapCircle(character.pointer.position, attackRange);
         // check if detected any enemies
         if (hit == null) return;
         // add knockback to hit enemy
         hit.GetComponent<Rigidbody2D>()?
-            .AddForce((hit.transform.position - transform.position).normalized * knockback, ForceMode2D.Impulse);
+            .AddForce((character.pointer.up - transform.position).normalized * knockback, ForceMode2D.Impulse);
         // deal damage
     }
 
