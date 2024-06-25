@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1738559877431449790}
   - component: {fileID: 8198512540640695824}
-  - component: {fileID: 1317610376757039393}
+  - component: {fileID: 1214702141452971629}
   m_Layer: 0
   m_Name: TestCharacter
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1317610376757039393
+--- !u!114 &1214702141452971629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,8 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4443563819890852365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71abc59cb30456c48b90e5e510e56ac5, type: 3}
+  m_Script: {fileID: 11500000, guid: 084bdbf61fdbe744fb8c171289ca869d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_name: Test Char 1
-  character_desc: 
+  characterName: Test Character
+  characterDesc: 
+  <maxHealth>k__BackingField: 100
+  <movementSpeed>k__BackingField: 250
+  <attackDamage>k__BackingField: 25
+  <skillCooldown>k__BackingField: 15
+  <attackDuration>k__BackingField: 1.5
+  <skillDuration>k__BackingField: 2

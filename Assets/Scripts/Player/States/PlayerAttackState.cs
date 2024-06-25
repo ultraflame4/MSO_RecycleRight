@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerAttackState : CoroutineState<PlayerController>
 {
-    // todo: current state duration is hard coded, pls add data script and add character information from there
     public PlayerAttackState(StateMachine<PlayerController> fsm, PlayerController character) : 
-        base(fsm, character, character.IdleState, 1.5f)
+        base(fsm, character, character.IdleState, character.Data.attackDuration)
     {
     }
 

@@ -6,7 +6,6 @@ public class PlayerMoveState : State<PlayerController>
 {
     Rigidbody2D rb;
     Vector2 move_input = Vector2.zero;
-    float movement_speed = 250f; // todo: this is temp, create "data" to store stats
 
     public PlayerMoveState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
     {
@@ -30,7 +29,7 @@ public class PlayerMoveState : State<PlayerController>
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        
+
         // ensure rigidbody is not null
         if (rb == null)
         {
@@ -39,6 +38,6 @@ public class PlayerMoveState : State<PlayerController>
         }
 
         // set velocity based on movement input
-        rb.velocity = move_input * movement_speed * Time.deltaTime;
+        rb.velocity = move_input * character.Data.movementSpeed * Time.deltaTime;
     }
 }
