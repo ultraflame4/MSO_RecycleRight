@@ -8,7 +8,8 @@ public class DirectionPointer : MonoBehaviour {
     public Transform player { get; private set; }
 
 
-    private void Update() {
+    private void Update() 
+    {
         Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 player_pos = player.position;
         // Ensure that comparison is done in 2D space
