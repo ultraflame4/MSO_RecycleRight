@@ -9,11 +9,15 @@ public class PlayerController : StateMachine<PlayerController>
     [field: SerializeField] public Behaviour CharacterAttack { get; private set; }
     [field: SerializeField] public Behaviour CharacterPassive { get; private set; }
     [field: SerializeField] public Behaviour CharacterSkill { get; private set; }
+
+    [Header("References")]
+    [SerializeField] private LevelManager levelManager;
     #endregion
 
     #region States
     public PlayerDefaultState DefaultState { get; private set; }
     public PlayerAttackState AttackState { get; private set; }
+    public PlayerMoveToZoneState MoveToZoneState { get; private set; }
     #endregion
 
     #region Other Properties
@@ -38,8 +42,13 @@ public class PlayerController : StateMachine<PlayerController>
         // initialize states
         DefaultState = new PlayerDefaultState(this, this);
         AttackState = new PlayerAttackState(this, this);
+        MoveToZoneState = new PlayerMoveToZoneState(this, this);
         // initialize state machine
         Initialize(DefaultState);
+
+        // subscribe to zone change event if level manager is not null
+        if (levelManager != null)
+            levelManager.ZoneChanged += MoveToZoneState.OnZoneChange;
     }
     #endregion
 
