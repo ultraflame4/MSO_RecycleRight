@@ -17,7 +17,7 @@ public class CharacterManager : MonoBehaviour
     /// </summary>
     public event Action<PlayerCharacter> CharacterChanged;
 
-    public void Start()
+    public void Awake()
     {
         placeholder.SetActive(false);
         character_instances = new PlayerCharacter[characters.Length];
