@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,20 +10,34 @@ public class CharacterManager : MonoBehaviour
     public GameObject[] characters { get; private set; }
     [field: SerializeField, Tooltip("A temporary placeholder for the character.")]
     public GameObject placeholder { get; private set; }
-    public Character[] character_instances { get; private set; }
+    public PlayerCharacter[] character_instances { get; private set; }
+
+    /// <summary>
+    /// Event that is triggered everytime the player changes character
+    /// </summary>
+    public event Action<PlayerCharacter> CharacterChanged;
 
     public void Start()
     {
         placeholder.SetActive(false);
-        character_instances = new Character[characters.Length];
+        character_instances = new PlayerCharacter[characters.Length];
+        // instantiate characters
         for (int i = 0; i < characters.Length; i++)
         {
             GameObject new_character = Instantiate(characters[i], container);
-            character_instances[i] = new_character.GetComponent<Character>();
+            character_instances[i] = new_character.GetComponent<PlayerCharacter>();
             new_character.SetActive(false);
         }
 
-        SwitchCharacter(0);
+        // ensure character instances is filled before setting first active character
+        if (character_instances.Length <= 0) return;
+
+        // set first character as active
+        for (int i = 0; i < character_instances.Length; i++)
+        {
+            PlayerCharacter character = character_instances[i];
+            character.SetSpawn(i == 0);
+        }
     }
 
     /// <summary>
@@ -31,23 +46,22 @@ public class CharacterManager : MonoBehaviour
     /// <param name="index"></param>
     public void SwitchCharacter(int index)
     {
+        // ensure index is within range
         if (index < 0 || index >= character_instances.Length)
         {
             Debug.LogWarning("Tried to switch to an invalid character index.");
             return;
         }
+
+        // switch character
         for (int i = 0; i < character_instances.Length; i++)
         {
-            Character character = character_instances[i];
-            if (i == index)
-            {
-                character.Spawn();
-            }
-            else
-            {
-                character.Despawn();
-            }
+            PlayerCharacter character = character_instances[i];
+            character.SetSpawn(i == index);
         }
+
+        // invoke character switch event
+        CharacterChanged?.Invoke(character_instances[index]);
     }
 
     private void Update()
