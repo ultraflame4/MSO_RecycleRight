@@ -15,7 +15,7 @@ public class RandomWalk : BaseRecyclableState
 
     public float GetEdgeWeight(float distance)
     {
-        return Mathf.Clamp01(2 * (1 - (1 / levelManager.current_zone.buffer_zone_start) * distance));
+        return Mathf.Clamp01(2 * (1 - (1 / levelManager.current_zone.buffer_zone_size) * distance));
     }
 
 
@@ -35,11 +35,11 @@ public class RandomWalk : BaseRecyclableState
             navigation.SetDestination(transform.position + current_direction * walk_distance);
         }
         // The closer to the edge, the bigger the vector
-        Vector3 fromEdge = -new Vector3(
+        Vector3 edgeWeight = -new Vector3(
                                     GetEdgeWeight(levelManager.current_zone.DistanceFromEdgeX(transform.position)),
                                     GetEdgeWeight(levelManager.current_zone.DistanceFromEdgeY(transform.position))
                                     );
-        Debug.DrawRay(transform.position, fromEdge);
+        Debug.DrawRay(transform.position, edgeWeight);
     }
 
 }

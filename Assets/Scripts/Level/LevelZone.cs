@@ -5,7 +5,7 @@ public class LevelZone : MonoBehaviour
     [field: SerializeField]
     public Vector2 size { get; private set; } = new Vector2(20, 10);
     [field: SerializeField]
-    public float buffer_zone_start { get; private set; } = 10f;
+    public float buffer_zone_size { get; private set; } = 10f;
 
 
     [field: SerializeField]
@@ -56,6 +56,8 @@ public class LevelZone : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireCube(transform.position, size);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, size - Vector2.one * buffer_zone_size);
         Gizmos.color = Color.cyan * .1f;
         Gizmos.DrawCube(transform.position, size);
 
