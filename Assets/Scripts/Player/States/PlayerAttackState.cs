@@ -15,6 +15,6 @@ public class PlayerAttackState : CoroutineState<PlayerController>
         base.Enter();
         // play attack animation
         // trigger attack
-        character.CharacterAttack?.TriggerAttack();
+        character.CharacterBehaviour?.TriggerAttack();
     }
 }
