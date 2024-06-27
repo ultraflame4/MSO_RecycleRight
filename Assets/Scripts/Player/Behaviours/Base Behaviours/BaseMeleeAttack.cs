@@ -25,7 +25,7 @@ public class BaseMeleeAttack : Behaviour
         // deal damage
     }
 
-    void OnDrawGizmosSelected()
+    protected void OnDrawGizmosSelected()
     {
         // ensure character is not null
         if (character == null) character = GetComponentInParent<PlayerController>();

@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: <skillCooldown>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: <skillDuration>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -81,7 +89,7 @@ MonoBehaviour:
   attackDamage: 5
   attackRange: 1.5
   knockback: 15
-  passiveChance: 0.45
+  passiveChance: 0.2
   skillDamage: 15
   skillRange: 5
   skillHealAmount: 30

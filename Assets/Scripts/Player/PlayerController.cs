@@ -12,6 +12,7 @@ public class PlayerController : StateMachine<PlayerController>
     #region States
     public PlayerDefaultState DefaultState { get; private set; }
     public PlayerAttackState AttackState { get; private set; }
+    public PlayerSkillState SkillState { get; private set; }
     public PlayerMoveToZoneState MoveToZoneState { get; private set; }
     #endregion
 
@@ -23,6 +24,10 @@ public class PlayerController : StateMachine<PlayerController>
 
     #region Other Private Components
     CharacterManager characterManager;
+    #endregion
+
+    #region Non-Inspector Public Variables
+    [HideInInspector] public bool canTriggerSkill = false;
     #endregion
 
     #region Monobehaviour Callbacks
@@ -38,6 +43,7 @@ public class PlayerController : StateMachine<PlayerController>
         // initialize states
         DefaultState = new PlayerDefaultState(this, this);
         AttackState = new PlayerAttackState(this, this);
+        SkillState = new PlayerSkillState(this, this);
         MoveToZoneState = new PlayerMoveToZoneState(this, this);
         // initialize state machine
         Initialize(DefaultState);
