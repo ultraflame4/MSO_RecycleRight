@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : Behaviour
+public class BaseMeleeAttack : Behaviour
 {
     // inspector fields
-    [SerializeField] float attackRange = 1.5f;
-    [SerializeField] float knockback = 15f;
+    [Header("Melee Attack")]
+    [SerializeField] protected float attackDamage = 5f;
+    [SerializeField] protected float attackRange = 1.5f;
+    [SerializeField] protected float knockback = 15f;
 
     // perform default melee attack
     public override void TriggerAttack()
