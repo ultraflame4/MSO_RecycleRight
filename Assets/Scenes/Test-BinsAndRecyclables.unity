@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 71231601}
   - component: {fileID: 71231602}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: TestRecyclable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,8 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 0
-  recyclableType: 1
-  is_food: 0
+  <recyclableType>k__BackingField: 0
 --- !u!50 &71231601
 Rigidbody2D:
   serializedVersion: 4
@@ -434,15 +433,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       propertyPath: m_Name
-      value: RecycleBin
+      value: RecyclingBin
       objectReference: {fileID: 0}
     - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -6.92
       objectReference: {fileID: 0}
     - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       propertyPath: m_LocalPosition.z
