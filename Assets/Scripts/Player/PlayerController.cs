@@ -19,11 +19,8 @@ public class PlayerController : StateMachine<PlayerController>
     #region Other Properties
     public PlayerCharacter Data { get; private set; }
     public Behaviour CharacterBehaviour { get; private set; }
+    public CharacterManager CharacterManager { get; private set; }
     public Transform pointer => transform.GetChild(0);
-    #endregion
-
-    #region Other Private Components
-    CharacterManager characterManager;
     #endregion
 
     #region Non-Inspector Public Variables
@@ -34,11 +31,11 @@ public class PlayerController : StateMachine<PlayerController>
     void Start()
     {
         // get componenets
-        characterManager = GetComponent<CharacterManager>();
+        CharacterManager = GetComponent<CharacterManager>();
         // set character to first character instance
-        OnCharacterChange(characterManager.character_instances[0]);
+        OnCharacterChange(CharacterManager.character_instances[0]);
         // subscribe to character change event
-        characterManager.CharacterChanged += OnCharacterChange;
+        CharacterManager.CharacterChanged += OnCharacterChange;
 
         // initialize states
         DefaultState = new PlayerDefaultState(this, this);

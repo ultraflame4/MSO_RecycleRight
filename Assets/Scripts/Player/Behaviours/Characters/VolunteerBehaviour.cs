@@ -9,13 +9,11 @@ public class VolunteerBehaviour : BaseMeleeAttack
     [SerializeField, Range(0f, 1f)] float passiveChance = 0.45f;
 
     [Header("Skill")]
-    [SerializeField] float skillDamage = 15f;
-    [SerializeField] float skillRange = 5f;
-    [SerializeField] float skillHealAmount = 30f;
+    [SerializeField] float buffScale = 1.5f;
+    [SerializeField] float buffDuration = 15f;
 
     // skill variables
-    Collider2D[] hits;
-    Vector3[] hitPositions;
+    PlayerCharacter cacheCharacterData;
 
     public override void TriggerAttack()
     {
@@ -43,48 +41,39 @@ public class VolunteerBehaviour : BaseMeleeAttack
     public override void TriggerSkill()
     {
         base.TriggerSkill();
-        // temp
-        Debug.Log("skill triggered!");
-        // detect enemies
-        hits = Physics2D.OverlapCircleAll(character.transform.position, skillRange);
-        // set hit position array
-        hitPositions = hits
-            .Select(x => x.transform.position)
-            .ToArray();
-        // start coroutine to stun hit enemies
-        StartCoroutine(StunHitEnemies(character.Data.skillDuration - 
-            (character.Data.skillDuration * character.Data.skillTriggerTimeFrame)));
+        // cache character data
+        cacheCharacterData = character.Data;
+        // set animation speed
+        // set animation duration
+        character.Data.attackDuration *= 1 / buffDuration;
+        // subscribe to characcter change event
+        character.CharacterManager.CharacterChanged += OnCharacterChange;
+        // start coroutine to count buff duration
+        StartCoroutine(CountBuffDuration(buffDuration));
     }
 
-    IEnumerator StunHitEnemies(float duration)
+    IEnumerator CountBuffDuration(float duration)
     {
-        float timeElapsed = 0f;
-        // check time elapsed
-        while (timeElapsed < duration)
-        {
-            // lock all hit enemy positions in hit list
-            for (int i = 0; i < hits.Length; i++)
-            {
-                hits[i].transform.position = hitPositions[i];
-            }
-            // increment time elapsed
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-        // reset hits and hit positions list
-        hits = null;
-        hitPositions = null;
-        Debug.Log("ended");
+        yield return new WaitForSeconds(duration);
+        // reset character data cache
+        cacheCharacterData = null;
+        // reset animation speed
+        // reset animation duration
+        character.Data.attackDuration *= buffDuration;
+        // unsubscribe to characcter change event
+        character.CharacterManager.CharacterChanged -= OnCharacterChange;
     }
 
-    new void OnDrawGizmosSelected() 
+    // event listener to transfer changes to animator speed to new character
+    void OnCharacterChange(PlayerCharacter data)
     {
-        // draw gizmos of base class
-        base.OnDrawGizmosSelected();
-        // ensure character is not null
-        if (character == null) return;
-        // show skill range
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(character.transform.position, skillRange);
+        // reset animation speed
+        // reset animation duration
+        cacheCharacterData.attackDuration *= buffDuration;
+        // cache character data
+        cacheCharacterData = data;
+        // set animation speed
+        // set animation duration
+        data.attackDuration *= 1 / buffDuration;
     }
 }
