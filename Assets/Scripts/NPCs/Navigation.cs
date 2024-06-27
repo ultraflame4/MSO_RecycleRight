@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Navigation : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;     
     private Vector3? current_target_pos;
 
 
