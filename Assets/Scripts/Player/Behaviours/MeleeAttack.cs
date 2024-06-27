@@ -26,7 +26,9 @@ public class MeleeAttack : Behaviour
     void OnDrawGizmosSelected()
     {
         // ensure character is not null
-        if (character == null) character = character = GetComponent<PlayerController>();
+        if (character == null) character = GetComponentInParent<PlayerController>();
+        // if character cannot be found, do not draw gizmos
+        if (character == null) return;
         // show attack range
         Gizmos.DrawWireSphere(character.pointer.position, attackRange);
     }
