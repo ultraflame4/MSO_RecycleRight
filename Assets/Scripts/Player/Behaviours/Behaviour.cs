@@ -17,6 +17,5 @@ public class Behaviour : MonoBehaviour
 
     // methods to be overrided depending on the character
     public virtual void TriggerAttack() {}
-    public virtual void TriggerPassive() {}
     public virtual void TriggerSkill() {}
 }
