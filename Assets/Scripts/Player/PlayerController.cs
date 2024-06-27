@@ -5,11 +5,6 @@ using UnityEngine;
 public class PlayerController : StateMachine<PlayerController>
 {
     #region Inspector Fields
-    [field: Header("Character Unique Behaviour Traits")]
-    [field: SerializeField] public Behaviour CharacterAttack { get; private set; }
-    [field: SerializeField] public Behaviour CharacterPassive { get; private set; }
-    [field: SerializeField] public Behaviour CharacterSkill { get; private set; }
-
     [Header("References")]
     [SerializeField] private LevelManager levelManager;
     #endregion
@@ -22,10 +17,11 @@ public class PlayerController : StateMachine<PlayerController>
 
     #region Other Properties
     public PlayerCharacter Data { get; private set; }
+    public Behaviour CharacterBehaviour { get; private set; }
     public Transform pointer => transform.GetChild(0);
     #endregion
 
-    #region Components
+    #region Other Private Components
     CharacterManager characterManager;
     #endregion
 
@@ -34,8 +30,8 @@ public class PlayerController : StateMachine<PlayerController>
     {
         // get componenets
         characterManager = GetComponent<CharacterManager>();
-        // set character data to first character instance
-        Data = characterManager.character_instances[0];
+        // set character to first character instance
+        OnCharacterChange(characterManager.character_instances[0]);
         // subscribe to character change event
         characterManager.CharacterChanged += OnCharacterChange;
 
@@ -55,7 +51,13 @@ public class PlayerController : StateMachine<PlayerController>
     #region Event Listeners
     void OnCharacterChange(PlayerCharacter data)
     {
+        // set data to new character
         Data = data;
+        // set behaviour to new character behaviour
+        Behaviour newBehaviour = data.GetComponent<Behaviour>();
+        // ensure behaviour is not null before assigning to variable
+        if (newBehaviour == null) return;
+        CharacterBehaviour = newBehaviour;
     }
     #endregion
 }

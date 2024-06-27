@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
 public class Behaviour : MonoBehaviour
 {
     protected PlayerController character;
@@ -10,7 +9,10 @@ public class Behaviour : MonoBehaviour
     void Start()
     {
         // get reference to player controller
-        character = GetComponent<PlayerController>();
+        character = GetComponentInParent<PlayerController>();
+        // check if character is null
+        if (character != null) return;
+        Debug.LogError("Componenet of type 'PlayerController' could not be found. (Behaviour.cs)");
     }
 
     // methods to be overrided depending on the character
