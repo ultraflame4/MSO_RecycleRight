@@ -1,10 +1,21 @@
 using UnityEngine;
 
-public class RecyclableNPC : BaseRecyclableNPC
+public class RecyclableNPC : FSMRecyclableNPC
 {
-    public float move_speed;
+
+    #region States
+    private RandomWalk state_RandWalk;
+    #endregion
+
     [field: SerializeField]
     public virtual RecyclableType recyclableType { get; private set; }
     public override bool is_contaminated => false;
+
+    private void Start()
+    {
+        state_RandWalk = new (this, this);
+
+        Initialize(state_RandWalk);
+    }
 
 }

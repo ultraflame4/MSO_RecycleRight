@@ -1,6 +1,11 @@
-public class BaseRecyclableState : State<BaseRecyclableNPC>
+using UnityEngine;
+
+public class BaseRecyclableState : State<FSMRecyclableNPC>
 {
-    public BaseRecyclableState(StateMachine<BaseRecyclableNPC> fsm, BaseRecyclableNPC character) : base(fsm, character)
+    public BaseRecyclableState(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
     {
     }
+
+    protected Navigation navigation => character.navigation;
+    protected Transform transform => character.transform;
 }

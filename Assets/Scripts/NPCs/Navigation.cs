@@ -11,20 +11,30 @@ public class Navigation : MonoBehaviour
     public float move_speed = 100f;
 
     private Rigidbody2D rb;
-    private Transform target;     
+    private Transform target;
     private Vector3? current_target_pos;
 
-    private void Start() {
+    private void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public bool reachedDestination {
-        get {
-            if (current_target_pos == null) return false;
+    /// <summary>
+    /// True when has reached destination or has not target position;
+    /// </summary>
+    public bool reachedDestination
+    {
+        get
+        {
+            if (current_target_pos == null) return true;
             return (current_target_pos.Value - transform.position).sqrMagnitude < stop_distance * stop_distance;
         }
     }
 
+    public void ClearDestination(){
+        target = null;
+        current_target_pos = null;
+    }
 
     public void SetDestination(Vector3 pos)
     {
@@ -36,7 +46,7 @@ public class Navigation : MonoBehaviour
         this.target = target;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (target != null)
         {
@@ -53,13 +63,13 @@ public class Navigation : MonoBehaviour
     {
         Vector3 dir = pos - transform.position;
         Vector3 vel = dir.normalized * move_speed * Time.deltaTime;
-        rb.velocity = vel * Mathf.Clamp01( dir.sqrMagnitude);
-        
-        if (reachedDestination) return;
-        rb.velocity = Vector2.zero;
+        rb.velocity = vel * Mathf.Clamp01(dir.magnitude);
+
+        if (reachedDestination) rb.velocity = Vector2.zero;
     }
 
-    private void OnDrawGizmosSelected() {
+    private void OnDrawGizmosSelected()
+    {
         if (current_target_pos == null) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(current_target_pos.Value, stop_distance);

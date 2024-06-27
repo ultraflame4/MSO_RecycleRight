@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b60aacdf37e844d88ad3da28fac161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_speed: 0
+  <navigation>k__BackingField: {fileID: 71231603}
   <recyclableType>k__BackingField: 0
 --- !u!50 &71231601
 Rigidbody2D:
@@ -299,7 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2296a6d0adcdff43ab72d74da347802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  stop_distance: 0.25
+  move_speed: 100
 --- !u!1 &2002934056
 GameObject:
   m_ObjectHideFlags: 0
