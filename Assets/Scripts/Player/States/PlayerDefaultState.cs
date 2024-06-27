@@ -6,7 +6,7 @@ public class PlayerDefaultState : State<PlayerController>
 {
     Rigidbody2D rb;
     Vector2 move_input = Vector2.zero;
-    bool attack_input = false;
+    bool attack_input, skill_input = false;
 
     public PlayerDefaultState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
     {
@@ -20,6 +20,7 @@ public class PlayerDefaultState : State<PlayerController>
         // reset inputs
         move_input = Vector2.zero;
         attack_input = false;
+        skill_input = false;
     }
 
     public override void HandleInputs()
@@ -29,12 +30,20 @@ public class PlayerDefaultState : State<PlayerController>
         move_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         // set attack input
         attack_input = Input.GetMouseButtonDown(0);
+        // set skill input
+        skill_input = Input.GetKeyDown(KeyCode.E);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
+        //check for transition to skill state
+        if (skill_input)
+        {
+            fsm.SwitchState(character.SkillState);
+            return;
+        }
         // check for transition to attack state
         if (attack_input)
         {
