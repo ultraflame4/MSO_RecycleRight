@@ -7,7 +7,6 @@ public class PlayerCharacter : Character
     [Header("Stats")]
     [SerializeField] public float maxHealth = 100f;
     [SerializeField] public float movementSpeed = 250f;
-    [SerializeField] public float attackDamage = 25f;
 
     [Header("Skills")]
     [SerializeField] public float skillCooldown = 15f;
