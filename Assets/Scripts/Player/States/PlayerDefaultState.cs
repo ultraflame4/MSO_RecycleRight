@@ -26,6 +26,8 @@ public class PlayerDefaultState : State<PlayerController>
     public override void HandleInputs()
     {
         base.HandleInputs();
+        // update pointer direction
+        character.PointerManager.UpdatePointer();
         // set movement input
         move_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         // set attack input
