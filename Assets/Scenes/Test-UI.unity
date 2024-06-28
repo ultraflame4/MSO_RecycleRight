@@ -1119,6 +1119,8 @@ GameObject:
   - component: {fileID: 1378555126}
   - component: {fileID: 1378555128}
   - component: {fileID: 1378555127}
+  - component: {fileID: 1378555130}
+  - component: {fileID: 1378555129}
   m_Layer: 5
   m_Name: Top UI
   m_TagString: Untagged
@@ -1187,6 +1189,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378555125}
   m_CullTransparentMesh: 1
+--- !u!114 &1378555129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378555125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5523a0b9e6a6e41877c56f77ee3ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profileImage: {fileID: 1658528725}
+  healthBar: {fileID: 59468633}
+  switchText: {fileID: 0}
+--- !u!114 &1378555130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378555125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c62f97125f9aab4aa5e98540ba76ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1532510743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1393,7 +1422,7 @@ GameObject:
   - component: {fileID: 1658528726}
   - component: {fileID: 1658528725}
   m_Layer: 5
-  m_Name: Test Image
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

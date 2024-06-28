@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5850345690743857658}
   - component: {fileID: 1289204909855651570}
   - component: {fileID: 4743732299361540393}
+  - component: {fileID: 1504036251392057516}
   m_Layer: 5
   m_Name: Character Switch UI
   m_TagString: Untagged
@@ -100,6 +101,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1504036251392057516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443015023145677028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5523a0b9e6a6e41877c56f77ee3ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profileImage: {fileID: 7424985952239220138}
+  healthBar: {fileID: 5247160644630146133}
+  switchText: {fileID: 2876701965526775349}
 --- !u!1 &2563834156318993837
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +462,7 @@ GameObject:
   - component: {fileID: 862659377358281013}
   - component: {fileID: 7424985952239220138}
   m_Layer: 5
-  m_Name: Test Image
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

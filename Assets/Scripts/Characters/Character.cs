@@ -5,16 +5,10 @@ public class Character : MonoBehaviour {
     public string characterName;
     [TextArea(3, 10)]
     public string characterDesc;
+    public Sprite characterSprite;
 
     public void SetSpawn(bool active)
     {
         gameObject.SetActive(active);
     }
-
-    // public void Spawn(){
-    //     gameObject.SetActive(true);
-    // }
-    // public void Despawn(){
-    //     gameObject.SetActive(false);
-    // }
 }
