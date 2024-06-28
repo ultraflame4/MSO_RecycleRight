@@ -13,7 +13,7 @@ public class RecyclableNPC : FSMRecyclableNPC
 
      [field: SerializeField]
     public virtual LevelManager levelManager { get; private set; }
-    public override bool is_contaminated => false;
+    public override bool is_contaminant => false;
 
     private void Start()
     {

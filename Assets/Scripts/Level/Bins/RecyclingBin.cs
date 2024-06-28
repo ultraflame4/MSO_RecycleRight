@@ -76,6 +76,7 @@ public class RecyclingBin : MonoBehaviour
         infestation_percent = 0;
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var recyclable = other.GetComponent<FSMRecyclableNPC>();
@@ -84,7 +85,7 @@ public class RecyclingBin : MonoBehaviour
         if (recyclable.is_food){
             StartInfestation();
         }
-        else if (recyclable.is_contaminated || recyclable.recyclableType != recyclableType){
+        else if ( recyclable.recyclableType != recyclableType){
             SetContaminated();
         }
     }
