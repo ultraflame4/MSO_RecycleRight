@@ -8,4 +8,5 @@ public class BaseRecyclableState : State<FSMRecyclableNPC>
 
     protected Navigation navigation => character.navigation;
     protected Transform transform => character.transform;
+
 }

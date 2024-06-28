@@ -7,4 +7,5 @@ public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>
     public virtual RecyclableType recyclableType { get; }
     public virtual bool is_food { get; }
     public virtual bool is_contaminated { get; }
+
 }

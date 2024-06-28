@@ -57,7 +57,7 @@ public class LevelZone : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireCube(transform.position, size);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, size - Vector2.one * buffer_zone_size);
+        Gizmos.DrawWireCube(transform.position, size - Vector2.one * buffer_zone_size * 2);
         Gizmos.color = Color.cyan * .1f;
         Gizmos.DrawCube(transform.position, size);
 
