@@ -47,7 +47,7 @@ public class RandomWalk : BaseRecyclableState
             current_direction = current_direction + current_edge_force;
             current_direction.Normalize();
 
-            Debug.Log($"Dir {current_direction}, mag {current_direction.magnitude}");
+            // Debug.Log($"Dir {current_direction}, mag {current_direction.magnitude}");
             navigation.SetDestination(transform.position + current_direction * walk_distance);
         }
 

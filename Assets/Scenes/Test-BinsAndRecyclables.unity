@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stop_distance: 0.1
-  slow_distance: 0.00001
-  move_speed: 1e+9
+  slow_distance: 0.024
+  move_speed: 200
   fix_overshoot: 1
 --- !u!1 &460220736
 GameObject:
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 70, y: 40}
-  <buffer_zone_size>k__BackingField: 5
-  <player_start_offset>k__BackingField: 1
+  <buffer_zone_size>k__BackingField: 2
+  <player_start_offset>k__BackingField: 3
   enemies: []
 --- !u!4 &460220738
 Transform:
@@ -434,8 +434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 70, y: 40}
-  <buffer_zone_size>k__BackingField: 5
-  <player_start_offset>k__BackingField: 1
+  <buffer_zone_size>k__BackingField: 2
+  <player_start_offset>k__BackingField: 3
   enemies: []
 --- !u!4 &1842558448
 Transform:
