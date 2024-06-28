@@ -20,6 +20,7 @@ public class PlayerController : StateMachine<PlayerController>
     public PlayerCharacter Data { get; private set; }
     public Behaviour CharacterBehaviour { get; private set; }
     public CharacterManager CharacterManager { get; private set; }
+    public DirectionPointer PointerManager { get; private set; }
     public Transform pointer => transform.GetChild(0);
     #endregion
 
@@ -30,8 +31,9 @@ public class PlayerController : StateMachine<PlayerController>
     #region Monobehaviour Callbacks
     void Start()
     {
-        // get componenets
+        // get components
         CharacterManager = GetComponent<CharacterManager>();
+        PointerManager = pointer.GetComponent<DirectionPointer>();
         // set character to first character instance
         OnCharacterChange(CharacterManager.character_instances[0]);
         // subscribe to character change event
