@@ -14,4 +14,7 @@ public class State<T>
     public virtual void LogicUpdate() {}
     public virtual void PhysicsUpdate() {}
     public virtual void Exit() {}
+
+    public virtual void OnDrawGizmosSelected() {}
+    public virtual void OnDrawGizmos() {}
 }
