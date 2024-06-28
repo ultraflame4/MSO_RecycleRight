@@ -301,7 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stop_distance: 0.1
-  move_speed: 200
+  slow_distance: 0.00001
+  move_speed: 1e+9
+  fix_overshoot: 1
 --- !u!1 &460220736
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class Navigation : MonoBehaviour
     public float slow_distance = 0.1f;
     [Tooltip("The movement speed")]
     public float move_speed = 100f;
+    [Tooltip("Checks for target position overshooting and fixes it.")]
+    public bool fix_overshoot = true;
+
 
     private Rigidbody2D rb;
     private Transform target;
@@ -61,20 +64,24 @@ public class Navigation : MonoBehaviour
         }
     }
 
+    private void DetectAndFixOvershoot(Vector3 target_pos, Vector3 current_dir){
+        Vector3 next_pos = (Vector2)transform.position + rb.velocity * Time.deltaTime;
+        Vector3 next_dir = target_pos - next_pos; // The direction from the next position to the target position
+        // If the next position is in the opposite direction of the target position, then stop (to prevent overshooting)
+        if (Vector3.Dot(next_dir, current_dir) < 0)
+        {
+            rb.velocity = Vector2.zero;
+            transform.position = target_pos;
+        }
+    }
+
     private void MoveToStep(Vector3 target_pos)
     {
         Vector3 dir = target_pos - transform.position;
         Vector3 vel = dir.normalized * move_speed * Time.deltaTime;
         rb.velocity = vel * Mathf.Clamp01(dir.magnitude * (1/slow_distance));
-        
-        Vector3 next_pos = transform.position + vel * Time.deltaTime;
-        Vector3 next_dir = target_pos - next_pos; // The direction from the next position to the target position
-        // If the next position is in the opposite direction of the target position, then stop (to prevent overshooting)
-        if (Vector3.Dot(next_dir, dir) < 0)
-        {
-            rb.velocity = Vector2.zero;
-            transform.position = target_pos;
-        }
+
+        if (fix_overshoot) DetectAndFixOvershoot(target_pos,dir);
 
         if (reachedDestination) rb.velocity = Vector2.zero;
     }
