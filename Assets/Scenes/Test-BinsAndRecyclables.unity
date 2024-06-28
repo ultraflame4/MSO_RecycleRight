@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <navigation>k__BackingField: {fileID: 71231603}
-  <recyclableType>k__BackingField: 0
+  _recyclableType: 1
   <levelManager>k__BackingField: {fileID: 1019736426}
 --- !u!50 &71231601
 Rigidbody2D:

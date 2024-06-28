@@ -7,8 +7,10 @@ public class RecyclableNPC : FSMRecyclableNPC
     private RandomWalk state_RandWalk;
     #endregion
 
-    [field: SerializeField]
-    public virtual RecyclableType recyclableType { get; private set; }
+    [ SerializeField]
+    private RecyclableType _recyclableType;
+    public override RecyclableType recyclableType => _recyclableType;
+
      [field: SerializeField]
     public virtual LevelManager levelManager { get; private set; }
     public override bool is_contaminated => false;

@@ -80,6 +80,7 @@ public class RecyclingBin : MonoBehaviour
     {
         var recyclable = other.GetComponent<FSMRecyclableNPC>();
         if (recyclable == null) return;
+        Debug.Log($"Recyclable {recyclable} Type {recyclable.recyclableType} entered bin {this} of type {this.recyclableType}");
         if (recyclable.is_food){
             StartInfestation();
         }
