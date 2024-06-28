@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerCharacterUIProfileManager : MonoBehaviour
@@ -10,12 +10,64 @@ public class PlayerCharacterUIProfileManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // ensure player is not null
+        if (player == null) return;
+        // subscribe to character change event
+        player.CharacterManager.CharacterChanged += OnCharacterChange;
+        // start by setting all UI icons
+        SetAllUI(player.CharacterManager.character_instances[0]);
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetAllUI(PlayerCharacter activeCharacter)
     {
-        
+        // ensure UI icons length is within range of character party
+        if (UIIcons.Length < player.CharacterManager.character_instances.Length)
+        {
+            Debug.LogError("There are more character instances than UI icons provided. (PlayerCharacterUIProfileManager.cs)");
+            return;
+        }
+
+        // check if active character is the first object in the array
+        // if so, simply loop through the array and set the UI in that order
+        if (activeCharacter == player.CharacterManager.character_instances[0])
+        {
+            // set inactive characters
+            for (int i = 0; i < player.CharacterManager.character_instances.Length; i++)
+            {
+                UIIcons[i].SetUI(player, player.CharacterManager.character_instances[i]);
+            }
+            return;
+        }
+
+        // cache first character in array
+        PlayerCharacter cachedCharacter =  player.CharacterManager.character_instances[0];
+        // loop through characters in the party and set the active character
+        for (int i = 0; i < player.CharacterManager.character_instances.Length; i++)
+        {
+            // get the current character
+            PlayerCharacter character = player.CharacterManager.character_instances[i];
+            // variable to change depending on the character to set
+            PlayerCharacter characterToSet = character;
+
+            // if first character is not the active, directly set first UI to active character
+            if (cachedCharacter != activeCharacter && i == 0)
+            {
+                // set first character in active UI spot
+                characterToSet = activeCharacter;
+                // cache current character
+                cachedCharacter = character;
+            }
+
+            // if reached the current location of the active character, set the UI to the previously cached character
+            if (character == activeCharacter && i != 0) characterToSet = cachedCharacter;
+
+            UIIcons[i].SetUI(player, characterToSet);
+        }
+    }
+
+    void OnCharacterChange(PlayerCharacter newCharacter)
+    {
+        // update UI icons
+        SetAllUI(newCharacter);
     }
 }
