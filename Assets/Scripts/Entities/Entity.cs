@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class Entity : MonoBehaviour {
     [Header("Character Information")]
     public string characterName;
     [TextArea(3, 10)]
