@@ -5,7 +5,7 @@ public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>
     [field: SerializeField]
     public Navigation navigation {get; private set;}
     /// <summary>
-    /// The recyclable type of this NPC (doesn't mat)
+    /// The recyclable type of this NPC (if contamiant NPC, set to OTHERS)
     /// </summary>
     public virtual RecyclableType recyclableType { get; }
     /// <summary>
