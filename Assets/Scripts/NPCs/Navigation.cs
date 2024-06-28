@@ -7,6 +7,8 @@ public class Navigation : MonoBehaviour
 
     [Tooltip("When distance between target & this game object is less than stop_distance, it will count as reached destination.")]
     public float stop_distance = 0.1f;
+    [Tooltip("When distance to start slowing down"), Range(0.00001f,1f)]
+    public float slow_distance = 0.1f;
     [Tooltip("The movement speed")]
     public float move_speed = 100f;
 
@@ -59,11 +61,20 @@ public class Navigation : MonoBehaviour
         }
     }
 
-    private void MoveToStep(Vector3 pos)
+    private void MoveToStep(Vector3 target_pos)
     {
-        Vector3 dir = pos - transform.position;
+        Vector3 dir = target_pos - transform.position;
         Vector3 vel = dir.normalized * move_speed * Time.deltaTime;
-        rb.velocity = vel * Mathf.Clamp01(dir.magnitude);
+        rb.velocity = vel * Mathf.Clamp01(dir.magnitude * (1/slow_distance));
+        
+        Vector3 next_pos = transform.position + vel * Time.deltaTime;
+        Vector3 next_dir = target_pos - next_pos; // The direction from the next position to the target position
+        // If the next position is in the opposite direction of the target position, then stop (to prevent overshooting)
+        if (Vector3.Dot(next_dir, dir) < 0)
+        {
+            rb.velocity = Vector2.zero;
+            transform.position = target_pos;
+        }
 
         if (reachedDestination) rb.velocity = Vector2.zero;
     }
