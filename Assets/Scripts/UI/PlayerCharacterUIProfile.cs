@@ -64,6 +64,6 @@ public class PlayerCharacterUIProfile : MonoBehaviour
         // if so, update cache
         cacheCanTriggerSkill = cachePlayer.CharacterBehaviour.CanTriggerSkill;
         // play animation depending on if skill can currently be triggered
-        anim.Play(cacheCanTriggerSkill ? "OnFire" : "Static");
+        anim.Play(cacheCanTriggerSkill ? "FireOn" : "Static");
     }
 }
