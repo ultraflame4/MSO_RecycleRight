@@ -29,7 +29,7 @@ public class PlayerDefaultState : State<PlayerController>
         // update pointer direction
         character.PointerManager.UpdatePointer();
         // set movement input
-        move_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // set attack input
         attack_input = Input.GetMouseButtonDown(0);
         // set skill input
