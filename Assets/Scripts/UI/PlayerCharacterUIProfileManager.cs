@@ -27,18 +27,6 @@ public class PlayerCharacterUIProfileManager : MonoBehaviour
             return;
         }
 
-        // check if active character is the first object in the array
-        // if so, simply loop through the array and set the UI in that order
-        if (activeCharacter == player.CharacterManager.character_instances[0])
-        {
-            // set inactive characters
-            for (int i = 0; i < player.CharacterManager.character_instances.Length; i++)
-            {
-                UIIcons[i].SetUI(player, player.CharacterManager.character_instances[i]);
-            }
-            return;
-        }
-
         // cache first character in array
         PlayerCharacter cachedCharacter =  player.CharacterManager.character_instances[0];
         // loop through characters in the party and set the active character
