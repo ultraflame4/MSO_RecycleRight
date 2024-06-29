@@ -10,21 +10,19 @@ public class PlayerSkillState : CoroutineState<PlayerController>
     public PlayerSkillState(StateMachine<PlayerController> fsm, PlayerController character) : 
         base(fsm, character, character.DefaultState, character.Data.skillDuration)
     {
-        // count duration from start of game to charge skill
-        fsm.StartCoroutine(WaitForSeconds(character.Data.skillCooldown, () => character.canTriggerSkill = true));
     }
 
     public override void Enter()
     {
         base.Enter();
         // check if can trigger skill, if not, return to default state
-        if (!character.canTriggerSkill)
+        if (!character.CharacterBehaviour.CanTriggerSkill)
         {
             fsm.SwitchState(character.DefaultState);
             return;
         }
         // set can trigger skill to false
-        character.canTriggerSkill = false;
+        character.CharacterBehaviour.CanTriggerSkill = false;
         // play skill animation
         // trigger skill after a certain duration
         triggerSkillCoroutine = fsm.StartCoroutine(
@@ -38,8 +36,8 @@ public class PlayerSkillState : CoroutineState<PlayerController>
     public override void Exit()
     {
         base.Exit();
-        // start coroutine to count skill cooldown
-        fsm.StartCoroutine(WaitForSeconds(character.Data.skillCooldown, () => character.canTriggerSkill = true));
+        // reset can trigger skill to true, and it would automatically delay the assignment by the skill cooldown
+        character.CharacterBehaviour.CanTriggerSkill = true;
         // stop trigger skill coroutine, and reset to null
         if (triggerSkillCoroutine == null) return; 
         fsm.StopCoroutine(triggerSkillCoroutine);

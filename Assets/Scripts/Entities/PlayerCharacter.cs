@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacter : Character
+public class PlayerCharacter : Entity
 {
     [Header("Stats")]
     [SerializeField] public float maxHealth = 100f;
