@@ -1216,6 +1216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c62f97125f9aab4aa5e98540ba76ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1956440269}
+  UIIcons:
+  - {fileID: 1378555129}
+  - {fileID: 1998812542}
+  - {fileID: 2128332181}
 --- !u!1001 &1532510743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1519,11 +1524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 76.92308
+      value: 123.07693
       objectReference: {fileID: 0}
     - target: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 73.07693
+      value: 123.07693
       objectReference: {fileID: 0}
     - target: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1591,11 +1596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331427080281565054, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 13.7
+      value: 49.5
       objectReference: {fileID: 0}
     - target: {fileID: 3331427080281565054, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -34.7
+      value: -75.7
       objectReference: {fileID: 0}
     - target: {fileID: 7424985952239220138, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_Sprite
@@ -1773,6 +1778,8 @@ MonoBehaviour:
   <container>k__BackingField: {fileID: 316731033}
   <characters>k__BackingField:
   - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
+  - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
+  - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
   <placeholder>k__BackingField: {fileID: 1766840333}
 --- !u!114 &1956440269
 MonoBehaviour:
@@ -1786,8 +1793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1238b709b57da4393bdaaa5d1616d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterManager: {fileID: 1956440268}
   levelManager: {fileID: 0}
-  canTriggerSkill: 0
 --- !u!1 &1956824500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1837,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
   m_PrefabInstance: {fileID: 3887645361791296742}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998812542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1504036251392057516, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
+  m_PrefabInstance: {fileID: 3887645361791296742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5523a0b9e6a6e41877c56f77ee3ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2067280335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1916,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 52747663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128332181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1504036251392057516, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
+  m_PrefabInstance: {fileID: 1713175723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5523a0b9e6a6e41877c56f77ee3ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3887645361791296742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1932,11 +1961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 76.92308
+      value: 123.07693
       objectReference: {fileID: 0}
     - target: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 73.07693
+      value: 123.07693
       objectReference: {fileID: 0}
     - target: {fileID: 899446499646298222, guid: 3d2e92fe127d9d64db2b7242c3e924c4, type: 3}
       propertyPath: m_LocalPosition.x
