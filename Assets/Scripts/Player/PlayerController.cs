@@ -6,6 +6,7 @@ public class PlayerController : StateMachine<PlayerController>
 {
     #region Inspector Fields
     [Header("References")]
+    [SerializeField] private CharacterManager characterManager;
     [SerializeField] private LevelManager levelManager;
     #endregion
 
@@ -19,16 +20,16 @@ public class PlayerController : StateMachine<PlayerController>
     #region Other Properties
     public PlayerCharacter Data { get; private set; }
     public Behaviour CharacterBehaviour { get; private set; }
-    public CharacterManager CharacterManager { get; private set; }
     public DirectionPointer PointerManager { get; private set; }
     public Transform pointer => transform.GetChild(0);
+    public CharacterManager CharacterManager => characterManager;
     #endregion
 
     #region Monobehaviour Callbacks
     void Start()
     {
         // get components
-        CharacterManager = GetComponent<CharacterManager>();
+        characterManager ??= GetComponent<CharacterManager>();
         PointerManager = pointer.GetComponent<DirectionPointer>();
         // set character to first character instance
         OnCharacterChange(CharacterManager.character_instances[0]);
