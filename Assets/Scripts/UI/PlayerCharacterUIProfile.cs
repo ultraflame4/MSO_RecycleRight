@@ -10,7 +10,7 @@ public class PlayerCharacterUIProfile : MonoBehaviour
     [SerializeField] Text switchText;
 
     // reference animator component
-    Animator anim;
+    UIAnimator anim;
     // caches
     PlayerController cachePlayer;
     bool cacheCanTriggerSkill = false;
@@ -18,7 +18,7 @@ public class PlayerCharacterUIProfile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponent<UIAnimator>();
     }
 
     // Update is called once per frame
