@@ -26,6 +26,8 @@ public class UIAnimation : MonoBehaviour
 
         // reset current sprite
         currentSprite = 0;
+        // ensure coroutine is null
+        if (playAnimationCoroutine != null) StopCoroutine(playAnimationCoroutine);
         // play animation
         playAnimationCoroutine = StartCoroutine(PlayAnimation());
     }
@@ -38,7 +40,8 @@ public class UIAnimation : MonoBehaviour
             Debug.LogError("Target Image or required sprites are not set. (UIAnimation.cs)");
             return;
         }
-
+        // ensure coroutine is not null
+        if (playAnimationCoroutine == null) return;
         // stop animation coroutine
         StopCoroutine(playAnimationCoroutine);
         // reset coroutine variable to null
