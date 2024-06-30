@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d8b1a2b053610249974972808b24269
+guid: fb8f4b826a57bae4d9d1e4cfc50f16cd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Maid_Mary_Frame_0
+  - name: Volunteer_Vincent_Frame_0
     originalName: 
-    pivot: {x: 1.1071429, y: -0.25}
+    pivot: {x: 0, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 54
+      x: 98
       y: 4
-      width: 28
-      height: 40
-    spriteID: 43d5d3be225c6924ca257f6d1e3aed90
+      width: 0
+      height: 0
+    spriteID: ffbd70f459d27624487fd33b22a7889f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,10 +140,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 4}
-  - name: Maid_Mary_Frame_1
+    uvTransform: {x: 35, y: -60}
+  - name: Volunteer_Vincent_Frame_1
     originalName: 
-    pivot: {x: 0.7619048, y: -0.25}
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 12
+      width: 0
+      height: 0
+    spriteID: 7237e8f1681e01248a00af182b9f7df6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: -24}
+  - name: Volunteer_Vincent_Frame_2
+    originalName: 
+    pivot: {x: 0.75, y: -0.2777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -151,8 +171,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 42
-      height: 40
-    spriteID: 72d2b346bf0d4144199e4c16ebc5d078
+      height: 36
+    spriteID: 2bf65b296aa63f645bcd0233eaafd439
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,18 +181,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Maid_Mary_Frame_2
+  - name: Volunteer_Vincent_Frame_3
     originalName: 
-    pivot: {x: 1.1071429, y: -0.25}
+    pivot: {x: 0.875, y: -0.2777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
+      x: 54
       y: 4
-      width: 28
-      height: 40
-    spriteID: 4c9b11ddf58188b4faad97464bfc843c
+      width: 36
+      height: 36
+    spriteID: 4406cbb9dff895a4aa6bfd5d4f6c6438
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,44 +200,108 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 4}
+    uvTransform: {x: 54, y: 4}
+  - name: Volunteer_Vincent_Frame_4
+    originalName: 
+    pivot: {x: 0.875, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 48
+      width: 36
+      height: 36
+    spriteID: 68e0d373f053a424d95bb6dc6463c506
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 48}
+  - name: Volunteer_Vincent_Frame_5
+    originalName: 
+    pivot: {x: 0.76829267, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 48
+      width: 41
+      height: 36
+    spriteID: ef6f03df3b781eb4c8cc5d564bc538ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 48}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1956363757
-    name: Maid_Mary
+    guid: -321999688
+    name: Volunteer_Vincent
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Maid_Mary_Frame_0
+    - name: Volunteer_Vincent_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 10
-        width: 28
-        height: 40
-      spriteId: 43d5d3be225c6924ca257f6d1e3aed90
-    - name: Maid_Mary_Frame_1
+        x: 0
+        y: 0
+        width: 63
+        height: 64
+      spriteId: ffbd70f459d27624487fd33b22a7889f
+    - name: Volunteer_Vincent_Frame_1
       frameIndex: 1
       cellRect:
         x: 0
         y: 10
-        width: 42
-        height: 40
-      spriteId: 72d2b346bf0d4144199e4c16ebc5d078
-    - name: Maid_Mary_Frame_2
+        width: 40
+        height: 36
+      spriteId: 7237e8f1681e01248a00af182b9f7df6
+    - name: Volunteer_Vincent_Frame_2
       frameIndex: 2
       cellRect:
-        x: 1
+        x: 0
         y: 10
-        width: 28
-        height: 40
-      spriteId: 4c9b11ddf58188b4faad97464bfc843c
+        width: 42
+        height: 36
+      spriteId: 2bf65b296aa63f645bcd0233eaafd439
+    - name: Volunteer_Vincent_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 10
+        width: 40
+        height: 36
+      spriteId: 4406cbb9dff895a4aa6bfd5d4f6c6438
+    - name: Volunteer_Vincent_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 10
+        width: 40
+        height: 36
+      spriteId: 68e0d373f053a424d95bb6dc6463c506
+    - name: Volunteer_Vincent_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 10
+        width: 41
+        height: 36
+      spriteId: ef6f03df3b781eb4c8cc5d564bc538ad
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 63, y: 64}
