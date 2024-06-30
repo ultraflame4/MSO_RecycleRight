@@ -7,7 +7,8 @@ public class DirectionPointer : MonoBehaviour {
     [field: SerializeField, Tooltip("The player's transform.")]
     public Transform player { get; private set; }
 
-    private void Update() {
+    public void UpdatePointer() 
+    {
         Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 player_pos = player.position;
         // Ensure that comparison is done in 2D space
