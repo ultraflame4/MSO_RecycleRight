@@ -39,6 +39,7 @@ public class VolunteerBehaviour : BaseMeleeAttack
     {
         base.TriggerSkill();
         // set animation speed
+        character.anim.speed = buffScale;
         // set animation duration
         data.attackDuration *= 1 / buffDuration;
         // subscribe to characcter change event
@@ -51,6 +52,7 @@ public class VolunteerBehaviour : BaseMeleeAttack
     {
         yield return new WaitForSeconds(duration);
         // reset animation speed
+        character.anim.speed = 1f;
         // reset animation duration
         data.attackDuration *= buffDuration;
         // unsubscribe to characcter change event
@@ -61,9 +63,11 @@ public class VolunteerBehaviour : BaseMeleeAttack
     void OnCharacterChange(PlayerCharacter data)
     {
         // reset animation speed
+        character.anim.speed = 1f;
         // reset animation duration
         data.attackDuration *= buffDuration;
         // set animation speed
+        character.anim.speed = buffScale;
         // set animation duration
         data.attackDuration *= 1 / buffDuration;
     }
