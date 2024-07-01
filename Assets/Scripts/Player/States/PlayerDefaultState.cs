@@ -49,8 +49,8 @@ public class PlayerDefaultState : State<PlayerController>
         // update sprite flip if moving
         if (move_input.x != 0) character.Data.renderer.flipX = move_input.x < 0f;
 
-        //check for transition to skill state
-        if (skill_input)
+        // check for transition to skill state, ensure can trigger skill
+        if (skill_input && character.CharacterBehaviour.CanTriggerSkill)
         {
             fsm.SwitchState(character.SkillState);
             return;
