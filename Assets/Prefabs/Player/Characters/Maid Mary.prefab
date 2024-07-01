@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillCooldown
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillTriggerTimeFrame
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -81,3 +93,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183d0f9860849b14dba294c7e1db7915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 5
+  attackRange: 1.5
+  attackStunDuration: 0.75
+  knockback: 15
+  cleanAmount: 5
+  areaOfEffect: 0
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
+  tickDamage: 5
+  tickStunDuration: 0.15
+  tickSpeed: 2.5
+  skillRange: 5
+  skillPullForce: 25
+  pullableType: 0
+  pullableMask:
+    serializedVersion: 2
+    m_Bits: 128
