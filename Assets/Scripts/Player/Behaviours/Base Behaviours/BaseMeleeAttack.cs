@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using NPC;
+using Interfaces;
 
 namespace Player.Behaviours
 {
@@ -24,8 +22,9 @@ namespace Player.Behaviours
             // check if detected any enemies
             if (hit == null) return;
 
-            // deal damage
-            hit.GetComponent<INPCBody>()?.Hit(attackDamage,attackStunDuration);
+            // deal damage and stun enemies that are hit
+            hit.GetComponent<IDamagable>()?.Damage(attackDamage);
+            hit.GetComponent<IStunnable>()?.Stun(attackStunDuration);
             // add knockback to hit enemy
             hit.GetComponent<Rigidbody2D>()?
                 .AddForce((character.pointer.position - transform.position).normalized * knockback, ForceMode2D.Impulse);

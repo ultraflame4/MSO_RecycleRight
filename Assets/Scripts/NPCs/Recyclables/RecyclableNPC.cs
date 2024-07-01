@@ -2,10 +2,11 @@ using UnityEngine;
 using Level;
 using Level.Bins;
 using NPC.Contaminant;
+using Interfaces;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, INPCBody
+    public class RecyclableNPC : FSMRecyclableNPC, IDamagable, IStunnable
     {
 
         #region States
@@ -38,9 +39,13 @@ namespace NPC.Recyclable
 
             Initialize(state_Idle);
         }
-        public void Hit(float damage, float stun_duration)
+        public void Damage(float damage)
         {
             Debug.Log("Hit");
+        }
+
+        public void Stun(float stun_duration)
+        {
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }
