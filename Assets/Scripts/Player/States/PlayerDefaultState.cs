@@ -44,6 +44,8 @@ public class PlayerDefaultState : State<PlayerController>
     {
         base.LogicUpdate();
 
+        // update sprite orientation
+        UpdateSpriteFlip();
         // update animations
         UpdateAnimations();
 
@@ -81,6 +83,15 @@ public class PlayerDefaultState : State<PlayerController>
         base.Exit();
         // reset velocity when exiting state
         rb.velocity = Vector2.zero;
+    }
+
+    // private update methods
+    void UpdateSpriteFlip()
+    {
+        // do not flip if not moving
+        if (move_input.x == 0) return;
+        // update sprite flip based on move input
+        character.Data.renderer.flipX = move_input.x < 0f;
     }
 
     void UpdateAnimations()
