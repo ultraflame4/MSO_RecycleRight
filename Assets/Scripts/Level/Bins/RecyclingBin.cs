@@ -16,7 +16,7 @@ public class RecyclingBin : MonoBehaviour
     public bool pending_infestation { get; private set; }
     [field: SerializeField]
     public float infestation_percent { get; private set; }
-
+    public float Score = 0;
     public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
 
 
@@ -48,6 +48,7 @@ public class RecyclingBin : MonoBehaviour
         binState = BinState.CONTAMINATED;
         pending_infestation = true;
         infestation_percent = 0;
+        Score = 0;
     }
 
     /// <summary>
@@ -74,6 +75,7 @@ public class RecyclingBin : MonoBehaviour
         binState = BinState.CONTAMINATED;
         pending_infestation = false;
         infestation_percent = 0;
+        Score = 0;
     }
 
 
@@ -87,6 +89,9 @@ public class RecyclingBin : MonoBehaviour
         }
         else if ( recyclable.recyclableType != recyclableType){
             SetContaminated();
+        }
+        else{
+            Score += 1;
         }
     }
 }
