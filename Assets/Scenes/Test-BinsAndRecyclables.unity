@@ -740,6 +740,7 @@ MonoBehaviour:
   - {fileID: 4845950280257841287, guid: 591839dc056637c469c5a9e27a2ef3e1, type: 3}
   - {fileID: 4381228617869542319, guid: 7ddb810bc1f028f4ba6646ed98a2f071, type: 3}
   <placeholder>k__BackingField: {fileID: 571316343}
+  CanSwitchCharacters: 1
 --- !u!114 &927129803
 MonoBehaviour:
   m_ObjectHideFlags: 0
