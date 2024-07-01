@@ -50,7 +50,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -129,8 +129,7 @@ MonoBehaviour:
   <container>k__BackingField: {fileID: 2503405273186887371}
   <characters>k__BackingField:
   - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
-  - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
-  - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
+  - {fileID: 5950129485960200443, guid: 327aba2409053944cb02937977e69ca2, type: 3}
   <placeholder>k__BackingField: {fileID: 1307939848808656399}
   CanSwitchCharacters: 1
 --- !u!1 &1307939848808656399

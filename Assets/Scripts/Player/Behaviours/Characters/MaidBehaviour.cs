@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
+using System.Linq;
 using UnityEngine;
-using Entity.Data;
 using Level.Bins;
 using NPC;
-using System.Linq;
 using Interfaces;
 
 namespace Player.Behaviours
@@ -12,9 +9,9 @@ namespace Player.Behaviours
     public class MaidBehaviour : BaseMeleeAttack
     {
         [Header("Skill Tick")]
-        [SerializeField] float tickDamage = 5f;
+        [SerializeField] float tickDamage = 1f;
         [SerializeField] float tickStunDuration = 0.15f;
-        [SerializeField] float tickSpeed = 2.5f;
+        [SerializeField] float tickSpeed = 1f;
 
         [Header("Skill Fields")]
         [SerializeField] float skillRange = 5f;
@@ -73,7 +70,7 @@ namespace Player.Behaviours
             foreach (Collider2D hit in hits)
             {
                 // get rigidbody of component to apply force
-                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
                 // ensure enemy that was hit has a rigidbody component
                 if (rb == null) continue;
                 // pull enemy towards self
