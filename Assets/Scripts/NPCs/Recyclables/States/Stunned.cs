@@ -3,13 +3,31 @@ using UnityEngine;
 
 public class Stunned : BaseRecyclableState
 {
-    public Stunned(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
+    public float stun_timer;
+    private RecyclableNPC npc;
+    public Stunned(RecyclableNPC npc) : base(npc, npc)
     {
+        this.npc = npc;
     }
 
     public override void Enter()
     {
         base.Enter();
-        navigation.enabled=false;
+        navigation.ClearDestination();
+        navigation.enabled = false;
+    }
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        stun_timer -= Time.deltaTime;
+        if (stun_timer <= 0)
+        {
+            character.SwitchState(npc.state_RandWalk);
+        }
+    }
+    public override void Exit()
+    {
+        base.Exit();
+        navigation.enabled = true;
     }
 }

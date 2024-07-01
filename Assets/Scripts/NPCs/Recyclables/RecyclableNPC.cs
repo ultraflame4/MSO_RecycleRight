@@ -4,8 +4,8 @@ public class RecyclableNPC : FSMRecyclableNPC, INPCBody
 {
 
     #region States
-    private RandomWalk state_RandWalk;
-    private Stunned state_Stunned;
+    public RandomWalk state_RandWalk {get; private set;}
+    public Stunned state_Stunned {get; private set;}
     #endregion
 
     [SerializeField]
@@ -21,13 +21,14 @@ public class RecyclableNPC : FSMRecyclableNPC, INPCBody
     {
         state_RandWalk = new(this, this);
         state_RandWalk.levelManager = levelManager;
-        state_Stunned = new(this, this);
+        state_Stunned = new(this);
 
         Initialize(state_RandWalk);
     }
-    public void Hit(float damage)
+    public void Hit(float damage, float stun_duration)
     {
         Debug.Log("Hit");
+        state_Stunned.stun_timer = stun_duration;
         SwitchState(state_Stunned);
     }
 

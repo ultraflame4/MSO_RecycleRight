@@ -22,7 +22,7 @@ public class BaseMeleeAttack : Behaviour
         if (hit == null) return;
 
         // deal damage
-        hit.GetComponent<INPCBody>()?.Hit(attackDamage);
+        hit.GetComponent<INPCBody>()?.Hit(attackDamage,.75f);
         // add knockback to hit enemy
         hit.GetComponent<Rigidbody2D>()?
             .AddForce((character.pointer.position - transform.position).normalized * knockback, ForceMode2D.Impulse);
