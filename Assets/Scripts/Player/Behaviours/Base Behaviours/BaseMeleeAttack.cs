@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class BaseMeleeAttack : Behaviour
@@ -19,10 +20,13 @@ public class BaseMeleeAttack : Behaviour
         Collider2D hit = Physics2D.OverlapCircle(character.pointer.position, attackRange);
         // check if detected any enemies
         if (hit == null) return;
+
+        // deal damage
+        hit.GetComponent<INPCBody>()?.Hit(attackDamage);
         // add knockback to hit enemy
         hit.GetComponent<Rigidbody2D>()?
             .AddForce((character.pointer.position - transform.position).normalized * knockback, ForceMode2D.Impulse);
-        // deal damage
+
     }
 
     protected void OnDrawGizmosSelected()
