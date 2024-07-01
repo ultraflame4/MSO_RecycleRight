@@ -27,5 +27,11 @@ namespace Entity.Data
             get { return health; }
             set { health = Mathf.Clamp(value, 0f, maxHealth); }
         }
+
+        void Start()
+        {
+            // set health to max health at start of game
+            Health = maxHealth;
+        }
     }
 }

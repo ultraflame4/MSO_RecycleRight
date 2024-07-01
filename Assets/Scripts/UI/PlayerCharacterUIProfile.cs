@@ -18,6 +18,7 @@ namespace UI
         UIAnimator anim;
         // caches
         Behaviour cacheCharacterBehaviour;
+        PlayerCharacter cacheCharacterData;
         bool cacheCanTriggerSkill = false;
 
         // Start is called before the first frame update
@@ -41,21 +42,28 @@ namespace UI
         {
             // cache player character behaviour
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
+            // cache player character data
+            cacheCharacterData = characterToShow;
             // check if skill is ready and update animation
             CheckSkillReadyAnimation();
+            // set health bar to show current character health
+            UpdateCharacterHealth();
 
-            // ensure sprite of character is not null
+            // ensure sprite of character is not null, and set profile image
             if (characterToShow.characterSprite != null)
-                // set profile image
                 profileImage.sprite = characterToShow.characterSprite;
             // do a null check for text, active player UI have no text, no need to update
             if (switchText != null)
                 switchText.text = (Array.IndexOf(player.CharacterManager.character_instances, characterToShow) + 1).ToString();
-            
-            // set health
-            // todo: health system
-            float tempHealth = 0.75f * characterToShow.maxHealth;
-            healthBar.fillAmount = tempHealth / characterToShow.maxHealth;
+        }
+
+        // methods to update UI
+        void UpdateCharacterHealth()
+        {
+            // ensure player character data is not null
+            if (cacheCharacterData == null) return;
+            // update health bar
+            healthBar.fillAmount = cacheCharacterData.Health / cacheCharacterData.maxHealth;
         }
 
         void CheckSkillReadyAnimation()
