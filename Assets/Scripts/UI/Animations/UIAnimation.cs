@@ -15,6 +15,9 @@ public class UIAnimation : MonoBehaviour
 
     public string Name => animationName;
 
+    /// <summary>
+    /// Play animation
+    /// </summary>
     public void Play()
     {
         // ensure required fields are not null
@@ -32,6 +35,9 @@ public class UIAnimation : MonoBehaviour
         playAnimationCoroutine = StartCoroutine(PlayAnimation());
     }
 
+    /// <summary>
+    /// Stop playing animation
+    /// </summary>
     public void Stop()
     {
         // ensure required fields are not null

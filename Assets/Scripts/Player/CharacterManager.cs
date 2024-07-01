@@ -45,7 +45,7 @@ public class CharacterManager : MonoBehaviour
     /// <summary>
     /// Switches the character to the one at the specified index.
     /// </summary>
-    /// <param name="index"></param>
+    /// <param name="index">Index of character to switch to</param>
     public void SwitchCharacter(int index)
     {
         // check if can switch characters

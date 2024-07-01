@@ -15,6 +15,10 @@ public class UIAnimator : MonoBehaviour
         animations[0].Play();
     }
 
+    /// <summary>
+    /// Play an animation in the animations list
+    /// </summary>
+    /// <param name="name">Name of animation to play</param>
     public void Play(string name)
     {
         // if animations list do not contain animation with the name
