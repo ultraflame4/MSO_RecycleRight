@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Entity.Data
@@ -21,5 +19,13 @@ namespace Entity.Data
         [Header("Animation Durations")]
         [SerializeField] public float attackDuration = 1.5f;
         [SerializeField] public float skillDuration = 2f;
+
+        // hidden public properties
+        private float health = 0f;
+        public float Health
+        {
+            get { return health; }
+            set { health = Mathf.Clamp(value, 0f, maxHealth); }
+        }
     }
 }
