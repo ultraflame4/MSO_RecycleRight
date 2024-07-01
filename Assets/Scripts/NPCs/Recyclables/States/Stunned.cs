@@ -22,7 +22,7 @@ public class Stunned : BaseRecyclableState
         stun_timer -= Time.deltaTime;
         if (stun_timer <= 0)
         {
-            character.SwitchState(npc.state_RandWalk);
+            character.SwitchState(npc.state_Idle);
         }
     }
     public override void Exit()

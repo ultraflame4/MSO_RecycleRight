@@ -4,26 +4,34 @@ public class RecyclableNPC : FSMRecyclableNPC, INPCBody
 {
 
     #region States
-    public RandomWalk state_RandWalk {get; private set;}
-    public Stunned state_Stunned {get; private set;}
+    public RecyclableIdle state_Idle { get; private set; }
+    public Flee state_Flee { get; private set; }
+    public Stunned state_Stunned { get; private set; }
     #endregion
-
-    [SerializeField]
-    private RecyclableType _recyclableType;
-    
-    public override RecyclableType recyclableType => _recyclableType;
-
+    #region References
     [field: SerializeField]
     public virtual LevelManager levelManager { get; private set; }
+    #endregion
 
+    #region Config
+    [SerializeField]
+    private RecyclableType _recyclableType;
+    public override RecyclableType recyclableType => _recyclableType;
+    public float sightRange = 3f;
+    #endregion
+
+
+
+    public ContaminantNPC nearestContaminant { get; private set; } = null;
 
     private void Start()
     {
-        state_RandWalk = new(this, this);
-        state_RandWalk.levelManager = levelManager;
+        state_Idle = new(this);
+        state_Idle.levelManager = levelManager;
         state_Stunned = new(this);
+        state_Flee = new(this);
 
-        Initialize(state_RandWalk);
+        Initialize(state_Idle);
     }
     public void Hit(float damage, float stun_duration)
     {
@@ -32,4 +40,9 @@ public class RecyclableNPC : FSMRecyclableNPC, INPCBody
         SwitchState(state_Stunned);
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
 }
