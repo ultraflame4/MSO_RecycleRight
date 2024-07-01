@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerCharacter : Entity
 {
     [Header("Stats")]
-    [SerializeField] public float maxHealth = 100f;
+    [SerializeField] // LOAD BEARING NEWLINE!! DO NOT REMOVE!!!
+    public float maxHealth = 100f;
     [SerializeField] public float movementSpeed = 250f;
 
     [Header("Skills")]

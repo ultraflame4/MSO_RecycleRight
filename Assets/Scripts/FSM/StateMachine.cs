@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class StateMachine<T> : MonoBehaviour
 {
+    
     protected State<T> currentState;
+    public string current_state_name = "None";
 
     /// <summary>
     /// Event callback
@@ -23,6 +25,7 @@ public class StateMachine<T> : MonoBehaviour
     public void Initialize(State<T> state)
     {
         currentState = state;
+        UpdateStateName();
         currentState?.Enter();
     }
 
@@ -31,17 +34,23 @@ public class StateMachine<T> : MonoBehaviour
     /// </summary>
     /// <param name="nextState">State to transition into</param>
     public void SwitchState(State<T> nextState)
-    {
+    {   
         // set previous state
-        State<T> prev = nextState;
+        State<T> prev = currentState;
         // change state
         currentState?.Exit();
         currentState = nextState;
+        UpdateStateName();
         currentState?.Enter();
         // Invoke event for side-effects.
         StateChanged?.Invoke(prev, nextState);
     }
 
+
+    public void UpdateStateName()
+    {
+        current_state_name =  currentState?.ToString() ?? "None";
+    }
     #region Monobehaviour Callbacks
 
     void Update() 
