@@ -17,6 +17,8 @@ public class PlayerDefaultState : State<PlayerController>
     public override void Enter()
     {
         base.Enter();
+        // allow character switching
+        character.CharacterManager.CanSwitchCharacters = true;
         // play idle animation
         character.anim.Play("Idle");
         // reset inputs
@@ -81,6 +83,8 @@ public class PlayerDefaultState : State<PlayerController>
     public override void Exit()
     {
         base.Exit();
+        // disallow character switching when not in default state
+        character.CharacterManager.CanSwitchCharacters = false;
         // reset velocity when exiting state
         rb.velocity = Vector2.zero;
     }
