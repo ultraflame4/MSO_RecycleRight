@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Entity.Data;
 
@@ -59,18 +58,16 @@ namespace Player.Behaviours
             // subscribe to characcter change event
             character.CharacterManager.CharacterChanged += OnCharacterChange;
             // start coroutine to count buff duration
-            StartCoroutine(CountBuffDuration(buffDuration));
-        }
-
-        IEnumerator CountBuffDuration(float duration)
-        {
-            yield return new WaitForSeconds(duration);
-            // reset animation speed
-            cacheActiveAnimator.speed = 1f;
-            // reset animation duration
-            cacheActiveData.attackDuration *= buffDuration;
-            // unsubscribe to character change event
-            character.CharacterManager.CharacterChanged -= OnCharacterChange;
+            StartCoroutine(CountDuration(buffDuration, () => 
+                {
+                    // reset animation speed
+                    cacheActiveAnimator.speed = 1f;
+                    // reset animation duration
+                    cacheActiveData.attackDuration *= buffDuration;
+                    // unsubscribe to character change event
+                    character.CharacterManager.CharacterChanged -= OnCharacterChange;
+                }
+            ));
         }
 
         // private methods

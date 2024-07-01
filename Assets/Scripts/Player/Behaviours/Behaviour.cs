@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Entity.Data;
 
@@ -34,8 +34,13 @@ namespace Player.Behaviours
 
                 // if value is true, check if coroutine is running
                 if (cooldown != null) StopCoroutine(cooldown);
-                // start a coroutine to count skill cooldown
-                cooldown = StartCoroutine(WaitForCooldown(data.skillCooldown));
+                // start a coroutine to count duration of skill cooldown
+                cooldown = StartCoroutine(CountDuration(data.skillCooldown, () => 
+                    {
+                        canTriggerSkill = true;
+                        cooldown = null;
+                    }
+                ));
             }
         }
 
@@ -59,12 +64,16 @@ namespace Player.Behaviours
         public virtual void TriggerAttack() {}
         public virtual void TriggerSkill() {}
 
-        // coroutine to count the duration of the cooldown
-        IEnumerator WaitForCooldown(float duration)
+        /// <summary>
+        /// Coroutine to wait a certain amount of time before calling a method to perform an action
+        /// </summary>
+        /// <param name="duration">Duration to wait</param>
+        /// <param name="callback">Method to call after the set duration</param>
+        /// <returns></returns>
+        protected IEnumerator CountDuration(float duration, Action callback = null)
         {
             yield return new WaitForSeconds(duration);
-            canTriggerSkill = true;
-            cooldown = null;
+            callback?.Invoke();
         }
     }
 }
