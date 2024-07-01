@@ -12,12 +12,20 @@ public class PlayerAttackState : CoroutineState<PlayerController>
 
     public override void Enter()
     {
-        // play attack animation
-        // trigger attack
+        // set attack animation trigger
+        character.anim?.SetTrigger("Attack");
+        // trigger attack at the end of animation
         character.CharacterBehaviour?.TriggerAttack();
         // update attack duration
         duration = character.Data.attackDuration;
         // count attack duration
         base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        // reset attack trigger
+        character.anim?.ResetTrigger("Attack");
     }
 }
