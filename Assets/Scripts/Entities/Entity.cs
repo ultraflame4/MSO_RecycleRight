@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour
     public Sprite characterSprite;
 
     // public properties
-    public SpriteRenderer renderer { get; private set; }
+    public new SpriteRenderer renderer { get; private set; }
 
     void Awake()
     {
