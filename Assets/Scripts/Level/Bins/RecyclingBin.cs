@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class RecyclingBin : MonoBehaviour
@@ -18,7 +19,7 @@ public class RecyclingBin : MonoBehaviour
     public float infestation_percent { get; private set; }
     public float Score = 0;
     public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
-
+    public TMP_Text scoreText;
 
     private void Update()
     {
@@ -32,6 +33,7 @@ public class RecyclingBin : MonoBehaviour
                 binState = BinState.INFESTED;
             }
         }
+        scoreText.text = $"Score: {Score}";
     }
 
     /// <summary>

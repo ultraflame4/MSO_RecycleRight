@@ -226,7 +226,7 @@ MonoBehaviour:
   current_state_name: None
   <navigation>k__BackingField: {fileID: 71231603}
   <levelManager>k__BackingField: {fileID: 1019736426}
-  _recyclableType: 1
+  _recyclableType: 0
   sightRange: 3
 --- !u!50 &71231601
 Rigidbody2D:
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add0bec2d3a39f4ab5ed89caee897cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <size>k__BackingField: {x: 70, y: 40}
+  <size>k__BackingField: {x: 35, y: 20}
   <buffer_zone_size>k__BackingField: 1
   <player_start_offset>k__BackingField: 3
   enemies: []
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add0bec2d3a39f4ab5ed89caee897cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <size>k__BackingField: {x: 70, y: 40}
+  <size>k__BackingField: {x: 35, y: 20}
   <buffer_zone_size>k__BackingField: 1
   <player_start_offset>k__BackingField: 3
   enemies: []
@@ -972,7 +972,7 @@ Transform:
   m_GameObject: {fileID: 1842558446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.7, y: 0, z: 0}
+  m_LocalPosition: {x: 31.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1041,7 +1041,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1140,6 +1140,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1483733214003663031, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       propertyPath: m_Name
       value: RecyclingBin
@@ -1184,10 +1188,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8474570806786925667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2955612406747713084, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 124d045367ab7654b95b27107a18631f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
