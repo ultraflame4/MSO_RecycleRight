@@ -112,3 +112,4 @@ MonoBehaviour:
   passiveChance: 0.45
   buffScale: 1.5
   buffDuration: 5
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
