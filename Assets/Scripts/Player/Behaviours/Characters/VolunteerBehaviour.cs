@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class VolunteerBehaviour : BaseMeleeAttack
@@ -14,6 +13,10 @@ public class VolunteerBehaviour : BaseMeleeAttack
 
     [Header("VFX")]
     [SerializeField] GameObject hitEffects;
+
+    // skill variables to cache current active character components
+    PlayerCharacter cacheActiveData;
+    Animator cacheActiveAnimator;
 
     public override void TriggerAttack()
     {
@@ -47,6 +50,9 @@ public class VolunteerBehaviour : BaseMeleeAttack
         character.anim.speed = buffScale;
         // set animation duration
         data.attackDuration *= 1 / buffDuration;
+        // cache current active player
+        cacheActiveData = data;
+        cacheActiveAnimator = character.anim;
         // subscribe to characcter change event
         character.CharacterManager.CharacterChanged += OnCharacterChange;
         // start coroutine to count buff duration
@@ -57,10 +63,10 @@ public class VolunteerBehaviour : BaseMeleeAttack
     {
         yield return new WaitForSeconds(duration);
         // reset animation speed
-        character.anim.speed = 1f;
+        cacheActiveAnimator.speed = 1f;
         // reset animation duration
-        data.attackDuration *= buffDuration;
-        // unsubscribe to characcter change event
+        cacheActiveData.attackDuration *= buffDuration;
+        // unsubscribe to character change event
         character.CharacterManager.CharacterChanged -= OnCharacterChange;
     }
 
@@ -83,13 +89,14 @@ public class VolunteerBehaviour : BaseMeleeAttack
     // event listener to transfer changes to animator speed to new character
     void OnCharacterChange(PlayerCharacter data)
     {
-        // reset animation speed
-        character.anim.speed = 1f;
-        // reset animation duration
-        data.attackDuration *= buffDuration;
-        // set animation speed
+        // reset buffs on previous character
+        cacheActiveAnimator.speed = 1f;
+        cacheActiveData.attackDuration *= buffDuration;
+        // apply buffs to new character
         character.anim.speed = buffScale;
-        // set animation duration
         data.attackDuration *= 1 / buffDuration;
+        // cache new character
+        cacheActiveAnimator = character.anim;
+        cacheActiveData = data;
     }
 }
