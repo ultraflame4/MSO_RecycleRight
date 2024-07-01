@@ -24,6 +24,7 @@ public class PlayerSkillState : CoroutineState<PlayerController>
         // set can trigger skill to false
         character.CharacterBehaviour.CanTriggerSkill = false;
         // play skill animation
+        
         // trigger skill after a certain duration
         triggerSkillCoroutine = fsm.StartCoroutine(
             WaitForSeconds(

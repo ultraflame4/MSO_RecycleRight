@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDefaultState : State<PlayerController>
 {
     Rigidbody2D rb;
-    Vector2 move_input = Vector2.zero;
+    Vector2 move_input, cached_move_input = Vector2.zero;
     bool attack_input, skill_input = false;
 
     public PlayerDefaultState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
@@ -19,6 +19,8 @@ public class PlayerDefaultState : State<PlayerController>
         base.Enter();
         // allow character switching
         character.CharacterManager.CanSwitchCharacters = true;
+        // play idle animation
+        character.anim.Play("Idle");
         // reset inputs
         move_input = Vector2.zero;
         attack_input = false;
@@ -30,6 +32,8 @@ public class PlayerDefaultState : State<PlayerController>
         base.HandleInputs();
         // update pointer direction
         character.PointerManager.UpdatePointer();
+        // cache move input before updating
+        cached_move_input = move_input;
         // set movement input
         move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // set attack input
@@ -41,6 +45,11 @@ public class PlayerDefaultState : State<PlayerController>
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        // update sprite orientation
+        UpdateSpriteFlip();
+        // update animations
+        UpdateAnimations();
 
         //check for transition to skill state
         if (skill_input)
@@ -78,5 +87,22 @@ public class PlayerDefaultState : State<PlayerController>
         character.CharacterManager.CanSwitchCharacters = false;
         // reset velocity when exiting state
         rb.velocity = Vector2.zero;
+    }
+
+    // private update methods
+    void UpdateSpriteFlip()
+    {
+        // do not flip if not moving
+        if (move_input.x == 0) return;
+        // update sprite flip based on move input
+        character.Data.renderer.flipX = move_input.x < 0f;
+    }
+
+    void UpdateAnimations()
+    {
+        // check if input changed from previous frame
+        if (cached_move_input == move_input) return;
+        // play animation pased on input
+        character.anim.Play(move_input == Vector2.zero ? "Idle" : "Run");
     }
 }
