@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd289fd8732c77a478b7595b8a58d6ab
+guid: 9eb4877dd98a5ce49b722de809155efd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BossDraft
+  - name: Attack_Effect_Frame_0
     originalName: 
-    pivot: {x: 0.4464286, y: 0}
+    pivot: {x: 0.5652174, y: -0.083333336}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 56
-      height: 53
-    spriteID: 9ce2e133704a7c946acd2b4e5ae8a3d2
+      width: 23
+      height: 24
+    spriteID: 97fd8a88e56d42f439eb077fe5759e9e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,27 +141,83 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Attack_Effect_Frame_1
+    originalName: 
+    pivot: {x: 0.5652174, y: -0.44444445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 23
+      height: 18
+    spriteID: 3ee96c0122809e942ace5827766a46c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 36}
+  - name: Attack_Effect_Frame_2
+    originalName: 
+    pivot: {x: 0.5652174, y: -0.625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 4
+      width: 23
+      height: 16
+    spriteID: acca35593548f0e41b6ac2a43e5cabe0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 461920078
-    name: BossDraft
+    guid: -450953126
+    name: Attack_Effect
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: BossDraft
+    - name: Attack_Effect_Frame_0
       frameIndex: 0
       cellRect:
-        x: 7
-        y: 0
-        width: 56
-        height: 53
-      spriteId: 9ce2e133704a7c946acd2b4e5ae8a3d2
+        x: 3
+        y: 2
+        width: 23
+        height: 24
+      spriteId: 97fd8a88e56d42f439eb077fe5759e9e
+    - name: Attack_Effect_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 3
+        y: 8
+        width: 23
+        height: 18
+      spriteId: 3ee96c0122809e942ace5827766a46c9
+    - name: Attack_Effect_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 3
+        y: 10
+        width: 23
+        height: 16
+      spriteId: acca35593548f0e41b6ac2a43e5cabe0
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 32, y: 32}

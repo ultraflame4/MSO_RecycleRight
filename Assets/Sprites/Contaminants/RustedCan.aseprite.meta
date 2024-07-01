@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 41
       width: 25
       height: 29
-    spriteID: 8bce7269039398145988b403732e15bd
+    spriteID: 49b9a0abad8860447862798e5a63a899
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 78
       width: 25
       height: 29
-    spriteID: 3a822422ee12c1245abd642f95276676
+    spriteID: eb942e68f3a36b8498154d1a054caa16
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 4
       width: 25
       height: 29
-    spriteID: 50737c8fd62d9f544bde0563276a6ebd
+    spriteID: 1d93fce18c319364bb7af158412e9e7d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 41
       width: 25
       height: 29
-    spriteID: a8cfb5d5a5fd2614eb095441c58fa0df
+    spriteID: 31c88db042955b042a9d700887484f0c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +232,7 @@ ScriptedImporter:
       y: 78
       width: 25
       height: 29
-    spriteID: ba9ea9b57a1fd414ea798ed7dab990e6
+    spriteID: b7d49825b8ece224c8edf7c251c58e84
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +252,7 @@ ScriptedImporter:
       y: 4
       width: 25
       height: 29
-    spriteID: 8f1ed04b9d198b64884e705294b28e3d
+    spriteID: b3f17e37fafbb7f4c9731b884a234c26
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +272,7 @@ ScriptedImporter:
       y: 41
       width: 25
       height: 29
-    spriteID: 9e9d993a151a74447953e0b9d4b7894f
+    spriteID: 3c52cc8004379bc4e910555b983a62d4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -305,7 +305,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: 8bce7269039398145988b403732e15bd
+      spriteId: 49b9a0abad8860447862798e5a63a899
     - name: RustedCan_Frame_2
       frameIndex: 2
       cellRect:
@@ -313,7 +313,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: 3a822422ee12c1245abd642f95276676
+      spriteId: eb942e68f3a36b8498154d1a054caa16
     - name: RustedCan_Frame_3
       frameIndex: 3
       cellRect:
@@ -321,7 +321,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: 50737c8fd62d9f544bde0563276a6ebd
+      spriteId: 1d93fce18c319364bb7af158412e9e7d
     - name: RustedCan_Frame_4
       frameIndex: 4
       cellRect:
@@ -329,7 +329,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: a8cfb5d5a5fd2614eb095441c58fa0df
+      spriteId: 31c88db042955b042a9d700887484f0c
     - name: RustedCan_Frame_5
       frameIndex: 5
       cellRect:
@@ -337,7 +337,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: ba9ea9b57a1fd414ea798ed7dab990e6
+      spriteId: b7d49825b8ece224c8edf7c251c58e84
     - name: RustedCan_Frame_6
       frameIndex: 6
       cellRect:
@@ -345,7 +345,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: 8f1ed04b9d198b64884e705294b28e3d
+      spriteId: b3f17e37fafbb7f4c9731b884a234c26
     - name: RustedCan_Frame_7
       frameIndex: 7
       cellRect:
@@ -353,7 +353,7 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 29
-      spriteId: 9e9d993a151a74447953e0b9d4b7894f
+      spriteId: 3c52cc8004379bc4e910555b983a62d4
     linkedCells: []
     parentIndex: -1
   platformSettings: []

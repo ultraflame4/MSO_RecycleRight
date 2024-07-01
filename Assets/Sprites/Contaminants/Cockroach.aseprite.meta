@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 84a8e5ccf72d46348885b94a826c4f73
+guid: 891216a522497f64f8d609c307d50b91
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 11
       height: 14
-    spriteID: b6a3b44ca8461c340a93e0d284fa0438
+    spriteID: e440f1ce4acbf7b4cb4858d279d563e0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 26
       width: 11
       height: 14
-    spriteID: eb0cbdc34fcb93b45939b4873a37472c
+    spriteID: 5ef4286780de02a4b90e80c5aab4ca02
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 48
       width: 11
       height: 14
-    spriteID: e350ea7b864abe94191f6cb71abf4ac3
+    spriteID: 1f25b89fb416c6d40ad4a2afbff087f6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 70
       width: 11
       height: 14
-    spriteID: e31e9ac387d63b745ad1b3d63bef691a
+    spriteID: 5905d19b1e1d01642a46d45eaeb916b8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 92
       width: 11
       height: 14
-    spriteID: 8664a2c685adfc2468dc08405e560a80
+    spriteID: 107ab308caae79e41a79989d3303f723
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +232,7 @@ ScriptedImporter:
       y: 70
       width: 11
       height: 13
-    spriteID: 666454295c3dde4429127c91b90e880e
+    spriteID: 18ba43b199b3e8c4d8266184e2dadfcb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +252,7 @@ ScriptedImporter:
       y: 4
       width: 11
       height: 14
-    spriteID: 6090f5559b18d664ab72eab19b73736f
+    spriteID: a4fd591f8f20be04089038bb83adcfd6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +272,7 @@ ScriptedImporter:
       y: 26
       width: 11
       height: 14
-    spriteID: 93534fe8326606c45ae3bf89b4aa5cd9
+    spriteID: 07d042bb0866d384d80769c2be0149fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -292,7 +292,7 @@ ScriptedImporter:
       y: 48
       width: 11
       height: 14
-    spriteID: 9c7c17f94394ad44b86e8d779eadcc93
+    spriteID: 30bc12acf2da8124897f476c71069935
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -317,7 +317,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: b6a3b44ca8461c340a93e0d284fa0438
+      spriteId: e440f1ce4acbf7b4cb4858d279d563e0
     - name: Cockroach_Frame_1
       frameIndex: 1
       cellRect:
@@ -325,7 +325,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: eb0cbdc34fcb93b45939b4873a37472c
+      spriteId: 5ef4286780de02a4b90e80c5aab4ca02
     - name: Cockroach_Frame_2
       frameIndex: 2
       cellRect:
@@ -333,7 +333,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: e350ea7b864abe94191f6cb71abf4ac3
+      spriteId: 1f25b89fb416c6d40ad4a2afbff087f6
     - name: Cockroach_Frame_3
       frameIndex: 3
       cellRect:
@@ -341,7 +341,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: e31e9ac387d63b745ad1b3d63bef691a
+      spriteId: 5905d19b1e1d01642a46d45eaeb916b8
     - name: Cockroach_Frame_4
       frameIndex: 4
       cellRect:
@@ -349,7 +349,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: 8664a2c685adfc2468dc08405e560a80
+      spriteId: 107ab308caae79e41a79989d3303f723
     - name: Cockroach_Frame_5
       frameIndex: 5
       cellRect:
@@ -357,7 +357,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 13
-      spriteId: 666454295c3dde4429127c91b90e880e
+      spriteId: 18ba43b199b3e8c4d8266184e2dadfcb
     - name: Cockroach_Frame_6
       frameIndex: 6
       cellRect:
@@ -365,7 +365,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: 6090f5559b18d664ab72eab19b73736f
+      spriteId: a4fd591f8f20be04089038bb83adcfd6
     - name: Cockroach_Frame_7
       frameIndex: 7
       cellRect:
@@ -373,7 +373,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: 93534fe8326606c45ae3bf89b4aa5cd9
+      spriteId: 07d042bb0866d384d80769c2be0149fe
     - name: Cockroach_Frame_8
       frameIndex: 8
       cellRect:
@@ -381,7 +381,7 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 14
-      spriteId: 9c7c17f94394ad44b86e8d779eadcc93
+      spriteId: 30bc12acf2da8124897f476c71069935
     linkedCells: []
     parentIndex: -1
   platformSettings: []
