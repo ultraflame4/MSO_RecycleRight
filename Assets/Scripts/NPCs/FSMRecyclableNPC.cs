@@ -13,4 +13,18 @@ public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>
     /// </summary>
     public virtual bool is_food { get; }
 
+    public virtual void OnEnteredBin(RecyclingBin bin){
+        if (is_food){
+            bin.StartInfestation();
+        }
+        else if ( recyclableType != bin.recyclableType){
+            bin.SetContaminated();
+        }
+        else{
+            bin.Score += 1;
+        }
+        // Destroy this NPC. In future if we want death animation we canb remove this
+        Destroy(gameObject);
+    }
+
 }
