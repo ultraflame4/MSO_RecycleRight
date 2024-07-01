@@ -5,6 +5,7 @@ using UnityEngine;
 public class Behaviour : MonoBehaviour
 {
     protected PlayerController character;
+    protected PlayerCharacter data;
 
     // handle skill cooldown
     Coroutine cooldown;
@@ -31,7 +32,7 @@ public class Behaviour : MonoBehaviour
             // if value is true, check if coroutine is running
             if (cooldown != null) StopCoroutine(cooldown);
             // start a coroutine to count skill cooldown
-            cooldown = StartCoroutine(WaitForCooldown(character.Data.skillCooldown));
+            cooldown = StartCoroutine(WaitForCooldown(data.skillCooldown));
         }
     }
 
@@ -39,9 +40,16 @@ public class Behaviour : MonoBehaviour
     {
         // get reference to player controller
         character = GetComponentInParent<PlayerController>();
-        // check if character is null
-        if (character != null) return;
-        Debug.LogError("Componenet of type 'PlayerController' could not be found. (Behaviour.cs)");
+        // get reference to character data script
+        data = GetComponent<PlayerCharacter>();
+        // check if character or is null
+        if (character == null)
+        {
+            Debug.LogError("Component of type 'PlayerController' could not be found. (Behaviour.cs)");
+            return;
+        }
+        // start skill cooldown
+        CanTriggerSkill = true;
     }
 
     // methods to be overrided depending on the character
