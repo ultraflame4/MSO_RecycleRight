@@ -1781,6 +1781,7 @@ MonoBehaviour:
   - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
   - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
   <placeholder>k__BackingField: {fileID: 1766840333}
+  CanSwitchCharacters: 1
 --- !u!114 &1956440269
 MonoBehaviour:
   m_ObjectHideFlags: 0
