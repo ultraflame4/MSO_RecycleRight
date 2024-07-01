@@ -64,11 +64,5 @@ public class StateMachine<T> : MonoBehaviour
         currentState?.PhysicsUpdate();
     }
 
-    public virtual void OnDrawGizmosSelected() {
-        currentState?.OnDrawGizmosSelected();
-    }
-    public virtual void OnDrawGizmos() {
-        currentState?.OnDrawGizmos();
-    }
     #endregion
 }
