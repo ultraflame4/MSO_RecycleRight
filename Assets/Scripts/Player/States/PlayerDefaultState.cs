@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDefaultState : State<PlayerController>
 {
     Rigidbody2D rb;
-    Vector2 move_input, cached_move_input = Vector2.zero;
+    Vector2 move_input = Vector2.zero;
     bool attack_input, skill_input = false;
 
     public PlayerDefaultState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
@@ -32,10 +32,10 @@ public class PlayerDefaultState : State<PlayerController>
         base.HandleInputs();
         // update pointer direction
         character.PointerManager.UpdatePointer();
-        // cache move input before updating
-        cached_move_input = move_input;
         // set movement input
         move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        // update animation
+        character.anim?.SetBool("IsMoving", move_input != Vector2.zero);
         // set attack input
         attack_input = Input.GetMouseButtonDown(0);
         // set skill input
@@ -46,10 +46,8 @@ public class PlayerDefaultState : State<PlayerController>
     {
         base.LogicUpdate();
 
-        // update sprite orientation
-        UpdateSpriteFlip();
-        // update animations
-        UpdateAnimations();
+        // update sprite flip if moving
+        if (move_input.x != 0) character.Data.renderer.flipX = move_input.x < 0f;
 
         //check for transition to skill state
         if (skill_input)
@@ -83,28 +81,13 @@ public class PlayerDefaultState : State<PlayerController>
     public override void Exit()
     {
         base.Exit();
+        // set is moving animation bool to false
+        character.anim?.SetBool("IsMoving", false);
         // set sprite flip to pointer direction when exiting default state
         character.Data.renderer.flipX = character.pointer.up.x < 0f;
         // disallow character switching when not in default state
         character.CharacterManager.CanSwitchCharacters = false;
         // reset velocity when exiting state
         rb.velocity = Vector2.zero;
-    }
-
-    // private update methods
-    void UpdateSpriteFlip()
-    {
-        // do not flip if not moving
-        if (move_input.x == 0) return;
-        // update sprite flip based on move input
-        character.Data.renderer.flipX = move_input.x < 0f;
-    }
-
-    void UpdateAnimations()
-    {
-        // check if input changed from previous frame
-        if (cached_move_input == move_input) return;
-        // play animation pased on input
-        character.anim?.Play(move_input == Vector2.zero ? "Idle" : "Run");
     }
 }
