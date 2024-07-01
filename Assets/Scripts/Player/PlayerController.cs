@@ -4,10 +4,11 @@ using Entity.Data;
 using Player.FSM;
 using Behaviour = Player.Behaviours.Behaviour;
 using Level;
+using Interfaces;
 
 namespace Player
 {
-    public class PlayerController : StateMachine<PlayerController>
+    public class PlayerController : StateMachine<PlayerController>, IDamagable
     {
         #region Inspector Fields
         [Header("References")]
@@ -55,6 +56,17 @@ namespace Player
             // subscribe to zone change event if level manager is not null
             if (levelManager != null)
                 levelManager.ZoneChanged += MoveToZoneState.OnZoneChange;
+        }
+        #endregion
+
+        #region Interface Methods
+        public void Damage(float damage)
+        {
+            // apply damage
+            Data.Health -= damage;
+            // check if died
+            if (Data.Health > 0f) return;
+            // todo: handle death
         }
         #endregion
 

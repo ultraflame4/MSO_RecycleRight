@@ -122,6 +122,9 @@ MonoBehaviour:
   attackRange: 1.5
   attackStunDuration: 0.75
   knockback: 15
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
   passiveChance: 0.45
   buffScale: 1.5
   buffDuration: 10
