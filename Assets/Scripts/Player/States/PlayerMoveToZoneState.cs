@@ -15,6 +15,13 @@ public class PlayerMoveToZoneState : State<PlayerController>
         rb = character.GetComponent<Rigidbody2D>();
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+        // play running animation
+        character.anim?.Play("Run");
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();

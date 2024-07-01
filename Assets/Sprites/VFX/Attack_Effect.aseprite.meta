@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f76092d2b9572d0429952bc23a77b40d
+guid: d47b234897bfb6a42a479e563fbd38a4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 12
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638554376729035908
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Activist_Asan_Frame_0
+  - name: Attack_Effect_Frame_0
     originalName: 
-    pivot: {x: 0.75609756, y: -0.36585364}
+    pivot: {x: 0.5652174, y: 0.5833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 41
-      height: 41
-    spriteID: 40e349244e6f05b488f21459b02a34cd
+      width: 23
+      height: 24
+    spriteID: d4b0f6d3322e6814ca1d209f18a85809
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Activist_Asan_Frame_1
+  - name: Attack_Effect_Frame_1
     originalName: 
-    pivot: {x: 0.75609756, y: -0.36585364}
+    pivot: {x: 0.5652174, y: 0.44444445}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 53
-      width: 41
-      height: 41
-    spriteID: bb2549ffeadc7aa46bba80ffeed50e50
+      y: 36
+      width: 23
+      height: 18
+    spriteID: 463b0a1438db91d4ca86d611f2282570
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,36 +160,136 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 53}
+    uvTransform: {x: 4, y: 36}
+  - name: Attack_Effect_Frame_2
+    originalName: 
+    pivot: {x: 0.5652174, y: 0.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 4
+      width: 23
+      height: 16
+    spriteID: 15b79170ba458bf42b529493e8343870
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -60572995
-    name: Activist_Asan
+    guid: -450953126
+    name: Attack_Effect
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Activist_Asan_Frame_0
+    - name: Attack_Effect_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 15
-        width: 41
-        height: 41
-      spriteId: 40e349244e6f05b488f21459b02a34cd
-    - name: Activist_Asan_Frame_1
+        x: 3
+        y: 2
+        width: 23
+        height: 24
+      spriteId: d4b0f6d3322e6814ca1d209f18a85809
+    - name: Attack_Effect_Frame_1
       frameIndex: 1
       cellRect:
-        x: 1
-        y: 15
-        width: 41
-        height: 41
-      spriteId: bb2549ffeadc7aa46bba80ffeed50e50
+        x: 3
+        y: 8
+        width: 23
+        height: 18
+      spriteId: 463b0a1438db91d4ca86d611f2282570
+    - name: Attack_Effect_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 3
+        y: 10
+        width: 23
+        height: 16
+      spriteId: 15b79170ba458bf42b529493e8343870
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 32, y: 32}

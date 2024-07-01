@@ -1,0 +1,755 @@
+fileFormatVersion: 2
+guid: fb8f4b826a57bae4d9d1e4cfc50f16cd
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 12
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638554368913096439
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Volunteer_Vincent_Frame_0
+    originalName: 
+    pivot: {x: 0.63333327, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 4
+      width: 15
+      height: 36
+    spriteID: 7ca30c45e7159af4da78ec4465e32098
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 4}
+  - name: Volunteer_Vincent_Frame_1
+    originalName: 
+    pivot: {x: 0.63333327, y: 0.5945946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 92
+      width: 15
+      height: 37
+    spriteID: 2bc6ef64bf5942b498ef0d20a83f54aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 97, y: 92}
+  - name: Volunteer_Vincent_Frame_2
+    originalName: 
+    pivot: {x: 0.63333327, y: 0.5945946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 137
+      width: 15
+      height: 37
+    spriteID: ddf4bedf9077d2f4f8a1c4188e976498
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 97, y: 137}
+  - name: Volunteer_Vincent_Frame_3
+    originalName: 
+    pivot: {x: 0.59374994, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 4
+      width: 16
+      height: 36
+    spriteID: 311e9f63851cc2e4b99eddfdf49ed55e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 97, y: 4}
+  - name: Volunteer_Vincent_Frame_4
+    originalName: 
+    pivot: {x: 0.63333327, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 48
+      width: 15
+      height: 36
+    spriteID: b5769a6b122a50b489321ef058328c38
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 48}
+  - name: Volunteer_Vincent_Frame_5
+    originalName: 
+    pivot: {x: 0.625, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 137
+      width: 20
+      height: 36
+    spriteID: 3c7ceb96dc3eafb46bcf620b4f7fa68a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 137}
+  - name: Volunteer_Vincent_Frame_6
+    originalName: 
+    pivot: {x: 0.6578947, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 48
+      width: 19
+      height: 36
+    spriteID: 59af7b0befb3dc34bb163369773ab3be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 48}
+  - name: Volunteer_Vincent_Frame_7
+    originalName: 
+    pivot: {x: 0.625, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 28
+      height: 36
+    spriteID: 7d48e367c3ad4e04bad05cd4b9dceb76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Volunteer_Vincent_Frame_8
+    originalName: 
+    pivot: {x: 0.56249994, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 92
+      width: 24
+      height: 36
+    spriteID: 159777a4a3d1ebb44ba0bcf1b430db08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 92}
+  - name: Volunteer_Vincent_Frame_9
+    originalName: 
+    pivot: {x: 0.6136363, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 180
+      width: 22
+      height: 36
+    spriteID: 6d0320cbe2710214bb3c4fee95c1a772
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 180}
+  - name: Volunteer_Vincent_Frame_10
+    originalName: 
+    pivot: {x: 0.73529404, y: 0.62857145}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 180
+      width: 17
+      height: 35
+    spriteID: 153503919d6886641adecd8d9952d0ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 180}
+  - name: Volunteer_Vincent_Frame_11
+    originalName: 
+    pivot: {x: 0.7857143, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 4
+      width: 21
+      height: 36
+    spriteID: 41fa670943540264694dc8e3c47e9f25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 4}
+  - name: Volunteer_Vincent_Frame_12
+    originalName: 
+    pivot: {x: 0.6346154, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 48
+      width: 26
+      height: 36
+    spriteID: 6c09850eadb58764a87c12a48babeeff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 48}
+  - name: Volunteer_Vincent_Frame_13
+    originalName: 
+    pivot: {x: 0.6944444, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 92
+      width: 18
+      height: 36
+    spriteID: 46720f9cd8b81494ca3d638b53d8c8da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 92}
+  - name: Volunteer_Vincent_Frame_14
+    originalName: 
+    pivot: {x: 0.6944444, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 136
+      width: 18
+      height: 36
+    spriteID: f83af8572129b9345a0ba5ab82502b42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 136}
+  - name: Volunteer_Vincent_Frame_15
+    originalName: 
+    pivot: {x: 0.5952381, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 48
+      width: 21
+      height: 36
+    spriteID: 289b2b6eaae63404caa81c7b90ae0223
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 48}
+  - name: Volunteer_Vincent_Frame_16
+    originalName: 
+    pivot: {x: 0.63333327, y: 0.6216216}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 182
+      width: 15
+      height: 37
+    spriteID: a85e0a5c984c00f44ab48500ade5c460
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 97, y: 182}
+  - name: Volunteer_Vincent_Frame_17
+    originalName: 
+    pivot: {x: 0.59374994, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 48
+      width: 16
+      height: 36
+    spriteID: aa6db3b94a8b67646924a528ed828fc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 97, y: 48}
+  - name: Volunteer_Vincent_Frame_18
+    originalName: 
+    pivot: {x: 0.3958333, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 136
+      width: 24
+      height: 36
+    spriteID: 27b44d804dfe9fa4f9be0228769fdd29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 136}
+  - name: Volunteer_Vincent_Frame_19
+    originalName: 
+    pivot: {x: 0.475, y: 0.5945946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 92
+      width: 20
+      height: 37
+    spriteID: 95a38ac0fb2a50a479fff4985a6554e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 92}
+  - name: Volunteer_Vincent_Frame_20
+    originalName: 
+    pivot: {x: 0.475, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 181
+      width: 20
+      height: 36
+    spriteID: 8629163e737a7a647bd7f1a7b7527eb1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 181}
+  - name: Volunteer_Vincent_Frame_21
+    originalName: 
+    pivot: {x: 0.475, y: 0.6111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 4
+      width: 20
+      height: 36
+    spriteID: 1f7188b235678154bbc047124bfa07cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -321999688
+    name: Volunteer_Vincent
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Volunteer_Vincent_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 22
+        y: 10
+        width: 15
+        height: 36
+      spriteId: 7ca30c45e7159af4da78ec4465e32098
+    - name: Volunteer_Vincent_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 22
+        y: 10
+        width: 15
+        height: 37
+      spriteId: 2bc6ef64bf5942b498ef0d20a83f54aa
+    - name: Volunteer_Vincent_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 22
+        y: 10
+        width: 15
+        height: 37
+      spriteId: ddf4bedf9077d2f4f8a1c4188e976498
+    - name: Volunteer_Vincent_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 22
+        y: 10
+        width: 16
+        height: 36
+      spriteId: 311e9f63851cc2e4b99eddfdf49ed55e
+    - name: Volunteer_Vincent_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 22
+        y: 10
+        width: 15
+        height: 36
+      spriteId: b5769a6b122a50b489321ef058328c38
+    - name: Volunteer_Vincent_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 19
+        y: 10
+        width: 20
+        height: 36
+      spriteId: 3c7ceb96dc3eafb46bcf620b4f7fa68a
+    - name: Volunteer_Vincent_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 19
+        y: 10
+        width: 19
+        height: 36
+      spriteId: 59af7b0befb3dc34bb163369773ab3be
+    - name: Volunteer_Vincent_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 14
+        y: 10
+        width: 28
+        height: 36
+      spriteId: 7d48e367c3ad4e04bad05cd4b9dceb76
+    - name: Volunteer_Vincent_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 18
+        y: 10
+        width: 24
+        height: 36
+      spriteId: 159777a4a3d1ebb44ba0bcf1b430db08
+    - name: Volunteer_Vincent_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 18
+        y: 10
+        width: 22
+        height: 36
+      spriteId: 6d0320cbe2710214bb3c4fee95c1a772
+    - name: Volunteer_Vincent_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 19
+        y: 10
+        width: 17
+        height: 35
+      spriteId: 153503919d6886641adecd8d9952d0ce
+    - name: Volunteer_Vincent_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 15
+        y: 10
+        width: 21
+        height: 36
+      spriteId: 41fa670943540264694dc8e3c47e9f25
+    - name: Volunteer_Vincent_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 15
+        y: 10
+        width: 26
+        height: 36
+      spriteId: 6c09850eadb58764a87c12a48babeeff
+    - name: Volunteer_Vincent_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 19
+        y: 10
+        width: 18
+        height: 36
+      spriteId: 46720f9cd8b81494ca3d638b53d8c8da
+    - name: Volunteer_Vincent_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 19
+        y: 10
+        width: 18
+        height: 36
+      spriteId: f83af8572129b9345a0ba5ab82502b42
+    - name: Volunteer_Vincent_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 19
+        y: 10
+        width: 21
+        height: 36
+      spriteId: 289b2b6eaae63404caa81c7b90ae0223
+    - name: Volunteer_Vincent_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 22
+        y: 9
+        width: 15
+        height: 37
+      spriteId: a85e0a5c984c00f44ab48500ade5c460
+    - name: Volunteer_Vincent_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 22
+        y: 10
+        width: 16
+        height: 36
+      spriteId: aa6db3b94a8b67646924a528ed828fc5
+    - name: Volunteer_Vincent_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 22
+        y: 10
+        width: 24
+        height: 36
+      spriteId: 27b44d804dfe9fa4f9be0228769fdd29
+    - name: Volunteer_Vincent_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 22
+        y: 10
+        width: 20
+        height: 37
+      spriteId: 95a38ac0fb2a50a479fff4985a6554e5
+    - name: Volunteer_Vincent_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 22
+        y: 10
+        width: 20
+        height: 36
+      spriteId: 8629163e737a7a647bd7f1a7b7527eb1
+    - name: Volunteer_Vincent_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 22
+        y: 10
+        width: 20
+        height: 36
+      spriteId: 1f7188b235678154bbc047124bfa07cf
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 63, y: 64}

@@ -12,6 +12,8 @@ public class CharacterManager : MonoBehaviour
     public GameObject placeholder { get; private set; }
     public PlayerCharacter[] character_instances { get; private set; }
 
+    [HideInInspector] public bool CanSwitchCharacters = true;
+
     /// <summary>
     /// Event that is triggered everytime the player changes character
     /// </summary>
@@ -26,7 +28,7 @@ public class CharacterManager : MonoBehaviour
         {
             GameObject new_character = Instantiate(characters[i], container);
             character_instances[i] = new_character.GetComponent<PlayerCharacter>();
-            new_character.SetActive(false);
+            new_character.GetComponent<Renderer>().enabled = false;
         }
 
         // ensure character instances is filled before setting first active character
@@ -46,6 +48,8 @@ public class CharacterManager : MonoBehaviour
     /// <param name="index"></param>
     public void SwitchCharacter(int index)
     {
+        // check if can switch characters
+        if (!CanSwitchCharacters) return;
         // ensure index is within range
         if (index < 0 || index >= character_instances.Length)
         {

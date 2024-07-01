@@ -1,0 +1,643 @@
+fileFormatVersion: 2
+guid: 9146297e04a62884db0dd8736d589517
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Enemy_Bottle_Frame_8
+    originalName: 
+    pivot: {x: 0.57894737, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 19
+      height: 45
+    spriteID: de34cf114247b4445906f7b2ad0b5266
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Enemy_Bottle_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 4
+      width: 16
+      height: 45
+    spriteID: 0805f9af31e903d449d51cab0754ab89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 4}
+  - name: Enemy_Bottle_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 57
+      width: 16
+      height: 45
+    spriteID: d8b57ff9949c1514387c5c005f30c675
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 57}
+  - name: Enemy_Bottle_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 163
+      width: 16
+      height: 43
+    spriteID: 549c5d8c036d6bd41941afbc03d91094
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 163}
+  - name: Enemy_Bottle_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 110
+      width: 16
+      height: 45
+    spriteID: b1cc4517d26031a42a4d6ca3e8d4c15e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 110}
+  - name: Enemy_Bottle_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -0.108695656}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 64
+      width: 14
+      height: 46
+    spriteID: 524cf432766568441966ac186befbada
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 64}
+  - name: Enemy_Bottle_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: -0.10204081}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 172
+      width: 12
+      height: 49
+    spriteID: 3b921b796b73fee45a5e4f45c4938749
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 172}
+  - name: Enemy_Bottle_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: -0.09615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 170
+      width: 14
+      height: 52
+    spriteID: 4f45cea9f42a1e94799068acfe5a6a20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 170}
+  - name: Enemy_Bottle_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: -0.10416667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 114
+      width: 16
+      height: 48
+    spriteID: bac063ae95273a643a7e47e0080ae52b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 114}
+  - name: Enemy_Bottle_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 163
+      width: 16
+      height: 45
+    spriteID: 22b89756579b00a4295ecb9db150bd84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 163}
+  - name: Enemy_Bottle_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 4
+      width: 16
+      height: 45
+    spriteID: 619e8be8c3c030d46a8a389f09f12c22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 4}
+  - name: Enemy_Bottle_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 4
+      width: 16
+      height: 43
+    spriteID: bfca2ca64b7629441bd483570c6a79e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 4}
+  - name: Enemy_Bottle_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 57
+      width: 16
+      height: 45
+    spriteID: 4086322241d4aa4429bf367101b45f52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 57}
+  - name: Enemy_Bottle_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.108695656}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 118
+      width: 14
+      height: 46
+    spriteID: 9026b790a6c67b44ab86c63e1b13d7ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 118}
+  - name: Enemy_Bottle_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.10204081}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 55
+      width: 12
+      height: 49
+    spriteID: e94c5b5ca644db845bad846cc2c386ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 55}
+  - name: Enemy_Bottle_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.09615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 4
+      width: 14
+      height: 52
+    spriteID: 6b8810aaef97a4f45a82f327865c025d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 4}
+  - name: Enemy_Bottle_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.10204081}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 57
+      width: 16
+      height: 49
+    spriteID: 0f7e73a8b257ca34b961b8c8732a6bd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 57}
+  - name: Enemy_Bottle_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 110
+      width: 16
+      height: 45
+    spriteID: 707b92e845af47e47b122f4bd80cb130
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 110}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1864814027
+    name: Enemy_Bottle
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Enemy_Bottle_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 21
+        y: 5
+        width: 19
+        height: 45
+      spriteId: de34cf114247b4445906f7b2ad0b5266
+    - name: Enemy_Bottle_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: 0805f9af31e903d449d51cab0754ab89
+    - name: Enemy_Bottle_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: d8b57ff9949c1514387c5c005f30c675
+    - name: Enemy_Bottle_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 43
+      spriteId: 549c5d8c036d6bd41941afbc03d91094
+    - name: Enemy_Bottle_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: b1cc4517d26031a42a4d6ca3e8d4c15e
+    - name: Enemy_Bottle_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 25
+        y: 5
+        width: 14
+        height: 46
+      spriteId: 524cf432766568441966ac186befbada
+    - name: Enemy_Bottle_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 26
+        y: 5
+        width: 12
+        height: 49
+      spriteId: 3b921b796b73fee45a5e4f45c4938749
+    - name: Enemy_Bottle_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 25
+        y: 5
+        width: 14
+        height: 52
+      spriteId: 4f45cea9f42a1e94799068acfe5a6a20
+    - name: Enemy_Bottle_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 48
+      spriteId: bac063ae95273a643a7e47e0080ae52b
+    - name: Enemy_Bottle_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: 22b89756579b00a4295ecb9db150bd84
+    - name: Enemy_Bottle_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: 619e8be8c3c030d46a8a389f09f12c22
+    - name: Enemy_Bottle_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 43
+      spriteId: bfca2ca64b7629441bd483570c6a79e8
+    - name: Enemy_Bottle_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: 4086322241d4aa4429bf367101b45f52
+    - name: Enemy_Bottle_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 25
+        y: 5
+        width: 14
+        height: 46
+      spriteId: 9026b790a6c67b44ab86c63e1b13d7ff
+    - name: Enemy_Bottle_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 26
+        y: 5
+        width: 12
+        height: 49
+      spriteId: e94c5b5ca644db845bad846cc2c386ef
+    - name: Enemy_Bottle_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 25
+        y: 5
+        width: 14
+        height: 52
+      spriteId: 6b8810aaef97a4f45a82f327865c025d
+    - name: Enemy_Bottle_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 49
+      spriteId: 0f7e73a8b257ca34b961b8c8732a6bd7
+    - name: Enemy_Bottle_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 24
+        y: 5
+        width: 16
+        height: 45
+      spriteId: 707b92e845af47e47b122f4bd80cb130
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

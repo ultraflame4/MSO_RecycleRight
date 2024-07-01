@@ -17,6 +17,10 @@ public class PlayerDefaultState : State<PlayerController>
     public override void Enter()
     {
         base.Enter();
+        // allow character switching
+        character.CharacterManager.CanSwitchCharacters = true;
+        // play idle animation
+        character.anim?.Play("Idle");
         // reset inputs
         move_input = Vector2.zero;
         attack_input = false;
@@ -30,6 +34,8 @@ public class PlayerDefaultState : State<PlayerController>
         character.PointerManager.UpdatePointer();
         // set movement input
         move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        // update animation
+        character.anim?.SetBool("IsMoving", move_input != Vector2.zero);
         // set attack input
         attack_input = Input.GetMouseButtonDown(0);
         // set skill input
@@ -40,8 +46,11 @@ public class PlayerDefaultState : State<PlayerController>
     {
         base.LogicUpdate();
 
-        //check for transition to skill state
-        if (skill_input)
+        // update sprite flip if moving
+        if (move_input.x != 0) character.Data.renderer.flipX = move_input.x < 0f;
+
+        // check for transition to skill state, ensure can trigger skill
+        if (skill_input && character.CharacterBehaviour.CanTriggerSkill)
         {
             fsm.SwitchState(character.SkillState);
             return;
@@ -72,6 +81,12 @@ public class PlayerDefaultState : State<PlayerController>
     public override void Exit()
     {
         base.Exit();
+        // set is moving animation bool to false
+        character.anim?.SetBool("IsMoving", false);
+        // set sprite flip to pointer direction when exiting default state
+        character.Data.renderer.flipX = character.pointer.up.x < 0f;
+        // disallow character switching when not in default state
+        character.CharacterManager.CanSwitchCharacters = false;
         // reset velocity when exiting state
         rb.velocity = Vector2.zero;
     }

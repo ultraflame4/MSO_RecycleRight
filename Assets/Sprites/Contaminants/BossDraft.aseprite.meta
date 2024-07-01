@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d8b1a2b053610249974972808b24269
+guid: dd289fd8732c77a478b7595b8a58d6ab
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Maid_Mary_Frame_0
+  - name: BossDraft
     originalName: 
-    pivot: {x: 1.1071429, y: -0.25}
+    pivot: {x: 0.4464286, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 28
-      height: 40
-    spriteID: 43d5d3be225c6924ca257f6d1e3aed90
+      width: 56
+      height: 53
+    spriteID: 9ce2e133704a7c946acd2b4e5ae8a3d2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,51 +141,23 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Maid_Mary_Frame_1
-    originalName: 
-    pivot: {x: 1.1071429, y: -0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 52
-      width: 28
-      height: 40
-    spriteID: 72d2b346bf0d4144199e4c16ebc5d078
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1956363757
-    name: Maid_Mary
+    guid: 461920078
+    name: BossDraft
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Maid_Mary_Frame_0
+    - name: BossDraft
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 10
-        width: 28
-        height: 40
-      spriteId: 43d5d3be225c6924ca257f6d1e3aed90
-    - name: Maid_Mary_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 1
-        y: 10
-        width: 28
-        height: 40
-      spriteId: 72d2b346bf0d4144199e4c16ebc5d078
+        x: 7
+        y: 0
+        width: 56
+        height: 53
+      spriteId: 9ce2e133704a7c946acd2b4e5ae8a3d2
     linkedCells: []
     parentIndex: -1
   platformSettings: []

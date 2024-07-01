@@ -12,7 +12,7 @@ public class PlayerCharacterUIProfile : MonoBehaviour
     // reference animator component
     UIAnimator anim;
     // caches
-    PlayerController cachePlayer;
+    Behaviour cacheCharacterBehaviour;
     bool cacheCanTriggerSkill = false;
 
     // Start is called before the first frame update
@@ -34,8 +34,8 @@ public class PlayerCharacterUIProfile : MonoBehaviour
     /// <param name="characterToShow">The character to be displayed on this icon</param>
     public void SetUI(PlayerController player, PlayerCharacter characterToShow)
     {
-        // cache player
-        cachePlayer = player;
+        // cache player character behaviour
+        cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
         // check if skill is ready and update animation
         CheckSkillReadyAnimation();
 
@@ -57,12 +57,12 @@ public class PlayerCharacterUIProfile : MonoBehaviour
     {
         // do not run if animator is null
         if (anim == null) return;
-        // ensure player is not null
-        if (cachePlayer == null) return;
+        // ensure player behaviour is not null
+        if (cacheCharacterBehaviour == null) return;
         // check if can trigger skill has changed
-        if (cacheCanTriggerSkill == cachePlayer.CharacterBehaviour.CanTriggerSkill) return;
+        if (cacheCanTriggerSkill == cacheCharacterBehaviour.CanTriggerSkill) return;
         // if so, update cache
-        cacheCanTriggerSkill = cachePlayer.CharacterBehaviour.CanTriggerSkill;
+        cacheCanTriggerSkill = cacheCharacterBehaviour.CanTriggerSkill;
         // play animation depending on if skill can currently be triggered
         anim.Play(cacheCanTriggerSkill ? "FireOn" : "Static");
     }

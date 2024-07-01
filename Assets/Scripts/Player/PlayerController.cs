@@ -21,8 +21,9 @@ public class PlayerController : StateMachine<PlayerController>
     public PlayerCharacter Data { get; private set; }
     public Behaviour CharacterBehaviour { get; private set; }
     public DirectionPointer PointerManager { get; private set; }
-    public Transform pointer => transform.GetChild(0);
+    public Animator anim { get; private set; }
     public CharacterManager CharacterManager => characterManager;
+    public Transform pointer => transform.GetChild(0);
     #endregion
 
     #region Monobehaviour Callbacks
@@ -33,8 +34,6 @@ public class PlayerController : StateMachine<PlayerController>
         PointerManager = pointer.GetComponent<DirectionPointer>();
         // set character to first character instance
         OnCharacterChange(CharacterManager.character_instances[0]);
-        // start skill cooldown by resetting skill cooldown to true
-        CharacterBehaviour.CanTriggerSkill = true;
         // subscribe to character change event
         CharacterManager.CharacterChanged += OnCharacterChange;
 
@@ -57,6 +56,8 @@ public class PlayerController : StateMachine<PlayerController>
     {
         // set data to new character
         Data = data;
+        // set animator
+        anim = data.GetComponent<Animator>();
         // set behaviour to new character behaviour
         Behaviour newBehaviour = data.GetComponent<Behaviour>();
         // ensure behaviour is not null before assigning to variable
