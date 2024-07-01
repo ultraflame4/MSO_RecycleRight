@@ -18,6 +18,16 @@ namespace UI
             player.CharacterManager.CharacterChanged += OnCharacterChange;
             // start by setting all UI icons
             SetAllUI(player.CharacterManager.character_instances[0]);
+            // check if there are more UI elements than characters in the party
+            if (UIIcons.Length <= player.CharacterManager.character_instances.Length) return;
+            // hide UI that does not have a correspoinding character in the party
+            for (int i = 0; i < (UIIcons.Length - player.CharacterManager.character_instances.Length); i++)
+            {
+                // do not hide first icon (active icon)
+                if (i == (UIIcons.Length - 1)) break;
+                // hide UI element
+                UIIcons[UIIcons.Length - (i + 1)].gameObject.SetActive(false);
+            }
         }
 
         void SetAllUI(PlayerCharacter activeCharacter)
