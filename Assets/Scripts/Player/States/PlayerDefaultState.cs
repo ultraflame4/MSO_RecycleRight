@@ -83,6 +83,8 @@ public class PlayerDefaultState : State<PlayerController>
     public override void Exit()
     {
         base.Exit();
+        // set sprite flip to pointer direction when exiting default state
+        character.Data.renderer.flipX = character.pointer.up.x < 0f;
         // disallow character switching when not in default state
         character.CharacterManager.CanSwitchCharacters = false;
         // reset velocity when exiting state
