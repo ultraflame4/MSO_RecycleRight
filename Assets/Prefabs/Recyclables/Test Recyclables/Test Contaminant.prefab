@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8827025693170606720}
   - component: {fileID: 816200145423749040}
   - component: {fileID: 3515256562022296972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test Contaminant
   m_TagString: Untagged
   m_Icon: {fileID: 0}

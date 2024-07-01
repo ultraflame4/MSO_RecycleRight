@@ -11,6 +11,7 @@ namespace Player.Behaviours
         [SerializeField] protected float attackRange = 1.5f;
         [SerializeField] protected float attackStunDuration = .75f;
         [SerializeField] protected float knockback = 15f;
+        [SerializeField] protected LayerMask hitMask;
 
         // perform default melee attack
         public override void TriggerAttack()
@@ -18,7 +19,7 @@ namespace Player.Behaviours
             base.TriggerAttack();
             // todo: add layer to enemy, and only detect enemy layer
             // use overlap sphere to detect enemies
-            Collider2D hit = Physics2D.OverlapCircle(character.pointer.position, attackRange);
+            Collider2D hit = Physics2D.OverlapCircle(character.pointer.position, attackRange, hitMask);
             // check if detected any enemies
             if (hit == null) return;
 
