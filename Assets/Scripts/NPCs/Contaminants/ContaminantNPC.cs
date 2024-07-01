@@ -1,7 +1,11 @@
 using UnityEngine;
+using Level.Bins;
 
-public class ContaminantNPC : FSMRecyclableNPC {
-    public float move_speed;
-    public override RecyclableType recyclableType => RecyclableType.OTHERS;
+namespace NPC.Contaminant
+{
+    public class ContaminantNPC : FSMRecyclableNPC {
+        public float move_speed;
+        public override RecyclableType recyclableType => RecyclableType.OTHERS;
 
+    }    
 }

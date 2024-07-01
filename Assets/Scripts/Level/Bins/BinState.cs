@@ -1,6 +1,9 @@
-public enum BinState
+namespace Level.Bins
 {
-    CLEAN,
-    CONTAMINATED,
-    INFESTED
-}
+    public enum BinState
+    {
+        CLEAN,
+        CONTAMINATED,
+        INFESTED
+    }
+}    
