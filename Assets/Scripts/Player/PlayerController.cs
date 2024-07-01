@@ -33,8 +33,6 @@ public class PlayerController : StateMachine<PlayerController>
         PointerManager = pointer.GetComponent<DirectionPointer>();
         // set character to first character instance
         OnCharacterChange(CharacterManager.character_instances[0]);
-        // start skill cooldown by resetting skill cooldown to true
-        CharacterBehaviour.CanTriggerSkill = true;
         // subscribe to character change event
         CharacterManager.CharacterChanged += OnCharacterChange;
 

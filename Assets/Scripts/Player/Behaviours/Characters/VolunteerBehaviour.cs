@@ -12,9 +12,6 @@ public class VolunteerBehaviour : BaseMeleeAttack
     [SerializeField] float buffScale = 1.5f;
     [SerializeField] float buffDuration = 15f;
 
-    // skill variables
-    PlayerCharacter cacheCharacterData;
-
     public override void TriggerAttack()
     {
         // boolean to check if passive is triggered
@@ -41,11 +38,9 @@ public class VolunteerBehaviour : BaseMeleeAttack
     public override void TriggerSkill()
     {
         base.TriggerSkill();
-        // cache character data
-        cacheCharacterData = character.Data;
         // set animation speed
         // set animation duration
-        character.Data.attackDuration *= 1 / buffDuration;
+        data.attackDuration *= 1 / buffDuration;
         // subscribe to characcter change event
         character.CharacterManager.CharacterChanged += OnCharacterChange;
         // start coroutine to count buff duration
@@ -55,11 +50,9 @@ public class VolunteerBehaviour : BaseMeleeAttack
     IEnumerator CountBuffDuration(float duration)
     {
         yield return new WaitForSeconds(duration);
-        // reset character data cache
-        cacheCharacterData = null;
         // reset animation speed
         // reset animation duration
-        character.Data.attackDuration *= buffDuration;
+        data.attackDuration *= buffDuration;
         // unsubscribe to characcter change event
         character.CharacterManager.CharacterChanged -= OnCharacterChange;
     }
@@ -69,9 +62,7 @@ public class VolunteerBehaviour : BaseMeleeAttack
     {
         // reset animation speed
         // reset animation duration
-        cacheCharacterData.attackDuration *= buffDuration;
-        // cache character data
-        cacheCharacterData = data;
+        data.attackDuration *= buffDuration;
         // set animation speed
         // set animation duration
         data.attackDuration *= 1 / buffDuration;
