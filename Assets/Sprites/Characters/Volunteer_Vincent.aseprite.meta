@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 121
-      y: 4
+      x: 97
+      y: 182
       width: 15
       height: 36
     spriteID: ffbd70f459d27624487fd33b22a7889f
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 121, y: 4}
+    uvTransform: {x: 97, y: 182}
   - name: Volunteer_Vincent_Frame_1
     originalName: 
     pivot: {x: 0.63333327, y: -0.2702703}
@@ -209,7 +209,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 121
-      y: 48
+      y: 4
       width: 15
       height: 36
     spriteID: 68e0d373f053a424d95bb6dc6463c506
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 121, y: 48}
+    uvTransform: {x: 121, y: 4}
   - name: Volunteer_Vincent_Frame_5
     originalName: 
     pivot: {x: 0.625, y: -0.2777778}
@@ -443,15 +443,15 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 48}
   - name: Volunteer_Vincent_Frame_16
     originalName: 
-    pivot: {x: 0.63333327, y: -0.24324325}
+    pivot: {x: 0.63333327, y: -0.2777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 97
-      y: 182
+      x: 121
+      y: 48
       width: 15
-      height: 37
+      height: 36
     spriteID: 12c5128816f27e649bec97f8e0973e32
     spriteBone: []
     spriteOutline: []
@@ -460,7 +460,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 97, y: 182}
+    uvTransform: {x: 121, y: 48}
   - name: Volunteer_Vincent_Frame_17
     originalName: 
     pivot: {x: 0.59374994, y: -0.2777778}
@@ -702,9 +702,9 @@ ScriptedImporter:
       frameIndex: 16
       cellRect:
         x: 22
-        y: 9
+        y: 10
         width: 15
-        height: 37
+        height: 36
       spriteId: 12c5128816f27e649bec97f8e0973e32
     - name: Volunteer_Vincent_Frame_17
       frameIndex: 17
