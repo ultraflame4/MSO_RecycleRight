@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -19,7 +20,12 @@ public class CoroutineState<T> : State<T>
     {
         base.Enter();
         // start coroutine to count state duration
-        coroutine = fsm.StartCoroutine(WaitForState());
+        coroutine = fsm.StartCoroutine(WaitForSeconds(duration, () => 
+            {
+                coroutine = null;
+                fsm.SwitchState(nextState);
+            }
+        ));
     }
 
     public override void Exit() 
@@ -30,10 +36,15 @@ public class CoroutineState<T> : State<T>
         fsm.StopCoroutine(coroutine);
     }
 
-    IEnumerator WaitForState()
+    /// <summary>
+    /// Coroutine to wait for a set duration in a state
+    /// </summary>
+    /// <param name="duration">Duration to wait</param>
+    /// <param name="callback">Method to call after the wait duration</param>
+    /// <returns></returns>
+    protected IEnumerator WaitForSeconds(float duration, Action callback = null)
     {
         yield return new WaitForSeconds(duration);
-        coroutine = null;
-        fsm.SwitchState(nextState);
+        callback?.Invoke();
     }
 }

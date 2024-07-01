@@ -9,6 +9,9 @@ public class PlayerCharacter : Entity
     public float maxHealth = 100f;
     [SerializeField] public float movementSpeed = 250f;
 
+    [Header("Attack")]
+    [SerializeField, Range(0f, 1f)] public float attackTriggerTimeFrame = 0.5f;
+
     [Header("Skills")]
     [SerializeField] public float skillCooldown = 15f;
     [SerializeField, Range(0f, 1f)] public float skillTriggerTimeFrame = 0.5f;

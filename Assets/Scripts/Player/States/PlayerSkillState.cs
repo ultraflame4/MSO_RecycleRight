@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSkillState : CoroutineState<PlayerController>
@@ -37,11 +34,5 @@ public class PlayerSkillState : CoroutineState<PlayerController>
         if (triggerSkillCoroutine == null) return; 
         fsm.StopCoroutine(triggerSkillCoroutine);
         triggerSkillCoroutine = null;
-    }
-
-    IEnumerator WaitForSeconds(float duration, Action callback = null)
-    {
-        yield return new WaitForSeconds(duration);
-        callback?.Invoke();
     }
 }
