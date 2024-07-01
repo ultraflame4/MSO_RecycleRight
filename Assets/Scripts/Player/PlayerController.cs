@@ -21,7 +21,9 @@ public class PlayerController : StateMachine<PlayerController>
     public PlayerCharacter Data { get; private set; }
     public Behaviour CharacterBehaviour { get; private set; }
     public DirectionPointer PointerManager { get; private set; }
-    public Animator anim { get; private set; }
+    private Animator _anim;
+    // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
+    public Animator anim => _anim == null ? null : _anim;
     public CharacterManager CharacterManager => characterManager;
     public Transform pointer => transform.GetChild(0);
     #endregion
@@ -57,7 +59,7 @@ public class PlayerController : StateMachine<PlayerController>
         // set data to new character
         Data = data;
         // set animator
-        anim = data.GetComponent<Animator>();
+        _anim = data.GetComponent<Animator>();
         // set behaviour to new character behaviour
         Behaviour newBehaviour = data.GetComponent<Behaviour>();
         // ensure behaviour is not null before assigning to variable
