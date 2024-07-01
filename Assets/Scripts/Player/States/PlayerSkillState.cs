@@ -15,16 +15,10 @@ public class PlayerSkillState : CoroutineState<PlayerController>
     public override void Enter()
     {
         base.Enter();
-        // check if can trigger skill, if not, return to default state
-        if (!character.CharacterBehaviour.CanTriggerSkill)
-        {
-            fsm.SwitchState(character.DefaultState);
-            return;
-        }
         // set can trigger skill to false
         character.CharacterBehaviour.CanTriggerSkill = false;
         // play skill animation
-        
+        character.anim?.Play("Skill");
         // trigger skill after a certain duration
         triggerSkillCoroutine = fsm.StartCoroutine(
             WaitForSeconds(

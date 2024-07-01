@@ -77,9 +77,21 @@ PrefabInstance:
       value: Volunteer Vincent
       objectReference: {fileID: 0}
     - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3249646083560479351, guid: fb8f4b826a57bae4d9d1e4cfc50f16cd, type: 3}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3000106052116290177, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
     m_RemovedGameObjects: []
@@ -112,3 +124,4 @@ MonoBehaviour:
   passiveChance: 0.45
   buffScale: 1.5
   buffDuration: 5
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}

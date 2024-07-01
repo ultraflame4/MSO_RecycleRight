@@ -12,6 +12,9 @@ public class VolunteerBehaviour : BaseMeleeAttack
     [SerializeField] float buffScale = 1.5f;
     [SerializeField] float buffDuration = 15f;
 
+    [Header("VFX")]
+    [SerializeField] GameObject hitEffects;
+
     public override void TriggerAttack()
     {
         // boolean to check if passive is triggered
@@ -26,6 +29,8 @@ public class VolunteerBehaviour : BaseMeleeAttack
             knockback *= 2;
             // todo: add some effect to indicate this has been triggered
         }
+        // spawn vfx
+        SpawnVFX();
         // trigger base attack
         base.TriggerAttack();
         // check if passive is triggered, if so, revert changes
@@ -57,6 +62,22 @@ public class VolunteerBehaviour : BaseMeleeAttack
         data.attackDuration *= buffDuration;
         // unsubscribe to characcter change event
         character.CharacterManager.CharacterChanged -= OnCharacterChange;
+    }
+
+    // private methods
+    void SpawnVFX()
+    {
+        // ensure hit effects prefab is provided
+        if (hitEffects == null) return;
+        // spawn hit vfx
+        GameObject vfx = Instantiate(
+            hitEffects, 
+            character.pointer.position, 
+            Quaternion.identity, 
+            character.transform
+        );
+        // set vfx direction
+        vfx.transform.up = character.pointer.up;
     }
 
     // event listener to transfer changes to animator speed to new character
