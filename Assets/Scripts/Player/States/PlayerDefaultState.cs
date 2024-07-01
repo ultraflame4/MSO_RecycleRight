@@ -20,7 +20,7 @@ public class PlayerDefaultState : State<PlayerController>
         // allow character switching
         character.CharacterManager.CanSwitchCharacters = true;
         // play idle animation
-        character.anim.Play("Idle");
+        character.anim?.Play("Idle");
         // reset inputs
         move_input = Vector2.zero;
         attack_input = false;
@@ -103,6 +103,6 @@ public class PlayerDefaultState : State<PlayerController>
         // check if input changed from previous frame
         if (cached_move_input == move_input) return;
         // play animation pased on input
-        character.anim.Play(move_input == Vector2.zero ? "Idle" : "Run");
+        character.anim?.Play(move_input == Vector2.zero ? "Idle" : "Run");
     }
 }
