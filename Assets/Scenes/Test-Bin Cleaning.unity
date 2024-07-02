@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 2
-  m_FillAmount: 0.5
+  m_FillAmount: 1
   m_FillClockwise: 0
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -1256,6 +1256,17 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1564725089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4309716347410156266, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
+  m_PrefabInstance: {fileID: 1340340360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1238b709b57da4393bdaaa5d1616d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1834366518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c62f97125f9aab4aa5e98540ba76ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1564725089}
   UIIcons:
   - {fileID: 1834366520}
   - {fileID: 165261954}

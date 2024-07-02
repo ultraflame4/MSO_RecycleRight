@@ -24,13 +24,16 @@ namespace UI
         // Start is called before the first frame update
         void Start()
         {
+            // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
         }
 
         // Update is called once per frame
         void Update()
         {
+            // update UI
             CheckSkillReadyAnimation();
+            UpdateCharacterHealth();
         }
 
         /// <summary>

@@ -18,16 +18,13 @@ namespace UI
             player.CharacterManager.CharacterChanged += OnCharacterChange;
             // start by setting all UI icons
             SetAllUI(player.CharacterManager.character_instances[0]);
-            // check if there are more UI elements than characters in the party
-            if (UIIcons.Length <= player.CharacterManager.character_instances.Length) return;
-            // hide UI that does not have a correspoinding character in the party
-            for (int i = 0; i < (UIIcons.Length - player.CharacterManager.character_instances.Length); i++)
-            {
-                // do not hide first icon (active icon)
-                if (i == (UIIcons.Length - 1)) break;
-                // hide UI element
-                UIIcons[UIIcons.Length - (i + 1)].gameObject.SetActive(false);
-            }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            // hide/show UI based on number of characters currently in the party
+            UpdateUIShown();
         }
 
         void SetAllUI(PlayerCharacter activeCharacter)
@@ -62,6 +59,22 @@ namespace UI
                 if (character == activeCharacter && i != 0) characterToSet = cachedCharacter;
 
                 UIIcons[i].SetUI(player, characterToSet);
+            }
+        }
+
+        void UpdateUIShown()
+        {
+            // ensure player is not null
+            if (player == null) return;
+            // check if there are more UI elements than characters in the party
+            if (UIIcons.Length <= player.CharacterManager.character_instances.Length) return;
+            // hide UI that does not have a correspoinding character in the party
+            for (int i = 0; i < (UIIcons.Length - player.CharacterManager.character_instances.Length); i++)
+            {
+                // do not hide first icon (active icon)
+                if (i == (UIIcons.Length - 1)) break;
+                // hide UI element
+                UIIcons[UIIcons.Length - (i + 1)].gameObject.SetActive(false);
             }
         }
 
