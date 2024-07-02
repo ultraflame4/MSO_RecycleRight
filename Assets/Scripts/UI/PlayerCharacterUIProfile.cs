@@ -32,6 +32,7 @@ namespace UI
         void Update()
         {
             // update UI
+            CheckSwitchability();
             CheckSkillReadyAnimation();
             UpdateCharacterHealth();
         }
@@ -47,10 +48,6 @@ namespace UI
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
             // cache player character data
             cacheCharacterData = characterToShow;
-            // check if skill is ready and update animation
-            CheckSkillReadyAnimation();
-            // set health bar to show current character health
-            UpdateCharacterHealth();
 
             // ensure sprite of character is not null, and set profile image
             if (characterToShow.characterSprite != null)
@@ -81,6 +78,14 @@ namespace UI
             cacheCanTriggerSkill = cacheCharacterBehaviour.CanTriggerSkill;
             // play animation depending on if skill can currently be triggered
             anim.Play(cacheCanTriggerSkill ? "FireOn" : "Static");
+        }
+
+        void CheckSwitchability()
+        {
+            // ensure player character data is not null
+            if (cacheCharacterData == null) return;
+            // darken profile image if cannot switch into character
+            profileImage.color = cacheCharacterData.Switchable ? Color.white : Color.grey;
         }
     }
 }
