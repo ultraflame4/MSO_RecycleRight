@@ -2,10 +2,11 @@ using UnityEngine;
 using Level.Bins;
 using NPC.Contaminants.States;
 using Player;
+using Interfaces;
 
 namespace NPC.Contaminant
 {
-    public class ContaminantNPC : FSMRecyclableNPC, ILevelEntity
+    public class ContaminantNPC : FSMRecyclableNPC, ILevelEntity, IDamagable, ICleanable
     {
         #region States
         public DetectTarget state_Idle { get; private set; }
@@ -25,6 +26,10 @@ namespace NPC.Contaminant
         public float attackDelay = .1f;
         [Tooltip("The damage of each attack")]
         public float attackDamage;
+        [Tooltip("Whether the contaminant can be cleaned")]
+        public bool cleanable;
+        [Tooltip("The prefab to instantiate when the contaminant is cleaned.")]
+        public GameObject clean_prefab;
 
         public override RecyclableType recyclableType => RecyclableType.OTHERS;
         public bool playerInSight => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < sightRange;
@@ -50,6 +55,16 @@ namespace NPC.Contaminant
         public void OnZoneStart()
         {
             // activate the contaminant
+        }
+
+        public void Damage(float damage)
+        {
+            // todo
+        }
+
+        public void Clean(float clean_amount)
+        {
+            // todo
         }
     }
 }
