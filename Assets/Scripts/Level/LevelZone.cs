@@ -14,11 +14,11 @@ namespace Level
         public float player_start_offset { get; private set; } = 1;
         public float player_startpos_x => transform.position.x - size.x / 2 + player_start_offset;
 
-        public EnemyController[] enemies;
+        public ILevelEnemy[] enemies;
 
         private void Start()
         {
-            enemies = GetComponentsInChildren<EnemyController>();
+            enemies = GetComponentsInChildren<ILevelEnemy>();
         }
 
         public void StartZone()
@@ -26,7 +26,7 @@ namespace Level
             Debug.Log("Zone started");
             foreach (var enemy in enemies)
             {
-                enemy.TriggerActive();
+                enemy.OnZoneStart();
             }
         }
         public bool PositionWithinZone(Vector3 position)
