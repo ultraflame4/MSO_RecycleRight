@@ -64,6 +64,7 @@ namespace NPC.Contaminant
 
         public void Clean(float clean_amount)
         {
+            if (!cleanable) return;
             // todo
         }
     }
