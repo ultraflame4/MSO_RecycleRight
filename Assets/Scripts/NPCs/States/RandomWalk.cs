@@ -36,6 +36,7 @@ namespace NPC.States
                 // Debug.Log($"Dir {current_direction}, mag {current_direction.magnitude}");
                 navigation.SetDestination(transform.position + current_direction * walk_distance);
             }
+            // If within buffer zone, recalculate edge force and add it to the direction (to push away from edges)
             if (levelManager.current_zone.PositionWithinBufferZone(transform.position))
             {
                 CalculateEdgeForce();

@@ -63,6 +63,7 @@ namespace NPC.Contaminants.States
                 npc.SwitchState(npc.state_Idle);
                 return;
             }
+            
             CalculateEdgeForce();
             direction = (closestRecyclable.transform.position - transform.position).normalized;
             direction+=current_edge_force*1.5f; // Push away from edges with a multiplier to make it more effective

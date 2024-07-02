@@ -43,16 +43,25 @@ namespace NPC.Recyclable.States
 
                 direction += from_contaminant.normalized * (1 / from_contaminant.sqrMagnitude); // the further away the contaminant is, the less it will affect the direction
             }
+
+            // If no contaminant is found, switch to idle
             if (direction == Vector3.zero)
             {
                 npc.SwitchState(npc.state_Idle);
             }
-            else
+            else // Otherwise runaway (normalise direction)
             {
-                CalculateEdgeForce();
+
+                // Normalise direction force
                 direction.Normalize();
-                direction+=current_edge_force*1.5f; // Push away from edges with a multiplier to make it more effective
-                direction.Normalize();
+
+                // If within buffer zone, recalculate edge force and add it to the direction (to push away from edges)
+                if (levelManager.current_zone.PositionWithinBufferZone(transform.position))
+                {
+                    CalculateEdgeForce();
+                    direction += current_edge_force * 1.5f; // Push away from edges with a multiplier to make it more effective
+                    direction.Normalize();
+                }
             }
         }
 
@@ -60,9 +69,10 @@ namespace NPC.Recyclable.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            
+
+            // Update destination
             navigation.SetDestination(transform.position + direction * npc.sightRange);
-            
+
         }
     }
 }
