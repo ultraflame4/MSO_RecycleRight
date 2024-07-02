@@ -13,7 +13,7 @@ namespace Entity.Data
         // public properties
         public new SpriteRenderer renderer { get; private set; }
         public new Collider2D collider { get; private set; }
-        public bool Enabled { get; private set; }
+        public bool Enabled { get; private set; } = true;
 
         void Awake()
         {

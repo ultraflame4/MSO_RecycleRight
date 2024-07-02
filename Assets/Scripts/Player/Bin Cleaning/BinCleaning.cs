@@ -120,6 +120,8 @@ namespace Player.BinCleaning
             if (index < 0) return;
             // switch to next character in array
             controller.CharacterManager.SwitchCharacter(index);
+            // disable current character
+            currentCharacterData.SetSpawn(false);
             // switch state to cleaning state
             SwitchState(Cleaning);
             // check if is last available character to clean
@@ -135,7 +137,7 @@ namespace Player.BinCleaning
             // loop through all characters to search for a character that be switched into
             foreach (PlayerCharacter character in controller.CharacterManager.character_instances)
             {
-                if (character.IsCleaning || character.Health <= 0f) continue;
+                if (!character.Switchable) continue;
                 availableCharacter = character;
                 return true;
             }
