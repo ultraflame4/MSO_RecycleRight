@@ -80,10 +80,11 @@ namespace Player.BinCleaning
             if (!lastCharacter) return;
             if (!AvailableCleaningCharacter(out PlayerCharacter availableCharacter)) return;
             // once found available character, enable controller, and switch to that character
+            lastCharacter = false;
+            availableCharacter.OverrideSwitchable = false;
             controller.gameObject.SetActive(true);
             controller.transform.position = availableCharacter.transform.position;
             controller.CharacterManager.SwitchCharacter(Array.IndexOf(controller.CharacterManager.character_instances, availableCharacter));
-            lastCharacter = false;
         }
         #endregion
 
@@ -137,7 +138,7 @@ namespace Player.BinCleaning
             // loop through all characters to search for a character that be switched into
             foreach (PlayerCharacter character in controller.CharacterManager.character_instances)
             {
-                if (!character.Switchable) continue;
+                if (character.IsCleaning || character.Health <= 0) continue;
                 availableCharacter = character;
                 return true;
             }

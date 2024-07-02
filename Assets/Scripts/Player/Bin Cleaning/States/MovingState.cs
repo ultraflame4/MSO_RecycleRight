@@ -18,6 +18,8 @@ namespace Player.BinCleaning.FSM
             character.anim?.Play("Run");
             // set move boolean
             character.anim?.SetBool("IsMoving", true);
+            // override switchable, disallow switching when in this state
+            character.currentCharacterData.OverrideSwitchable = true;
         }
 
         public override void LogicUpdate()
@@ -45,6 +47,8 @@ namespace Player.BinCleaning.FSM
             base.Exit();
             // reset move boolean
             character.anim?.SetBool("IsMoving", false);
+            // release switchable override
+            character.currentCharacterData.OverrideSwitchable = false;
             // reset cleaning
             character.SetCleaning(false, character.controller.CharacterManager.container);
         }
