@@ -74,8 +74,8 @@ namespace Player
         #region Event Listeners
         void OnCharacterChange(PlayerCharacter prevData, PlayerCharacter data)
         {
-            // do not switch to character if character is cleaning
-            if (data.IsCleaning) return;
+            // do not switch to character if character cannot be switched into
+            if (!data.Switchable) return;
             // set data to new character
             Data = data;
             // set animator

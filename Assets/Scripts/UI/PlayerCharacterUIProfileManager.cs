@@ -80,8 +80,8 @@ namespace UI
 
         void OnCharacterChange(PlayerCharacter prevCharacter, PlayerCharacter newCharacter)
         {
-            // do not update UI if new character is cleaning
-            if (newCharacter.IsCleaning) return;
+            // do not switch to character if character cannot be switched into
+            if (!newCharacter.Switchable) return;
             // update UI icons
             SetAllUI(newCharacter);
         }
