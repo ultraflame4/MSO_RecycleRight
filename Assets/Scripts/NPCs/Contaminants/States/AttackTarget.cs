@@ -33,8 +33,9 @@ namespace NPC.Contaminants.States
         IEnumerator Attack()
         {
             yield return new WaitForSeconds(npc.attackDelay);
-            // Attack player
-            target.Damage(npc.attackDamage);
+            // Attack target
+            // Debug.Log($"Attacking target {target}");
+            target?.Damage(npc.attackDamage);
             npc.SwitchState(npc.state_Idle);
         }
 

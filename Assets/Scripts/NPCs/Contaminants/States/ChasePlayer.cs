@@ -32,7 +32,7 @@ namespace NPC.Contaminants.States
 
             if (npc.playerInAttackRange)
             {
-                
+                npc.SwitchState(npc.state_AttackPlayer);   
             }
         }
 
