@@ -60,10 +60,12 @@ namespace NPC.Contaminant
         public void Damage(float damage)
         {
             // todo
+            Debug.LogWarning("Contaminant damaged! THIS IS WIP! PLEASE IMPLEMENT!");
         }
 
         public void Clean(float clean_amount)
         {
+            Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             if (!cleanable) return;
             // todo
         }
