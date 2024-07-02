@@ -34,7 +34,7 @@ namespace NPC.Recyclable
         {
             state_Idle = new(this);
             state_Idle.levelManager = levelManager;
-            state_Stunned = new(this);
+            state_Stunned = new(state_Idle, this, this);
             state_Flee = new(this);
 
             Initialize(state_Idle);
