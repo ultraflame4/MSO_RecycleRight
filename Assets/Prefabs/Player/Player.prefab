@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <distance>k__BackingField: 2
+  <height>k__BackingField: 1.5
   <player>k__BackingField: {fileID: 4417281709216151005}
 --- !u!1 &8533808296531404537
 GameObject:
