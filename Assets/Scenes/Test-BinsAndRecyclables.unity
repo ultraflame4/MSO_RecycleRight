@@ -239,7 +239,6 @@ MonoBehaviour:
   <size>k__BackingField: {x: 35, y: 20}
   <buffer_zone_size>k__BackingField: 1
   <player_start_offset>k__BackingField: 3
-  enemies: []
 --- !u!4 &460220738
 Transform:
   m_ObjectHideFlags: 0
@@ -656,7 +655,6 @@ MonoBehaviour:
   <size>k__BackingField: {x: 35, y: 20}
   <buffer_zone_size>k__BackingField: 1
   <player_start_offset>k__BackingField: 3
-  enemies: []
 --- !u!4 &1842558448
 Transform:
   m_ObjectHideFlags: 0

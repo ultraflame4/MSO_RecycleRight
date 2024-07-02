@@ -1,4 +1,5 @@
 using System.Linq;
+using Level;
 using NPC;
 using NPC.Contaminant;
 using Patterns.FSM;
@@ -9,7 +10,7 @@ namespace NPC.Contaminants.States
     public class Idle  : NPC.States.RandomWalk
     {
         ContaminantNPC npc;
-        public Idle(ContaminantNPC npc) : base(npc, npc)
+        public Idle(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
         {
             this.npc = npc;
         }

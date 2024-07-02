@@ -16,10 +16,6 @@ namespace NPC.Recyclable
         public Flee state_Flee { get; private set; }
         public Stunned state_Stunned { get; private set; }
         #endregion
-        #region References
-        [field: SerializeField]
-        public virtual LevelManager levelManager { get; private set; }
-        #endregion
 
         #region Config
         [SerializeField]
@@ -35,7 +31,6 @@ namespace NPC.Recyclable
         private void Start()
         {
             state_Idle = new(this);
-            state_Idle.levelManager = levelManager;
             state_Stunned = new(state_Idle, this, this);
             state_Flee = new(this);
 

@@ -21,6 +21,27 @@ namespace Level
 
         public event Action<LevelManager, LevelZone> ZoneChanged;
 
+        private static LevelManager _instance;
+        public static LevelManager Instance {
+            get {
+                if (_instance == null)
+                {
+                    throw new NullReferenceException("There is no LevelManager in the scene!");
+                }
+                return _instance;
+            }
+        }
+
+        private void Awake() {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else{
+                Debug.LogWarning("There are multiple LevelManagers in the scene! This is not allowed!");
+            }
+        }
+
         public void Start()
         {
             zones = transform.GetComponentsInChildren<LevelZone>();

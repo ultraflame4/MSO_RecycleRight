@@ -165,6 +165,7 @@ MonoBehaviour:
   current_state_name: None
   <navigation>k__BackingField: {fileID: -4371265464402291041}
   move_speed: 0
+  sightRange: 3
 --- !u!114 &-4371265464402291041
 MonoBehaviour:
   m_ObjectHideFlags: 0

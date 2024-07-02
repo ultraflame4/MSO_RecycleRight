@@ -14,8 +14,9 @@ namespace NPC.States
         public LevelManager levelManager;
         private Vector3 current_direction = Vector3.zero;
         private Vector3 current_edge_force; // The force that pushes NPC away from the edge. Gets stronger the closer to the edge. (Only starts to push when within buffer zone)
-        public RandomWalk(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
+        public RandomWalk(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character, LevelManager levelManager) : base(fsm, character)
         {
+            this.levelManager = levelManager;
         }
 
         public float GetEdgeWeight(float distance)
