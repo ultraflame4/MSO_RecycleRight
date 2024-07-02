@@ -113,7 +113,7 @@ namespace Player.BinCleaning
             CleanBin(bins[0]);
         }
 
-        void OnZoneChange(LevelManager manager, LevelZone zone)
+        void OnZoneChange(LevelZone zone)
         {
             // force switch to moving state, run towards player's current position and reset
             SwitchState(Moving);
