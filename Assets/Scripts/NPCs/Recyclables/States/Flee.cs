@@ -1,5 +1,4 @@
 using UnityEngine;
-using NPC.Contaminant;
 
 namespace NPC.Recyclable
 {
@@ -29,13 +28,14 @@ namespace NPC.Recyclable
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
+            // todo in future, overlap specific circle
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, npc.sightRange);
 
 
             direction = Vector3.zero;
             foreach (var item in colliders)
             {
-                var contaminant = item.GetComponent<ContaminantNPC>();
+                var contaminant = item.GetComponent<NPC.Contaminant.ContaminantNPC>();
                 if (contaminant == null) continue;
 
                 Vector3 from_contaminant = transform.position - contaminant.transform.position;
