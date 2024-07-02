@@ -29,8 +29,11 @@ namespace Entity.Data
             set { health = Mathf.Clamp(value, 0f, maxHealth); }
         }
 
+        public bool Switchable => !OverrideSwitchable && !(IsCleaning || Health <= 0);
+
         // hidden public variables
         [HideInInspector] public bool IsCleaning = false;
+        [HideInInspector] public bool OverrideSwitchable = false;
 
         void Start()
         {

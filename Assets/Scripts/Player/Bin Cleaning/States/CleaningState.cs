@@ -25,6 +25,8 @@ namespace Player.BinCleaning.FSM
             base.Exit();
             // completed cleaning bin
             character.cleaningBin.CompleteClean();
+            // reset cleaning state of character
+            character.currentCharacterData.IsCleaning = false;
         }
     }
 }

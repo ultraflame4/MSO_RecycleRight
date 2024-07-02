@@ -38,9 +38,13 @@ namespace Player.BinCleaning
         #region Public Properties
         public PlayerController controller { get; private set; }
         public PlayerCharacter currentCharacterData { get; private set; }
-        public PlayerCharacter activeCharacterData { get; private set; }
         public RecyclingBin cleaningBin { get; private set; }
         public Animator anim { get; private set; }
+        #endregion
+
+        #region Private Variables
+        PlayerCharacter activeCharacterData;
+        bool lastCharacter = false;
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -67,15 +71,28 @@ namespace Player.BinCleaning
             // initialize fsm
             Initialize(Default);
         }
+
+        new void Update()
+        {
+            // call update in base class
+            base.Update();
+            // handle last character
+            if (!lastCharacter) return;
+            if (!AvailableCleaningCharacter(out PlayerCharacter availableCharacter)) return;
+            // once found available character, enable controller, and switch to that character
+            controller.gameObject.SetActive(true);
+            controller.transform.position = availableCharacter.transform.position;
+            controller.CharacterManager.SwitchCharacter(Array.IndexOf(controller.CharacterManager.character_instances, availableCharacter));
+            lastCharacter = false;
+        }
         #endregion
 
         #region Cleaning Behaviour Methods
         public void SetCleaning(bool cleaning, Transform parent)
-        {
-            // set cleaning state of character
-            currentCharacterData.IsCleaning = cleaning;
-            // set spawn, disable collider to prevent taking damage when cleaning
-            currentCharacterData.SetSpawn(cleaning);
+        {   
+            // check if character is enabled
+            if (!currentCharacterData.Enabled) currentCharacterData.renderer.enabled = cleaning;
+            // set renderer, disable collider to prevent taking damage when cleaning
             currentCharacterData.collider.enabled = false;
             // set character parent
             currentCharacterData.transform.parent = parent;
@@ -91,9 +108,8 @@ namespace Player.BinCleaning
         {
             // set bin state to start cleaning
             cleaningBin.SetCleaning();
-            // set current character to is cleaning
+            // set cleaning state of character
             currentCharacterData.IsCleaning = true;
-
             // switch back to original character
             int index = Array.IndexOf(controller.CharacterManager.character_instances, activeCharacterData);
             // if original character is self, do not switch back, instead increment and switch to next character
@@ -106,6 +122,24 @@ namespace Player.BinCleaning
             controller.CharacterManager.SwitchCharacter(index);
             // switch state to cleaning state
             SwitchState(Cleaning);
+            // check if is last available character to clean
+            lastCharacter = !AvailableCleaningCharacter(out PlayerCharacter availableCharacter);
+            // disable controller if is last character
+            controller.gameObject.SetActive(!lastCharacter);
+        }
+
+        bool AvailableCleaningCharacter(out PlayerCharacter availableCharacter)
+        {
+            // set default output to null
+            availableCharacter = null;
+            // loop through all characters to search for a character that be switched into
+            foreach (PlayerCharacter character in controller.CharacterManager.character_instances)
+            {
+                if (character.IsCleaning || character.Health <= 0f) continue;
+                availableCharacter = character;
+                return true;
+            }
+            return false;
         }
         #endregion
 

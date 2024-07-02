@@ -58,8 +58,8 @@ namespace Player
                 Debug.LogWarning("Tried to switch to an invalid character index.");
                 return;
             }
-            // do not switch characters if character is cleaning
-            if (character_instances[index].IsCleaning) return;
+            // check if can switch to character
+            if (!character_instances[index].Switchable) return;
 
             // cache previous character
             PlayerCharacter prev = null;
