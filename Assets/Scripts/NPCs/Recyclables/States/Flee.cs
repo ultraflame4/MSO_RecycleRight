@@ -1,13 +1,14 @@
+using Level;
 using UnityEngine;
 
 namespace NPC.Recyclable.States
 {
-    public class Flee : BaseRecyclableState
+    public class Flee : NPC.States.Movement
     {
         RecyclableNPC npc;
         Vector3 direction;
 
-        public Flee(RecyclableNPC npc) : base(npc, npc)
+        public Flee(RecyclableNPC npc) : base(npc, npc, LevelManager.Instance)
         {
             this.npc = npc;
         }
@@ -48,6 +49,9 @@ namespace NPC.Recyclable.States
             }
             else
             {
+                CalculateEdgeForce();
+                direction.Normalize();
+                direction+=current_edge_force*1.5f; // Push away from edges with a multiplier to make it more effective
                 direction.Normalize();
             }
         }

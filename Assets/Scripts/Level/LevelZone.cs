@@ -54,6 +54,12 @@ namespace Level
             return Mathf.Min(DistanceFromEdgeX(position), DistanceFromEdgeY(position));
         }
 
+        public bool PositionWithinBufferZone(Vector3 position)
+        {
+            
+            return DistanceFromEdge(position) < buffer_zone_size;
+        }
+
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.white;

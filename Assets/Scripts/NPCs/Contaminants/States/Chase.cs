@@ -1,3 +1,4 @@
+using Level;
 using NPC;
 using NPC.Contaminant;
 using NPC.Recyclable;
@@ -6,12 +7,12 @@ using UnityEngine;
 
 namespace NPC.Contaminants.States
 {
-    public class Chase : BaseRecyclableState
+    public class Chase : NPC.States.Movement
     {
         ContaminantNPC npc;
         Vector3 direction;
 
-        public Chase(ContaminantNPC npc) : base(npc, npc)
+        public Chase(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
         {
             this.npc = npc;
         }
@@ -62,7 +63,10 @@ namespace NPC.Contaminants.States
                 npc.SwitchState(npc.state_Idle);
                 return;
             }
+            CalculateEdgeForce();
             direction = (closestRecyclable.transform.position - transform.position).normalized;
+            direction+=current_edge_force*1.5f; // Push away from edges with a multiplier to make it more effective
+            direction.Normalize();
         }
 
 
@@ -70,7 +74,7 @@ namespace NPC.Contaminants.States
         {
             base.LogicUpdate();
 
-            navigation.SetDestination(transform.position + direction * npc.sightRange);
+            navigation.SetDestination(transform.position + direction);
 
         }
     }
