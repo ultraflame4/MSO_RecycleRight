@@ -8,7 +8,7 @@ using Interfaces;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, IDamagable, IStunnable, ILevelEntity
+    public class RecyclableNPC : FSMRecyclableNPC, IStunnable, ILevelEntity
     {
 
         #region States
@@ -36,9 +36,9 @@ namespace NPC.Recyclable
 
             Initialize(state_Idle);
         }
-        public void Damage(float damage)
+        public void Contaminate(float damage)
         {
-            Debug.Log("Hit");
+            Debug.Log("Hit by Contaminant!");
         }
 
         public void Stun(float stun_duration)
