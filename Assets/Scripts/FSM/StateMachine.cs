@@ -55,13 +55,13 @@ namespace Patterns.FSM
         }
         #region Monobehaviour Callbacks
 
-        void Update() 
+        protected void Update() 
         {
             currentState?.HandleInputs();
             currentState?.LogicUpdate();
         }
 
-        void FixedUpdate() 
+        protected void FixedUpdate() 
         {
             currentState?.PhysicsUpdate();
         }

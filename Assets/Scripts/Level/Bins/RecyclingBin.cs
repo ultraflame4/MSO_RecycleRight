@@ -1,12 +1,12 @@
 using TMPro;
 using UnityEngine;
 using NPC;
+using Patterns.FSM;
 
 namespace Level.Bins
 {
     public class RecyclingBin : MonoBehaviour
     {
-
         [Tooltip("How long it will take for the bin to become infested, once contaminated with food items.")]
         public float infestation_secs;
 
@@ -57,15 +57,23 @@ namespace Level.Bins
         }
 
         /// <summary>
-        /// Use this when the bin is cleaned.
+        /// Use this when the bin is being cleaned.
         /// 
-        /// Sets state to clean
+        /// Sets state to cleaning
         /// </summary>
-        public void SetClean()
+        public void SetCleaning()
         {
-            binState = BinState.CLEAN;
+            binState = BinState.CLEANING;
             pending_infestation = false;
             infestation_percent = 0;
+        }
+
+        /// <summary>
+        /// Use this when bin has completed its cleaning proccess and can continue being used
+        /// </summary>
+        public void CompleteClean()
+        {
+            binState = BinState.CLEAN;
         }
 
         /// <summary>
@@ -86,6 +94,7 @@ namespace Level.Bins
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (binState == BinState.CLEANING) return;
             var recyclable = other.GetComponent<FSMRecyclableNPC>();
             if (recyclable == null) return;
             Debug.Log($"Recyclable {recyclable} Type {recyclable.recyclableType} entered bin {this} of type {this.recyclableType}");
