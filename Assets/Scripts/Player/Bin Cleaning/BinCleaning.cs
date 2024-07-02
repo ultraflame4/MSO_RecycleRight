@@ -38,6 +38,7 @@ namespace Player.BinCleaning
         #region Public Properties
         public PlayerController controller { get; private set; }
         public PlayerCharacter currentCharacterData { get; private set; }
+        public PlayerCharacter activeCharacterData { get; private set; }
         public RecyclingBin cleaningBin { get; private set; }
         public Animator anim { get; private set; }
         #endregion
@@ -92,12 +93,15 @@ namespace Player.BinCleaning
             cleaningBin.SetCleaning();
             // set current character to is cleaning
             currentCharacterData.IsCleaning = true;
-            // switch to next character in the array
-            // get index of current character
-            int index = Array.IndexOf(controller.CharacterManager.character_instances, currentCharacterData);
-            // increment index by 1, if last item, reset index to 0
-            index = index < (controller.CharacterManager.character_instances.Length - 1) && 
-                controller.CharacterManager.character_instances.Length > 1 ? index++ : 0;
+
+            // switch back to original character
+            int index = Array.IndexOf(controller.CharacterManager.character_instances, activeCharacterData);
+            // if original character is self, do not switch back, instead increment and switch to next character
+            if (activeCharacterData == currentCharacterData)
+                // increment index by 1, if last item, reset index to 0
+                index = index >= (controller.CharacterManager.character_instances.Length - 1) ? 0 : index + 1;
+            // check if an index is found
+            if (index < 0) return;
             // switch to next character in array
             controller.CharacterManager.SwitchCharacter(index);
             // switch state to cleaning state
@@ -108,6 +112,8 @@ namespace Player.BinCleaning
         #region Event Listeners
         void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
         {
+            // cache previous character
+            activeCharacterData = prev;
             // ensure switching to current character
             if (curr != currentCharacterData) return;
             // do not run if character is cleaning
