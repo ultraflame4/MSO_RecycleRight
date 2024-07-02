@@ -64,6 +64,12 @@ namespace NPC.Contaminants.States
                 return;
             }
             
+            if (Vector3.Distance(transform.position, closestRecyclable.transform.position) < npc.attackRange)
+            {
+                npc.SwitchState(npc.state_AttackRecyclable);
+                return;
+            }
+
             CalculateEdgeForce();
             direction = (closestRecyclable.transform.position - transform.position).normalized;
             direction+=current_edge_force*1.5f; // Push away from edges with a multiplier to make it more effective

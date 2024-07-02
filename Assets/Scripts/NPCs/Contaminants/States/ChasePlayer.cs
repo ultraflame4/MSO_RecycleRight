@@ -22,6 +22,20 @@ namespace NPC.Contaminants.States
             navigation.SetDestination(PlayerController.Instance.transform);
         }
 
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+            if (!npc.playerInSight)
+            {
+                npc.SwitchState(npc.state_Idle);
+            }
+
+            if (npc.playerInAttackRange)
+            {
+                
+            }
+        }
+
         public override void Exit()
         {
             base.Exit();

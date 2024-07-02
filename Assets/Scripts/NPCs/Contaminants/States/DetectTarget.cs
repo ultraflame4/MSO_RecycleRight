@@ -9,7 +9,7 @@ namespace NPC.Contaminants.States
 {
     public class DetectTarget  : NPC.States.RandomWalk
     {
-        ContaminantNPC npc;
+        protected ContaminantNPC npc;
         public DetectTarget(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
         {
             this.npc = npc;
