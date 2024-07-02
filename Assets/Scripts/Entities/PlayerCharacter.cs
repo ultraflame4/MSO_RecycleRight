@@ -4,6 +4,7 @@ namespace Entity.Data
 {
     public class PlayerCharacter : Entity
     {
+        // inspector fields
         [Header("Stats")]
         [SerializeField] // LOAD BEARING NEWLINE!! DO NOT REMOVE!!!
         public float maxHealth = 100f;
@@ -20,13 +21,16 @@ namespace Entity.Data
         [SerializeField] public float attackDuration = 1.5f;
         [SerializeField] public float skillDuration = 2f;
 
-        // hidden public properties
+        // public properties
         private float health = 0f;
         public float Health
         {
             get { return health; }
             set { health = Mathf.Clamp(value, 0f, maxHealth); }
         }
+
+        // hidden public variables
+        [HideInInspector] public bool IsCleaning = false;
 
         void Start()
         {

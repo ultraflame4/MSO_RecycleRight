@@ -31,6 +31,7 @@ namespace Player
         // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
+        public LevelManager LevelManager => levelManager;
         public Transform pointer => transform.GetChild(0);
         #endregion
 
