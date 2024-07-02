@@ -7,12 +7,12 @@ using UnityEngine;
 
 namespace NPC.Contaminants.States
 {
-    public class Chase : NPC.States.Movement
+    public class ChaseRecyclable : NPC.States.Movement
     {
         ContaminantNPC npc;
         Vector3 direction;
 
-        public Chase(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
+        public ChaseRecyclable(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
         {
             this.npc = npc;
         }

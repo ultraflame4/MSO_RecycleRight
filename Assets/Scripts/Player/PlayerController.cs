@@ -5,6 +5,7 @@ using Player.FSM;
 using Behaviour = Player.Behaviours.Behaviour;
 using Level;
 using Interfaces;
+using System;
 
 namespace Player
 {
@@ -32,9 +33,36 @@ namespace Player
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
         public Transform pointer => transform.GetChild(0);
+
+        
+        private static PlayerController _instance;
+        public static PlayerController Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    throw new NullReferenceException("There is no player instance in the scene!");
+                }
+                return _instance;
+            }
+        }
         #endregion
 
         #region Monobehaviour Callbacks
+
+        private void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Debug.LogWarning("There are multiple PlayerController(s) in the scene! This is not allowed!");
+            }
+        }
+
         void Start()
         {
             // get components

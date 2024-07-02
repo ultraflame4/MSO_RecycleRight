@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace NPC.Contaminants.States
 {
-    public class Idle  : NPC.States.RandomWalk
+    public class DetectTarget  : NPC.States.RandomWalk
     {
         ContaminantNPC npc;
-        public Idle(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
+        public DetectTarget(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
         {
             this.npc = npc;
         }
@@ -29,7 +29,14 @@ namespace NPC.Contaminants.States
             bool nearbyTarget = colliders.Any(x=>x.GetComponent<NPC.Recyclable.RecyclableNPC>() != null);
             if (nearbyTarget)
             {
-                npc.SwitchState(npc.state_Chase);
+                npc.SwitchState(npc.state_ChaseRecyclable);
+                return;
+            }
+
+            if (npc.playerInSight)
+            {
+                npc.SwitchState(npc.state_ChasePlayer);
+                return;
             }
         }
 
