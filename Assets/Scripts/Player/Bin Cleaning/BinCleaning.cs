@@ -115,6 +115,8 @@ namespace Player.BinCleaning
 
         void OnZoneChange(LevelZone zone)
         {
+            // do not run if it is first zone
+            if (zone == controller.LevelManager.zones[0]) return;
             // force switch to moving state, run towards player's current position and reset
             SwitchState(Moving);
         }
