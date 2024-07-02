@@ -901,6 +901,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 364, y: 220}
+  - name: Maid_Mary_Frame_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 364
+      y: 292
+      width: 64
+      height: 64
+    spriteID: 3354e82c57a19714bbd8279472907224
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 364, y: 292}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -1222,6 +1242,14 @@ ScriptedImporter:
         width: 64
         height: 64
       spriteId: e4ca98d6d4c7d034e82b76fb4e01ed3f
+    - name: Maid_Mary_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      spriteId: 3354e82c57a19714bbd8279472907224
     linkedCells: []
     parentIndex: -1
   platformSettings:
