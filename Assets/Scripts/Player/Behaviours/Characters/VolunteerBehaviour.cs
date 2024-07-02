@@ -55,10 +55,11 @@ namespace Player.Behaviours
             // apply attack speed increase to all characters by looping through all characters
             foreach (PlayerCharacter otherCharaData in character.CharacterManager.character_instances)
             {
-                otherCharaData.attackDuration *= active ? 1 / buffDuration : buffDuration;
                 Animator otherCharaAnim = otherCharaData.GetComponent<Animator>();
                 if (otherCharaAnim == null) continue;
-                otherCharaAnim.speed = active ? buffDuration : 1f;
+                otherCharaAnim.speed = active ? buffScale : 1f;
+                otherCharaData.attackDuration *= active ? 1 / buffScale : buffScale;
+                otherCharaData.movementSpeed *= active ? buffScale : 1 / buffScale;
             }
         }
 
