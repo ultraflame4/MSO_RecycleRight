@@ -24,7 +24,7 @@ namespace Player.BinCleaning.FSM
         {
             base.LogicUpdate();
             // check if reached target destination
-            if (Vector3.Distance(character.controller.transform.position, character.transform.position) > character.binCleanRange) return;
+            if (Vector3.Distance(character.controller.transform.position, character.transform.position) > character.returnThreshold) return;
             // when reached player, return to default state
             fsm.SwitchState(character.Default);
         }
@@ -37,7 +37,7 @@ namespace Player.BinCleaning.FSM
             // update sprite flip based on move direction
             character.currentCharacterData.renderer.flipX = move_dir.x < 0f;
             // move towards active player
-            character.transform.Translate(move_dir * (character.currentCharacterData.movementSpeed / 100f) * Time.deltaTime);
+            character.transform.Translate(move_dir * character.returnSpeed * Time.deltaTime);
         }
 
         public override void Exit()

@@ -179,9 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e082467cce57e6c44aa8fad989293bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current_state_name: None
   binCleanDuration: 15
   binCleanRange: 2
   binCleanOffset: {x: 0, y: 0.5, z: 0}
   binMask:
     serializedVersion: 2
     m_Bits: 512
+  returnSpeed: 10
+  returnThreshold: 2

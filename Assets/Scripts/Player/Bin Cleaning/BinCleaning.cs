@@ -12,6 +12,7 @@ namespace Player.BinCleaning
     public class BinCleaning : StateMachine<BinCleaning>
     {
         #region Inspector Fields
+        [Header("Bin Cleaning")]
         [Tooltip("Duration to clean bin")]
         public float binCleanDuration = 15f;
         [Tooltip("Maximum distance from bin to be able to clean it")]
@@ -20,6 +21,12 @@ namespace Player.BinCleaning
         public Vector3 binCleanOffset;
         [SerializeField, Tooltip("Layer mask to detect bin")]
         private LayerMask binMask;
+
+        [Header("Movement")]
+        [Tooltip("Speed to return to player after cleaning bin")]
+        public float returnSpeed = 10f;
+        [Tooltip("Distance from player threshold to count as having reached the target return location")]
+        public float returnThreshold = 2f;
         #endregion
 
         #region FSM States
@@ -138,6 +145,9 @@ namespace Player.BinCleaning
             // show bin interaction range
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, binCleanRange);
+            // show return threshold range
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, returnThreshold);
         }
         #endregion
     }   
