@@ -2,7 +2,7 @@
 using Patterns.FSM;
 using UnityEngine;
 
-namespace NPC.Recyclable
+namespace NPC.States
 {
     public class Stunned : BaseRecyclableState
     {

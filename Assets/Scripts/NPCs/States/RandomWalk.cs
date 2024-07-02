@@ -2,7 +2,7 @@ using UnityEngine;
 using Patterns.FSM;
 using Level;
 
-namespace NPC.Recyclable
+namespace NPC.States
 {
     public class RandomWalk : BaseRecyclableState
     {

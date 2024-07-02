@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NPC.Recyclable
+namespace NPC.Recyclable.States
 {
     public class Flee : BaseRecyclableState
     {

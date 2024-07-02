@@ -1,7 +1,9 @@
 using UnityEngine;
 using Level;
 using Level.Bins;
+using NPC.States;
 using NPC.Contaminant;
+using NPC.Recyclable.States;
 using Interfaces;
 
 namespace NPC.Recyclable
