@@ -74,7 +74,8 @@ namespace Player.Behaviours
                 // ensure enemy that was hit has a rigidbody component
                 if (rb == null) continue;
                 // pull enemy towards self
-                rb.AddForce((character.transform.position - hit.transform.position).normalized * skillPullForce);
+                rb.AddForce((character.transform.position - hit.transform.position).normalized * 
+                    (1f - (Mathf.Clamp(Vector3.Distance(character.transform.position, hit.transform.position), 0f, skillRange) / skillRange)) * skillPullForce);
             }
         }
 
