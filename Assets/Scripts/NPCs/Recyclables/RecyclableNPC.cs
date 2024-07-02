@@ -6,7 +6,7 @@ using Interfaces;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, IDamagable, IStunnable
+    public class RecyclableNPC : FSMRecyclableNPC, IDamagable, IStunnable, ILevelEntity
     {
 
         #region States
@@ -54,6 +54,11 @@ namespace NPC.Recyclable
         {
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, sightRange);
+        }
+
+        public void OnZoneStart()
+        {
+            // todo activate the recyclable
         }
     }
 }

@@ -1,3 +1,3 @@
-public interface ILevelEnemy{
+public interface ILevelEntity{
     public void OnZoneStart();
 }
