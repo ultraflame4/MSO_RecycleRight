@@ -31,6 +31,8 @@ namespace Player.BinCleaning
         #region Public Properties
         public PlayerController controller { get; private set; }
         public PlayerCharacter currentCharacterData { get; private set; }
+        public RecyclingBin cleaningBin { get; private set; }
+        public Animator anim { get; private set; }
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -41,6 +43,8 @@ namespace Player.BinCleaning
             controller = GetComponentInParent<PlayerController>();
             // get reference to the character data of this character
             currentCharacterData = GetComponent<PlayerCharacter>();
+            // get reference to animator
+            anim = GetComponent<Animator>();
             // subscribe to character change event
             controller.CharacterManager.CharacterChanged += OnCharacterChange;
             // subscribe to zone change event
@@ -75,10 +79,12 @@ namespace Player.BinCleaning
                 currentCharacterData.transform.localPosition += binCleanOffset;
         }
 
-        void CleanBin(RecyclingBin bin)
+        void CleanBin()
         {
             // set bin state to start cleaning
-            bin.SetCleaning();
+            cleaningBin.SetCleaning();
+            // set current character to is cleaning
+            currentCharacterData.IsCleaning = true;
             // switch to next character in the array
             // get index of current character
             int index = Array.IndexOf(controller.CharacterManager.character_instances, currentCharacterData);
@@ -87,8 +93,6 @@ namespace Player.BinCleaning
                 controller.CharacterManager.character_instances.Length > 1 ? index++ : 0;
             // switch to next character in array
             controller.CharacterManager.SwitchCharacter(index);
-            // setup cleaning
-            SetCleaning(true, bin.transform);
             // switch state to cleaning state
             SwitchState(Cleaning);
         }
@@ -99,6 +103,8 @@ namespace Player.BinCleaning
         {
             // ensure switching to current character
             if (data != currentCharacterData) return;
+            // do not run if character is cleaning
+            if (currentCharacterData.IsCleaning) return;
             // check if near a bin
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, binCleanRange, binMask);
             // filter out uncontaminated bins
@@ -109,8 +115,10 @@ namespace Player.BinCleaning
                 .ToArray();
             // check if anything still remains after the filter
             if (bins.Length <= 0) return;
+            // set cleaning bin
+            cleaningBin = bins[0];
             // handle starting bin cleaning
-            CleanBin(bins[0]);
+            CleanBin();
         }
 
         void OnZoneChange(LevelZone zone)

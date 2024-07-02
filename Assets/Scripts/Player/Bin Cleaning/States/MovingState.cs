@@ -15,9 +15,9 @@ namespace Player.BinCleaning.FSM
         {
             base.Enter();
             // play idle animation
-            character.controller.anim?.Play("Idle");
+            character.anim?.Play("Run");
             // set move boolean
-            character.controller.anim?.SetBool("IsMoving", true);
+            character.anim?.SetBool("IsMoving", true);
         }
 
         public override void LogicUpdate()
@@ -37,14 +37,14 @@ namespace Player.BinCleaning.FSM
             // update sprite flip based on move direction
             character.currentCharacterData.renderer.flipX = move_dir.x < 0f;
             // move towards active player
-            character.transform.Translate(move_dir * character.currentCharacterData.movementSpeed * Time.deltaTime);
+            character.transform.Translate(move_dir * (character.currentCharacterData.movementSpeed / 100f) * Time.deltaTime);
         }
 
         public override void Exit()
         {
             base.Exit();
             // reset move boolean
-            character.controller.anim?.SetBool("IsMoving", false);
+            character.anim?.SetBool("IsMoving", false);
             // reset cleaning
             character.SetCleaning(false, character.controller.CharacterManager.container);
         }

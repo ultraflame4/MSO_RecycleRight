@@ -12,10 +12,19 @@ namespace Player.BinCleaning.FSM
         public override void Enter()
         {
             base.Enter();
+            // setup cleaning
+            character.SetCleaning(true, character.cleaningBin.transform);
             // play idle animation
-            character.controller.anim?.Play("Idle");
+            character.anim?.Play("Idle");
             // reset move boolean
-            character.controller.anim?.SetBool("IsMoving", false);
+            character.anim?.SetBool("IsMoving", false);
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            // completed cleaning bin
+            character.cleaningBin.CompleteClean();
         }
     }
 }

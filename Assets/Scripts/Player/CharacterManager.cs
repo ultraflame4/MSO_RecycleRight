@@ -65,6 +65,7 @@ namespace Player
             for (int i = 0; i < character_instances.Length; i++)
             {
                 PlayerCharacter character = character_instances[i];
+                if (character.IsCleaning) continue;
                 character.SetSpawn(i == index);
             }
 
