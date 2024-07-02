@@ -1,12 +1,77 @@
 using NPC;
+using NPC.Contaminant;
+using NPC.Recyclable;
 using Patterns.FSM;
+using UnityEngine;
 
 namespace NPC.Contaminants.States
 {
-    public class Chase : NPC.BaseRecyclableState
+    public class Chase : BaseRecyclableState
     {
-        public Chase(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
+        ContaminantNPC npc;
+        Vector3 direction;
+
+        public Chase(ContaminantNPC npc) : base(npc, npc)
         {
+            this.npc = npc;
+        }
+
+
+        public override void Enter()
+        {
+            base.Enter();
+            navigation.ClearDestination();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            navigation.ClearDestination();
+        }
+
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
+            // todo in future, overlap specific circle
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, npc.sightRange);
+
+
+            // Get closest recyclable
+            RecyclableNPC closestRecyclable = null;
+            foreach (var item in colliders)
+            {
+                var target = item.GetComponent<RecyclableNPC>();
+                if (target == null) continue;
+
+                if (closestRecyclable == null)
+                {
+                    closestRecyclable = target;
+                }
+
+                var dist2 = (transform.position - target.transform.position).sqrMagnitude;
+                var current_dist2 = (transform.position - closestRecyclable.transform.position).sqrMagnitude;
+
+                if (dist2 < current_dist2)
+                {
+                    closestRecyclable = target;
+                }
+
+            }
+            if (closestRecyclable == null)
+            {
+                npc.SwitchState(npc.state_Idle);
+                return;
+            }
+            direction = (closestRecyclable.transform.position - transform.position).normalized;
+        }
+
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            navigation.SetDestination(transform.position + direction * npc.sightRange);
+
         }
     }
 }
