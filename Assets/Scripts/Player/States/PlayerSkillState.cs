@@ -14,6 +14,9 @@ namespace Player.FSM
 
         public override void Enter()
         {
+            // update skill duration
+            duration = character.Data.skillDuration;
+            // count skill duration
             base.Enter();
             // set can trigger skill to false
             character.CharacterBehaviour.CanTriggerSkill = false;
