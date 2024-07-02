@@ -42,7 +42,7 @@ namespace Player
             characterManager ??= GetComponent<CharacterManager>();
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
-            OnCharacterChange(CharacterManager.character_instances[0]);
+            OnCharacterChange(null, CharacterManager.character_instances[0]);
             // subscribe to character change event
             CharacterManager.CharacterChanged += OnCharacterChange;
 
@@ -72,7 +72,7 @@ namespace Player
         #endregion
 
         #region Event Listeners
-        void OnCharacterChange(PlayerCharacter data)
+        void OnCharacterChange(PlayerCharacter prevData, PlayerCharacter data)
         {
             // do not switch to character if character is cleaning
             if (data.IsCleaning) return;

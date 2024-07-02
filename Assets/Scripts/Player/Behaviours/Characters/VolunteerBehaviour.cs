@@ -86,7 +86,7 @@ namespace Player.Behaviours
         }
 
         // event listener to transfer changes to animator speed to new character
-        void OnCharacterChange(PlayerCharacter data)
+        void OnCharacterChange(PlayerCharacter prevData, PlayerCharacter data)
         {
             // reset buffs on previous character
             cacheActiveAnimator.speed = 1f;

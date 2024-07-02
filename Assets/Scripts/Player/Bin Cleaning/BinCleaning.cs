@@ -106,10 +106,10 @@ namespace Player.BinCleaning
         #endregion
 
         #region Event Listeners
-        void OnCharacterChange(PlayerCharacter data)
+        void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
         {
             // ensure switching to current character
-            if (data != currentCharacterData) return;
+            if (curr != currentCharacterData) return;
             // do not run if character is cleaning
             if (currentCharacterData.IsCleaning) return;
             // check if near a bin
