@@ -35,8 +35,12 @@ namespace NPC.Contaminants.States
             yield return new WaitForSeconds(npc.attackDelay);
             // Attack target
             // Debug.Log($"Attacking target {target}");
-            target?.Damage(npc.attackDamage);
+            OnAttackTarget();
             npc.SwitchState(npc.state_Idle);
+        }
+
+        protected virtual void OnAttackTarget(){
+            target?.Damage(npc.attackDamage);
         }
 
         public override void Exit()

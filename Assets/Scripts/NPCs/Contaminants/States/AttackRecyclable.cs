@@ -16,7 +16,12 @@ namespace NPC.Contaminants.States
         {
         }
         public RecyclableNPC nearestRecyclable;
-        public override IDamagable target => nearestRecyclable;
+        // public override IDamagable target => nearestRecyclable;
+
+        protected override void OnAttackTarget()
+        {
+            nearestRecyclable?.Contaminate(npc.attackDamage);
+        }
 
     }
 }

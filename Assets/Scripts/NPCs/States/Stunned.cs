@@ -26,6 +26,7 @@ namespace NPC.States
             stun_timer -= Time.deltaTime;
             if (stun_timer <= 0)
             {
+                stun_timer = 0;
                 character.SwitchState(Idle);
             }
         }
