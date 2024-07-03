@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: attackTriggerTimeFrame
-      value: 0.9
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
@@ -126,6 +126,7 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 384
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   tickDamage: 1
   tickStunDuration: 0.15
   tickSpeed: 1

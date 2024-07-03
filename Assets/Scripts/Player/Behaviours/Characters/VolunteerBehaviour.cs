@@ -12,9 +12,6 @@ namespace Player.Behaviours
         [SerializeField] float buffScale = 1.5f;
         [SerializeField] float buffDuration = 15f;
 
-        [Header("VFX")]
-        [SerializeField] GameObject hitEffects;
-
         public override void TriggerAttack()
         {
             // boolean to check if passive is triggered
@@ -29,8 +26,6 @@ namespace Player.Behaviours
                 knockback *= 2;
                 // todo: add some effect to indicate this has been triggered
             }
-            // spawn vfx
-            SpawnVFX();
             // trigger base attack
             base.TriggerAttack();
             // check if passive is triggered, if so, revert changes
@@ -61,21 +56,6 @@ namespace Player.Behaviours
                 otherCharaData.attackDuration *= active ? 1 / buffScale : buffScale;
                 otherCharaData.movementSpeed *= active ? buffScale : 1 / buffScale;
             }
-        }
-
-        void SpawnVFX()
-        {
-            // ensure hit effects prefab is provided
-            if (hitEffects == null) return;
-            // spawn hit vfx
-            GameObject vfx = Instantiate(
-                hitEffects, 
-                character.pointer.position, 
-                Quaternion.identity, 
-                character.transform
-            );
-            // set vfx direction
-            vfx.transform.up = character.pointer.up;
         }
     }
 }

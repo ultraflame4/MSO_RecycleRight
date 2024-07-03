@@ -30,6 +30,10 @@ namespace Player.Behaviours
         [Tooltip("Layer mask of enemies that can be hit")]
         [SerializeField] protected LayerMask hitMask;
 
+        [Header("VFX")]
+        [Tooltip("Effect to spawn when attack is triggered")]
+        [SerializeField] protected GameObject hitEffects;
+
         // perform default melee attack
         public override void TriggerAttack()
         {
@@ -65,6 +69,19 @@ namespace Player.Behaviours
                 hit.GetComponent<Rigidbody2D>()?
                     .AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
             }
+
+            // spawn hit vfx
+            // ensure hit effects prefab is provided
+            if (hitEffects == null) return;
+            // spawn hit vfx
+            GameObject vfx = Instantiate(
+                hitEffects, 
+                character.pointer.position, 
+                Quaternion.identity, 
+                character.transform
+            );
+            // set vfx direction
+            vfx.transform.up = character.pointer.up;
         }
 
         protected void OnDrawGizmosSelected()
