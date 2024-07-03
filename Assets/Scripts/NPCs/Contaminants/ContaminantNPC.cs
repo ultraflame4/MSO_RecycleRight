@@ -3,12 +3,14 @@ using Level.Bins;
 using NPC.Contaminants.States;
 using Player;
 using Interfaces;
+using NPC.States;
 
 namespace NPC.Contaminant
 {
-    public class ContaminantNPC : FSMRecyclableNPC, ILevelEntity, IDamagable, ICleanable
+    public class ContaminantNPC : FSMRecyclableNPC, ILevelEntity, IDamagable, ICleanable, IStunnable
     {
         #region States
+        public Stunned state_Stunned { get; private set; }
         public DetectTarget state_Idle { get; private set; }
         public AttackRecyclable state_AttackRecyclable { get; private set; }
         public ChaseRecyclable state_ChaseRecyclable { get; private set; }
@@ -42,6 +44,7 @@ namespace NPC.Contaminant
             state_AttackRecyclable = new AttackRecyclable(this);
             state_ChasePlayer = new ChasePlayer(this);
             state_AttackPlayer = new AttackPlayer(this);
+            state_Stunned = new Stunned(state_Idle, this, this);
             SwitchState(state_Idle);
         }
 
@@ -68,6 +71,12 @@ namespace NPC.Contaminant
             Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             if (!cleanable) return;
             // todo
+        }
+
+        public void Stun(float stun_duration)
+        {
+            state_Stunned.stun_timer = stun_duration;
+            SwitchState(state_Stunned);
         }
     }
 }
