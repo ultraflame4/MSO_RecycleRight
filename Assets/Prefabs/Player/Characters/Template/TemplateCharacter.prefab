@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1738559877431449790}
   - component: {fileID: 8198512540640695824}
+  - component: {fileID: -6801794928883840886}
   - component: {fileID: -6992295730688417858}
   - component: {fileID: 1214702141452971629}
+  - component: {fileID: 5478115462021916385}
   m_Layer: 0
   m_Name: TemplateCharacter
   m_TagString: Untagged
@@ -85,7 +87,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!70 &-6801794928883840886
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443563819890852365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!95 &-6992295730688417858
 Animator:
   serializedVersion: 5
@@ -97,7 +134,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -124,7 +161,30 @@ MonoBehaviour:
   characterSprite: {fileID: 0}
   maxHealth: 100
   movementSpeed: 250
+  attackTriggerTimeFrame: 0.5
   skillCooldown: 15
   skillTriggerTimeFrame: 0.5
   attackDuration: 1.5
   skillDuration: 2
+  IsCleaning: 0
+--- !u!114 &5478115462021916385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443563819890852365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e082467cce57e6c44aa8fad989293bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_state_name: None
+  binCleanDuration: 15
+  binCleanRange: 2
+  binCleanOffset: {x: 0, y: 0.5, z: 0}
+  binMask:
+    serializedVersion: 2
+    m_Bits: 512
+  returnSpeed: 10
+  returnThreshold: 2

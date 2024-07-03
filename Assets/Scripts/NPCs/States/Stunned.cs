@@ -1,15 +1,17 @@
 
+using Patterns.FSM;
 using UnityEngine;
 
-namespace NPC.Recyclable
+namespace NPC.States
 {
     public class Stunned : BaseRecyclableState
     {
         public float stun_timer;
-        private RecyclableNPC npc;
-        public Stunned(RecyclableNPC npc) : base(npc, npc)
-        {
-            this.npc = npc;
+        private BaseRecyclableState Idle;
+
+        public Stunned(BaseRecyclableState idle,StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
+        {   
+            Idle = idle;
         }
 
         public override void Enter()
@@ -24,7 +26,8 @@ namespace NPC.Recyclable
             stun_timer -= Time.deltaTime;
             if (stun_timer <= 0)
             {
-                character.SwitchState(npc.state_Idle);
+                stun_timer = 0;
+                character.SwitchState(Idle);
             }
         }
         public override void Exit()

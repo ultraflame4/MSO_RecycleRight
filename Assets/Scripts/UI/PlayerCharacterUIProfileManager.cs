@@ -20,6 +20,13 @@ namespace UI
             SetAllUI(player.CharacterManager.character_instances[0]);
         }
 
+        // Update is called once per frame
+        void Update()
+        {
+            // hide/show UI based on number of characters currently in the party
+            UpdateUIShown();
+        }
+
         void SetAllUI(PlayerCharacter activeCharacter)
         {
             // ensure UI icons length is within range of character party
@@ -55,8 +62,26 @@ namespace UI
             }
         }
 
-        void OnCharacterChange(PlayerCharacter newCharacter)
+        void UpdateUIShown()
         {
+            // ensure player is not null
+            if (player == null) return;
+            // check if there are more UI elements than characters in the party
+            if (UIIcons.Length <= player.CharacterManager.character_instances.Length) return;
+            // hide UI that does not have a correspoinding character in the party
+            for (int i = 0; i < (UIIcons.Length - player.CharacterManager.character_instances.Length); i++)
+            {
+                // do not hide first icon (active icon)
+                if (i == (UIIcons.Length - 1)) break;
+                // hide UI element
+                UIIcons[UIIcons.Length - (i + 1)].gameObject.SetActive(false);
+            }
+        }
+
+        void OnCharacterChange(PlayerCharacter prevCharacter, PlayerCharacter newCharacter)
+        {
+            // do not switch to character if character cannot be switched into
+            if (!newCharacter.Switchable) return;
             // update UI icons
             SetAllUI(newCharacter);
         }

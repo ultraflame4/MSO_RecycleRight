@@ -14,19 +14,19 @@ namespace Level
         public float player_start_offset { get; private set; } = 1;
         public float player_startpos_x => transform.position.x - size.x / 2 + player_start_offset;
 
-        public EnemyController[] enemies;
+        public ILevelEntity[] entities;
 
         private void Start()
         {
-            enemies = GetComponentsInChildren<EnemyController>();
+            entities = GetComponentsInChildren<ILevelEntity>();
         }
 
         public void StartZone()
         {
             Debug.Log("Zone started");
-            foreach (var enemy in enemies)
+            foreach (var enemy in entities)
             {
-                enemy.TriggerActive();
+                enemy.OnZoneStart();
             }
         }
         public bool PositionWithinZone(Vector3 position)
@@ -52,6 +52,12 @@ namespace Level
         public float DistanceFromEdge(Vector3 position)
         {
             return Mathf.Min(DistanceFromEdgeX(position), DistanceFromEdgeY(position));
+        }
+
+        public bool PositionWithinBufferZone(Vector3 position)
+        {
+            
+            return DistanceFromEdge(position) < buffer_zone_size;
         }
 
         public void OnDrawGizmos()

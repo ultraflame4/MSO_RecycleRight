@@ -74,8 +74,8 @@ ScriptedImporter:
     fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -87,8 +87,8 @@ ScriptedImporter:
     fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638554475760139887
+  platformSettingsDirtyTick: 638555530556282644
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Volunteer_Vincent_Frame_0
     originalName: 
-    pivot: {x: 0.63333327, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 181, y: 4}
   - name: Volunteer_Vincent_Frame_1
     originalName: 
-    pivot: {x: 0.63333327, y: 0.5945946}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 157, y: 136}
   - name: Volunteer_Vincent_Frame_2
     originalName: 
-    pivot: {x: 0.63333327, y: 0.5945946}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 157, y: 181}
   - name: Volunteer_Vincent_Frame_3
     originalName: 
-    pivot: {x: 0.59374994, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 157, y: 4}
   - name: Volunteer_Vincent_Frame_4
     originalName: 
-    pivot: {x: 0.63333327, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 181, y: 48}
   - name: Volunteer_Vincent_Frame_5
     originalName: 
-    pivot: {x: 0.625, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 137}
   - name: Volunteer_Vincent_Frame_6
     originalName: 
-    pivot: {x: 0.6578947, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 102, y: 177}
   - name: Volunteer_Vincent_Frame_7
     originalName: 
-    pivot: {x: 0.625, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -283,8 +283,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Volunteer_Vincent_Frame_8
     originalName: 
-    pivot: {x: 0.56249994, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -303,8 +303,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 91}
   - name: Volunteer_Vincent_Frame_9
     originalName: 
-    pivot: {x: 0.6136363, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -323,8 +323,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 135}
   - name: Volunteer_Vincent_Frame_10
     originalName: 
-    pivot: {x: 0.73529404, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -343,8 +343,8 @@ ScriptedImporter:
     uvTransform: {x: 130, y: 179}
   - name: Volunteer_Vincent_Frame_11
     originalName: 
-    pivot: {x: 0.7857143, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -363,8 +363,8 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 4}
   - name: Volunteer_Vincent_Frame_12
     originalName: 
-    pivot: {x: 0.6346154, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -383,8 +383,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 48}
   - name: Volunteer_Vincent_Frame_13
     originalName: 
-    pivot: {x: 0.6944444, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -403,8 +403,8 @@ ScriptedImporter:
     uvTransform: {x: 130, y: 47}
   - name: Volunteer_Vincent_Frame_14
     originalName: 
-    pivot: {x: 0.6944444, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -423,8 +423,8 @@ ScriptedImporter:
     uvTransform: {x: 130, y: 91}
   - name: Volunteer_Vincent_Frame_15
     originalName: 
-    pivot: {x: 0.5952381, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -443,8 +443,8 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 48}
   - name: Volunteer_Vincent_Frame_16
     originalName: 
-    pivot: {x: 0.63333327, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -463,8 +463,8 @@ ScriptedImporter:
     uvTransform: {x: 181, y: 92}
   - name: Volunteer_Vincent_Frame_17
     originalName: 
-    pivot: {x: 0.59374994, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -483,8 +483,8 @@ ScriptedImporter:
     uvTransform: {x: 157, y: 48}
   - name: Volunteer_Vincent_Frame_18
     originalName: 
-    pivot: {x: 0.43181813, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -503,8 +503,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 179}
   - name: Volunteer_Vincent_Frame_19
     originalName: 
-    pivot: {x: 0.475, y: 0.5945946}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -523,8 +523,8 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 92}
   - name: Volunteer_Vincent_Frame_20
     originalName: 
-    pivot: {x: 0.475, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -543,8 +543,8 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 181}
   - name: Volunteer_Vincent_Frame_21
     originalName: 
-    pivot: {x: 0.475, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -563,8 +563,8 @@ ScriptedImporter:
     uvTransform: {x: 102, y: 4}
   - name: Volunteer_Vincent_Frame_22
     originalName: 
-    pivot: {x: 0.63333327, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -583,8 +583,8 @@ ScriptedImporter:
     uvTransform: {x: 181, y: 136}
   - name: Volunteer_Vincent_Frame_23
     originalName: 
-    pivot: {x: 0.475, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -603,8 +603,8 @@ ScriptedImporter:
     uvTransform: {x: 102, y: 48}
   - name: Volunteer_Vincent_Frame_24
     originalName: 
-    pivot: {x: 0.475, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -623,8 +623,8 @@ ScriptedImporter:
     uvTransform: {x: 102, y: 91}
   - name: Volunteer_Vincent_Frame_25
     originalName: 
-    pivot: {x: 0.63888884, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -643,8 +643,8 @@ ScriptedImporter:
     uvTransform: {x: 130, y: 135}
   - name: Volunteer_Vincent_Frame_26
     originalName: 
-    pivot: {x: 0.65624994, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -663,8 +663,8 @@ ScriptedImporter:
     uvTransform: {x: 157, y: 92}
   - name: Volunteer_Vincent_Frame_27
     originalName: 
-    pivot: {x: 0.53999996, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -683,8 +683,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 4}
   - name: Volunteer_Vincent_Frame_28
     originalName: 
-    pivot: {x: 0.4807692, y: 0.6111111}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -703,8 +703,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 92}
   - name: Volunteer_Vincent_Frame_29
     originalName: 
-    pivot: {x: 0.4038461, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -723,8 +723,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 136}
   - name: Volunteer_Vincent_Frame_30
     originalName: 
-    pivot: {x: 0.4038461, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -743,8 +743,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 179}
   - name: Volunteer_Vincent_Frame_31
     originalName: 
-    pivot: {x: 0.37999997, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -763,8 +763,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 48}
   - name: Volunteer_Vincent_Frame_32
     originalName: 
-    pivot: {x: 0.49999997, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -783,8 +783,8 @@ ScriptedImporter:
     uvTransform: {x: 130, y: 4}
   - name: Volunteer_Vincent_Frame_33
     originalName: 
-    pivot: {x: 0.475, y: 0.62857145}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1146,6 +1146,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: tvOS
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048

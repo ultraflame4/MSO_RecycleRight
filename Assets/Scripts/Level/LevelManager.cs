@@ -19,7 +19,28 @@ namespace Level
 
         public LevelZone current_zone => zones[current_zone_index];
 
-        public event Action<LevelManager, LevelZone> ZoneChanged;
+        public event Action<LevelZone> ZoneChanged;
+
+        private static LevelManager _instance;
+        public static LevelManager Instance {
+            get {
+                if (_instance == null)
+                {
+                    throw new NullReferenceException("There is no LevelManager in the scene!");
+                }
+                return _instance;
+            }
+        }
+
+        private void Awake() {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else{
+                Debug.LogWarning("There are multiple LevelManagers in the scene! This is not allowed!");
+            }
+        }
 
         public void Start()
         {
@@ -32,7 +53,7 @@ namespace Level
             current_zone_index = index;
             camera.target_position = current_zone.transform.position;
             // call event when moving to new zone
-            ZoneChanged?.Invoke(this, current_zone);
+            ZoneChanged?.Invoke(current_zone);
         }
 
         private void OnValidate()

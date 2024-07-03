@@ -5,6 +5,7 @@ using Player.FSM;
 using Behaviour = Player.Behaviours.Behaviour;
 using Level;
 using Interfaces;
+using System;
 
 namespace Player
 {
@@ -31,17 +32,45 @@ namespace Player
         // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
+        public LevelManager LevelManager => levelManager;
         public Transform pointer => transform.GetChild(0);
+
+        
+        private static PlayerController _instance;
+        public static PlayerController Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    throw new NullReferenceException("There is no player instance in the scene!");
+                }
+                return _instance;
+            }
+        }
         #endregion
 
         #region Monobehaviour Callbacks
+
+        private void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Debug.LogWarning("There are multiple PlayerController(s) in the scene! This is not allowed!");
+            }
+        }
+
         void Start()
         {
             // get components
             characterManager ??= GetComponent<CharacterManager>();
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
-            OnCharacterChange(CharacterManager.character_instances[0]);
+            OnCharacterChange(null, CharacterManager.character_instances[0]);
             // subscribe to character change event
             CharacterManager.CharacterChanged += OnCharacterChange;
 
@@ -71,8 +100,10 @@ namespace Player
         #endregion
 
         #region Event Listeners
-        void OnCharacterChange(PlayerCharacter data)
+        void OnCharacterChange(PlayerCharacter prevData, PlayerCharacter data)
         {
+            // do not switch to character if character cannot be switched into
+            if (!data.Switchable) return;
             // set data to new character
             Data = data;
             // set animator
