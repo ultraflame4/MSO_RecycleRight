@@ -423,15 +423,15 @@ ScriptedImporter:
     uvTransform: {x: 216, y: 0}
   - name: character_icon_small_Frame_2
     originalName: 
-    pivot: {x: 0, y: 1.1052631}
+    pivot: {x: 0.5, y: 0.5769231}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 216
       y: 26
-      width: 19
-      height: 19
+      width: 26
+      height: 26
     spriteID: 6695c91e66d40b74a962fe7889714fe5
     spriteBone: []
     spriteOutline: []
@@ -441,6 +441,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 216, y: 26}
+  - name: character_icon_small_Frame_3
+    originalName: 
+    pivot: {x: 0, y: 1.1052631}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 213
+      y: 53
+      width: 19
+      height: 19
+    spriteID: 5862d5352295d9a49a64fb1b48c2efcb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 213, y: 53}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -450,104 +470,104 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: character_icon_small_Frame_3
-      frameIndex: 3
+    - name: character_icon_small_Frame_4
+      frameIndex: 4
       cellRect:
         x: 5
         y: 8
         width: 56
         height: 43
       spriteId: c9a8ab55e906ebb4f8eb6e596dacc588
-    - name: character_icon_small_Frame_4
-      frameIndex: 4
+    - name: character_icon_small_Frame_5
+      frameIndex: 5
       cellRect:
         x: 5
         y: 8
         width: 53
         height: 46
       spriteId: 3c42d7b35a9b4344c8699037ae893e0c
-    - name: character_icon_small_Frame_5
-      frameIndex: 5
+    - name: character_icon_small_Frame_6
+      frameIndex: 6
       cellRect:
         x: 5
         y: 8
         width: 49
         height: 48
       spriteId: 7edb0cf510823e24f861e76129410970
-    - name: character_icon_small_Frame_6
-      frameIndex: 6
+    - name: character_icon_small_Frame_7
+      frameIndex: 7
       cellRect:
         x: 5
         y: 8
         width: 53
         height: 51
       spriteId: befc089bd9d5e0b4482e396656177ead
-    - name: character_icon_small_Frame_7
-      frameIndex: 7
+    - name: character_icon_small_Frame_8
+      frameIndex: 8
       cellRect:
         x: 5
         y: 8
         width: 54
         height: 54
       spriteId: 0e8a2e495f3f2f84ebb9f86eed414dd9
-    - name: character_icon_small_Frame_8
-      frameIndex: 8
-      cellRect:
-        x: 5
-        y: 8
-        width: 53
-        height: 49
-      spriteId: 7fe878362f9ffae4eb58809060dacd55
     - name: character_icon_small_Frame_9
       frameIndex: 9
       cellRect:
         x: 5
         y: 8
         width: 53
-        height: 52
-      spriteId: 9dfac12edfa23e444833c192baf3d3ba
+        height: 49
+      spriteId: 7fe878362f9ffae4eb58809060dacd55
     - name: character_icon_small_Frame_10
       frameIndex: 10
+      cellRect:
+        x: 5
+        y: 8
+        width: 53
+        height: 52
+      spriteId: 9dfac12edfa23e444833c192baf3d3ba
+    - name: character_icon_small_Frame_11
+      frameIndex: 11
       cellRect:
         x: 5
         y: 8
         width: 54
         height: 50
       spriteId: 043a737e131ea3a4f80a1bd38b508f67
-    - name: character_icon_small_Frame_11
-      frameIndex: 11
+    - name: character_icon_small_Frame_12
+      frameIndex: 12
       cellRect:
         x: 5
         y: 7
         width: 52
         height: 55
       spriteId: 994d0520627686846be5530de73e79b9
-    - name: character_icon_small_Frame_12
-      frameIndex: 12
+    - name: character_icon_small_Frame_13
+      frameIndex: 13
       cellRect:
         x: 5
         y: 7
         width: 50
         height: 50
       spriteId: 473ca7ae742a659488e8ca00f6a07608
-    - name: character_icon_small_Frame_13
-      frameIndex: 13
+    - name: character_icon_small_Frame_14
+      frameIndex: 14
       cellRect:
         x: 5
         y: 7
         width: 53
         height: 55
       spriteId: 9329b0a23f96f24459e5fc07e1e92c96
-    - name: character_icon_small_Frame_14
-      frameIndex: 14
+    - name: character_icon_small_Frame_15
+      frameIndex: 15
       cellRect:
         x: 5
         y: 6
         width: 55
         height: 52
       spriteId: eb1d58f6e4a023b4781509ecc92e1b7f
-    - name: character_icon_small_Frame_15
-      frameIndex: 15
+    - name: character_icon_small_Frame_16
+      frameIndex: 16
       cellRect:
         x: 5
         y: 8
@@ -573,11 +593,19 @@ ScriptedImporter:
     - name: character_icon_small_Frame_2
       frameIndex: 2
       cellRect:
+        x: 19
+        y: 17
+        width: 26
+        height: 26
+      spriteId: 6695c91e66d40b74a962fe7889714fe5
+    - name: character_icon_small_Frame_3
+      frameIndex: 3
+      cellRect:
         x: 32
         y: 11
         width: 19
         height: 19
-      spriteId: 6695c91e66d40b74a962fe7889714fe5
+      spriteId: 5862d5352295d9a49a64fb1b48c2efcb
     linkedCells: []
     parentIndex: -1
   platformSettings:

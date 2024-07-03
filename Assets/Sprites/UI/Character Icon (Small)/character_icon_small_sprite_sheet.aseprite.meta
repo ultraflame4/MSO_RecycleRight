@@ -229,8 +229,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 0
-      y: 128
+      x: 256
+      y: 192
       width: 64
       height: 64
     spriteID: 4d7371c6955036a4d8e27fcd772a313e
@@ -249,7 +249,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
+      x: 0
       y: 128
       width: 64
       height: 64
@@ -269,7 +269,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
+      x: 64
       y: 128
       width: 64
       height: 64
@@ -289,7 +289,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 192
+      x: 128
       y: 128
       width: 64
       height: 64
@@ -309,8 +309,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 0
-      y: 64
+      x: 192
+      y: 128
       width: 64
       height: 64
     spriteID: 77b2052c17bb2a043a8f9890ffb4e5ca
@@ -329,8 +329,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 64
+      x: 256
+      y: 128
       width: 64
       height: 64
     spriteID: 17293cec060c7d24cb8b7b40dd9c52ae
@@ -349,7 +349,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
+      x: 0
       y: 64
       width: 64
       height: 64
@@ -369,7 +369,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 192
+      x: 64
       y: 64
       width: 64
       height: 64
@@ -389,8 +389,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 0
-      y: 0
+      x: 128
+      y: 64
       width: 64
       height: 64
     spriteID: 8649409ea14352742a2224633111fe9a
@@ -409,8 +409,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 0
+      x: 192
+      y: 64
       width: 64
       height: 64
     spriteID: 945581779a9dfe84981b39d2c25b018b
@@ -429,8 +429,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
-      y: 0
+      x: 256
+      y: 64
       width: 64
       height: 64
     spriteID: 7d0b82700a189c5489f7153e94f140c6
@@ -449,11 +449,31 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 192
+      x: 0
       y: 0
       width: 64
       height: 64
     spriteID: 071dfc886ef97634aaea91cb58dcc41d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: character_icon_small_sprite_sheet_16
+    originalName: 
+    pivot: {x: 0.48, y: 0.43}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 64
+      height: 64
+    spriteID: d758f163d5387134594fe3b3f84b620e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -475,7 +495,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 256
+        width: 320
         height: 256
       spriteId: cc7d7531d36b15b499c0679390acc1ff
     linkedCells: []
@@ -556,4 +576,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 320, y: 256}
