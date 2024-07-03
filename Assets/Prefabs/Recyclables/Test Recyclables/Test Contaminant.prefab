@@ -307,7 +307,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   <navigation>k__BackingField: {fileID: -4371265464402291041}
-  move_speed: 0
+  healthbar: {fileID: 1397642903920785213}
+  maxHealth: 100
   sightRange: 3
   attackRange: 1
   attackDelay: 0.1
@@ -328,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stop_distance: 0.1
   slow_distance: 0.024
-  move_speed: 200
+  move_speed: 100
   fix_overshoot: 1
 --- !u!1 &2993720417284047056
 GameObject:

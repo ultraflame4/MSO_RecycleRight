@@ -4,6 +4,7 @@ using NPC.Contaminants.States;
 using Player;
 using Interfaces;
 using NPC.States;
+using UnityEngine.UI;
 
 namespace NPC.Contaminant
 {
@@ -18,9 +19,14 @@ namespace NPC.Contaminant
         public AttackPlayer state_AttackPlayer { get; private set; }
         #endregion
 
+
+        #region References
+        public Slider healthbar;
+        #endregion
+        [Header("Config")]
+        [Tooltip("Max health for this contaminant.")]
+        public float maxHealth = 100f;
         [Tooltip("The speed at which the contaminant moves")]
-        public float move_speed;
-        [Tooltip("The sight range of the contaminant.")]
         public float sightRange = 3f;
         [Tooltip("The attack range of the contaminant. If target is within this range, the contaminant will start attacking.")]
         public float attackRange = 1f;
@@ -63,7 +69,7 @@ namespace NPC.Contaminant
         public void Damage(float damage)
         {
             // todo
-            Debug.LogWarning("Contaminant damaged! THIS IS WIP! PLEASE IMPLEMENT!");
+            healthbar.value -= damage / maxHealth;
         }
 
         public void Clean(float clean_amount)

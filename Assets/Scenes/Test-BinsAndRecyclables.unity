@@ -371,9 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <container>k__BackingField: {fileID: 1075659761}
   <characters>k__BackingField:
-  - {fileID: 4443563819890852365, guid: ccfa256f4404a91409b5e50a0c988b4f, type: 3}
-  - {fileID: 4845950280257841287, guid: 591839dc056637c469c5a9e27a2ef3e1, type: 3}
-  - {fileID: 4381228617869542319, guid: 7ddb810bc1f028f4ba6646ed98a2f071, type: 3}
+  - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
   <placeholder>k__BackingField: {fileID: 571316343}
   CanSwitchCharacters: 1
 --- !u!114 &927129803
@@ -574,9 +572,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 987613528716712253, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.0000038146973
+    - target: {fileID: 1745649954879997374, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745649954879997374, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2242677056016477077, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
       propertyPath: m_Name
@@ -620,14 +622,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6006978828687435903, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7936546132793574932, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8879448512537715111, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
