@@ -20,7 +20,14 @@ namespace Level.Bins
         public bool pending_infestation { get; private set; }
         [field: SerializeField]
         public float infestation_percent { get; private set; }
-        public float Score = 0;
+        private float _score = 0;
+        public float Score{
+            get => _score;
+            set {
+                if (binState != BinState.CLEAN) return;
+                _score = value;
+            }
+        }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
         public TMP_Text scoreText;
 
