@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: ea3d985103e2d1c49b8da17e651b5795, type: 2}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillCooldown
       value: 12
@@ -19,6 +31,10 @@ PrefabInstance:
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillDuration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillTriggerTimeFrame
@@ -102,7 +118,7 @@ MonoBehaviour:
   attackStunDuration: 0.75
   knockback: 15
   cleanAmount: 5
-  areaOfEffect: 0
+  areaOfEffect: 1
   hitMask:
     serializedVersion: 2
     m_Bits: 384
