@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UI.Animations;
 using Entity.Data;
 using Player;
@@ -12,7 +13,7 @@ namespace UI
     {
         [SerializeField] Image profileImage;
         [SerializeField] Image healthBar;
-        [SerializeField] Text switchText;
+        [SerializeField] TextMeshProUGUI switchText;
 
         // reference animator component
         UIAnimator anim;
