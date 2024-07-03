@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profileImage: {fileID: 7424985952239220138}
   healthBar: {fileID: 5247160644630146133}
-  switchText: {fileID: 0}
+  switchText: {fileID: 5217326429758064167}
 --- !u!114 &3062574584723072495
 MonoBehaviour:
   m_ObjectHideFlags: 0
