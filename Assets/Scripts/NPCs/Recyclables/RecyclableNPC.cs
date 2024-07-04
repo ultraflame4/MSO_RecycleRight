@@ -30,6 +30,9 @@ namespace NPC.Recyclable
 
         public ContaminantNPC nearestContaminant { get; private set; } = null;
 
+        // The internal 'cleanliness' meter so that recyclables don't immediately get contaminated. When above 0, still considered clean.
+        private int secret_cleanliness = 3;
+
         private void Start()
         {
             state_Idle = new(this);
@@ -40,7 +43,10 @@ namespace NPC.Recyclable
         }
         public void Contaminate(float damage)
         {
-            // Debug.Log("Hit by Contaminant!");
+            if (secret_cleanliness > 0){
+                secret_cleanliness --;
+                return;
+            }
             var contaminant = Instantiate(contaminant_prefab);
             contaminant.transform.position = transform.position;
             Destroy(gameObject);
