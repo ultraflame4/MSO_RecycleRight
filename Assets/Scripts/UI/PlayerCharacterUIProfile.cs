@@ -14,12 +14,17 @@ namespace UI
         [SerializeField] Image profileImage;
         [SerializeField] Image healthBar;
         [SerializeField] TextMeshProUGUI switchText;
+        [SerializeField] GameObject unswitchableOverlay;
 
         // reference animator component
         UIAnimator anim;
+        // reference character manager component
+        CharacterManager characterManager;
+
         // caches
         Behaviour cacheCharacterBehaviour;
         PlayerCharacter cacheCharacterData;
+        Color cacheOriginalProfileColor;
         bool cacheCanTriggerSkill = false;
 
         // Start is called before the first frame update
@@ -27,6 +32,13 @@ namespace UI
         {
             // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
+            // get reference to character manager
+            characterManager = GameObject.FindWithTag("Player").GetComponent<CharacterManager>();
+            // cache original profile image color
+            cacheOriginalProfileColor = profileImage.color;
+            // disable unswitchable overlay on start
+            if (unswitchableOverlay == null) return; 
+            unswitchableOverlay.SetActive(false);
         }
 
         // Update is called once per frame
@@ -41,21 +53,27 @@ namespace UI
         /// <summary>
         /// Method to be called to set the image, health and text on the UI icon
         /// </summary>
-        /// <param name="player">A reference to the player of type PlayerController</param>
         /// <param name="characterToShow">The character to be displayed on this icon</param>
-        public void SetUI(PlayerController player, PlayerCharacter characterToShow)
+        public void SetUI(PlayerCharacter characterToShow)
         {
+            // ensure character manager is not null
+            if (characterManager == null) return;
+
             // cache player character behaviour
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
             // cache player character data
             cacheCharacterData = characterToShow;
 
-            // ensure sprite of character is not null, and set profile image
-            if (characterToShow.characterSprite != null)
-                profileImage.sprite = characterToShow.characterSprite;
             // do a null check for text, active player UI have no text, no need to update
             if (switchText != null)
-                switchText.text = (Array.IndexOf(player.CharacterManager.character_instances, characterToShow) + 1).ToString();
+                switchText.text = (Array.IndexOf(characterManager.character_instances, characterToShow) + 1).ToString();
+            
+            // ensure profile image is not null before attempting to set the sprite
+            if (profileImage == null) return;
+            // set profile image of character
+            profileImage.sprite = characterToShow.characterSprite;
+            // if no sprite is found, set default sprite, otherwise set color to white to show sprite
+            profileImage.color = characterToShow.characterSprite == null ? cacheOriginalProfileColor : Color.white;
         }
 
         // methods to update UI
@@ -83,10 +101,10 @@ namespace UI
 
         void CheckSwitchability()
         {
-            // ensure player character data is not null
-            if (cacheCharacterData == null) return;
+            // ensure player character data, unswitchable overlay and character manager is not null
+            if (cacheCharacterData == null || unswitchableOverlay == null || characterManager == null) return;
             // darken profile image if cannot switch into character
-            profileImage.color = cacheCharacterData.Switchable ? Color.white : Color.grey;
+            unswitchableOverlay.SetActive(!cacheCharacterData.Switchable || !characterManager.CanSwitchCharacters);
         }
     }
 }

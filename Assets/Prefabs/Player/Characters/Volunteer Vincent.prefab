@@ -21,6 +21,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillIcon
+      value: 
+      objectReference: {fileID: -1145719832218232496, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: characterName
       value: Volunteer Vincent
       objectReference: {fileID: 0}
@@ -36,6 +40,10 @@ PrefabInstance:
       propertyPath: attackDuration
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 3635251773814090647, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillTriggerTimeFrame
       value: 0.9
