@@ -10,6 +10,9 @@ namespace Player.Behaviours
         protected PlayerController character;
         protected PlayerCharacter data;
 
+        // public events to be called when skill is triggered
+        public event Action<PlayerCharacter> SkillTriggered;
+
         // handle skill cooldown
         Coroutine cooldown;
         bool canTriggerSkill = false;
@@ -62,7 +65,11 @@ namespace Player.Behaviours
 
         // methods to be overrided depending on the character
         public virtual void TriggerAttack() {}
-        public virtual void TriggerSkill() {}
+        public virtual void TriggerSkill() 
+        {
+            // invoke event whenever skill is triggered
+            SkillTriggered?.Invoke(data);
+        }
 
         /// <summary>
         /// Coroutine to wait a certain amount of time before calling a method to perform an action
