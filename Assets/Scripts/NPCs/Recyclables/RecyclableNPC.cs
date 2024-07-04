@@ -18,9 +18,11 @@ namespace NPC.Recyclable
         #endregion
 
         #region Config
-        [SerializeField]
+        
+        [SerializeField, Tooltip("The recyclable type.")]
         private RecyclableType _recyclableType;
-        public GameObject contaminant_prefab;
+        [SerializeField, Tooltip("The contaminant version of this recyclable.")]
+        private GameObject contaminant_prefab;
         public float sightRange = 3f;
         #endregion
 
@@ -54,6 +56,15 @@ namespace NPC.Recyclable
         {
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, sightRange);
+        }
+
+        private void OnValidate() {
+            if (recyclableType == RecyclableType.OTHERS){
+                Debug.LogWarning("The 'OTHER' Recyclable type is meant for non-recyclables / contaminants! Using it on Recyclables will have unintended effects! You should probably use ContaminantNPC instead!");
+            }
+            if (contaminant_prefab == null){
+                Debug.LogWarning("IMPORTANT! contaminant_prefab is a required field! When null, it will cause this recyclable to never spawn it's contaminated version");
+            }
         }
 
         public void OnZoneStart()
