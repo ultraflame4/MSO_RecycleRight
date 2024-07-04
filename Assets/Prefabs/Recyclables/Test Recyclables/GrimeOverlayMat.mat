@@ -73,9 +73,9 @@ Material:
     - _EdgeExtend: 0
     - _EnableExternalAlpha: 0
     - _Extend: 0
-    - _GrimePercent: 0.61
-    - _falloff: 278.6
-    - _pixelsPerUnit: 65
+    - _GrimePercent: 0
+    - _falloff: 500
+    - _pixelsPerUnit: 64.39
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
