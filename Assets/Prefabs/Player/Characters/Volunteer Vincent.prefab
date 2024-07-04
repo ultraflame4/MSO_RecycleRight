@@ -21,6 +21,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterName
+      value: Volunteer Vincent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillCooldown
       value: 6
       objectReference: {fileID: 0}
@@ -139,7 +143,7 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 384
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   passiveChance: 0.45
   buffScale: 1.5
   buffDuration: 10
-  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
