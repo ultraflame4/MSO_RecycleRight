@@ -6,12 +6,14 @@ namespace UI
 {
     public class PlayerCharacterUIProfileManager : MonoBehaviour
     {
-        [SerializeField] PlayerController player;
         [SerializeField] PlayerCharacterUIProfile[] UIIcons;
+        PlayerController player;
 
         // Start is called before the first frame update
         void Start()
         {
+            // get reference to player
+            player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
             // ensure player is not null
             if (player == null) return;
             // subscribe to character change event
