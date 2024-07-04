@@ -310,8 +310,8 @@ MonoBehaviour:
   healthbar: {fileID: 1397642903920785213}
   maxHealth: 100
   sightRange: 3
-  attackRange: 1
-  attackDelay: 0.1
+  attackRange: 0.65
+  attackDelay: 0.5
   attackDamage: 0
   cleanable: 0
   clean_prefab: {fileID: 0}

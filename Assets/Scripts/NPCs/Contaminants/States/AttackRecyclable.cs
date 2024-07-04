@@ -23,5 +23,7 @@ namespace NPC.Contaminants.States
             nearestRecyclable?.Contaminate(npc.attackDamage);
         }
 
+        
+
     }
 }

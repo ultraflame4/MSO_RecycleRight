@@ -60,6 +60,8 @@ namespace NPC.Contaminant
         {
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, sightRange);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
         }
 
         public void OnZoneStart()
