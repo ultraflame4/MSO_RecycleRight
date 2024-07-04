@@ -35,7 +35,7 @@ namespace Patterns.FSM
         /// Method to switch states. 
         /// </summary>
         /// <param name="nextState">State to transition into</param>
-        public void SwitchState(State<T> nextState)
+        public virtual void SwitchState(State<T> nextState)
         {   
             // set previous state
             State<T> prev = currentState;

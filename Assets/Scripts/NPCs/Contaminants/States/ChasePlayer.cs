@@ -28,11 +28,13 @@ namespace NPC.Contaminants.States
             if (!npc.playerInSight)
             {
                 npc.SwitchState(npc.state_Idle);
+                return;
             }
 
             if (npc.playerInAttackRange)
             {
                 npc.SwitchState(npc.state_AttackPlayer);   
+                return;
             }
         }
 

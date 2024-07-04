@@ -13,7 +13,9 @@ namespace NPC.Contaminants.States
     public class AttackTarget : BaseRecyclableState
     {
         protected ContaminantNPC npc;
-        public virtual IDamagable target {get;}
+        public virtual IDamagable target { get; }
+
+        private Coroutine attackCoroutine;
 
         public AttackTarget(ContaminantNPC npc) : base(npc, npc)
         {
@@ -27,7 +29,11 @@ namespace NPC.Contaminants.States
             navigation.ClearDestination();
             navigation.SetDestination(PlayerController.Instance.transform);
             // Start attack coroutine
-            npc.StartCoroutine(Attack());
+            if (attackCoroutine != null) // if coroutine active, stop it
+            {
+                npc.StopCoroutine(attackCoroutine);
+            }
+            attackCoroutine = npc.StartCoroutine(Attack());
         }
 
         IEnumerator Attack()
@@ -39,7 +45,8 @@ namespace NPC.Contaminants.States
             npc.SwitchState(npc.state_Idle);
         }
 
-        protected virtual void OnAttackTarget(){
+        protected virtual void OnAttackTarget()
+        {
             target?.Damage(npc.attackDamage);
         }
 
@@ -47,6 +54,10 @@ namespace NPC.Contaminants.States
         {
             base.Exit();
             navigation.ClearDestination();
+            if (attackCoroutine != null) // On exit state, stop all coroutines to prevent unexpected behaviours. (The state may end before coroutine does)
+            {
+                npc.StopCoroutine(attackCoroutine);
+            }
         }
     }
 }

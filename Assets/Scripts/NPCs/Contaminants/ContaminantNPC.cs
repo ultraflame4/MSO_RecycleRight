@@ -5,6 +5,7 @@ using Player;
 using Interfaces;
 using NPC.States;
 using UnityEngine.UI;
+using Patterns.FSM;
 
 namespace NPC.Contaminant
 {
@@ -81,8 +82,16 @@ namespace NPC.Contaminant
 
         public void Stun(float stun_duration)
         {
+            // Debug.Log($"Stunned for {stun_duration}");
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
+        }
+
+        public override void SwitchState(State<FSMRecyclableNPC> nextState)
+        {
+            base.SwitchState(nextState);
+            // Debug.Log($"Switching to {nextState}");
+
         }
     }
 }

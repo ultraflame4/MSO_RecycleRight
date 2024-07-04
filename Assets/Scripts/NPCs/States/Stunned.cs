@@ -34,6 +34,7 @@ namespace NPC.States
         {
             base.Exit();
             navigation.enabled = true;
+            stun_timer = 0;
         }
     }
 }
