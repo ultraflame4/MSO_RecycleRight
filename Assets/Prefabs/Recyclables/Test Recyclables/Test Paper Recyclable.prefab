@@ -102,8 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   <navigation>k__BackingField: {fileID: 3382951207035353726}
-  <levelManager>k__BackingField: {fileID: 0}
   _recyclableType: 0
+  contaminant_prefab: {fileID: 2242677056016477077, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
   sightRange: 3
 --- !u!114 &3382951207035353726
 MonoBehaviour:
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stop_distance: 0.1
   slow_distance: 0.024
-  move_speed: 200
+  move_speed: 90
   fix_overshoot: 1
 --- !u!50 &4818698516221350111
 Rigidbody2D:

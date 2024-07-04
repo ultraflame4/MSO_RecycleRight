@@ -59,7 +59,7 @@ namespace NPC.Recyclable.States
                 if (levelManager.current_zone.PositionWithinBufferZone(transform.position))
                 {
                     CalculateEdgeForce();
-                    direction += current_edge_force * 1.5f; // Push away from edges with a multiplier to make it more effective
+                    direction += current_edge_force;
                     direction.Normalize();
                 }
             }
