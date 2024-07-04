@@ -24,6 +24,7 @@ namespace UI
         // caches
         Behaviour cacheCharacterBehaviour;
         PlayerCharacter cacheCharacterData;
+        Color cacheOriginalProfileColor;
         bool cacheCanTriggerSkill = false;
 
         // Start is called before the first frame update
@@ -33,6 +34,8 @@ namespace UI
             anim = GetComponent<UIAnimator>();
             // get reference to character manager
             characterManager = GameObject.FindWithTag("Player").GetComponent<CharacterManager>();
+            // cache original profile image color
+            cacheOriginalProfileColor = profileImage.color;
             // disable unswitchable overlay on start
             if (unswitchableOverlay == null) return; 
             unswitchableOverlay.SetActive(false);
@@ -61,12 +64,16 @@ namespace UI
             // cache player character data
             cacheCharacterData = characterToShow;
 
-            // ensure sprite of character is not null, and set profile image
-            if (characterToShow.characterSprite != null)
-                profileImage.sprite = characterToShow.characterSprite;
             // do a null check for text, active player UI have no text, no need to update
             if (switchText != null)
                 switchText.text = (Array.IndexOf(characterManager.character_instances, characterToShow) + 1).ToString();
+            
+            // ensure profile image is not null before attempting to set the sprite
+            if (profileImage == null) return;
+            // set profile image of character
+            profileImage.sprite = characterToShow.characterSprite;
+            // if no sprite is found, set default sprite, otherwise set color to white to show sprite
+            profileImage.color = characterToShow.characterSprite == null ? cacheOriginalProfileColor : Color.white;
         }
 
         // methods to update UI

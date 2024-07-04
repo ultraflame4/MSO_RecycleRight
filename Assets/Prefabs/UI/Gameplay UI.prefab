@@ -112,6 +112,7 @@ MonoBehaviour:
   profileImage: {fileID: 6185794117626864057}
   healthBar: {fileID: 3942545538906799009}
   switchText: {fileID: 0}
+  unswitchableOverlay: {fileID: 0}
 --- !u!1 &647315790458813921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,8 +1225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 41.3, y: -80.1}
-  m_SizeDelta: {x: 59.306, y: 142.3342}
+  m_AnchoredPosition: {x: 45, y: -67}
+  m_SizeDelta: {x: 61.4185, y: 114.6479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3996130380639323840
 CanvasRenderer:
@@ -1248,14 +1249,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8078432, g: 0.8078432, b: 0.8078432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3249646083560479351, guid: fb8f4b826a57bae4d9d1e4cfc50f16cd, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
