@@ -19,7 +19,7 @@ namespace Level
 
         public LevelZone current_zone => zones[current_zone_index];
 
-        public event Action<LevelManager, LevelZone> ZoneChanged;
+        public event Action<LevelZone> ZoneChanged;
 
         private static LevelManager _instance;
         public static LevelManager Instance {
@@ -54,7 +54,7 @@ namespace Level
             current_zone_index = index;
             camera.target_position = current_zone.transform.position;
             // call event when moving to new zone
-            ZoneChanged?.Invoke(this, current_zone);
+            ZoneChanged?.Invoke(current_zone);
         }
 
         private void OnValidate()

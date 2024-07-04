@@ -19,7 +19,7 @@ namespace Player
         /// <summary>
         /// Event that is triggered everytime the player changes character
         /// </summary>
-        public event Action<PlayerCharacter> CharacterChanged;
+        public event Action<PlayerCharacter, PlayerCharacter> CharacterChanged;
 
         public void Awake()
         {
@@ -58,16 +58,25 @@ namespace Player
                 Debug.LogWarning("Tried to switch to an invalid character index.");
                 return;
             }
+            // check if can switch to character
+            if (!character_instances[index].Switchable) return;
 
+            // cache previous character
+            PlayerCharacter prev = null;
             // switch character
             for (int i = 0; i < character_instances.Length; i++)
             {
                 PlayerCharacter character = character_instances[i];
+                // do not disable characters that are cleaning
+                if (character.IsCleaning) continue;
+                // check if character is active
+                if (character.Enabled) prev = character;
+                // update spawn of character
                 character.SetSpawn(i == index);
             }
 
             // invoke character switch event
-            CharacterChanged?.Invoke(character_instances[index]);
+            CharacterChanged?.Invoke(prev, character_instances[index]);
         }
 
         private void Update()

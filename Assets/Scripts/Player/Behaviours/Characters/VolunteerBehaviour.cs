@@ -12,13 +12,6 @@ namespace Player.Behaviours
         [SerializeField] float buffScale = 1.5f;
         [SerializeField] float buffDuration = 15f;
 
-        [Header("VFX")]
-        [SerializeField] GameObject hitEffects;
-
-        // skill variables to cache current active character components
-        PlayerCharacter cacheActiveData;
-        Animator cacheActiveAnimator;
-
         public override void TriggerAttack()
         {
             // boolean to check if passive is triggered
@@ -33,8 +26,6 @@ namespace Player.Behaviours
                 knockback *= 2;
                 // todo: add some effect to indicate this has been triggered
             }
-            // spawn vfx
-            SpawnVFX();
             // trigger base attack
             base.TriggerAttack();
             // check if passive is triggered, if so, revert changes
@@ -47,56 +38,24 @@ namespace Player.Behaviours
         public override void TriggerSkill()
         {
             base.TriggerSkill();
-            // set animation speed
-            character.anim.speed = buffScale;
-            // set animation duration
-            data.attackDuration *= 1 / buffDuration;
-            // cache current active player
-            cacheActiveData = data;
-            cacheActiveAnimator = character.anim;
-            // subscribe to characcter change event
-            character.CharacterManager.CharacterChanged += OnCharacterChange;
+            // apply buff
+            SetBuffActive(true);
             // start coroutine to count buff duration
-            StartCoroutine(CountDuration(buffDuration, () => 
-                {
-                    // reset animation speed
-                    cacheActiveAnimator.speed = 1f;
-                    // reset animation duration
-                    cacheActiveData.attackDuration *= buffDuration;
-                    // unsubscribe to character change event
-                    character.CharacterManager.CharacterChanged -= OnCharacterChange;
-                }
-            ));
+            StartCoroutine(CountDuration(buffDuration, () => SetBuffActive(false)));
         }
 
         // private methods
-        void SpawnVFX()
+        void SetBuffActive(bool active)
         {
-            // ensure hit effects prefab is provided
-            if (hitEffects == null) return;
-            // spawn hit vfx
-            GameObject vfx = Instantiate(
-                hitEffects, 
-                character.pointer.position, 
-                Quaternion.identity, 
-                character.transform
-            );
-            // set vfx direction
-            vfx.transform.up = character.pointer.up;
-        }
-
-        // event listener to transfer changes to animator speed to new character
-        void OnCharacterChange(PlayerCharacter data)
-        {
-            // reset buffs on previous character
-            cacheActiveAnimator.speed = 1f;
-            cacheActiveData.attackDuration *= buffDuration;
-            // apply buffs to new character
-            character.anim.speed = buffScale;
-            data.attackDuration *= 1 / buffDuration;
-            // cache new character
-            cacheActiveAnimator = character.anim;
-            cacheActiveData = data;
+            // apply attack speed increase to all characters by looping through all characters
+            foreach (PlayerCharacter otherCharaData in character.CharacterManager.character_instances)
+            {
+                Animator otherCharaAnim = otherCharaData.GetComponent<Animator>();
+                if (otherCharaAnim == null) continue;
+                otherCharaAnim.speed = active ? buffScale : 1f;
+                otherCharaData.attackDuration *= active ? 1 / buffScale : buffScale;
+                otherCharaData.movementSpeed *= active ? buffScale : 1 / buffScale;
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Interfaces;
 
@@ -29,17 +30,25 @@ namespace Player.Behaviours
         [Tooltip("Layer mask of enemies that can be hit")]
         [SerializeField] protected LayerMask hitMask;
 
+        [Header("VFX")]
+        [Tooltip("Effect to spawn when attack is triggered")]
+        [SerializeField] protected GameObject hitEffects;
+
         // perform default melee attack
         public override void TriggerAttack()
         {
             base.TriggerAttack();
             // array to store all hit enemies
             Collider2D[] hits;
-            // check if attacks to AoE, and detect enemies depending on that
-            hits = areaOfEffect ? 
-                Physics2D.OverlapCircleAll(character.pointer.position, attackRange, hitMask) : 
-                new Collider2D[] { Physics2D.OverlapCircle(character.pointer.position, attackRange, hitMask) };
-            
+            // detect enemies in both direction of pointer, and area around self
+            hits = Physics2D.OverlapCircleAll(character.pointer.position, attackRange, hitMask)
+                .Concat(Physics2D.OverlapCircleAll(character.transform.position, attackRange, hitMask))
+                .ToArray();
+            // sort by distance from self
+            hits = hits.OrderBy(x => Vector3.Distance(x.transform.position, transform.position)).ToArray();
+            // only keep first element if AoE is false
+            if (!areaOfEffect && hits.Length > 0) hits = new Collider2D[] { hits[0] };
+
             // loop through hits list and apply hit
             foreach (Collider2D hit in hits)
             {
@@ -60,6 +69,19 @@ namespace Player.Behaviours
                 hit.GetComponent<Rigidbody2D>()?
                     .AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
             }
+
+            // spawn hit vfx
+            // ensure hit effects prefab is provided
+            if (hitEffects == null) return;
+            // spawn hit vfx
+            GameObject vfx = Instantiate(
+                hitEffects, 
+                character.pointer.position, 
+                Quaternion.identity, 
+                character.transform
+            );
+            // set vfx direction
+            vfx.transform.up = character.pointer.up;
         }
 
         protected void OnDrawGizmosSelected()
@@ -70,6 +92,7 @@ namespace Player.Behaviours
             if (character == null) return;
             // show attack range
             Gizmos.DrawWireSphere(character.pointer.position, attackRange);
+            Gizmos.DrawWireSphere(character.transform.position, attackRange);
         }
     }
 }

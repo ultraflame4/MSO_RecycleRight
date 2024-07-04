@@ -50,7 +50,7 @@ namespace Player.FSM
         }
 
         // event listener (any state transition)
-        public void OnZoneChange(LevelManager levelManager, LevelZone current_zone)
+        public void OnZoneChange(LevelZone current_zone)
         {
             // set current zone
             currentZone = current_zone;

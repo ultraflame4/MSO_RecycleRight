@@ -11,7 +11,23 @@ PrefabInstance:
     - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: ea3d985103e2d1c49b8da17e651b5795, type: 2}
+      objectReference: {fileID: 9100000, guid: 4b9bcf10688f1b243a9f9233dcff291a, type: 2}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterName
+      value: Maid Mary
+      objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillCooldown
       value: 12
@@ -21,8 +37,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackDuration
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillTriggerTimeFrame
-      value: 0.15
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackTriggerTimeFrame
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,10 +126,11 @@ MonoBehaviour:
   attackStunDuration: 0.75
   knockback: 15
   cleanAmount: 5
-  areaOfEffect: 0
+  areaOfEffect: 1
   hitMask:
     serializedVersion: 2
     m_Bits: 384
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   tickDamage: 1
   tickStunDuration: 0.15
   tickSpeed: 1

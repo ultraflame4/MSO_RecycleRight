@@ -32,6 +32,7 @@ namespace Player
         // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
+        public LevelManager LevelManager => levelManager;
         public Transform pointer => transform.GetChild(0);
 
         
@@ -69,7 +70,7 @@ namespace Player
             characterManager ??= GetComponent<CharacterManager>();
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
-            OnCharacterChange(CharacterManager.character_instances[0]);
+            OnCharacterChange(null, CharacterManager.character_instances[0]);
             // subscribe to character change event
             CharacterManager.CharacterChanged += OnCharacterChange;
 
@@ -99,8 +100,10 @@ namespace Player
         #endregion
 
         #region Event Listeners
-        void OnCharacterChange(PlayerCharacter data)
+        void OnCharacterChange(PlayerCharacter prevData, PlayerCharacter data)
         {
+            // do not switch to character if character cannot be switched into
+            if (!data.Switchable) return;
             // set data to new character
             Data = data;
             // set animator

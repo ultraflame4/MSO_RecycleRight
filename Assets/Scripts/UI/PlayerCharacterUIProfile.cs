@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UI.Animations;
 using Entity.Data;
 using Player;
@@ -12,7 +13,7 @@ namespace UI
     {
         [SerializeField] Image profileImage;
         [SerializeField] Image healthBar;
-        [SerializeField] Text switchText;
+        [SerializeField] TextMeshProUGUI switchText;
 
         // reference animator component
         UIAnimator anim;
@@ -24,13 +25,17 @@ namespace UI
         // Start is called before the first frame update
         void Start()
         {
+            // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
         }
 
         // Update is called once per frame
         void Update()
         {
+            // update UI
+            CheckSwitchability();
             CheckSkillReadyAnimation();
+            UpdateCharacterHealth();
         }
 
         /// <summary>
@@ -44,10 +49,6 @@ namespace UI
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
             // cache player character data
             cacheCharacterData = characterToShow;
-            // check if skill is ready and update animation
-            CheckSkillReadyAnimation();
-            // set health bar to show current character health
-            UpdateCharacterHealth();
 
             // ensure sprite of character is not null, and set profile image
             if (characterToShow.characterSprite != null)
@@ -78,6 +79,14 @@ namespace UI
             cacheCanTriggerSkill = cacheCharacterBehaviour.CanTriggerSkill;
             // play animation depending on if skill can currently be triggered
             anim.Play(cacheCanTriggerSkill ? "FireOn" : "Static");
+        }
+
+        void CheckSwitchability()
+        {
+            // ensure player character data is not null
+            if (cacheCharacterData == null) return;
+            // darken profile image if cannot switch into character
+            profileImage.color = cacheCharacterData.Switchable ? Color.white : Color.grey;
         }
     }
 }
