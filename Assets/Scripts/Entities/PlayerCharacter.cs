@@ -16,6 +16,7 @@ namespace Entity.Data
         [Header("Skills")]
         [SerializeField] public float skillCooldown = 15f;
         [SerializeField, Range(0f, 1f)] public float skillTriggerTimeFrame = 0.5f;
+        [SerializeField] public Sprite skillIcon;
 
         [Header("Animation Durations")]
         [SerializeField] public float attackDuration = 1.5f;
