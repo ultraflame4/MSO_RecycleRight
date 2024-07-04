@@ -15,6 +15,7 @@ namespace UI
         [SerializeField] Image profileImage;
         [SerializeField] Image healthBar;
         [SerializeField] TextMeshProUGUI switchText;
+        [SerializeField] GameObject unswitchableOverlay;
 
         // reference animator component
         UIAnimator anim;
@@ -28,6 +29,9 @@ namespace UI
         {
             // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
+            // disable unswitchable overlay on start
+            if (unswitchableOverlay == null) return; 
+            unswitchableOverlay.SetActive(false);
         }
 
         // Update is called once per frame
@@ -84,10 +88,10 @@ namespace UI
 
         void CheckSwitchability()
         {
-            // ensure player character data is not null
-            if (cacheCharacterData == null) return;
+            // ensure player character data and unswitchable overlay is not null
+            if (cacheCharacterData == null || unswitchableOverlay == null) return;
             // darken profile image if cannot switch into character
-            profileImage.color = cacheCharacterData.Switchable ? Color.white : Color.grey;
+            unswitchableOverlay.SetActive(!cacheCharacterData.Switchable);
         }
     }
 }
