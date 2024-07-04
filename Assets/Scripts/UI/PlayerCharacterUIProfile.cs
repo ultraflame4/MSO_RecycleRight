@@ -6,6 +6,7 @@ using UI.Animations;
 using Entity.Data;
 using Player;
 using Behaviour = Player.Behaviours.Behaviour;
+using UnityEngine.TextCore.Text;
 
 namespace UI
 {
@@ -41,9 +42,9 @@ namespace UI
         /// <summary>
         /// Method to be called to set the image, health and text on the UI icon
         /// </summary>
-        /// <param name="player">A reference to the player of type PlayerController</param>
+        /// <param name="characterManager">A reference to the player character manager</param>
         /// <param name="characterToShow">The character to be displayed on this icon</param>
-        public void SetUI(PlayerController player, PlayerCharacter characterToShow)
+        public void SetUI(CharacterManager characterManager, PlayerCharacter characterToShow)
         {
             // cache player character behaviour
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
@@ -55,7 +56,7 @@ namespace UI
                 profileImage.sprite = characterToShow.characterSprite;
             // do a null check for text, active player UI have no text, no need to update
             if (switchText != null)
-                switchText.text = (Array.IndexOf(player.CharacterManager.character_instances, characterToShow) + 1).ToString();
+                switchText.text = (Array.IndexOf(characterManager.character_instances, characterToShow) + 1).ToString();
         }
 
         // methods to update UI

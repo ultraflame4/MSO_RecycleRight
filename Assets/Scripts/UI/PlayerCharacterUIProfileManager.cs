@@ -7,19 +7,19 @@ namespace UI
     public class PlayerCharacterUIProfileManager : MonoBehaviour
     {
         [SerializeField] PlayerCharacterUIProfile[] UIIcons;
-        PlayerController player;
+        CharacterManager characterManager;
 
         // Start is called before the first frame update
         void Start()
         {
-            // get reference to player
-            player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-            // ensure player is not null
-            if (player == null) return;
+            // get reference to character manager
+            characterManager = GameObject.FindWithTag("Player").GetComponent<CharacterManager>();
+            // ensure character manager is not null
+            if (characterManager == null) return;
             // subscribe to character change event
-            player.CharacterManager.CharacterChanged += OnCharacterChange;
+            characterManager.CharacterChanged += OnCharacterChange;
             // start by setting all UI icons
-            SetAllUI(player.CharacterManager.character_instances[0]);
+            SetAllUI(characterManager.character_instances[0]);
         }
 
         // Update is called once per frame
@@ -32,19 +32,19 @@ namespace UI
         void SetAllUI(PlayerCharacter activeCharacter)
         {
             // ensure UI icons length is within range of character party
-            if (UIIcons.Length < player.CharacterManager.character_instances.Length)
+            if (UIIcons.Length < characterManager.character_instances.Length)
             {
                 Debug.LogError("There are more character instances than UI icons provided. (PlayerCharacterUIProfileManager.cs)");
                 return;
             }
 
             // cache first character in array
-            PlayerCharacter cachedCharacter =  player.CharacterManager.character_instances[0];
+            PlayerCharacter cachedCharacter =  characterManager.character_instances[0];
             // loop through characters in the party and set the active character
-            for (int i = 0; i < player.CharacterManager.character_instances.Length; i++)
+            for (int i = 0; i < characterManager.character_instances.Length; i++)
             {
                 // get the current character
-                PlayerCharacter character = player.CharacterManager.character_instances[i];
+                PlayerCharacter character = characterManager.character_instances[i];
                 // variable to change depending on the character to set
                 PlayerCharacter characterToSet = character;
 
@@ -60,18 +60,18 @@ namespace UI
                 // if reached the current location of the active character, set the UI to the previously cached character
                 if (character == activeCharacter && i != 0) characterToSet = cachedCharacter;
 
-                UIIcons[i].SetUI(player, characterToSet);
+                UIIcons[i].SetUI(characterManager, characterToSet);
             }
         }
 
         void UpdateUIShown()
         {
-            // ensure player is not null
-            if (player == null) return;
+            // ensure character manager is not null
+            if (characterManager == null) return;
             // check if there are more UI elements than characters in the party
-            if (UIIcons.Length <= player.CharacterManager.character_instances.Length) return;
+            if (UIIcons.Length <= characterManager.character_instances.Length) return;
             // hide UI that does not have a correspoinding character in the party
-            for (int i = 0; i < (UIIcons.Length - player.CharacterManager.character_instances.Length); i++)
+            for (int i = 0; i < (UIIcons.Length - characterManager.character_instances.Length); i++)
             {
                 // do not hide first icon (active icon)
                 if (i == (UIIcons.Length - 1)) break;
