@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: ea3d985103e2d1c49b8da17e651b5795, type: 2}
+      objectReference: {fileID: 9100000, guid: 4b9bcf10688f1b243a9f9233dcff291a, type: 2}
     - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -25,16 +25,20 @@ PrefabInstance:
       value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterName
+      value: Maid Mary
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillCooldown
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillDuration
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: attackDuration
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillTriggerTimeFrame
