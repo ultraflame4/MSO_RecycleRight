@@ -44,6 +44,7 @@ namespace Level
 
         public void Start()
         {
+            
             zones = transform.GetComponentsInChildren<LevelZone>();
             MoveToZone(0);
         }

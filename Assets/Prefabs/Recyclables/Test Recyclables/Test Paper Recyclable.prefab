@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stop_distance: 0.1
   slow_distance: 0.024
-  move_speed: 200
+  move_speed: 90
   fix_overshoot: 1
 --- !u!50 &4818698516221350111
 Rigidbody2D:
