@@ -60,7 +60,7 @@ namespace UI
                 // if reached the current location of the active character, set the UI to the previously cached character
                 if (character == activeCharacter && i != 0) characterToSet = cachedCharacter;
 
-                UIIcons[i].SetUI(characterManager, characterToSet);
+                UIIcons[i].SetUI(characterToSet);
             }
         }
 

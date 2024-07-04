@@ -6,7 +6,6 @@ using UI.Animations;
 using Entity.Data;
 using Player;
 using Behaviour = Player.Behaviours.Behaviour;
-using UnityEngine.TextCore.Text;
 
 namespace UI
 {
@@ -19,6 +18,9 @@ namespace UI
 
         // reference animator component
         UIAnimator anim;
+        // reference character manager component
+        CharacterManager characterManager;
+
         // caches
         Behaviour cacheCharacterBehaviour;
         PlayerCharacter cacheCharacterData;
@@ -29,6 +31,8 @@ namespace UI
         {
             // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
+            // get reference to character manager
+            characterManager = GameObject.FindWithTag("Player").GetComponent<CharacterManager>();
             // disable unswitchable overlay on start
             if (unswitchableOverlay == null) return; 
             unswitchableOverlay.SetActive(false);
@@ -46,10 +50,12 @@ namespace UI
         /// <summary>
         /// Method to be called to set the image, health and text on the UI icon
         /// </summary>
-        /// <param name="characterManager">A reference to the player character manager</param>
         /// <param name="characterToShow">The character to be displayed on this icon</param>
-        public void SetUI(CharacterManager characterManager, PlayerCharacter characterToShow)
+        public void SetUI(PlayerCharacter characterToShow)
         {
+            // ensure character manager is not null
+            if (characterManager == null) return;
+
             // cache player character behaviour
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
             // cache player character data
@@ -88,10 +94,10 @@ namespace UI
 
         void CheckSwitchability()
         {
-            // ensure player character data and unswitchable overlay is not null
-            if (cacheCharacterData == null || unswitchableOverlay == null) return;
+            // ensure player character data, unswitchable overlay and character manager is not null
+            if (cacheCharacterData == null || unswitchableOverlay == null || characterManager == null) return;
             // darken profile image if cannot switch into character
-            unswitchableOverlay.SetActive(!cacheCharacterData.Switchable);
+            unswitchableOverlay.SetActive(!cacheCharacterData.Switchable || !characterManager.CanSwitchCharacters);
         }
     }
 }
