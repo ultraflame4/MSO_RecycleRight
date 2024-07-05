@@ -21,8 +21,16 @@ PrefabInstance:
       value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillIcon
+      value: 
+      objectReference: {fileID: 3155246883752744553, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: characterName
       value: Waste Collector Wilson
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillCooldown
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillDuration
@@ -32,6 +40,10 @@ PrefabInstance:
       propertyPath: attackDuration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: -4739837699357375595, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillTriggerTimeFrame
       value: 0
