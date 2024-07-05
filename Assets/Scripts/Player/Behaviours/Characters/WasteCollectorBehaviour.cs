@@ -54,6 +54,9 @@ namespace Player.Behaviours
 
             // apply grab damage to hit enemy
             hit.GetComponent<IDamagable>()?.Damage(grabDamage);
+            // spawn grab vfx
+            SpawnVFX(grabEffect);
+
             // cache original movement speed
             originalMovementSpeed = character.Data.movementSpeed;
             // set grab position of enemy, and apply offset based on which direction the player is facing
@@ -75,6 +78,8 @@ namespace Player.Behaviours
             hit.GetComponent<Rigidbody2D>()?.AddForce(
                 (character.pointer.position - character.transform.position).normalized * 
                 throwForce, ForceMode2D.Impulse);
+            // spawn throw vfx
+            SpawnVFX(throwEffect);
 
             // reset anything that was flipped
             if (flippedCanSkill) 
@@ -87,11 +92,28 @@ namespace Player.Behaviours
             // after throw, reset hit to null
             hit = null;
         }
+
+        void SpawnVFX(GameObject effect)
+        {
+            // ensure effects prefab is provided
+            if (effect == null) return;
+            // spawn hit vfx
+            GameObject vfx = Instantiate(
+                effect, 
+                character.pointer.position, 
+                Quaternion.identity, 
+                character.transform
+            );
+            // set vfx direction
+            vfx.transform.up = character.pointer.up;
+        }
         #endregion
 
         #region MonoBehaviour Callbacks
         void Update()
         {
+            // update animator
+            character.anim.SetBool("Grabbed", grabbed);
             // do not run if nothing is grabbed
             if (!grabbed) return;
             // ensure cannot use skill when grabbed something
