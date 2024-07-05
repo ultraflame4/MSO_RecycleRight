@@ -101,9 +101,21 @@ PrefabInstance:
       value: Maid Mary
       objectReference: {fileID: 0}
     - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4166666
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.4166667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4088218517254759407, guid: 9d8b1a2b053610249974972808b24269, type: 3}
+      objectReference: {fileID: -2233654393134734872, guid: 9d8b1a2b053610249974972808b24269, type: 3}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
