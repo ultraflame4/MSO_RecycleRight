@@ -1,5 +1,6 @@
 using UnityEngine;
 using Interfaces;
+using Unity.VisualScripting;
 
 namespace Player.Behaviours
 {
@@ -71,14 +72,9 @@ namespace Player.Behaviours
             // spawn grab vfx
             SpawnVFX(grabEffect);
 
-            // cache original movement speed
-            originalMovementSpeed = character.Data.movementSpeed;
             // set grab position of enemy, and apply offset based on which direction the player is facing
             grabPosition = (Vector2) character.transform.position + 
                 ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
-            // reset flip
-            flippedCanSkill = false;
-            flippedCanSwitch = false;
         }
 
         void Throw()
@@ -94,12 +90,20 @@ namespace Player.Behaviours
                 throwForce, ForceMode2D.Impulse);
             // spawn throw vfx
             SpawnVFX(throwEffect);
+            // reset grab
+            ResetGrab();
+        }
 
+        void ResetGrab()
+        {
             // reset anything that was flipped
             if (flippedCanSkill) 
                 canTriggerSkill = true;
             if (flippedCanSwitch) 
                 character.CharacterManager.CanSwitchCharacters = true;
+            // reset flip
+            flippedCanSkill = false;
+            flippedCanSwitch = false;
 
             // reset movement speed
             character.Data.movementSpeed = originalMovementSpeed;
@@ -124,10 +128,16 @@ namespace Player.Behaviours
         #endregion
 
         #region MonoBehaviour Callbacks
+        void Start()
+        {
+            // set original movement speed
+            originalMovementSpeed = data.movementSpeed;
+        }
+
         void Update()
         {
-            // update animator
-            character.anim.SetBool("Grabbed", grabbed);
+            // if is enabled and not grabbing, reset grab
+            if (data != null && data.Enabled && !grabbed) ResetGrab();
             // do not run if nothing is grabbed
             if (!grabbed) return;
             // ensure cannot use skill when grabbed something
