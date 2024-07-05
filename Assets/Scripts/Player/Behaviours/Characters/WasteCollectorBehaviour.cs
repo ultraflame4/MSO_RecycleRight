@@ -1,6 +1,5 @@
 using UnityEngine;
 using Interfaces;
-using Unity.VisualScripting;
 
 namespace Player.Behaviours
 {
