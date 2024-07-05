@@ -25,9 +25,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _GrimePercent: -0
+    - _GrimePercent: 0.5
     - _falloff: 201.49
-    - _pixelsPerUnit: 251
+    - _pixelsPerUnit: 128
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &5977661703009335853
