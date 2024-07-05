@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabDamage: 2
   grabRange: 1.5
-  grabOffset: {x: 1, y: 0}
+  grabOffset: {x: 1, y: 0.5}
   hitMask:
     serializedVersion: 2
     m_Bits: 384

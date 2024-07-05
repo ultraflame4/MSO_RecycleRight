@@ -8,7 +8,7 @@ namespace Player.Behaviours
         [Header("Attack: Grab")]
         [SerializeField] float grabDamage = 2f;
         [SerializeField] float grabRange = 1.5f;
-        [SerializeField] Vector3 grabOffset;
+        [SerializeField] Vector2 grabOffset;
         [SerializeField] LayerMask hitMask;
         [SerializeField] GameObject grabEffect;
 
@@ -19,7 +19,7 @@ namespace Player.Behaviours
 
         #region Grab Attack Variables
         Collider2D hit;
-        Vector3 grabPosition;
+        Vector2 grabPosition;
         float originalMovementSpeed;
         bool flippedCanSkill, flippedCanSwitch = false;
         bool grabbed => hit != null;
@@ -56,10 +56,9 @@ namespace Player.Behaviours
             hit.GetComponent<IDamagable>()?.Damage(grabDamage);
             // cache original movement speed
             originalMovementSpeed = character.Data.movementSpeed;
-
             // set grab position of enemy, and apply offset based on which direction the player is facing
-            grabPosition = character.transform.position + grabOffset;
-            grabPosition.x *= character.Data.renderer.flipX ? -1f : 1f;
+            grabPosition = (Vector2) character.transform.position + 
+                ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
             // reset flip
             flippedCanSkill = false;
             flippedCanSwitch = false;
