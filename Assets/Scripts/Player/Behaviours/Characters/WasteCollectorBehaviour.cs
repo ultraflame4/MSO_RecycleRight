@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Entity.Data;
+using Interfaces;
 
 namespace Player.Behaviours
 {
@@ -10,6 +8,7 @@ namespace Player.Behaviours
         [Header("Attack: Grab")]
         [SerializeField] float grabDamage = 2f;
         [SerializeField] float grabRange = 1.5f;
+        [SerializeField] Vector3 grabOffset;
         [SerializeField] LayerMask hitMask;
         [SerializeField] GameObject grabEffect;
 
@@ -20,6 +19,7 @@ namespace Player.Behaviours
 
         #region Grab Attack Variables
         Collider2D hit;
+        Vector3 grabPosition;
         float originalMovementSpeed;
         bool flippedCanSkill, flippedCanSwitch = false;
         bool grabbed => hit != null;
@@ -49,6 +49,17 @@ namespace Player.Behaviours
             hit = Physics2D.OverlapCircle(character.transform.position, grabRange, hitMask);
             // if nothing is detected around player, try finding enemies around pointer
             hit = grabbed ? hit : Physics2D.OverlapCircle(character.pointer.position, grabRange, hitMask);
+            // check if something is hit
+            if (!grabbed) return;
+
+            // apply grab damage to hit enemy
+            hit.GetComponent<IDamagable>()?.Damage(grabDamage);
+            // cache original movement speed
+            originalMovementSpeed = character.Data.movementSpeed;
+
+            // set grab position of enemy, and apply offset based on which direction the player is facing
+            grabPosition = character.transform.position + grabOffset;
+            grabPosition.x *= character.Data.renderer.flipX ? -1f : 1f;
             // reset flip
             flippedCanSkill = false;
             flippedCanSwitch = false;
@@ -59,30 +70,27 @@ namespace Player.Behaviours
             // ensure hit is not null, ensure something has been grabbed
             if (!grabbed) return;
 
+            // apply throw damage to hit enemy
+            hit.GetComponent<IDamagable>()?.Damage(throwDamage);
+            // throw the hit enemy
+            hit.GetComponent<Rigidbody2D>()?.AddForce(
+                (character.pointer.position - character.transform.position).normalized * 
+                throwForce, ForceMode2D.Impulse);
+
             // reset anything that was flipped
             if (flippedCanSkill) 
                 canTriggerSkill = true;
             if (flippedCanSwitch) 
                 character.CharacterManager.CanSwitchCharacters = true;
-            // reset flip
-            flippedCanSkill = false;
-            flippedCanSwitch = false;
 
             // reset movement speed
-            data.movementSpeed = originalMovementSpeed;
-
+            character.Data.movementSpeed = originalMovementSpeed;
             // after throw, reset hit to null
             hit = null;
         }
         #endregion
 
         #region MonoBehaviour Callbacks
-        void Start()
-        {
-            // cache original movement speed
-            originalMovementSpeed = data.movementSpeed;
-        }
-
         void Update()
         {
             // do not run if nothing is grabbed
@@ -105,6 +113,8 @@ namespace Player.Behaviours
         {
             // do not run if nothing is grabbed
             if (!grabbed) return;
+            // lock position of hit enemy
+            hit.transform.position = grabPosition;
             // set character movement speed to 0 to prevent movement
             data.movementSpeed = 0f;
         }

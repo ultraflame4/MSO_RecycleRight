@@ -47,8 +47,9 @@ namespace Player.FSM
         {
             base.LogicUpdate();
 
-            // update sprite flip if moving
-            if (move_input.x != 0) character.Data.renderer.flipX = move_input.x < 0f;
+            // update sprite flip if moving, and movement speed is not 0
+            if (move_input.x != 0 && character.Data.movementSpeed > 0f) 
+                character.Data.renderer.flipX = move_input.x < 0f;
 
             // check for transition to skill state, ensure can trigger skill
             if (skill_input && character.CharacterBehaviour.CanTriggerSkill)
