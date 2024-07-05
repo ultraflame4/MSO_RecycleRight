@@ -17,6 +17,9 @@ namespace Player.Behaviours
         [SerializeField] float throwForce = 25f;
         [SerializeField] GameObject throwEffect;
 
+        [Header("Skill")]
+        [SerializeField] GameObject garbageTruckPrefab;
+
         #region Grab Attack Variables
         Collider2D hit;
         Vector2 grabPosition;
@@ -39,6 +42,17 @@ namespace Player.Behaviours
         public override void TriggerSkill()
         {
             base.TriggerSkill();
+            // do not run if truck prefab is not found
+            if (garbageTruckPrefab == null) return;
+            // ensure sprite is not flipped
+            character.Data.renderer.flipX = false;
+            // get horizontal size of screen
+            float screenHorSize = (Camera.main.orthographicSize * 2) * (Screen.width / Screen.height);
+            // get position of left screen edge
+            Vector2 edgePosition = Camera.main.transform.position;
+            edgePosition.x -= screenHorSize;
+            // instantiate truck prefab
+            Instantiate(garbageTruckPrefab, edgePosition, Quaternion.identity);
         }
         #endregion
 

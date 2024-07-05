@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillCooldown
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillDuration
@@ -131,3 +131,4 @@ MonoBehaviour:
   throwDamage: 3
   throwForce: 25
   throwEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
+  garbageTruckPrefab: {fileID: 1001936688018432966, guid: db588a3d9116d5d44aee3b344c406de9, type: 3}
