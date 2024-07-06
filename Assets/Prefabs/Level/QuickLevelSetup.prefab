@@ -94,7 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <zones>k__BackingField:
   - {fileID: 1990800496328826679}
-  - {fileID: 0}
   <current_zone_index>k__BackingField: 0
   <camera>k__BackingField: {fileID: 0}
   debug_move_to_current_zone: 0
