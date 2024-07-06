@@ -7,6 +7,9 @@ public class GrimeController : MonoBehaviour
     [SerializeField, Tooltip("The amount of grime / dirt to show. Range between 0-1"), Range(0, 1)]
     private float _grimeAmount;
 
+    /// <summary>
+    /// The amount of grime / dirt to show. Ranges between 0-1
+    /// </summary>
     public float GrimeAmount
     {
         get => _grimeAmount;
