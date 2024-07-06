@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4391210720078617544}
   - component: {fileID: 6037717592131285158}
+  - component: {fileID: 2414146129980149966}
   m_Layer: 8
   m_Name: GrimeOverlay
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42dae454a2376484795a82bb5b09c52d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,6 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2414146129980149966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586597678014085804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990d9131b1da4364c8ffc476a0a17291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6037717592131285158}
 --- !u!1 &2055126443518451980
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +541,7 @@ MonoBehaviour:
   current_state_name: None
   <navigation>k__BackingField: {fileID: -4371265464402291041}
   healthbar: {fileID: 1397642903920785213}
+  grimeController: {fileID: 0}
   maxHealth: 100
   sightRange: 3
   attackRange: 0.65

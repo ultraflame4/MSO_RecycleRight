@@ -23,7 +23,9 @@ namespace NPC.Contaminant
 
         #region References
         public Slider healthbar;
+        public GrimeController grimeController;
         #endregion
+        
         [Header("Config")]
         [Tooltip("Max health for this contaminant.")]
         public float maxHealth = 100f;

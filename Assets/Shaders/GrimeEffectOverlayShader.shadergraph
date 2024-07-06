@@ -778,10 +778,10 @@
     "m_Guid": {
         "m_GuidSerialized": "3c24ee75-a06e-4bcb-aff2-01eb0a3362bc"
     },
-    "m_Name": "GrimePercent",
+    "m_Name": "percent",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "GrimePercent",
-    "m_DefaultReferenceName": "_GrimePercent",
+    "m_RefNameGeneratedByDisplayName": "percent",
+    "m_DefaultReferenceName": "_percent",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -792,7 +792,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": 0.10000000149011612,
-    "m_FloatType": 0,
+    "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
@@ -3210,7 +3210,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "df9c2cd4eb874ec4860ddeee972bdd1a",
     "m_Id": 0,
-    "m_DisplayName": "GrimePercent",
+    "m_DisplayName": "percent",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
