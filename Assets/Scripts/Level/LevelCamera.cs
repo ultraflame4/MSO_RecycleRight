@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Level
@@ -8,7 +9,7 @@ namespace Level
         public new Camera camera { get; private set; }
 
         [Tooltip("The target position for the camera.")]
-        public Vector3 target_position;
+        public Vector3 zone_position;
         [Tooltip("Camera damping")]
         public float smoothTime = 0.3f;
 
@@ -63,6 +64,7 @@ namespace Level
                 Adjust();
             }
 
+            Vector3 target_position = Vector3.Lerp(PlayerController.Instance.transform.position, zone_position, 0.8f);
             target_position.z = camera.transform.position.z;
             transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
         }

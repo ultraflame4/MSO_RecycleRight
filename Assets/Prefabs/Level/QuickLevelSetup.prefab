@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add0bec2d3a39f4ab5ed89caee897cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <size>k__BackingField: {x: 33, y: 17}
-  <offset>k__BackingField: {x: 1, y: -1}
+  <size>k__BackingField: {x: 35, y: 20}
+  <offset>k__BackingField: {x: 1, y: -0.1}
   <buffer_zone_size>k__BackingField: 1
   <player_start_offset>k__BackingField: 5
 --- !u!1 &5953387964923012740
