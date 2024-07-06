@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6037717592131285158}
+  _grimeAmount: 0
 --- !u!1 &2055126443518451980
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,14 +542,14 @@ MonoBehaviour:
   current_state_name: None
   <navigation>k__BackingField: {fileID: -4371265464402291041}
   healthbar: {fileID: 1397642903920785213}
-  grimeController: {fileID: 0}
+  grimeController: {fileID: 2414146129980149966}
   maxHealth: 100
   sightRange: 3
   attackRange: 0.65
   attackDelay: 0.5
   attackDamage: 0
   cleanable: 0
-  clean_prefab: {fileID: 0}
+  clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
 --- !u!114 &-4371265464402291041
 MonoBehaviour:
   m_ObjectHideFlags: 0

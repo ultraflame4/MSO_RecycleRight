@@ -25,7 +25,7 @@ namespace NPC.Contaminant
         public Slider healthbar;
         public GrimeController grimeController;
         #endregion
-        
+
         [Header("Config")]
         [Tooltip("Max health for this contaminant.")]
         public float maxHealth = 100f;
@@ -73,7 +73,6 @@ namespace NPC.Contaminant
 
         public void Damage(float damage)
         {
-            // todo
             healthbar.value -= damage / maxHealth;
         }
 
@@ -81,7 +80,12 @@ namespace NPC.Contaminant
         {
             Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             if (!cleanable) return;
-            // todo
+            grimeController.GrimeAmount -= clean_amount;
+            if (grimeController.GrimeAmount <= 0.1)
+            {
+                Instantiate(clean_prefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
 
         public void Stun(float stun_duration)
