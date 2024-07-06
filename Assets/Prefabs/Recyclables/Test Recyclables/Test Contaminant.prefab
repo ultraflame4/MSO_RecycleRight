@@ -547,7 +547,7 @@ MonoBehaviour:
   sightRange: 3
   attackRange: 0.65
   attackDelay: 0.5
-  attackDamage: 0
+  attackDamage: 10
   cleanable: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
 --- !u!114 &-4371265464402291041
