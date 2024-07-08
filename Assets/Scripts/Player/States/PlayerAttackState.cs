@@ -15,7 +15,7 @@ namespace Player.FSM
         public override void Enter()
         {
             // update attack duration
-            duration = character.Data.attackDuration;
+            duration = character.Data.attackDuration * character.Data.attackMultiplier;
             // count attack duration
             base.Enter();
             // set attack animation trigger

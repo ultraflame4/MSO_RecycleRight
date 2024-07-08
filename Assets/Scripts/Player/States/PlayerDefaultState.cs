@@ -78,7 +78,8 @@ namespace Player.FSM
             }
 
             // set velocity based on movement input
-            rb.velocity = move_input.normalized * character.Data.movementSpeed * Time.deltaTime;
+            rb.velocity = move_input.normalized * character.Data.movementSpeed * 
+                character.Data.movementMultiplier * Time.deltaTime;
         }
 
         public override void Exit()

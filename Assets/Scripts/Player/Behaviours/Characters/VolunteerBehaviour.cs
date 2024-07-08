@@ -53,8 +53,8 @@ namespace Player.Behaviours
                 Animator otherCharaAnim = otherCharaData.GetComponent<Animator>();
                 if (otherCharaAnim == null) continue;
                 otherCharaAnim.speed = active ? buffScale : 1f;
-                otherCharaData.attackDuration *= active ? 1 / buffScale : buffScale;
-                otherCharaData.movementSpeed *= active ? buffScale : 1 / buffScale;
+                otherCharaData.movementMultiplier = active ? buffScale : 1f;
+                otherCharaData.attackMultiplier = active ? 1f / buffScale : 1f;
             }
         }
     }

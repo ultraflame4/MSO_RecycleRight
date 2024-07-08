@@ -23,6 +23,12 @@ namespace Entity.Data
         // animation durations
         [HideInInspector] public float attackDuration = 1.5f;
         [HideInInspector] public float skillDuration = 2f;
+        #endregion
+
+        #region Other Variables
+        // multipliers
+        [HideInInspector] public float movementMultiplier = 1f;
+        [HideInInspector] public float attackMultiplier = 1f;
 
         // booleans
         [HideInInspector] public bool IsCleaning = false;
