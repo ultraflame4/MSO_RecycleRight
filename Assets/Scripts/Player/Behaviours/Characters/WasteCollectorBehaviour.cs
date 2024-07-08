@@ -23,6 +23,7 @@ namespace Player.Behaviours
         #region Grab Attack Variables
         Collider2D hit;
         Vector2 grabPosition;
+        Animator anim;
         float originalMovementSpeed;
         bool flippedCanSkill, flippedCanSwitch = false;
         bool grabbed => hit != null;
@@ -63,6 +64,8 @@ namespace Player.Behaviours
             hit = Physics2D.OverlapCircle(character.transform.position, grabRange, hitMask);
             // if nothing is detected around player, try finding enemies around pointer
             hit = grabbed ? hit : Physics2D.OverlapCircle(character.pointer.position, grabRange, hitMask);
+            // update grab animation boolean
+            anim.SetBool("Grabbed", grabbed);
             // check if something is hit
             if (!grabbed) return;
 
@@ -108,6 +111,8 @@ namespace Player.Behaviours
             character.Data.movementSpeed = originalMovementSpeed;
             // after throw, reset hit to null
             hit = null;
+            // update grab animation boolean
+            anim.SetBool("Grabbed", grabbed);
         }
 
         void SpawnVFX(GameObject effect)
@@ -129,6 +134,8 @@ namespace Player.Behaviours
         #region MonoBehaviour Callbacks
         void Start()
         {
+            // get reference to animator
+            anim = GetComponent<Animator>();
             // set original movement speed
             originalMovementSpeed = data.movementSpeed;
         }
