@@ -56,7 +56,7 @@ namespace Entity.Data
             skillTriggerTimeFrame = objectData.skillTriggerTimeFrame;
             skillIcon = objectData.skillIcon;
             attackDuration = objectData.attackDuration;
-            skillDuration = objectData.skillCooldown;
+            skillDuration = objectData.skillDuration;
             // run base method
             base.Awake();
         }
