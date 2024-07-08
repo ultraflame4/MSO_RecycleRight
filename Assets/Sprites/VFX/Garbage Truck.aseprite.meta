@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 12
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638560433183276148
+  platformSettingsDirtyTick: 638560436704521072
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Garbage Truck
     originalName: 
-    pivot: {x: 0.54838705, y: -0.9464286}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 196
       width: 124
-      height: 56
+      height: 55
     spriteID: 331d3823dcc91c844ae274a09fc7f18d
     spriteBone: []
     spriteOutline: []
@@ -140,16 +140,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: -49}
+    uvTransform: {x: 4, y: 196}
   - name: Garbage Truck_Frame_1
     originalName: 
-    pivot: {x: 0.54838705, y: -0.9464286}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 68
+      y: 4
       width: 124
       height: 56
     spriteID: e30af26757a48a94a8a33355e9a62241
@@ -160,16 +160,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 15}
+    uvTransform: {x: 4, y: 4}
   - name: Garbage Truck_Frame_2
     originalName: 
-    pivot: {x: 0.54838705, y: -0.9464286}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 132
+      y: 68
       width: 124
       height: 56
     spriteID: 5f1fa19e486e57a41b0cdce922940138
@@ -180,16 +180,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 79}
+    uvTransform: {x: 4, y: 68}
   - name: Garbage Truck_Frame_3
     originalName: 
-    pivot: {x: 0.54838705, y: -0.9464286}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 196
+      y: 132
       width: 124
       height: 56
     spriteID: d3fa788a01eb8e04d9f024eb82eb0ea5
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 143}
+    uvTransform: {x: 4, y: 132}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -214,33 +214,33 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: -4
-        y: 0
-        width: 128
-        height: 128
+        y: 54
+        width: 124
+        height: 55
       spriteId: 331d3823dcc91c844ae274a09fc7f18d
     - name: Garbage Truck_Frame_1
       frameIndex: 1
       cellRect:
         x: -4
-        y: 0
-        width: 128
-        height: 128
+        y: 53
+        width: 124
+        height: 56
       spriteId: e30af26757a48a94a8a33355e9a62241
     - name: Garbage Truck_Frame_2
       frameIndex: 2
       cellRect:
         x: -4
-        y: 0
-        width: 128
-        height: 128
+        y: 53
+        width: 124
+        height: 56
       spriteId: 5f1fa19e486e57a41b0cdce922940138
     - name: Garbage Truck_Frame_3
       frameIndex: 3
       cellRect:
         x: -4
-        y: 0
-        width: 128
-        height: 128
+        y: 53
+        width: 124
+        height: 56
       spriteId: d3fa788a01eb8e04d9f024eb82eb0ea5
     linkedCells: []
     parentIndex: -1
