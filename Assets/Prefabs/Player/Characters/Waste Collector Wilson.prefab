@@ -25,6 +25,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3155246883752744553, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: characterName
       value: Waste Collector Wilson
       objectReference: {fileID: 0}
