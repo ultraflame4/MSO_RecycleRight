@@ -1187,6 +1187,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3098136573413635867, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
+      propertyPath: <characters>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098136573413635867, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
+      propertyPath: <characters>k__BackingField.Array.data[2]
+      value: 
+      objectReference: {fileID: 3310225104491134764, guid: 0c01898533548bd47953b3e126cacd82, type: 3}
     - target: {fileID: 4417281709216151005, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

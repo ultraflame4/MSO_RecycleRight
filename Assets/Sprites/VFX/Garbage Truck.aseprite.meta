@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69e66d80348491d4aa3237fbcec8c3de
+guid: 55e89821093de3048af861c6fb81ed4e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 52
+    spritePixelsToUnits: 12
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638557155389503304
+  platformSettingsDirtyTick: 638560440348072893
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Character Skill Icons
+  - name: Garbage Truck
     originalName: 
-    pivot: {x: 0.5, y: -0.23809524}
+    pivot: {x: 0.5294118, y: -1.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 33
-      width: 22
-      height: 21
-    spriteID: 18724b2e730c80f4bafcc2572ffc51e0
+      y: 175
+      width: 119
+      height: 48
+    spriteID: 331d3823dcc91c844ae274a09fc7f18d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,19 +140,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 33}
-  - name: Character Skill Icons_Frame_0
+    uvTransform: {x: 4, y: 175}
+  - name: Garbage Truck_Frame_1
     originalName: 
-    pivot: {x: 0.47826087, y: -0.23809524}
+    pivot: {x: 0.5294118, y: -1.0816326}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 23
-      height: 21
-    spriteID: 8f36b12008be9bc4cbb981cec0b46e43
+      width: 119
+      height: 49
+    spriteID: e30af26757a48a94a8a33355e9a62241
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,18 +161,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Character Skill Icons_Frame_2
+  - name: Garbage Truck_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.31578946}
+    pivot: {x: 0.5294118, y: -1.0816326}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 4
-      width: 24
-      height: 19
-    spriteID: d9d661425911c2048bca24bf7dc81e5d
+      x: 4
+      y: 61
+      width: 119
+      height: 49
+    spriteID: 5f1fa19e486e57a41b0cdce922940138
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,40 +180,68 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 35, y: 4}
+    uvTransform: {x: 4, y: 61}
+  - name: Garbage Truck_Frame_3
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.0816326}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 118
+      width: 119
+      height: 49
+    spriteID: d3fa788a01eb8e04d9f024eb82eb0ea5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 118}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 915981722
-    name: Character Skill Icons
+    guid: -1427125226
+    name: Garbage Truck
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Character Skill Icons_Frame_0
+    - name: Garbage Truck_Frame_0
       frameIndex: 0
       cellRect:
-        x: 5
-        y: 5
-        width: 22
-        height: 21
-      spriteId: 18724b2e730c80f4bafcc2572ffc51e0
-    - name: Character Skill Icons_Frame_1
+        x: 1
+        y: 54
+        width: 119
+        height: 48
+      spriteId: 331d3823dcc91c844ae274a09fc7f18d
+    - name: Garbage Truck_Frame_1
       frameIndex: 1
       cellRect:
-        x: 5
-        y: 5
-        width: 23
-        height: 21
-      spriteId: 8f36b12008be9bc4cbb981cec0b46e43
-    - name: Character Skill Icons_Frame_2
+        x: 1
+        y: 53
+        width: 119
+        height: 49
+      spriteId: e30af26757a48a94a8a33355e9a62241
+    - name: Garbage Truck_Frame_2
       frameIndex: 2
       cellRect:
-        x: 4
-        y: 6
-        width: 24
-        height: 19
-      spriteId: d9d661425911c2048bca24bf7dc81e5d
+        x: 1
+        y: 53
+        width: 119
+        height: 49
+      spriteId: 5f1fa19e486e57a41b0cdce922940138
+    - name: Garbage Truck_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 1
+        y: 53
+        width: 119
+        height: 49
+      spriteId: d3fa788a01eb8e04d9f024eb82eb0ea5
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -289,19 +317,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  - name: tvOS
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 128, y: 128}
