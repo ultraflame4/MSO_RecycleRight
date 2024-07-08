@@ -15,7 +15,7 @@ namespace Player.Behaviours
 
         // handle skill cooldown
         Coroutine cooldown;
-        bool canTriggerSkill = false;
+        protected bool canTriggerSkill = false;
 
         /// <summary>
         /// Property that returns if skill cooldown is over. Setting it to true would automatically delay the assignment of this property by the skill cooldown. 
@@ -47,7 +47,7 @@ namespace Player.Behaviours
             }
         }
 
-        void Start()
+        void Awake()
         {
             // get reference to player controller
             character = GetComponentInParent<PlayerController>();

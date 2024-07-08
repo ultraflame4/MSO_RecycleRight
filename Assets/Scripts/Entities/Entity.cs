@@ -4,18 +4,16 @@ namespace Entity.Data
 {
     public class Entity : MonoBehaviour 
     {
-        [Header("Character Information")]
-        public string characterName;
-        [TextArea(3, 10)]
-        public string characterDesc;
-        public Sprite characterSprite;
+        [HideInInspector] public string characterName;
+        [HideInInspector] public string characterDesc;
+        [HideInInspector] public Sprite characterSprite;
 
         // public properties
         public new SpriteRenderer renderer { get; private set; }
         public new Collider2D collider { get; private set; }
         public bool Enabled { get; private set; } = true;
 
-        void Awake()
+        protected void Awake()
         {
             // get reference to components
             renderer = GetComponent<SpriteRenderer>();
