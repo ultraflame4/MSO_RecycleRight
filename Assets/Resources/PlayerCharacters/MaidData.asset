@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6428e1feadfac2b44842b36725aae1f5, type: 3}
+  m_Script: {fileID: 0}
   m_Name: MaidData
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Maid Mary
   characterDesc: 
   characterSprite: {fileID: -2199317966230432783, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
   movementSpeed: 250
-  attackTriggerTimeFrame: 0.85
+  attackTriggerTimeFrame: 0.853
   skillCooldown: 12
   skillTriggerTimeFrame: 0.25
   skillIcon: {fileID: -7817459201985428684, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
