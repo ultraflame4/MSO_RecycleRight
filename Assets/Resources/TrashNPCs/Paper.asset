@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Paper
   characterDesc: 
   characterSprite: {fileID: 0}
-  trashNPCType: 0
+  trashNPCType: 1
   common:
     maxHealth: 100
     movementSpeed: 250
