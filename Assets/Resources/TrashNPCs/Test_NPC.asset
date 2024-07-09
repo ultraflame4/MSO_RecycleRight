@@ -15,10 +15,11 @@ MonoBehaviour:
   characterName: 
   characterDesc: 
   characterSprite: {fileID: 0}
-  maxHealth: 100
-  movementSpeed: 250
-  sightRange: 3
-  trashNPCType: 1
+  trashNPCType: 0
+  common:
+    maxHealth: 100
+    movementSpeed: 250
+    sightRange: 4
   recyclableConfig:
     recyclableType: 0
     recyclablePrefab: {fileID: 0}
