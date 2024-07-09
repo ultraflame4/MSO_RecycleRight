@@ -123,7 +123,7 @@ namespace Level.Bins
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (binState == BinState.CLEANING) return;
+            if (binState != BinState.CLEAN) return;
             var recyclable = other.GetComponent<FSMRecyclableNPC>();
             if (recyclable == null) return;
             Debug.Log($"Recyclable {recyclable} Type {recyclable.recyclableType} entered bin {this} of type {this.recyclableType}");
