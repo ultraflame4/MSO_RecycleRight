@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191619e370b2c66408a2bddde83ac700, type: 3}
+  m_Script: {fileID: 0}
   m_Name: WasteCollectorData
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Waste Collector Wilson
   characterDesc: 
   characterSprite: {fileID: -4739837699357375595, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
@@ -20,6 +20,6 @@ MonoBehaviour:
   attackTriggerTimeFrame: 0.5
   skillCooldown: 7
   skillTriggerTimeFrame: 0
-  skillIcon: {fileID: 3155246883752744553, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+  skillIcon: {fileID: 0}
   attackDuration: 0.7
   skillDuration: 2
