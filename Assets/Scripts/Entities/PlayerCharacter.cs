@@ -5,7 +5,7 @@ namespace Entity.Data
     public class PlayerCharacter : Entity
     {
         // inspector fields
-        [SerializeField] PlayerCharacterObject objectData;
+        [SerializeField] PlayerCharacterSO objectData;
 
         #region Object Data
         // stats

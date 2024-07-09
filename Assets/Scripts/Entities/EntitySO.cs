@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EntityObject", menuName = "ScriptableObjects/EntityObject", order = 1)]
-public class EntityObject : ScriptableObject
+public class EntitySO : ScriptableObject
 {
     [Header("Character Information")]
     public string characterName;
