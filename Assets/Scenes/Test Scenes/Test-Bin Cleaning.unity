@@ -153,8 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 35, y: 20}
+  <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 1
-  <player_start_offset>k__BackingField: 3
+  <player_startpos_offset>k__BackingField: {x: 2, y: 0}
 --- !u!4 &460220738
 Transform:
   m_ObjectHideFlags: 0
@@ -185,6 +186,38 @@ PrefabInstance:
     - target: {fileID: 2563933589082131684, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
       propertyPath: m_Name
       value: Gameplay UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285677558600845115, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285677558600845115, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285677558600845115, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285677558600845115, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621879727509143277, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621879727509143277, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621879727509143277, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621879727509143277, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7503080226411607385, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
       propertyPath: m_Pivot.x
@@ -439,6 +472,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1745649954879997374, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745649954879997374, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2242677056016477077, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
       propertyPath: m_Name
       value: Test Contaminant
@@ -684,6 +725,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9144881778111748206, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 2955612406747713084, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -718,8 +762,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 35, y: 20}
+  <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 1
-  <player_start_offset>k__BackingField: 3
+  <player_startpos_offset>k__BackingField: {x: 2, y: 0}
 --- !u!4 &1842558448
 Transform:
   m_ObjectHideFlags: 0
@@ -886,9 +931,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <camera>k__BackingField: {fileID: 2002934058}
-  target_position: {x: 0, y: 0, z: 0}
+  zone_position: {x: 0, y: 0, z: 0}
   smoothTime: 0.3
   aspect: {x: 16, y: 9}
+  allowPeeking: 0
 --- !u!1001 &933763301926788535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -949,6 +995,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9144881778111748206, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 2955612406747713084, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
