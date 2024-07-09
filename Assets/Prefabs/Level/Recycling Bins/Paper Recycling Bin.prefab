@@ -106,6 +106,7 @@ MonoBehaviour:
   <pending_infestation>k__BackingField: 0
   <infestation_percent>k__BackingField: 0
   scoreText: {fileID: 9108521643822776249}
+  contaminatedSprite: {fileID: 1335499128783244354, guid: 7a0937451b9eab64ca96b1fe2534ba7c, type: 3}
 --- !u!61 &4733919160138857592
 BoxCollider2D:
   m_ObjectHideFlags: 0

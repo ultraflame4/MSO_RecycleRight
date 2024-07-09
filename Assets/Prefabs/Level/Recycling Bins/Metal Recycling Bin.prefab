@@ -57,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8978807193514718397, guid: 7c53595c543d8dd408e9ccf02cd56f3c, type: 3}
+      propertyPath: contaminatedSprite
+      value: 
+      objectReference: {fileID: -3721359685667120332, guid: 7a0937451b9eab64ca96b1fe2534ba7c, type: 3}
+    - target: {fileID: 8978807193514718397, guid: 7c53595c543d8dd408e9ccf02cd56f3c, type: 3}
       propertyPath: <recyclableType>k__BackingField
       value: 2
       objectReference: {fileID: 0}

@@ -13,6 +13,10 @@ PrefabInstance:
       value: Plastic Recycling Bin
       objectReference: {fileID: 0}
     - target: {fileID: 2306597006772178457, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+      propertyPath: contaminatedSprite
+      value: 
+      objectReference: {fileID: 3570410876166405835, guid: 7a0937451b9eab64ca96b1fe2534ba7c, type: 3}
+    - target: {fileID: 2306597006772178457, guid: 124d045367ab7654b95b27107a18631f, type: 3}
       propertyPath: <recyclableType>k__BackingField
       value: 1
       objectReference: {fileID: 0}
