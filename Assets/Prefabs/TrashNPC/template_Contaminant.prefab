@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 3481361625278285539}
   - component: {fileID: 8690451943301939409}
   m_Layer: 8
-  m_Name: template_Contaminant
+  m_Name: template_contaminant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +848,7 @@ MonoBehaviour:
   attackDamage: 0
   cleanable: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
-  npcData: {fileID: 11400000, guid: 87aac9bbccc3d28408a69d6d42da3e06, type: 2}
+  npcData: {fileID: 0}
 --- !u!114 &8690451943301939409
 MonoBehaviour:
   m_ObjectHideFlags: 0

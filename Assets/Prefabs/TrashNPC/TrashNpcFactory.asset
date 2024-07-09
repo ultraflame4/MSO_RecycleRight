@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07eeb2e57ad23d04781974c2797de2ef, type: 3}
   m_Name: TrashNpcFactory
   m_EditorClassIdentifier: 
-  templateRecyclablePrefab: {fileID: 0}
+  templateRecyclablePrefab: {fileID: 5423529344811936447, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
   templateContaminantPrefab: {fileID: 6991750651239364505, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
