@@ -110,7 +110,7 @@ public class TrashNpcSOInspector : Editor
         if (missingContaminantPrefab && GUILayout.Button("Create Contaminant prefab"))
         {
             var filepath = EditorUtility.SaveFilePanel("Create Contaminant NPC", "", $"{trashNpcData.name}_Contaminant.prefab", "prefab");
-            trashNpcData.contaminantConfig.contaminantPrefab = factory.CreateRecyclable(filepath, trashNpcData);
+            trashNpcData.contaminantConfig.contaminantPrefab = factory.CreateContaminant(filepath, trashNpcData);
         }
 
 
