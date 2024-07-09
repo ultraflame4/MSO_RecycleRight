@@ -27,20 +27,17 @@ namespace NPC.Contaminant
         #endregion
 
         [Header("Config")]
-        [Tooltip("Max health for this contaminant.")]
-        public float maxHealth = 100f;
-        [Tooltip("The speed at which the contaminant moves")]
-        public float sightRange = 3f;
-        [Tooltip("The attack range of the contaminant. If target is within this range, the contaminant will start attacking.")]
-        public float attackRange = 1f;
-        [Tooltip("The delay before each attack. in seconds")]
-        public float attackDelay = .1f;
-        [Tooltip("The damage of each attack")]
-        public float attackDamage;
-        [Tooltip("Whether the contaminant can be cleaned")]
-        public bool cleanable;
+        public CommonConfig commonConfig;
+        public ContaminantConfig dataConfig;
+        public float maxHealth => commonConfig.maxHealth;
+        public float sightRange => commonConfig.sightRange;
+        public float attackRange => dataConfig.attackRange;
+        public float attackDelay => dataConfig.attackDelay;
+        public float attackDamage => dataConfig.attackDamage;
+        public bool cleanable => dataConfig.cleanable;
         [Tooltip("The prefab to instantiate when the contaminant is cleaned.")]
         public GameObject clean_prefab;
+        
 
         public override RecyclableType recyclableType => RecyclableType.OTHERS;
         public bool playerInSight => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < sightRange;

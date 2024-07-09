@@ -34,20 +34,27 @@ public class RecyclableConfig
     public RecyclableType recyclableType;
     public GameObject recyclablePrefab;
 }
-[CreateAssetMenu(fileName = "NPC", menuName = "ScriptableObjects/TrashNpc", order = 1)]
-public class TrashNpcSO : EntitySO
+
+[Serializable]
+public class CommonConfig
 {
-    [Header("Base Stats")]
     [Tooltip("Max health for this contaminant / recyclable.")]
     public float maxHealth = 100f;
     [Tooltip("Movement speed for this contaminant / recyclable.")]
     public float movementSpeed = 250f;
     [Tooltip("How far this contaminant / recyclable can see. (Detection range)")]
     public float sightRange = 3f;
+}
+
+[CreateAssetMenu(fileName = "NPC", menuName = "ScriptableObjects/TrashNpc", order = 1)]
+public class TrashNpcSO : EntitySO
+{
+
 
     [Tooltip("Base NPC type.")]
     public TrashNPCType trashNPCType;
-    
+    public CommonConfig common;
+
     public RecyclableConfig recyclableConfig;
 
     public ContaminantConfig contaminantConfig;
