@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using NPC;
-using Patterns.FSM;
 
 namespace Level.Bins
 {
@@ -30,6 +29,21 @@ namespace Level.Bins
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
         public TMP_Text scoreText;
+
+        // sprites
+        public Sprite contaminatedSprite;
+        private Sprite cleanedSprite;
+        private new SpriteRenderer renderer;
+
+        private void Start()
+        {
+            renderer = GetComponent<SpriteRenderer>();
+            if (renderer == null) return;
+            cleanedSprite = renderer.sprite;
+            // check if already contaminated, if so change sprite to contaminated
+            if (binState == BinState.CLEAN || contaminatedSprite == null) return;
+            renderer.sprite = contaminatedSprite;
+        }
 
         private void Update()
         {
@@ -61,6 +75,9 @@ namespace Level.Bins
             pending_infestation = true;
             infestation_percent = 0;
             Score = 0;
+
+            if (renderer == null) return;
+            renderer.sprite = contaminatedSprite;
         }
 
         /// <summary>
@@ -81,6 +98,8 @@ namespace Level.Bins
         public void CompleteClean()
         {
             binState = BinState.CLEAN;
+            if (renderer == null) return;
+            renderer.sprite = cleanedSprite;
         }
 
         /// <summary>
@@ -96,6 +115,9 @@ namespace Level.Bins
             pending_infestation = false;
             infestation_percent = 0;
             Score = 0;
+
+            if (renderer == null) return;
+            renderer.sprite = contaminatedSprite;
         }
 
 

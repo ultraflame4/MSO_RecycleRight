@@ -72,15 +72,16 @@ namespace UI
             activeIndex = Array.IndexOf(characterManager.character_instances, curr);
             // set character skill icon, ensure icon image is not null
             if (iconImage != null) iconImage.sprite = curr.skillIcon;
+            // get behaviour of new character
+            Behaviour characterBehaviour = curr.GetComponent<Behaviour>();
+            // subscribe from skill triggered event of new character if behaviour is not null
+            if (characterBehaviour != null) characterBehaviour.SkillTriggered += OnSkillTrigger;
+            // ensure previous character is not null
+            if (prev == null) return;
             // get behaviour of previous character
-            Behaviour characterBehaviour = prev.GetComponent<Behaviour>();
+            characterBehaviour = prev.GetComponent<Behaviour>();
             // unsubscribe from skill triggered event of previous character if behaviour is not null
             if (characterBehaviour != null) characterBehaviour.SkillTriggered -= OnSkillTrigger;
-            // get behaviour of new character
-            characterBehaviour = curr.GetComponent<Behaviour>();
-            // subscribe from skill triggered event of new character if behaviour is not null
-            if (characterBehaviour == null) return;
-            characterBehaviour.SkillTriggered += OnSkillTrigger;
         }
 
         void OnSkillTrigger(PlayerCharacter character)
