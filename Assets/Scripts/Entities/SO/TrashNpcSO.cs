@@ -17,13 +17,29 @@ public enum TrashNPCType
 [Serializable]
 public class ContaminantConfig
 {
+    /// <summary>
+    /// Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.
+    /// </summary>
+    [Tooltip("Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.")]
     public GameObject contaminantPrefab;
+    /// <summary>
+    /// The attack range of the contaminant. If target is within this range, the contaminant will start attacking.
+    /// </summary>
     [Tooltip("The attack range of the contaminant. If target is within this range, the contaminant will start attacking.")]
     public float attackRange = 1f;
-    [Tooltip("The delay before each attack. in seconds")]
+    /// <summary>
+    /// The delay before each attack. in seconds.
+    /// </summary>
+    [Tooltip("The delay before each attack. in seconds.")]
     public float attackDelay = .1f;
+    /// <summary>
+    /// The damage of each attack
+    /// </summary>
     [Tooltip("The damage of each attack")]
     public float attackDamage;
+    /// <summary>
+    /// Whether the contaminant can be cleaned
+    /// </summary>
     [Tooltip("Whether the contaminant can be cleaned")]
     public bool cleanable;
 }
@@ -31,7 +47,15 @@ public class ContaminantConfig
 [Serializable]
 public class RecyclableConfig
 {
+    /// <summary>
+    /// The type of recyclable
+    /// </summary>
+    [Tooltip("The type of recyclable")]
     public RecyclableType recyclableType;
+    /// <summary>
+    /// Reference to the prefab of the recyclable. Will be used to instantiate the recyclable.
+    /// </summary>
+    [Tooltip("Reference to the prefab of the recyclable. Will be used to instantiate the recyclable.")]
     public GameObject recyclablePrefab;
 }
 
@@ -50,13 +74,27 @@ public class CommonConfig
 public class TrashNpcSO : EntitySO
 {
 
-
+    /// <summary>
+    /// Base NPC type.
+    /// </summary>
     [Tooltip("Base NPC type.")]
     public TrashNPCType trashNPCType;
+    /// <summary>
+    /// Common config for both contaminant and recyclable.
+    /// </summary>
+    [Tooltip("Common config for both contaminant and recyclable.")]
     public CommonConfig common;
 
+    /// <summary>
+    /// Recyclable Specific Configuration
+    /// </summary>
+    [Tooltip("Recyclable Specific Configuration")]
     public RecyclableConfig recyclableConfig;
 
+    /// <summary>
+    /// Contaminant Specific Configuration
+    /// </summary>
+    [Tooltip("Contaminant Specific Configuration")]
     public ContaminantConfig contaminantConfig;
 
 }
