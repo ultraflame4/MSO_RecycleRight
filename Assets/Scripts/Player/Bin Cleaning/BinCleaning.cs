@@ -149,8 +149,8 @@ namespace Player.BinCleaning
         #region Event Listeners
         void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
         {
-            // cache previous character
-            activeCharacterData = prev;
+            // cache previous character if it is not null
+            activeCharacterData = prev == null ? curr : prev;
             // ensure switching to current character
             if (curr != currentCharacterData) return;
             // do not run if character is cleaning
