@@ -13,9 +13,9 @@ public class TrashNpcSOInspector : Editor
     readonly Color danger = new Color(1f, .4f, .4f);
 
 
-    public TrashNpcFactory FindFactory()
+    public TrashNpcFactorySO FindFactory()
     {
-        string[] guids = AssetDatabase.FindAssets("t:TrashNpcFactory");
+        string[] guids = AssetDatabase.FindAssets($"t:{typeof(TrashNpcFactorySO).Name}");
         if (guids.Length < 1)
         {
             return null;
@@ -25,13 +25,13 @@ public class TrashNpcSOInspector : Editor
             Debug.LogWarning("Multiple TrashNpcFactory assets found. Will pick first one!. This will cause unintended side effects!");
         }
         var asset_path = AssetDatabase.GUIDToAssetPath(guids[0]);
-        return AssetDatabase.LoadAssetAtPath<TrashNpcFactory>(asset_path);
+        return AssetDatabase.LoadAssetAtPath<TrashNpcFactorySO>(asset_path);
     }
 
 
     public override void OnInspectorGUI()
     {
-        TrashNpcSO trashNpcSO = (TrashNpcSO)target;
+        TrashNpcSO trashNpcData = (TrashNpcSO)target;
 
 
 
@@ -39,7 +39,7 @@ public class TrashNpcSOInspector : Editor
 
 
 
-        if (trashNpcSO.trashNPCType == TrashNPCType.Recyclable)
+        if (trashNpcData.trashNPCType == TrashNPCType.Recyclable)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("recyclableConfig"));
         }
@@ -54,7 +54,7 @@ public class TrashNpcSOInspector : Editor
         bool missingRecyclablePrefab = false;
         bool missingContaminantPrefab = false;
 
-        TrashNpcFactory factory = FindFactory();
+        TrashNpcFactorySO factory = FindFactory();
         if (factory == null)
         {
             errors_string.Add("TrashNpcFactory asset could not be found. Please create one.");
@@ -74,16 +74,16 @@ public class TrashNpcSOInspector : Editor
             }
         }
 
-        if (trashNpcSO.recyclableConfig.recyclablePrefab == null)
+        if (trashNpcData.recyclableConfig.recyclablePrefab == null)
         {
-            if (trashNpcSO.trashNPCType == TrashNPCType.Recyclable)
+            if (trashNpcData.trashNPCType == TrashNPCType.Recyclable)
             {
                 missingRecyclablePrefab = true;
                 errors_string.Add("Missing recyclable prefab");
             }
         }
 
-        if (trashNpcSO.contaminantConfig.contaminantPrefab == null)
+        if (trashNpcData.contaminantConfig.contaminantPrefab == null)
         {
             missingContaminantPrefab = true;
             errors_string.Add("Missing contaminant prefab");
@@ -104,11 +104,13 @@ public class TrashNpcSOInspector : Editor
 
         if (missingRecyclablePrefab && GUILayout.Button("Create Recyclable prefab"))
         {
-
+            var filepath = EditorUtility.SaveFilePanel("Create Recyclable NPC", "", $"{trashNpcData.name}_Recyclable.prefab", "prefab");
+            factory.CreateRecyclable(filepath, trashNpcData);
         }
         if (missingContaminantPrefab && GUILayout.Button("Create Contaminant prefab"))
         {
-
+            var filepath = EditorUtility.SaveFilePanel("Create Contaminant NPC", "", $"{trashNpcData.name}_Contaminant.prefab", "prefab");
+            factory.CreateRecyclable(filepath, trashNpcData);
         }
 
 
