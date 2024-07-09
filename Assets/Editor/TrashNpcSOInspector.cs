@@ -105,12 +105,12 @@ public class TrashNpcSOInspector : Editor
         if (missingRecyclablePrefab && GUILayout.Button("Create Recyclable prefab"))
         {
             var filepath = EditorUtility.SaveFilePanel("Create Recyclable NPC", "", $"{trashNpcData.name}_Recyclable.prefab", "prefab");
-            factory.CreateRecyclable(filepath, trashNpcData);
+            trashNpcData.recyclableConfig.recyclablePrefab = factory.CreateRecyclable(filepath, trashNpcData);
         }
         if (missingContaminantPrefab && GUILayout.Button("Create Contaminant prefab"))
         {
             var filepath = EditorUtility.SaveFilePanel("Create Contaminant NPC", "", $"{trashNpcData.name}_Contaminant.prefab", "prefab");
-            factory.CreateRecyclable(filepath, trashNpcData);
+            trashNpcData.contaminantConfig.contaminantPrefab = factory.CreateRecyclable(filepath, trashNpcData);
         }
 
 
