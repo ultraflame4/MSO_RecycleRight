@@ -74,8 +74,8 @@ ScriptedImporter:
     fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -87,8 +87,8 @@ ScriptedImporter:
     fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638554369174272943
+  platformSettingsDirtyTick: 638555957330328998
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,898 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Maid_Mary_Frame_0
+  - name: Maid_Mary_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
-    alignment: 9
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 438
+      width: 17
+      height: 41
+    spriteID: 7afeae57f5fea3b4896d1063c3564795
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 438}
+  - name: Maid_Mary_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 347
+      width: 17
+      height: 40
+    spriteID: b21818b1a14ff2a4e9d3ed05ff797929
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 347}
+  - name: Maid_Mary_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 395
+      width: 17
+      height: 40
+    spriteID: b9202367416182a4c90015386ee53b3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 395}
+  - name: Maid_Mary_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 4
+      width: 17
+      height: 41
+    spriteID: a7f731d57f8bb664eb0fcc1ad6bc9616
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 4}
+  - name: Maid_Mary_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 53
+      width: 17
+      height: 41
+    spriteID: 63eabbf2cf3af364a9c28c0163288c2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 53}
+  - name: Maid_Mary_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 292
+      width: 18
+      height: 41
+    spriteID: 26442fd0d8bea204296f9ef389467fa3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 292}
+  - name: Maid_Mary_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 102
+      width: 19
+      height: 41
+    spriteID: 684ef22ef36f2ea4d9bc436ac0580451
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 102}
+  - name: Maid_Mary_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 151
+      width: 19
+      height: 41
+    spriteID: 6dc53189bf549b0448a81fafe28cebde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 151}
+  - name: Maid_Mary_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 350
+      width: 20
+      height: 41
+    spriteID: a09bd3120e5d29d43a9a81bd68e442c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 350}
+  - name: Maid_Mary_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 399
+      width: 20
+      height: 41
+    spriteID: 2e8eebd333f8a2a479ac8b1331516d82
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 399}
+  - name: Maid_Mary_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 200
+      width: 19
+      height: 41
+    spriteID: 4d332d1ea4ecc2e47be6d71f37252b8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 200}
+  - name: Maid_Mary_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 346
+      width: 21
+      height: 41
+    spriteID: cc5e92706c486e240bb54759af7cdc90
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 346}
+  - name: Maid_Mary_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 101
+      width: 31
+      height: 41
+    spriteID: 8d6097529eade094c8ec2d833b4956a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 101}
+  - name: Maid_Mary_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 395
+      width: 21
+      height: 41
+    spriteID: 41b4b2c596f925247a8542bff674d7f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 395}
+  - name: Maid_Mary_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 249
+      width: 19
+      height: 41
+    spriteID: 1a16ae3747ae5d242949a41a144240fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 249}
+  - name: Maid_Mary_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 298
+      width: 19
+      height: 41
+    spriteID: 6aa10744830ebbc478917cf136f86205
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 298}
+  - name: Maid_Mary_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 390
+      width: 18
+      height: 40
+    spriteID: 4c55d104b07b38545a680c07107297d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 390}
+  - name: Maid_Mary_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 4
+      width: 19
+      height: 40
+    spriteID: 8f50ca4b555b4e342a26dcbab333128c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 4}
+  - name: Maid_Mary_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 52
+      width: 19
+      height: 40
+    spriteID: ca47ece881b3c4349ab31367dc003e16
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 52}
+  - name: Maid_Mary_Frame_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 100
+      width: 19
+      height: 40
+    spriteID: 2aac47b5d198bb64fb890def73fe3942
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 100}
+  - name: Maid_Mary_Frame_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 148
+      width: 19
+      height: 40
+    spriteID: cda97b34ed572b440ada4b302aeb74e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 148}
+  - name: Maid_Mary_Frame_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 196
+      width: 19
+      height: 40
+    spriteID: 94ef9f1d0bad94a4f9db2d79d1919000
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 196}
+  - name: Maid_Mary_Frame_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 244
+      width: 19
+      height: 40
+    spriteID: 050b3e7ee94ee2143bb97c830a89a00a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 244}
+  - name: Maid_Mary_Frame_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 444
+      width: 21
+      height: 41
+    spriteID: 8ce885ae3807d5c4a8bf6f7e9a9bc1ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 444}
+  - name: Maid_Mary_Frame_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 21
+      height: 41
+    spriteID: 1fb82538d48d9b748b277df21363b2cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: Maid_Mary_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 53
+      width: 21
+      height: 41
+    spriteID: cb0078074ec41d24b911e8a42fac7f9d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 53}
+  - name: Maid_Mary_Frame_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 102
+      width: 21
+      height: 41
+    spriteID: 705653f37b574f346a2eff5c1d51f354
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 102}
+  - name: Maid_Mary_Frame_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 151
+      width: 21
+      height: 41
+    spriteID: e7690fde1ef44c54f8c3a167ae17b6bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 151}
+  - name: Maid_Mary_Frame_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 448
+      width: 20
+      height: 41
+    spriteID: 719df98008627884b8e4454378af1293
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 448}
+  - name: Maid_Mary_Frame_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 102
+      width: 17
+      height: 41
+    spriteID: a5c3cd7ed79c07e469ee3191bf106b1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 102}
+  - name: Maid_Mary_Frame_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 151
+      width: 17
+      height: 41
+    spriteID: 498ee536f46c1554ea38df60a6d698e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 151}
+  - name: Maid_Mary_Frame_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 200
+      width: 17
+      height: 41
+    spriteID: 24363b764b3761c42813b32a1115fc5f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 200}
+  - name: Maid_Mary_Frame_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 248
+      width: 24
+      height: 41
+    spriteID: 13e7e4a1e64f1ac4387e0ec110be889d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 248}
+  - name: Maid_Mary_Frame_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 150
+      width: 27
+      height: 41
+    spriteID: 8c9a5339bae840449be542acc921fc9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 150}
+  - name: Maid_Mary_Frame_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 297
+      width: 24
+      height: 41
+    spriteID: 83779614e9b790d4aa1fd8b0c2c04070
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 297}
+  - name: Maid_Mary_Frame_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 199
+      width: 25
+      height: 41
+    spriteID: 699774206258f3f4385799110e4576b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 199}
+  - name: Maid_Mary_Frame_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 347
+      width: 19
+      height: 41
+    spriteID: eb0d13c599537084b9857f987cc28fa9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 347}
+  - name: Maid_Mary_Frame_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 4
+      width: 20
+      height: 41
+    spriteID: 29f7917198b40db44b3fc984ec2fa335
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 4}
+  - name: Maid_Mary_Frame_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 396
+      width: 19
+      height: 41
+    spriteID: 40a8f23bc67c6f3438d3979a80ec9817
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 396}
+  - name: Maid_Mary_Frame_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 52
+      width: 32
+      height: 41
+    spriteID: f508cb9698e09e24ca76bc6671c993ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 52}
+  - name: Maid_Mary_Frame_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 393
+      width: 38
+      height: 41
+    spriteID: 95d9403db9677c14fb2086fbcd74bb35
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 393}
+  - name: Maid_Mary_Frame_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 249
+      width: 17
+      height: 41
+    spriteID: a976119c34b34a54582286f29e9e7781
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 249}
+  - name: Maid_Mary_Frame_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 298
+      width: 17
+      height: 41
+    spriteID: 8926209f61050c2498ddd23bfc9582de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 298}
+  - name: Maid_Mary_Frame_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 341
+      width: 18
+      height: 41
+    spriteID: 1f158652d75d64348a0b3aa636a7547f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 341}
+  - name: Maid_Mary_Frame_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 64
-    spriteID: 43d5d3be225c6924ca257f6d1e3aed90
+      width: 40
+      height: 41
+    spriteID: c477c5109a6398346a04497228270b8b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +1021,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Maid_Mary_Frame_1
+  - name: Maid_Mary_Frame_48
     originalName: 
     pivot: {x: 0.5, y: 0.5}
-    alignment: 9
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 76
-      width: 64
-      height: 64
-    spriteID: 72d2b346bf0d4144199e4c16ebc5d078
+      y: 53
+      width: 40
+      height: 41
+    spriteID: 3bc9d9afc022c564f8e47f3b8a7021ff
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +1040,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
-  - name: Maid_Mary_Frame_2
+    uvTransform: {x: 4, y: 53}
+  - name: Maid_Mary_Frame_49
     originalName: 
     pivot: {x: 0.5, y: 0.5}
-    alignment: 9
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 148
-      width: 64
-      height: 64
-    spriteID: 4c9b11ddf58188b4faad97464bfc843c
+      y: 102
+      width: 40
+      height: 41
+    spriteID: a09da6929ccfde545aaa8a57f784e964
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,19 +1060,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 148}
-  - name: Maid_Mary_Frame_3
+    uvTransform: {x: 4, y: 102}
+  - name: Maid_Mary_Frame_50
     originalName: 
     pivot: {x: 0.5, y: 0.5}
-    alignment: 9
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 220
-      width: 64
-      height: 64
-    spriteID: 857c657b9ecf6c340ad7fb805c870fcc
+      y: 151
+      width: 40
+      height: 41
+    spriteID: 0632e16547cf0034c8d90900613005c9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,19 +1080,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 220}
-  - name: Maid_Mary_Frame_4
+    uvTransform: {x: 4, y: 151}
+  - name: Maid_Mary_Frame_51
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 292
-      width: 64
-      height: 64
-    spriteID: ce92327c21a50bf49970e7dd3fb7676c
+      y: 249
+      width: 40
+      height: 40
+    spriteID: 4c6982b2cb1b53d4a9f69de2d37fcac6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -220,19 +1100,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 292}
-  - name: Maid_Mary_Frame_5
+    uvTransform: {x: 4, y: 249}
+  - name: Maid_Mary_Frame_52
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 364
-      width: 64
-      height: 64
-    spriteID: 6af92516e98a7c4429e58f737346afec
+      y: 442
+      width: 38
+      height: 40
+    spriteID: cf756d0d9ecbded4999106240946cc36
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -240,39 +1120,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 364}
-  - name: Maid_Mary_Frame_6
+    uvTransform: {x: 4, y: 442}
+  - name: Maid_Mary_Frame_53
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 436
-      width: 64
-      height: 64
-    spriteID: 3b814019feb31c7468ea57fda1aa9426
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 436}
-  - name: Maid_Mary_Frame_7
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 76
+      x: 52
       y: 4
-      width: 64
-      height: 64
-    spriteID: ece7af8c7fbb717419bf122adc97e485
+      width: 38
+      height: 40
+    spriteID: 84c01e6c14bd9a343b28e59626ef5ca8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -280,19 +1140,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 4}
-  - name: Maid_Mary_Frame_8
+    uvTransform: {x: 52, y: 4}
+  - name: Maid_Mary_Frame_54
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 76
-      width: 64
-      height: 64
-    spriteID: 566cf334c143a3d4d978b6a138ec0741
+      x: 4
+      y: 297
+      width: 40
+      height: 40
+    spriteID: 02f572a0e661ba74aac680bb79e6a56e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -300,19 +1160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 76}
-  - name: Maid_Mary_Frame_9
+    uvTransform: {x: 4, y: 297}
+  - name: Maid_Mary_Frame_55
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 148
-      width: 64
-      height: 64
-    spriteID: 2ad44f79e931d1949b09c9f925f757b6
+      x: 4
+      y: 345
+      width: 40
+      height: 40
+    spriteID: ee79b9ba2dd2f7a4087a4f4fc8bf52d7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -320,19 +1180,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 148}
-  - name: Maid_Mary_Frame_10
+    uvTransform: {x: 4, y: 345}
+  - name: Maid_Mary_Frame_56
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 220
-      width: 64
-      height: 64
-    spriteID: b6c2dae67de2d6f41b6b22309c5e3bbd
+      x: 4
+      y: 200
+      width: 40
+      height: 41
+    spriteID: 66bd2bc4f63e7db449260d9d373e01ae
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -340,7 +1200,107 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 220}
+    uvTransform: {x: 4, y: 200}
+  - name: Maid_Mary_Frame_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 445
+      width: 19
+      height: 41
+    spriteID: 3300c13edbf9c204f940024bd1876fec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 445}
+  - name: Maid_Mary_Frame_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 127
+      y: 53
+      width: 20
+      height: 41
+    spriteID: bcddad1b0ac0c7b409190131e6bbfb0a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 127, y: 53}
+  - name: Maid_Mary_Frame_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 200
+      width: 20
+      height: 42
+    spriteID: 4715177554d10f44e99c5dad6406bf42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 200}
+  - name: Maid_Mary_Frame_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 250
+      width: 20
+      height: 42
+    spriteID: 6b8040c4503bedb4db71ffa7ca85071b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 250}
+  - name: Maid_Mary_Frame_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 300
+      width: 20
+      height: 42
+    spriteID: bcf3a92a1ccb4b94b8eb6995b12da15d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 300}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -350,169 +1310,481 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Maid_Mary_Frame_0
-      frameIndex: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 43d5d3be225c6924ca257f6d1e3aed90
-    - name: Maid_Mary_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 72d2b346bf0d4144199e4c16ebc5d078
-    - name: Maid_Mary_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 4c9b11ddf58188b4faad97464bfc843c
     - name: Maid_Mary_Frame_3
       frameIndex: 3
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 857c657b9ecf6c340ad7fb805c870fcc
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: 7afeae57f5fea3b4896d1063c3564795
     - name: Maid_Mary_Frame_4
       frameIndex: 4
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: ce92327c21a50bf49970e7dd3fb7676c
+        x: 23
+        y: 10
+        width: 17
+        height: 40
+      spriteId: b21818b1a14ff2a4e9d3ed05ff797929
     - name: Maid_Mary_Frame_5
       frameIndex: 5
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 6af92516e98a7c4429e58f737346afec
+        x: 23
+        y: 10
+        width: 17
+        height: 40
+      spriteId: b9202367416182a4c90015386ee53b3c
     - name: Maid_Mary_Frame_6
       frameIndex: 6
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 3b814019feb31c7468ea57fda1aa9426
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: a7f731d57f8bb664eb0fcc1ad6bc9616
     - name: Maid_Mary_Frame_7
       frameIndex: 7
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: ece7af8c7fbb717419bf122adc97e485
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: 63eabbf2cf3af364a9c28c0163288c2b
     - name: Maid_Mary_Frame_8
       frameIndex: 8
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 566cf334c143a3d4d978b6a138ec0741
+        x: 23
+        y: 10
+        width: 18
+        height: 41
+      spriteId: 26442fd0d8bea204296f9ef389467fa3
     - name: Maid_Mary_Frame_9
       frameIndex: 9
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 2ad44f79e931d1949b09c9f925f757b6
+        x: 22
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 684ef22ef36f2ea4d9bc436ac0580451
     - name: Maid_Mary_Frame_10
       frameIndex: 10
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: b6c2dae67de2d6f41b6b22309c5e3bbd
+        x: 22
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 6dc53189bf549b0448a81fafe28cebde
+    - name: Maid_Mary_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 41
+      spriteId: a09bd3120e5d29d43a9a81bd68e442c6
+    - name: Maid_Mary_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 41
+      spriteId: 2e8eebd333f8a2a479ac8b1331516d82
+    - name: Maid_Mary_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 21
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 4d332d1ea4ecc2e47be6d71f37252b8d
+    - name: Maid_Mary_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 21
+        y: 10
+        width: 21
+        height: 41
+      spriteId: cc5e92706c486e240bb54759af7cdc90
+    - name: Maid_Mary_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 14
+        y: 10
+        width: 31
+        height: 41
+      spriteId: 8d6097529eade094c8ec2d833b4956a5
+    - name: Maid_Mary_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 22
+        y: 10
+        width: 21
+        height: 41
+      spriteId: 41b4b2c596f925247a8542bff674d7f6
+    - name: Maid_Mary_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 24
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 1a16ae3747ae5d242949a41a144240fc
+    - name: Maid_Mary_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 22
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 6aa10744830ebbc478917cf136f86205
+    - name: Maid_Mary_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 22
+        y: 10
+        width: 18
+        height: 40
+      spriteId: 4c55d104b07b38545a680c07107297d1
+    - name: Maid_Mary_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 21
+        y: 10
+        width: 19
+        height: 40
+      spriteId: 8f50ca4b555b4e342a26dcbab333128c
+    - name: Maid_Mary_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 20
+        y: 10
+        width: 19
+        height: 40
+      spriteId: ca47ece881b3c4349ab31367dc003e16
+    - name: Maid_Mary_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 20
+        y: 10
+        width: 19
+        height: 40
+      spriteId: 2aac47b5d198bb64fb890def73fe3942
+    - name: Maid_Mary_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 20
+        y: 10
+        width: 19
+        height: 40
+      spriteId: cda97b34ed572b440ada4b302aeb74e1
+    - name: Maid_Mary_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 20
+        y: 10
+        width: 19
+        height: 40
+      spriteId: 94ef9f1d0bad94a4f9db2d79d1919000
+    - name: Maid_Mary_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 20
+        y: 10
+        width: 19
+        height: 40
+      spriteId: 050b3e7ee94ee2143bb97c830a89a00a
+    - name: Maid_Mary_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 23
+        y: 10
+        width: 21
+        height: 41
+      spriteId: 8ce885ae3807d5c4a8bf6f7e9a9bc1ad
+    - name: Maid_Mary_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 23
+        y: 10
+        width: 21
+        height: 41
+      spriteId: 1fb82538d48d9b748b277df21363b2cc
+    - name: Maid_Mary_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 23
+        y: 10
+        width: 21
+        height: 41
+      spriteId: cb0078074ec41d24b911e8a42fac7f9d
+    - name: Maid_Mary_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 23
+        y: 10
+        width: 21
+        height: 41
+      spriteId: 705653f37b574f346a2eff5c1d51f354
+    - name: Maid_Mary_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 23
+        y: 10
+        width: 21
+        height: 41
+      spriteId: e7690fde1ef44c54f8c3a167ae17b6bc
+    - name: Maid_Mary_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 41
+      spriteId: 719df98008627884b8e4454378af1293
+    - name: Maid_Mary_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: a5c3cd7ed79c07e469ee3191bf106b1a
+    - name: Maid_Mary_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: 498ee536f46c1554ea38df60a6d698e9
+    - name: Maid_Mary_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: 24363b764b3761c42813b32a1115fc5f
+    - name: Maid_Mary_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 23
+        y: 10
+        width: 24
+        height: 41
+      spriteId: 13e7e4a1e64f1ac4387e0ec110be889d
+    - name: Maid_Mary_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 23
+        y: 10
+        width: 27
+        height: 41
+      spriteId: 8c9a5339bae840449be542acc921fc9a
+    - name: Maid_Mary_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 23
+        y: 10
+        width: 24
+        height: 41
+      spriteId: 83779614e9b790d4aa1fd8b0c2c04070
+    - name: Maid_Mary_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 23
+        y: 10
+        width: 25
+        height: 41
+      spriteId: 699774206258f3f4385799110e4576b9
+    - name: Maid_Mary_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 23
+        y: 10
+        width: 19
+        height: 41
+      spriteId: eb0d13c599537084b9857f987cc28fa9
+    - name: Maid_Mary_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 20
+        y: 10
+        width: 20
+        height: 41
+      spriteId: 29f7917198b40db44b3fc984ec2fa335
+    - name: Maid_Mary_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 21
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 40a8f23bc67c6f3438d3979a80ec9817
+    - name: Maid_Mary_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 23
+        y: 10
+        width: 32
+        height: 41
+      spriteId: f508cb9698e09e24ca76bc6671c993ff
+    - name: Maid_Mary_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 23
+        y: 10
+        width: 38
+        height: 41
+      spriteId: 95d9403db9677c14fb2086fbcd74bb35
+    - name: Maid_Mary_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: a976119c34b34a54582286f29e9e7781
+    - name: Maid_Mary_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 23
+        y: 10
+        width: 17
+        height: 41
+      spriteId: 8926209f61050c2498ddd23bfc9582de
+    - name: Maid_Mary_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 23
+        y: 10
+        width: 18
+        height: 41
+      spriteId: 1f158652d75d64348a0b3aa636a7547f
+    - name: Maid_Mary_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 12
+        y: 10
+        width: 40
+        height: 41
+      spriteId: c477c5109a6398346a04497228270b8b
+    - name: Maid_Mary_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 13
+        y: 10
+        width: 40
+        height: 41
+      spriteId: 3bc9d9afc022c564f8e47f3b8a7021ff
+    - name: Maid_Mary_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 13
+        y: 10
+        width: 40
+        height: 41
+      spriteId: a09da6929ccfde545aaa8a57f784e964
+    - name: Maid_Mary_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 13
+        y: 10
+        width: 40
+        height: 41
+      spriteId: 0632e16547cf0034c8d90900613005c9
+    - name: Maid_Mary_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 12
+        y: 10
+        width: 40
+        height: 40
+      spriteId: 4c6982b2cb1b53d4a9f69de2d37fcac6
+    - name: Maid_Mary_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 10
+        y: 10
+        width: 38
+        height: 40
+      spriteId: cf756d0d9ecbded4999106240946cc36
+    - name: Maid_Mary_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 10
+        y: 10
+        width: 38
+        height: 40
+      spriteId: 84c01e6c14bd9a343b28e59626ef5ca8
+    - name: Maid_Mary_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 10
+        y: 10
+        width: 40
+        height: 40
+      spriteId: 02f572a0e661ba74aac680bb79e6a56e
+    - name: Maid_Mary_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 13
+        y: 10
+        width: 40
+        height: 40
+      spriteId: ee79b9ba2dd2f7a4087a4f4fc8bf52d7
+    - name: Maid_Mary_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 13
+        y: 10
+        width: 40
+        height: 41
+      spriteId: 66bd2bc4f63e7db449260d9d373e01ae
+    - name: Maid_Mary_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 21
+        y: 10
+        width: 19
+        height: 41
+      spriteId: 3300c13edbf9c204f940024bd1876fec
+    - name: Maid_Mary_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 41
+      spriteId: bcddad1b0ac0c7b409190131e6bbfb0a
+    - name: Maid_Mary_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 42
+      spriteId: 4715177554d10f44e99c5dad6406bf42
+    - name: Maid_Mary_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 42
+      spriteId: 6b8040c4503bedb4db71ffa7ca85071b
+    - name: Maid_Mary_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 21
+        y: 10
+        width: 20
+        height: 42
+      spriteId: bcf3a92a1ccb4b94b8eb6995b12da15d
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: iPhone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Windows Store Apps
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

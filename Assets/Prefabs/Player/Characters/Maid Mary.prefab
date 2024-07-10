@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8014629419025105654
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4b9bcf10688f1b243a9f9233dcff291a, type: 2}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillIcon
+      value: 
+      objectReference: {fileID: -7817459201985428684, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterName
+      value: Maid Mary
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillCooldown
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackDuration
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: -2199317966230432783, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillTriggerTimeFrame
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackTriggerTimeFrame
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Name
+      value: Maid Mary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4166666
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.4166667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2233654393134734872, guid: 9d8b1a2b053610249974972808b24269, type: 3}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4627775928051362050}
+  m_SourcePrefab: {fileID: 100100000, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+--- !u!1 &5950129485960200443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+  m_PrefabInstance: {fileID: 8014629419025105654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4627775928051362050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950129485960200443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183d0f9860849b14dba294c7e1db7915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 5
+  attackRange: 1.5
+  attackStunDuration: 0.75
+  knockback: 15
+  cleanAmount: 5
+  areaOfEffect: 1
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
+  tickDamage: 1
+  tickStunDuration: 0.15
+  tickSpeed: 1
+  skillRange: 5
+  skillPullForce: 150
+  pullableType: 0
+  pullableMask:
+    serializedVersion: 2
+    m_Bits: 128

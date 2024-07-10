@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6592487280175580085
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70a2448d1a543734f97d4508eb4d1aa6, type: 2}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillIcon
+      value: 
+      objectReference: {fileID: -1145719832218232496, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterName
+      value: Volunteer Vincent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillCooldown
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackDuration
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 3635251773814090647, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillTriggerTimeFrame
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: <skillCooldown>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: <skillDuration>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Name
+      value: Volunteer Vincent
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3249646083560479351, guid: fb8f4b826a57bae4d9d1e4cfc50f16cd, type: 3}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3000106052116290177, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4596512103458408271}
+  m_SourcePrefab: {fileID: 100100000, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+--- !u!1 &7410547296858456504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+  m_PrefabInstance: {fileID: 6592487280175580085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4596512103458408271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7410547296858456504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fd31207badff145b6d8f8e596e82fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 5
+  attackRange: 1.5
+  attackStunDuration: 0.75
+  knockback: 15
+  cleanAmount: 0
+  areaOfEffect: 0
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
+  hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
+  passiveChance: 0.45
+  buffScale: 1.5
+  buffDuration: 10

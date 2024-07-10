@@ -1,47 +1,45 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Patterns.FSM;
 
-public class PlayerSkillState : CoroutineState<PlayerController>
+namespace Player.FSM
 {
-    Coroutine triggerSkillCoroutine;
-
-    public PlayerSkillState(StateMachine<PlayerController> fsm, PlayerController character) : 
-        base(fsm, character, character.DefaultState, character.Data.skillDuration)
+    public class PlayerSkillState : CoroutineState<PlayerController>
     {
-    }
+        Coroutine triggerSkillCoroutine;
 
-    public override void Enter()
-    {
-        base.Enter();
-        // set can trigger skill to false
-        character.CharacterBehaviour.CanTriggerSkill = false;
-        // play skill animation
-        character.anim?.Play("Skill");
-        // trigger skill after a certain duration
-        triggerSkillCoroutine = fsm.StartCoroutine(
-            WaitForSeconds(
-                character.Data.skillDuration * character.Data.skillTriggerTimeFrame, 
-                () => character.CharacterBehaviour?.TriggerSkill()
-            )
-        );
-    }
+        public PlayerSkillState(StateMachine<PlayerController> fsm, PlayerController character) : 
+            base(fsm, character, character.DefaultState, character.Data.skillDuration)
+        {
+        }
 
-    public override void Exit()
-    {
-        base.Exit();
-        // reset can trigger skill to true, and it would automatically delay the assignment by the skill cooldown
-        character.CharacterBehaviour.CanTriggerSkill = true;
-        // stop trigger skill coroutine, and reset to null
-        if (triggerSkillCoroutine == null) return; 
-        fsm.StopCoroutine(triggerSkillCoroutine);
-        triggerSkillCoroutine = null;
-    }
+        public override void Enter()
+        {
+            // update skill duration
+            duration = character.Data.skillDuration;
+            // count skill duration
+            base.Enter();
+            // set can trigger skill to false
+            character.CharacterBehaviour.CanTriggerSkill = false;
+            // play skill animation
+            character.anim?.Play("Skill");
+            // trigger skill after a certain duration
+            triggerSkillCoroutine = fsm.StartCoroutine(
+                WaitForSeconds(
+                    character.Data.skillDuration * character.Data.skillTriggerTimeFrame, 
+                    () => character.CharacterBehaviour?.TriggerSkill()
+                )
+            );
+        }
 
-    IEnumerator WaitForSeconds(float duration, Action callback = null)
-    {
-        yield return new WaitForSeconds(duration);
-        callback?.Invoke();
+        public override void Exit()
+        {
+            base.Exit();
+            // reset can trigger skill to true, and it would automatically delay the assignment by the skill cooldown
+            character.CharacterBehaviour.CanTriggerSkill = true;
+            // stop trigger skill coroutine, and reset to null
+            if (triggerSkillCoroutine == null) return; 
+            fsm.StopCoroutine(triggerSkillCoroutine);
+            triggerSkillCoroutine = null;
+        }
     }
 }

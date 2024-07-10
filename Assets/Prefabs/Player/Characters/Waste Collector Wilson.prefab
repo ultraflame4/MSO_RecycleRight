@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1178533468244114721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 2289573718311261478, guid: fb8f4b826a57bae4d9d1e4cfc50f16cd, type: 3}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterName
+      value: Waste Collector Wilson
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Name
+      value: Waste Collector Wilson
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6869229262029090571, guid: 6b55b990c9a95a54790a068214a3905d, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2666946962269136698}
+  m_SourcePrefab: {fileID: 100100000, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+--- !u!1 &3310225104491134764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+  m_PrefabInstance: {fileID: 1178533468244114721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2666946962269136698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310225104491134764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3507b157e337ff54fa256935d14db22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabDamage: 2
+  grabRange: 1.5
+  grabOffset: {x: 1, y: 0.5}
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
+  grabEffect: {fileID: 0}
+  throwDamage: 3
+  throwForce: 25
+  throwEffect: {fileID: 0}

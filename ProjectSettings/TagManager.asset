@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacles
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Recyclable
+  - Contaminant
+  - Bin
   - 
   - 
   - 
