@@ -24,8 +24,9 @@ MonoBehaviour:
     recyclableType: 0
     recyclablePrefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
   contaminantConfig:
-    contaminantPrefab: {fileID: 8151956509993383244, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+    contaminantPrefab: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
     attackRange: 1
     attackDelay: 0.1
     attackDamage: 0
+    attackDuration: 1.5
     cleanable: 0
