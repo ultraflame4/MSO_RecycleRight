@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55e89821093de3048af861c6fb81ed4e
+guid: 1ca37f1e734179940bb2767308d49b5d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,38 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Garbage Truck
+  - name: OldPhone
     originalName: 
-    pivot: {x: 0.5294118, y: -1.125}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 175
-      width: 119
-      height: 48
-    spriteID: 331d3823dcc91c844ae274a09fc7f18d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 175}
-  - name: Garbage Truck_Frame_1
-    originalName: 
-    pivot: {x: 0.5294118, y: -1.0816326}
+    pivot: {x: 0.5, y: -0.03448276}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 119
-      height: 49
-    spriteID: e30af26757a48a94a8a33355e9a62241
+      width: 14
+      height: 29
+    spriteID: 7147e4855d59ed544a012f874ff60d2e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,91 +141,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Garbage Truck_Frame_2
-    originalName: 
-    pivot: {x: 0.5294118, y: -1.0816326}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 61
-      width: 119
-      height: 49
-    spriteID: 5f1fa19e486e57a41b0cdce922940138
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 61}
-  - name: Garbage Truck_Frame_3
-    originalName: 
-    pivot: {x: 0.5294118, y: -1.0816326}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 118
-      width: 119
-      height: 49
-    spriteID: d3fa788a01eb8e04d9f024eb82eb0ea5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 118}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1427125226
-    name: Garbage Truck
+    guid: 1437739675
+    name: OldPhone
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Garbage Truck_Frame_0
+    - name: OldPhone
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 54
-        width: 119
-        height: 48
-      spriteId: 331d3823dcc91c844ae274a09fc7f18d
-    - name: Garbage Truck_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
-      spriteId: e30af26757a48a94a8a33355e9a62241
-    - name: Garbage Truck_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
-      spriteId: 5f1fa19e486e57a41b0cdce922940138
-    - name: Garbage Truck_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
-      spriteId: d3fa788a01eb8e04d9f024eb82eb0ea5
+        x: 9
+        y: 1
+        width: 14
+        height: 29
+      spriteId: 7147e4855d59ed544a012f874ff60d2e
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 128, y: 128}
+  canvasSize: {x: 32, y: 32}

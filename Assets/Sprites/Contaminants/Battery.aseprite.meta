@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55e89821093de3048af861c6fb81ed4e
+guid: 7c2e2764d32aa6d42a9f77f0f16ee44c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,38 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Garbage Truck
+  - name: Battery_Frame_0
     originalName: 
-    pivot: {x: 0.5294118, y: -1.125}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 175
-      width: 119
-      height: 48
-    spriteID: 331d3823dcc91c844ae274a09fc7f18d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 175}
-  - name: Garbage Truck_Frame_1
-    originalName: 
-    pivot: {x: 0.5294118, y: -1.0816326}
+    pivot: {x: 0.47826087, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 119
-      height: 49
-    spriteID: e30af26757a48a94a8a33355e9a62241
+      width: 23
+      height: 32
+    spriteID: 3142dcc7f880cbd43aa28ae8f6db6e73
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Garbage Truck_Frame_2
+  - name: Battery_Frame_1
     originalName: 
-    pivot: {x: 0.5294118, y: -1.0816326}
+    pivot: {x: 0.45454547, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 61
-      width: 119
-      height: 49
-    spriteID: 5f1fa19e486e57a41b0cdce922940138
+      y: 44
+      width: 22
+      height: 32
+    spriteID: 05ada1446fa4de847bd0294a48485cb2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 61}
-  - name: Garbage Truck_Frame_3
+    uvTransform: {x: 4, y: 44}
+  - name: Battery_Frame_2
     originalName: 
-    pivot: {x: 0.5294118, y: -1.0816326}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 118
-      width: 119
-      height: 49
-    spriteID: d3fa788a01eb8e04d9f024eb82eb0ea5
+      y: 84
+      width: 22
+      height: 32
+    spriteID: d196527621650954dae31550e16d8f01
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,52 +180,44 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 118}
+    uvTransform: {x: 4, y: 84}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1427125226
-    name: Garbage Truck
+    guid: 1651508741
+    name: Battery
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Garbage Truck_Frame_0
+    - name: Battery_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 54
-        width: 119
-        height: 48
-      spriteId: 331d3823dcc91c844ae274a09fc7f18d
-    - name: Garbage Truck_Frame_1
+        x: 5
+        y: 0
+        width: 23
+        height: 32
+      spriteId: 3142dcc7f880cbd43aa28ae8f6db6e73
+    - name: Battery_Frame_1
       frameIndex: 1
       cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
-      spriteId: e30af26757a48a94a8a33355e9a62241
-    - name: Garbage Truck_Frame_2
+        x: 6
+        y: 0
+        width: 22
+        height: 32
+      spriteId: 05ada1446fa4de847bd0294a48485cb2
+    - name: Battery_Frame_2
       frameIndex: 2
       cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
-      spriteId: 5f1fa19e486e57a41b0cdce922940138
-    - name: Garbage Truck_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
-      spriteId: d3fa788a01eb8e04d9f024eb82eb0ea5
+        x: 5
+        y: 0
+        width: 22
+        height: 32
+      spriteId: d196527621650954dae31550e16d8f01
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 128, y: 128}
+  canvasSize: {x: 32, y: 32}
