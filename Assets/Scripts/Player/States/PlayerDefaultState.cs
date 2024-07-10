@@ -36,7 +36,8 @@ namespace Player.FSM
             // set movement input
             move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             // update animation
-            character.anim?.SetBool("IsMoving", move_input != Vector2.zero);
+            character.anim?.SetBool("IsMoving", 
+                move_input != Vector2.zero && character.Data.movementSpeed > 0f);
             // set attack input
             attack_input = Input.GetMouseButtonDown(0);
             // set skill input
@@ -77,7 +78,8 @@ namespace Player.FSM
             }
 
             // set velocity based on movement input
-            rb.velocity = move_input.normalized * character.Data.movementSpeed * Time.deltaTime;
+            rb.velocity = move_input.normalized * character.Data.movementSpeed * 
+                character.Data.movementMultiplier * Time.deltaTime;
         }
 
         public override void Exit()

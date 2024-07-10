@@ -5,6 +5,7 @@ using NPC.States;
 using NPC.Contaminant;
 using NPC.Recyclable.States;
 using Interfaces;
+using System;
 
 namespace NPC.Recyclable
 {
@@ -18,12 +19,14 @@ namespace NPC.Recyclable
         #endregion
 
         #region Config
-        
-        [SerializeField, Tooltip("The recyclable type.")]
+
+        [Header("Config"), SerializeField, Tooltip("The recyclable type.")]
         private RecyclableType _recyclableType;
         [SerializeField, Tooltip("The contaminant version of this recyclable.")]
         private GameObject contaminant_prefab;
         public float sightRange = 3f;
+        [Tooltip("The npc data to configure this npc. Please note that this will override the above settings (on awake).")]
+        public TrashNpcSO npcData;
         #endregion
 
         public override RecyclableType recyclableType => _recyclableType;
@@ -32,6 +35,25 @@ namespace NPC.Recyclable
 
         // The internal 'cleanliness' meter so that recyclables don't immediately get contaminated. When above 0, still considered clean.
         private int secret_cleanliness = 3;
+
+
+
+        public void LoadConfig()
+        {
+            if (npcData == null) return;
+            Debug.Log("Overriding data using npc config...");
+            if (npcData.trashNPCType != TrashNPCType.Recyclable)
+            {
+                throw new ArgumentException("This RecyclableNPC is not configured as a Recyclable! Please change trashNPCType to Recyclable or use ContaminantNPC instead!");
+            }
+            sightRange = npcData.common.sightRange;
+            _recyclableType = npcData.recyclableConfig.recyclableType;
+            contaminant_prefab = npcData.contaminantConfig.contaminantPrefab;
+        }
+        private void Awake()
+        {
+            LoadConfig();
+        }
 
         private void Start()
         {
@@ -43,8 +65,9 @@ namespace NPC.Recyclable
         }
         public void Contaminate(float damage)
         {
-            if (secret_cleanliness > 0){
-                secret_cleanliness --;
+            if (secret_cleanliness > 0)
+            {
+                secret_cleanliness--;
                 return;
             }
             var contaminant = Instantiate(contaminant_prefab);
@@ -64,11 +87,15 @@ namespace NPC.Recyclable
             Gizmos.DrawWireSphere(transform.position, sightRange);
         }
 
-        private void OnValidate() {
-            if (recyclableType == RecyclableType.OTHERS){
+        private void OnValidate()
+        {
+            LoadConfig();
+            if (recyclableType == RecyclableType.OTHERS)
+            {
                 Debug.LogWarning("The 'OTHER' Recyclable type is meant for non-recyclables / contaminants! Using it on Recyclables will have unintended effects! You should probably use ContaminantNPC instead!");
             }
-            if (contaminant_prefab == null){
+            if (contaminant_prefab == null)
+            {
                 Debug.LogWarning("IMPORTANT! contaminant_prefab is a required field! When null, it will cause this recyclable to never spawn it's contaminated version");
             }
         }

@@ -52,7 +52,7 @@ namespace Level
         public void MoveToZone(int index)
         {
             current_zone_index = index;
-            camera.target_position = current_zone.transform.position;
+            camera.zone_position = current_zone.transform.position;
             // call event when moving to new zone
             ZoneChanged?.Invoke(current_zone);
         }

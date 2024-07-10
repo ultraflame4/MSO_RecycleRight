@@ -25,6 +25,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1145719832218232496, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 034f46f0974198449917a6a15a10cfec, type: 2}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: characterName
       value: Volunteer Vincent
       objectReference: {fileID: 0}

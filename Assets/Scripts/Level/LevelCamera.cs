@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Level
@@ -8,7 +9,7 @@ namespace Level
         public new Camera camera { get; private set; }
 
         [Tooltip("The target position for the camera.")]
-        public Vector3 target_position;
+        public Vector3 zone_position;
         [Tooltip("Camera damping")]
         public float smoothTime = 0.3f;
 
@@ -20,6 +21,8 @@ namespace Level
         private Vector3 velocity = Vector3.zero;
 
         private Vector2 lastScreenSize = Vector2.zero;
+        [Tooltip("Make the camera lerp between the player and the zone position. This is an experimental solution to reveal zone areas covered by the UI.")]
+        public bool allowPeeking = false;
         private void Start()
         {
             Adjust();
@@ -53,7 +56,7 @@ namespace Level
                 rect.y = 0;
                 camera.rect = rect;
             }
-        
+
         }
         private void Update()
         {
@@ -63,6 +66,16 @@ namespace Level
                 Adjust();
             }
 
+            Vector3 target_position;
+            if (allowPeeking)
+            {
+                target_position = Vector3.Lerp(PlayerController.Instance.transform.position, zone_position, 0.8f);
+
+            }
+            else
+            {
+                target_position = zone_position;
+            }
             target_position.z = camera.transform.position.z;
             transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
         }

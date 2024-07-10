@@ -9,10 +9,10 @@ public class DestroyAfter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DestryAfterLifetime());
+        StartCoroutine(DestroyAfterLifetime());
     }
 
-    IEnumerator DestryAfterLifetime()
+    IEnumerator DestroyAfterLifetime()
     {
         yield return new WaitForSeconds(duration);
         Destroy(gameObject);

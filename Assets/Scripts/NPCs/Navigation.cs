@@ -21,6 +21,8 @@ namespace NPC
         private Transform target;
         private Vector3? current_target_pos;
 
+        public bool flipX => rb.velocity.x > 0;
+
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();

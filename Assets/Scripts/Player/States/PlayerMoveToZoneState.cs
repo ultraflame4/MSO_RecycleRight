@@ -55,7 +55,8 @@ namespace Player.FSM
             // set current zone
             currentZone = current_zone;
             // set move force
-            moveForce = new Vector3(current_zone.player_startpos_x, character.transform.position.y, character.transform.position.z);
+            moveForce = (Vector3) current_zone.player_startpos;
+            moveForce.z = character.transform.position.z;
             // switch to this state
             fsm.SwitchState(character.MoveToZoneState);
         }

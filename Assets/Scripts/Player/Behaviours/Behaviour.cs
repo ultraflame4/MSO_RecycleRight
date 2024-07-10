@@ -47,7 +47,7 @@ namespace Player.Behaviours
             }
         }
 
-        void Start()
+        void Awake()
         {
             // get reference to player controller
             character = GetComponentInParent<PlayerController>();
