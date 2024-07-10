@@ -15,6 +15,6 @@ namespace NPC.Contaminants.States
         public AttackPlayer(ContaminantNPC npc) : base(npc)
         {
         }
-        public override IDamagable target => PlayerController.Instance;
+        public override IDamagable target => PlayerController.Instance.Data;
     }
 }
