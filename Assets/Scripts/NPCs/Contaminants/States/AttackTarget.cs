@@ -12,10 +12,13 @@ namespace NPC.Contaminants.States
 {
     public class AttackTarget : BaseRecyclableState
     {
+        
         protected ContaminantNPC npc;
         public virtual IDamagable target { get; }
 
         private Coroutine attackCoroutine;
+        public static int animParamTriggerAttack = Animator.StringToHash("Attack");
+        
 
         public AttackTarget(ContaminantNPC npc) : base(npc, npc)
         {
@@ -42,11 +45,13 @@ namespace NPC.Contaminants.States
             // Attack target
             // Debug.Log($"Attacking target {target}");
             OnAttackTarget();
+            yield return new WaitForSeconds(npc.attackDuration);
             npc.SwitchState(npc.state_Idle);
         }
 
         protected virtual void OnAttackTarget()
         {
+            npc.animator?.SetTrigger(animParamTriggerAttack);
             target?.Damage(npc.attackDamage);
         }
 
@@ -58,6 +63,7 @@ namespace NPC.Contaminants.States
             {
                 npc.StopCoroutine(attackCoroutine);
             }
+            npc.animator?.ResetTrigger(animParamTriggerAttack);
         }
     }
 }

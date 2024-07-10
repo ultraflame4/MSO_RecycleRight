@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 2289573718311261478, guid: fb8f4b826a57bae4d9d1e4cfc50f16cd, type: 3}
+      objectReference: {fileID: 9100000, guid: 5bc120c1cafb8f245b430aa283b08bc4, type: 2}
     - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Size.y
       value: 3.5
@@ -21,8 +21,36 @@ PrefabInstance:
       value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillIcon
+      value: 
+      objectReference: {fileID: 3155246883752744553, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: characterName
       value: Waste Collector Wilson
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillCooldown
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillDuration
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: attackDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: -4739837699357375595, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: skillTriggerTimeFrame
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,7 +131,8 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 384
-  grabEffect: {fileID: 0}
+  grabEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   throwDamage: 3
   throwForce: 25
-  throwEffect: {fileID: 0}
+  throwEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
+  garbageTruckPrefab: {fileID: 1001936688018432966, guid: db588a3d9116d5d44aee3b344c406de9, type: 3}

@@ -6,6 +6,7 @@ using Interfaces;
 using NPC.States;
 using UnityEngine.UI;
 using Patterns.FSM;
+using UnityEngine.AI;
 
 namespace NPC.Contaminant
 {
@@ -23,8 +24,11 @@ namespace NPC.Contaminant
 
         #region References
         public Slider healthbar;
+        public GrimeController grimeController;
         #endregion
+
         [Header("Config")]
+
         [Tooltip("Max health for this contaminant.")]
         public float maxHealth = 100f;
         [Tooltip("The speed at which the contaminant moves")]
@@ -33,6 +37,8 @@ namespace NPC.Contaminant
         public float attackRange = 1f;
         [Tooltip("The delay before each attack. in seconds")]
         public float attackDelay = .1f;
+        [Tooltip("The duration of each attack. in seconds")]
+        public float attackDuration = 1.5f;
         [Tooltip("The damage of each attack")]
         public float attackDamage;
         [Tooltip("Whether the contaminant can be cleaned")]
@@ -40,9 +46,45 @@ namespace NPC.Contaminant
         [Tooltip("The prefab to instantiate when the contaminant is cleaned.")]
         public GameObject clean_prefab;
 
+        [Tooltip("The npc data to configure this npc. Please note that this will override the above settings (on awake).")]
+        public TrashNpcSO npcData;
+
         public override RecyclableType recyclableType => RecyclableType.OTHERS;
         public bool playerInSight => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < sightRange;
         public bool playerInAttackRange => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange;
+
+        public void LoadConfig()
+        {
+            if (npcData == null) return;
+            Debug.Log("Overriding data using npc config...");
+            maxHealth = npcData.common.maxHealth;
+            sightRange = npcData.common.sightRange;
+            attackRange = npcData.contaminantConfig.attackRange;
+            attackDelay = npcData.contaminantConfig.attackDelay;
+            attackDamage = npcData.contaminantConfig.attackDamage;
+            attackDuration = npcData.contaminantConfig.attackDuration;
+            cleanable = npcData.contaminantConfig.cleanable;
+            if (cleanable)
+            {
+                if (npcData.recyclableConfig.recyclablePrefab != null)
+                {
+
+                    clean_prefab = npcData.recyclableConfig.recyclablePrefab;
+                    return;
+                }
+
+                Debug.LogWarning("No clean prefab set due to missing recyclable prefab in config! clean_prefab will not be overriden! This may be intended behaviour!");
+            }
+
+        }
+        private void OnValidate()
+        {
+            LoadConfig();
+        }
+        private void Awake()
+        {
+            LoadConfig();
+        }
 
         private void Start()
         {
@@ -54,6 +96,7 @@ namespace NPC.Contaminant
             state_Stunned = new Stunned(state_Idle, this, this);
             SwitchState(state_Idle);
         }
+
 
 
         private void OnDrawGizmosSelected()
@@ -71,7 +114,6 @@ namespace NPC.Contaminant
 
         public void Damage(float damage)
         {
-            // todo
             healthbar.value -= damage / maxHealth;
         }
 
@@ -79,7 +121,12 @@ namespace NPC.Contaminant
         {
             Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             if (!cleanable) return;
-            // todo
+            grimeController.GrimeAmount -= clean_amount;
+            if (grimeController.GrimeAmount <= 0.1)
+            {
+                Instantiate(clean_prefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
 
         public void Stun(float stun_duration)
