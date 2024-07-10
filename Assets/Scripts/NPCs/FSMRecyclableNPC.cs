@@ -16,6 +16,7 @@ namespace NPC
         /// Make this return true if this NPC is a food item. (Causes infestation)
         /// </summary>
         public virtual bool is_food { get; }
+        public Animator animator;
 
         public virtual void OnEnteredBin(RecyclingBin bin){
             if (is_food){
