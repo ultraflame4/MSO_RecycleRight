@@ -169,7 +169,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 113
-      y: 4
+      y: 53
       width: 14
       height: 40
     spriteID: 1fcec691997684e4f828d826fe0930f0
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 4}
+    uvTransform: {x: 113, y: 53}
   - name: WasteCollector_Wilson_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +189,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 85
-      y: 190
+      y: 236
       width: 18
       height: 40
     spriteID: 71b42a12daf415c4493e10b094bade0e
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 190}
+    uvTransform: {x: 85, y: 236}
   - name: WasteCollector_Wilson_Frame_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -209,7 +209,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 342
+      y: 388
       width: 19
       height: 40
     spriteID: e75385d2736143141a3d01c1d82b1b50
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 342}
+    uvTransform: {x: 54, y: 388}
   - name: WasteCollector_Wilson_Frame_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 390
+      y: 436
       width: 19
       height: 40
     spriteID: 44fdb83770cf3fb41888bb2d3e14e4c4
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 390}
+    uvTransform: {x: 54, y: 436}
   - name: WasteCollector_Wilson_Frame_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -249,7 +249,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 238
+      y: 284
       width: 18
       height: 44
     spriteID: 58f427fbe3040dd4684ed9b3a9046366
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 238}
+    uvTransform: {x: 54, y: 284}
   - name: WasteCollector_Wilson_Frame_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -269,7 +269,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 290
+      y: 336
       width: 18
       height: 44
     spriteID: 627e4f4290eb7544ea2a801de0521a60
@@ -280,7 +280,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 290}
+    uvTransform: {x: 54, y: 336}
   - name: WasteCollector_Wilson_Frame_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -329,7 +329,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 113
-      y: 52
+      y: 101
       width: 14
       height: 40
     spriteID: 868e42f7ee8b5974cbf26994ac71fa7c
@@ -340,7 +340,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 52}
+    uvTransform: {x: 113, y: 101}
   - name: WasteCollector_Wilson_Frame_11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -348,8 +348,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 425
+      x: 113
+      y: 4
       width: 14
       height: 41
     spriteID: ef9293d6d956b944f8eb7a7cb7aff22a
@@ -360,7 +360,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 425}
+    uvTransform: {x: 113, y: 4}
   - name: WasteCollector_Wilson_Frame_12
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -369,7 +369,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 113
-      y: 100
+      y: 149
       width: 14
       height: 40
     spriteID: 4f6db3ba370453541a160dd900248820
@@ -380,7 +380,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 100}
+    uvTransform: {x: 113, y: 149}
   - name: WasteCollector_Wilson_Frame_13
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -389,7 +389,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 113
-      y: 148
+      y: 197
       width: 14
       height: 40
     spriteID: 936daf1e43149f74c8d9069b136fdc7f
@@ -400,7 +400,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 148}
+    uvTransform: {x: 113, y: 197}
   - name: WasteCollector_Wilson_Frame_14
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -409,7 +409,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 85
-      y: 378
+      y: 424
       width: 17
       height: 39
     spriteID: d0b33251293214f448502217074791b6
@@ -420,7 +420,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 378}
+    uvTransform: {x: 85, y: 424}
   - name: WasteCollector_Wilson_Frame_15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -428,8 +428,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 54
-      y: 438
+      x: 85
+      y: 4
       width: 20
       height: 38
     spriteID: 28f9e5d4465fba24faf7c21ffca320de
@@ -440,7 +440,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 438}
+    uvTransform: {x: 85, y: 4}
   - name: WasteCollector_Wilson_Frame_16
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -469,7 +469,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 85
-      y: 286
+      y: 332
       width: 18
       height: 38
     spriteID: 1573b27bff9b8a149876f9b581671176
@@ -480,7 +480,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 286}
+    uvTransform: {x: 85, y: 332}
   - name: WasteCollector_Wilson_Frame_18
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -489,7 +489,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 85
-      y: 144
+      y: 190
       width: 19
       height: 38
     spriteID: 79ae97e3b15011c44ba33a24cfa3c712
@@ -500,48 +500,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 144}
+    uvTransform: {x: 85, y: 190}
   - name: WasteCollector_Wilson_Frame_19
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 85
-      y: 4
-      width: 20
-      height: 38
-    spriteID: f345de8d9c34a2b489e303efe89a4a1a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 85, y: 4}
-  - name: WasteCollector_Wilson_Frame_20
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 85
-      y: 332
-      width: 18
-      height: 38
-    spriteID: edbd670fab3b4fb43a16207d2f4cf1d0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 85, y: 332}
-  - name: WasteCollector_Wilson_Frame_21
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 7
@@ -552,7 +512,7 @@ ScriptedImporter:
       y: 50
       width: 20
       height: 38
-    spriteID: da0f666349d8b20458a2a50ee6c18359
+    spriteID: f345de8d9c34a2b489e303efe89a4a1a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -561,6 +521,46 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 85, y: 50}
+  - name: WasteCollector_Wilson_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 378
+      width: 18
+      height: 38
+    spriteID: edbd670fab3b4fb43a16207d2f4cf1d0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 378}
+  - name: WasteCollector_Wilson_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 96
+      width: 20
+      height: 38
+    spriteID: da0f666349d8b20458a2a50ee6c18359
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 96}
   - name: WasteCollector_Wilson_Frame_22
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -569,7 +569,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 85
-      y: 238
+      y: 284
       width: 18
       height: 40
     spriteID: 6da374fb124323f4c83ebf3be247deee
@@ -580,7 +580,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 238}
+    uvTransform: {x: 85, y: 284}
   - name: WasteCollector_Wilson_Frame_23
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -589,7 +589,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 190
+      y: 236
       width: 20
       height: 40
     spriteID: 47dcdffd72fc145438651989cd2750e4
@@ -600,7 +600,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 190}
+    uvTransform: {x: 54, y: 236}
   - name: WasteCollector_Wilson_Frame_24
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -629,7 +629,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 85
-      y: 96
+      y: 142
       width: 19
       height: 40
     spriteID: 69a0bda87881b5a44990566ee2750165
@@ -640,7 +640,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 96}
+    uvTransform: {x: 85, y: 142}
   - name: WasteCollector_Wilson_Frame_26
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -728,9 +728,9 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 435
-      width: 26
+      x: 54
+      y: 144
+      width: 23
       height: 38
     spriteID: 1da8c711bfe4e82459b91e13092a702d
     spriteBone: []
@@ -740,8 +740,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 435}
+    uvTransform: {x: 54, y: 144}
   - name: WasteCollector_Wilson_Frame_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 435
+      width: 26
+      height: 38
+    spriteID: dafdc03210338da469d78a3e3493e82e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 435}
+  - name: WasteCollector_Wilson_Frame_32
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 7
@@ -752,7 +772,7 @@ ScriptedImporter:
       y: 200
       width: 31
       height: 38
-    spriteID: dafdc03210338da469d78a3e3493e82e
+    spriteID: 562fb2ed9884c71438d78f45cb6fbd12
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -761,7 +781,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 200}
-  - name: WasteCollector_Wilson_Frame_32
+  - name: WasteCollector_Wilson_Frame_33
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 7
@@ -772,26 +792,6 @@ ScriptedImporter:
       y: 246
       width: 31
       height: 38
-    spriteID: 562fb2ed9884c71438d78f45cb6fbd12
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 246}
-  - name: WasteCollector_Wilson_Frame_33
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 54
-      y: 144
-      width: 23
-      height: 38
     spriteID: 7548dfb73310d6348891972a41dfdcd7
     spriteBone: []
     spriteOutline: []
@@ -800,7 +800,27 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 144}
+    uvTransform: {x: 4, y: 246}
+  - name: WasteCollector_Wilson_Frame_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 190
+      width: 23
+      height: 38
+    spriteID: b852c52c817b4d446bef21d0ce89b5fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 190}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -1053,17 +1073,17 @@ ScriptedImporter:
     - name: WasteCollector_Wilson_Frame_30
       frameIndex: 30
       cellRect:
-        x: 17
+        x: 20
         y: 10
-        width: 26
+        width: 23
         height: 38
       spriteId: 1da8c711bfe4e82459b91e13092a702d
     - name: WasteCollector_Wilson_Frame_31
       frameIndex: 31
       cellRect:
-        x: 20
+        x: 17
         y: 10
-        width: 31
+        width: 26
         height: 38
       spriteId: dafdc03210338da469d78a3e3493e82e
     - name: WasteCollector_Wilson_Frame_32
@@ -1079,9 +1099,17 @@ ScriptedImporter:
       cellRect:
         x: 20
         y: 10
-        width: 23
+        width: 31
         height: 38
       spriteId: 7548dfb73310d6348891972a41dfdcd7
+    - name: WasteCollector_Wilson_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 20
+        y: 10
+        width: 23
+        height: 38
+      spriteId: b852c52c817b4d446bef21d0ce89b5fd
     linkedCells: []
     parentIndex: -1
   platformSettings:

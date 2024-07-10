@@ -129,9 +129,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 52
-      width: 41
-      height: 41
+      y: 56
+      width: 64
+      height: 43
     spriteID: 40e349244e6f05b488f21459b02a34cd
     spriteBone: []
     spriteOutline: []
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 4, y: 56}
   - name: Activist_Asan_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -149,9 +149,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 101
-      width: 41
-      height: 40
+      y: 107
+      width: 64
+      height: 43
     spriteID: bb2549ffeadc7aa46bba80ffeed50e50
     spriteBone: []
     spriteOutline: []
@@ -160,7 +160,247 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 101}
+    uvTransform: {x: 4, y: 107}
+  - name: Activist_Asan_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 158
+      width: 64
+      height: 43
+    spriteID: 44036001d7d1be94988decb33256c6d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 158}
+  - name: Activist_Asan_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 209
+      width: 64
+      height: 43
+    spriteID: 60c53de364d521d498660549f66bf24b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 209}
+  - name: Activist_Asan_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 260
+      width: 64
+      height: 43
+    spriteID: ba04c3e6b03fa4b49a773818c3d0a1af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 260}
+  - name: Activist_Asan_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 311
+      width: 64
+      height: 43
+    spriteID: 5da4e4f09bc698749be5b7e46cbd3dd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 311}
+  - name: Activist_Asan_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 362
+      width: 64
+      height: 43
+    spriteID: 306ec14403d82054ab793dbf98db2da8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 362}
+  - name: Activist_Asan_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 413
+      width: 64
+      height: 43
+    spriteID: 4e373786082a2ed4e9ed0305c5e90a89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 413}
+  - name: Activist_Asan_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 464
+      width: 64
+      height: 43
+    spriteID: 0e42c74da20aa2d4fbdb2348a4feda3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 464}
+  - name: Activist_Asan_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 4
+      width: 64
+      height: 43
+    spriteID: aa198357eae33d846b9b2be5ac5f184a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 4}
+  - name: Activist_Asan_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 55
+      width: 64
+      height: 43
+    spriteID: 3b4589c51c6ad65408fd41afc869076c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 55}
+  - name: Activist_Asan_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 106
+      width: 64
+      height: 43
+    spriteID: 253524275553c914aacbf75d5eab7b25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 106}
+  - name: Activist_Asan_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 157
+      width: 64
+      height: 43
+    spriteID: 762b46f806c6b3247b6862c802db5004
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 157}
+  - name: Activist_Asan_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 208
+      width: 64
+      height: 43
+    spriteID: 9863ca07a37295343bdccd8746dc215d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 208}
   - name: Activist_Asan_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -168,11 +408,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 149
-      width: 41
-      height: 40
-    spriteID: e8cbeffedff037846a52308c5c04d6b9
+      x: 76
+      y: 259
+      width: 64
+      height: 43
+    spriteID: ba5094932170d1c48abc66abf9ca675b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,7 +420,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 149}
+    uvTransform: {x: 76, y: 259}
   - name: Activist_Asan_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -188,11 +428,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 197
-      width: 41
-      height: 40
-    spriteID: ce7cceaa55ed7e44eb4dfc7f78a60b34
+      x: 76
+      y: 310
+      width: 64
+      height: 43
+    spriteID: a51312b467e6643429edcbe260b9823f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,7 +440,47 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 197}
+    uvTransform: {x: 76, y: 310}
+  - name: Activist_Asan_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 361
+      width: 64
+      height: 43
+    spriteID: 82f311da07821854fae03c7327f81f7d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 361}
+  - name: Activist_Asan_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 412
+      width: 64
+      height: 43
+    spriteID: 06ec4a9a60443bd4f8a74ce20e4a8010
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 412}
   - name: Activist_Asan_Frame_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -208,11 +488,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 59
-      y: 4
-      width: 41
-      height: 40
-    spriteID: d8765af88d67ec24f99e7e16c28e741a
+      x: 76
+      y: 463
+      width: 64
+      height: 43
+    spriteID: 743d01f3f7f0c8847898b49f0c4305f1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -220,8 +500,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 59, y: 4}
+    uvTransform: {x: 76, y: 463}
   - name: Activist_Asan_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 4
+      width: 64
+      height: 43
+    spriteID: 6e150fbf710ed8b4abcdca284a773cd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 4}
+  - name: Activist_Asan_Frame_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 55
+      width: 64
+      height: 43
+    spriteID: 9f31e9dcb6176664691e3da04a30a4f3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 55}
+  - name: Activist_Asan_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 106
+      width: 64
+      height: 43
+    spriteID: ce266ee3506efec4db659b2d6cd57dad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 106}
+  - name: Activist_Asan_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 157
+      width: 64
+      height: 43
+    spriteID: 7dc3da9ae24ed5744ba8b05793de6f86
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 157}
+  - name: Activist_Asan_Frame_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 7
@@ -230,9 +590,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 47
-      height: 40
-    spriteID: 17ef8de75cd046f4fb68bce7d3c00b35
+      width: 64
+      height: 44
+    spriteID: 868b3872dd82f4348a2a0cba2cdd6b43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -241,18 +601,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Activist_Asan_Frame_6
+  - name: Activist_Asan_Frame_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 59
-      y: 52
-      width: 39
-      height: 42
-    spriteID: 9e90e3a5c1f316e49810d97606db33a4
+      x: 148
+      y: 208
+      width: 64
+      height: 43
+    spriteID: f8c978d1c5176a346a919bc08d484be4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -260,7 +620,147 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 59, y: 52}
+    uvTransform: {x: 148, y: 208}
+  - name: Activist_Asan_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 259
+      width: 64
+      height: 43
+    spriteID: 2ad01a7bcc4336147a983b0a91c4e07e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 259}
+  - name: Activist_Asan_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 407
+      width: 41
+      height: 40
+    spriteID: c7fbb02bf6f4bbf47b69a0c19cd12e05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 407}
+  - name: Activist_Asan_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 455
+      width: 41
+      height: 40
+    spriteID: 0758619a947860a42a0ad6483d65bd8e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 455}
+  - name: Activist_Asan_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 358
+      width: 41
+      height: 41
+    spriteID: 48a6015a808494f4abb8d8ebaa5f4488
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 358}
+  - name: Activist_Asan_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 310
+      width: 41
+      height: 40
+    spriteID: 8222ea52f481490489251ad9b5d4d605
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 310}
+  - name: Activist_Asan_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 358
+      width: 41
+      height: 40
+    spriteID: dd3af8d3468c10044b408be39f0260d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 358}
+  - name: Activist_Asan_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 310
+      width: 47
+      height: 40
+    spriteID: 9e58df5b3b095ef4f9d712e3d0141ea9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 310}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -270,22 +770,214 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Activist_Asan_Frame_0
-      frameIndex: 0
+    - name: Activist_Asan_Frame_6
+      frameIndex: 6
       cellRect:
-        x: 1
-        y: 15
-        width: 41
-        height: 41
+        x: 0
+        y: 13
+        width: 64
+        height: 43
       spriteId: 40e349244e6f05b488f21459b02a34cd
-    - name: Activist_Asan_Frame_1
-      frameIndex: 1
+    - name: Activist_Asan_Frame_12
+      frameIndex: 12
       cellRect:
-        x: 1
-        y: 16
-        width: 41
-        height: 40
+        x: 0
+        y: 13
+        width: 64
+        height: 43
       spriteId: bb2549ffeadc7aa46bba80ffeed50e50
+    - name: Activist_Asan_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 44036001d7d1be94988decb33256c6d5
+    - name: Activist_Asan_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 60c53de364d521d498660549f66bf24b
+    - name: Activist_Asan_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: ba04c3e6b03fa4b49a773818c3d0a1af
+    - name: Activist_Asan_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 5da4e4f09bc698749be5b7e46cbd3dd0
+    - name: Activist_Asan_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 306ec14403d82054ab793dbf98db2da8
+    - name: Activist_Asan_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 4e373786082a2ed4e9ed0305c5e90a89
+    - name: Activist_Asan_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 0e42c74da20aa2d4fbdb2348a4feda3c
+    - name: Activist_Asan_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: aa198357eae33d846b9b2be5ac5f184a
+    - name: Activist_Asan_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 3b4589c51c6ad65408fd41afc869076c
+    - name: Activist_Asan_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 253524275553c914aacbf75d5eab7b25
+    - name: Activist_Asan_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 762b46f806c6b3247b6862c802db5004
+    - name: Activist_Asan_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 9863ca07a37295343bdccd8746dc215d
+    - name: Activist_Asan_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: ba5094932170d1c48abc66abf9ca675b
+    - name: Activist_Asan_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: a51312b467e6643429edcbe260b9823f
+    - name: Activist_Asan_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 82f311da07821854fae03c7327f81f7d
+    - name: Activist_Asan_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 06ec4a9a60443bd4f8a74ce20e4a8010
+    - name: Activist_Asan_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 743d01f3f7f0c8847898b49f0c4305f1
+    - name: Activist_Asan_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 6e150fbf710ed8b4abcdca284a773cd0
+    - name: Activist_Asan_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 9f31e9dcb6176664691e3da04a30a4f3
+    - name: Activist_Asan_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: ce266ee3506efec4db659b2d6cd57dad
+    - name: Activist_Asan_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 7dc3da9ae24ed5744ba8b05793de6f86
+    - name: Activist_Asan_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 44
+      spriteId: 868b3872dd82f4348a2a0cba2cdd6b43
+    - name: Activist_Asan_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: f8c978d1c5176a346a919bc08d484be4
+    - name: Activist_Asan_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 13
+        width: 64
+        height: 43
+      spriteId: 2ad01a7bcc4336147a983b0a91c4e07e
     - name: Activist_Asan_Frame_2
       frameIndex: 2
       cellRect:
@@ -293,7 +985,7 @@ ScriptedImporter:
         y: 16
         width: 41
         height: 40
-      spriteId: e8cbeffedff037846a52308c5c04d6b9
+      spriteId: c7fbb02bf6f4bbf47b69a0c19cd12e05
     - name: Activist_Asan_Frame_3
       frameIndex: 3
       cellRect:
@@ -301,7 +993,23 @@ ScriptedImporter:
         y: 16
         width: 41
         height: 40
-      spriteId: ce7cceaa55ed7e44eb4dfc7f78a60b34
+      spriteId: 0758619a947860a42a0ad6483d65bd8e
+    - name: Activist_Asan_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 1
+        y: 15
+        width: 41
+        height: 41
+      spriteId: 48a6015a808494f4abb8d8ebaa5f4488
+    - name: Activist_Asan_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 1
+        y: 16
+        width: 41
+        height: 40
+      spriteId: 8222ea52f481490489251ad9b5d4d605
     - name: Activist_Asan_Frame_4
       frameIndex: 4
       cellRect:
@@ -309,7 +1017,7 @@ ScriptedImporter:
         y: 16
         width: 41
         height: 40
-      spriteId: d8765af88d67ec24f99e7e16c28e741a
+      spriteId: dd3af8d3468c10044b408be39f0260d9
     - name: Activist_Asan_Frame_5
       frameIndex: 5
       cellRect:
@@ -317,15 +1025,7 @@ ScriptedImporter:
         y: 16
         width: 47
         height: 40
-      spriteId: 17ef8de75cd046f4fb68bce7d3c00b35
-    - name: Activist_Asan_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 1
-        y: 14
-        width: 39
-        height: 42
-      spriteId: 9e90e3a5c1f316e49810d97606db33a4
+      spriteId: 9e58df5b3b095ef4f9d712e3d0141ea9
     linkedCells: []
     parentIndex: -1
   platformSettings:
