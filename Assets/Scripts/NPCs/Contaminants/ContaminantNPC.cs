@@ -37,6 +37,8 @@ namespace NPC.Contaminant
         public float attackRange = 1f;
         [Tooltip("The delay before each attack. in seconds")]
         public float attackDelay = .1f;
+        [Tooltip("The duration of each attack. in seconds")]
+        public float attackDuration = 1.5f;
         [Tooltip("The damage of each attack")]
         public float attackDamage;
         [Tooltip("Whether the contaminant can be cleaned")]
@@ -60,6 +62,7 @@ namespace NPC.Contaminant
             attackRange = npcData.contaminantConfig.attackRange;
             attackDelay = npcData.contaminantConfig.attackDelay;
             attackDamage = npcData.contaminantConfig.attackDamage;
+            attackDuration = npcData.contaminantConfig.attackDuration;
             cleanable = npcData.contaminantConfig.cleanable;
             if (cleanable)
             {

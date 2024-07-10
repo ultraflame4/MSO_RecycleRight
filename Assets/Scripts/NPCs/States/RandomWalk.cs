@@ -20,7 +20,7 @@ namespace NPC.States
 
         public override void LogicUpdate()
         {
-
+            base.LogicUpdate();
             if (navigation.reachedDestination)
             {
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using Patterns.FSM;
 using Level.Bins;
+using UnityEngine.Serialization;
 
 namespace NPC
 {
@@ -16,6 +17,15 @@ namespace NPC
         /// Make this return true if this NPC is a food item. (Causes infestation)
         /// </summary>
         public virtual bool is_food { get; }
+        [SerializeField, FormerlySerializedAs("animator")]
+        private Animator _animator;
+        public Animator animator {
+            get {
+                if (_animator) return _animator;
+                return null;
+            }
+        }
+        public SpriteRenderer spriteRenderer;
 
         public virtual void OnEnteredBin(RecyclingBin bin){
             if (is_food){

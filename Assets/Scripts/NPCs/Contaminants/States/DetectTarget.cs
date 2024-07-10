@@ -15,12 +15,6 @@ namespace NPC.Contaminants.States
             this.npc = npc;
         }
 
-        public override void Enter()
-        {
-            base.Enter();
-            
-        }
-
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();

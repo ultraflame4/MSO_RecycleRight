@@ -37,6 +37,12 @@ public class ContaminantConfig
     /// </summary>
     [Tooltip("The damage of each attack")]
     public float attackDamage;
+
+    /// <summary>
+    /// The duration of each attack. in seconds
+    /// </summary>
+    [Tooltip("The duration of each attack. in seconds")]
+    public float attackDuration = 1.5f;
     /// <summary>
     /// Whether the contaminant can be cleaned
     /// </summary>
