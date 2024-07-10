@@ -34,19 +34,24 @@ namespace NPC.States
         public override void Enter()
         {
             base.Enter();
-            character.animator?.SetBool(animParamBoolWalk,true);
+            character.animator?.SetBool(animParamBoolWalk, true);
         }
         public override void OnDrawGizmosSelected()
         {
             base.OnDrawGizmosSelected();
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, current_edge_force);
+        }
 
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+            if (character.spriteRenderer) character.spriteRenderer.flipX = navigation.flipX;
         }
         public override void Exit()
         {
             base.Exit();
-            character.animator.SetBool(animParamBoolWalk,false);
+            character.animator?.SetBool(animParamBoolWalk, false);
         }
     }
 }

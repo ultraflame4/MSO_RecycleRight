@@ -839,13 +839,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   <navigation>k__BackingField: {fileID: 8690451943301939409}
+  animator: {fileID: 8032888024164147659}
+  spriteRenderer: {fileID: 7100357504067239762}
   healthbar: {fileID: 5208754194471477544}
   grimeController: {fileID: 2116439068003672345}
-  animator: {fileID: 8032888024164147659}
   maxHealth: 100
   sightRange: 4
   attackRange: 1
   attackDelay: 0.1
+  attackDuration: 1.5
   attackDamage: 0
   cleanable: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
