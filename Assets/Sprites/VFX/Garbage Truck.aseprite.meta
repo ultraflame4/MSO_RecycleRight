@@ -132,9 +132,6 @@ ScriptedImporter:
       y: 175
       width: 119
       height: 48
-      y: 175
-      width: 119
-      height: 48
     spriteID: 331d3823dcc91c844ae274a09fc7f18d
     spriteBone: []
     spriteOutline: []
@@ -143,7 +140,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 175}
     uvTransform: {x: 4, y: 175}
   - name: Garbage Truck_Frame_1
     originalName: 
@@ -156,9 +152,6 @@ ScriptedImporter:
       y: 4
       width: 119
       height: 49
-      y: 4
-      width: 119
-      height: 49
     spriteID: e30af26757a48a94a8a33355e9a62241
     spriteBone: []
     spriteOutline: []
@@ -167,7 +160,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
     uvTransform: {x: 4, y: 4}
   - name: Garbage Truck_Frame_2
     originalName: 
@@ -180,9 +172,6 @@ ScriptedImporter:
       y: 61
       width: 119
       height: 49
-      y: 61
-      width: 119
-      height: 49
     spriteID: 5f1fa19e486e57a41b0cdce922940138
     spriteBone: []
     spriteOutline: []
@@ -191,7 +180,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 61}
     uvTransform: {x: 4, y: 61}
   - name: Garbage Truck_Frame_3
     originalName: 
@@ -204,9 +192,6 @@ ScriptedImporter:
       y: 118
       width: 119
       height: 49
-      y: 118
-      width: 119
-      height: 49
     spriteID: d3fa788a01eb8e04d9f024eb82eb0ea5
     spriteBone: []
     spriteOutline: []
@@ -215,7 +200,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 118}
     uvTransform: {x: 4, y: 118}
   spriteSheetImportData: []
   asepriteLayers:
@@ -233,18 +217,10 @@ ScriptedImporter:
         y: 54
         width: 119
         height: 48
-        x: 1
-        y: 54
-        width: 119
-        height: 48
       spriteId: 331d3823dcc91c844ae274a09fc7f18d
     - name: Garbage Truck_Frame_1
       frameIndex: 1
       cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
         x: 1
         y: 53
         width: 119
@@ -257,18 +233,10 @@ ScriptedImporter:
         y: 53
         width: 119
         height: 49
-        x: 1
-        y: 53
-        width: 119
-        height: 49
       spriteId: 5f1fa19e486e57a41b0cdce922940138
     - name: Garbage Truck_Frame_3
       frameIndex: 3
       cellRect:
-        x: 1
-        y: 53
-        width: 119
-        height: 49
         x: 1
         y: 53
         width: 119
