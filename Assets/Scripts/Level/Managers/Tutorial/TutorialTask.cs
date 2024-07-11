@@ -20,7 +20,7 @@ namespace Level.Tutorial
         public event Action TaskCompleted;
 
         // Start is called before the first frame update
-        void Start()
+        protected void Start()
         {
             // reset coroutine
             coroutine = null;
@@ -32,7 +32,7 @@ namespace Level.Tutorial
         }
 
         // Update is called once per frame
-        void Update()
+        protected void Update()
         {
             if (!IsActive || !CheckTaskCompletion() || coroutine != null) return;
             coroutine = StartCoroutine(CountDuration());
