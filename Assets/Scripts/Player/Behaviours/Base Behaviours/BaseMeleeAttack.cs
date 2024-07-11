@@ -1,6 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using Interfaces;
+using NPC.Contaminant;
 
 namespace Player.Behaviours
 {
@@ -55,10 +56,11 @@ namespace Player.Behaviours
                 // ensure hit is not null
                 if (hit == null) continue;
 
-                // if attacks can clean contaminants (clean amount > 0), try to get cleanable interface
-                if (cleanAmount > 0f && hit.GetComponent<ICleanable>() != null)
-                    // clean contaminant that is hit
-                    hit.GetComponent<ICleanable>().Clean(cleanAmount);
+                // attempt to get reference to contaminant fsm
+                ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
+                // clean contaminant that is hit if it is cleanable
+                if (cleanAmount > 0f && contaminant != null && contaminant.cleanable)
+                    hit.GetComponent<ICleanable>()?.Clean(cleanAmount);
                 else
                     // deal damage if cannot clean
                     hit.GetComponent<IDamagable>()?.Damage(attackDamage);
