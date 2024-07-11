@@ -16,7 +16,6 @@ namespace NPC
         [Tooltip("Checks for target position overshooting and fixes it.")]
         public bool fix_overshoot = true;
 
-
         private Rigidbody2D rb;
         private Transform target;
         private Vector3? current_target_pos;
