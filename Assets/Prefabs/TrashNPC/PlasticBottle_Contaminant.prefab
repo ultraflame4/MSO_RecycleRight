@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: sightRange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: attackDamage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5090525263914492313, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -69,9 +73,21 @@ PrefabInstance:
       value: PlasticBottle_Contaminant
       objectReference: {fileID: 0}
     - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -5401671726381394326, guid: 9146297e04a62884db0dd8736d589517, type: 3}
+      objectReference: {fileID: 4796279524644775078, guid: 9146297e04a62884db0dd8736d589517, type: 3}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032888024164147659, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Controller
       value: 

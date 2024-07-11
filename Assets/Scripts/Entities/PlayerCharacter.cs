@@ -1,8 +1,9 @@
 using UnityEngine;
+using Interfaces;
 
 namespace Entity.Data
 {
-    public class PlayerCharacter : Entity
+    public class PlayerCharacter : Entity, IDamagable
     {
         // inspector fields
         [SerializeField] PlayerCharacterSO objectData;
@@ -44,6 +45,15 @@ namespace Entity.Data
         }
 
         public bool Switchable => !OverrideSwitchable && !(IsCleaning || Health <= 0);
+        #endregion
+
+        #region Interface Methods
+        public void Damage(float damage)
+        {
+            // apply damage
+            Health -= damage;
+            Debug.Log($"{gameObject.name}: {Health}");
+        }
         #endregion
         
         #region MonoBehaviour Callback

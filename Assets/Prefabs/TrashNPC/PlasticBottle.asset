@@ -27,5 +27,6 @@ MonoBehaviour:
     contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     attackRange: 1
     attackDelay: 0.1
-    attackDamage: 0
+    attackDamage: 5
+    attackDuration: 1.5
     cleanable: 0
