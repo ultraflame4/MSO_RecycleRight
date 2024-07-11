@@ -33,7 +33,7 @@ namespace UI
             // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
             // get reference to character manager
-            characterManager = GameObject.FindWithTag("Player").GetComponent<CharacterManager>();
+            characterManager = PlayerController.Instance.CharacterManager;
             // cache original profile image color
             cacheOriginalProfileColor = profileImage.color;
             // disable unswitchable overlay on start
