@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 37
-      y: 182
+      x: 73
+      y: 4
       width: 15
       height: 47
     spriteID: de34cf114247b4445906f7b2ad0b5266
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 182}
+    uvTransform: {x: 73, y: 4}
   - name: Enemy_Bottle_Frame_9
     originalName: 
     pivot: {x: 0.47058824, y: -0.23404254}
@@ -149,7 +149,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 45
-      y: 72
+      y: 73
       width: 17
       height: 47
     spriteID: 0805f9af31e903d449d51cab0754ab89
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 45, y: 72}
+    uvTransform: {x: 45, y: 73}
   - name: Enemy_Bottle_Frame_10
     originalName: 
     pivot: {x: 0.5217391, y: -0.23404254}
@@ -169,7 +169,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 182
+      y: 183
       width: 23
       height: 47
     spriteID: d8b57ff9949c1514387c5c005f30c675
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 182}
+    uvTransform: {x: 4, y: 183}
   - name: Enemy_Bottle_Frame_11
     originalName: 
     pivot: {x: 0.44, y: -0.21276595}
@@ -189,7 +189,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 127
+      y: 128
       width: 25
       height: 47
     spriteID: 549c5d8c036d6bd41941afbc03d91094
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 127}
+    uvTransform: {x: 4, y: 128}
   - name: Enemy_Bottle_Frame_12
     originalName: 
     pivot: {x: 0.47058824, y: -0.23404254}
@@ -209,7 +209,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 37
-      y: 127
+      y: 128
       width: 17
       height: 47
     spriteID: b1cc4517d26031a42a4d6ca3e8d4c15e
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 127}
+    uvTransform: {x: 37, y: 128}
   - name: Enemy_Bottle_Frame_13
     originalName: 
     pivot: {x: 0.4666667, y: -0.23404254}
@@ -228,8 +228,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 74
-      y: 4
+      x: 73
+      y: 59
       width: 15
       height: 47
     spriteID: 524cf432766568441966ac186befbada
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 74, y: 4}
+    uvTransform: {x: 73, y: 59}
   - name: Enemy_Bottle_Frame_14
     originalName: 
     pivot: {x: 0.5151515, y: -0.23404254}
@@ -249,7 +249,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 72
+      y: 73
       width: 33
       height: 47
     spriteID: 3b921b796b73fee45a5e4f45c4938749
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 72}
+    uvTransform: {x: 4, y: 73}
   - name: Enemy_Bottle_Frame_15
     originalName: 
     pivot: {x: 0.516129, y: -0.016666668}
@@ -270,8 +270,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 62
-      height: 60
+      width: 61
+      height: 61
     spriteID: 4f45cea9f42a1e94799068acfe5a6a20
     spriteBone: []
     spriteOutline: []
@@ -288,9 +288,9 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 74
-      y: 59
-      width: 15
+      x: 37
+      y: 183
+      width: 17
       height: 47
     spriteID: bac063ae95273a643a7e47e0080ae52b
     spriteBone: []
@@ -300,7 +300,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 74, y: 59}
+    uvTransform: {x: 37, y: 183}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -370,16 +370,16 @@ ScriptedImporter:
       frameIndex: 25
       cellRect:
         x: 0
-        y: 1
-        width: 62
-        height: 60
+        y: 0
+        width: 61
+        height: 61
       spriteId: 4f45cea9f42a1e94799068acfe5a6a20
     - name: Enemy_Bottle_Frame_26
       frameIndex: 26
       cellRect:
-        x: 25
+        x: 24
         y: 11
-        width: 15
+        width: 17
         height: 47
       spriteId: bac063ae95273a643a7e47e0080ae52b
     linkedCells: []
