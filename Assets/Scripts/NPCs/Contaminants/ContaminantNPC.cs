@@ -119,8 +119,8 @@ namespace NPC.Contaminant
 
         public void Clean(float clean_amount)
         {
-            Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             if (!cleanable) return;
+            // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
             {
