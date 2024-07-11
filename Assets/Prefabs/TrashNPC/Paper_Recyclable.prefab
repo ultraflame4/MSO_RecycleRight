@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 3787632505832760229, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: a29b22887c6fdc049aefeb776f522e1b, type: 2}
+      objectReference: {fileID: 22100000, guid: 5d843df80a0b52e47afa31a15893baa5, type: 2}
     - target: {fileID: 5423529344811936447, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Name
       value: Paper_Recyclable
@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: npcData
       value: 
       objectReference: {fileID: 11400000, guid: 0b07314574d297644906f5e00790b134, type: 2}
+    - target: {fileID: 5928528250783536157, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 2559581861570595645}
     - target: {fileID: 5928528250783536157, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: contaminant_prefab
       value: 
@@ -73,3 +77,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+--- !u!95 &2559581861570595645 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3787632505832760229, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+  m_PrefabInstance: {fileID: 1663281361899792536}
+  m_PrefabAsset: {fileID: 0}
