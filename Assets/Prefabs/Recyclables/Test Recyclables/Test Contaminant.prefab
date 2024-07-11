@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42dae454a2376484795a82bb5b09c52d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -541,15 +541,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   <navigation>k__BackingField: {fileID: -4371265464402291041}
+  _animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   healthbar: {fileID: 1397642903920785213}
   grimeController: {fileID: 2414146129980149966}
   maxHealth: 100
   sightRange: 3
   attackRange: 0.65
   attackDelay: 0.5
+  attackDuration: 1.5
   attackDamage: 10
   cleanable: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
+  npcData: {fileID: 0}
 --- !u!114 &-4371265464402291041
 MonoBehaviour:
   m_ObjectHideFlags: 0

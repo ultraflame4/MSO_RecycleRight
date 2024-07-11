@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42dae454a2376484795a82bb5b09c52d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 3481361625278285539}
   - component: {fileID: 8690451943301939409}
   m_Layer: 8
-  m_Name: template_Contaminant
+  m_Name: Template_Contaminant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +785,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -819,7 +819,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   <navigation>k__BackingField: {fileID: 8690451943301939409}
-  animator: {fileID: 8032888024164147659}
+  _animator: {fileID: 8032888024164147659}
   spriteRenderer: {fileID: 7100357504067239762}
   healthbar: {fileID: 5208754194471477544}
   grimeController: {fileID: 2116439068003672345}

@@ -52,7 +52,6 @@ namespace Entity.Data
         {
             // apply damage
             Health -= damage;
-            Debug.Log($"{gameObject.name}: {Health}");
         }
         #endregion
         

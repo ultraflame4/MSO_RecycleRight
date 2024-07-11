@@ -1,5 +1,6 @@
 using System.Linq;
 using Level;
+using Level.Bins;
 using NPC;
 using NPC.Contaminant;
 using Patterns.FSM;
@@ -30,6 +31,11 @@ namespace NPC.Contaminants.States
             if (npc.playerInSight)
             {
                 npc.SwitchState(npc.state_ChasePlayer);
+                return;
+            }
+            bool nearbyBin = colliders.Any(x=>x.GetComponent<RecyclingBin>());
+            if (nearbyBin){
+                npc.SwitchState(npc.state_ChaseBin);
                 return;
             }
         }
