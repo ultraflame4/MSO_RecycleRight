@@ -15,6 +15,6 @@ public static class Utils{
 
 }
 
-public class MonoBehavior
+public class MonoBehavour
 {
 }
