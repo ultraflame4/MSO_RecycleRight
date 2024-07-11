@@ -20,7 +20,14 @@ namespace NPC
         private Transform target;
         private Vector3? current_target_pos;
 
-        public bool flipX => rb.velocity.x > 0;
+        public bool flipX {
+            get {
+                if (rb){
+                    return rb.velocity.x > 0;
+                }
+                return false;
+            }
+        }
 
         private void Start()
         {
