@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4260a42c11c9f5e41b0b8e40e547452b
+guid: 9b4886dfc8550b54aaa719ee91cd054a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 33
       height: 37
-    spriteID: 74e96e3e29ac0b44998076657641bbbb
+    spriteID: 1dd02a5c3045bdf4781bb62e0d19aaa0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 4
       width: 13
       height: 17
-    spriteID: be6be06e030d8d043a762a1c95ab1584
+    spriteID: 2e057a0ee1bcf04479487cf0bf3435a8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -177,7 +177,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 37
-      spriteId: 74e96e3e29ac0b44998076657641bbbb
+      spriteId: 1dd02a5c3045bdf4781bb62e0d19aaa0
     - name: Mouse_Frame_1
       frameIndex: 1
       cellRect:
@@ -185,7 +185,7 @@ ScriptedImporter:
         y: 11
         width: 13
         height: 17
-      spriteId: be6be06e030d8d043a762a1c95ab1584
+      spriteId: 2e057a0ee1bcf04479487cf0bf3435a8
     linkedCells: []
     parentIndex: -1
   platformSettings: []
