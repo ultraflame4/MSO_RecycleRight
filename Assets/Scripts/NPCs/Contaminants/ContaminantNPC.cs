@@ -18,6 +18,7 @@ namespace NPC.Contaminant
         public AttackRecyclable state_AttackRecyclable { get; private set; }
         public ChaseRecyclable state_ChaseRecyclable { get; private set; }
         public ChasePlayer state_ChasePlayer { get; private set; }
+        public ChaseBin state_ChaseBin { get; private set; }
         public AttackPlayer state_AttackPlayer { get; private set; }
         #endregion
 
@@ -89,8 +90,9 @@ namespace NPC.Contaminant
         private void Start()
         {
             state_Idle = new DetectTarget(this);
-            state_ChaseRecyclable = new ChaseRecyclable(this);
             state_AttackRecyclable = new AttackRecyclable(this);
+            state_ChaseRecyclable = new ChaseRecyclable(this);
+            state_ChaseBin = new ChaseBin(this);
             state_ChasePlayer = new ChasePlayer(this);
             state_AttackPlayer = new AttackPlayer(this);
             state_Stunned = new Stunned(state_Idle, this, this);
