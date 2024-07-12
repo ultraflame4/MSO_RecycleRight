@@ -1,4 +1,3 @@
-using UnityEngine;
 using Entity.Data;
 using Player;
 using Behaviour = Player.Behaviours.Behaviour;
@@ -9,7 +8,7 @@ namespace Level.Tutorial
     {
         CharacterManager characterManager;
         Behaviour behaviour;
-        bool conditionTriggered = false;
+        bool conditionTriggered, tutorialActivated = false;
         int currentCount;
 
         // Start is called before the first frame update
@@ -18,29 +17,37 @@ namespace Level.Tutorial
             base.Start();
             currentCount = 0;
             characterManager = PlayerController.Instance.CharacterManager;
-            behaviour = PlayerController.Instance.CharacterBehaviour;
-            characterManager.CharacterChanged += OnCharacterChange;
-            if (behaviour == null) return;
-            behaviour.SkillTriggered += SkillTriggered;
+        }
+
+        new void Update()
+        {
+            // check for activating tutorial
+            if (!tutorialActivated && IsActive)
+            {
+                tutorialActivated = true;
+                characterManager.CharacterChanged += OnCharacterChange;
+                behaviour.SkillTriggered += SkillTriggered;
+                PlayerController.Instance.Data.skillCooldownMultiplier = 0f;
+            }
+            base.Update();
         }
         
         public override bool CheckTaskCompletion()
         {
-            Debug.Log("test");
-            PlayerController.Instance.Data.skillCooldownMultiplier = 0f;
             if (!conditionTriggered) return false;
             currentCount++;
             conditionTriggered = false;
             box.IncrementCount();
-            PlayerController.Instance.Data.skillCooldownMultiplier = 1f;
             if (count != 0 && currentCount < count) return false;
+            PlayerController.Instance.Data.skillCooldownMultiplier = 1f;
             characterManager.CharacterChanged -= OnCharacterChange;
+            behaviour.SkillTriggered -= SkillTriggered;
             return true;
         }
 
         void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
         {
-            if (!IsActive) return;
+            curr.skillCooldownMultiplier = 0f;
             behaviour = curr.GetComponent<Behaviour>();
             if (behaviour != null) behaviour.SkillTriggered += SkillTriggered;
             if (prev == null) return;
@@ -51,7 +58,6 @@ namespace Level.Tutorial
 
         void SkillTriggered(PlayerCharacter data)
         {
-            if (!IsActive) return;
             conditionTriggered = true;
         }
     }
