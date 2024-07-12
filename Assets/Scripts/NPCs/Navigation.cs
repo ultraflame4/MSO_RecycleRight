@@ -15,13 +15,19 @@ namespace NPC
         public float move_speed = 100f;
         [Tooltip("Checks for target position overshooting and fixes it.")]
         public bool fix_overshoot = true;
-
-
+        
         private Rigidbody2D rb;
         private Transform target;
         private Vector3? current_target_pos;
 
-        public bool flipX => rb.velocity.x > 0;
+        public bool flipX {
+            get {
+                if (rb){
+                    return rb.velocity.x > 0;
+                }
+                return false;
+            }
+        }
 
         private void Start()
         {

@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 7073787532599200981}
   - component: {fileID: 8620654108279005573}
   - component: {fileID: 308808039077732414}
+  - component: {fileID: 3774998345464463093}
   m_Layer: 5
   m_Name: Information Box
   m_TagString: Untagged
@@ -211,6 +212,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 52
+--- !u!114 &3774998345464463093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634168055463537028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2889e88c9db184eb577918eb58f36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  informationText: {fileID: 5922110950723130766}
+  countText: {fileID: 3528887189475889804}
+  maxCount: 0
 --- !u!1 &7168108232394219222
 GameObject:
   m_ObjectHideFlags: 0

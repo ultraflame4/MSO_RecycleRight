@@ -14,3 +14,7 @@ public static class Utils{
     }
 
 }
+
+public class MonoBehavour
+{
+}

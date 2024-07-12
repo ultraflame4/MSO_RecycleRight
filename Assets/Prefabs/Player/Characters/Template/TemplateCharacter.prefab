@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -6992295730688417858}
   - component: {fileID: 1214702141452971629}
   - component: {fileID: 5478115462021916385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TemplateCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,14 +159,19 @@ MonoBehaviour:
   characterName: Template Character
   characterDesc: 
   characterSprite: {fileID: 0}
+  objectData: {fileID: 0}
   maxHealth: 100
   movementSpeed: 250
   attackTriggerTimeFrame: 0.5
   skillCooldown: 15
   skillTriggerTimeFrame: 0.5
+  skillIcon: {fileID: 0}
   attackDuration: 1.5
   skillDuration: 2
+  movementMultiplier: 1
+  attackMultiplier: 1
   IsCleaning: 0
+  OverrideSwitchable: 0
 --- !u!114 &5478115462021916385
 MonoBehaviour:
   m_ObjectHideFlags: 0
