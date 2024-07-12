@@ -13,24 +13,28 @@ namespace Level.Tutorial
             bool taskComplete = false;
 
             // check key press
-            foreach (KeyCode key in keys)
-            {
-                if (!Input.GetKeyDown(key)) continue;
-                taskComplete = true;
-                break;
-            }
-
+            taskComplete = CheckButtonPress(keys, (KeyCode key) => Input.GetKeyDown(key));
             // check mouse button press
-            foreach (int mouseButton in mouseButtons)
-            {
-                if (taskComplete) break;
-                if (!Input.GetMouseButtonDown(mouseButton)) continue;
-                taskComplete = true;
-            }
+            if (!taskComplete)
+                taskComplete = CheckButtonPress(mouseButtons, (int mouseButton) => Input.GetMouseButtonDown(mouseButton));
 
             if (taskComplete) box.IncrementCount();
 
             return taskComplete;
+        }
+
+        private delegate bool Condition<T>(T element);
+        private bool CheckButtonPress<T>(T[] array, Condition<T> condition)
+        {
+            if (array == null || array.Length <= 0) return false;
+
+            foreach (var element in array)
+            {
+                if (!condition.Invoke(element)) continue;
+                return true;
+            }
+
+            return false;
         }
     }
 }
