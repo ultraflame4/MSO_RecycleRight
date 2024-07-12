@@ -15018,6 +15018,57 @@ MonoBehaviour:
   smoothTime: 0.3
   aspect: {x: 16, y: 9}
   allowPeeking: 0
+--- !u!1 &432680492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432680493}
+  - component: {fileID: 432680494}
+  m_Layer: 0
+  m_Name: Attack Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432680493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432680492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5240765378600200609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &432680494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432680492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141e08e4f063d814d871274dff0dda15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCompletionDuration: 3
+  UIElements: []
+  text: Perform an Attack
+  count: 3
+  box: {fileID: 2143212988}
+  keys: 
+  mouseButtons: 00000000
 --- !u!1001 &510799179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15256,6 +15307,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7503080226411607385, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
   m_PrefabInstance: {fileID: 345989316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &754969638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754969639}
+  - component: {fileID: 754969640}
+  m_Layer: 0
+  m_Name: Move Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754969639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754969638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5240765378600200609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &754969640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754969638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141e08e4f063d814d871274dff0dda15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCompletionDuration: 5
+  UIElements: []
+  text: Use WASD to move around
+  count: 0
+  box: {fileID: 2143212988}
+  keys: 77000000610000007300000064000000
+  mouseButtons: 
 --- !u!1001 &987933177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15569,6 +15671,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7073787532599200981, guid: b20b7bc5d7950f34994020ba4dafb5c8, type: 3}
   m_PrefabInstance: {fileID: 2143212986}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2143212988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3774998345464463093, guid: b20b7bc5d7950f34994020ba4dafb5c8, type: 3}
+  m_PrefabInstance: {fileID: 2143212986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2889e88c9db184eb577918eb58f36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1315312721146712386
 Transform:
   m_ObjectHideFlags: 0
@@ -15631,7 +15744,9 @@ Transform:
   m_LocalPosition: {x: 0.02, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 754969639}
+  - {fileID: 432680493}
   m_Father: {fileID: 1315312721146712386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6793962242787335996
@@ -15644,6 +15759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315312721146712386}
   - component: {fileID: 7641254686706731872}
+  - component: {fileID: 7641254686706731873}
   m_Layer: 0
   m_Name: QuickLevelSetup
   m_TagString: Untagged
@@ -15668,6 +15784,22 @@ MonoBehaviour:
   <current_zone_index>k__BackingField: 0
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
+--- !u!114 &7641254686706731873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793962242787335996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899b7bcedc9e8f749a6cce2e39f1a28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneTasks:
+  - <tasks>k__BackingField:
+    - {fileID: 754969640}
+    - {fileID: 432680494}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
