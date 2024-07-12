@@ -38,7 +38,7 @@ namespace Player.Behaviours
                 // if value is true, check if coroutine is running
                 if (cooldown != null) StopCoroutine(cooldown);
                 // start a coroutine to count duration of skill cooldown
-                cooldown = StartCoroutine(CountDuration(data.skillCooldown * data.skillCooldownMultiplier, () => 
+                cooldown = StartCoroutine(CountDuration(data.netSkillCooldown, () => 
                     {
                         canTriggerSkill = true;
                         cooldown = null;

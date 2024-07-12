@@ -42,8 +42,7 @@ namespace UI
             for (int i = 0; i < cooldownManager.Length; i++)
             {
                 // only increment cooldown when less than max cooldown
-                if (cooldownManager[i] >= (characterManager.character_instances[i].skillCooldown * 
-                    characterManager.character_instances[i].skillCooldownMultiplier)) 
+                if (cooldownManager[i] >= characterManager.character_instances[i].netSkillCooldown) 
                         continue;
                 // increment cooldown
                 cooldownManager[i] += Time.deltaTime;
