@@ -141,6 +141,66 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: EmptyBtn_Frame_1
+    originalName: 
+    pivot: {x: 0.44444445, y: -1.2222222}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 21
+      width: 9
+      height: 9
+    spriteID: d360ec5cef2fcaf4dbf24d2466a2f7d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 21}
+  - name: EmptyBtn_Frame_2
+    originalName: 
+    pivot: {x: 0.44444445, y: -1.2222222}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 38
+      width: 9
+      height: 9
+    spriteID: be61b7ff87ab7744fb3133d9be4025d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 38}
+  - name: EmptyBtn_Frame_3
+    originalName: 
+    pivot: {x: 0.44444445, y: -1.2222222}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 21
+      y: 4
+      width: 9
+      height: 9
+    spriteID: cc35fc6381ae279448c80d9d47749177
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 21, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,7 +210,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: EmptyBtn
+    - name: EmptyBtn_Frame_0
       frameIndex: 0
       cellRect:
         x: 12
@@ -158,6 +218,30 @@ ScriptedImporter:
         width: 9
         height: 9
       spriteId: 1283b490bded2084ca385cd69f84a40d
+    - name: EmptyBtn_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 12
+        y: 11
+        width: 9
+        height: 9
+      spriteId: d360ec5cef2fcaf4dbf24d2466a2f7d8
+    - name: EmptyBtn_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 12
+        y: 11
+        width: 9
+        height: 9
+      spriteId: be61b7ff87ab7744fb3133d9be4025d7
+    - name: EmptyBtn_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 12
+        y: 11
+        width: 9
+        height: 9
+      spriteId: cc35fc6381ae279448c80d9d47749177
     linkedCells: []
     parentIndex: -1
   platformSettings: []
