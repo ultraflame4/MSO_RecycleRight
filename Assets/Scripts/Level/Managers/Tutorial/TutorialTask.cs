@@ -9,7 +9,7 @@ namespace Level.Tutorial
         [Tooltip("Minimum duration to keep tutorial active.")]
         [SerializeField] float minCompletionDuration = 5f;
         [Tooltip("UI elements to show for the tutorial.")]
-        [SerializeField] GameObject[] UIelements;
+        [SerializeField] GameObject[] UIElements;
         Coroutine coroutine;
 
         // public boolean properties
@@ -45,7 +45,7 @@ namespace Level.Tutorial
         public virtual void SetTutorialActive(bool active)
         {
             // set active of UI element objects
-            foreach(GameObject obj in UIelements)
+            foreach(GameObject obj in UIElements)
             {
                 obj.SetActive(active);
             }
