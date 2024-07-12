@@ -15067,6 +15067,7 @@ MonoBehaviour:
   text: Perform an Attack
   count: 3
   box: {fileID: 2143212988}
+  showBox: 1
   keys: 
   mouseButtons: 00000000
 --- !u!1001 &510799179
@@ -15356,6 +15357,7 @@ MonoBehaviour:
   text: Use WASD to move around
   count: 0
   box: {fileID: 2143212988}
+  showBox: 1
   keys: 77000000610000007300000064000000
   mouseButtons: 
 --- !u!1001 &987933177

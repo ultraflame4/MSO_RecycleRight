@@ -9,6 +9,7 @@ namespace Level.Tutorial
         [SerializeField] private string text;
         [SerializeField] protected int count = 0;
         [SerializeField] protected InformationBox box;
+        [SerializeField] protected bool showBox = true;
 
         public override void SetTutorialActive(bool active)
         {
@@ -17,6 +18,7 @@ namespace Level.Tutorial
             box.SetInformation(text, count);
             box.ResetCount();
             box.UpdateCountUI();
+            box.gameObject.SetActive(showBox);
         }
 
         public abstract override bool CheckTaskCompletion();
