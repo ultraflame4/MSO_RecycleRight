@@ -38,7 +38,11 @@ namespace Level.Tutorial
             coroutine = StartCoroutine(CountDuration());
         }
 
-        public void SetTutorialActive(bool active)
+        /// <summary>
+        /// Toggle hiding and showing of tutorial UI elements.
+        /// </summary>
+        /// <param name="active">Whether to show (true) the tutorial or not (false)</param>
+        public virtual void SetTutorialActive(bool active)
         {
             // set active of UI element objects
             foreach(GameObject obj in UIelements)
