@@ -11,9 +11,7 @@ namespace Player
     public class PlayerController : StateMachine<PlayerController>
     {
         #region Inspector Fields
-        [Header("References")]
         [SerializeField] private CharacterManager characterManager;
-        [SerializeField] private LevelManager levelManager;
         #endregion
 
         #region States
@@ -31,7 +29,7 @@ namespace Player
         // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
-        public LevelManager LevelManager => levelManager;
+        public LevelManager LevelManager => LevelManager.Instance;
         public Transform pointer => transform.GetChild(0);
 
         
@@ -82,8 +80,8 @@ namespace Player
             Initialize(DefaultState);
 
             // subscribe to zone change event if level manager is not null
-            if (levelManager != null)
-                levelManager.ZoneChanged += MoveToZoneState.OnZoneChange;
+            if (LevelManager != null)
+                LevelManager.ZoneChanged += MoveToZoneState.OnZoneChange;
         }
         #endregion
 
