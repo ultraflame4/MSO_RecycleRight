@@ -6,7 +6,7 @@ namespace Level.Tutorial
     public abstract class TutorialTaskWithInfoBox : TutorialTask
     {
         [Header("Information Box"), TextArea(3, 10)]
-        [SerializeField] private string text;
+        [SerializeField] protected string text;
         [SerializeField] protected int count = 0;
         [SerializeField] protected InformationBox box;
         [SerializeField] protected bool showBox = true;

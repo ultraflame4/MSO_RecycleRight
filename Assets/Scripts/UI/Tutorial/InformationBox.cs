@@ -28,6 +28,7 @@ namespace UI
             UpdateCountUI();
         }
 
+        #region Current Count Setters
         /// <summary>
         /// Increment action count by 1
         /// </summary>
@@ -45,6 +46,17 @@ namespace UI
             currentCount = 0;
             UpdateCountUI();
         }
+
+        /// <summary>
+        /// Directly set count to value
+        /// </summary>
+        /// <param name="count">Current count value</param>
+        public void SetCount(int count)
+        {
+            currentCount = count;
+            UpdateCountUI();
+        }
+        #endregion
 
         /// <summary>
         /// Update action count in UI

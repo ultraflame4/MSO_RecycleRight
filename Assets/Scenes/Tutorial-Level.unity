@@ -15526,6 +15526,65 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 6, y: 0}
+--- !u!1 &1820398363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1820398364}
+  - component: {fileID: 1820398365}
+  m_Layer: 0
+  m_Name: Push Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1820398364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820398363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5240765378600200609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820398365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820398363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acfaf689a7af15a479d818ed836ccc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCompletionDuration: 3
+  UIElements:
+  - {fileID: 1910549484}
+  text: Push all the recyclables into the recycling bin
+  count: 2
+  box: {fileID: 2143212988}
+  showBox: 1
+  enemies:
+  - {fileID: 2080359422}
+  - {fileID: 1838627943}
+--- !u!1 &1838627943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+  m_PrefabInstance: {fileID: 510799179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1872780657
 GameObject:
   m_ObjectHideFlags: 0
@@ -15571,6 +15630,16 @@ Transform:
   - {fileID: 239833833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1910549484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4634168055463537028, guid: b20b7bc5d7950f34994020ba4dafb5c8, type: 3}
+  m_PrefabInstance: {fileID: 2143212986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2080359422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+  m_PrefabInstance: {fileID: 1282986262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2143212986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15678,7 +15747,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3774998345464463093, guid: b20b7bc5d7950f34994020ba4dafb5c8, type: 3}
   m_PrefabInstance: {fileID: 2143212986}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1910549484}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a2889e88c9db184eb577918eb58f36c, type: 3}
@@ -15749,6 +15818,7 @@ Transform:
   m_Children:
   - {fileID: 754969639}
   - {fileID: 432680493}
+  - {fileID: 1820398364}
   m_Father: {fileID: 1315312721146712386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6793962242787335996
@@ -15803,6 +15873,7 @@ MonoBehaviour:
   - <tasks>k__BackingField:
     - {fileID: 754969640}
     - {fileID: 432680494}
+    - {fileID: 1820398365}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
