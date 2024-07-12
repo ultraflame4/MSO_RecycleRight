@@ -52,7 +52,6 @@ namespace Level.Tutorial
 
         void CompleteTask()
         {
-            Debug.Log("Task completed.");
             // unsubscribe from task complete event
             currentTask.TaskCompleted -= CompleteTask;
             // increment task index

@@ -14,7 +14,7 @@ namespace Level.Tutorial
         public override void SetTutorialActive(bool active)
         {
             base.SetTutorialActive(active);
-            if (box == null && !active) return;
+            if (box == null || !active) return;
             box.SetInformation(text, count);
             box.ResetCount();
             box.UpdateCountUI();
