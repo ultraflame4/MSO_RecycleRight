@@ -15441,7 +15441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 671127491}
-  - component: {fileID: 671127492}
+  - component: {fileID: 671127493}
   m_Layer: 0
   m_Name: Character Switching Task
   m_TagString: Untagged
@@ -15464,7 +15464,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1644321658}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &671127492
+--- !u!114 &671127493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15473,7 +15473,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 671127490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141e08e4f063d814d871274dff0dda15, type: 3}
+  m_Script: {fileID: 11500000, guid: 668b89440564ae44ab09f660c2d7ce06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minCompletionDuration: 1.5
@@ -15482,8 +15482,6 @@ MonoBehaviour:
   count: 3
   box: {fileID: 2143212988}
   showBox: 1
-  keys: 310000003200000033000000
-  mouseButtons: 
 --- !u!1 &754969638
 GameObject:
   m_ObjectHideFlags: 0
@@ -16574,7 +16572,9 @@ MonoBehaviour:
     - {fileID: 432680494}
     - {fileID: 1820398365}
   - <tasks>k__BackingField:
-    - {fileID: 671127492}
+    - {fileID: 671127493}
+  - <tasks>k__BackingField:
+    - {fileID: 1151258060}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
