@@ -7,6 +7,13 @@ namespace Level.Tutorial
         [Header("Button Press")]
         [SerializeField] KeyCode[] keys;
         [SerializeField] int[] mouseButtons;
+        int currentCount;
+
+        new void Start()
+        {
+            base.Start();
+            currentCount = 0;
+        }
 
         public override bool CheckTaskCompletion()
         {
@@ -18,9 +25,13 @@ namespace Level.Tutorial
             if (!taskComplete)
                 taskComplete = CheckButtonPress(mouseButtons, (int mouseButton) => Input.GetMouseButtonDown(mouseButton));
 
-            if (taskComplete) box.IncrementCount();
+            if (taskComplete) 
+            {
+                currentCount++;
+                box.IncrementCount();
+            }
 
-            return taskComplete;
+            return currentCount >= count || (count <= 0 && taskComplete);
         }
 
         private delegate bool Condition<T>(T element);

@@ -74,8 +74,8 @@ namespace Level.Tutorial
             {
                 currentTaskIndex++;
             }
-            // set task
-            SetTask();
+            // ensure there are tasks to set, then set task
+            if (zoneTasks.Length > levelManager.current_zone_index) SetTask();
         }
     }
 }

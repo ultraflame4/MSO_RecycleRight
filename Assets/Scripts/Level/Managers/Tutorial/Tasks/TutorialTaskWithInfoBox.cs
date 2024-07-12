@@ -7,7 +7,7 @@ namespace Level.Tutorial
     {
         [Header("Information Box"), TextArea(3, 10)]
         [SerializeField] private string text;
-        [SerializeField] private int count = 0;
+        [SerializeField] protected int count = 0;
         [SerializeField] protected InformationBox box;
 
         public override void SetTutorialActive(bool active)

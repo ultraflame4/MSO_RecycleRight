@@ -15370,6 +15370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4309716347410156266, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 7641254686706731872}
     - target: {fileID: 4417281709216151005, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15781,6 +15785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <zones>k__BackingField:
   - {fileID: 1690838768548505231}
+  - {fileID: 1644321659}
   <current_zone_index>k__BackingField: 0
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
