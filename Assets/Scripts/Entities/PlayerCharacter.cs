@@ -26,12 +26,13 @@ namespace Entity.Data
         [HideInInspector] public float skillDuration = 2f;
         #endregion
 
-        #region Other Variables
-        // multipliers
+        #region Multipliers
         [HideInInspector] public float movementMultiplier = 1f;
         [HideInInspector] public float attackMultiplier = 1f;
+        [HideInInspector] public float skillCooldownMultiplier = 1f;
+        #endregion
 
-        // booleans
+        #region Booleans
         [HideInInspector] public bool IsCleaning = false;
         [HideInInspector] public bool OverrideSwitchable = false;
         #endregion
