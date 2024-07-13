@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Level.Tutorial
@@ -9,7 +10,12 @@ namespace Level.Tutorial
         [SerializeField] int[] mouseButtons;
         int currentCount;
 
-        new void Start()
+        /// <summary>
+        /// It is called whenever a button press is detected. 
+        /// </summary>
+        public event Action<int> ButtonPressed;
+
+        new protected void Start()
         {
             base.Start();
             currentCount = 0;
@@ -29,6 +35,7 @@ namespace Level.Tutorial
             {
                 currentCount++;
                 box.IncrementCount();
+                ButtonPressed?.Invoke(currentCount);
             }
 
             return currentCount >= count || (count <= 0 && taskComplete);
