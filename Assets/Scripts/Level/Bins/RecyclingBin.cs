@@ -65,6 +65,7 @@ namespace Level.Bins
 
         void SetActiveCleaningEffects(bool active)
         {
+            // Loop through all cleaning effects and start/stop them
             foreach (var effect in cleaningEffects)
             {
                 if (effect == null) continue;
@@ -112,6 +113,7 @@ namespace Level.Bins
             pending_infestation = false;
             infestation_percent = 0;
 
+            // Disable text as they are not used anyways
             nameText.enabled = false;
             scoreText.enabled = false;
             SetActiveCleaningEffects(true);
@@ -128,6 +130,7 @@ namespace Level.Bins
             if (renderer == null) return;
             renderer.sprite = cleanedSprite;
 
+            // Renable text
             nameText.enabled = true;
             scoreText.enabled = true;
             SetActiveCleaningEffects(false);
