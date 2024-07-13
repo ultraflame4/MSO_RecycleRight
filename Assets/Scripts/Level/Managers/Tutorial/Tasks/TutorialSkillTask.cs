@@ -26,6 +26,7 @@ namespace Level.Tutorial
             {
                 tutorialActivated = true;
                 characterManager.CharacterChanged += OnCharacterChange;
+                if (behaviour == null) behaviour = PlayerController.Instance.CharacterBehaviour;
                 behaviour.SkillTriggered += SkillTriggered;
                 PlayerController.Instance.Data.skillCooldownMultiplier = 0f;
             }

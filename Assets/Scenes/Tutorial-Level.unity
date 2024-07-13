@@ -15646,7 +15646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minCompletionDuration: 3
-  UIElements: []
+  UIElements:
+  - {fileID: 1802924147}
   text: Clean the contaminant
   count: 1
   box: {fileID: 2143212988}
@@ -16589,12 +16590,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2179d3187d76441aab88fc610d5d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1802924147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+  m_PrefabInstance: {fileID: 995658354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1802924149 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
   m_PrefabInstance: {fileID: 995658354}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1802924147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff882cb59a7cfbb49829be03ab27e585, type: 3}
