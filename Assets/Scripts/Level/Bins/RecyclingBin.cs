@@ -28,7 +28,9 @@ namespace Level.Bins
             }
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
+        public TMP_Text nameText;
         public TMP_Text scoreText;
+        public ParticleSystem[] cleaningEffects;
 
         // sprites
         public Sprite contaminatedSprite;
@@ -43,6 +45,7 @@ namespace Level.Bins
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
             renderer.sprite = contaminatedSprite;
+            SetActiveCleaningEffects(false);
         }
 
         private void Update()
@@ -60,12 +63,29 @@ namespace Level.Bins
             scoreText.text = $"Score: {Score}";
         }
 
+        void SetActiveCleaningEffects(bool active)
+        {
+            foreach (var effect in cleaningEffects)
+            {
+                if (effect == null) continue;
+                if (active)
+                {
+                    effect.Play();
+                }
+                else
+                {
+                    effect.Stop();
+                }
+            }
+        }
+
         /// <summary>
         /// Use this when bin is contaminated with food items, causing it to get infested.
         /// This will also start a timer, when timer completes, the bin will release cockroaches & other pests
         /// 
         /// Sets state to contaminated, when timer runs out, state changes to infested.
         /// </summary>
+        [EasyButtons.Button]
         public void StartInfestation()
         {
             // Already infested skip
@@ -85,21 +105,32 @@ namespace Level.Bins
         /// 
         /// Sets state to cleaning
         /// </summary>
+        [EasyButtons.Button]
         public void SetCleaning()
         {
             binState = BinState.CLEANING;
             pending_infestation = false;
             infestation_percent = 0;
+
+            nameText.enabled = false;
+            scoreText.enabled = false;
+            SetActiveCleaningEffects(true);
+            
         }
 
         /// <summary>
         /// Use this when bin has completed its cleaning proccess and can continue being used
         /// </summary>
+        [EasyButtons.Button]
         public void CompleteClean()
         {
             binState = BinState.CLEAN;
             if (renderer == null) return;
             renderer.sprite = cleanedSprite;
+
+            nameText.enabled = true;
+            scoreText.enabled = true;
+            SetActiveCleaningEffects(false);
         }
 
         /// <summary>
@@ -107,6 +138,7 @@ namespace Level.Bins
         /// 
         /// Sets state to contaminated.
         /// </summary>
+        [EasyButtons.Button]
         public void SetContaminated()
         {
             // Infestation takes higher priority
