@@ -19,6 +19,8 @@
         "files": [
           "**/*.{md,yml}"
         ],
+        "src": "docfx/api",
+        "dest": "api",
         "exclude": [
           "docfx/_site/**"
         ]
