@@ -24,6 +24,7 @@ namespace Level.Tutorial
         {
             if (contaminant.grimeController.GrimeAmount > minGrimeAmount) return false;
             Destroy(contaminant.gameObject);
+            box.IncrementCount();
             return true;
         }
     }
