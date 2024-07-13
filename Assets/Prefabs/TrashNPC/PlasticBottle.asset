@@ -29,4 +29,4 @@ MonoBehaviour:
     attackDelay: 0.1
     attackDamage: 5
     attackDuration: 1.5
-    cleanable: 0
+    cleanable: 1
