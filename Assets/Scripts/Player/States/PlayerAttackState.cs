@@ -23,7 +23,7 @@ namespace Player.FSM
             // trigger attack after a certain duration
             triggerAttackCoroutine = fsm.StartCoroutine(
                 WaitForSeconds(
-                    character.Data.attackDuration * character.Data.attackTriggerTimeFrame, 
+                    character.Data.netAttackDuration * character.Data.attackTriggerTimeFrame, 
                     () => character.CharacterBehaviour?.TriggerAttack()
                 )
             );
