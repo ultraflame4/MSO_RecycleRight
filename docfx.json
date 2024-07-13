@@ -9,7 +9,7 @@
           ]
         }
       ],
-      "dest": "api",
+      "dest": "docfx/api",
       "outputFormat":"markdown"
     }
   ],
@@ -20,7 +20,7 @@
           "**/*.{md,yml}"
         ],
         "exclude": [
-          "_site/**"
+          "docfx/_site/**"
         ]
       }
     ],
@@ -31,7 +31,7 @@
         ]
       }
     ],
-    "output": "_site",
+    "output": "docfx/_site",
     "template": [
       "default",
       "modern"
