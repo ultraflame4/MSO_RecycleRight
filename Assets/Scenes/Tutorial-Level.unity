@@ -15802,6 +15802,7 @@ MonoBehaviour:
   showBox: 1
   zone: {fileID: 300597343}
   contaminant: {fileID: 1802924149}
+  contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
   minGrimeAmount: 0.15
 --- !u!1 &827099852
 GameObject:

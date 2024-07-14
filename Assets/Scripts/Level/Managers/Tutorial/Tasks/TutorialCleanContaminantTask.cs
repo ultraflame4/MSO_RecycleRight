@@ -1,4 +1,5 @@
 using UnityEngine;
+using NPC;
 using NPC.Contaminant;
 
 namespace Level.Tutorial
@@ -7,8 +8,10 @@ namespace Level.Tutorial
     {
         [SerializeField] Transform zone;
         [SerializeField] ContaminantNPC contaminant;
+        [SerializeField] GameObject contaminantPrefab;
         [SerializeField] float minGrimeAmount = .15f;
         Vector3 orignalContaminantPosition;
+        Transform originalParent;
         Collider2D hit;
         bool completed = false;
 
@@ -17,6 +20,24 @@ namespace Level.Tutorial
         {
             base.Start();
             orignalContaminantPosition = contaminant.transform.position;
+            originalParent = contaminant.transform.parent;
+        }
+
+        new void Update()
+        {
+            base.Update();
+            if (!completed && contaminant == null && contaminantPrefab != null)
+            {
+                GameObject obj = Instantiate(
+                        contaminantPrefab, 
+                        orignalContaminantPosition, 
+                        Quaternion.identity, 
+                        originalParent
+                    );
+                
+                obj.GetComponent<Navigation>().enabled = false;
+                contaminant = obj.GetComponent<ContaminantNPC>();
+            }
         }
 
         void FixedUpdate()
