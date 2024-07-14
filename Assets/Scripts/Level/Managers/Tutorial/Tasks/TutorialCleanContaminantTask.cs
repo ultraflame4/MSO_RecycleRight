@@ -7,28 +7,41 @@ namespace Level.Tutorial
     {
         [SerializeField] ContaminantNPC contaminant;
         [SerializeField] float minGrimeAmount = .15f;
-        Vector3 orignalContaminantPosition;
+        Vector3 orignalContaminantPosition, zonePosition;
 
         // Start is called before the first frame update
         new void Start()
         {
             base.Start();
             orignalContaminantPosition = contaminant.transform.position;
+            if (transform.parent == null) return;
+            zonePosition = transform.parent.position;
         }
 
-        // Update is called once per frame
-        new void Update()
+        void FixedUpdate()
         {
-            base.Update();
+            if (contaminant == null) return;
             contaminant.transform.position = orignalContaminantPosition;
         }
 
         public override bool CheckTaskCompletion()
         {
             if (contaminant.grimeController.GrimeAmount > minGrimeAmount) return false;
-            Destroy(contaminant.gameObject);
+            // clean up game objects after completing task
+            if (contaminant != null) Destroy(contaminant.gameObject);
+            if (zonePosition != null)
+            {
+                Collider2D hit = Physics2D.OverlapCircle(zonePosition, 5f, LayerMask.GetMask("Recyclables"));
+                if (hit != null) Destroy(hit.gameObject);
+            }
+            // increment box count
             box.IncrementCount();
             return true;
+        }
+
+        void OnDrawGizmosSelected() 
+        {
+            Gizmos.DrawWireSphere(transform.parent.position, 5f);
         }
     }
 }

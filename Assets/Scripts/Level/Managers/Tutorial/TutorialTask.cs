@@ -47,7 +47,7 @@ namespace Level.Tutorial
             // set active of UI element objects
             foreach(GameObject obj in UIElements)
             {
-                obj.SetActive(active);
+                obj?.SetActive(active);
             }
             // update is active property
             IsActive = active;
