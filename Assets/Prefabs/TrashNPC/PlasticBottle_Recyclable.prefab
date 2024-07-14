@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 3787632505832760229, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 5d843df80a0b52e47afa31a15893baa5, type: 2}
+      objectReference: {fileID: 22100000, guid: a29b22887c6fdc049aefeb776f522e1b, type: 2}
     - target: {fileID: 5423529344811936447, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Name
       value: PlasticBottle_Recyclable
