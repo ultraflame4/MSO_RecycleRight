@@ -5,17 +5,16 @@ namespace Level.Tutorial
 {
     public class TutorialCleanContaminantTask : TutorialTaskWithInfoBox
     {
+        [SerializeField] Transform zone;
         [SerializeField] ContaminantNPC contaminant;
         [SerializeField] float minGrimeAmount = .15f;
-        Vector3 orignalContaminantPosition, zonePosition;
+        Vector3 orignalContaminantPosition;
 
         // Start is called before the first frame update
         new void Start()
         {
             base.Start();
             orignalContaminantPosition = contaminant.transform.position;
-            if (transform.parent == null) return;
-            zonePosition = transform.parent.position;
         }
 
         void FixedUpdate()
@@ -29,9 +28,9 @@ namespace Level.Tutorial
             if (contaminant.grimeController.GrimeAmount > minGrimeAmount) return false;
             // clean up game objects after completing task
             if (contaminant != null) Destroy(contaminant.gameObject);
-            if (zonePosition != null)
+            if (zone != null)
             {
-                Collider2D hit = Physics2D.OverlapCircle(zonePosition, 5f, LayerMask.GetMask("Recyclables"));
+                Collider2D hit = Physics2D.OverlapCircle(zone.position, 5f, LayerMask.GetMask("Recyclable"));
                 if (hit != null) Destroy(hit.gameObject);
             }
             // increment box count
@@ -41,7 +40,8 @@ namespace Level.Tutorial
 
         void OnDrawGizmosSelected() 
         {
-            Gizmos.DrawWireSphere(transform.parent.position, 5f);
+            if (zone == null) return;
+            Gizmos.DrawWireSphere(zone.position, 5f);
         }
     }
 }

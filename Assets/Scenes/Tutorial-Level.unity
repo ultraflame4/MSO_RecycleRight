@@ -15656,6 +15656,7 @@ MonoBehaviour:
   count: 1
   box: {fileID: 2143212988}
   showBox: 1
+  zone: {fileID: 300597343}
   contaminant: {fileID: 1802924149}
   minGrimeAmount: 0.15
 --- !u!1 &827099852

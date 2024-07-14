@@ -44,13 +44,13 @@ namespace Level.Tutorial
         /// <param name="active">Whether to show (true) the tutorial or not (false)</param>
         public virtual void SetTutorialActive(bool active)
         {
+            // update is active property
+            IsActive = active;
             // set active of UI element objects
             foreach(GameObject obj in UIElements)
             {
                 obj?.SetActive(active);
             }
-            // update is active property
-            IsActive = active;
         }
 
         public abstract bool CheckTaskCompletion();
