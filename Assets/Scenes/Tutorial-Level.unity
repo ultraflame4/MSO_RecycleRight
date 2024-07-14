@@ -15257,10 +15257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0999d9cbbb0b7e4db3162b9d43150d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCompletionDuration: 3
+  minCompletionDuration: 1
   UIElements: []
   text: Perform an Attack
-  count: 3
+  count: 1
   box: {fileID: 2143212988}
   showBox: 1
   keys: 
@@ -15597,7 +15597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141e08e4f063d814d871274dff0dda15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCompletionDuration: 5
+  minCompletionDuration: 1
   UIElements: []
   text: Use WASD to move around
   count: 0
@@ -16100,9 +16100,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1820398364}
-  - {fileID: 432680493}
   - {fileID: 754969639}
+  - {fileID: 432680493}
+  - {fileID: 1820398364}
   m_Father: {fileID: 827099853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1282986262
@@ -16663,13 +16663,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfaf689a7af15a479d818ed836ccc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCompletionDuration: 3
+  minCompletionDuration: 1
   UIElements:
   - {fileID: 1910549484}
   text: Push all the recyclables into the recycling bin
   count: 2
   box: {fileID: 2143212988}
   showBox: 1
+  bin: {fileID: 2038906804}
+  enemyPrefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
   enemies:
   - {fileID: 2080359422}
   - {fileID: 1838627943}
@@ -16870,6 +16872,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
   m_PrefabInstance: {fileID: 2004636343}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038906804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2306597006772178457, guid: 124d045367ab7654b95b27107a18631f, type: 3}
+  m_PrefabInstance: {fileID: 59579262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b2179d3187d76441aab88fc610d5d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052222642
 GameObject:
   m_ObjectHideFlags: 0
