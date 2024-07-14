@@ -1,6 +1,5 @@
 using UnityEngine;
 using NPC.Contaminant;
-using System.Collections;
 
 namespace Level.Tutorial
 {
