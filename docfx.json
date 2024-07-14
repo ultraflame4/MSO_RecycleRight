@@ -9,7 +9,8 @@
                     ]
                 }
             ],
-            "dest": "docfx/api"
+            "dest": "docfx/api",
+            "outputFormat": "markdown"
         }
     ],
     "build": {

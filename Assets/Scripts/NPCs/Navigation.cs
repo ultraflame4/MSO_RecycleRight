@@ -7,9 +7,9 @@ namespace NPC
     public class Navigation : MonoBehaviour
     {
 
-        [Tooltip("When distance between target & this game object is less than stop_distance, it will count as reached destination.")]
+        [Tooltip("At what distance from the destination should this game object stop")]
         public float stop_distance = 0.1f;
-        [Tooltip("When distance to start slowing down"), Range(0.00001f,1f)]
+        [Tooltip("The distance from the destination at which this game object start slowing down."), Range(0.00001f,1f)]
         public float slow_distance = 0.1f;
         [Tooltip("The movement speed")]
         public float move_speed = 100f;
