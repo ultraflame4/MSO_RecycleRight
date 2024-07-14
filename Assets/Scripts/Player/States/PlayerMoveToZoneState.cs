@@ -12,7 +12,6 @@ namespace Player.FSM
         Vector3 dest;
         Rigidbody2D rb;
 
-
         public PlayerMoveToZoneState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
         {
             // get reference to rigidbody component
@@ -23,6 +22,7 @@ namespace Player.FSM
         {
             base.Enter();
             // play running animation
+            character.anim?.Play("Idle");
             character.anim?.SetBool("IsMoving", true);
         }
 
@@ -31,11 +31,6 @@ namespace Player.FSM
             base.Exit();
             // stop running animation
             character.anim?.SetBool("IsMoving", false);
-        }
-
-        public override void LogicUpdate()
-        {
-            base.LogicUpdate();
         }
 
         public override void PhysicsUpdate()
@@ -48,7 +43,6 @@ namespace Player.FSM
             // check if reached target destination
             if (dir.magnitude >= .1f) return;
             rb.velocity = Vector2.zero;
-
             
             // start zone once player reached zone
             // return to default state once moved to zone
@@ -59,6 +53,8 @@ namespace Player.FSM
         // event listener (any state transition)
         public void OnZoneChange(LevelZone current_zone)
         {
+            // ignore zone 1
+            if (character.LevelManager.current_zone_index == 0) return;
             // set current zone
             currentZone = current_zone;
             // set move force
