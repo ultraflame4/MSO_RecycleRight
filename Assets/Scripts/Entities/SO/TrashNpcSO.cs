@@ -44,6 +44,11 @@ public class ContaminantConfig
     [Tooltip("The duration of each attack. in seconds")]
     public float attackDuration = 1.5f;
     /// <summary>
+    /// Whether the contaminant contains traces of food or other substances which will attract pests. (i.e tupperware containers, pizza boxes)
+    /// </summary>
+    [Tooltip("Whether the contaminant contains traces of food or other substances which will attract pests.")]
+    public bool attract_pests = false;
+    /// <summary>
     /// Whether the contaminant can be cleaned
     /// </summary>
     [Tooltip("Whether the contaminant can be cleaned")]
