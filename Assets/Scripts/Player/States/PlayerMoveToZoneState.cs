@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Patterns.FSM;
 using Level;
@@ -18,18 +16,10 @@ namespace Player.FSM
             rb = character.GetComponent<Rigidbody2D>();
         }
 
-        public override void Enter()
-        {
-            base.Enter();
-            // play running animation
-            character.anim?.Play("Idle");
-            character.anim?.SetBool("IsMoving", true);
-        }
-
         public override void Exit()
         {
             base.Exit();
-            // stop running animation
+            // reset running animation
             character.anim?.SetBool("IsMoving", false);
         }
 
@@ -40,6 +30,12 @@ namespace Player.FSM
             Vector3 dir = dest - character.transform.position;
             Vector3 vel = dir.normalized * character.Data.movementSpeed * 4 * Time.deltaTime;
             rb.velocity = vel * Mathf.Clamp01(dir.sqrMagnitude);
+            
+            // play running animation
+            character.anim?.SetBool("IsMoving", true);
+            // update sprite flip
+            character.Data.renderer.flipX = vel.x < 0f;
+
             // check if reached target destination
             if (dir.magnitude >= .1f) return;
             rb.velocity = Vector2.zero;
