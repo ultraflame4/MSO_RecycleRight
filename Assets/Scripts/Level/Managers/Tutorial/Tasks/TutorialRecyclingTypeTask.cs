@@ -32,45 +32,43 @@ namespace Level.Tutorial
             ResetRecyclables();
         }
 
-        // Update is called once per frame
-        new void Update()
-        {
-            base.Update();
-            CheckReset();
-        }
-
         public override bool CheckTaskCompletion()
         {
+            int recyclableCount, scoredBins;
+
+            recyclableCount = recyclables
+                .Select(x => x.gameObject)
+                .Where(x => x != null)
+                .ToArray().Length;
+            
+            scoredBins = bins
+                .Where(x => x.binState == BinState.CLEAN && x.Score > 0)
+                .ToArray().Length;
+
             // update information box count UI based on number of recyclables that are destroyed (in the bin)
-            box.SetCount(recyclables.Select(x => x.gameObject).Where(x => x == null).ToArray().Length);
-            // ensure all recyclables are destroyed
-            foreach (Recyclable recyclable in recyclables)
-            {
-                if (recyclable.gameObject == null) continue;
-                return false;
-            }
-            // ensure all bins are clean
+            box.SetCount(recyclables.Length - recyclableCount);
+
+            // ensure all bins are clean, and have 1 score
             foreach (RecyclingBin bin in bins)
             {
-                if (bin.binState == BinState.CLEAN) continue;
+                if (recyclableCount == 0) 
+                {
+                    if (scoredBins == recyclables.Length) continue;
+                    ResetRecyclables();
+                }
                 return false;
             }
             return true;
         }
 
-        void CheckReset()
+        void ResetRecyclables()
         {
             foreach (RecyclingBin bin in bins)
             {
-                if (bin.binState == BinState.CLEAN) continue;
                 bin.CompleteClean();
                 bin.Score = 0;
-                ResetRecyclables();
             }
-        }
 
-        void ResetRecyclables()
-        {
             for (int i = 0; i < recyclables.Length; i++)
             {
                 Destroy(recyclables[i].gameObject);

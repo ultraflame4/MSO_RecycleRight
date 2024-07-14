@@ -1,5 +1,6 @@
 using UnityEngine;
 using NPC.Contaminant;
+using System.Collections;
 
 namespace Level.Tutorial
 {
@@ -9,6 +10,7 @@ namespace Level.Tutorial
         [SerializeField] ContaminantNPC contaminant;
         [SerializeField] float minGrimeAmount = .15f;
         Vector3 orignalContaminantPosition;
+        Collider2D hit;
         bool completed = false;
 
         // Start is called before the first frame update
@@ -20,6 +22,7 @@ namespace Level.Tutorial
 
         void FixedUpdate()
         {
+            if (hit != null) hit.transform.position = orignalContaminantPosition;
             if (contaminant == null) return;
             contaminant.transform.position = orignalContaminantPosition;
         }
@@ -33,14 +36,21 @@ namespace Level.Tutorial
 
             if (zone != null)
             {
-                Collider2D hit = Physics2D.OverlapCircle(zone.position, 5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) Destroy(hit.gameObject);
+                hit = Physics2D.OverlapCircle(zone.position, 5f, LayerMask.GetMask("Recyclable"));
+                if (hit != null) TaskCompleted += DestroyRecyclable;
             }
 
             // increment box count
             box.IncrementCount();
             completed = true;
             return true;
+        }
+
+        void DestroyRecyclable()
+        {
+            if (hit == null) return;
+            Destroy(hit.gameObject);
+            TaskCompleted -= DestroyRecyclable;
         }
 
         void OnDrawGizmosSelected() 
