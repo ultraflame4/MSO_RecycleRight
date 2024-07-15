@@ -9,7 +9,7 @@ namespace Level
     {
         [SerializeField] float zoneChangeDelay = 2.5f;
         [SerializeField] string binTag = "Bin";
-        
+
         LevelManager levelManager;
         Coroutine coroutine;
 
@@ -19,18 +19,22 @@ namespace Level
         void Start()
         {
             levelManager = LevelManager.Instance;
-            // get references to recycling bins
+            if (levelManager.zones == null) return;
+            // get references to recycling bins, and disable other zones
             Bins = new RecyclingBin[levelManager.zones.Length][];
             for (int i = 0; i < levelManager.zones.Length; i++)
             {
                 Bins[i] = levelManager.zones[i].GetComponentsInChildren<RecyclingBin>();
+                if (i == 0) continue;
+                SetZoneActive(false, i);
             }
         }
 
         // This is in late update because the check for zone completion should only be done after all the other logic has completed
         void LateUpdate()
         {
-            if (levelManager.zones[levelManager.current_zone_index].transform.childCount > 
+            if (levelManager.zones == null || 
+                levelManager.zones[levelManager.current_zone_index].transform.childCount > 
                 Bins[levelManager.current_zone_index].Length) 
                     return;
             
@@ -45,9 +49,25 @@ namespace Level
             coroutine = StartCoroutine(DelayedZoneUpdate());
         }
 
+        /// <summary>
+        /// Set the active of the zone
+        /// </summary>
+        /// <param name="active">Whether to activate or deactivate zone</param>
+        /// <param name="index">Index of zone</param>
+        void SetZoneActive(bool active, int index)
+        {
+            if (levelManager.zones == null || levelManager.zones.Length <= index) return;
+            foreach (Transform child in levelManager.zones[index].transform)
+            {
+                if (child.gameObject.CompareTag(binTag)) continue;
+                child.gameObject.SetActive(active);
+            }
+        }
+
         IEnumerator DelayedZoneUpdate()
         {
             yield return new WaitForSeconds(zoneChangeDelay);
+            SetZoneActive(true, levelManager.current_zone_index + 1);
             levelManager.MoveToZone(levelManager.current_zone_index + 1);
             coroutine = null;
         }
