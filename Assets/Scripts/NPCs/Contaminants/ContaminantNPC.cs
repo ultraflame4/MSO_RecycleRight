@@ -144,6 +144,9 @@ namespace NPC.Contaminant
         public void Stun(float stun_duration)
         {
             // Debug.Log($"Stunned for {stun_duration}");
+            if (healthbar.value < 0 || currentState == state_Death){
+                return;
+            }
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }

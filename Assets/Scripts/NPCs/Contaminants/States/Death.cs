@@ -24,7 +24,7 @@ namespace NPC.Contaminants.States
                 GameObject.Destroy(transform.gameObject);
                 return;
             }
-            dest = GeneralBinSingleton.instance.worldPosition;
+            dest = GeneralBinSingleton.instance.transform.position;
             navigation.enabled = false;
         }
 
@@ -40,8 +40,8 @@ namespace NPC.Contaminants.States
             var v = (dest - transform.position);
             var dist = v.magnitude;
             var dir = v.normalized;
-            transform.position += dir * Mathf.Clamp01(1 - Mathf.Clamp01(dist) + 0.1f);
-            if (dist < 0.1f)
+            transform.position += dir * Mathf.Clamp01(dist) * .15f;
+            if (dist < 0.24f)
             {
                 GameObject.Destroy(transform.gameObject);
             }
