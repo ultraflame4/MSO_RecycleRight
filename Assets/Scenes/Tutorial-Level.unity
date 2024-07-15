@@ -25612,7 +25612,7 @@ MonoBehaviour:
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
-  <player_startpos_offset>k__BackingField: {x: 6, y: 0}
+  <player_startpos_offset>k__BackingField: {x: 8, y: 0}
 --- !u!1001 &345989316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26332,7 +26332,7 @@ MonoBehaviour:
   UIElements: []
   recyclables: []
   text: Swap to another character in the party
-  count: 3
+  count: 1
   box: {fileID: 2143212988}
   showBox: 1
 --- !u!1 &754969638
@@ -27260,7 +27260,7 @@ MonoBehaviour:
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
-  <player_startpos_offset>k__BackingField: {x: 6, y: 0}
+  <player_startpos_offset>k__BackingField: {x: 8, y: 0}
 --- !u!1001 &1748590258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27999,7 +27999,7 @@ MonoBehaviour:
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
-  <player_startpos_offset>k__BackingField: {x: 6, y: 0}
+  <player_startpos_offset>k__BackingField: {x: 8, y: 0}
 --- !u!4 &5240765378600200609
 Transform:
   m_ObjectHideFlags: 0
