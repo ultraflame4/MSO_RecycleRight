@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Level.Bins;
 
@@ -6,9 +7,12 @@ namespace Level
     [RequireComponent(typeof(LevelManager))]
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] float zoneChangeDelay = 2.5f;
         [SerializeField] string binTag = "Bin";
-
+        
         LevelManager levelManager;
+        Coroutine coroutine;
+
         public RecyclingBin[][] Bins { get; private set; }
 
         // Start is called before the first frame update
@@ -37,7 +41,15 @@ namespace Level
                 return;
             }
 
+            if (coroutine != null) return;
+            coroutine = StartCoroutine(DelayedZoneUpdate());
+        }
+
+        IEnumerator DelayedZoneUpdate()
+        {
+            yield return new WaitForSeconds(zoneChangeDelay);
             levelManager.MoveToZone(levelManager.current_zone_index + 1);
+            coroutine = null;
         }
     }
 }
