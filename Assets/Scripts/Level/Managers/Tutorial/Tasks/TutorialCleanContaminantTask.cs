@@ -8,43 +8,27 @@ namespace Level.Tutorial
     {
         [SerializeField] Transform zone;
         [SerializeField] ContaminantNPC contaminant;
-        [SerializeField] GameObject contaminantPrefab;
         [SerializeField] float minGrimeAmount = .15f;
-        Vector3 orignalContaminantPosition;
-        Transform originalParent;
         Collider2D hit;
         bool completed = false;
-
-        // Start is called before the first frame update
-        new void Start()
-        {
-            base.Start();
-            orignalContaminantPosition = contaminant.transform.position;
-            originalParent = contaminant.transform.parent;
-        }
 
         new void Update()
         {
             base.Update();
-            if (!completed && contaminant == null && contaminantPrefab != null)
+            if (!completed && contaminant == null)
             {
-                GameObject obj = Instantiate(
-                        contaminantPrefab, 
-                        orignalContaminantPosition, 
-                        Quaternion.identity, 
-                        originalParent
-                    );
-                
-                obj.GetComponent<Navigation>().enabled = false;
-                contaminant = obj.GetComponent<ContaminantNPC>();
+                ResetRecyclables();
+                if (recyclables == null || recyclables.Length <= 0) return;
+                contaminant = recyclables[0].gameObject.GetComponent<ContaminantNPC>();
             }
         }
 
         void FixedUpdate()
         {
-            if (hit != null) hit.transform.position = orignalContaminantPosition;
+            if (recyclables == null || recyclables.Length <= 0) return;
+            if (hit != null) hit.transform.position = recyclables[0].originalPosition;
             if (contaminant == null) return;
-            contaminant.transform.position = orignalContaminantPosition;
+            contaminant.transform.position = recyclables[0].originalPosition;
         }
 
         public override bool CheckTaskCompletion()
@@ -57,7 +41,11 @@ namespace Level.Tutorial
             if (zone != null)
             {
                 hit = Physics2D.OverlapCircle(zone.position, 5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) TaskCompleted += DestroyRecyclable;
+                if (hit != null) 
+                {
+                    hit.GetComponent<Navigation>().enabled = false;
+                    TaskCompleted += DestroyRecyclable;
+                }
             }
 
             // increment box count

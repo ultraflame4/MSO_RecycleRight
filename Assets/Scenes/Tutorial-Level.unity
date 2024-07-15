@@ -171,6 +171,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 509999886}
   - {fileID: 1070564163}
+  recyclables: []
   contaminant: {fileID: 509999886}
   contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
   bin: {fileID: 1070564162}
@@ -15311,6 +15312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 1
   UIElements: []
+  recyclables: []
   text: Perform an Attack
   count: 1
   box: {fileID: 2143212988}
@@ -15692,6 +15694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 1.5
   UIElements: []
+  recyclables: []
   text: Swap to another character in the party
   count: 3
   box: {fileID: 2143212988}
@@ -15742,6 +15745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 1
   UIElements: []
+  recyclables: []
   text: Use WASD to move around
   count: 0
   box: {fileID: 2143212988}
@@ -15796,13 +15800,17 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1802924147}
   - {fileID: 1910549484}
+  recyclables:
+  - gameObject: {fileID: 1802924147}
+    prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+    originalPosition: {x: 0, y: 0, z: 0}
+    originalParent: {fileID: 0}
   text: Clean the contaminant
   count: 1
   box: {fileID: 2143212988}
   showBox: 1
   zone: {fileID: 300597343}
   contaminant: {fileID: 1802924149}
-  contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
   minGrimeAmount: 0.15
 --- !u!1 &827099852
 GameObject:
@@ -16226,15 +16234,19 @@ MonoBehaviour:
   - {fileID: 1910549484}
   - {fileID: 889834695}
   - {fileID: 2147411322}
+  recyclables:
+  - gameObject: {fileID: 1317091343}
+    prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+    originalPosition: {x: 0, y: 0, z: 0}
+    originalParent: {fileID: 0}
+  - gameObject: {fileID: 196433225}
+    prefab: {fileID: 6531889305799652985, guid: 4a42f65ff9f6c2e4594677a64040ada9, type: 3}
+    originalPosition: {x: 0, y: 0, z: 0}
+    originalParent: {fileID: 0}
   text: Push the recyclables into their corresponding bins, depending on their type
   count: 2
   box: {fileID: 2143212988}
   showBox: 1
-  recyclables:
-  - gameObject: {fileID: 1317091343}
-    prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
-  - gameObject: {fileID: 196433225}
-    prefab: {fileID: 6531889305799652985, guid: 4a42f65ff9f6c2e4594677a64040ada9, type: 3}
   bins:
   - {fileID: 1793221771}
   - {fileID: 2147411324}
@@ -16518,6 +16530,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1910549484}
   - {fileID: 1070564163}
+  recyclables: []
   text: Clean the bin by switching to another character while near the bin
   count: 1
   box: {fileID: 2143212988}
@@ -16888,15 +16901,20 @@ MonoBehaviour:
   minCompletionDuration: 1
   UIElements:
   - {fileID: 1910549484}
+  recyclables:
+  - gameObject: {fileID: 2080359422}
+    prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+    originalPosition: {x: 0, y: 0, z: 0}
+    originalParent: {fileID: 0}
+  - gameObject: {fileID: 1838627943}
+    prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+    originalPosition: {x: 0, y: 0, z: 0}
+    originalParent: {fileID: 0}
   text: Push all the recyclables into the recycling bin
   count: 2
   box: {fileID: 2143212988}
   showBox: 1
   bin: {fileID: 2038906804}
-  enemyPrefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
-  enemies:
-  - {fileID: 2080359422}
-  - {fileID: 1838627943}
 --- !u!1 &1838627943 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
@@ -17151,6 +17169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 3
   UIElements: []
+  recyclables: []
   text: Trigger the character's skill
   count: 2
   box: {fileID: 2143212988}

@@ -1,33 +1,17 @@
-using System;
 using System.Linq;
 using UnityEngine;
 using Level.Bins;
-using NPC;
 
 namespace Level.Tutorial
 {
     public class TutorialRecyclingTypeTask : TutorialTaskWithInfoBox
     {
-        [SerializeField] Recyclable[] recyclables;
         [SerializeField] RecyclingBin[] bins;
-
-        [Serializable]
-        private struct Recyclable
-        {
-            public GameObject gameObject;
-            public GameObject prefab;
-        }
-
-        Vector3[] originalRecyclablePositions;
-        Transform recyclableParent;
 
         // Start is called before the first frame update
         new void Start()
         {
             base.Start();
-            // cache recyclable positions and parent
-            originalRecyclablePositions = recyclables.Select(x => x.gameObject.transform.position).ToArray();
-            if (recyclables != null) recyclableParent = recyclables[0].gameObject.transform.parent;
             // reset recyclables
             ResetRecyclables();
         }
@@ -68,18 +52,7 @@ namespace Level.Tutorial
                 bin.CompleteClean();
                 bin.Score = 0;
             }
-
-            for (int i = 0; i < recyclables.Length; i++)
-            {
-                Destroy(recyclables[i].gameObject);
-                recyclables[i].gameObject = Instantiate(
-                        recyclables[i].prefab, 
-                        originalRecyclablePositions[i], 
-                        Quaternion.identity, 
-                        recyclableParent
-                    );
-                recyclables[i].gameObject.GetComponent<Navigation>().enabled = false;
-            }
+            base.ResetRecyclables();
         }
     }
 }
