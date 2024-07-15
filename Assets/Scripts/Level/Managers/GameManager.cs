@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Level.Bins;
 
@@ -12,24 +9,35 @@ namespace Level
         [SerializeField] string binTag = "Bin";
 
         LevelManager levelManager;
-        RecyclingBin[][] bins;
+        public RecyclingBin[][] Bins { get; private set; }
 
         // Start is called before the first frame update
         void Start()
         {
             levelManager = LevelManager.Instance;
-            bins = new RecyclingBin[levelManager.zones.Length][];
-            for (int i = 0; i < bins.Length; i++)
+            // get references to recycling bins
+            Bins = new RecyclingBin[levelManager.zones.Length][];
+            for (int i = 0; i < levelManager.zones.Length; i++)
             {
-                bins[i] = levelManager.zones[i].GetComponentsInChildren<RecyclingBin>();
+                Bins[i] = levelManager.zones[i].GetComponentsInChildren<RecyclingBin>();
             }
-            // Debug.Log(levelManager.zones[0].transform.childCount);
         }
 
-        // Update is called once per frame
-        void Update()
+        // This is in late update because the check for zone completion should only be done after all the other logic has completed
+        void LateUpdate()
         {
+            if (levelManager.zones[levelManager.current_zone_index].transform.childCount > 
+                Bins[levelManager.current_zone_index].Length) 
+                    return;
             
+            // check for level completion
+            if (levelManager.current_zone_index >= (levelManager.zones.Length - 1))
+            {
+                Debug.Log("Level Completed.");
+                return;
+            }
+
+            levelManager.MoveToZone(levelManager.current_zone_index + 1);
         }
     }
 }

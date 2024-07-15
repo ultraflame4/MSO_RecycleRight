@@ -718,6 +718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315312721146712386}
   - component: {fileID: 7641254686706731872}
+  - component: {fileID: 7641254686706731873}
   m_Layer: 0
   m_Name: QuickLevelSetup
   m_TagString: Untagged
@@ -742,6 +743,19 @@ MonoBehaviour:
   <current_zone_index>k__BackingField: 0
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
+--- !u!114 &7641254686706731873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793962242787335996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e886d149de7a80547ae323afa8ffd2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binTag: Bin
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
