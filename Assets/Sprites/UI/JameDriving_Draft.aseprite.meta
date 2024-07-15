@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfb010ac080ed60408eb2b53eaf92114
+guid: 89e72d65bc15a5847b6865c62b2a0e6e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: TupperwareDraft
+  - name: JameDriving_Draft
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -130,9 +130,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 32
-    spriteID: 7c11e7c28ff444e49a07009ff6cff94d
+      width: 128
+      height: 94
+    spriteID: 7048593b9a08dc646afa9139c81d2d8c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,24 +144,24 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 473308786
-    name: TupperwareDraft
+    guid: 577152048
+    name: JameDriving_Draft
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: TupperwareDraft
+    - name: JameDriving_Draft
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 32
-        height: 32
-      spriteId: 7c11e7c28ff444e49a07009ff6cff94d
+        width: 128
+        height: 94
+      spriteId: 7048593b9a08dc646afa9139c81d2d8c
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 128, y: 128}

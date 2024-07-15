@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 73
-      y: 4
+      x: 37
+      y: 183
       width: 15
       height: 47
     spriteID: de34cf114247b4445906f7b2ad0b5266
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 73, y: 4}
+    uvTransform: {x: 37, y: 183}
   - name: Enemy_Bottle_Frame_9
     originalName: 
     pivot: {x: 0.47058824, y: -0.23404254}
@@ -229,7 +229,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 73
-      y: 59
+      y: 4
       width: 15
       height: 47
     spriteID: 524cf432766568441966ac186befbada
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 73, y: 59}
+    uvTransform: {x: 73, y: 4}
   - name: Enemy_Bottle_Frame_14
     originalName: 
     pivot: {x: 0.5151515, y: -0.23404254}
@@ -288,9 +288,9 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 37
-      y: 183
-      width: 17
+      x: 73
+      y: 59
+      width: 15
       height: 47
     spriteID: bac063ae95273a643a7e47e0080ae52b
     spriteBone: []
@@ -300,7 +300,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 183}
+    uvTransform: {x: 73, y: 59}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -377,9 +377,9 @@ ScriptedImporter:
     - name: Enemy_Bottle_Frame_26
       frameIndex: 26
       cellRect:
-        x: 24
+        x: 25
         y: 11
-        width: 17
+        width: 15
         height: 47
       spriteId: bac063ae95273a643a7e47e0080ae52b
     linkedCells: []
