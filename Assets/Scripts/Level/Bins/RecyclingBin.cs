@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using NPC;
+using System;
+using System.Collections;
 
 namespace Level.Bins
 {
@@ -19,6 +21,7 @@ namespace Level.Bins
         public bool pending_infestation { get; private set; }
         [field: SerializeField]
         public float infestation_percent { get; private set; }
+    
         private float _score = 0;
         public float Score{
             get => _score;
@@ -35,16 +38,16 @@ namespace Level.Bins
         // sprites
         public Sprite contaminatedSprite;
         private Sprite cleanedSprite;
-        private new SpriteRenderer renderer;
+        private SpriteRenderer spriteR;
 
         private void Start()
         {
-            renderer = GetComponent<SpriteRenderer>();
-            if (renderer == null) return;
-            cleanedSprite = renderer.sprite;
+            spriteR = GetComponent<SpriteRenderer>();
+            if (spriteR == null) return;
+            cleanedSprite = spriteR.sprite;
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
-            renderer.sprite = contaminatedSprite;
+            spriteR.sprite = contaminatedSprite;
             SetActiveCleaningEffects(false);
         }
 
@@ -55,12 +58,37 @@ namespace Level.Bins
                 infestation_percent += Time.deltaTime / infestation_secs;
                 if (infestation_percent >= 1)
                 {
+                    // Bin is infested
+                    
                     pending_infestation = false;
                     infestation_percent = 0;
                     binState = BinState.INFESTED;
+                    StartCoroutine(SpawnPests_Coroutine());
                 }
             }
             scoreText.text = $"Score: {Score}";
+        }
+
+
+        private float GetSpawnInterval(float x){
+            float maxInterval = 5;
+            float timeToMin = 10;
+
+            x = Mathf.Clamp(x,0,timeToMin);
+            float c = maxInterval;
+            float g = timeToMin / c;
+            float y = -(x/g)+c;
+
+            return y;
+        }
+        private IEnumerator SpawnPests_Coroutine(){
+            float timeSinceInfested = Utils.GetCurrentTime();
+            while (true){
+                var now = Utils.GetCurrentTime();
+                yield return new WaitForSeconds(GetSpawnInterval((now - timeSinceInfested)/1000));
+                // Spawn pest
+                // todo
+            }
         }
 
         void SetActiveCleaningEffects(bool active)
@@ -97,8 +125,8 @@ namespace Level.Bins
             infestation_percent = 0;
             Score = 0;
 
-            if (renderer == null) return;
-            renderer.sprite = contaminatedSprite;
+            if (spriteR == null) return;
+            spriteR.sprite = contaminatedSprite;
         }
 
         /// <summary>
@@ -127,8 +155,8 @@ namespace Level.Bins
         public void CompleteClean()
         {
             binState = BinState.CLEAN;
-            if (renderer == null) return;
-            renderer.sprite = cleanedSprite;
+            if (spriteR == null) return;
+            spriteR.sprite = cleanedSprite;
 
             // Renable text
             nameText.enabled = true;
@@ -151,8 +179,8 @@ namespace Level.Bins
             infestation_percent = 0;
             Score = 0;
 
-            if (renderer == null) return;
-            renderer.sprite = contaminatedSprite;
+            if (spriteR == null) return;
+            spriteR.sprite = contaminatedSprite;
         }
 
 
