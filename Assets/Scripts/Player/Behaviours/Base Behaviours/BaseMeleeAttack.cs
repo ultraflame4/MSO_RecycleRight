@@ -23,7 +23,7 @@ namespace Player.Behaviours
         [SerializeField] protected float knockback = 15f;
 
         [Tooltip("Set Clean Amount to 0 if attacks do not clean contaminants")]
-        [SerializeField] protected float cleanAmount = 0f;
+        [SerializeField, Range(0f, 1f)] protected float cleanAmount = 0f;
 
         [Tooltip("Set this to true if the attack can hit ALL enemies within range")]
         [SerializeField] protected bool areaOfEffect = false;

@@ -45,6 +45,8 @@ namespace NPC.Contaminant
         public float attackDamage;
         [Tooltip("Whether the contaminant can be cleaned")]
         public bool cleanable;
+        [Tooltip("Whether the contaminant contains traces of food or other substances which will attract pests.")]
+        public bool attract_pests=false;
         [Tooltip("The prefab to instantiate when the contaminant is cleaned.")]
         public GameObject clean_prefab;
 
@@ -54,6 +56,8 @@ namespace NPC.Contaminant
         public override RecyclableType recyclableType => RecyclableType.OTHERS;
         public bool playerInSight => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < sightRange;
         public bool playerInAttackRange => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange;
+
+        public override bool cause_infestation => true;
 
         public void LoadConfig()
         {
@@ -65,6 +69,7 @@ namespace NPC.Contaminant
             attackDelay = npcData.contaminantConfig.attackDelay;
             attackDamage = npcData.contaminantConfig.attackDamage;
             attackDuration = npcData.contaminantConfig.attackDuration;
+            attract_pests = npcData.contaminantConfig.attract_pests;
             cleanable = npcData.contaminantConfig.cleanable;
             if (cleanable)
             {

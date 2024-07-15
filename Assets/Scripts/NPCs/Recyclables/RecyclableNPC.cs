@@ -36,7 +36,10 @@ namespace NPC.Recyclable
         // The internal 'cleanliness' meter so that recyclables don't immediately get contaminated. When above 0, still considered clean.
         private int secret_cleanliness = 3;
 
-
+        /// <summary>
+        /// Recyclables do not cause infestation and hence this is always false.
+        /// </summary>
+        public override bool cause_infestation => false;
 
         public void LoadConfig()
         {

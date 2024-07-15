@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &3787632505832760229
 Animator:
   serializedVersion: 5
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 2339856638650244569}
   - component: {fileID: 6703782892095147996}
   m_Layer: 7
-  m_Name: Template_Recyclable
+  m_Name: template_recyclable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 448
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
