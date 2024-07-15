@@ -149,7 +149,7 @@ MonoBehaviour:
   attackRange: 0.75
   attackStunDuration: 1.5
   knockback: 15
-  cleanAmount: 5
+  cleanAmount: 0.25
   areaOfEffect: 1
   hitMask:
     serializedVersion: 2

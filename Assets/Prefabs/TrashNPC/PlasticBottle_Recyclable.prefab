@@ -21,6 +21,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 55c47a878d49a5144a6cb4e71eab85cf, type: 2}
     - target: {fileID: 5928528250783536157, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: _recyclableType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928528250783536157, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: contaminant_prefab
       value: 
       objectReference: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}

@@ -14,6 +14,7 @@ namespace Player.Behaviours
 
         [Header("Attack: Throw")]
         [SerializeField] float throwDamage = 3f;
+        [SerializeField] float throwStunDuration = .75f;
         [SerializeField] float throwForce = 25f;
         [SerializeField] GameObject throwEffect;
 
@@ -86,6 +87,8 @@ namespace Player.Behaviours
 
             // apply throw damage to hit enemy
             hit.GetComponent<IDamagable>()?.Damage(throwDamage);
+            // apply stun to allow knockback
+            hit.GetComponent<IStunnable>()?.Stun(throwStunDuration);
             // throw the hit enemy
             hit.GetComponent<Rigidbody2D>()?.AddForce(
                 (character.pointer.position - character.transform.position).normalized * 
