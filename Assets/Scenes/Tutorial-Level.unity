@@ -15313,7 +15313,7 @@ MonoBehaviour:
   minCompletionDuration: 1
   UIElements: []
   recyclables: []
-  text: Perform an Attack
+  text: Left Click to Push/Attack the Recyclable
   count: 1
   box: {fileID: 2143212988}
   showBox: 1
@@ -15746,8 +15746,8 @@ MonoBehaviour:
   minCompletionDuration: 1
   UIElements: []
   recyclables: []
-  text: Use WASD to move around
-  count: 0
+  text: Use WASD to move your character
+  count: 1
   box: {fileID: 2143212988}
   showBox: 1
   keys: 77000000610000007300000064000000
@@ -16910,7 +16910,7 @@ MonoBehaviour:
     prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
-  text: Push all the recyclables into the recycling bin
+  text: Push all the recyclables into the recycling bin.
   count: 2
   box: {fileID: 2143212988}
   showBox: 1
