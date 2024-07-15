@@ -28,6 +28,8 @@ namespace Level.Tutorial
                 characterManager.CharacterChanged += OnCharacterChange;
                 if (behaviour == null) behaviour = PlayerController.Instance.CharacterBehaviour;
                 behaviour.SkillTriggered += SkillTriggered;
+                behaviour.OverrideTriggerSkill = true;
+                behaviour.CanTriggerSkill = true;
                 PlayerController.Instance.Data.skillCooldownMultiplier = 0f;
             }
             base.Update();
@@ -43,6 +45,7 @@ namespace Level.Tutorial
             PlayerController.Instance.Data.skillCooldownMultiplier = 1f;
             characterManager.CharacterChanged -= OnCharacterChange;
             behaviour.SkillTriggered -= SkillTriggered;
+            behaviour.OverrideTriggerSkill = false;
             return true;
         }
 
@@ -50,16 +53,23 @@ namespace Level.Tutorial
         {
             curr.skillCooldownMultiplier = 0f;
             behaviour = curr.GetComponent<Behaviour>();
-            if (behaviour != null) behaviour.SkillTriggered += SkillTriggered;
+            if (behaviour != null) 
+            {
+                behaviour.SkillTriggered += SkillTriggered;
+                behaviour.OverrideTriggerSkill = false;
+            }
             if (prev == null) return;
             prev.skillCooldownMultiplier = 1f;
             behaviour = prev.GetComponent<Behaviour>();
-            if (behaviour != null) behaviour.SkillTriggered -= SkillTriggered;
+            if (behaviour == null) return; 
+            behaviour.SkillTriggered -= SkillTriggered;
+            behaviour.OverrideTriggerSkill = true;
         }
 
         void SkillTriggered(PlayerCharacter data)
         {
             conditionTriggered = true;
+            behaviour.CanTriggerSkill = true;
         }
     }
 }

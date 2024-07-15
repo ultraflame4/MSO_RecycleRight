@@ -29,7 +29,7 @@ namespace Player.Behaviours
             set
             {
                 // if value is false, just set value
-                if (!value)
+                if (!value || OverrideTriggerSkill)
                 {
                     canTriggerSkill = value;
                     return;
@@ -46,6 +46,8 @@ namespace Player.Behaviours
                 ));
             }
         }
+
+        [HideInInspector] public bool OverrideTriggerSkill = false;
 
         void Awake()
         {
