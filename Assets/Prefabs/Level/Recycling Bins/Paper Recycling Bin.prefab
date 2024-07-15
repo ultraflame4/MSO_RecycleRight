@@ -4891,7 +4891,7 @@ GameObject:
   - component: {fileID: 4733919160138857592}
   m_Layer: 9
   m_Name: Paper Recycling Bin
-  m_TagString: Untagged
+  m_TagString: Bin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
