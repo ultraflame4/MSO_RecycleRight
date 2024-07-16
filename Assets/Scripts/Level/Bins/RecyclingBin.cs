@@ -3,46 +3,65 @@ using UnityEngine;
 using NPC;
 using System;
 using System.Collections;
+using UnityEngine.Pool;
 
 namespace Level.Bins
 {
+    [RequireComponent(typeof(SpriteRenderer), typeof(PestSpawner))]
     public class RecyclingBin : MonoBehaviour
     {
+
+        #region Component Config
         [Tooltip("How long it will take for the bin to become infested, once contaminated with food items.")]
         public float infestation_secs;
 
-        [field: Header("Internal")]
+        [field: Header("Config")]
 
         [field: SerializeField]
         public RecyclableType recyclableType { get; private set; }
         [field: SerializeField]
         public BinState binState { get; private set; }
-        [field: SerializeField]
-        public bool pending_infestation { get; private set; }
-        [field: SerializeField]
+        #endregion
+
+        #region Component References
+        
+        [Header("References")]
+
+        public TMP_Text nameText;
+        public TMP_Text scoreText;
+        public ParticleSystem[] cleaningEffects;
+        public Sprite contaminatedSprite;
+        private Sprite cleanedSprite;
+        private SpriteRenderer spriteR;
+        private PestSpawner pestSpawner;
+        #endregion
+
+        [field: Header("Internal"), SerializeField]
         public float infestation_percent { get; private set; }
-    
+        [SerializeField]
+        private bool pending_infestation;
+        [SerializeField]
         private float _score = 0;
-        public float Score{
+        public float Score
+        {
             get => _score;
-            set {
+            set
+            {
                 if (binState != BinState.CLEAN) return;
                 _score = value;
             }
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
-        public TMP_Text nameText;
-        public TMP_Text scoreText;
-        public ParticleSystem[] cleaningEffects;
 
-        // sprites
-        public Sprite contaminatedSprite;
-        private Sprite cleanedSprite;
-        private SpriteRenderer spriteR;
+
+        private void Awake() {
+            spriteR = GetComponent<SpriteRenderer>();
+            pestSpawner = GetComponent<PestSpawner>();
+        }
 
         private void Start()
         {
-            spriteR = GetComponent<SpriteRenderer>();
+            
             if (spriteR == null) return;
             cleanedSprite = spriteR.sprite;
             // check if already contaminated, if so change sprite to contaminated
@@ -59,37 +78,16 @@ namespace Level.Bins
                 if (infestation_percent >= 1)
                 {
                     // Bin is infested
-                    
+
                     pending_infestation = false;
                     infestation_percent = 0;
                     binState = BinState.INFESTED;
-                    StartCoroutine(SpawnPests_Coroutine());
+                    pestSpawner.StartPestSpawning();
                 }
             }
             scoreText.text = $"Score: {Score}";
         }
 
-
-        private float GetSpawnInterval(float x){
-            float maxInterval = 5;
-            float timeToMin = 10;
-
-            x = Mathf.Clamp(x,0,timeToMin);
-            float c = maxInterval;
-            float g = timeToMin / c;
-            float y = -(x/g)+c;
-
-            return y;
-        }
-        private IEnumerator SpawnPests_Coroutine(){
-            float timeSinceInfested = Utils.GetCurrentTime();
-            while (true){
-                var now = Utils.GetCurrentTime();
-                yield return new WaitForSeconds(GetSpawnInterval((now - timeSinceInfested)/1000));
-                // Spawn pest
-                // todo
-            }
-        }
 
         void SetActiveCleaningEffects(bool active)
         {
@@ -145,7 +143,8 @@ namespace Level.Bins
             nameText.enabled = false;
             scoreText.enabled = false;
             SetActiveCleaningEffects(true);
-            
+            pestSpawner.StopPestSpawning();
+
         }
 
         /// <summary>
@@ -162,6 +161,7 @@ namespace Level.Bins
             nameText.enabled = true;
             scoreText.enabled = true;
             SetActiveCleaningEffects(false);
+            pestSpawner.StopPestSpawning();
         }
 
         /// <summary>

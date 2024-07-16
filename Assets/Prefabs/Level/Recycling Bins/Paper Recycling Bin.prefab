@@ -4888,6 +4888,7 @@ GameObject:
   - component: {fileID: 3878348233619145667}
   - component: {fileID: 2583877470163425052}
   - component: {fileID: 2306597006772178457}
+  - component: {fileID: 3295732771367991245}
   - component: {fileID: 4733919160138857592}
   m_Layer: 9
   m_Name: Paper Recycling Bin
@@ -4981,8 +4982,6 @@ MonoBehaviour:
   infestation_secs: 4
   <recyclableType>k__BackingField: 0
   <binState>k__BackingField: 0
-  <pending_infestation>k__BackingField: 0
-  <infestation_percent>k__BackingField: 0
   nameText: {fileID: 4218542349674180466}
   scoreText: {fileID: 9108521643822776249}
   cleaningEffects:
@@ -4990,6 +4989,20 @@ MonoBehaviour:
   - {fileID: 5749791755963554269}
   - {fileID: 7223174403909403137}
   contaminatedSprite: {fileID: 1335499128783244354, guid: 7a0937451b9eab64ca96b1fe2534ba7c, type: 3}
+--- !u!114 &3295732771367991245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127486948450122989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5fa9d15a7e54a45b79bbdca1d02cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pestPrefab: {fileID: 7835404459225403049, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
+  maxConcurrentPest: 10
 --- !u!61 &4733919160138857592
 BoxCollider2D:
   m_ObjectHideFlags: 0
