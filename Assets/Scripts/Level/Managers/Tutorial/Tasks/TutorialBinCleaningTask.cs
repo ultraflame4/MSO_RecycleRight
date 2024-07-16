@@ -11,11 +11,11 @@ namespace Level.Tutorial
         {
             foreach (RecyclingBin bin in bins)
             {
-                if (bin.binState == BinState.CONTAMINATED) return false;
-                box.SetCount(1);
-                return true;
+                if (bin.binState == BinState.CLEAN) continue;
+                return false;
             }
-            return false;
+            box.SetCount(1);
+            return true;
         }
     }
 }
