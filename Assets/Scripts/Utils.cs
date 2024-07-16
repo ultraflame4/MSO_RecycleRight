@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 public static class Utils{
@@ -13,6 +14,13 @@ public static class Utils{
         }
     }
 
+    /// <summary>
+    /// Gets the current time in epoch ms
+    /// </summary>
+    /// <returns>Returns the current time in epoch ms</returns>
+    public static float GetCurrentTime(){
+        return DateTimeOffset.Now.ToUnixTimeMilliseconds();
+    }
 }
 
 public class MonoBehavour

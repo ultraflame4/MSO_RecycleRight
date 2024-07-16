@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace NPC
 {
-    public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>
+    public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>, IBinTrashItem
     {
         [field: SerializeField]
         public Navigation navigation { get; private set; }
@@ -31,8 +31,11 @@ namespace NPC
         }
         public SpriteRenderer spriteRenderer;
 
-        public virtual void OnEnteredBin(RecyclingBin bin)
+
+        public void OnEnterBin(RecyclingBin bin)
         {
+            if (bin.binState != BinState.CLEAN) return;
+            Debug.Log($"Recyclable {this} Type {recyclableType} entered bin {bin} of type {bin.recyclableType}");
             if (cause_infestation)
             {
                 bin.StartInfestation();
@@ -48,7 +51,6 @@ namespace NPC
             // Destroy this NPC. In future if we want death animation we canb remove this
             Destroy(gameObject);
         }
-
     }
 }
 

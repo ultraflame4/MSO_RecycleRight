@@ -50,7 +50,7 @@ namespace Player.FSM
         public void OnZoneChange(LevelZone current_zone)
         {
             // ignore zone 1
-            if (character.LevelManager.current_zone_index == 0) return;
+            if (LevelManager.Instance.current_zone_index == 0) return;
             // set current zone
             currentZone = current_zone;
             // set move force

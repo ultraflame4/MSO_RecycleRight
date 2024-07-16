@@ -13,7 +13,7 @@ namespace Entity.Data
         public new Collider2D collider { get; private set; }
         public bool Enabled { get; private set; } = true;
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             // get reference to components
             renderer = GetComponent<SpriteRenderer>();
