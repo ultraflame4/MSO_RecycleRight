@@ -13,7 +13,17 @@ namespace Level
         LevelManager levelManager;
         Coroutine coroutine;
 
+
+        public static GameManager Instance { get; private set; }
         public RecyclingBin[][] Bins { get; private set; }
+
+        void Awake()
+        {
+            if (Instance == null)
+                Instance = this;
+            else if (Instance != this)
+                Destroy(gameObject);
+        }
 
         // Start is called before the first frame update
         void Start()
