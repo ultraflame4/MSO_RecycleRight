@@ -170,11 +170,10 @@ MonoBehaviour:
   minCompletionDuration: 3
   UIElements:
   - {fileID: 509999886}
-  - {fileID: 1070564163}
   recyclables: []
   contaminant: {fileID: 509999886}
   contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-  bin: {fileID: 1070564162}
+  bin: {fileID: 2147411324}
 --- !u!1001 &59579262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26066,15 +26065,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2091930917230474811, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.22
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.87
+      value: -5.73
       objectReference: {fileID: 0}
     - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26612,11 +26611,6 @@ Transform:
   - {fileID: 1458551752}
   m_Father: {fileID: 827099853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &889834695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-  m_PrefabInstance: {fileID: 1793221768}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987933177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26760,98 +26754,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
   m_PrefabInstance: {fileID: 995658354}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1070564160
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1644321658}
-    m_Modifications:
-    - target: {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_Name
-      value: Paper Recycling Bin (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2306597006772178457, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: <binState>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.300003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9144881778111748206, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2955612406747713084, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: 124d045367ab7654b95b27107a18631f, type: 3}
---- !u!4 &1070564161 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-  m_PrefabInstance: {fileID: 1070564160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1070564162 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2306597006772178457, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-  m_PrefabInstance: {fileID: 1070564160}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070564163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2179d3187d76441aab88fc610d5d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1070564163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-  m_PrefabInstance: {fileID: 1070564160}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1098309756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26965,8 +26867,6 @@ MonoBehaviour:
   minCompletionDuration: 3
   UIElements:
   - {fileID: 1910549484}
-  - {fileID: 889834695}
-  - {fileID: 2147411322}
   recyclables:
   - gameObject: {fileID: 1317091343}
     prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
@@ -27262,13 +27162,13 @@ MonoBehaviour:
   minCompletionDuration: 3
   UIElements:
   - {fileID: 1910549484}
-  - {fileID: 1070564163}
+  - {fileID: 0}
   recyclables: []
   text: Clean the bin by switching to another character while near the bin
   count: 1
   box: {fileID: 2143212988}
   showBox: 1
-  bin: {fileID: 1070564162}
+  bin: {fileID: 0}
 --- !u!1 &1592119863
 GameObject:
   m_ObjectHideFlags: 0
@@ -27338,7 +27238,6 @@ Transform:
   - {fileID: 1748590259}
   - {fileID: 1793221769}
   - {fileID: 509999885}
-  - {fileID: 1070564161}
   m_Father: {fileID: 1315312721146712386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1644321659
@@ -27564,7 +27463,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2306597006772178457, guid: 124d045367ab7654b95b27107a18631f, type: 3}
   m_PrefabInstance: {fileID: 1793221768}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889834695}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2179d3187d76441aab88fc610d5d7b, type: 3}
@@ -28018,17 +27917,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2889e88c9db184eb577918eb58f36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2147411322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4692704942311212617, guid: 7c53595c543d8dd408e9ccf02cd56f3c, type: 3}
-  m_PrefabInstance: {fileID: 1748590258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2147411324 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8978807193514718397, guid: 7c53595c543d8dd408e9ccf02cd56f3c, type: 3}
   m_PrefabInstance: {fileID: 1748590258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147411322}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2179d3187d76441aab88fc610d5d7b, type: 3}
