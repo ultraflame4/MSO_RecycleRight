@@ -13,16 +13,27 @@ namespace Level
         LevelManager levelManager;
         Coroutine coroutine;
 
+        private static GameManager _instance;
+        public static GameManager Instance 
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    throw new NullReferenceException("There is no game manager instance in the scene!");
+                }
+                return _instance;
+            }
+        }
 
-        public static GameManager Instance { get; private set; }
         public RecyclingBin[][] Bins { get; private set; }
 
-        void Awake()
+        private void Awake()
         {
-            if (Instance == null)
-                Instance = this;
-            else if (Instance != this)
-                Destroy(gameObject);
+            if (_instance == null)
+                _instance = this;
+            else
+                Debug.LogWarning("There are multiple GameManager(s) in the scene! This is not allowed!");
         }
 
         // Start is called before the first frame update
