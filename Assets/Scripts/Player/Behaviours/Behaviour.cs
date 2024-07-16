@@ -29,7 +29,7 @@ namespace Player.Behaviours
             set
             {
                 // if value is false, just set value
-                if (!value)
+                if (!value || OverrideTriggerSkill)
                 {
                     canTriggerSkill = value;
                     return;
@@ -38,7 +38,7 @@ namespace Player.Behaviours
                 // if value is true, check if coroutine is running
                 if (cooldown != null) StopCoroutine(cooldown);
                 // start a coroutine to count duration of skill cooldown
-                cooldown = StartCoroutine(CountDuration(data.skillCooldown, () => 
+                cooldown = StartCoroutine(CountDuration(data.netSkillCooldown, () => 
                     {
                         canTriggerSkill = true;
                         cooldown = null;
@@ -46,6 +46,8 @@ namespace Player.Behaviours
                 ));
             }
         }
+
+        [HideInInspector] public bool OverrideTriggerSkill = false;
 
         void Awake()
         {

@@ -42,14 +42,15 @@ namespace UI
             for (int i = 0; i < cooldownManager.Length; i++)
             {
                 // only increment cooldown when less than max cooldown
-                if (cooldownManager[i] >= characterManager.character_instances[i].skillCooldown) 
+                if (cooldownManager[i] >= characterManager.character_instances[i].netSkillCooldown) 
                         continue;
                 // increment cooldown
                 cooldownManager[i] += Time.deltaTime;
             }
             // update cooldown overlay
             cooldownOverlay.fillAmount = 1f - (cooldownManager[activeIndex] / 
-                characterManager.character_instances[activeIndex].skillCooldown);
+                (characterManager.character_instances[activeIndex].skillCooldown * 
+                characterManager.character_instances[activeIndex].skillCooldownMultiplier));
         }
 
         void SetCooldownManager()

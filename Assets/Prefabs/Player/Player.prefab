@@ -94,6 +94,7 @@ MonoBehaviour:
   <characters>k__BackingField:
   - {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
   - {fileID: 5950129485960200443, guid: 327aba2409053944cb02937977e69ca2, type: 3}
+  - {fileID: 3310225104491134764, guid: 0c01898533548bd47953b3e126cacd82, type: 3}
   <placeholder>k__BackingField: {fileID: 1307939848808656399}
   CanSwitchCharacters: 1
 --- !u!1 &1307939848808656399
@@ -367,7 +368,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: -99290421258637258, guid: 36fb2c92dfa2a7c438a833196a6d8aab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
