@@ -1,20 +1,24 @@
+using System.Collections;
+using Level.Bins;
 using NPC;
 using UnityEngine;
 
 public class PestController : MonoBehaviour
 {
 
-    
+
     public event System.Action OnDeath;
     public float life_s = 1;
-    public float sight=8f;
-    public bool is_dead=false;
+    public float sight = 8f;
+    public bool is_dead = false;
 
 
     [SerializeField]
     private Navigation navigation;
     [SerializeField]
     private Rigidbody2D rb;
+    [SerializeField]
+    private SpriteRenderer spriteR;
 
     private const float current_direction_strength = .4f;
     private const float rand_direction_strength = .3f;
@@ -23,29 +27,42 @@ public class PestController : MonoBehaviour
 
     private Vector3 nearest_bin_dir = Vector3.zero;
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         // Because objects are recycled, we need to reset the navigation destination.
         navigation.ClearDestination();
+        spriteR.color = Color.white;
+        is_dead = false;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         var bins = Physics2D.OverlapCircleAll(transform.position, sight, LayerMask.GetMask("Bin"));
         if (bins.Length == 0) return;
-        Vector3 nearest_bin = bins[0].transform.position;
-        float nearest_bin_d = Vector3.Distance(nearest_bin, transform.position);
+
+        Vector3 nearest_bin = Vector3.zero;
+        float nearest_bin_d = Mathf.Infinity;
+
         for (int i = 0; i < bins.Length; i++)
         {
-            if (Vector3.Distance(bins[i].transform.position, transform.position) < nearest_bin_d)
+            var bin = bins[i].GetComponent<RecyclingBin>();
+            if (bin == null) continue;
+            if (bin.binState == BinState.INFESTED || bin.binState == BinState.CLEANING) continue;
+
+            var d = Vector3.Distance(bin.transform.position, transform.position);
+            if (d < nearest_bin_d)
             {
-                nearest_bin = bins[i].transform.position;
+                nearest_bin = bin.transform.position;
+                nearest_bin_d = d;
             }
         }
+        if (nearest_bin == Vector3.zero) return;
         nearest_bin_dir = (nearest_bin - transform.position).normalized;
     }
 
     private void Update()
     {
-
+        if (is_dead) return;
         // If the pest has reached its destination, set a new random direction.
         if (navigation.reachedDestination)
         {
@@ -61,15 +78,40 @@ public class PestController : MonoBehaviour
         // Decrease the life of the pest
         life_s -= Time.deltaTime;
         // If the pest has run out of life, call the OnDeath event
-        // use is_dead to prevent multiple calls to OnDeath
-        if (life_s <= 0 && !is_dead)
+        
+        if (life_s <= 0)
         {
-            is_dead = true;
-            OnDeath?.Invoke();
+            KillSelf();
         }
     }
 
-    private void OnDrawGizmosSelected() {
+    public void OnEnteredBin()
+    {
+        KillSelf();
+    }
+
+    private void KillSelf()
+    {
+        // use is_dead to prevent multiple calls
+        if (is_dead) return;
+        is_dead = true;
+        navigation.ClearDestination();
+        rb.velocity = Vector2.zero;
+        StartCoroutine(DeathEffect_Coroutine());
+    }
+
+    IEnumerator DeathEffect_Coroutine(){
+
+        for (int i = 0; i < 50; i++)
+        {
+            yield return new WaitForSeconds(.01f);
+            spriteR.color = Color.Lerp(Color.white, Color.clear, i / 50f);
+        }
+        OnDeath?.Invoke();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, sight);
     }

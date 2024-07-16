@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6573529479452028753}
   - component: {fileID: 6144443638164142404}
   - component: {fileID: 7279848950322654857}
+  - component: {fileID: 7107920548938786345}
   m_Layer: 0
   m_Name: Cockroach
-  m_TagString: Untagged
+  m_TagString: Pest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,3 +170,39 @@ MonoBehaviour:
   is_dead: 0
   navigation: {fileID: 6144443638164142404}
   rb: {fileID: 6573529479452028753}
+  spriteR: {fileID: 1191895030894080905}
+--- !u!58 &7107920548938786345
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835404459225403049}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 448
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.13891442
