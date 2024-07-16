@@ -396,11 +396,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4475680008235062735, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1450948
+      value: -15.11
       objectReference: {fileID: 0}
     - target: {fileID: 4475680008235062735, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2458477
+      value: -6.92
       objectReference: {fileID: 0}
     - target: {fileID: 4475680008235062735, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
       propertyPath: m_LocalPosition.z
@@ -434,13 +434,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7279848950322654857, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
+      propertyPath: life_s
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7835404459225403049, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
       propertyPath: m_Name
       value: Cockroach
       objectReference: {fileID: 0}
     - target: {fileID: 7835404459225403049, guid: a026cd8f9f36c15469ad53d4b3e17d60, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

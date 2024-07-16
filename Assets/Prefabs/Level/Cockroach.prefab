@@ -164,5 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b921a901cd8454439a7a972d77a6ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life_s: 1
+  sight: 8
+  is_dead: 0
   navigation: {fileID: 6144443638164142404}
   rb: {fileID: 6573529479452028753}
