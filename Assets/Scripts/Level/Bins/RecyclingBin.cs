@@ -186,20 +186,9 @@ namespace Level.Bins
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("Pest")) {
-                if (binState == BinState.INFESTED) return;
-                var pest = other.GetComponent<PestController>();
-                if (pest == null) return;
-                pest.OnEnteredBin();
-                StartInfestation();
-                Debug.Log($"Pest {pest} entered bin {this} of type {this.recyclableType}");
-            }
-
-            if (binState != BinState.CLEAN) return;
-            var recyclable = other.GetComponent<FSMRecyclableNPC>();
-            if (recyclable == null) return;
-            Debug.Log($"Recyclable {recyclable} Type {recyclable.recyclableType} entered bin {this} of type {this.recyclableType}");
-            recyclable.OnEnteredBin(this);
+            var item = other.GetComponent<IBinTrashItem>();
+            if (item == null) return;
+            item.OnEnterBin(this);
         }
     }
 }

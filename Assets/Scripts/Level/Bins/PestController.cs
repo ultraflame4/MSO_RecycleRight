@@ -3,7 +3,7 @@ using Level.Bins;
 using NPC;
 using UnityEngine;
 
-public class PestController : MonoBehaviour
+public class PestController : MonoBehaviour, IBinTrashItem
 {
 
 
@@ -58,7 +58,7 @@ public class PestController : MonoBehaviour
 
             // Skip if the bin is infested or is being cleaned
             if (bin.binState == BinState.INFESTED || bin.binState == BinState.CLEANING) continue;
-            
+
             // compare the distance to the nearest bin
             var d = Vector3.Distance(bin.transform.position, transform.position);
             if (d < nearest_bin_d)
@@ -74,7 +74,7 @@ public class PestController : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
         // Skip if the pest is dead
         if (is_dead) return;
         // If the pest has reached its destination, set a new random direction.
@@ -99,11 +99,16 @@ public class PestController : MonoBehaviour
         }
     }
 
+
+
     /// <summary>
     /// Called when the pest enters a bin. Will kill the pest.
     /// </summary>
-    public void OnEnteredBin()
+    public void OnEnterBin(RecyclingBin bin)
     {
+        if (bin.binState == BinState.INFESTED) return;
+        Debug.Log($"Pest {this} entered bin {bin} of type {bin.recyclableType}");
+        bin.StartInfestation();
         KillSelf();
     }
 
@@ -117,12 +122,13 @@ public class PestController : MonoBehaviour
         // Clear the destination and stop the pest
         navigation.ClearDestination();
         rb.velocity = Vector2.zero;
-    
+
         // Start the death effect
         StartCoroutine(DeathEffect_Coroutine());
     }
 
-    IEnumerator DeathEffect_Coroutine(){
+    IEnumerator DeathEffect_Coroutine()
+    {
         // Slowly fade out the sprite
         for (int i = 0; i < 50; i++)
         {
@@ -139,4 +145,5 @@ public class PestController : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, sight);
     }
+
 }
