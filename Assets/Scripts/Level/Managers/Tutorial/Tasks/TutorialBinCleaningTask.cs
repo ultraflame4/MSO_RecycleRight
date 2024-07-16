@@ -11,7 +11,7 @@ namespace Level.Tutorial
         {
             foreach (RecyclingBin bin in bins)
             {
-                if (bin.binState == BinState.CONTAMINATED) continue;
+                if (bin.binState == BinState.CONTAMINATED) return false;
                 box.SetCount(1);
                 return true;
             }
