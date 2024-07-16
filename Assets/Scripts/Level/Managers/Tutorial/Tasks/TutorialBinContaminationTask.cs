@@ -8,7 +8,7 @@ namespace Level.Tutorial
     {
         [SerializeField] GameObject contaminant;
         [SerializeField] GameObject contaminantPrefab;
-        [SerializeField] RecyclingBin bin;
+        [SerializeField] RecyclingBin[] bins;
         Transform originalParent;
         Vector3 originalContaminantPosition;
 
@@ -23,25 +23,34 @@ namespace Level.Tutorial
         {
             base.Update();
 
-            if (contaminant == null && bin.binState == BinState.CLEAN)
+            foreach (RecyclingBin bin in bins)
             {
-                contaminant = Instantiate(
-                        contaminantPrefab, 
-                        originalContaminantPosition, 
-                        Quaternion.identity, 
-                        originalParent
-                    );
-                contaminant.GetComponent<Navigation>().enabled = false;
+                if (contaminant == null && bin.binState == BinState.CLEAN)
+                {
+                    contaminant = Instantiate(
+                            contaminantPrefab, 
+                            originalContaminantPosition, 
+                            Quaternion.identity, 
+                            originalParent
+                        );
+                    contaminant.GetComponent<Navigation>().enabled = false;
 
-                // ensure cleaned contaminant does not spawn a recyclable
-                Collider2D hit = Physics2D.OverlapCircle(contaminant.transform.position, 5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) Destroy(hit.gameObject);
+                    // ensure cleaned contaminant does not spawn a recyclable
+                    Collider2D hit = Physics2D.OverlapCircle(contaminant.transform.position, 5f, LayerMask.GetMask("Recyclable"));
+                    if (hit != null) Destroy(hit.gameObject);
+                }
             }
         }
 
         public override bool CheckTaskCompletion()
         {
-            return bin.binState == BinState.CONTAMINATED;
+            
+            foreach (RecyclingBin bin in bins)
+            {
+                if (bin.binState != BinState.CONTAMINATED) continue;
+                return true;
+            }
+            return false;
         }
     }
 }
