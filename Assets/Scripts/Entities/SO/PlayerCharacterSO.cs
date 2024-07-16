@@ -18,4 +18,5 @@ public class PlayerCharacterSO : EntitySO
     [Header("Animation Durations")]
     public float attackDuration = 1.5f;
     public float skillDuration = 2f;
+    public float deathDuration = 3.5f;
 }

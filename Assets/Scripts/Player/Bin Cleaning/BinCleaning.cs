@@ -42,9 +42,9 @@ namespace Player.BinCleaning
         public Animator anim { get; private set; }
         #endregion
 
-        #region Private Variables
-        PlayerCharacter activeCharacterData;
-        bool lastCharacter = false;
+        #region Hidden Variables
+        private PlayerCharacter activeCharacterData;
+        [HideInInspector] public bool lastCharacter = false;
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -151,6 +151,8 @@ namespace Player.BinCleaning
         {
             // cache previous character if it is not null
             activeCharacterData = prev == null ? curr : prev;
+            // ensure switch is not due to death state
+            if (controller.current_state_name == "Player.FSM.PlayerDeathState") return;
             // ensure switching to current character
             if (curr != currentCharacterData) return;
             // do not run if character is cleaning
