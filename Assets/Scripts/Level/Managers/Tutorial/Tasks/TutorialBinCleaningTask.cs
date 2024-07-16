@@ -5,12 +5,17 @@ namespace Level.Tutorial
 {
     public class TutorialBinCleaningTask : TutorialTaskWithInfoBox
     {
-        [SerializeField] RecyclingBin bin;
+        [SerializeField] RecyclingBin[] bins;
 
         public override bool CheckTaskCompletion()
         {
-            if (bin.binState == BinState.CLEAN) box.SetCount(1);
-            return bin.binState == BinState.CLEAN;
+            foreach (RecyclingBin bin in bins)
+            {
+                if (bin.binState != BinState.CLEAN) continue;
+                box.SetCount(1);
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Level.Bins;
 using NPC;
@@ -23,22 +24,19 @@ namespace Level.Tutorial
         {
             base.Update();
 
-            foreach (RecyclingBin bin in bins)
+            if (contaminant == null && bins.Where(x => x.binState == BinState.CLEAN).ToArray().Length == bins.Length)
             {
-                if (contaminant == null && bin.binState == BinState.CLEAN)
-                {
-                    contaminant = Instantiate(
-                            contaminantPrefab, 
-                            originalContaminantPosition, 
-                            Quaternion.identity, 
-                            originalParent
-                        );
-                    contaminant.GetComponent<Navigation>().enabled = false;
+                contaminant = Instantiate(
+                        contaminantPrefab, 
+                        originalContaminantPosition, 
+                        Quaternion.identity, 
+                        originalParent
+                    );
+                contaminant.GetComponent<Navigation>().enabled = false;
 
-                    // ensure cleaned contaminant does not spawn a recyclable
-                    Collider2D hit = Physics2D.OverlapCircle(contaminant.transform.position, 5f, LayerMask.GetMask("Recyclable"));
-                    if (hit != null) Destroy(hit.gameObject);
-                }
+                // ensure cleaned contaminant does not spawn a recyclable
+                Collider2D hit = Physics2D.OverlapCircle(contaminant.transform.position, 5f, LayerMask.GetMask("Recyclable"));
+                if (hit != null) Destroy(hit.gameObject);
             }
         }
 
