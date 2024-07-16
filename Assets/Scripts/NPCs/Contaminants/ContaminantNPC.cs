@@ -14,6 +14,7 @@ namespace NPC.Contaminant
     {
         #region States
         public Stunned state_Stunned { get; private set; }
+        public Death state_Death { get; private set; }
         public DetectTarget state_Idle { get; private set; }
         public AttackRecyclable state_AttackRecyclable { get; private set; }
         public ChaseRecyclable state_ChaseRecyclable { get; private set; }
@@ -101,6 +102,7 @@ namespace NPC.Contaminant
             state_ChasePlayer = new ChasePlayer(this);
             state_AttackPlayer = new AttackPlayer(this);
             state_Stunned = new Stunned(state_Idle, this, this);
+            state_Death = new Death( this);
             SwitchState(state_Idle);
         }
 
@@ -122,6 +124,9 @@ namespace NPC.Contaminant
         public void Damage(float damage)
         {
             healthbar.value -= damage / maxHealth;
+            if (healthbar.value < 0 && currentState != state_Death){
+                SwitchState(state_Death);
+            }
         }
 
         public void Clean(float clean_amount)
@@ -139,6 +144,9 @@ namespace NPC.Contaminant
         public void Stun(float stun_duration)
         {
             // Debug.Log($"Stunned for {stun_duration}");
+            if (healthbar.value < 0 || currentState == state_Death){
+                return;
+            }
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }
@@ -146,8 +154,6 @@ namespace NPC.Contaminant
         public override void SwitchState(State<FSMRecyclableNPC> nextState)
         {
             base.SwitchState(nextState);
-            // Debug.Log($"Switching to {nextState}");
-
         }
     }
 }

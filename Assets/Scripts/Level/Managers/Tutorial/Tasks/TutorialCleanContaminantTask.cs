@@ -6,11 +6,17 @@ namespace Level.Tutorial
 {
     public class TutorialCleanContaminantTask : TutorialTaskWithInfoBox
     {
-        [SerializeField] Transform zone;
-        [SerializeField] ContaminantNPC contaminant;
         [SerializeField] float minGrimeAmount = .15f;
+        ContaminantNPC contaminant;
         Collider2D hit;
         bool completed = false;
+
+        new void Start()
+        {
+            base.Start();
+            if (recyclables == null || recyclables.Length <= 0) return;
+            contaminant = recyclables[0].gameObject.GetComponent<ContaminantNPC>();
+        }
 
         new void Update()
         {
@@ -38,9 +44,9 @@ namespace Level.Tutorial
             // clean up game objects after completing task
             if (contaminant != null) Destroy(contaminant.gameObject);
 
-            if (zone != null)
+            if (recyclables != null && recyclables.Length > 0)
             {
-                hit = Physics2D.OverlapCircle(zone.position, 5f, LayerMask.GetMask("Recyclable"));
+                Collider2D hit = Physics2D.OverlapCircle(recyclables[0].originalPosition, 1.5f, LayerMask.GetMask("Recyclable"));
                 if (hit != null) 
                 {
                     hit.GetComponent<Navigation>().enabled = false;
@@ -59,12 +65,6 @@ namespace Level.Tutorial
             if (hit == null) return;
             Destroy(hit.gameObject);
             TaskCompleted -= DestroyRecyclable;
-        }
-
-        void OnDrawGizmosSelected() 
-        {
-            if (zone == null) return;
-            Gizmos.DrawWireSphere(zone.position, 5f);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Level.Tutorial
     public class TutorialSwitchTask : TutorialTaskWithInfoBox
     {
         CharacterManager characterManager;
-        bool switchTriggered = false;
+        bool switchTriggered, taskStarted = false;
         int currentCount;
 
         // Start is called before the first frame update
@@ -20,6 +20,7 @@ namespace Level.Tutorial
 
         public override bool CheckTaskCompletion()
         {
+            if (!taskStarted) taskStarted = true;
             if (!switchTriggered) return false;
             currentCount++;
             switchTriggered = false;
@@ -31,7 +32,7 @@ namespace Level.Tutorial
 
         void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
         {
-            if (prev == null || prev == curr) return;
+            if (!taskStarted || prev == null || prev == curr) return;
             switchTriggered = true;
         }
     }
