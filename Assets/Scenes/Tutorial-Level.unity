@@ -173,7 +173,9 @@ MonoBehaviour:
   recyclables: []
   contaminant: {fileID: 509999886}
   contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-  bin: {fileID: 2147411324}
+  bins:
+  - {fileID: 1793221771}
+  - {fileID: 2147411324}
 --- !u!1001 &59579262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27168,7 +27170,9 @@ MonoBehaviour:
   count: 1
   box: {fileID: 2143212988}
   showBox: 1
-  bin: {fileID: 0}
+  bins:
+  - {fileID: 1793221771}
+  - {fileID: 2147411324}
 --- !u!1 &1592119863
 GameObject:
   m_ObjectHideFlags: 0
