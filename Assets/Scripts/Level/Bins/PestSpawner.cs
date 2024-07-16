@@ -10,8 +10,12 @@ public class PestSpawner : MonoBehaviour
     [Tooltip("Maximum number of pests allowed to be alive at any time.")]
     public int maxConcurrentPest = 10;
 
-    private ObjectPool<PestController> pestPool;
 
+    private ObjectPool<PestController> pestPool; // Using ObjectPool to recycle game objects.
+
+    /// <summary>
+    /// Coroutine that spawns pests.
+    /// </summary>
     private Coroutine spawnPestsCoroutine;
     [Header("Status"), SerializeField]
     private bool isActive = false;
@@ -35,6 +39,7 @@ public class PestSpawner : MonoBehaviour
     private void OnTakeFromPool(PestController pest)
     {
         pest.gameObject.SetActive(true);
+        // Reset position and rotation
         pest.gameObject.transform.position = transform.position;
         pest.gameObject.transform.rotation = Quaternion.identity;
         pest.gameObject.transform.parent = transform;
@@ -57,29 +62,41 @@ public class PestSpawner : MonoBehaviour
         {
             var now = Utils.GetCurrentTime();
 
+            // Calculate life and spawn rate based on number of rounds. These values were tested on desmos.
             var life = Mathf.Clamp(1.25f * rounds, 2, 10);
-            var spawn_rate = Mathf.Clamp(.2f * rounds, 1, 3);
+            var spawn_count = Mathf.Clamp(.2f * rounds, 1, 3);
+            // Wait for 2 seconds between each round.
             yield return new WaitForSeconds(2);
-            if (pestPool.CountActive >= maxConcurrentPest)
-            {
-                continue;
-            }
-            for (int i = 0; i < spawn_rate; i++)
+
+            // If there are already maxConcurrentPest pests alive, skip this round.
+            if (pestPool.CountActive >= maxConcurrentPest) continue;
+
+            // Spawn pests
+            for (int i = 0; i < spawn_count; i++)
             {
                 // Spawn pest
-                var pest = pestPool.Get();
+                var pest = pestPool.Get(); // Get a pest from the pool and assign the new life value.
                 pest.life_s = life;
             }
+            // Increase round count
             rounds++;
         }
     }
 
+    /// <summary>
+    /// Start spawning pests.
+    /// </summary>
+    [EasyButtons.Button]
     public void StartPestSpawning()
     {
         StopPestSpawning();
         spawnPestsCoroutine = StartCoroutine(SpawnPests_Coroutine());
     }
 
+    /// <summary>
+    /// Stop spawning pests.
+    /// </summary>
+    [EasyButtons.Button]
     public void StopPestSpawning()
     {
         isActive = false;
