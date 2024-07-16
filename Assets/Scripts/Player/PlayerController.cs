@@ -66,11 +66,9 @@ namespace Player
             characterManager ??= GetComponent<CharacterManager>();
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
-            Debug.Log($"{CharacterManager.character_instances[0]} dddd");
             OnCharacterChange(null, CharacterManager.character_instances[0]);
             // subscribe to character change event
             CharacterManager.CharacterChanged += OnCharacterChange;
-            Debug.Log($"{this.Data == null} xdddd {CharacterManager.character_instances[0].Switchable}");
             // initialize states
             DefaultState = new PlayerDefaultState(this, this);
             AttackState = new PlayerAttackState(this, this);

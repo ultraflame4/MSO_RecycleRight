@@ -117,7 +117,7 @@ public class PestController : MonoBehaviour
         // Clear the destination and stop the pest
         navigation.ClearDestination();
         rb.velocity = Vector2.zero;
-
+    
         // Start the death effect
         StartCoroutine(DeathEffect_Coroutine());
     }
@@ -130,6 +130,7 @@ public class PestController : MonoBehaviour
             spriteR.color = Color.Lerp(Color.white, Color.clear, i / 50f);
         }
         // When finished fading out, call the OnDeath event
+        gameObject.SetActive(false);
         OnDeath?.Invoke();
     }
 
