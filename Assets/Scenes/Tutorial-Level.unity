@@ -170,9 +170,11 @@ MonoBehaviour:
   minCompletionDuration: 3
   UIElements:
   - {fileID: 509999886}
-  recyclables: []
-  contaminant: {fileID: 509999886}
-  contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+  recyclables:
+  - gameObject: {fileID: 509999886}
+    prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+    originalPosition: {x: 0, y: 0, z: 0}
+    originalParent: {fileID: 0}
   bins:
   - {fileID: 1793221771}
   - {fileID: 2147411324}
@@ -27164,7 +27166,6 @@ MonoBehaviour:
   minCompletionDuration: 3
   UIElements:
   - {fileID: 1910549484}
-  - {fileID: 0}
   recyclables: []
   text: Clean the bin by switching to another character while near the bin
   count: 1

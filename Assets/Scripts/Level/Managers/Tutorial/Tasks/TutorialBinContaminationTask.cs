@@ -7,45 +7,31 @@ namespace Level.Tutorial
 {
     public class TutorialBinContaminationTask : TutorialTask
     {
-        [SerializeField] GameObject contaminant;
-        [SerializeField] GameObject contaminantPrefab;
         [SerializeField] RecyclingBin[] bins;
-        Transform originalParent;
-        Vector3 originalContaminantPosition;
-
-        new void Start()
-        {
-            base.Start();
-            originalParent = contaminant.transform.parent;
-            originalContaminantPosition = contaminant.transform.position;
-        }
+        bool completed = false;
 
         new void Update()
         {
             base.Update();
-
-            if (contaminant == null && bins.Where(x => x.binState == BinState.CLEAN).ToArray().Length == bins.Length)
-            {
-                contaminant = Instantiate(
-                        contaminantPrefab, 
-                        originalContaminantPosition, 
-                        Quaternion.identity, 
-                        originalParent
-                    );
-                contaminant.GetComponent<Navigation>().enabled = false;
-
-                // ensure cleaned contaminant does not spawn a recyclable
-                Collider2D hit = Physics2D.OverlapCircle(contaminant.transform.position, 5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) Destroy(hit.gameObject);
-            }
+            // check if need to reset contaminant
+            if (completed || recyclables == null || recyclables.Length <= 0 || !(recyclables[0].gameObject == null && 
+                bins.Where(x => x.binState == BinState.CLEAN).ToArray().Length == bins.Length)) 
+                    return;
+            // reset recyclables
+            ResetRecyclables();
+            // ensure cleaned contaminant does not spawn a recyclable
+            Collider2D hit = Physics2D.OverlapCircle(recyclables[0].gameObject.transform.position, 
+                5f, LayerMask.GetMask("Recyclable"));
+            if (hit == null) return; 
+            Destroy(hit.gameObject);
         }
 
         public override bool CheckTaskCompletion()
         {
-            
             foreach (RecyclingBin bin in bins)
             {
                 if (bin.binState != BinState.CONTAMINATED) continue;
+                completed = true;
                 return true;
             }
             return false;
