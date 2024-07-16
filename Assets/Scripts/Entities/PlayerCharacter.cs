@@ -63,7 +63,7 @@ namespace Entity.Data
         #endregion
         
         #region MonoBehaviour Callback
-        new void Awake()
+        protected override void Awake()
         {
             // set data
             // base entity data
@@ -79,15 +79,13 @@ namespace Entity.Data
             skillIcon = objectData.skillIcon;
             attackDuration = objectData.attackDuration;
             skillDuration = objectData.skillDuration;
-            // run base method
+            
+
+            Health = maxHealth;
+
             base.Awake();
         }
-        
-        void Start()
-        {
-            // set health to max health at start of game
-            Health = maxHealth;
-        }
+
         #endregion
     }
 }

@@ -21,7 +21,13 @@ namespace Level
 
         public event Action<LevelZone> ZoneChanged;
 
-        private static LevelManager _instance;
+        /// <summary>
+        /// The instance of the LevelManager in the scene. If there is no instance, it will be null;
+        /// </summary>
+        public static LevelManager _instance {get; private set;} = null;
+        /// <summary>
+        /// Returns the instance of the LevelManager in the scene. If there is no instance, it will throw an exception.
+        /// </summary>
         public static LevelManager Instance {
             get {
                 if (_instance == null)

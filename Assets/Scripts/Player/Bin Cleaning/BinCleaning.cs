@@ -60,8 +60,8 @@ namespace Player.BinCleaning
             // subscribe to character change event
             controller.CharacterManager.CharacterChanged += OnCharacterChange;
             // subscribe to zone change event
-            if (controller.LevelManager != null)
-                controller.LevelManager.ZoneChanged += OnZoneChange;
+            if (LevelManager._instance != null)
+                LevelManager._instance.ZoneChanged += OnZoneChange;
             
             // handle fsm
             // initialize states
@@ -174,7 +174,7 @@ namespace Player.BinCleaning
         void OnZoneChange(LevelZone zone)
         {
             // do not run if it is first zone
-            if (zone == controller.LevelManager.zones[0]) return;
+            if (zone == LevelManager.Instance.zones[0]) return;
             // force switch to moving state, run towards player's current position and reset
             SwitchState(Moving);
         }

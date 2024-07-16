@@ -29,7 +29,6 @@ namespace Player
         // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
-        public LevelManager LevelManager => LevelManager.Instance;
         public Transform pointer => transform.GetChild(0);
 
         
@@ -67,10 +66,11 @@ namespace Player
             characterManager ??= GetComponent<CharacterManager>();
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
+            Debug.Log($"{CharacterManager.character_instances[0]} dddd");
             OnCharacterChange(null, CharacterManager.character_instances[0]);
             // subscribe to character change event
             CharacterManager.CharacterChanged += OnCharacterChange;
-
+            Debug.Log($"{this.Data == null} xdddd {CharacterManager.character_instances[0].Switchable}");
             // initialize states
             DefaultState = new PlayerDefaultState(this, this);
             AttackState = new PlayerAttackState(this, this);
@@ -80,8 +80,8 @@ namespace Player
             Initialize(DefaultState);
 
             // subscribe to zone change event if level manager is not null
-            if (LevelManager != null)
-                LevelManager.ZoneChanged += MoveToZoneState.OnZoneChange;
+            if (LevelManager._instance != null)
+                LevelManager._instance.ZoneChanged += MoveToZoneState.OnZoneChange;
         }
         #endregion
 
