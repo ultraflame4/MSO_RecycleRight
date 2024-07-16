@@ -1,0 +1,101 @@
+using System;
+using System.Collections;
+using UnityEngine;
+using Patterns.FSM;
+using Entity.Data;
+
+namespace Player.FSM
+{
+    public class PlayerDeathState : State<PlayerController>
+    {
+        Coroutine coroutine;
+
+        public PlayerDeathState(StateMachine<PlayerController> fsm, PlayerController character) : base(fsm, character)
+        {
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+            // ensure only one death coroutine is running
+            if (coroutine != null) return;
+            // start coroutine to wait for death duration
+            coroutine = fsm.StartCoroutine(WaitForDeath());
+        }
+
+        IEnumerator WaitForDeath()
+        {
+            float duration = 0f;
+            while (duration < character.Data.deathDuration)
+            {
+                // TODO: replace with death animation/effect
+                Color newColor = character.Data.renderer.color;
+                newColor.a -=  Time.deltaTime / character.Data.deathDuration;
+                character.Data.renderer.color = newColor;
+                // increment coroutine
+                duration += Time.deltaTime;
+                yield return duration;
+            }
+            coroutine = null;
+            HandleDeathDurationEnd();
+        }
+
+        int GetNextAvailableCharacter()
+        {
+            int index = Array.IndexOf(character.CharacterManager.character_instances, character.Data);
+            int defaultReturnValue = -1;
+            for (int i = 0; i < character.CharacterManager.character_instances.Length - 1; i++)
+            {
+                index++;
+                if (index >= character.CharacterManager.character_instances.Length) index = 0;
+                if (character.CharacterManager.character_instances[index].IsCleaning) defaultReturnValue = -2;
+                if (!character.CharacterManager.character_instances[index].Switchable) continue;
+                return index;
+            }
+            return defaultReturnValue;
+        }
+
+        void HandleDeathDurationEnd()
+        {
+            // when character dies, switch to next available character in party
+            int index = GetNextAvailableCharacter();
+
+            // if there is a character found, switch to that character
+            if (index >= 0)
+            {
+                character.CharacterManager.CanSwitchCharacters = true;
+                character.CharacterManager.SwitchCharacter(index);
+                fsm.SwitchState(character.DefaultState);
+                return;
+            }
+            
+            // if index is -2, it is not the end of the game, there are still available chracters
+            // but they are currently busy, so wait until they can be swapped into
+            if (index == -2)
+            {
+                foreach (PlayerCharacter chara in character.CharacterManager.character_instances)
+                {
+                    if (!chara.IsCleaning) continue;
+                    chara.GetComponent<BinCleaning.BinCleaning>().lastCharacter = true;
+                    character.PointerManager.gameObject.SetActive(false);
+                    character.CharacterManager.CharacterChanged += CharacterAvailable;
+                    return;
+                }
+            }
+
+            // if index is -1, it is the end of the game
+            // TODO: trigger end of the game
+            Debug.Log("End of game, all player characters have died. ");
+        }
+
+        // when character is available, this would be called, and would switch to new character
+        void CharacterAvailable(PlayerCharacter prev, PlayerCharacter curr)
+        {
+            character.PointerManager.gameObject.SetActive(true);
+            character.CharacterManager.CharacterChanged -= CharacterAvailable;
+            character.CharacterManager.CanSwitchCharacters = true;
+            character.CharacterManager.SwitchCharacter(Array.IndexOf(character.CharacterManager.character_instances, curr));
+            fsm.SwitchState(character.DefaultState);
+        }
+    }
+}
