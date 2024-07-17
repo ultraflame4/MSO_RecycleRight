@@ -36,10 +36,11 @@ namespace Level.Tutorial
             if (recyclables != null && recyclables.Length > 0)
             {
                 Collider2D hit = Physics2D.OverlapCircle(recyclables[0].originalPosition, 1.5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) 
+                if (hit != null || contaminant == null) 
                 {
                     Destroy(hit.gameObject);
                     ResetRecyclables();
+                    return false;
                 }
             }
 
