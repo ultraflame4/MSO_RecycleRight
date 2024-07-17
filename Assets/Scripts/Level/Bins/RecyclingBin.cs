@@ -116,7 +116,7 @@ namespace Level.Bins
         public void StartInfestation()
         {
             // Already infested skip
-            if (binState == BinState.INFESTED) return;
+            if (binState == BinState.INFESTED || pending_infestation) return;
 
             binState = BinState.CONTAMINATED;
             pending_infestation = true;
