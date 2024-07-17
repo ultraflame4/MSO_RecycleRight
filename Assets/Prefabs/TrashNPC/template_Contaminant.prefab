@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 42dae454a2376484795a82bb5b09c52d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2151013705622909294}
+  grimeMaterial: {fileID: 2100000, guid: 42dae454a2376484795a82bb5b09c52d, type: 2}
   _grimeAmount: 0
 --- !u!1 &565254662581941418
 GameObject:
@@ -647,7 +648,7 @@ MonoBehaviour:
   m_MinValue: -0.038
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.565
+  m_Value: 0.506
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -850,7 +851,6 @@ MonoBehaviour:
   attackDuration: 1.5
   attackDamage: 0
   cleanable: 0
-  attract_pests: 0
   attract_pests: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
   npcData: {fileID: 0}

@@ -103,6 +103,9 @@ namespace NPC.Contaminant
             state_AttackPlayer = new AttackPlayer(this);
             state_Stunned = new Stunned(state_Idle, this, this);
             state_Death = new Death( this);
+            
+            grimeController.GrimeAmount = cleanable ? 1 : 0;
+            healthbar.value = 1f;
             SwitchState(state_Idle);
         }
 
