@@ -46,6 +46,7 @@ namespace NPC
             }
         }
 
+        [EasyButtons.Button]
         public void ClearDestination(){
             target = null;
             current_target_pos = null;
