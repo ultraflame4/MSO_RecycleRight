@@ -136,7 +136,7 @@ namespace NPC.Contaminant
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
             {
-                Instantiate(clean_prefab, transform.position, Quaternion.identity);
+                Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
                 Destroy(gameObject);
             }
         }

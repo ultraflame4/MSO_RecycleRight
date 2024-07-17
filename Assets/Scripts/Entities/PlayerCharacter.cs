@@ -1,5 +1,6 @@
 using UnityEngine;
 using Interfaces;
+using Player;
 
 namespace Entity.Data
 {
@@ -24,6 +25,7 @@ namespace Entity.Data
         // animation durations
         [HideInInspector] public float attackDuration = 1.5f;
         [HideInInspector] public float skillDuration = 2f;
+        [HideInInspector] public float deathDuration = 3.5f;
         #endregion
 
         #region Booleans
@@ -59,11 +61,14 @@ namespace Entity.Data
         {
             // apply damage
             Health -= damage;
+            // check if died, if so, switch to death state
+            if (PlayerController.Instance == null || Health > 0) return;
+            PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
         }
         #endregion
         
         #region MonoBehaviour Callback
-        new void Awake()
+        protected override void Awake()
         {
             // set data
             // base entity data
@@ -79,15 +84,12 @@ namespace Entity.Data
             skillIcon = objectData.skillIcon;
             attackDuration = objectData.attackDuration;
             skillDuration = objectData.skillDuration;
-            // run base method
+            deathDuration = objectData.deathDuration;
+            Health = maxHealth;
+
             base.Awake();
         }
-        
-        void Start()
-        {
-            // set health to max health at start of game
-            Health = maxHealth;
-        }
+
         #endregion
     }
 }
