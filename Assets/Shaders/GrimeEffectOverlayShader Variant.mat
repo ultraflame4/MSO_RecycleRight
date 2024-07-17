@@ -27,7 +27,7 @@ Material:
     m_Floats:
     - _GrimePercent: 0.1
     - _falloff: 201.49
-    - _percent: 1
+    - _percent: 0
     - _pixelsPerUnit: 135.23
     m_Colors: []
   m_BuildTextureStacks: []
