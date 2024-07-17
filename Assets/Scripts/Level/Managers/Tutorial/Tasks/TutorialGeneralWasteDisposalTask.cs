@@ -25,7 +25,7 @@ namespace Level.Tutorial
 
         void FixedUpdate()
         {
-            if (recyclables == null || recyclables.Length <= 0 || contaminant == null) return;
+            if (completed || recyclables == null || recyclables.Length <= 0 || contaminant == null) return;
             contaminant.transform.position = recyclables[0].originalPosition;
         }
 
