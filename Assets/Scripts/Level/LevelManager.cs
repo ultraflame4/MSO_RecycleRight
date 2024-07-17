@@ -69,7 +69,7 @@ namespace Level
             for (int i = 0; i < zones.Length; i++)
             {
                 Bins[i] = zones[i].GetComponentsInChildren<RecyclingBin>();
-                if (i == 0) continue;
+                if (i == 0 || !updateZone) continue;
                 SetZoneActive(false, i);
             }
         }
@@ -77,7 +77,7 @@ namespace Level
         // This is in late update because the check for zone completion should only be done after all the other logic has completed
         void LateUpdate()
         {
-            if (zones == null || 
+            if (!updateZone || zones == null ||
                 zones[current_zone_index].transform.childCount > 
                 Bins[current_zone_index].Length) 
                     return;
