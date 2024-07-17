@@ -47,8 +47,13 @@ namespace Level.Bins
             get => _score;
             set
             {
-                if (binState != BinState.CLEAN) return;
+                if (binState != BinState.CLEAN){
+                    _score = 0;
+                    return;
+                }
                 _score = value;
+                
+
             }
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
@@ -156,9 +161,8 @@ namespace Level.Bins
         public void CompleteClean()
         {
             binState = BinState.CLEAN;
-            if (spriteR == null) return;
-            spriteR.sprite = cleanedSprite;
-
+            Score = 0;
+            if (spriteR != null) spriteR.sprite = cleanedSprite;
             // Renable text
             nameText.enabled = true;
             scoreText.enabled = true;
