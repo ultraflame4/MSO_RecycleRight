@@ -22,14 +22,19 @@ public class GrimeController : MonoBehaviour
     }
 
     private Material material;
-    private void Start()
+
+    private void Awake()
     {
         InitMaterial();
+    }
+    private void Start()
+    {
+        UpdateMaterial();
     }
 
     private void InitMaterial()
     {
-        material = grimeMaterial;
+        material =  new Material(grimeMaterial);
         spriteRenderer.material = material;
     }
     private void UpdateMaterial()
@@ -39,6 +44,8 @@ public class GrimeController : MonoBehaviour
             InitMaterial();
         }
         material.SetFloat("_percent", _grimeAmount);
+        Debug.Log($"update mat, {_grimeAmount}");
+        spriteRenderer.material = material;
     }
 
     private void OnValidate()
