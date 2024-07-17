@@ -18,31 +18,24 @@ namespace Level.Tutorial
 
         public override bool CheckTaskCompletion()
         {
-            int recyclableCount, scoredBins;
-
-            recyclableCount = recyclables
+            int recyclableCount = recyclables
                 .Select(x => x.gameObject)
-                .Where(x => x != null)
+                .Where(x => x == null)
                 .ToArray().Length;
             
-            scoredBins = bins
-                .Where(x => x.binState == BinState.CLEAN && x.Score > 0)
-                .ToArray().Length;
-
             // update information box count UI based on number of recyclables that are destroyed (in the bin)
-            box.SetCount(recyclables.Length - recyclableCount);
+            box.SetCount(recyclableCount);
 
-            // ensure all bins are clean, and have 1 score
+            // ensure all bins are clean
             foreach (RecyclingBin bin in bins)
             {
-                if (recyclableCount == 0) 
-                {
-                    if (scoredBins == recyclables.Length) continue;
+                if (bin.binState == BinState.CLEAN) 
+                    continue;
+                if (recyclableCount >= (recyclables.Length - 1)) 
                     ResetRecyclables();
-                }
                 return false;
             }
-            return true;
+            return recyclableCount == recyclables.Length;
         }
 
         void ResetRecyclables()

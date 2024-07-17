@@ -64,10 +64,10 @@ namespace Level.Bins
             
             if (spriteR == null) return;
             cleanedSprite = spriteR.sprite;
+            SetActiveCleaningEffects(false);
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
             spriteR.sprite = contaminatedSprite;
-            SetActiveCleaningEffects(false);
         }
 
         private void Update()
