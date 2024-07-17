@@ -86,7 +86,7 @@ namespace Entity.Data
             skillDuration = objectData.skillDuration;
             deathDuration = objectData.deathDuration;
             Health = maxHealth;
-            Debug.Log($"Loaded character data from {objectData == null}");
+            Debug.Log($"Loaded character data. Scriptable Object is null? {objectData == null}");
             base.Awake();
         }
 
