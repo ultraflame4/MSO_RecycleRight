@@ -15,6 +15,12 @@ namespace NPC.Contaminants.States
         public AttackPlayer(ContaminantNPC npc) : base(npc)
         {
         }
-        public override IDamagable target => PlayerController.Instance;
+        public override IDamagable target {
+            get {
+                if (PlayerController.Instance == null) return null;
+                if (Vector3.Distance(PlayerController.Instance.transform.position, npc.transform.position) > npc.attackRange) return null;
+                return PlayerController.Instance.Data;
+            }
+        }
     }
 }

@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 5
-  attackRange: 1.5
-  attackStunDuration: 0.75
+  attackRange: 0.75
+  attackStunDuration: 1.5
   knockback: 15
-  cleanAmount: 5
+  cleanAmount: 0.25
   areaOfEffect: 1
   hitMask:
     serializedVersion: 2

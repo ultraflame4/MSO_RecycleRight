@@ -1,48 +1,80 @@
 using TMPro;
 using UnityEngine;
 using NPC;
+using System;
+using System.Collections;
+using UnityEngine.Pool;
 
 namespace Level.Bins
 {
+    [RequireComponent(typeof(SpriteRenderer), typeof(PestSpawner))]
     public class RecyclingBin : MonoBehaviour
     {
+
+        #region Component Config
         [Tooltip("How long it will take for the bin to become infested, once contaminated with food items.")]
         public float infestation_secs;
 
-        [field: Header("Internal")]
+        [field: Header("Config")]
 
         [field: SerializeField]
         public RecyclableType recyclableType { get; private set; }
         [field: SerializeField]
         public BinState binState { get; private set; }
-        [field: SerializeField]
-        public bool pending_infestation { get; private set; }
-        [field: SerializeField]
+        #endregion
+
+        #region Component References
+        
+        [Header("References")]
+
+        public TMP_Text nameText;
+        public TMP_Text scoreText;
+        public ParticleSystem[] cleaningEffects;
+        public Sprite contaminatedSprite;
+        private Sprite cleanedSprite;
+        private SpriteRenderer spriteR;
+        private PestSpawner pestSpawner;
+        #endregion
+
+        [field: Header("Internal"), SerializeField]
         public float infestation_percent { get; private set; }
+        [SerializeField]
+        private bool pending_infestation;
+        [SerializeField]
         private float _score = 0;
-        public float Score{
+        public float Score
+        {
             get => _score;
-            set {
-                if (binState != BinState.CLEAN) return;
+            set
+            {
+                if (binState != BinState.CLEAN){
+                    _score = 0;
+                    return;
+                }
                 _score = value;
+                
+
             }
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
-        public TMP_Text scoreText;
 
-        // sprites
-        public Sprite contaminatedSprite;
-        private Sprite cleanedSprite;
-        private new SpriteRenderer renderer;
+
+        private void Awake() {
+            spriteR = GetComponent<SpriteRenderer>();
+            pestSpawner = GetComponent<PestSpawner>();
+
+            cleanedSprite = spriteR.sprite; // Initialise here.
+        }
 
         private void Start()
         {
-            renderer = GetComponent<SpriteRenderer>();
-            if (renderer == null) return;
-            cleanedSprite = renderer.sprite;
+            
+            if (spriteR == null) return;
+            
+            SetActiveCleaningEffects(false);
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
-            renderer.sprite = contaminatedSprite;
+            spriteR.sprite = contaminatedSprite;
         }
 
         private void Update()
@@ -52,12 +84,33 @@ namespace Level.Bins
                 infestation_percent += Time.deltaTime / infestation_secs;
                 if (infestation_percent >= 1)
                 {
+                    // Bin is infested
+
                     pending_infestation = false;
                     infestation_percent = 0;
                     binState = BinState.INFESTED;
+                    pestSpawner.StartPestSpawning();
                 }
             }
             scoreText.text = $"Score: {Score}";
+        }
+
+
+        void SetActiveCleaningEffects(bool active)
+        {
+            // Loop through all cleaning effects and start/stop them
+            foreach (var effect in cleaningEffects)
+            {
+                if (effect == null) continue;
+                if (active)
+                {
+                    effect.Play();
+                }
+                else
+                {
+                    effect.Stop();
+                }
+            }
         }
 
         /// <summary>
@@ -66,18 +119,19 @@ namespace Level.Bins
         /// 
         /// Sets state to contaminated, when timer runs out, state changes to infested.
         /// </summary>
+        [EasyButtons.Button]
         public void StartInfestation()
         {
             // Already infested skip
-            if (binState == BinState.INFESTED) return;
+            if (binState == BinState.INFESTED || pending_infestation) return;
 
             binState = BinState.CONTAMINATED;
             pending_infestation = true;
             infestation_percent = 0;
             Score = 0;
 
-            if (renderer == null) return;
-            renderer.sprite = contaminatedSprite;
+            if (spriteR == null) return;
+            spriteR.sprite = contaminatedSprite;
         }
 
         /// <summary>
@@ -85,21 +139,35 @@ namespace Level.Bins
         /// 
         /// Sets state to cleaning
         /// </summary>
+        [EasyButtons.Button]
         public void SetCleaning()
         {
             binState = BinState.CLEANING;
             pending_infestation = false;
             infestation_percent = 0;
+
+            // Disable text as they are not used anyways
+            nameText.enabled = false;
+            scoreText.enabled = false;
+            SetActiveCleaningEffects(true);
+            pestSpawner.StopPestSpawning();
+
         }
 
         /// <summary>
         /// Use this when bin has completed its cleaning proccess and can continue being used
         /// </summary>
+        [EasyButtons.Button]
         public void CompleteClean()
         {
             binState = BinState.CLEAN;
-            if (renderer == null) return;
-            renderer.sprite = cleanedSprite;
+            Score = 0;
+            if (spriteR != null) spriteR.sprite = cleanedSprite;
+            // Renable text
+            nameText.enabled = true;
+            scoreText.enabled = true;
+            SetActiveCleaningEffects(false);
+            pestSpawner.StopPestSpawning();
         }
 
         /// <summary>
@@ -107,6 +175,7 @@ namespace Level.Bins
         /// 
         /// Sets state to contaminated.
         /// </summary>
+        [EasyButtons.Button]
         public void SetContaminated()
         {
             // Infestation takes higher priority
@@ -116,18 +185,16 @@ namespace Level.Bins
             infestation_percent = 0;
             Score = 0;
 
-            if (renderer == null) return;
-            renderer.sprite = contaminatedSprite;
+            if (spriteR == null) return;
+            spriteR.sprite = contaminatedSprite;
         }
 
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (binState != BinState.CLEAN) return;
-            var recyclable = other.GetComponent<FSMRecyclableNPC>();
-            if (recyclable == null) return;
-            Debug.Log($"Recyclable {recyclable} Type {recyclable.recyclableType} entered bin {this} of type {this.recyclableType}");
-            recyclable.OnEnteredBin(this);
+            var item = other.GetComponent<IBinTrashItem>();
+            if (item == null) return;
+            item.OnEnterBin(this);
         }
     }
 }

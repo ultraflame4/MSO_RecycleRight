@@ -44,6 +44,18 @@ public class ContaminantConfig
     [Tooltip("The duration of each attack. in seconds")]
     public float attackDuration = 1.5f;
     /// <summary>
+    /// Whether the contaminant contains traces of food or other substances which will attract pests. (i.e tupperware containers, pizza boxes)
+    /// </summary>
+    [Tooltip("Whether the contaminant contains traces of food or other substances which will attract pests.")]
+    public bool attract_pests = false;
+
+    /// <summary>
+    /// The delay before the attack hits the target. This is used to sync the attack animation with the actual attack. In seconds.
+    /// </summary>
+    [Tooltip("The delay before the attack hits the target. This is used to sync the attack animation with the actual attack. In seconds.")]
+    public float attack_hit_delay = 0f;
+
+    /// <summary>
     /// Whether the contaminant can be cleaned
     /// </summary>
     [Tooltip("Whether the contaminant can be cleaned")]

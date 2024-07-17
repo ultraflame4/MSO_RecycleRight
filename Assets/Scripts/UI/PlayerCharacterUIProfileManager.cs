@@ -13,7 +13,7 @@ namespace UI
         void Start()
         {
             // get reference to character manager
-            characterManager = GameObject.FindWithTag("Player").GetComponent<CharacterManager>();
+            characterManager = PlayerController.Instance.CharacterManager;
             // ensure character manager is not null
             if (characterManager == null) return;
             // subscribe to character change event

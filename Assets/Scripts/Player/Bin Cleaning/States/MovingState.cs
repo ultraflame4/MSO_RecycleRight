@@ -15,7 +15,7 @@ namespace Player.BinCleaning.FSM
         {
             base.Enter();
             // play idle animation
-            character.anim?.Play("Run");
+            character.anim?.Play("Idle");
             // set move boolean
             character.anim?.SetBool("IsMoving", true);
             // override switchable, disallow switching when in this state

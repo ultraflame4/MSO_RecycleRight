@@ -1,20 +1,17 @@
+using System;
 using UnityEngine;
 using Patterns.FSM;
 using Entity.Data;
 using Player.FSM;
 using Behaviour = Player.Behaviours.Behaviour;
 using Level;
-using Interfaces;
-using System;
 
 namespace Player
 {
-    public class PlayerController : StateMachine<PlayerController>, IDamagable
+    public class PlayerController : StateMachine<PlayerController>
     {
         #region Inspector Fields
-        [Header("References")]
         [SerializeField] private CharacterManager characterManager;
-        [SerializeField] private LevelManager levelManager;
         #endregion
 
         #region States
@@ -22,6 +19,7 @@ namespace Player
         public PlayerAttackState AttackState { get; private set; }
         public PlayerSkillState SkillState { get; private set; }
         public PlayerMoveToZoneState MoveToZoneState { get; private set; }
+        public PlayerDeathState DeathState { get; private set; }
         #endregion
 
         #region Other Properties
@@ -32,7 +30,6 @@ namespace Player
         // Explicitly return null if _anim is equals null (If _anim == null, it may not be the real null, Unity overrides the equality operator to make some stuff equal to null (destroyed objects, missing components, etc))
         public Animator anim => _anim == null ? null : _anim;
         public CharacterManager CharacterManager => characterManager;
-        public LevelManager LevelManager => levelManager;
         public Transform pointer => transform.GetChild(0);
 
         
@@ -73,29 +70,18 @@ namespace Player
             OnCharacterChange(null, CharacterManager.character_instances[0]);
             // subscribe to character change event
             CharacterManager.CharacterChanged += OnCharacterChange;
-
             // initialize states
             DefaultState = new PlayerDefaultState(this, this);
             AttackState = new PlayerAttackState(this, this);
             SkillState = new PlayerSkillState(this, this);
             MoveToZoneState = new PlayerMoveToZoneState(this, this);
+            DeathState = new PlayerDeathState(this, this);
             // initialize state machine
             Initialize(DefaultState);
 
             // subscribe to zone change event if level manager is not null
-            if (levelManager != null)
-                levelManager.ZoneChanged += MoveToZoneState.OnZoneChange;
-        }
-        #endregion
-
-        #region Interface Methods
-        public void Damage(float damage)
-        {
-            // apply damage
-            Data.Health -= damage;
-            // check if died
-            if (Data.Health > 0f) return;
-            // todo: handle death
+            if (LevelManager._instance != null)
+                LevelManager._instance.ZoneChanged += MoveToZoneState.OnZoneChange;
         }
         #endregion
 

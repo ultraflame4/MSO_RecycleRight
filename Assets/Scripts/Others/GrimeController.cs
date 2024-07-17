@@ -4,6 +4,7 @@ public class GrimeController : MonoBehaviour
 {
     [Tooltip("The sprite renderer hosting the grime overlay texture and the grime overlay material")]
     public SpriteRenderer spriteRenderer;
+    public Material grimeMaterial;
     [SerializeField, Tooltip("The amount of grime / dirt to show. Range between 0-1"), Range(0, 1)]
     private float _grimeAmount;
 
@@ -21,14 +22,19 @@ public class GrimeController : MonoBehaviour
     }
 
     private Material material;
-    private void Start()
+
+    private void Awake()
     {
         InitMaterial();
+    }
+    private void Start()
+    {
+        UpdateMaterial();
     }
 
     private void InitMaterial()
     {
-        material = spriteRenderer.material;
+        material =  new Material(grimeMaterial);
         spriteRenderer.material = material;
     }
     private void UpdateMaterial()
@@ -38,6 +44,8 @@ public class GrimeController : MonoBehaviour
             InitMaterial();
         }
         material.SetFloat("_percent", _grimeAmount);
+        Debug.Log($"update mat, {_grimeAmount}");
+        spriteRenderer.material = material;
     }
 
     private void OnValidate()

@@ -1,8 +1,10 @@
 using UnityEngine;
+using Interfaces;
+using Player;
 
 namespace Entity.Data
 {
-    public class PlayerCharacter : Entity
+    public class PlayerCharacter : Entity, IDamagable
     {
         // inspector fields
         [SerializeField] PlayerCharacterSO objectData;
@@ -23,16 +25,24 @@ namespace Entity.Data
         // animation durations
         [HideInInspector] public float attackDuration = 1.5f;
         [HideInInspector] public float skillDuration = 2f;
+        [HideInInspector] public float deathDuration = 3.5f;
         #endregion
 
-        #region Other Variables
-        // multipliers
-        [HideInInspector] public float movementMultiplier = 1f;
-        [HideInInspector] public float attackMultiplier = 1f;
-
-        // booleans
+        #region Booleans
         [HideInInspector] public bool IsCleaning = false;
         [HideInInspector] public bool OverrideSwitchable = false;
+        #endregion
+
+        #region Multipliers
+        [HideInInspector] public float movementMultiplier = 1f;
+        [HideInInspector] public float attackMultiplier = 1f;
+        [HideInInspector] public float skillCooldownMultiplier = 1f;
+        #endregion
+
+        #region Multiplied Data
+        public float netMovementSpeed => movementSpeed * movementMultiplier;
+        public float netAttackDuration => attackDuration * attackMultiplier;
+        public float netSkillCooldown => skillCooldown * skillCooldownMultiplier;
         #endregion
 
         #region Properties
@@ -45,9 +55,20 @@ namespace Entity.Data
 
         public bool Switchable => !OverrideSwitchable && !(IsCleaning || Health <= 0);
         #endregion
+
+        #region Interface Methods
+        public void Damage(float damage)
+        {
+            // apply damage
+            Health -= damage;
+            // check if died, if so, switch to death state
+            if (PlayerController.Instance == null || Health > 0) return;
+            PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
+        }
+        #endregion
         
         #region MonoBehaviour Callback
-        new void Awake()
+        protected override void Awake()
         {
             // set data
             // base entity data
@@ -63,15 +84,12 @@ namespace Entity.Data
             skillIcon = objectData.skillIcon;
             attackDuration = objectData.attackDuration;
             skillDuration = objectData.skillDuration;
-            // run base method
+            deathDuration = objectData.deathDuration;
+            Health = maxHealth;
+            Debug.Log($"Loaded character data. Scriptable Object is null? {objectData == null}");
             base.Awake();
         }
-        
-        void Start()
-        {
-            // set health to max health at start of game
-            Health = maxHealth;
-        }
+
         #endregion
     }
 }

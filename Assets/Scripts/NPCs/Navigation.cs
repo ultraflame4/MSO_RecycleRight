@@ -7,21 +7,27 @@ namespace NPC
     public class Navigation : MonoBehaviour
     {
 
-        [Tooltip("When distance between target & this game object is less than stop_distance, it will count as reached destination.")]
+        [Tooltip("At what distance from the destination should this game object stop")]
         public float stop_distance = 0.1f;
-        [Tooltip("When distance to start slowing down"), Range(0.00001f,1f)]
+        [Tooltip("The distance from the destination at which this game object start slowing down."), Range(0.00001f,1f)]
         public float slow_distance = 0.1f;
         [Tooltip("The movement speed")]
         public float move_speed = 100f;
         [Tooltip("Checks for target position overshooting and fixes it.")]
         public bool fix_overshoot = true;
-
-
+        
         private Rigidbody2D rb;
         private Transform target;
         private Vector3? current_target_pos;
 
-        public bool flipX => rb.velocity.x > 0;
+        public bool flipX {
+            get {
+                if (rb){
+                    return rb.velocity.x > 0;
+                }
+                return false;
+            }
+        }
 
         private void Start()
         {
@@ -40,6 +46,7 @@ namespace NPC
             }
         }
 
+        [EasyButtons.Button]
         public void ClearDestination(){
             target = null;
             current_target_pos = null;
@@ -48,6 +55,10 @@ namespace NPC
         public void SetDestination(Vector3 pos)
         {
             current_target_pos = pos;
+        }
+
+        public void StopVelocity(){
+            rb.velocity = Vector3.zero;
         }
 
         public void SetDestination(Transform target)

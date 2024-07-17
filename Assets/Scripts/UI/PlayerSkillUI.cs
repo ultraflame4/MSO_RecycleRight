@@ -42,14 +42,15 @@ namespace UI
             for (int i = 0; i < cooldownManager.Length; i++)
             {
                 // only increment cooldown when less than max cooldown
-                if (cooldownManager[i] >= characterManager.character_instances[i].skillCooldown) 
+                if (cooldownManager[i] >= characterManager.character_instances[i].netSkillCooldown) 
                         continue;
                 // increment cooldown
                 cooldownManager[i] += Time.deltaTime;
             }
             // update cooldown overlay
             cooldownOverlay.fillAmount = 1f - (cooldownManager[activeIndex] / 
-                characterManager.character_instances[activeIndex].skillCooldown);
+                (characterManager.character_instances[activeIndex].skillCooldown * 
+                characterManager.character_instances[activeIndex].skillCooldownMultiplier));
         }
 
         void SetCooldownManager()
@@ -68,6 +69,8 @@ namespace UI
         // event listeners
         void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
         {
+            // do not switch to character if character cannot be switched into
+            if (!curr.Switchable) return;
             // update active index
             activeIndex = Array.IndexOf(characterManager.character_instances, curr);
             // set character skill icon, ensure icon image is not null
