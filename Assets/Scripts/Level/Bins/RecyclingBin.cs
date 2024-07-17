@@ -57,13 +57,15 @@ namespace Level.Bins
         private void Awake() {
             spriteR = GetComponent<SpriteRenderer>();
             pestSpawner = GetComponent<PestSpawner>();
+
+            cleanedSprite = spriteR.sprite; // Initialise here.
         }
 
         private void Start()
         {
             
             if (spriteR == null) return;
-            cleanedSprite = spriteR.sprite;
+            
             SetActiveCleaningEffects(false);
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
