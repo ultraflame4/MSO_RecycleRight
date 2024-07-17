@@ -57,6 +57,10 @@ namespace NPC
             current_target_pos = pos;
         }
 
+        public void StopVelocity(){
+            rb.velocity = Vector3.zero;
+        }
+
         public void SetDestination(Transform target)
         {
             this.target = target;

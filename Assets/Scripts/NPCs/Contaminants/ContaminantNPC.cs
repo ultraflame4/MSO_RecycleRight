@@ -49,6 +49,8 @@ namespace NPC.Contaminant
         public bool attract_pests=false;
         [Tooltip("The prefab to instantiate when the contaminant is cleaned.")]
         public GameObject clean_prefab;
+        [Tooltip("The delay before the attack hits the target. This is used to sync the attack animation with the actual attack. In seconds.")]
+        public float attack_hit_delay = 0f;
 
         [Tooltip("The npc data to configure this npc. Please note that this will override the above settings (on awake).")]
         public TrashNpcSO npcData;
@@ -70,6 +72,7 @@ namespace NPC.Contaminant
             attackDamage = npcData.contaminantConfig.attackDamage;
             attackDuration = npcData.contaminantConfig.attackDuration;
             attract_pests = npcData.contaminantConfig.attract_pests;
+            attack_hit_delay = npcData.contaminantConfig.attack_hit_delay;
             cleanable = npcData.contaminantConfig.cleanable;
             if (cleanable)
             {
