@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8137850248478652861}
   - component: {fileID: 2151013705622909294}
   - component: {fileID: 2116439068003672345}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: GrimeOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4499305115945538989}
   - component: {fileID: 7104017137578983470}
   - component: {fileID: 1194784995174342749}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8054660249999163465}
   - component: {fileID: 8521848378192187178}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 8032888024164147659}
   - component: {fileID: 2992538052419691700}
   - component: {fileID: 6699648712919308335}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 5050912855731052712}
   - component: {fileID: 3321520672722178443}
   - component: {fileID: 2789685497451923635}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 1906331827156867166}
   - component: {fileID: 1828325072615984949}
   - component: {fileID: 5208754194471477544}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 1301760359086767725}
   - component: {fileID: 6637979659156780522}
   - component: {fileID: 1011989942480860807}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 4470070128566506984}
   - component: {fileID: 3481361625278285539}
   - component: {fileID: 8690451943301939409}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: template_Contaminant
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -850,7 +850,6 @@ MonoBehaviour:
   attackDuration: 1.5
   attackDamage: 0
   cleanable: 0
-  attract_pests: 0
   attract_pests: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
   npcData: {fileID: 0}
