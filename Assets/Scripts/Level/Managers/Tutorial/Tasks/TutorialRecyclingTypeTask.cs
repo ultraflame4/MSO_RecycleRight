@@ -23,19 +23,23 @@ namespace Level.Tutorial
                 .Where(x => x == null)
                 .ToArray().Length;
             
+            int totalCleanBins = bins
+                .Where(x => x.binState == BinState.CLEAN)
+                .ToArray().Length;
+            
+            int totalScore = (int) Enumerable.Sum(bins.Select(x => x.Score).ToArray());
+            
             // update information box count UI based on number of recyclables that are destroyed (in the bin)
             box.SetCount(recyclableCount);
 
-            // ensure all bins are clean
-            foreach (RecyclingBin bin in bins)
-            {
-                if (bin.binState == BinState.CLEAN) 
-                    continue;
-                if (recyclableCount >= (recyclables.Length - 1)) 
-                    ResetRecyclables();
-                return false;
-            }
-            return recyclableCount == recyclables.Length;
+            // check for completion condition
+            if (totalCleanBins == bins.Length && totalScore == recyclables.Length)
+                return true;
+            // check if need to reset task
+            if (totalCleanBins < bins.Length || (totalScore < recyclables.Length && recyclableCount == recyclables.Length)) 
+                ResetRecyclables();
+
+            return false;
         }
 
         void ResetRecyclables()
