@@ -117,7 +117,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638568433412207588
+  platformSettingsDirtyTick: 638568450169849716
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 429}
   - name: Enemy_Paper_Frame_2
     originalName: 
-    pivot: {x: 0.5106383, y: -0.3783784}
+    pivot: {x: 0.34042552, y: -0.35135135}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 48}
   - name: Enemy_Paper_Frame_3
     originalName: 
-    pivot: {x: 0.34042552, y: -0.35135135}
+    pivot: {x: 0.75555557, y: -0.4117647}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 453}
   - name: Enemy_Paper_Frame_4
     originalName: 
-    pivot: {x: 0.75555557, y: -0.4117647}
+    pivot: {x: 0.85, y: -0.17021276}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 66}
   - name: Enemy_Paper_Frame_5
     originalName: 
-    pivot: {x: 0.85, y: -0.17021276}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -263,7 +263,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 93}
   - name: Enemy_Paper_Frame_6
     originalName: 
-    pivot: {x: 0.5217391, y: -0.5555556}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -283,7 +283,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 138}
   - name: Enemy_Paper_Frame_7
     originalName: 
-    pivot: {x: 0.4255319, y: -0.3783784}
+    pivot: {x: 0.34042552, y: -0.35135135}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -303,7 +303,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 183}
   - name: Enemy_Paper_Frame_0
     originalName: 
-    pivot: {x: 0.59574467, y: -0.32432434}
+    pivot: {x: 0.74418604, y: -0.4117647}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -323,7 +323,7 @@ ScriptedImporter:
     uvTransform: {x: 172, y: 4}
   - name: Enemy_Paper_Frame_1
     originalName: 
-    pivot: {x: 0.5531915, y: -0.5675676}
+    pivot: {x: 0.74418604, y: -0.074074075}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -343,7 +343,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Enemy_Paper_Frame_7
     originalName: 
-    pivot: {x: 0.31914893, y: -0.3783784}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -363,7 +363,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 228}
   - name: Enemy_Paper_Frame_0
     originalName: 
-    pivot: {x: 0.4468085, y: -0.2972973}
+    pivot: {x: 0.5217391, y: -0.5555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -383,7 +383,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 409}
   - name: Enemy_Paper_Frame_1
     originalName: 
-    pivot: {x: 0.5106383, y: -0.3783784}
+    pivot: {x: 0.4255319, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -403,7 +403,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 273}
   - name: Enemy_Paper_Frame_21
     originalName: 
-    pivot: {x: 0.5106383, y: -0.3783784}
+    pivot: {x: 0.59574467, y: -0.32432434}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -423,7 +423,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 318}
   - name: Enemy_Paper_Frame_22
     originalName: 
-    pivot: {x: 0.5106383, y: -0.3783784}
+    pivot: {x: 0.5531915, y: -0.5675676}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -443,7 +443,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 363}
   - name: Enemy_Paper_Frame_23
     originalName: 
-    pivot: {x: 0.5106383, y: -0.3783784}
+    pivot: {x: 0.31914893, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -463,7 +463,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 408}
   - name: Enemy_Paper_Frame_24
     originalName: 
-    pivot: {x: 0.5106383, y: -0.3783784}
+    pivot: {x: 0.4468085, y: -0.2972973}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -523,7 +523,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 49}
   - name: Enemy_Paper_Frame_27
     originalName: 
-    pivot: {x: 0.5121951, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -543,7 +543,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 94}
   - name: Enemy_Paper_Frame_28
     originalName: 
-    pivot: {x: 0.4634146, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -563,7 +563,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 139}
   - name: Enemy_Paper_Frame_29
     originalName: 
-    pivot: {x: 0.41463414, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -583,7 +583,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 184}
   - name: Enemy_Paper_Frame_2
     originalName: 
-    pivot: {x: 0.36585364, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -603,7 +603,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 229}
   - name: Enemy_Paper_Frame_3
     originalName: 
-    pivot: {x: 0.31707317, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -623,7 +623,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 274}
   - name: Enemy_Paper_Frame_4
     originalName: 
-    pivot: {x: 0.537037, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -643,7 +643,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 319}
   - name: Enemy_Paper_Frame_5
     originalName: 
-    pivot: {x: 0.5121951, y: -0.41666666}
+    pivot: {x: 0.5106383, y: -0.3783784}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -663,7 +663,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 364}
   - name: Enemy_Paper_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: -0.37142858}
+    pivot: {x: 0.5121951, y: -0.41666666}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -683,8 +683,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 165}
   - name: Enemy_Paper_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.4634146, y: -0.41666666}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -703,8 +703,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 209}
   - name: Enemy_Paper_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.41463414, y: -0.41666666}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -723,8 +723,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 253}
   - name: Enemy_Paper_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.36585364, y: -0.41666666}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -743,8 +743,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 297}
   - name: Enemy_Paper_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.31707317, y: -0.41666666}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -763,8 +763,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 341}
   - name: Enemy_Paper_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.537037, y: -0.41666666}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -783,8 +783,8 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 4}
   - name: Enemy_Paper_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5121951, y: -0.41666666}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -803,8 +803,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 385}
   - name: Enemy_Paper_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5, y: -0.37142858}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
