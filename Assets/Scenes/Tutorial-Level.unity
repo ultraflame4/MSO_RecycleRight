@@ -29604,6 +29604,9 @@ MonoBehaviour:
   - {fileID: 1644321659}
   - {fileID: 300597344}
   <current_zone_index>k__BackingField: 0
+  zoneChangeDelay: 2.5
+  binTag: Bin
+  updateZone: 0
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
 --- !u!114 &7641254686706731873
