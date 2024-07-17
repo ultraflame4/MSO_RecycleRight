@@ -57,7 +57,7 @@ namespace NPC.Contaminant
         public bool playerInSight => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < sightRange;
         public bool playerInAttackRange => PlayerController.Instance != null && Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange;
 
-        public override bool cause_infestation => true;
+        public override bool cause_infestation => attract_pests;
 
         public void LoadConfig()
         {
