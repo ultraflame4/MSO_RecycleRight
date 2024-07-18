@@ -31,7 +31,7 @@ public struct LevelInfoData{
 /// <summary>
 /// Scriptable object to hold information about the level.
 /// </summary>
-[CreateAssetMenu(fileName = "LevelInfo", menuName = "LevelInfo", order = 0)]
+[CreateAssetMenu(fileName = "LevelInfo", menuName = "ScriptableObjects/Level/LevelInfo", order = 0)]
 public class LevelInfoSO : ScriptableObject {
     public LevelInfoData data;
 }
