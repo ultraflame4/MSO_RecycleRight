@@ -66,11 +66,10 @@ namespace Entity.Data
             PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
         }
         #endregion
-        
-        #region MonoBehaviour Callback
-        protected override void Awake()
+
+        #region Other Methods
+        public void SetData()
         {
-            // set data
             // base entity data
             characterName = objectData.characterName;
             characterDesc = objectData.characterDesc;
@@ -87,9 +86,15 @@ namespace Entity.Data
             deathDuration = objectData.deathDuration;
             Health = maxHealth;
             Debug.Log($"Loaded character data. Scriptable Object is null? {objectData == null}");
+        }
+        #endregion
+        
+        #region MonoBehaviour Callback
+        protected override void Awake()
+        {
+            SetData();
             base.Awake();
         }
-
         #endregion
     }
 }
