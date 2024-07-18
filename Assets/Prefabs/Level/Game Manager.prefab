@@ -49,3 +49,4 @@ MonoBehaviour:
   <LevelNames>k__BackingField:
   - Tutorial-Level
   - Level-1
+  levelScoreGradingSO: {fileID: 11400000, guid: 01569d7a4a1b99e4e851eca9fd425321, type: 2}

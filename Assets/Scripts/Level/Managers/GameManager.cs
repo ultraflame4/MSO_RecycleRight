@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public LevelScoreGradingSO levelScoreGradingSO;
 
     // singleton instance
     private static GameManager _instance;
