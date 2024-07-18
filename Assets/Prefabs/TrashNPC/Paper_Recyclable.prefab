@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2086369730254394613, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3787632505832760229, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Controller
       value: 
@@ -28,6 +32,18 @@ PrefabInstance:
       propertyPath: contaminant_prefab
       value: 
       objectReference: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+    - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Radius
+      value: 0.952223
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7167511950734399430, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Sprite
       value: 
