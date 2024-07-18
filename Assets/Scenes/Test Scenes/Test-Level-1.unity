@@ -1626,8 +1626,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1315312721146712386}
   - component: {fileID: 7641254686706731872}
+  - component: {fileID: 7641254686706731873}
   m_Layer: 0
-  m_Name: QuickLevelSetup
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1654,6 +1655,19 @@ MonoBehaviour:
   updateZone: 1
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
+--- !u!114 &7641254686706731873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793962242787335996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e3ae83934465548a5d5f3f238c6305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: c598976bb27d55743b3e6eae023ab5ce, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
