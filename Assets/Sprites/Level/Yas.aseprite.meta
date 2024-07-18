@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da511ef6f5bfc704e82e747ca74ac2d6
+guid: 382f6c3d8b257674398eff0de50b911f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Level Select draft
+  - name: Yas
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -130,9 +130,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 16
-    spriteID: 8c9e05da5d682884ea72b604fc0f99f4
+      width: 44
+      height: 61
+    spriteID: 6fd91d0d7d392e94d83f5e15e1b8fc0b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,55 +141,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Level Select draft_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 28
-      width: 16
-      height: 16
-    spriteID: 8e27552e0049d464e8bf8f5a45886ea2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1854415295
-    name: Level Select draft
+    guid: 1446429831
+    name: Yas
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Level Select draft_Frame_0
+    - name: Yas
       frameIndex: 0
       cellRect:
-        x: 0
+        x: 10
         y: 0
-        width: 16
-        height: 16
-      spriteId: 8c9e05da5d682884ea72b604fc0f99f4
-    - name: Level Select draft_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      spriteId: 8e27552e0049d464e8bf8f5a45886ea2
+        width: 44
+        height: 61
+      spriteId: 6fd91d0d7d392e94d83f5e15e1b8fc0b
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 64, y: 64}
