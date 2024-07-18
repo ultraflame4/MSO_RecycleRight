@@ -54,7 +54,7 @@ namespace Level
             
             if (_instance != null)
             {
-                Debug.LogWarning("There are multiple LevelManagers in the scene! Will replace old instance! If this caused by scene loading, ignore.");
+                Debug.LogWarning("Existing LevelManager found! Will replace existing instance! If this caused by scene loading, ignore.");
             }
             _instance = this;
         }
