@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da511ef6f5bfc704e82e747ca74ac2d6
+guid: 40d7cf3373b3aed4988b7cef83144546
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,78 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Level Select draft
+  - name: Enemy_TupperWare_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 4
+      width: 32
+      height: 24
+    spriteID: 74d5a14a4ea72524ba02e73d0c995e88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 4}
+  - name: Enemy_TupperWare_Frame_1
+    originalName: 
+    pivot: {x: 0.78125, y: -0.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 83
+      y: 4
+      width: 32
+      height: 24
+    spriteID: 17d57e7f917f92c439357da1aad80fad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 83, y: 4}
+  - name: Enemy_TupperWare_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 37
+      width: 32
+      height: 24
+    spriteID: b01ed1318be070c49b06aa5ac30c1710
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 37}
+  - name: Enemy_TupperWare_Frame_3
+    originalName: 
+    pivot: {x: 0.516129, y: -0.84}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 16
-    spriteID: 8c9e05da5d682884ea72b604fc0f99f4
+      width: 31
+      height: 25
+    spriteID: 6f38ceadd1f4ce34b8711782bedaccb7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +201,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Level Select draft_Frame_1
+  - name: Enemy_TupperWare_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.875}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 28
-      width: 16
-      height: 16
-    spriteID: 8e27552e0049d464e8bf8f5a45886ea2
+      x: 44
+      y: 37
+      width: 32
+      height: 24
+    spriteID: e286356975254784caccf1c79d7be2c7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,36 +220,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 44, y: 37}
+  - name: Enemy_TupperWare_Frame_5
+    originalName: 
+    pivot: {x: 0.5151515, y: -0.95652175}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 37
+      width: 33
+      height: 23
+    spriteID: 94ebf6f80dc1d4f45bba779af459c633
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 37}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1854415295
-    name: Level Select draft
+    guid: -1251184350
+    name: Enemy_TupperWare
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Level Select draft_Frame_0
+    - name: Enemy_TupperWare_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      spriteId: 8c9e05da5d682884ea72b604fc0f99f4
-    - name: Level Select draft_Frame_1
+        x: 16
+        y: 21
+        width: 32
+        height: 24
+      spriteId: 74d5a14a4ea72524ba02e73d0c995e88
+    - name: Enemy_TupperWare_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      spriteId: 8e27552e0049d464e8bf8f5a45886ea2
+        x: 7
+        y: 20
+        width: 32
+        height: 24
+      spriteId: 17d57e7f917f92c439357da1aad80fad
+    - name: Enemy_TupperWare_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 16
+        y: 21
+        width: 32
+        height: 24
+      spriteId: b01ed1318be070c49b06aa5ac30c1710
+    - name: Enemy_TupperWare_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 16
+        y: 21
+        width: 31
+        height: 25
+      spriteId: 6f38ceadd1f4ce34b8711782bedaccb7
+    - name: Enemy_TupperWare_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 16
+        y: 21
+        width: 32
+        height: 24
+      spriteId: e286356975254784caccf1c79d7be2c7
+    - name: Enemy_TupperWare_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 15
+        y: 22
+        width: 33
+        height: 23
+      spriteId: 94ebf6f80dc1d4f45bba779af459c633
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 64, y: 64}
