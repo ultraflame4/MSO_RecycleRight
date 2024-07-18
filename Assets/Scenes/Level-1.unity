@@ -185,62 +185,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 586948166}
     m_Modifications:
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 933016689}
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePause
-      objectReference: {fileID: 0}
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 255619180928453951, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 933016689}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePause
-      objectReference: {fileID: 0}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 368843389583586275, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2563933589082131684, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
       propertyPath: m_Name
       value: Gameplay UI
@@ -1116,17 +1060,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3878348233619145667, guid: 124d045367ab7654b95b27107a18631f, type: 3}
   m_PrefabInstance: {fileID: 856530149}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &933016689 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 531895933604062004, guid: 51c03847ed3c42649aca071fa5118ad2, type: 3}
-  m_PrefabInstance: {fileID: 345989316}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa195200e5dc434e952451a14b97521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &987933177
 PrefabInstance:
   m_ObjectHideFlags: 0
