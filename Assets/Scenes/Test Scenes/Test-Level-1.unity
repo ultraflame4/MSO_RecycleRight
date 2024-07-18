@@ -1667,7 +1667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e3ae83934465548a5d5f3f238c6305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 11400000, guid: c598976bb27d55743b3e6eae023ab5ce, type: 2}
+  _info: {fileID: 11400000, guid: c598976bb27d55743b3e6eae023ab5ce, type: 2}
+  data:
+    levelName: test
+    levelDescription: 
+    maxScore: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

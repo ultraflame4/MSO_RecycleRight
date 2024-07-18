@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -18,13 +19,19 @@ public struct LevelNPC{
     int count;
 }
 
+[Serializable]
+public struct LevelInfoData{
+
+    public string levelName;
+    public string levelDescription;
+    public float maxScore;
+    public LevelNPC[] npcs;
+}
+
 /// <summary>
 /// Scriptable object to hold information about the level.
 /// </summary>
 [CreateAssetMenu(fileName = "LevelInfo", menuName = "LevelInfo", order = 0)]
 public class LevelInfoSO : ScriptableObject {
-    public string levelName;
-    public string levelDescription;
-    public float maxScore;
-    public LevelNPC[] npcs;
+    public LevelInfoData data;
 }
