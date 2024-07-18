@@ -51,13 +51,12 @@ namespace Level
         public event Action<LevelZone> ZoneChanged;
 
         private void Awake() {
-            if (_instance == null)
+            
+            if (_instance != null)
             {
-                _instance = this;
+                Debug.LogWarning("There are multiple LevelManagers in the scene! Will replace old instance! If this caused by scene loading, ignore.");
             }
-            else{
-                Debug.LogWarning("There are multiple LevelManagers in the scene! This is not allowed!");
-            }
+            _instance = this;
         }
 
         public void Start()
