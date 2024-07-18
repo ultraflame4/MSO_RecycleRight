@@ -8,11 +8,30 @@ using Entity.Data;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] string prefabPath = "Prefabs/Player/Characters";
+    [SerializeField] int partySize = 3;
+
     [field: SerializeField] 
     public string[] LevelNames { get; private set; }
-    public GameObject[] Characters { get; private set; }
-    public PlayerCharacter[] CharacterData { get; private set; }
 
+    // characters
+    public Character[] Characters { get; private set; }
+    public struct Character
+    {
+        public GameObject prefab;
+        public PlayerCharacter data;
+        public bool selected;
+
+        public Character(GameObject prefab, PlayerCharacter data)
+        {
+            this.prefab = prefab;
+            this.data = data;
+            selected = false;
+        }
+    }
+
+
+    // singleton instance
     private static GameManager _instance;
     public static GameManager Instance 
     { 
@@ -40,15 +59,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // get reference to player character prefabs
+        GameObject[] prefabs = Resources.LoadAll<GameObject>(prefabPath);
+        Characters = new Character[prefabs.Length];
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            Characters[i] = new Character(prefabs[i], prefabs[i].GetComponent<PlayerCharacter>());
+            Characters[i].data.SetData();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    #region Level Selection
     public void LoadLevel(string name)
     {
         if (!LevelNames.Contains(name)) return;
@@ -61,4 +82,5 @@ public class GameManager : MonoBehaviour
             return;
         SceneManager.LoadScene(LevelNames[index]);
     }
+    #endregion
 }
