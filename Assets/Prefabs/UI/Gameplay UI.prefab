@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &681309033840846342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -459,6 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2684022059158115649}
+  - component: {fileID: 531895933604062004}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -486,6 +487,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &531895933604062004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364790446553343813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa195200e5dc434e952451a14b97521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseKey: 27
 --- !u!1 &2563933589082131684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1230,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4419989295375665762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 531895933604062004}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: TogglePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8460699762240689301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,6 +1656,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 681309033840846342}
     m_Modifications:
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 531895933604062004}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_text
       value: Resume
