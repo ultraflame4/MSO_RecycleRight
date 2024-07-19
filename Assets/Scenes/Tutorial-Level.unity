@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 5
   UIElements:
-  - {fileID: 962701374}
+  - {fileID: 1198889696}
   recyclables: []
   text: 
   count: 0
@@ -25970,6 +25970,7 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  bins: []
 --- !u!1 &309369744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
@@ -29556,6 +29557,7 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  bins: []
 --- !u!1001 &1784101992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30486,6 +30488,7 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  bins: []
 --- !u!4 &5240765378600200609
 Transform:
   m_ObjectHideFlags: 0
@@ -30598,9 +30601,11 @@ MonoBehaviour:
   <current_zone_index>k__BackingField: 0
   zoneChangeDelay: 2.5
   binTag: Bin
-  updateZone: 0
+  autoChangeZone: 0
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
+  levelInfo: {fileID: 0}
+  levelEnd: {fileID: 0}
 --- !u!114 &7641254686706731873
 MonoBehaviour:
   m_ObjectHideFlags: 0
