@@ -42,7 +42,7 @@ namespace Player.FSM
             
             // start zone once player reached zone
             // return to default state once moved to zone
-            currentZone.StartZone();
+            currentZone.ActivateZone();
             fsm.SwitchState(character.DefaultState);
         }
 

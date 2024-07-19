@@ -2,15 +2,22 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public struct LevelScoreGrade
+public class LevelScoreGrade
 {
     public string grade;
+
+    [Tooltip("The color to display for this grade. Used for text.")]
+    public Color gradeColor = Color.white;
+    [Tooltip("The description to display for this grade.")]
+    public string gradeDescription;
     [Range(0, 1)]
     public float percentage;
     [Tooltip("The sprite to display for this grade.")]
     public Sprite gradeSprite;
     [Tooltip("The number of times to repeat the sprite (horizontal).")]
     public int spriteRepeat;
+
+    
 }
 
 [CreateAssetMenu(fileName = "LevelScoreGradingSO", menuName = "ScriptableObjects/Level/LevelScoreGradingSO", order = 0)]
