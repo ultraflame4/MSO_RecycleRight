@@ -17,13 +17,21 @@ namespace NPC.Recyclable.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+            }
         }
 
         public override void Exit()
         {
             base.Exit();
-            navigation.ClearDestination();
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+            }
         }
 
         public override void PhysicsUpdate()
@@ -70,9 +78,13 @@ namespace NPC.Recyclable.States
         {
             base.LogicUpdate();
 
-            // Update destination
-            navigation.SetDestination(transform.position + direction * npc.sightRange);
 
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                // Update destination
+                navigation.SetDestination(transform.position + direction * npc.sightRange);
+            }
         }
     }
 }

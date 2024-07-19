@@ -18,8 +18,12 @@ namespace NPC.Contaminants.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
-            navigation.SetDestination(PlayerController.Instance.transform);
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+                navigation.SetDestination(PlayerController.Instance.transform);
+            }
         }
 
         public override void LogicUpdate()
@@ -33,7 +37,7 @@ namespace NPC.Contaminants.States
 
             if (npc.playerInAttackRange)
             {
-                npc.SwitchState(npc.state_AttackPlayer);   
+                npc.SwitchState(npc.state_AttackPlayer);
                 return;
             }
         }

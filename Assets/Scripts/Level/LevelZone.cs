@@ -37,7 +37,7 @@ namespace Level
             bins = GetComponentsInChildren<RecyclingBin>();
         }
 
-        public void RefereshEntities()
+        public void RefreshEntities()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
         }
@@ -59,6 +59,7 @@ namespace Level
         /// </summary>
         public void DeactiveZone()
         {
+            RefreshEntities();
             foreach (var entity in entities)
             {
                 // Some entities may be destroyed before the zone is deactivated (i.e enemies)

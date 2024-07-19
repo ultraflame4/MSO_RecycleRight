@@ -21,13 +21,21 @@ namespace NPC.Contaminants.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+            }
         }
 
         public override void Exit()
         {
             base.Exit();
-            navigation.ClearDestination();
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+            }
         }
 
         public override void PhysicsUpdate()
@@ -63,7 +71,7 @@ namespace NPC.Contaminants.States
                 npc.SwitchState(npc.state_Idle);
                 return;
             }
-            
+
             if (Vector3.Distance(transform.position, closestRecyclable.transform.position) < npc.attackRange)
             {
                 npc.state_AttackRecyclable.nearestRecyclable = closestRecyclable;
@@ -73,7 +81,7 @@ namespace NPC.Contaminants.States
 
             CalculateEdgeForce();
             direction = (closestRecyclable.transform.position - transform.position).normalized;
-            direction+=current_edge_force*1.5f; // Push away from edges with a multiplier to make it more effective
+            direction += current_edge_force * 1.5f; // Push away from edges with a multiplier to make it more effective
             direction.Normalize();
         }
 
@@ -81,9 +89,11 @@ namespace NPC.Contaminants.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-
-            navigation.SetDestination(transform.position + direction);
-
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.SetDestination(transform.position + direction);
+            }
         }
     }
 }

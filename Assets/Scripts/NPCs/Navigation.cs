@@ -108,5 +108,6 @@ namespace NPC
             Gizmos.DrawWireSphere(current_target_pos.Value, stop_distance);
             Gizmos.DrawLine(transform.position, current_target_pos.Value);
         }
+
     }
 }
