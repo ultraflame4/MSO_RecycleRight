@@ -8,7 +8,7 @@ public class LevelInfo : MonoBehaviour
 {
     [SerializeField]
     private LevelInfoSO _info;
-    public LevelInfoSO Info
+    private LevelInfoSO info
     {
         get
         {
@@ -19,6 +19,9 @@ public class LevelInfo : MonoBehaviour
             return _info;
         }
     }
+
+    public LevelInfoData Data => info.data;
+
 
     [SerializeField]
     private LevelInfoData data;
@@ -43,13 +46,13 @@ public class LevelInfo : MonoBehaviour
     [EasyButtons.Button]
     private void LoadFromScriptableObject()
     {
-        data = Info.data;
+        data = info.data;
     }
 
 
     [EasyButtons.Button]
     private void SaveToScriptableObject()
     {
-        Info.data = data;
+        info.data = data;
     }
 }

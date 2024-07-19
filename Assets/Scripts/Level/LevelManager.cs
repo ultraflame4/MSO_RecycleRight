@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Level.Bins;
+using System.Linq;
 
 namespace Level
 {
@@ -26,10 +27,11 @@ namespace Level
         [field: SerializeField, Tooltip("The level camera")]
         public new LevelCamera camera { get; private set; }
         public bool debug_move_to_current_zone = false;
+        [SerializeField, Tooltip("The level info for this level. When missing, some features may not work.")]
+        private LevelInfo levelInfo;
+        [SerializeField, Tooltip("The level end menu for this level. When missing, some features may not work.")]
+        private LevelEndMenu levelEnd;
         #endregion
-
-        public LevelZone current_zone => zones[current_zone_index];
-        public RecyclingBin[][] Bins { get; private set; }
 
         #region Singleton
         /// <summary>
@@ -61,8 +63,12 @@ namespace Level
         }
 
         #endregion
-        Coroutine coroutine_zone_change;
 
+
+        public LevelZone current_zone => zones[current_zone_index];
+        public RecyclingBin[][] Bins { get; private set; }
+
+        Coroutine coroutine_zone_change;
         public event Action<LevelZone> ZoneChanged;
 
         public void Start()
@@ -78,6 +84,7 @@ namespace Level
                 SetZoneActive(false, i);
             }
         }
+
 
         // This is in late update because the check for zone completion should only be done after all the other logic has completed
         void LateUpdate()
@@ -138,9 +145,25 @@ namespace Level
             coroutine_zone_change = null;
         }
 
+        public float GetCurrentScore(){
+            return Bins.Sum(x => x.Sum(y => y.Score));
+        }
+
         public void EndLevel()
         {
+            if (levelInfo == null)
+            {
+                Debug.LogWarning("LevelInfo is missing. Cannot end level.");
+                return;
+            }
 
+            if (levelEnd == null)
+            {
+                Debug.LogWarning("LevelEndMenu is missing. Cannot end level.");
+                return;
+            }
+
+            levelEnd.ShowEndScreen(GetCurrentScore(), levelInfo.Data.maxScore);
         }
     }
 }
