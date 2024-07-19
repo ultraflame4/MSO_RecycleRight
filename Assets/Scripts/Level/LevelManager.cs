@@ -7,6 +7,7 @@ namespace Level
 {
     public class LevelManager : MonoBehaviour
     {
+        #region Unity Configuration
         [field: Header("Zones")]
         [field: SerializeField, Tooltip("The zones that the player can switch between. This is automatically retrieved at runtime.")]
         public LevelZone[] zones { get; private set; }
@@ -25,19 +26,23 @@ namespace Level
         [field: SerializeField, Tooltip("The level camera")]
         public new LevelCamera camera { get; private set; }
         public bool debug_move_to_current_zone = false;
+        #endregion
 
         public LevelZone current_zone => zones[current_zone_index];
         public RecyclingBin[][] Bins { get; private set; }
 
+        #region Singleton
         /// <summary>
         /// The instance of the LevelManager in the scene. If there is no instance, it will be null;
         /// </summary>
-        public static LevelManager _instance {get; private set;} = null;
+        public static LevelManager _instance { get; private set; } = null;
         /// <summary>
         /// Returns the instance of the LevelManager in the scene. If there is no instance, it will throw an exception.
         /// </summary>
-        public static LevelManager Instance {
-            get {
+        public static LevelManager Instance
+        {
+            get
+            {
                 if (_instance == null)
                 {
                     throw new NullReferenceException("There is no LevelManager in the scene!");
@@ -45,19 +50,20 @@ namespace Level
                 return _instance;
             }
         }
+        private void Awake()
+        {
 
-        Coroutine coroutine_zone_change;
-
-        public event Action<LevelZone> ZoneChanged;
-
-        private void Awake() {
-            
             if (_instance != null)
             {
                 Debug.LogWarning("Existing LevelManager found! Will replace existing instance! If this caused by scene loading, ignore.");
             }
             _instance = this;
         }
+
+        #endregion
+        Coroutine coroutine_zone_change;
+
+        public event Action<LevelZone> ZoneChanged;
 
         public void Start()
         {
@@ -77,10 +83,10 @@ namespace Level
         void LateUpdate()
         {
             if (!updateZone || zones == null ||
-                zones[current_zone_index].transform.childCount > 
-                Bins[current_zone_index].Length) 
-                    return;
-            
+                zones[current_zone_index].transform.childCount >
+                Bins[current_zone_index].Length)
+                return;
+
             // check for level completion
             if (current_zone_index >= (zones.Length - 1))
             {
@@ -130,6 +136,11 @@ namespace Level
             SetZoneActive(true, current_zone_index + 1);
             MoveToZone(current_zone_index + 1);
             coroutine_zone_change = null;
+        }
+
+        public void EndLevel()
+        {
+
         }
     }
 }
