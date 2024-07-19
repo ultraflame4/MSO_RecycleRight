@@ -375,7 +375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 187.5, y: -272.65543}
+  m_AnchoredPosition: {x: 669.5843, y: -253.00464}
   m_SizeDelta: {x: 375, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3389121469804985686
@@ -454,7 +454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.61856, y: -575.06537}
+  m_AnchoredPosition: {x: 668.95325, y: -555.41455}
   m_SizeDelta: {x: 483.22217, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6627991916112486993
@@ -535,8 +535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.61856, y: -299.0594}
-  m_SizeDelta: {x: 375, y: 0}
+  m_AnchoredPosition: {x: 668.95325, y: -289.23398}
+  m_SizeDelta: {x: 1339.1686, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3383174563518755836
 MonoBehaviour:
@@ -648,7 +648,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 249.3125, y: 133.3389}
+  m_SizeDelta: {x: 1339.1686, y: 97.7218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4265881621161013959
 CanvasRenderer:
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: S
+  m_text: Perfect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e75494c0ea1def449b83dd6e1881f04, type: 2}
   m_sharedMaterial: {fileID: 8528087190751924140, guid: 1e75494c0ea1def449b83dd6e1881f04, type: 2}
@@ -705,8 +705,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 256
-  m_fontSizeBase: 256
+  m_fontSize: 128
+  m_fontSizeBase: 128
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1316,7 +1316,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 16.279}
+  m_SizeDelta: {x: 100, y: 32.2453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8053850852017256494
 GameObject:
@@ -1662,6 +1662,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5157e8362d0141c448d9af52331fbc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 3828363191032266262}
+  gradeTitle: {fileID: 5561152474218473852}
+  gradeText: {fileID: 8723810050120338668}
+  badgePrefab: {fileID: 1393623438341523519, guid: 55c67afa6b47eff4481e93544237a332, type: 3}
+  badgeContainer: {fileID: 562533536119125133}
 --- !u!1001 &5180515304228337545
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelEndMenu : MonoBehaviour {
-
+    
+    [SerializeField]    
     private TextMeshProUGUI scoreText;
+    [SerializeField]
     private TextMeshProUGUI gradeTitle;
+    [SerializeField]
     private TextMeshProUGUI gradeText;
+    [SerializeField]
     private GameObject badgePrefab;
+    [SerializeField]
     private GameObject badgeContainer;
 
 
@@ -41,20 +46,20 @@ public class LevelEndMenu : MonoBehaviour {
             {
                 badgeChild = Instantiate(badgePrefab, badgeContainer.transform);
             }
-
+            badgeChild.SetActive(true);
             badgeChild.GetComponent<Image>().sprite = grade.gradeSprite;
         }
     }
 
-    public void ShowScore(float score, float maxScore){
-        scoreText.text = $"{score}/{maxScore}";
+    public void ShowScore(float score){
+        scoreText.text = $"Score: {score}";
     }
 
     public void ShowEndScreen(float score, float maxScore){
         gameObject.SetActive(true);
         var grade = GradeFromScore(score, maxScore);
         ShowGrade(grade);
-        ShowScore(score, maxScore);
+        ShowScore(score);
     }
     
 
