@@ -343,7 +343,13 @@ MonoBehaviour:
   leftDoor: {fileID: 1784908789}
   rightDoor: {fileID: 259332015}
   doorPosition: 1
-  debug_update_door_position: 1
+  debug_update_door_position: 0
+  moveAnimationDuration: 1
+  endScale: 0.75
+  endOffset: {x: 0, y: -2, z: 0}
+  moveToZoomAnimationRatio: 0.65
+  animationProgress: 0
+  debug_play: 0
 --- !u!1 &1366801331
 GameObject:
   m_ObjectHideFlags: 0
