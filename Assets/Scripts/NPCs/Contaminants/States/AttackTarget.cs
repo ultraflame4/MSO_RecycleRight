@@ -31,7 +31,7 @@ namespace NPC.Contaminants.States
         {
             base.Enter();
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 navigation.ClearDestination();
                 navigation.StopVelocity();

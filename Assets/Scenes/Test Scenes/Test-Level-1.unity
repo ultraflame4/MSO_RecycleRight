@@ -1617,6 +1617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticBottle_Contaminant
       objectReference: {fileID: 0}
+    - target: {fileID: 2091930917230474811, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.16
