@@ -37,11 +37,17 @@ namespace Level
             bins = GetComponentsInChildren<RecyclingBin>();
         }
 
+        public void RefereshEntities()
+        {
+            entities = GetComponentsInChildren<ILevelEntity>();
+        }
+
         /// <summary>
         /// Activates the zone. This is called when the player enters the zone.
         /// </summary>
         public void ActivateZone()
         {
+            Debug.Log($"Activating Zone {this}. Entities: {entities.Length}");
             foreach (var entity in entities)
             {
                 entity.OnZoneStart();

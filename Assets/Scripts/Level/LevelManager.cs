@@ -132,14 +132,13 @@ namespace Level
         public void ChangeZone(int new_zone_index)
         {
             current_zone_index = new_zone_index;
-
+            current_zone.RefereshEntities();
             // disable all other zones
             foreach (var zone in zones)
             {
                 if (zone == current_zone) continue;
                 zone.DeactiveZone();
             }
-
             current_zone.ActivateZone();
             MoveToZone(new_zone_index);
         }
