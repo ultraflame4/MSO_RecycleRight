@@ -25,8 +25,11 @@ public class TrainDoorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // set default values
+        transform.localPosition = Vector3.zero;
         originalDoorPosX = rightDoor.localPosition.x;
         screenWidth = (Screen.width / 2f) + originalDoorPosX;
+        // reset animations
         doorPosition = 0f;
         animationProgress = 0f;
         UpdateDoorPosition();
@@ -60,7 +63,7 @@ public class TrainDoorManager : MonoBehaviour
         }
 
         transform.localScale = forward_direction ? new Vector3(endScale, endScale, endScale) : Vector3.one;
-        // transform.localPosition = forward_direction ? Vector3.zero + endOffset : Vector3.zero;
+        transform.localPosition = forward_direction ? Vector3.zero + endOffset : Vector3.zero;
         doorPosition = forward_direction ? 1f : 0f;
         UpdateDoorPosition();
         moveAnimation = null;
@@ -83,8 +86,8 @@ public class TrainDoorManager : MonoBehaviour
         float currentScale = endScale + ((1f - endScale) * (1f - currentCycleRatio));
         transform.localScale = new Vector3(currentScale, currentScale, currentScale);
         // change position
-        Vector3 currentPosition = transform.localPosition + endOffset + ((Vector3.one - (transform.localPosition + endOffset)) * (1f - currentCycleRatio));
-        transform.localPosition = currentPosition;
+        Vector3 newPos = currentCycleRatio * endOffset;
+        transform.localPosition = newPos;
     }
 
     void UpdateDoorPosition()

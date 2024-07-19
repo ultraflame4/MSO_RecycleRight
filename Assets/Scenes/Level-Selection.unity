@@ -346,7 +346,7 @@ MonoBehaviour:
   debug_update_door_position: 0
   moveAnimationDuration: 1
   endScale: 0.75
-  endOffset: {x: 0, y: -2, z: 0}
+  endOffset: {x: 0, y: -25, z: 0}
   moveToZoomAnimationRatio: 0.65
   animationProgress: 0
   debug_play: 0
