@@ -18,7 +18,7 @@ namespace NPC.Recyclable.States
         {
             base.Enter();
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 navigation.ClearDestination();
             }
@@ -28,7 +28,7 @@ namespace NPC.Recyclable.States
         {
             base.Exit();
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 navigation.ClearDestination();
             }
@@ -80,7 +80,7 @@ namespace NPC.Recyclable.States
 
 
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 // Update destination
                 navigation.SetDestination(transform.position + direction * npc.sightRange);

@@ -18,12 +18,15 @@ namespace NPC.States
         public override void Enter()
         {
             base.Enter();
-            if (navigation != null)
+            if (navigation == null) return;
+
+            original_navigation_enabled = navigation.enabled;
+            if (navigation.enabled)
             {
                 navigation.ClearDestination();
-                original_navigation_enabled = navigation.enabled;
                 navigation.enabled = false;
             }
+
         }
         public override void LogicUpdate()
         {
@@ -38,8 +41,9 @@ namespace NPC.States
         public override void Exit()
         {
             base.Exit();
-            navigation.enabled = original_navigation_enabled;
             stun_timer = 0;
+            if (navigation == null) return;
+            navigation.enabled = original_navigation_enabled;
         }
     }
 }

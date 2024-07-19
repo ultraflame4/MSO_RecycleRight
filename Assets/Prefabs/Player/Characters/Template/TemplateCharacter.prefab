@@ -168,10 +168,12 @@ MonoBehaviour:
   skillIcon: {fileID: 0}
   attackDuration: 1.5
   skillDuration: 2
-  movementMultiplier: 1
-  attackMultiplier: 1
+  deathDuration: 3.5
   IsCleaning: 0
   OverrideSwitchable: 0
+  movementMultiplier: 1
+  attackMultiplier: 1
+  skillCooldownMultiplier: 1
 --- !u!114 &5478115462021916385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current_state_name: None
-  binCleanDuration: 15
+  binCleanDuration: 5
   binCleanRange: 2
   binCleanOffset: {x: 0, y: 0.5, z: 0}
   binMask:
@@ -193,3 +195,4 @@ MonoBehaviour:
     m_Bits: 512
   returnSpeed: 10
   returnThreshold: 2
+  lastCharacter: 0

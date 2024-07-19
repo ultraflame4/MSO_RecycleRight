@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] string prefabPath = "Prefabs/Player/Characters";
     [SerializeField] int partySize = 3;
 
-    [field: SerializeField] 
+    [field: SerializeField]
     public string[] LevelNames { get; private set; }
 
     // characters
@@ -31,13 +31,15 @@ public class GameManager : MonoBehaviour
     }
 
     public LevelScoreGradingSO levelScoreGradingSO;
+    [Tooltip("Whether this is the root game manager. if it is, it will not be destroyed on scene load.")]
+    public bool is_root = false;
 
     // singleton instance
     private static GameManager _instance;
-    public static GameManager Instance 
-    { 
-        get 
-        { 
+    public static GameManager Instance
+    {
+        get
+        {
             if (_instance == null)
                 throw new NullReferenceException("There is no Game Manager in the scene!");
             return _instance;
@@ -49,12 +51,16 @@ public class GameManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (is_root) DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Debug.LogWarning("There are multiple GameManagers in the scene! This is not allowed!");
+
+        if (_instance.is_root) { 
+            Debug.LogWarning("Detected existing root game manager. This game manager will be deactived!");
+            gameObject.SetActive(false);
+            return;
         }
+        Debug.LogWarning("Multiple game manager detected! This is not allowed!");
+
     }
 
     // Start is called before the first frame update

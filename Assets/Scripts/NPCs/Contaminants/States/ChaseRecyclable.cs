@@ -22,7 +22,7 @@ namespace NPC.Contaminants.States
         {
             base.Enter();
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 navigation.ClearDestination();
             }
@@ -32,7 +32,7 @@ namespace NPC.Contaminants.States
         {
             base.Exit();
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 navigation.ClearDestination();
             }
@@ -90,7 +90,7 @@ namespace NPC.Contaminants.States
         {
             base.LogicUpdate();
             // Navigation component may be disabled!
-            if (navigation != null)
+            if (navigation != null && navigation.enabled)
             {
                 navigation.SetDestination(transform.position + direction);
             }

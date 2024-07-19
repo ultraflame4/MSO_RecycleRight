@@ -89,6 +89,8 @@ namespace Level
             // Skip logic if the level has ended
             if (levelEnded) return;
             if (zones == null) return;
+            // Skip change zone and end level logic if autoChangeZone is disabled
+            if (!autoChangeZone) return;
             // check if the current zone is complete, if not, skip
             if (!current_zone.zoneComplete) return;
             // check for level completion
@@ -99,7 +101,7 @@ namespace Level
                 return;
             }
             // prevent multiple zone changes, skip zone change if autoChangeZone is disabled
-            if (coroutine_zone_change != null || !autoChangeZone) return;
+            if (coroutine_zone_change != null) return;
             coroutine_zone_change = StartCoroutine(NextZone_coroutine());
         }
 
