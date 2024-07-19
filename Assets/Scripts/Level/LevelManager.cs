@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using Level.Bins;
 using System.Linq;
+using System.Xml.Serialization;
+using UnityEngine.Serialization;
 
 namespace Level
 {
@@ -20,8 +22,8 @@ namespace Level
         [Tooltip("Delay before changing to the next zone.")]
         [SerializeField] float zoneChangeDelay = 2.5f;
         [SerializeField] string binTag = "Bin";
-        [Tooltip("Controls whether to update zones automatically.")]
-        [SerializeField] bool updateZone = true;
+        [Tooltip("Controls whether to change zones automatically when they are completed."), FormerlySerializedAs("updateZone")]
+        [SerializeField] bool autoChangeZone = true;
 
         [field: Header("References")]
         [field: SerializeField, Tooltip("The level camera")]
@@ -66,7 +68,6 @@ namespace Level
 
 
         public LevelZone current_zone => zones[current_zone_index];
-        public RecyclingBin[][] Bins { get; private set; }
 
         Coroutine coroutine_zone_change;
         public event Action<LevelZone> ZoneChanged;
@@ -74,25 +75,18 @@ namespace Level
         public void Start()
         {
             zones = transform.GetComponentsInChildren<LevelZone>();
-            MoveToZone(0);
-            // get references to recycling bins, and disable other zones
-            Bins = new RecyclingBin[zones.Length][];
-            for (int i = 0; i < zones.Length; i++)
-            {
-                Bins[i] = zones[i].GetComponentsInChildren<RecyclingBin>();
-                if (i == 0 || !updateZone) continue;
-                SetZoneActive(false, i);
-            }
+
+
+            ChangeZone(0);
         }
 
 
         // This is in late update because the check for zone completion should only be done after all the other logic has completed
         void LateUpdate()
         {
-            if (!updateZone || zones == null ||
-                zones[current_zone_index].transform.childCount >
-                Bins[current_zone_index].Length)
-                return;
+            if (!autoChangeZone || zones == null) return;
+            // check if the current zone is complete, if not, skip
+            if (!current_zone.zoneComplete) return;
 
             // check for level completion
             if (current_zone_index >= (zones.Length - 1))
@@ -100,10 +94,19 @@ namespace Level
                 Debug.Log("Level Completed.");
                 return;
             }
-
+            // prevent multiple zone changes
             if (coroutine_zone_change != null) return;
-            coroutine_zone_change = StartCoroutine(DelayedZoneUpdate());
+            coroutine_zone_change = StartCoroutine(NextZone_coroutine());
         }
+
+        
+        IEnumerator NextZone_coroutine()
+        {
+            yield return new WaitForSeconds(zoneChangeDelay);
+            ChangeZone(current_zone_index + 1);
+            coroutine_zone_change = null;
+        }
+
 
         public void MoveToZone(int index)
         {
@@ -122,31 +125,24 @@ namespace Level
             }
         }
 
-        /// <summary>
-        /// Set the active of the zone
-        /// </summary>
-        /// <param name="active">Whether to activate or deactivate zone</param>
-        /// <param name="index">Index of zone</param>
-        public void SetZoneActive(bool active, int index)
+        public void ChangeZone(int new_zone_index)
         {
-            if (zones == null || zones.Length <= index) return;
-            foreach (Transform child in zones[index].transform)
+            current_zone_index = new_zone_index;
+
+            // disable all other zones
+            foreach (var zone in zones)
             {
-                if (child.gameObject.CompareTag(binTag)) continue;
-                child.gameObject.SetActive(active);
+                if (zone == current_zone) continue;
+                zone.DeactiveZone();
             }
+
+            current_zone.ActivateZone();
+            MoveToZone(new_zone_index);
         }
 
-        IEnumerator DelayedZoneUpdate()
+        public float GetCurrentScore()
         {
-            yield return new WaitForSeconds(zoneChangeDelay);
-            SetZoneActive(true, current_zone_index + 1);
-            MoveToZone(current_zone_index + 1);
-            coroutine_zone_change = null;
-        }
-
-        public float GetCurrentScore(){
-            return Bins.Sum(x => x.Sum(y => y.Score));
+            return zones.Sum(x => x.bins.Sum(y => y.Score));
         }
 
         public void EndLevel()

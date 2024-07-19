@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace NPC
 {
-    public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>, IBinTrashItem
+    public class FSMRecyclableNPC : StateMachine<FSMRecyclableNPC>, IBinTrashItem, ILevelEntity
     {
         [field: SerializeField]
         public Navigation navigation { get; private set; }
@@ -49,7 +49,20 @@ namespace NPC
                 bin.Score += 1;
             }
             // Destroy this NPC. In future if we want death animation we canb remove this
+            // gameObject.SetActive(false);
             Destroy(gameObject);
+        }
+
+        public void OnZoneEnd()
+        {
+            // This may already be destroyed, so no need to do anything else.
+            if (this == null) return;
+            gameObject.SetActive(false);
+        }
+
+        public void OnZoneStart()
+        {
+            gameObject.SetActive(true);
         }
     }
 }

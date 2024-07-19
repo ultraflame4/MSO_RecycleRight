@@ -9,7 +9,7 @@ using System;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, IStunnable, ILevelEntity
+    public class RecyclableNPC : FSMRecyclableNPC, IStunnable
     {
 
         #region States
@@ -101,11 +101,6 @@ namespace NPC.Recyclable
             {
                 Debug.LogWarning("IMPORTANT! contaminant_prefab is a required field! When null, it will cause this recyclable to never spawn it's contaminated version");
             }
-        }
-
-        public void OnZoneStart()
-        {
-            // todo activate the recyclable
         }
     }
 }
