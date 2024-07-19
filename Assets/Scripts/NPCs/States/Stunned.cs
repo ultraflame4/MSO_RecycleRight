@@ -9,8 +9,8 @@ namespace NPC.States
         public float stun_timer;
         private BaseRecyclableState Idle;
 
-        public Stunned(BaseRecyclableState idle,StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
-        {   
+        public Stunned(BaseRecyclableState idle, StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
+        {
             Idle = idle;
         }
 
@@ -18,9 +18,12 @@ namespace NPC.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
-            original_navigation_enabled = navigation.enabled;
-            navigation.enabled = false;
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+                original_navigation_enabled = navigation.enabled;
+                navigation.enabled = false;
+            }
         }
         public override void LogicUpdate()
         {

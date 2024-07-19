@@ -46,6 +46,9 @@ namespace NPC.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            // Navigation component may be disabled!
+            if (navigation == null) return;
+
             if (character.spriteRenderer) character.spriteRenderer.flipX = navigation.flipX;
         }
         public override void Exit()

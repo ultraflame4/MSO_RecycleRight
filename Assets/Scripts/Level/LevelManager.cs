@@ -77,8 +77,6 @@ namespace Level
         public void Start()
         {
             zones = transform.GetComponentsInChildren<LevelZone>();
-
-
             ChangeZone(0);
         }
 
@@ -132,15 +130,12 @@ namespace Level
         public void ChangeZone(int new_zone_index)
         {
             current_zone_index = new_zone_index;
-            MoveToZone(new_zone_index);
-
-            // do not run if auto change zone is false, let other script handle it
-            if (!autoChangeZone) return;
-
+            
             // disable all other zones
             foreach (var zone in zones)
             {
                 if (zone == current_zone) continue;
+                
                 zone.DeactiveZone();
             }
 

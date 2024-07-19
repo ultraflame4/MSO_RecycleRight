@@ -22,7 +22,11 @@ namespace NPC.Contaminants.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
+            // Navigation component may be disabled!
+            if (navigation != null)
+            {
+                navigation.ClearDestination();
+            }
         }
 
         public override void LogicUpdate()
@@ -30,10 +34,15 @@ namespace NPC.Contaminants.States
             base.LogicUpdate();
             // todo, use layer mask to filter colliders
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, npc.sightRange);
-            var nearest = colliders.Select(x=>x.GetComponent<RecyclingBin>()).Where(x=>x!=null).OrderBy(x=>(x.transform.position-npc.transform.position).sqrMagnitude).FirstOrDefault();
-            if (nearest){
-                navigation.SetDestination(nearest.transform);
-                return; 
+            var nearest = colliders.Select(x => x.GetComponent<RecyclingBin>()).Where(x => x != null).OrderBy(x => (x.transform.position - npc.transform.position).sqrMagnitude).FirstOrDefault();
+            if (nearest)
+            {
+                // Navigation component may be disabled!
+                if (navigation != null)
+                {
+                    navigation.SetDestination(nearest.transform);
+                }
+                return;
             }
             npc.SwitchState(npc.state_Idle);
         }
