@@ -1,16 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TrainDoorManager : MonoBehaviour
+public class TrainDoorAnimation : MonoBehaviour
 {
-    [Header("Door")]
+    [Header("Door Movement")]
     [SerializeField] RectTransform leftDoor;
     [SerializeField] RectTransform rightDoor;
     [SerializeField, Range(0f, 1f)] float doorPosition = 1f;
     [SerializeField] bool debug_update_door_position = false;
 
-    [Header("Movement")]
+    [Header("Animation")]
     [SerializeField] float moveAnimationDuration = 2.5f;
     [SerializeField] float endScale = .75f;
     [SerializeField] Vector3 endOffset = Vector3.zero;

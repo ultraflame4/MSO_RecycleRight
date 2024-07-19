@@ -326,7 +326,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 438.75, y: 1080}
+  m_SizeDelta: {x: 875, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262446955
 MonoBehaviour:
@@ -345,8 +345,8 @@ MonoBehaviour:
   doorPosition: 1
   debug_update_door_position: 0
   moveAnimationDuration: 1
-  endScale: 0.75
-  endOffset: {x: 0, y: -25, z: 0}
+  endScale: 0.7
+  endOffset: {x: 0, y: -20, z: 0}
   moveToZoomAnimationRatio: 0.65
   animationProgress: 0
   debug_play: 0
