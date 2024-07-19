@@ -132,6 +132,10 @@ namespace Level
         public void ChangeZone(int new_zone_index)
         {
             current_zone_index = new_zone_index;
+            MoveToZone(new_zone_index);
+
+            // do not run if auto change zone is false, let other script handle it
+            if (!autoChangeZone) return;
 
             // disable all other zones
             foreach (var zone in zones)
@@ -141,7 +145,7 @@ namespace Level
             }
 
             current_zone.ActivateZone();
-            MoveToZone(new_zone_index);
+            
         }
 
         public float GetCurrentScore()

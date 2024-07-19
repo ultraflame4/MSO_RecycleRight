@@ -8,14 +8,6 @@ namespace Level.Tutorial
     {
         [SerializeField] RecyclingBin[] bins;
 
-        // Start is called before the first frame update
-        new void Start()
-        {
-            base.Start();
-            // reset recyclables
-            ResetRecyclables();
-        }
-
         public override bool CheckTaskCompletion()
         {
             int recyclableCount = recyclables
