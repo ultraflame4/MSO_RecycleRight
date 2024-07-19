@@ -70,6 +70,8 @@ namespace Level
         public LevelZone current_zone => zones[current_zone_index];
 
         Coroutine coroutine_zone_change;
+        private bool levelEnded = false;
+
         public event Action<LevelZone> ZoneChanged;
 
         public void Start()
@@ -84,22 +86,24 @@ namespace Level
         // This is in late update because the check for zone completion should only be done after all the other logic has completed
         void LateUpdate()
         {
-            if (!autoChangeZone || zones == null) return;
+            // Skip logic if the level has ended
+            if (levelEnded) return;
+            if (zones == null) return;
             // check if the current zone is complete, if not, skip
             if (!current_zone.zoneComplete) return;
-
             // check for level completion
             if (current_zone_index >= (zones.Length - 1))
             {
                 Debug.Log("Level Completed.");
+                EndLevel();
                 return;
             }
-            // prevent multiple zone changes
-            if (coroutine_zone_change != null) return;
+            // prevent multiple zone changes, skip zone change if autoChangeZone is disabled
+            if (coroutine_zone_change != null || !autoChangeZone) return;
             coroutine_zone_change = StartCoroutine(NextZone_coroutine());
         }
 
-        
+
         IEnumerator NextZone_coroutine()
         {
             yield return new WaitForSeconds(zoneChangeDelay);
@@ -147,6 +151,7 @@ namespace Level
 
         public void EndLevel()
         {
+            if (levelEnded) return;
             if (levelInfo == null)
             {
                 Debug.LogWarning("LevelInfo is missing. Cannot end level.");
@@ -158,7 +163,7 @@ namespace Level
                 Debug.LogWarning("LevelEndMenu is missing. Cannot end level.");
                 return;
             }
-
+            levelEnded = true;
             levelEnd.ShowEndScreen(GetCurrentScore(), levelInfo.Data.maxScore);
         }
     }
