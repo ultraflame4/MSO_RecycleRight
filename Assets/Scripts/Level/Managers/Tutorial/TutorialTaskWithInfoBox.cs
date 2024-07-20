@@ -10,7 +10,7 @@ namespace Level.Tutorial
         [SerializeField] protected int count = 0;
         [SerializeField] protected InformationBox box;
         [SerializeField] protected bool showBox = true;
-    
+
         public override void SetTutorialActive(bool active)
         {
             base.SetTutorialActive(active);

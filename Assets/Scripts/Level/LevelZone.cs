@@ -47,7 +47,6 @@ namespace Level
         /// </summary>
         public void ActivateZone()
         {
-            Debug.Log($"Activating Zone {this}. Entities: {entities.Length}");
             foreach (var entity in entities)
             {
                 entity.OnZoneStart();

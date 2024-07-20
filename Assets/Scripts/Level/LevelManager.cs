@@ -77,8 +77,6 @@ namespace Level
         public void Start()
         {
             zones = transform.GetComponentsInChildren<LevelZone>();
-
-
             ChangeZone(0);
         }
 
@@ -142,6 +140,7 @@ namespace Level
                 
                 zone.DeactiveZone();
             }
+
             current_zone.ActivateZone();
             
         }
