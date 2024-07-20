@@ -18,7 +18,13 @@ namespace NPC.Contaminants.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
+            
+            // Navigation component may be disabled!
+            if (navigation != null && navigation.enabled)
+            {
+                navigation.ClearDestination();
+            }
+            
             if (GeneralBinSingleton.instance == null)
             {
                 GameObject.Destroy(transform.gameObject);

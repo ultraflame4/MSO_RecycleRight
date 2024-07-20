@@ -37,11 +37,17 @@ namespace Level
             bins = GetComponentsInChildren<RecyclingBin>();
         }
 
+        public void RefreshEntities()
+        {
+            entities = GetComponentsInChildren<ILevelEntity>();
+        }
+
         /// <summary>
         /// Activates the zone. This is called when the player enters the zone.
         /// </summary>
         public void ActivateZone()
         {
+            Debug.Log($"Activating Zone {this}. Entities: {entities.Length}");
             foreach (var entity in entities)
             {
                 entity.OnZoneStart();
@@ -53,6 +59,7 @@ namespace Level
         /// </summary>
         public void DeactiveZone()
         {
+            RefreshEntities();
             foreach (var entity in entities)
             {
                 // Some entities may be destroyed before the zone is deactivated (i.e enemies)

@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183d0f9860849b14dba294c7e1db7915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OverrideTriggerSkill: 0
   attackDamage: 5
   attackRange: 0.75
   attackStunDuration: 1.5

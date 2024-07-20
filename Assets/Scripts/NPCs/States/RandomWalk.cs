@@ -21,6 +21,8 @@ namespace NPC.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            // Navigation component may be disabled!
+            if (navigation == null) return;
             if (navigation.reachedDestination)
             {
 

@@ -89,6 +89,8 @@ namespace Level
             // Skip logic if the level has ended
             if (levelEnded) return;
             if (zones == null) return;
+            // Skip change zone and end level logic if autoChangeZone is disabled
+            if (!autoChangeZone) return;
             // check if the current zone is complete, if not, skip
             if (!current_zone.zoneComplete) return;
             // check for level completion
@@ -99,7 +101,7 @@ namespace Level
                 return;
             }
             // prevent multiple zone changes, skip zone change if autoChangeZone is disabled
-            if (coroutine_zone_change != null || !autoChangeZone) return;
+            if (coroutine_zone_change != null) return;
             coroutine_zone_change = StartCoroutine(NextZone_coroutine());
         }
 
@@ -132,18 +134,14 @@ namespace Level
         public void ChangeZone(int new_zone_index)
         {
             current_zone_index = new_zone_index;
-            MoveToZone(new_zone_index);
-
-            // do not run if auto change zone is false, let other script handle it
-            if (!autoChangeZone) return;
-
+            
             // disable all other zones
             foreach (var zone in zones)
             {
                 if (zone == current_zone) continue;
+                
                 zone.DeactiveZone();
             }
-
             current_zone.ActivateZone();
             
         }
