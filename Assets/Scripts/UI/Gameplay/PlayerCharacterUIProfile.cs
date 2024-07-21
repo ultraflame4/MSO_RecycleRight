@@ -63,7 +63,7 @@ namespace UI
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
             // cache player character data
             cacheCharacterData = characterToShow;
-
+            Debug.Log($"Setting UI for {characterToShow.characterName} for {gameObject.name}.");
             // do a null check for text, active player UI have no text, no need to update
             if (switchText != null)
                 switchText.text = (Array.IndexOf(characterManager.character_instances, characterToShow) + 1).ToString();

@@ -63,7 +63,7 @@ namespace Player
         void Start()
         {
             // get components
-            characterManager ??= GetComponent<CharacterManager>();
+            
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
             OnCharacterChange(null, CharacterManager.character_instances[0]);
