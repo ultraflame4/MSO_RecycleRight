@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPath: Prefabs/Player/Characters
   partySize: 3
+  loadLevelDelay: 1
   <LevelNames>k__BackingField:
   - Tutorial-Level
   - Level-1
   levelScoreGradingSO: {fileID: 11400000, guid: 01569d7a4a1b99e4e851eca9fd425321, type: 2}
+  is_root: 0

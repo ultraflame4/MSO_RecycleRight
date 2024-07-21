@@ -55,12 +55,24 @@ public class PauseManager : MonoBehaviour
     public void RestartLevel()
     {
         if (Paused) TogglePause();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LeaveLevel(string scene_name)
     {
         if (Paused) TogglePause();
-        SceneManager.LoadScene(scene_name);
+        LoadScene(scene_name);
+    }
+
+    void LoadScene(string scene_name)
+    {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogWarning("Game Manager instance could not be found, manually switching scenes instead. (PauseManager.cs)");
+            SceneManager.LoadScene(scene_name);
+            return;
+        }
+
+        GameManager.Instance.LoadScene(scene_name);
     }
 }
