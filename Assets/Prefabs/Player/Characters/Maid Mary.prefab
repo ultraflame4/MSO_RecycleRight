@@ -146,11 +146,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OverrideTriggerSkill: 0
-  attackDamage: 5
+  attackDamage: 15
   attackRange: 0.75
   attackStunDuration: 1.5
   knockback: 15
-  cleanAmount: 0.25
+  cleanAmount: 0.4
   areaOfEffect: 1
   hitMask:
     serializedVersion: 2
