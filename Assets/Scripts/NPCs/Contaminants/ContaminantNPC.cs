@@ -64,7 +64,7 @@ namespace NPC.Contaminant
         public void LoadConfig()
         {
             if (npcData == null) return;
-            Debug.Log("Overriding data using npc config...");
+
             maxHealth = npcData.common.maxHealth;
             sightRange = npcData.common.sightRange;
             attackRange = npcData.contaminantConfig.attackRange;

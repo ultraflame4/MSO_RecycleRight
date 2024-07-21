@@ -35,7 +35,7 @@ namespace NPC
         public void OnEnterBin(RecyclingBin bin)
         {
             if (bin.binState != BinState.CLEAN) return;
-            Debug.Log($"Recyclable {this} Type {recyclableType} entered bin {bin} of type {bin.recyclableType}");
+            
             if (cause_infestation)
             {
                 bin.StartInfestation();
