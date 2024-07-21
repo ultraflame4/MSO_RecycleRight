@@ -7,13 +7,11 @@ namespace UI
     public class PlayerCharacterUIProfileManager : MonoBehaviour
     {
         [SerializeField] PlayerCharacterUIProfile[] UIIcons;
-        CharacterManager characterManager;
+        CharacterManager characterManager => PlayerController.Instance.CharacterManager;
 
         // Start is called before the first frame update
         void Start()
         {
-            // get reference to character manager
-            characterManager = PlayerController.Instance.CharacterManager;
             // ensure character manager is not null
             if (characterManager == null) return;
             // subscribe to character change event
