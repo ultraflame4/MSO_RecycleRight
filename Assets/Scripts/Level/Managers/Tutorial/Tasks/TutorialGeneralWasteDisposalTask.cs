@@ -31,7 +31,7 @@ namespace Level.Tutorial
 
         public override bool CheckTaskCompletion()
         {
-            if (completed || (contaminant.healthbar.value > minHealthPercent && contaminant != null)) return false;
+            if (completed || (contaminant.healthbar.value >= minHealthPercent && contaminant != null)) return false;
 
             if (recyclables != null && recyclables.Length > 0)
             {
