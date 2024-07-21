@@ -38,7 +38,7 @@ namespace Level.Tutorial
         public event Action TaskCompleted;
 
         // Start is called before the first frame update
-        protected virtual void Start()
+        protected void Start()
         {
             // reset coroutine
             coroutine = null;

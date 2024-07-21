@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -43,10 +44,23 @@ public class PauseManager : MonoBehaviour
         TogglePause();
     }
 
+    // menu button methods
     public void TogglePause()
     {
         Paused = !Paused;
         Time.timeScale = Paused ? 0f : 1f;
         pauseMenu?.SetActive(Paused);
+    }
+
+    public void RestartLevel()
+    {
+        if (Paused) TogglePause();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LeaveLevel(string scene_name)
+    {
+        if (Paused) TogglePause();
+        SceneManager.LoadScene(scene_name);
     }
 }

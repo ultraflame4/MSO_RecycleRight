@@ -1763,6 +1763,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6145871579350754386}
     m_Modifications:
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 531895933604062004}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeaveLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level-Selection
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_text
       value: Leave
@@ -1893,6 +1925,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6145871579350754386}
     m_Modifications:
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 531895933604062004}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_text
       value: Restart

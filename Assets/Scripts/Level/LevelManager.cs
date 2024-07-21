@@ -77,8 +77,6 @@ namespace Level
         public void Start()
         {
             zones = transform.GetComponentsInChildren<LevelZone>();
-
-
             ChangeZone(0);
         }
 
@@ -134,6 +132,7 @@ namespace Level
         public void ChangeZone(int new_zone_index)
         {
             current_zone_index = new_zone_index;
+            MoveToZone(new_zone_index);
             
             // disable all other zones
             foreach (var zone in zones)
@@ -142,8 +141,8 @@ namespace Level
                 
                 zone.DeactiveZone();
             }
+
             current_zone.ActivateZone();
-            MoveToZone(new_zone_index);
         }
 
         public float GetCurrentScore()
