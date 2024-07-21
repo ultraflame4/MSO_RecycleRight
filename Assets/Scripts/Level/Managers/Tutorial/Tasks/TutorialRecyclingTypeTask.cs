@@ -28,7 +28,7 @@ namespace Level.Tutorial
             if (totalCleanBins == bins.Length && totalScore == recyclables.Length)
                 return true;
             // check if need to reset task
-            if (totalCleanBins < bins.Length || (totalScore < recyclables.Length && recyclableCount == recyclables.Length)) 
+            if (totalCleanBins < bins.Length || (totalScore < recyclables.Length && totalScore < recyclableCount)) 
                 ResetRecyclables();
 
             return false;
