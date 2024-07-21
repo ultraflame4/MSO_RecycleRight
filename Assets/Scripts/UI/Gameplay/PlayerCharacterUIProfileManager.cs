@@ -38,11 +38,6 @@ namespace UI
                 return;
             }
 
-            // // cache first character in array
-            // PlayerCharacter cachedCharacter =  characterManager.character_instances[0];
-            Debug.Log($"Setting UI for {characterManager.character_instances.Length} characters.");
-
-
             // Counter for indexing UIIcons. Start at 1 as first UIIcon is reserved for active character.
             int c = 1;
             // loop through characters in the party and set the active character
@@ -50,13 +45,10 @@ namespace UI
             {
                 // get the current character
                 PlayerCharacter character = characterManager.character_instances[i];
-                // // variable to change depending on the character to set
-                // PlayerCharacter characterToSet = character;
 
                 // If active character, use first ui profile slot.
                 if (character == activeCharacter)
                 {
-                    Debug.Log($"Setting Top UI for active character: Is null? {character.characterName}");
                     // Assign active character to the reserved UIIcon
                     UIIcons[0].SetUI(activeCharacter);
                     continue;
