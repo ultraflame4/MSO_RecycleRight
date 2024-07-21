@@ -56,7 +56,7 @@ namespace UI
                 // If active character, use first ui profile slot.
                 if (character == activeCharacter)
                 {
-                    Debug.Log($"Setting Top UI for active character: Is null? {character == null}");
+                    Debug.Log($"Setting Top UI for active character: Is null? {character.characterName}");
                     // Assign active character to the reserved UIIcon
                     UIIcons[0].SetUI(activeCharacter);
                     continue;

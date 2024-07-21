@@ -19,7 +19,7 @@ namespace UI
         // reference animator component
         UIAnimator anim;
         // reference character manager component
-        CharacterManager characterManager;
+        CharacterManager characterManager => PlayerController.Instance.CharacterManager;
 
         // caches
         Behaviour cacheCharacterBehaviour;
@@ -32,8 +32,7 @@ namespace UI
         {
             // get UI animator component to play animations
             anim = GetComponent<UIAnimator>();
-            // get reference to character manager
-            characterManager = PlayerController.Instance.CharacterManager;
+            
             // cache original profile image color
             cacheOriginalProfileColor = profileImage.color;
             // disable unswitchable overlay on start
@@ -57,7 +56,10 @@ namespace UI
         public void SetUI(PlayerCharacter characterToShow)
         {
             // ensure character manager is not null
-            if (characterManager == null) return;
+            if (characterManager == null) {
+                Debug.LogWarn("Character Manager is null. Skipping ui set!");
+                return;
+            }
 
             // cache player character behaviour
             cacheCharacterBehaviour = characterToShow.GetComponent<Behaviour>();
