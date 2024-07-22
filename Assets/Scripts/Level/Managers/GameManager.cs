@@ -7,7 +7,6 @@ using Entity.Data;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] string prefabPath = "Prefabs/Player/Characters";
     [SerializeField] int partySize = 3;
     [SerializeField] float loadLevelDelay = 2.5f;
 
