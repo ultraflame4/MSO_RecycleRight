@@ -176,7 +176,7 @@ MonoBehaviour:
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
-  <player_startpos_offset>k__BackingField: {x: 6, y: 0}
+  <player_startpos_offset>k__BackingField: {x: 8, y: 0}
   bins: []
 --- !u!1001 &345989316
 PrefabInstance:
@@ -1454,6 +1454,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
   m_PrefabInstance: {fileID: 1672798390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1724240671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724240673}
+  - component: {fileID: 1724240672}
+  m_Layer: 0
+  m_Name: Zone3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1724240672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724240671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3add0bec2d3a39f4ab5ed89caee897cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <size>k__BackingField: {x: 38, y: 23}
+  <offset>k__BackingField: {x: 0, y: 0}
+  <buffer_zone_size>k__BackingField: 2.4
+  <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  bins: []
+--- !u!4 &1724240673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724240671}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 69.96, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1315312721146712386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1764778631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1669,6 +1718,7 @@ Transform:
   m_Children:
   - {fileID: 1640138191}
   - {fileID: 22862167}
+  - {fileID: 1724240673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6793962242787335996
@@ -1703,6 +1753,7 @@ MonoBehaviour:
   <zones>k__BackingField:
   - {fileID: 1640138192}
   - {fileID: 22862168}
+  - {fileID: 1724240672}
   <current_zone_index>k__BackingField: 0
   zoneChangeDelay: 2.5
   binTag: Bin
