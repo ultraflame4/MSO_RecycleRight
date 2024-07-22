@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eefd0963388f72f488253ddf8343c8c9, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 11400000, guid: 034f46f0974198449917a6a15a10cfec, type: 2}
+  - {fileID: 11400000, guid: cb3733b86c1c40c4dbec36e795501fda, type: 2}
+  - {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
+  grades: {fileID: 11400000, guid: 01569d7a4a1b99e4e851eca9fd425321, type: 2}
+  levels:
+  - scene:
+      asset: {fileID: 102900000, guid: 35992ea5de048fa45871880da3401847, type: 3}
+      guid: 35992ea5de048fa45871880da3401847
+    levelInfo: {fileID: 11400000, guid: 83b91671a0526194bb855fe2475bc788, type: 2}
+  - scene:
+      asset: {fileID: 102900000, guid: 0a6f7b993b9c80b4899030c22f1b866e, type: 3}
+      guid: 0a6f7b993b9c80b4899030c22f1b866e
+    levelInfo: {fileID: 0}
