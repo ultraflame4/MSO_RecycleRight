@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c2e2764d32aa6d42a9f77f0f16ee44c
+guid: ec063f53d0ca41e429935fc0817dbde7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Battery_Frame_0
+  - name: Level Select Background
     originalName: 
-    pivot: {x: 0.47826087, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 23
-      height: 27
-    spriteID: 3142dcc7f880cbd43aa28ae8f6db6e73
+      width: 350
+      height: 197
+    spriteID: 40b163fd9b3045945920fefb6455babe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,83 +141,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Battery_Frame_1
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 39
-      width: 22
-      height: 27
-    spriteID: 05ada1446fa4de847bd0294a48485cb2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 39}
-  - name: Battery_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 74
-      width: 22
-      height: 26
-    spriteID: d196527621650954dae31550e16d8f01
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 74}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1651508741
-    name: Battery
+    guid: -695286716
+    name: Level Select Background
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Battery_Frame_0
+    - name: Level Select Background
       frameIndex: 0
       cellRect:
-        x: 5
+        x: 0
         y: 0
-        width: 23
-        height: 27
-      spriteId: 3142dcc7f880cbd43aa28ae8f6db6e73
-    - name: Battery_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 6
-        y: 0
-        width: 22
-        height: 27
-      spriteId: 05ada1446fa4de847bd0294a48485cb2
-    - name: Battery_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 5
-        y: 0
-        width: 22
-        height: 26
-      spriteId: d196527621650954dae31550e16d8f01
+        width: 350
+        height: 197
+      spriteId: 40b163fd9b3045945920fefb6455babe
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 350, y: 197}
