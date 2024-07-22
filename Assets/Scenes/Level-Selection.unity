@@ -668,7 +668,7 @@ MonoBehaviour:
   doorPosition: 1
   debug_update_door_position: 0
   moveAnimationDuration: 1
-  endScale: 0.3
+  endScale: 0.35
   endOffset: {x: 0, y: -75, z: 0}
   moveToZoomAnimationRatio: 0.5
   animationProgress: 0
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -985,9 +985,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1262446954}
-  - {fileID: 205278387}
   - {fileID: 887405594}
+  - {fileID: 205278387}
+  - {fileID: 1262446954}
   - {fileID: 1366801332}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
