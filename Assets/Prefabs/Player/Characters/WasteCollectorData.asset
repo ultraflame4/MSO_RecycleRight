@@ -23,3 +23,5 @@ MonoBehaviour:
   skillIcon: {fileID: 3155246883752744553, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
   attackDuration: 0.7
   skillDuration: 2
+  deathDuration: 3.5
+  prefab: {fileID: 3310225104491134764, guid: 0c01898533548bd47953b3e126cacd82, type: 3}

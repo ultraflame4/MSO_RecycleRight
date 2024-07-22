@@ -5,7 +5,8 @@ public class TrainDoorAnimation : MonoBehaviour
 {
     [Header("Door Movement")]
     [SerializeField] RectTransform leftDoor;
-    [SerializeField] RectTransform rightDoor;
+    [SerializeField] RectTransform rightDoor, leftStationDoor, rightStationDoor;
+    [SerializeField, Range(0f, 1f)] float stationDoorOffset = 0.15f;
     [SerializeField, Range(0f, 1f)] float doorPosition = 1f;
     [SerializeField] bool debug_update_door_position = false;
 
@@ -60,6 +61,7 @@ public class TrainDoorAnimation : MonoBehaviour
         moveAnimation = StartCoroutine(Animate(animationProgress <= 0f));
     }
 
+    #region Animation
     IEnumerator Animate(bool forward_direction)
     {
         float timeElapsed = 0f;
@@ -69,7 +71,7 @@ public class TrainDoorAnimation : MonoBehaviour
             timeElapsed += Time.deltaTime;
             animationProgress = Mathf.Clamp01(forward_direction ? 
                 (timeElapsed / moveAnimationDuration) : 1f - (timeElapsed / moveAnimationDuration));
-            UpdateAnimation();
+            UpdateAnimation(forward_direction);
             yield return timeElapsed;
         }
 
@@ -81,8 +83,7 @@ public class TrainDoorAnimation : MonoBehaviour
         debug_play = false;
     }
 
-
-    void UpdateAnimation()
+    void UpdateAnimation(bool forward_direction)
     {
         if (animationProgress <= moveToZoomAnimationRatio)
         {
@@ -90,6 +91,11 @@ public class TrainDoorAnimation : MonoBehaviour
             doorPosition = Mathf.Clamp01(doorPosition);
             UpdateDoorPosition();
             return;
+        }
+        else if (forward_direction && doorPosition != 1f)
+        {
+            doorPosition = 1f;
+            UpdateDoorPosition();
         }
 
         float currentCycleRatio = (animationProgress - moveToZoomAnimationRatio) / (1f - moveToZoomAnimationRatio);
@@ -100,13 +106,23 @@ public class TrainDoorAnimation : MonoBehaviour
         Vector3 newPos = currentCycleRatio * endOffset;
         transform.localPosition = newPos;
     }
+    #endregion
 
+    #region Door Movement
     void UpdateDoorPosition()
     {
-        Vector3 newPos = new Vector3(originalDoorPosX + ((1f - doorPosition) * (screenWidth - originalDoorPosX)), 
-            rightDoor.localPosition.y, rightDoor.localPosition.z);
-        rightDoor.localPosition = newPos;
-        newPos.x *= -1f;
-        leftDoor.localPosition = newPos;
+        MoveDoor(leftStationDoor, rightStationDoor, doorPosition);
+        float ratio = Mathf.Clamp01((doorPosition - stationDoorOffset) / (1f - stationDoorOffset));
+        MoveDoor(leftDoor, rightDoor, ratio);
     }
+
+    void MoveDoor(RectTransform left, RectTransform right, float ratio)
+    {
+        Vector3 newPos = new Vector3(originalDoorPosX + ((1f - ratio) * (screenWidth - originalDoorPosX)), 
+            right.localPosition.y, right.localPosition.z);
+        right.localPosition = newPos;
+        newPos.x *= -1f;
+        left.localPosition = newPos;
+    }
+    #endregion
 }

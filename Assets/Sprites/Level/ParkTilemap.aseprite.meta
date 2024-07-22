@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec063f53d0ca41e429935fc0817dbde7
+guid: a3f246f01d0980b4a98b5b96f9f40888
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,10 +32,10 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -71,7 +71,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -84,7 +84,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638572445950927601
+  platformSettingsDirtyTick: 638572517676369459
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -120,156 +120,16 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData:
-  - name: Level Select Background
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 350
-      height: 197
-    spriteID: 40b163fd9b3045945920fefb6455babe
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: Level Select Background_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 209
-      width: 350
-      height: 197
-    spriteID: b1a1eb12010184d4c8e779907574339a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 209}
-  - name: Level Select Background_Frame_2
-    originalName: 
-    pivot: {x: 0.98333347, y: -0.6235294}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 362
-      y: 209
-      width: 60
-      height: 85
-    spriteID: 659aa16cbe38c4945a4e8465d3118ee2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 362, y: 209}
-  - name: Level Select Background_Frame_1
-    originalName: 
-    pivot: {x: 0.98275864, y: -0.3253968}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 362
-      y: 4
-      width: 58
-      height: 126
-    spriteID: 88e5e4cdb37f90049a9dd7bbd63b5569
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 362, y: 4}
-  - name: Level Select Background_Frame_2
-    originalName: 
-    pivot: {x: 0.017241415, y: -0.3253968}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 428
-      y: 4
-      width: 58
-      height: 126
-    spriteID: 68734a748b835ee4c97a13ed8ec8770b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 428, y: 4}
+  animatedSpriteImportData: []
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -695286716
-    name: Level Select Background
+    guid: 960369340
+    name: ParkTilemap
     layerFlags: 0
     layerType: 0
     blendMode: 0
-    cells:
-    - name: Level Select Background_Frame_0
-      frameIndex: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 350
-        height: 197
-      spriteId: 40b163fd9b3045945920fefb6455babe
-    - name: Level Select Background_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 0
-        y: 0
-        width: 350
-        height: 197
-      spriteId: b1a1eb12010184d4c8e779907574339a
-    - name: Level Select Background_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 116
-        y: 53
-        width: 60
-        height: 85
-      spriteId: 659aa16cbe38c4945a4e8465d3118ee2
-    - name: Level Select Background_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 118
-        y: 41
-        width: 58
-        height: 126
-      spriteId: 88e5e4cdb37f90049a9dd7bbd63b5569
-    - name: Level Select Background_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 174
-        y: 41
-        width: 58
-        height: 126
-      spriteId: 68734a748b835ee4c97a13ed8ec8770b
+    cells: []
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -286,30 +146,6 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: iPhone
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
@@ -345,7 +181,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  generatePhysicsShape: 0
+  generatePhysicsShape: 1
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 350, y: 197}
+  canvasSize: {x: 96, y: 96}
