@@ -21,4 +21,6 @@ public class PlayerCharacterSO : EntitySO
     public float attackDuration = 1.5f;
     public float skillDuration = 2f;
     public float deathDuration = 3.5f;
+    [Header("The prefab for the character.")]
+    public GameObject prefab;
 }

@@ -11,26 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int partySize = 3;
     [SerializeField] float loadLevelDelay = 2.5f;
 
-    [field: SerializeField]
-    public string[] LevelNames { get; private set; }
+    public GameConfigSO config;
 
-    // characters
-    public Character[] Characters { get; private set; }
-    public struct Character
-    {
-        public GameObject prefab;
-        public PlayerCharacter data;
-        public bool selected;
-
-        public Character(GameObject prefab, PlayerCharacter data)
-        {
-            this.prefab = prefab;
-            this.data = data;
-            selected = false;
-        }
-    }
-
-    public LevelScoreGradingSO levelScoreGradingSO;
     [Tooltip("Whether this is the root game manager. if it is, it will not be destroyed on scene load.")]
     public bool is_root = false;
 
@@ -78,14 +60,7 @@ public class GameManager : MonoBehaviour
     {
         // reset coroutine to null
         delayed_switch_scene_coroutine = null;
-        // get reference to player character prefabs
-        GameObject[] prefabs = Resources.LoadAll<GameObject>(prefabPath);
-        Characters = new Character[prefabs.Length];
-        for (int i = 0; i < prefabs.Length; i++)
-        {
-            Characters[i] = new Character(prefabs[i], prefabs[i].GetComponent<PlayerCharacter>());
-            Characters[i].data.SetData();
-        }
+
     }
 
     #region Level Selection
@@ -95,7 +70,7 @@ public class GameManager : MonoBehaviour
     /// <param name="name">Name of level scene to load</param>
     public void LoadLevel(string name)
     {
-        if (delayed_switch_scene_coroutine != null || !LevelNames.Contains(name)) return;
+        if (delayed_switch_scene_coroutine != null || !config.levels.Any(x => x.levelInfo.name == name)) return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
@@ -106,10 +81,9 @@ public class GameManager : MonoBehaviour
     /// <param name="index">Index of level name in array</param>
     public void LoadLevel(int index)
     {
-        if (delayed_switch_scene_coroutine != null || LevelNames == null ||
-            LevelNames.Length <= 0 || index < 0 || index >= LevelNames.Length)
+        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0)
             return;
-        delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(LevelNames[index], loadLevelDelay));
+        delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(config.levels[index].scene_name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
 

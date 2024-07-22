@@ -19,7 +19,7 @@ public class LevelEndMenu : MonoBehaviour {
 
     public static LevelScoreGrade GradeFromScore(float score, float maxScore){
         float current_p = score / maxScore;
-        foreach (var grade in GameManager.Instance.levelScoreGradingSO.passGrades.OrderByDescending(x => x.percentage))
+        foreach (var grade in GameManager.Instance.config.grades.passGrades.OrderByDescending(x => x.percentage))
         {
 
             if (current_p >= grade.percentage)
@@ -27,7 +27,7 @@ public class LevelEndMenu : MonoBehaviour {
                 return grade;
             }
         }
-        return GameManager.Instance.levelScoreGradingSO.failGrades;
+        return GameManager.Instance.config.grades.failGrades;
     }
 
     public void ShowGrade(LevelScoreGrade grade){
