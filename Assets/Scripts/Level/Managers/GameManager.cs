@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     {
         if (delayed_switch_scene_coroutine != null || config.levels.Length == 0)
             return;
-        delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(config.levels[index].scene_name, loadLevelDelay));
+        delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(config.levels[index].scene.Name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
 

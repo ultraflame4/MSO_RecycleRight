@@ -1,13 +1,11 @@
+using System;
+using Eflatun.SceneReference;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public struct Character
-{
-    public GameObject prefab;
-    public Entity.Data.PlayerCharacter data;
-}
-
+[Serializable]
 public struct GameLevel{
-    public string scene_name;
+    public SceneReference scene;
     public LevelInfoSO levelInfo;
 }
 
