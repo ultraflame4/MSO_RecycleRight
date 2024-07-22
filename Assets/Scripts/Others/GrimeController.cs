@@ -44,7 +44,6 @@ public class GrimeController : MonoBehaviour
             InitMaterial();
         }
         material.SetFloat("_percent", _grimeAmount);
-        Debug.Log($"update mat, {_grimeAmount}");
         spriteRenderer.material = material;
     }
 

@@ -7,13 +7,11 @@ namespace UI
     public class PlayerCharacterUIProfileManager : MonoBehaviour
     {
         [SerializeField] PlayerCharacterUIProfile[] UIIcons;
-        CharacterManager characterManager;
+        CharacterManager characterManager => PlayerController.Instance.CharacterManager;
 
         // Start is called before the first frame update
         void Start()
         {
-            // get reference to character manager
-            characterManager = PlayerController.Instance.CharacterManager;
             // ensure character manager is not null
             if (characterManager == null) return;
             // subscribe to character change event
@@ -38,29 +36,23 @@ namespace UI
                 return;
             }
 
-            // cache first character in array
-            PlayerCharacter cachedCharacter =  characterManager.character_instances[0];
+            // Counter for indexing UIIcons. Start at 1 as first UIIcon is reserved for active character.
+            int c = 1;
             // loop through characters in the party and set the active character
             for (int i = 0; i < characterManager.character_instances.Length; i++)
             {
                 // get the current character
                 PlayerCharacter character = characterManager.character_instances[i];
-                // variable to change depending on the character to set
-                PlayerCharacter characterToSet = character;
 
-                // if first character is not the active, directly set first UI to active character
-                if (cachedCharacter != activeCharacter && i == 0)
+                // If active character, use first ui profile slot.
+                if (character == activeCharacter)
                 {
-                    // set first character in active UI spot
-                    characterToSet = activeCharacter;
-                    // cache current character
-                    cachedCharacter = character;
+                    // Assign active character to the reserved UIIcon
+                    UIIcons[0].SetUI(activeCharacter);
+                    continue;
                 }
-
-                // if reached the current location of the active character, set the UI to the previously cached character
-                if (character == activeCharacter && i != 0) characterToSet = cachedCharacter;
-
-                UIIcons[i].SetUI(characterToSet);
+                UIIcons[c].SetUI(character);
+                c++; // Increment counter to get next UIIcon
             }
         }
 
