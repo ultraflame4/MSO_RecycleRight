@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level-1-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: Shanbi Park
-    levelDescription: The park
-    maxScore: 1
+    levelName: 
+    levelDescription: 
+    maxScore: 0
