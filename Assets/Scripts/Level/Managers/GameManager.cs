@@ -60,12 +60,16 @@ public class GameManager : MonoBehaviour
             if (is_root) DontDestroyOnLoad(gameObject);
         }
 
-        if (_instance.is_root) { 
-            Debug.LogWarning("Detected existing root game manager. This game manager will be deactived!");
-            gameObject.SetActive(false);
-            return;
+        if (_instance != this)
+        {
+            if (_instance.is_root && _instance != this)
+            {
+                Debug.LogWarning("Detected existing root game manager. This game manager will be deactived!");
+                gameObject.SetActive(false);
+                return;
+            }
+            Debug.LogWarning("Multiple game manager detected! This is not allowed!");
         }
-        Debug.LogWarning("Multiple game manager detected! This is not allowed!");
 
     }
 
@@ -102,9 +106,9 @@ public class GameManager : MonoBehaviour
     /// <param name="index">Index of level name in array</param>
     public void LoadLevel(int index)
     {
-        if (delayed_switch_scene_coroutine != null || LevelNames == null || 
+        if (delayed_switch_scene_coroutine != null || LevelNames == null ||
             LevelNames.Length <= 0 || index < 0 || index >= LevelNames.Length)
-                return;
+            return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(LevelNames[index], loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
@@ -116,6 +120,22 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
+    }
+
+    /// <summary>
+    /// Opens the Level Selection Scene.
+    /// </summary>
+    public void OpenScene_LevelSelection()
+    {
+        LoadScene("Level-Selection");
+    }
+
+    /// <summary>
+    /// Opens the main menu scene
+    /// </summary>
+    public void OpenScene_MainMenu()
+    {
+        LoadScene("MainMenu");
     }
 
     IEnumerator DelayedSwitchScene(string scene_name, float delay)
