@@ -41,8 +41,8 @@ namespace Level.Tutorial
             return currentCount >= count || (count <= 0 && taskComplete);
         }
 
-        private delegate bool Condition<T>(T element);
-        private bool CheckButtonPress<T>(T[] array, Condition<T> condition)
+        protected delegate bool Condition<T>(T element);
+        protected bool CheckButtonPress<T>(T[] array, Condition<T> condition)
         {
             if (array == null || array.Length <= 0) return false;
 

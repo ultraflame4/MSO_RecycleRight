@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902f9a46f36141b478e998328457f16b, type: 3}
+  m_Name: LevelScoreGradingSO
+  m_EditorClassIdentifier: 
+  failGrades:
+    grade: Fail
+    gradeColor: {r: 1, g: 0, b: 0.02229166, a: 1}
+    gradeDescription: 
+    percentage: 0
+    gradeSprite: {fileID: 0}
+    spriteRepeat: 0
+  passGrades:
+  - grade: Survived
+    gradeColor: {r: 1, g: 0.32727972, b: 0, a: 1}
+    gradeDescription: 
+    percentage: 0
+    gradeSprite: {fileID: 0}
+    spriteRepeat: 0
+  - grade: Pass
+    gradeColor: {r: 0.042452812, g: 1, b: 0.35203934, a: 1}
+    gradeDescription: 
+    percentage: 0.25
+    gradeSprite: {fileID: 0}
+    spriteRepeat: 0
+  - grade: Great Effort
+    gradeColor: {r: 0.25943398, g: 0.43259028, b: 1, a: 1}
+    gradeDescription: 
+    percentage: 0.5
+    gradeSprite: {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    spriteRepeat: 1
+  - grade: Excellent
+    gradeColor: {r: 0.72743374, g: 0.2216981, b: 1, a: 1}
+    gradeDescription: 
+    percentage: 0.75
+    gradeSprite: {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    spriteRepeat: 2
+  - grade: Perfect
+    gradeColor: {r: 0.9960785, g: 0.7058824, b: 0, a: 1}
+    gradeDescription: 
+    percentage: 1
+    gradeSprite: {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    spriteRepeat: 3

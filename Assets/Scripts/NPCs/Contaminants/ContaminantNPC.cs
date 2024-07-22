@@ -10,7 +10,7 @@ using UnityEngine.AI;
 
 namespace NPC.Contaminant
 {
-    public class ContaminantNPC : FSMRecyclableNPC, ILevelEntity, IDamagable, ICleanable, IStunnable
+    public class ContaminantNPC : FSMRecyclableNPC, IDamagable, ICleanable, IStunnable
     {
         #region States
         public Stunned state_Stunned { get; private set; }
@@ -64,7 +64,7 @@ namespace NPC.Contaminant
         public void LoadConfig()
         {
             if (npcData == null) return;
-            Debug.Log("Overriding data using npc config...");
+
             maxHealth = npcData.common.maxHealth;
             sightRange = npcData.common.sightRange;
             attackRange = npcData.contaminantConfig.attackRange;
@@ -120,11 +120,6 @@ namespace NPC.Contaminant
             Gizmos.DrawWireSphere(transform.position, sightRange);
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackRange);
-        }
-
-        public void OnZoneStart()
-        {
-            // activate the contaminant
         }
 
         public void Damage(float damage)

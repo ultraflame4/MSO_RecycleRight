@@ -30,8 +30,12 @@ namespace NPC.Contaminants.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
-            navigation.StopVelocity();
+            // Navigation component may be disabled!
+            if (navigation != null && navigation.enabled)
+            {
+                navigation.ClearDestination();
+                navigation.StopVelocity();
+            }
 
             // Start attack coroutine
             if (attackCoroutine != null) // if coroutine active, stop it

@@ -48,7 +48,6 @@ namespace Player
         #endregion
 
         #region Monobehaviour Callbacks
-
         private void Awake()
         {
             if (_instance == null)
@@ -64,7 +63,7 @@ namespace Player
         void Start()
         {
             // get components
-            characterManager ??= GetComponent<CharacterManager>();
+            
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
             OnCharacterChange(null, CharacterManager.character_instances[0]);
@@ -82,6 +81,18 @@ namespace Player
             // subscribe to zone change event if level manager is not null
             if (LevelManager._instance != null)
                 LevelManager._instance.ZoneChanged += MoveToZoneState.OnZoneChange;
+        }
+
+        new void Update()
+        {
+            if (Time.timeScale <= 0f) return;
+            base.Update();
+        }
+
+        new void FixedUpdate()
+        {
+            if (Time.timeScale <= 0f) return;
+            base.FixedUpdate();
         }
         #endregion
 

@@ -8,14 +8,6 @@ namespace Level.Tutorial
     {
         [SerializeField] RecyclingBin[] bins;
 
-        // Start is called before the first frame update
-        new void Start()
-        {
-            base.Start();
-            // reset recyclables
-            ResetRecyclables();
-        }
-
         public override bool CheckTaskCompletion()
         {
             int recyclableCount = recyclables
@@ -36,7 +28,7 @@ namespace Level.Tutorial
             if (totalCleanBins == bins.Length && totalScore == recyclables.Length)
                 return true;
             // check if need to reset task
-            if (totalCleanBins < bins.Length || (totalScore < recyclables.Length && recyclableCount == recyclables.Length)) 
+            if (totalCleanBins < bins.Length || (totalScore < recyclables.Length && totalScore < recyclableCount)) 
                 ResetRecyclables();
 
             return false;

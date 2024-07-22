@@ -61,6 +61,7 @@ namespace Level.Tutorial
                 {
                     // handle win condition
                     Debug.Log("Tutorial stage completed.");
+                    LevelManager.Instance.EndLevel();
                     return;
                 }
                 // handle last task in zone

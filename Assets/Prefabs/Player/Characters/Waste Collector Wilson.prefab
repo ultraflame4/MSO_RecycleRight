@@ -125,14 +125,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3507b157e337ff54fa256935d14db22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDamage: 2
+  OverrideTriggerSkill: 0
+  grabDamage: 7
   grabRange: 1.5
   grabOffset: {x: 1, y: 0.5}
   hitMask:
     serializedVersion: 2
     m_Bits: 384
   grabEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
-  throwDamage: 3
+  throwDamage: 15
+  throwStunDuration: 0.75
   throwForce: 25
   throwEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   garbageTruckPrefab: {fileID: 1001936688018432966, guid: db588a3d9116d5d44aee3b344c406de9, type: 3}
