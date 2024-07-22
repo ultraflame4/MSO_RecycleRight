@@ -20,7 +20,7 @@ public class LevelScoreGrade
     
 }
 
-[CreateAssetMenu(fileName = "LevelScoreGradingSO", menuName = "ScriptableObjects/Level/LevelScoreGradingSO", order = 0)]
+[CreateAssetMenu(fileName = "LevelGradingConfig", menuName = "ScriptableObjects/Game/LevelScoreGradingSO", order = 0)]
 public class LevelScoreGradingSO : ScriptableObject
 {
     public LevelScoreGrade failGrades;
