@@ -29,9 +29,11 @@ public class TrainDoorAnimation : MonoBehaviour
         transform.localPosition = Vector3.zero;
         originalDoorPosX = rightDoor.localPosition.x;
         screenWidth = (Screen.width / 2f) + originalDoorPosX;
-        // reset animations
+        // reset animation
         doorPosition = 0f;
         animationProgress = 0f;
+        transform.localScale = Vector3.one;
+        transform.localPosition = Vector3.zero;
         UpdateDoorPosition();
     }
 
