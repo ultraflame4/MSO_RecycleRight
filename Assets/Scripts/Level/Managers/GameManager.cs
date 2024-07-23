@@ -3,7 +3,6 @@ using System.Linq;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Entity.Data;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    #region Level Selection
+    #region Scene Management
     /// <summary>
     /// Load level scene based on the name of the scene
     /// </summary>
