@@ -51,7 +51,29 @@ public class TrainDoorAnimation : MonoBehaviour
         moveAnimation = StartCoroutine(Animate(animationProgress <= 0f));
     }
 
+    public void PlayDoorAnimation()
+    {
+        if (moveAnimation != null || animationProgress < 1f) return;
+        moveAnimation = StartCoroutine(AnimateDoor());
+    }
+
     #region Animation
+    IEnumerator AnimateDoor()
+    {
+        float timeElapsed = 0f;
+
+        while (timeElapsed <= moveAnimationDuration)
+        {
+            timeElapsed += Time.deltaTime;
+            doorPosition = Mathf.Clamp01(timeElapsed / moveAnimationDuration);
+            yield return timeElapsed;
+        }
+
+        doorPosition = 0f;
+        UpdateDoorPosition();
+        moveAnimation = null;
+    }
+    
     IEnumerator Animate(bool forward_direction)
     {
         float timeElapsed = 0f;
