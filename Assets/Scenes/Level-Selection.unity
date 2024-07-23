@@ -1456,7 +1456,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032228278}
-  - component: {fileID: 1032228279}
+  - component: {fileID: 1032228280}
+  - component: {fileID: 1032228281}
   m_Layer: 5
   m_Name: Detailed Level Menu
   m_TagString: Untagged
@@ -1487,7 +1488,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1032228279
+--- !u!114 &1032228280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032228277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457bdad01250f004a8d9da2b33bc2765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNameText: {fileID: 0}
+  levelDescText: {fileID: 1446949764}
+  <anim>k__BackingField: {fileID: 1032228281}
+--- !u!114 &1032228281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1746,7 +1762,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450, y: 350}
+  m_SizeDelta: {x: 450, y: 325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446949764
 MonoBehaviour:
@@ -1768,7 +1784,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi lacus,
+    rhoncus vitae iaculis vel, viverra a ipsum. Donec pellentesque ipsum metus, ut
+    porta mi pulvinar id. Nulla facilisi. Vestibulum ante ipsum primis in faucibus
+    orci luctus et ultrices posuere cubilia curae; '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb386f6bc876bf1478c06c4ffee0d7fb, type: 2}
   m_sharedMaterial: {fileID: 5807939526964537196, guid: cb386f6bc876bf1478c06c4ffee0d7fb, type: 2}
@@ -1795,12 +1814,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 32.6
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 7
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -1813,7 +1832,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -2342,7 +2361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimation: {fileID: 1262446955}
-  levelDetailsMenu: {fileID: 1032228279}
+  levelDetailsMenu: {fileID: 1032228280}
 --- !u!1 &1998691161
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Level-1-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: 
-    levelDescription: 
+    levelName: Level 1
+    levelDescription: 'This level introduces the player to the pest infestation mechanic.
+
+      (This
+      description is to be edited)'
     maxScore: 0

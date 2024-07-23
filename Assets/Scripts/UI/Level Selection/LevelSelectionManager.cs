@@ -6,7 +6,7 @@ namespace UI.LevelSelection
     public class LevelSelectionManager : MonoBehaviour
     {
         [SerializeField] TrainDoorAnimation doorAnimation;
-        [SerializeField] UIFadeAnimation levelDetailsMenu;
+        [SerializeField] LevelDetailsMenu levelDetailsMenu;
         SceneReference selectedLevel;
 
         // Start is called before the first frame update
@@ -15,7 +15,7 @@ namespace UI.LevelSelection
             selectedLevel = null;
         }
 
-        #region Button Events
+        #region Main Level Selection Menu
         /// <summary>
         /// Select a level and go to detailed level selection scene
         /// </summary>
@@ -23,7 +23,7 @@ namespace UI.LevelSelection
         public void LevelSelected(int index)
         {
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.SetActive(true);
+            levelDetailsMenu?.anim?.SetActive(true);
 
             if (GameManager.Instance == null)
             {
@@ -32,15 +32,32 @@ namespace UI.LevelSelection
             }
 
             selectedLevel = GameManager.Instance.config.levels[index].scene;
+            levelDetailsMenu?.SetText(GameManager.Instance.config.levels[index].levelInfo.data.levelName, 
+                GameManager.Instance.config.levels[index].levelInfo.data.levelDescription);
         }
 
+        /// <summary>
+        /// Return to previous scene (Main Menu)
+        /// </summary>
+        public void Back()
+        {
+            if (GameManager.Instance == null)
+            {
+                Debug.LogWarning("Game manager instance is null, \"Main Menu\" scene could not be loaded. (LevelSelectionManager.cs)");
+                return;
+            }
+            GameManager.Instance.OpenScene_MainMenu();
+        }
+        #endregion
+
+        #region Level Details Menu
         /// <summary>
         /// Return from detailed level selection scene to level selection scene
         /// </summary>
         public void LevelSelectionBack()
         {
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.SetActive(false);
+            levelDetailsMenu?.anim?.SetActive(false);
             selectedLevel = null;
         }
 
@@ -63,19 +80,6 @@ namespace UI.LevelSelection
             }
 
             GameManager.Instance.LoadScene(selectedLevel.Name);
-        }
-
-        /// <summary>
-        /// Return to previous scene (Main Menu)
-        /// </summary>
-        public void Back()
-        {
-            if (GameManager.Instance == null)
-            {
-                Debug.LogWarning("Game manager instance is null, \"Main Menu\" scene could not be loaded. (LevelSelectionManager.cs)");
-                return;
-            }
-            GameManager.Instance.OpenScene_MainMenu();
         }
         #endregion
     }

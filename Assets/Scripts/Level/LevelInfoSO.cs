@@ -23,6 +23,7 @@ public struct LevelNPC{
 public struct LevelInfoData{
 
     public string levelName;
+    [TextArea(5, 10)]
     public string levelDescription;
     public float maxScore;
     public LevelNPC[] npcs;
