@@ -40,26 +40,18 @@ namespace UI
 
             foreach (Image image in images)
             {
-                StartCoroutine(Fade(active, image.gameObject, image.color, (Color color, bool currentActive) => 
-                    {
-                        image.color = color;
-                        image.gameObject.SetActive(currentActive);
-                    }
-                ));
+                StartCoroutine(Fade(active, image.gameObject, image.color, 
+                    (Color color) => image.color = color));
             }
 
             foreach (TextMeshProUGUI text in textBoxes)
             {
-                StartCoroutine(Fade(active, text.gameObject, text.color, (Color color, bool currentActive) => 
-                    {
-                        text.color = color;
-                        text.gameObject.SetActive(currentActive);
-                    }
-                ));
+                StartCoroutine(Fade(active, text.gameObject, text.color, 
+                    (Color color) => text.color = color));
             }
         }
 
-        IEnumerator Fade(bool active, GameObject gameObject, Color color, Action<Color, bool> update_callback = null)
+        IEnumerator Fade(bool active, GameObject gameObject, Color color, Action<Color> update_color_callback = null)
         {
             if (active) 
             {
@@ -74,7 +66,7 @@ namespace UI
             {
                 timeElasped += Time.deltaTime;
                 color.a = active ? timeElasped / fadeDuration : 1f - (timeElasped / fadeDuration);
-                update_callback?.Invoke(color, gameObject.activeSelf);
+                update_color_callback?.Invoke(color);
                 yield return timeElasped;
             }
 
