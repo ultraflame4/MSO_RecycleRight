@@ -706,6 +706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_Contaminant
       objectReference: {fileID: 0}
+    - target: {fileID: 2182901040310101990, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+      propertyPath: stop_distance
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 2338699509537195694, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
