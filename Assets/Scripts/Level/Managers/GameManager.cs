@@ -110,6 +110,15 @@ public class GameManager : MonoBehaviour
         LoadScene("MainMenu");
     }
 
+    /// <summary>
+    /// Restarts the current scene
+    /// </summary>
+    /// <returns></returns>
+    public void RestartScene()
+    {
+        LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     IEnumerator DelayedSwitchScene(string scene_name, float delay)
     {
         yield return new WaitForSeconds(delay);
