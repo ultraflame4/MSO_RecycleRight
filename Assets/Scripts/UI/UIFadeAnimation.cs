@@ -8,15 +8,15 @@ namespace UI
 {
     public class UIFadeAnimation : MonoBehaviour
     {
-        [SerializeField] float fadeDelay = 1f;
-        [SerializeField] float fadeDuration = .75f;
-        [SerializeField] bool startActive = false;
-        Image[] images;
-        TextMeshProUGUI[] textBoxes;
+        [SerializeField] protected float fadeDelay = 1f;
+        [SerializeField] protected float fadeDuration = .75f;
+        [SerializeField] protected bool startActive = false;
+        protected Image[] images;
+        protected TextMeshProUGUI[] textBoxes;
 
 
         // Start is called before the first frame update
-        void Start()
+        protected virtual void Start()
         {
             images = GetComponentsInChildren<Image>();
             textBoxes = GetComponentsInChildren<TextMeshProUGUI>();
@@ -34,7 +34,7 @@ namespace UI
             }
         }
 
-        public void SetActive(bool active)
+        public virtual void SetActive(bool active)
         {
             StopAllCoroutines();
 

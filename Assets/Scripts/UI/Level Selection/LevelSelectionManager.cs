@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Eflatun.SceneReference;
 
 namespace UI.LevelSelection
 {
@@ -8,60 +7,62 @@ namespace UI.LevelSelection
     {
         [SerializeField] TrainDoorAnimation doorAnimation;
         [SerializeField] UIFadeAnimation levelDetailsMenu;
+        SceneReference selectedLevel;
 
         // Start is called before the first frame update
         void Start()
         {
-            
+            selectedLevel = null;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
-
-        #region Level Selection Menu Button Events
+        #region Button Events
+        /// <summary>
+        /// Select a level and go to detailed level selection scene
+        /// </summary>
+        /// <param name="index">Index of level in levels array</param>
         public void LevelSelected(int index)
         {
             doorAnimation?.PlayAnimation();
             levelDetailsMenu?.SetActive(true);
+
+            if (GameManager.Instance == null)
+            {
+                Debug.LogWarning("Game manager instance is null, unable to show level details. (LevelSelectionManager.cs)");
+                return;
+            }
+
+            selectedLevel = GameManager.Instance.config.levels[index].scene;
         }
 
+        /// <summary>
+        /// Return from detailed level selection scene to level selection scene
+        /// </summary>
         public void LevelSelectionBack()
         {
             doorAnimation?.PlayAnimation();
             levelDetailsMenu?.SetActive(false);
+            selectedLevel = null;
         }
-        #endregion
 
-        #region Game Manager Button Events
         /// <summary>
-        /// Load level scene based on the name of the scene
+        /// Load into currently selected level scene
         /// </summary>
-        /// <param name="name">Name of level scene to load</param>
-        public void LoadLevel(string name)
+        public void LoadLevel()
         {
             if (GameManager.Instance == null)
             {
                 Debug.LogWarning("Game manager instance is null, level could not be loaded. (LevelSelectionManager.cs)");
                 return;
             }
-            GameManager.Instance.LoadLevel(name);
-        }
 
-        /// <summary>
-        /// Load level scene based on index in Level Names array
-        /// </summary>
-        /// <param name="index">Index of level name in array</param>
-        public void LoadLevel(int index)
-        {
-            if (GameManager.Instance == null)
+            if (selectedLevel == null) 
             {
-                Debug.LogWarning("Game manager instance is null, level could not be loaded. (LevelSelectionManager.cs)");
+                Debug.LogWarning("Selected level could not be found, returning to level selection scene. (LevelSelectionManager.cs)");
+                LevelSelectionBack();
                 return;
             }
-            GameManager.Instance.LoadLevel(index);
+
+            GameManager.Instance.LoadScene(selectedLevel.Name);
         }
 
         /// <summary>
