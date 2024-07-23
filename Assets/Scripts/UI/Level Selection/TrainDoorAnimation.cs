@@ -33,10 +33,6 @@ public class TrainDoorAnimation : MonoBehaviour
         doorPosition = 0f;
         animationProgress = 0f;
         UpdateDoorPosition();
-        
-        // TODO: this is temporary, subscribe and check for actual animation when done
-        if (GameManager.Instance == null) return;
-        GameManager.Instance.StartedLevelLoad += TestAnim;
     }
 
     // Update is called once per frame
@@ -45,14 +41,6 @@ public class TrainDoorAnimation : MonoBehaviour
         if (debug_play) PlayAnimation();
         if (!debug_update_door_position) return;
         UpdateDoorPosition();
-    }
-
-    // TODO: this is temporary for testing purposes
-    void TestAnim()
-    {
-        PlayAnimation();
-        if (GameManager.Instance == null) return;
-        GameManager.Instance.StartedLevelLoad -= TestAnim;
     }
 
     public void PlayAnimation()

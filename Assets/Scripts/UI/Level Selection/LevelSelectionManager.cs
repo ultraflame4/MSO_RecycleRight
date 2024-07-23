@@ -6,6 +6,8 @@ namespace UI.LevelSelection
 {
     public class LevelSelectionManager : MonoBehaviour
     {
+        [SerializeField] TrainDoorAnimation doorAnimation;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -17,6 +19,18 @@ namespace UI.LevelSelection
         {
             
         }
+
+        #region Level Selection Menu Button Events
+        public void LevelSelected(int index)
+        {
+            doorAnimation.PlayAnimation();
+        }
+
+        public void LevelSelectionBack()
+        {
+            doorAnimation.PlayAnimation();
+        }
+        #endregion
 
         #region Game Manager Button Events
         /// <summary>

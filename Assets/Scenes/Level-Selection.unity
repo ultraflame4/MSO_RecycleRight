@@ -1115,6 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1659ffc1b9733445903cf416feed161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorAnimation: {fileID: 1262446955}
 --- !u!1 &2045376081
 GameObject:
   m_ObjectHideFlags: 0
