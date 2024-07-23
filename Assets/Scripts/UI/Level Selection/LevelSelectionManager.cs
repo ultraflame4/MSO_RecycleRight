@@ -7,7 +7,7 @@ namespace UI.LevelSelection
     public class LevelSelectionManager : MonoBehaviour
     {
         [SerializeField] TrainDoorAnimation doorAnimation;
-        [SerializeField] DetailedLevelMenu levelDetailsMenu;
+        [SerializeField] UIFadeAnimation levelDetailsMenu;
 
         // Start is called before the first frame update
         void Start()
