@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -11,25 +12,42 @@ namespace UI
         [SerializeField] float fadeDelay = 1f;
         [SerializeField] float fadeDuration = .75f;
         [SerializeField] bool startActive = false;
-        Image[] images;
-        TextMeshProUGUI[] textBoxes;
+        
+        List<UIItem> uiItems;
+        private class UIItem
+        {
+            public GameObject gameObject { get; }
+            public Color color { get; }
+            public Color originalColor { get; }
+            public Action<Color> UpdateColor { get; }
 
+            public UIItem(GameObject gameObject, Color color, Action<Color> update_color_callback = null)
+            {
+                this.gameObject = gameObject;
+                this.color = color;
+                originalColor = new Color(color.r, color.g, color.b, color.a);
+                UpdateColor = update_color_callback;
+            }
+        }
 
         // Start is called before the first frame update
         void Start()
         {
-            images = GetComponentsInChildren<Image>();
-            textBoxes = GetComponentsInChildren<TextMeshProUGUI>();
-
-            if (startActive) return;
+            Image[] images = GetComponentsInChildren<Image>();
+            TextMeshProUGUI[] textBoxes = GetComponentsInChildren<TextMeshProUGUI>();
+            uiItems = new List<UIItem>();
 
             foreach (Image image in images)
             {
+                uiItems.Add(new UIItem(image.gameObject, image.color, (Color color) => image.color = color));
+                if (startActive) continue;
                 image.gameObject.SetActive(false);
             }
 
             foreach (TextMeshProUGUI text in textBoxes)
             {
+                uiItems.Add(new UIItem(text.gameObject, text.color, (Color color) => text.color = color));
+                if (startActive) continue;
                 text.gameObject.SetActive(false);
             }
         }
@@ -38,41 +56,36 @@ namespace UI
         {
             StopAllCoroutines();
 
-            foreach (Image image in images)
+            foreach (UIItem item in uiItems)
             {
-                StartCoroutine(Fade(active, image.gameObject, image.color, 
-                    (Color color) => image.color = color));
-            }
-
-            foreach (TextMeshProUGUI text in textBoxes)
-            {
-                StartCoroutine(Fade(active, text.gameObject, text.color, 
-                    (Color color) => text.color = color));
+                StartCoroutine(Fade(item, active));
             }
         }
 
-        IEnumerator Fade(bool active, GameObject gameObject, Color color, Action<Color> update_color_callback = null)
+        IEnumerator Fade(UIItem item, bool active)
         {
             if (active) 
             {
                 yield return new WaitForSeconds(fadeDelay);
-                gameObject.SetActive(true);
+                item.gameObject.SetActive(true);
             }
 
             float timeElasped = 0f;
-            color.a = active ? 0f : 1f;
+            Color color = item.color;
+            color.a = active ? 0f : item.originalColor.a;
 
             while (timeElasped < fadeDuration)
             {
                 timeElasped += Time.deltaTime;
-                color.a = active ? timeElasped / fadeDuration : 1f - (timeElasped / fadeDuration);
-                update_color_callback?.Invoke(color);
+                color.a = item.originalColor.a * (active ? timeElasped / fadeDuration : 1f - (timeElasped / fadeDuration));
+                item.UpdateColor?.Invoke(color);
                 yield return timeElasped;
             }
 
-            color.a = active ? 1f : 0f;
+            color.a = active ? item.originalColor.a : 0f;
+            item.UpdateColor?.Invoke(color);
 
-            if (!active) gameObject.SetActive(false);
+            if (!active) item.gameObject.SetActive(false);
         }
     }
 }
