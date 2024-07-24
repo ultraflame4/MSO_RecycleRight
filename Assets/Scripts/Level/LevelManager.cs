@@ -138,7 +138,6 @@ namespace Level
             foreach (var zone in zones)
             {
                 if (zone == current_zone) continue;
-                
                 zone.DeactiveZone();
             }
 

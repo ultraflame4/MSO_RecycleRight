@@ -30,7 +30,7 @@ namespace Level
         public bool zoneComplete {get; private set;}
         public ILevelEntity[] entities;
         public RecyclingBin[] bins;
-
+        
         private void Start()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
@@ -39,7 +39,7 @@ namespace Level
 
         public void RefreshEntities()
         {
-            entities = GetComponentsInChildren<ILevelEntity>();
+            entities = GetComponentsInChildren<ILevelEntity>(true);
         }
 
         /// <summary>
