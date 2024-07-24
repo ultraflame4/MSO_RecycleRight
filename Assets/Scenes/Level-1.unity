@@ -2149,6 +2149,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: 18.166168
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 10.335584
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: 18.035713
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: -10.30642
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: -18.080236
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: -10.578253
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[3].x
+      value: -18.086988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[3].y
+      value: 10.39269
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[4].x
+      value: 18.174404
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911264595644330646, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_Points.Array.data[4].y
+      value: 10.3376045
+      objectReference: {fileID: 0}
     - target: {fileID: 8564434415938832313, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_Name
       value: Main Camera
