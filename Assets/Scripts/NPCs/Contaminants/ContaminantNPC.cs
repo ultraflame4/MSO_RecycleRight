@@ -135,11 +135,12 @@ namespace NPC.Contaminant
         public void Clean(float clean_amount)
         {
             if (!cleanable) return;
-            if (spawned_cleaned_prefab) return;
             // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
             {
+                if (spawned_cleaned_prefab) return;
+                spawned_cleaned_prefab = true;
                 Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
                 Destroy(gameObject);
             }
