@@ -29,4 +29,6 @@ MonoBehaviour:
     attackDelay: 0.1
     attackDamage: 5
     attackDuration: 1.5
+    attract_pests: 1
+    attack_hit_delay: 0
     cleanable: 1
