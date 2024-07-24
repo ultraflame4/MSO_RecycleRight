@@ -61,6 +61,8 @@ namespace NPC.Contaminant
 
         public override bool cause_infestation => attract_pests;
 
+        private bool spawned_cleaned_prefab = false;
+
         public void LoadConfig()
         {
             if (npcData == null) return;
@@ -133,6 +135,7 @@ namespace NPC.Contaminant
         public void Clean(float clean_amount)
         {
             if (!cleanable) return;
+            if (spawned_cleaned_prefab) return;
             // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
