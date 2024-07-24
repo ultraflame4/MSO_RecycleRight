@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     levelName: Tutorial
-    levelDescription: The Tutorial
+    levelDescription: "This is a combat simulation to teach new volunteers the proper
+      ways to recycle. \n(This description is to be edited)"
     maxScore: 1
