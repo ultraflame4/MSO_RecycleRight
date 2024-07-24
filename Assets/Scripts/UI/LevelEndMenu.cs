@@ -63,4 +63,11 @@ public class LevelEndMenu : MonoBehaviour {
     }
     
 
+    public void btnContinue(){
+        GameManager.Instance.OpenScene_LevelSelection();
+    }
+    public void btnRestart(){
+        GameManager.Instance.RestartScene();
+    }
+
 }
