@@ -3,7 +3,6 @@ using System.Linq;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Entity.Data;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    #region Level Selection
+    #region Scene Management
     /// <summary>
     /// Load level scene based on the name of the scene
     /// </summary>
@@ -109,6 +108,15 @@ public class GameManager : MonoBehaviour
     public void OpenScene_MainMenu()
     {
         LoadScene("MainMenu");
+    }
+
+    /// <summary>
+    /// Restarts the current scene
+    /// </summary>
+    /// <returns></returns>
+    public void RestartScene()
+    {
+        LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator DelayedSwitchScene(string scene_name, float delay)
