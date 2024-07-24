@@ -136,6 +136,7 @@ namespace NPC.Contaminant
         {
             if (!cleanable) return;
             if (spawned_cleaned_prefab) return;
+            spawned_cleaned_prefab = true;
             // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
