@@ -18,6 +18,7 @@ namespace UI.LevelSelection
         [SerializeField] Vector3 endOffset = Vector3.zero;
         [SerializeField, Range(0f, 1f)] float moveToZoomAnimationRatio = 0.5f;
         [SerializeField, Range(0f, 1f)] float animationProgress;
+        [SerializeField] GameObject background;
         [SerializeField] bool debug_play = false;
 
         float originalDoorPosX;
@@ -36,6 +37,7 @@ namespace UI.LevelSelection
             animationProgress = 0f;
             transform.localScale = Vector3.one;
             transform.localPosition = Vector3.zero;
+            background?.SetActive(false);
             UpdateDoorPosition();
         }
 
@@ -44,6 +46,7 @@ namespace UI.LevelSelection
         {
             if (debug_play) PlayAnimation();
             if (!debug_update_door_position) return;
+            background?.SetActive(true);
             UpdateDoorPosition();
         }
 
@@ -57,6 +60,9 @@ namespace UI.LevelSelection
         IEnumerator Animate(bool forward_direction)
         {
             float timeElapsed = 0f;
+
+            // if forward direction, show background
+            if (forward_direction) background?.SetActive(true);
 
             while (timeElapsed <= moveAnimationDuration)
             {
@@ -73,6 +79,8 @@ namespace UI.LevelSelection
             UpdateDoorPosition();
             moveAnimation = null;
             debug_play = false;
+            // hide background if not forward direction, and animation ended
+            if (!forward_direction) background?.SetActive(false);
         }
 
         void UpdateAnimation(bool forward_direction)
