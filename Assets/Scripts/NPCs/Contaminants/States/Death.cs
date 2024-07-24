@@ -32,6 +32,7 @@ namespace NPC.Contaminants.States
             }
             dest = GeneralBinSingleton.instance.transform.position;
             navigation.enabled = false;
+            character.GetComponent<Collider2D>().enabled = false;
         }
 
         public override void Exit()
