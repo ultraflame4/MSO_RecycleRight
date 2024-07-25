@@ -39,7 +39,7 @@ namespace Level
 
         public void RefreshEntities()
         {
-            entities = GetComponentsInChildren<ILevelEntity>();
+            // entities = GetComponentsInChildren<ILevelEntity>();
         }
 
         /// <summary>

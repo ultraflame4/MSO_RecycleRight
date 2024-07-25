@@ -49,9 +49,7 @@ namespace Player.FSM
             if (dir.magnitude >= .1f) return;
             rb.velocity = Vector2.zero;
             
-            // start zone once player reached zone
             // return to default state once moved to zone
-            currentZone.ActivateZone();
             fsm.SwitchState(character.DefaultState);
         }
 
