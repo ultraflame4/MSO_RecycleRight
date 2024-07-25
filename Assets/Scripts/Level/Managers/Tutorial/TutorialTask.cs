@@ -63,7 +63,7 @@ namespace Level.Tutorial
         protected void Update()
         {
             // Don't run completion check if alr compelted OR task not active.
-            if (!IsActive && !IsCompleted) return;
+            if (!IsActive || IsCompleted) return;
             var complete = CheckTaskCompletion();
             if (complete){
                 EndTask();
@@ -115,6 +115,7 @@ namespace Level.Tutorial
             IsActive = true;
             IsCompleted = true;
             SetActiveUIElements(false);
+            Debug.Log($"Ended task: {gameObject.name}");
         }
 
 
