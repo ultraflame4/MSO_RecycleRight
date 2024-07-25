@@ -28,6 +28,10 @@ namespace Level
         /// </summary>
         public Vector2 camera_target_pos=> transform.position;
         public bool zoneComplete {get; private set;}
+        /// <summary>
+        /// Skips the completetion check for the zone. Requires ForceComplete() to be called to complete the zone.
+        /// </summary>
+        public bool skipCompletionCheck = false;
         public ILevelEntity[] entities;
         public RecyclingBin[] bins;
 
@@ -77,7 +81,15 @@ namespace Level
         }
 
         private void OnTransformChildrenChanged() {
+            if (skipCompletionCheck) return;
             zoneComplete = CheckZoneFinished();
+        }
+
+        /// <summary>
+        /// Force the zone to be complete.
+        /// </summary>
+        public void ForceComplete(){
+            zoneComplete = true;
         }
 
         #region Zone Bounds
