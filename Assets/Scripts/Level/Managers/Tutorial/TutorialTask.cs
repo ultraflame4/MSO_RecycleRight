@@ -62,8 +62,12 @@ namespace Level.Tutorial
         // Update is called once per frame
         protected void Update()
         {
-            if (!IsActive) return;
-            CheckTaskCompletion();
+            // Don't run completion check if alr compelted OR task not active.
+            if (!IsActive && !IsCompleted) return;
+            var complete = CheckTaskCompletion();
+            if (complete){
+                EndTask();
+            }
         }
 
         /// <summary>
@@ -114,6 +118,10 @@ namespace Level.Tutorial
         }
 
 
+        /// <summary>
+        /// Called every frame when task is active to check if task is complete.
+        /// </summary>
+        /// <returns>True if completed, otherwise false</returns>
         public abstract bool CheckTaskCompletion();
     }
 }

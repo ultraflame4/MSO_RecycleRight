@@ -11,6 +11,12 @@ namespace Level.Tutorial
         List<TutorialTask> pendingTasks = new List<TutorialTask>();
 
         private Coroutine iterTask = null;
+        private LevelZone zone;
+        private void Start()
+        {
+            zone = GetComponentInParent<LevelZone>();
+            zone.skipCompletionCheck = true;
+        }
 
         public void OnZoneStart()
         {
@@ -31,8 +37,9 @@ namespace Level.Tutorial
             }
         }
 
-        private void OnAllTasksFinished(){
-            GetComponentInParent<LevelZone>().ForceComplete();
+        private void OnAllTasksFinished()
+        {
+            zone.ForceComplete();
         }
 
         private IEnumerator IterateTasks_Coroutine()
@@ -40,7 +47,8 @@ namespace Level.Tutorial
             foreach (var task in pendingTasks)
             {
                 task.StartTask();
-                while (!task.IsCompleted){
+                while (!task.IsCompleted)
+                {
                     yield return null;
                 }
             }

@@ -5,8 +5,9 @@ namespace Level.Tutorial
 {
     public class TutorialButtonPressTask : TutorialTaskWithInfoBox
     {
-        [Header("Button Press")]
-        [SerializeField] KeyCode[] keys;
+        [Header("Buttons")]
+        [SerializeField, Tooltip("List of keyboard keys player is required to press before the tasks finishes.")]
+        KeyCode[] keys;
         [SerializeField] int[] mouseButtons;
         int currentCount;
 
