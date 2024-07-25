@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using NPC;
+using System.Xml.Serialization;
 
 namespace Level.Tutorial
 {
@@ -19,14 +20,15 @@ namespace Level.Tutorial
     public abstract class TutorialTask : MonoBehaviour
     {
         [Header("Task")]
-        [Tooltip("Minimum duration to keep tutorial active.")]
-        [SerializeField] float minCompletionDuration = 5f;
-        [Tooltip("UI elements to show for the tutorial.")]
-        [SerializeField] GameObject[] UIElements;
+        [SerializeField, Tooltip("Minimum duration to keep tutorial active.")]
+        float minCompletionDuration = 5f;
+
+        [SerializeField, Tooltip("UI elements to show for the tutorial.")]
+        GameObject[] UIElements;
 
         [Header("Reset")]
-        [Tooltip("List of recyclables to be reset when the player needs to retry the tutorial. ")]
-        [SerializeField] protected Recyclable[] recyclables;
+        [SerializeField, Tooltip("List of recyclables to be reset when the player needs to retry the tutorial. ")]
+        protected Recyclable[] recyclables;
 
         Coroutine coroutine;
 
@@ -46,8 +48,9 @@ namespace Level.Tutorial
             IsActive = false;
             IsCompleted = false;
             // when game is starting, disable UI elements
-            SetTutorialActive(false);
-            // cache original recyclable positions and parents
+            SetActiveUIElements(false);
+
+            // Store original recyclable positions and parents
             if (recyclables == null) return;
             for (int i = 0; i < recyclables.Length; i++)
             {
@@ -59,8 +62,8 @@ namespace Level.Tutorial
         // Update is called once per frame
         protected void Update()
         {
-            if (!IsActive || !CheckTaskCompletion() || coroutine != null) return;
-            coroutine = StartCoroutine(CountDuration());
+            if (!IsActive) return;
+            CheckTaskCompletion();
         }
 
         /// <summary>
@@ -83,34 +86,33 @@ namespace Level.Tutorial
             }
         }
 
-        /// <summary>
-        /// Toggle hiding and showing of tutorial UI elements.
-        /// </summary>
-        /// <param name="active">Whether to show (true) the tutorial or not (false)</param>
-        public virtual void SetTutorialActive(bool active)
-        {
-            // set active of UI element objects
+
+        private void SetActiveUIElements(bool active){
             foreach(GameObject obj in UIElements)
             {
                 if (obj == null) continue;
-                obj.SetActive(active);
-            }
-            // update is active property
-            IsActive = active;
+                obj.SetActive(true);
+            }    
         }
+
+        /// <summary>
+        /// Starts the task
+        /// </summary>
+        public virtual void StartTask(){
+            IsActive = true;
+            SetActiveUIElements(true);
+        }
+
+        /// <summary>
+        /// Ends the task
+        /// </summary>
+        public virtual void EndTask(){
+            IsActive = true;
+            IsCompleted = true;
+            SetActiveUIElements(false);
+        }
+
 
         public abstract bool CheckTaskCompletion();
-
-        IEnumerator CountDuration()
-        {
-            yield return new WaitForSeconds(minCompletionDuration);
-            // reset tutorial
-            SetTutorialActive(false);
-            coroutine = null;
-            // mark tutorial as completed
-            IsCompleted = true;
-            // invoke event
-            TaskCompleted?.Invoke();
-        }
     }
 }
