@@ -3,8 +3,12 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class UIScrollScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class UIScrollScale : 
+        MonoBehaviour, 
+        IPointerEnterHandler, 
+        IPointerExitHandler
     {
+        [SerializeField] RectTransform target;
         [SerializeField] Vector2 scaleBoundaries;
         [SerializeField] float scaleAmount = 5f;
         Vector3 originalScale;
@@ -14,7 +18,7 @@ namespace UI
         // Start is called before the first frame update
         void Start()
         {
-            originalScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            originalScale = new Vector3(target.localScale.x, target.localScale.y, target.localScale.z);
             pointer_over_self = false;
         }
 
@@ -32,13 +36,13 @@ namespace UI
 
         void Scale(float amount)
         {
-            transform.localScale += Vector3.one * amount * Time.deltaTime;
+            target.localScale += Vector3.one * amount * Time.deltaTime;
             // ensure scale is within boundaries, only need to check one value because the scale amount is the same
             // if not within scale boundaries, reset scale to boundary
-            if (transform.localScale.x < originalScale.x - scaleBoundaries.x)
-                transform.localScale = originalScale - Vector3.one * scaleBoundaries.x;
-            else if (transform.localScale.x > originalScale.y + scaleBoundaries.y)
-                transform.localScale = originalScale + Vector3.one * scaleBoundaries.y;
+            if (target.localScale.x < originalScale.x - scaleBoundaries.x)
+                target.localScale = originalScale - Vector3.one * scaleBoundaries.x;
+            else if (target.localScale.x > originalScale.y + scaleBoundaries.y)
+                target.localScale = originalScale + Vector3.one * scaleBoundaries.y;
         }
 
         public void OnPointerEnter(PointerEventData pointerEventData)
