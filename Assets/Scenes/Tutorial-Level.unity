@@ -28297,6 +28297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticBottle_Contaminant
       objectReference: {fileID: 0}
+    - target: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2091930917230474811, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -28355,11 +28359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8611568359990708359, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.52408475
       objectReference: {fileID: 0}
     - target: {fileID: 8611568359990708359, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29231,6 +29235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_Contaminant
       objectReference: {fileID: 0}
+    - target: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2338699509537195694, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.31
@@ -29273,11 +29281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8413110272752032090, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.52408475
       objectReference: {fileID: 0}
     - target: {fileID: 8413110272752032090, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

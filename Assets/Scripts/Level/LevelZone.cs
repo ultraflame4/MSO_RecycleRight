@@ -39,7 +39,7 @@ namespace Level
 
         public void RefreshEntities()
         {
-            entities = GetComponentsInChildren<ILevelEntity>(true);
+            entities = GetComponentsInChildren<ILevelEntity>();
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace Level
         /// </summary>
         public void DeactiveZone()
         {
-            RefreshEntities();
-            foreach (var entity in entities)
+            var activeEntities = GetComponentsInChildren<ILevelEntity>();
+            foreach (var entity in activeEntities)
             {
                 // Some entities may be destroyed before the zone is deactivated (i.e enemies)
                 if (entity != null) entity.OnZoneEnd();
