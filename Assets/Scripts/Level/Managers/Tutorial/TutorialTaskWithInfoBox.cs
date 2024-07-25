@@ -11,10 +11,10 @@ namespace Level.Tutorial
         [SerializeField] protected InformationBox box;
         [SerializeField] protected bool showBox = true;
 
-        public override void SetTutorialActive(bool active)
+        public override void StartTask()
         {
-            base.SetTutorialActive(active);
-            if (box == null || !active) return;
+            base.StartTask();
+            if (box == null) return;
             box.SetInformation(text, count);
             box.ResetCount();
             box.UpdateCountUI();

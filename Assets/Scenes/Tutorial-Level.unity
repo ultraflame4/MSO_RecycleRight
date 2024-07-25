@@ -28755,6 +28755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196005928}
+  - component: {fileID: 1196005929}
   m_Layer: 0
   m_Name: Tasks
   m_TagString: Untagged
@@ -28780,6 +28781,22 @@ Transform:
   - {fileID: 1820398364}
   m_Father: {fileID: 5240765378600200609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1196005929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196005927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10345f0cc64b1994b8cb2a77939c4eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <tasks>k__BackingField:
+  - {fileID: 754969640}
+  - {fileID: 432680494}
+  - {fileID: 1820398365}
 --- !u!1 &1198889696
 GameObject:
   m_ObjectHideFlags: 0
@@ -30771,7 +30788,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1315312721146712386}
   - component: {fileID: 7641254686706731872}
-  - component: {fileID: 7641254686706731873}
   - component: {fileID: 7641254686706731874}
   m_Layer: 0
   m_Name: Level
@@ -30804,34 +30820,6 @@ MonoBehaviour:
   debug_move_to_current_zone: 0
   levelInfo: {fileID: 7641254686706731874}
   levelEnd: {fileID: 764398571}
---- !u!114 &7641254686706731873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6793962242787335996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899b7bcedc9e8f749a6cce2e39f1a28e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoneTasks:
-  - <tasks>k__BackingField:
-    - {fileID: 754969640}
-    - {fileID: 432680494}
-    - {fileID: 1820398365}
-  - <tasks>k__BackingField:
-    - {fileID: 1151258060}
-    - {fileID: 28947235}
-    - {fileID: 1458551753}
-  - <tasks>k__BackingField:
-    - {fileID: 1482208329}
-    - {fileID: 671127493}
-    - {fileID: 814320108}
-    - {fileID: 2052222644}
-    - {fileID: 1424073992}
-    - {fileID: 206437024}
 --- !u!114 &7641254686706731874
 MonoBehaviour:
   m_ObjectHideFlags: 0

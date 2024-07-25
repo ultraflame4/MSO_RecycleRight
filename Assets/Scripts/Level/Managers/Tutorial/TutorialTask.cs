@@ -91,7 +91,7 @@ namespace Level.Tutorial
             foreach(GameObject obj in UIElements)
             {
                 if (obj == null) continue;
-                obj.SetActive(true);
+                obj.SetActive(active);
             }    
         }
 
@@ -100,6 +100,7 @@ namespace Level.Tutorial
         /// </summary>
         public virtual void StartTask(){
             IsActive = true;
+            Debug.Log($"Starting task: {gameObject.name}");
             SetActiveUIElements(true);
         }
 
