@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     /// <param name="name">Name of level scene to load</param>
     public void LoadLevel(string name)
     {
-        if (delayed_switch_scene_coroutine != null || !config.levels.Any(x => x.levelInfo.name == name)) return;
+        if (delayed_switch_scene_coroutine != null || config.levels.Any(x => x.levelInfo.name == name)) return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
@@ -79,8 +79,9 @@ public class GameManager : MonoBehaviour
     /// <param name="index">Index of level name in array</param>
     public void LoadLevel(int index)
     {
-        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0)
-            return;
+        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0 || 
+            index < 0 || index >= config.levels.Length)
+                return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(config.levels[index].scene.Name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
