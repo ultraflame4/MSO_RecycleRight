@@ -133,6 +133,7 @@ namespace Level
         {
             current_zone_index = new_zone_index;
             MoveToZone(new_zone_index);
+            if (!autoChangeZone) return;
             
             // disable all other zones
             foreach (var zone in zones)

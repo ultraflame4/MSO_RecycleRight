@@ -38,12 +38,6 @@ namespace Level.Tutorial
             currentTask = zoneTasks[levelManager.current_zone_index].tasks[currentTaskIndex];
             // subscribe to task complete event
             currentTask.TaskCompleted += CompleteTask;
-            // check if tutorial is completed
-            if (currentTask.IsCompleted)
-            {
-                CompleteTask();
-                return;
-            }
             // activate tutorial
             currentTask.SetTutorialActive(true);
         }
