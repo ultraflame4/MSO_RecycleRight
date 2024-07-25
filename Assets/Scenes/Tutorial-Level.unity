@@ -30830,7 +30830,7 @@ MonoBehaviour:
   autoChangeZone: 0
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
-  levelInfo: {fileID: 0}
+  levelInfo: {fileID: 7641254686706731874}
   levelEnd: {fileID: 0}
 --- !u!114 &7641254686706731873
 MonoBehaviour:
@@ -30858,8 +30858,8 @@ MonoBehaviour:
     - {fileID: 671127493}
     - {fileID: 814320108}
     - {fileID: 2052222644}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 1424073992}
+    - {fileID: 206437024}
 --- !u!114 &7641254686706731874
 MonoBehaviour:
   m_ObjectHideFlags: 0
