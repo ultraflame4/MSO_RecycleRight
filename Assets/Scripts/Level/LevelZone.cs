@@ -22,16 +22,17 @@ namespace Level
         /// <summary>
         /// The center of the zone
         /// </summary>
-        public Vector3 center=> transform.position + (Vector3)offset;
+        public Vector3 center => transform.position + (Vector3)offset;
         /// <summary>
         /// The position the camera should target
         /// </summary>
-        public Vector2 camera_target_pos=> transform.position;
-        public bool zoneComplete {get; private set;}
+        public Vector2 camera_target_pos => transform.position;
+        public bool zoneComplete { get; private set; }
         /// <summary>
         /// Skips the completetion check for the zone. Requires ForceComplete() to be called to complete the zone.
         /// </summary>
         public bool skipCompletionCheck = false;
+
         public ILevelEntity[] entities;
         public RecyclingBin[] bins;
 
@@ -55,6 +56,10 @@ namespace Level
             {
                 entity.OnZoneStart();
             }
+            foreach (var entity in entities)
+            {
+                entity.OnZoneAfterStart();
+            }
         }
 
         /// <summary>
@@ -76,11 +81,13 @@ namespace Level
         /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
         /// </summary>
         /// <returns></returns>
-        public bool CheckZoneFinished(){
+        public bool CheckZoneFinished()
+        {
             return GetComponentsInChildren<IBinTrashItem>().Length < 1;
         }
 
-        private void OnTransformChildrenChanged() {
+        private void OnTransformChildrenChanged()
+        {
             if (skipCompletionCheck) return;
             zoneComplete = CheckZoneFinished();
         }
@@ -88,7 +95,8 @@ namespace Level
         /// <summary>
         /// Force the zone to be complete.
         /// </summary>
-        public void ForceComplete(){
+        public void ForceComplete()
+        {
             zoneComplete = true;
         }
 
@@ -120,7 +128,7 @@ namespace Level
 
         public bool PositionWithinBufferZone(Vector3 position)
         {
-            
+
             return DistanceFromEdge(position) < buffer_zone_size;
         }
         #endregion
@@ -134,7 +142,7 @@ namespace Level
             Gizmos.DrawCube(center, size);
 
             Gizmos.color = Color.green * .5f;
-            Gizmos.DrawSphere(player_startpos,.25f);
+            Gizmos.DrawSphere(player_startpos, .25f);
         }
     }
 }

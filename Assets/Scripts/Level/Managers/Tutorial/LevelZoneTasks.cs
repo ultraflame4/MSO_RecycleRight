@@ -12,6 +12,8 @@ namespace Level.Tutorial
 
         private Coroutine iterTask = null;
         private LevelZone zone;
+
+
         private void Start()
         {
             zone = GetComponentInParent<LevelZone>();
@@ -22,6 +24,14 @@ namespace Level.Tutorial
         {
             pendingTasks.AddRange(tasks);
 
+        }
+
+        public void OnZoneAfterStart()
+        {
+            foreach (var item in tasks)
+            {
+                item.ResetTask();
+            }
             if (iterTask != null)
             {
                 StopCoroutine(iterTask);

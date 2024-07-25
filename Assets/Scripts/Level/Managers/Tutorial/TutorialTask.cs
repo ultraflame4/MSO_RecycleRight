@@ -29,6 +29,8 @@ namespace Level.Tutorial
         [Header("Reset")]
         [SerializeField, Tooltip("List of recyclables to be reset when the player needs to retry the tutorial. ")]
         protected Recyclable[] recyclables;
+        [SerializeField, Tooltip("List of game objects to enable / disable.")]
+        protected GameObject[] controlledEntities;
 
         Coroutine coroutine;
 
@@ -99,12 +101,21 @@ namespace Level.Tutorial
             }    
         }
 
+        public void ResetTask()
+        {
+            foreach (var item in controlledEntities)
+            {
+                item.SetActive(IsActive);
+            }   
+        }
+
         /// <summary>
         /// Starts the task
         /// </summary>
         public virtual void StartTask(){
             IsActive = true;
             Debug.Log($"Starting task: {gameObject.name}");
+            ResetTask();
             SetActiveUIElements(true);
         }
 
@@ -124,5 +135,8 @@ namespace Level.Tutorial
         /// </summary>
         /// <returns>True if completed, otherwise false</returns>
         public abstract bool CheckTaskCompletion();
+
+
+
     }
 }

@@ -169,13 +169,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 3
   UIElements:
-  - {fileID: 509999886}
   - {fileID: 675451867}
   recyclables:
   - gameObject: {fileID: 509999886}
     prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  controlledEntities:
+  - {fileID: 509999886}
   bins:
   - {fileID: 1592388323}
   - {fileID: 478012651}
@@ -454,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &206437023
 Transform:
   m_ObjectHideFlags: 0
@@ -486,6 +487,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1198889696}
   recyclables: []
+  controlledEntities: []
   text: 
   count: 0
   box: {fileID: 0}
@@ -26363,6 +26365,7 @@ MonoBehaviour:
   - {fileID: 1980871870}
   - {fileID: 585797179}
   recyclables: []
+  controlledEntities: []
   text: Left Click to Push/Attack the Recyclable
   count: 1
   box: {fileID: 2143212988}
@@ -26945,7 +26948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &671127491
 Transform:
   m_ObjectHideFlags: 0
@@ -26977,6 +26980,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1022943420}
   recyclables: []
+  controlledEntities: []
   text: Swap to another character in the party
   count: 1
   box: {fileID: 2143212988}
@@ -27298,6 +27302,7 @@ MonoBehaviour:
   - {fileID: 734448863}
   - {fileID: 478013585}
   recyclables: []
+  controlledEntities: []
   text: Use WASD to move your character
   count: 1
   box: {fileID: 2143212988}
@@ -27844,7 +27849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &814320107
 Transform:
   m_ObjectHideFlags: 0
@@ -27882,6 +27887,7 @@ MonoBehaviour:
     prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  controlledEntities: []
   text: Clean the contaminant
   count: 1
   box: {fileID: 2143212988}
@@ -28757,6 +28763,9 @@ MonoBehaviour:
     prefab: {fileID: 6531889305799652985, guid: 4a42f65ff9f6c2e4594677a64040ada9, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  controlledEntities:
+  - {fileID: 196433225}
+  - {fileID: 1317091343}
   text: Push the recyclables into their corresponding bins.
   count: 2
   box: {fileID: 2143212988}
@@ -29387,7 +29396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1424073991
 Transform:
   m_ObjectHideFlags: 0
@@ -29419,6 +29428,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 962701374}
   recyclables: []
+  controlledEntities: []
   text: 
   count: 0
   box: {fileID: 0}
@@ -29476,6 +29486,7 @@ MonoBehaviour:
   - {fileID: 374127006}
   - {fileID: 1267533548}
   recyclables: []
+  controlledEntities: []
   text: Clean the Bin.
   count: 1
   box: {fileID: 2143212988}
@@ -29499,7 +29510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1482208328
 Transform:
   m_ObjectHideFlags: 0
@@ -29535,6 +29546,7 @@ MonoBehaviour:
     prefab: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  controlledEntities: []
   text: Reduce the Hit Points of the contaminant to 0.
   count: 1
   box: {fileID: 2143212988}
@@ -29683,6 +29695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1592119864}
+  - component: {fileID: 1592119865}
   m_Layer: 0
   m_Name: Tasks
   m_TagString: Untagged
@@ -29711,6 +29724,25 @@ Transform:
   - {fileID: 206437023}
   m_Father: {fileID: 300597343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1592119865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592119863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10345f0cc64b1994b8cb2a77939c4eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <tasks>k__BackingField:
+  - {fileID: 1482208329}
+  - {fileID: 671127493}
+  - {fileID: 814320108}
+  - {fileID: 2052222644}
+  - {fileID: 1424073992}
+  - {fileID: 206437024}
 --- !u!1001 &1592388321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29978,6 +30010,7 @@ MonoBehaviour:
     prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  controlledEntities: []
   text: Push all the recyclables into the recycling bin
   count: 2
   box: {fileID: 2143212988}
@@ -30425,7 +30458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2052222643
 Transform:
   m_ObjectHideFlags: 0
@@ -30464,6 +30497,7 @@ MonoBehaviour:
   - {fileID: 326852217}
   - {fileID: 1910549484}
   recyclables: []
+  controlledEntities: []
   text: Trigger the character's skill
   count: 2
   box: {fileID: 2143212988}
