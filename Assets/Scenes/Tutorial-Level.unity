@@ -25975,6 +25975,7 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  skipCompletionCheck: 0
   bins: []
 --- !u!1 &309369744 stripped
 GameObject:
@@ -27896,6 +27897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842363604}
+  - component: {fileID: 842363605}
   m_Layer: 0
   m_Name: Tasks
   m_TagString: Untagged
@@ -27921,6 +27923,22 @@ Transform:
   - {fileID: 1458551752}
   m_Father: {fileID: 1644321658}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842363605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842363603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10345f0cc64b1994b8cb2a77939c4eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <tasks>k__BackingField:
+  - {fileID: 1151258060}
+  - {fileID: 28947235}
+  - {fileID: 1458551753}
 --- !u!1 &899533838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
@@ -29826,6 +29844,7 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  skipCompletionCheck: 0
   bins: []
 --- !u!1001 &1784101992
 PrefabInstance:
@@ -30758,6 +30777,7 @@ MonoBehaviour:
   <offset>k__BackingField: {x: 0, y: 0}
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
+  skipCompletionCheck: 0
   bins: []
 --- !u!4 &5240765378600200609
 Transform:
@@ -30815,7 +30835,7 @@ MonoBehaviour:
   <current_zone_index>k__BackingField: 0
   zoneChangeDelay: 2.5
   binTag: Bin
-  autoChangeZone: 0
+  autoChangeZone: 1
   <camera>k__BackingField: {fileID: 354180125}
   debug_move_to_current_zone: 0
   levelInfo: {fileID: 7641254686706731874}
