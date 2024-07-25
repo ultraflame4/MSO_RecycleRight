@@ -79,7 +79,9 @@ namespace UI.LevelSelection
                 return;
             }
 
-            GameManager.Instance.LoadScene(selectedLevel.Name);
+            doorAnimation?.PlayAnimation();
+            levelDetailsMenu?.anim?.SetActive(false);
+            GameManager.Instance.LoadLevel(selectedLevel.Name);
         }
         #endregion
     }
