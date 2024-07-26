@@ -65,10 +65,10 @@ namespace UI
 
         void UpdateBoundaries()
         {
-            maxPos.x = (Screen.width / 2f) + (target.localScale.x * (target.sizeDelta.y / 4f) + padding + right);
-            maxPos.y = (Screen.height / 2f) - (target.localScale.y * (target.sizeDelta.y / 2f) + padding + up);
-            minPos.x = -(Screen.width / 2f) - (target.localScale.x * (target.sizeDelta.y / 4f) + padding + left);
-            minPos.y = -(Screen.height / 2f) + (target.localScale.y * (target.sizeDelta.y / 2f) + padding + down);
+            maxPos.x = (Canvas.sizeDelta.x / 2f) + (target.localScale.x * (target.sizeDelta.y / 4f) + padding + right);
+            maxPos.y = (Canvas.sizeDelta.y / 2f) - (target.localScale.y * (target.sizeDelta.y / 2f) + padding + up);
+            minPos.x = -(Canvas.sizeDelta.x / 2f) - (target.localScale.x * (target.sizeDelta.y / 4f) + padding + left);
+            minPos.y = -(Canvas.sizeDelta.y / 2f) + (target.localScale.y * (target.sizeDelta.y / 2f) + padding + down);
         }
 
         void KeepWithinBoundaries()
