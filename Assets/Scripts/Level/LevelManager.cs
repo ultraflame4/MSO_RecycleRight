@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using UnityEngine;
-using Level.Bins;
 using System.Linq;
-using System.Xml.Serialization;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Level
@@ -94,7 +92,6 @@ namespace Level
             // check for level completion
             if (current_zone_index >= (zones.Length - 1))
             {
-                Debug.Log("Level Completed.");
                 EndLevel();
                 return;
             }
