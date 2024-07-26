@@ -54,7 +54,6 @@ namespace Level.Tutorial
                 if (levelManager.current_zone_index == (levelManager.zones.Length - 1))
                 {
                     // handle win condition
-                    Debug.Log("Tutorial stage completed.");
                     LevelManager.Instance.EndLevel();
                     return;
                 }
