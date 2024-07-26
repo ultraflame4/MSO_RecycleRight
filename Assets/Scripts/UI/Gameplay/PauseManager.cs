@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Level;
 
 namespace UI
 {
@@ -10,6 +11,7 @@ namespace UI
         private GameObject pauseMenu;
 
         public bool Paused { get; private set; } = false;
+        private bool canPause = true;
 
         private static PauseManager _instance;
         public static PauseManager Instance
@@ -37,12 +39,14 @@ namespace UI
         {
             pauseMenu = transform.GetChild(0).gameObject;
             pauseMenu?.SetActive(false);
+            canPause = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (!Input.GetKeyDown(pauseKey)) return;
+            CheckEnded();
+            if (!canPause || !Input.GetKeyDown(pauseKey)) return;
             TogglePause();
         }
 
@@ -76,6 +80,14 @@ namespace UI
             }
 
             GameManager.Instance.LoadScene(scene_name);
+        }
+
+        void CheckEnded()
+        {
+            if (LevelManager.Instance == null || !LevelManager.Instance.LevelEnded) return;
+            canPause = false;
+            if (!Paused) return;
+            TogglePause();
         }
     }
 }

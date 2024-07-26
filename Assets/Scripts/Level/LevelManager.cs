@@ -64,11 +64,10 @@ namespace Level
 
         #endregion
 
+        Coroutine coroutine_zone_change;
 
         public LevelZone current_zone => zones[current_zone_index];
-
-        Coroutine coroutine_zone_change;
-        private bool levelEnded = false;
+        public bool LevelEnded { get; private set; } = false;
 
         public event Action<LevelZone> ZoneChanged;
 
@@ -83,7 +82,7 @@ namespace Level
         void LateUpdate()
         {
             // Skip logic if the level has ended
-            if (levelEnded) return;
+            if (LevelEnded) return;
             if (zones == null) return;
             // Skip change zone and end level logic if autoChangeZone is disabled
             if (!autoChangeZone) return;
@@ -149,7 +148,7 @@ namespace Level
 
         public void EndLevel()
         {
-            if (levelEnded) return;
+            if (LevelEnded) return;
             if (levelInfo == null)
             {
                 Debug.LogWarning("LevelInfo is missing. Cannot end level.");
@@ -161,7 +160,7 @@ namespace Level
                 Debug.LogWarning("LevelEndMenu is missing. Cannot end level.");
                 return;
             }
-            levelEnded = true;
+            LevelEnded = true;
             levelEnd.ShowEndScreen(GetCurrentScore(), levelInfo.Data.maxScore);
         }
     }
