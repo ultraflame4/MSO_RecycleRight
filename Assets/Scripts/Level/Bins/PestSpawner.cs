@@ -105,4 +105,18 @@ public class PestSpawner : MonoBehaviour
             StopCoroutine(spawnPestsCoroutine);
         }
     }
+
+    /// <summary>
+    /// Destroys all pests from this bin
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    [EasyButtons.Button]
+    public void ClearPests()
+    {
+        foreach (var pest in GetComponentsInChildren<PestController>())
+        {
+            pest.KillSelf();
+        }
+        
+    }
 }

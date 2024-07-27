@@ -106,13 +106,18 @@ public class PestController : MonoBehaviour, IBinTrashItem
     /// </summary>
     public void OnEnterBin(RecyclingBin bin)
     {
+        // Skip if the bin is already infested or is being cleaned
         if (bin.binState == BinState.INFESTED) return;
+        if (bin.binState == BinState.CLEANING) return;
+        // Skip if the pest is already dead
+        if (is_dead) return;
+        
         Debug.Log($"Pest {this} entered bin {bin} of type {bin.recyclableType}");
         bin.StartInfestation();
         KillSelf();
     }
 
-    private void KillSelf()
+    public void KillSelf()
     {
         // Check if alraedy dead, if yes skip to prevent multiple calls
         if (is_dead) return;

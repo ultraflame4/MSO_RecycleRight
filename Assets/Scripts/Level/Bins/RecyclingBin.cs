@@ -124,6 +124,8 @@ namespace Level.Bins
         {
             // Already infested skip
             if (binState == BinState.INFESTED || pending_infestation) return;
+            // If cleaning, skip infestation
+            if (binState == BinState.CLEANING) return;
 
             binState = BinState.CONTAMINATED;
             pending_infestation = true;
@@ -151,6 +153,7 @@ namespace Level.Bins
             scoreText.enabled = false;
             SetActiveCleaningEffects(true);
             pestSpawner.StopPestSpawning();
+            
 
         }
 
@@ -167,6 +170,7 @@ namespace Level.Bins
             nameText.enabled = true;
             scoreText.enabled = true;
             SetActiveCleaningEffects(false);
+            pestSpawner.ClearPests();
             pestSpawner.StopPestSpawning();
         }
 
