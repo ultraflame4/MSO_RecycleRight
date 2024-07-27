@@ -5,7 +5,7 @@ namespace Patterns.FSM
     public class StateMachine<T> : MonoBehaviour
     {
         
-        protected State<T> currentState;
+        public State<T> currentState {get; protected set;}
         public string current_state_name = "None";
 
         /// <summary>

@@ -9,7 +9,7 @@ using System;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, IStunnable
+    public class RecyclableNPC : FSMRecyclableNPC, IStunnable, IDamagable
     {
 
         #region States
@@ -104,6 +104,15 @@ namespace NPC.Recyclable
             {
                 Debug.LogWarning("IMPORTANT! contaminant_prefab is a required field! When null, it will cause this recyclable to never spawn it's contaminated version");
             }
+        }
+
+        public void Damage(float damage)
+        {
+            // Recyclables cannot be damaged (by player)
+            // They can still be damaged by contaminants.
+            // This method is here to satisfy the IDamagable interface.
+            // Please do not remove this method.
+            // Or remove IDamagable from this class.
         }
     }
 }

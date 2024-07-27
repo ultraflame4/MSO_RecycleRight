@@ -6,12 +6,14 @@ public class ContaminantAnimationEvents : MonoBehaviour {
     public void TriggerHit()
     {
         contaminantNPC.state_AttackPlayer.TriggerHit();
+        contaminantNPC.state_AttackRecyclable.TriggerHit();
     }
     public void TriggerAttackEnd()
     {
         contaminantNPC.state_AttackPlayer.EndAttack();
+        contaminantNPC.state_AttackRecyclable.TriggerHit();
     }
-        public void TriggerEnd()
+    public void TriggerEnd()
     {
         TriggerAttackEnd();
     }

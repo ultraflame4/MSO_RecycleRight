@@ -72,7 +72,7 @@ namespace NPC.Contaminants.States
                 return;
             }
 
-            if (Vector3.Distance(transform.position, closestRecyclable.transform.position) < npc.attackRange)
+            if (Vector3.Distance(transform.position, closestRecyclable.transform.position) < npc.startAttackRange)
             {
                 npc.state_AttackRecyclable.nearestRecyclable = closestRecyclable;
                 npc.SwitchState(npc.state_AttackRecyclable);
