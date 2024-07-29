@@ -2148,10 +2148,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5806307092956682881, guid: e30992eac08a718408820dd6e92c8862, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8564434415938832313, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -2167,7 +2163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1636265043}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 839ea85408f543e489b14d89bfaf31cd, type: 3}
   m_Name: 
@@ -2413,6 +2409,7 @@ Transform:
   m_Children:
   - {fileID: 1666893047}
   - {fileID: 439981753}
+  - {fileID: 1666893047}
   - {fileID: 1566695981}
   - {fileID: 1764429231}
   - {fileID: 1949332555}
