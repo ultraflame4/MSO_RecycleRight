@@ -6,7 +6,7 @@ using Level;
 
 namespace Player.Behaviours
 {
-public class EnvironmentalActivistBehaviour : Behaviour
+    public class EnvironmentalActivistBehaviour : Behaviour
     {
         [Header("Attack")]
         [SerializeField] float attackDamage = 5f;
@@ -17,6 +17,28 @@ public class EnvironmentalActivistBehaviour : Behaviour
         [SerializeField, Range(0f, 1f)] float cleanAmount = 0.6f;
         [SerializeField] LayerMask hitMask;
 
+        [Header("Passive")]
+        [SerializeField, Range(0f, 1f)] float cooldownDecrease = 0.2f;
+        float originalSkillCooldown, lastScore, currScore;
+        int scoreDifference;
+        
+        #region MonoBehaviour Callbacks
+        void Start()
+        {
+            originalSkillCooldown = data.skillCooldown;
+            lastScore = 0;
+        }
+
+        void Update()
+        {
+            if (LevelManager.Instance == null) return;
+            currScore = LevelManager.Instance.GetCurrentScore();
+            if (currScore > lastScore) TriggerPassive();
+            lastScore = currScore;
+        }
+        #endregion
+
+        #region Inherited Methods
         public override void TriggerAttack()
         {
             base.TriggerAttack();
@@ -59,6 +81,8 @@ public class EnvironmentalActivistBehaviour : Behaviour
         public override void TriggerSkill()
         {
             base.TriggerSkill();
+            // reset skill cooldown to original cooldown
+            data.skillCooldown = originalSkillCooldown;
 
             // ensure level manager is not null
             if (LevelManager.Instance == null)
@@ -80,6 +104,18 @@ public class EnvironmentalActivistBehaviour : Behaviour
                 contaminant.SpawnRecyclable();
             }
         }
+        #endregion
+
+        #region Passive
+        void TriggerPassive()
+        {
+            // scoreDifference = (int) (currScore - lastScore);
+            // if (scoreDifference <= 0) return;
+            // data.skillCooldown -= cooldownDecrease * scoreDifference;
+            // OverrideTriggerSkill = true;
+            // CanTriggerSkill 
+        }
+        #endregion
 
         protected void OnDrawGizmosSelected() 
         {

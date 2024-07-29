@@ -49,8 +49,7 @@ namespace UI
             }
             // update cooldown overlay
             cooldownOverlay.fillAmount = 1f - (cooldownManager[activeIndex] / 
-                (characterManager.character_instances[activeIndex].skillCooldown * 
-                characterManager.character_instances[activeIndex].skillCooldownMultiplier));
+                characterManager.character_instances[activeIndex].netSkillCooldown);
         }
 
         /// <summary>
