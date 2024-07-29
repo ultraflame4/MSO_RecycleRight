@@ -68,12 +68,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.5
-  m_DeadZoneHeight: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.9
-  m_SoftZoneHeight: 0.9
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -358,6 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493971440476763513}
   - component: {fileID: 5806307092956682881}
+  - component: {fileID: 2200652449047609206}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -395,11 +396,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839ea85408f543e489b14d89bfaf31cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confiner2D: {fileID: 4517138807874186986}
+  <camera>k__BackingField: {fileID: 0}
   zone_position: {x: 0, y: 0, z: 0}
   smoothTime: 0.3
   aspect: {x: 16, y: 9}
   allowPeeking: 0
+--- !u!114 &2200652449047609206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564434415938832313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5343047118262627681
 PrefabInstance:
   m_ObjectHideFlags: 0
