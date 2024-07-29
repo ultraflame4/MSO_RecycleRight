@@ -143,13 +143,8 @@ namespace NPC.Contaminant
             if (!cleanable) return;
             // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             grimeController.GrimeAmount -= clean_amount;
-            if (grimeController.GrimeAmount <= 0.1)
-            {
-                if (spawned_cleaned_prefab) return;
-                spawned_cleaned_prefab = true;
-                Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
-                Destroy(gameObject);
-            }
+            if (grimeController.GrimeAmount <= 0.1) 
+                SpawnRecyclable();
         }
 
         public void Stun(float stun_duration)
@@ -163,9 +158,13 @@ namespace NPC.Contaminant
             SwitchState(state_Stunned);
         }
 
-        public override void SwitchState(State<FSMRecyclableNPC> nextState)
+        public override void SpawnRecyclable()
         {
-            base.SwitchState(nextState);
+            base.SpawnRecyclable();
+            if (spawned_cleaned_prefab) return;
+            spawned_cleaned_prefab = true;
+            Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
+            Destroy(gameObject);
         }
     }
 }

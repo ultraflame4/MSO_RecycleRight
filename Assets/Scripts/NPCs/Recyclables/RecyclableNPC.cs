@@ -74,17 +74,23 @@ namespace NPC.Recyclable
                 secret_cleanliness--;
                 return;
             }
-            if (spawned_contaminant) return;
-            spawned_contaminant = true;
-            var contaminant = Instantiate(contaminant_prefab);
-            contaminant.transform.position = transform.position;
-            Destroy(gameObject);
+            SpawnRecyclable();
         }
 
         public void Stun(float stun_duration)
         {
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
+        }
+
+        public override void SpawnRecyclable()
+        {
+            base.SpawnRecyclable();
+            if (spawned_contaminant) return;
+            spawned_contaminant = true;
+            var contaminant = Instantiate(contaminant_prefab);
+            contaminant.transform.position = transform.position;
+            Destroy(gameObject);
         }
 
         private void OnDrawGizmosSelected()

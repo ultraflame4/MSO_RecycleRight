@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using Interfaces;
 using NPC.Contaminant;
+using Level;
 
 namespace Player.Behaviours
 {
@@ -14,13 +15,14 @@ public class EnvironmentalActivistBehaviour : Behaviour
         [SerializeField, Range(0f, 1f)] float angle = 0.45f;
         [SerializeField] float knockback = 5f;
         [SerializeField, Range(0f, 1f)] float cleanAmount = 0.6f;
+        [SerializeField] LayerMask hitMask;
 
         public override void TriggerAttack()
         {
             base.TriggerAttack();
 
             // get hit enemies
-            Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range, hitMask);
             // filter based on angle
             hits = hits
                 .Where(x => 
@@ -57,6 +59,26 @@ public class EnvironmentalActivistBehaviour : Behaviour
         public override void TriggerSkill()
         {
             base.TriggerSkill();
+
+            // ensure level manager is not null
+            if (LevelManager.Instance == null)
+            {
+                Debug.LogWarning("Level Manager could not be found! (EnvironmentalActivistBehaviour.cs)");
+                return;
+            }
+
+            // get contaminants
+            Collider2D[] hits = Physics2D.OverlapBoxAll(LevelManager.Instance.current_zone.transform.position, 
+                LevelManager.Instance.current_zone.size, hitMask);
+            ContaminantNPC[] contaminants = hits
+                .Select(x => x.GetComponent<ContaminantNPC>())
+                .Where(x => x != null)
+                .ToArray();
+            
+            foreach (ContaminantNPC contaminant in contaminants)
+            {
+                contaminant.SpawnRecyclable();
+            }
         }
 
         protected void OnDrawGizmosSelected() 
@@ -71,9 +93,14 @@ public class EnvironmentalActivistBehaviour : Behaviour
             float rotationAngle = 90f * (1f - angle);
             Vector3 directionVector = (character.pointer.position - character.transform.position).normalized;
             Debug.DrawLine(character.transform.position, character.transform.position + 
-                Quaternion.Euler(0f, 0f, rotationAngle) * (directionVector * range), Color.yellow);
+                Quaternion.Euler(0f, 0f, rotationAngle) * (directionVector * range), Color.magenta);
             Debug.DrawLine(character.transform.position, character.transform.position + 
-                Quaternion.Euler(0f, 0f, -rotationAngle) * (directionVector * range), Color.yellow);
+                Quaternion.Euler(0f, 0f, -rotationAngle) * (directionVector * range), Color.magenta);
+            // draw skill range
+            if (LevelManager.Instance == null) return;
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireCube(LevelManager.Instance.current_zone.transform.position, 
+                LevelManager.Instance.current_zone.size);
         }
     }
 }
