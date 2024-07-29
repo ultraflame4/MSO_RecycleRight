@@ -159,7 +159,7 @@ MonoBehaviour:
   tickDamage: 1
   tickStunDuration: 0.15
   tickSpeed: 1
-  skillRange: 5
+  skillRange: 7.5
   skillPullForce: 150
   pullableType: 0
   pullableMask:
