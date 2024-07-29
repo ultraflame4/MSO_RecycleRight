@@ -2208,6 +2208,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LookaheadTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4517138807874186986, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
@@ -2216,6 +2220,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 742053681}
+    - target: {fileID: 7126330843778069134, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.376507
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126330843778069134, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.38741004
+      objectReference: {fileID: 0}
     - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
