@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
-  <peek_extend>k__BackingField: 1.5
+  <peek_extend>k__BackingField: 4
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
   bins: []
@@ -230,10 +230,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 20.5, y: 13}
-      - {x: -20.5, y: 13}
-      - {x: -20.5, y: -13}
-      - {x: 20.5, y: -13}
+    - - {x: 23, y: 15.5}
+      - {x: -23, y: 15.5}
+      - {x: -23, y: -15.5}
+      - {x: 23, y: -15.5}
   m_UseDelaunayMesh: 0
 --- !u!1001 &51455069
 PrefabInstance:
@@ -2247,7 +2247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_DeadZoneWidth
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LookaheadTime
@@ -2255,7 +2255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_DeadZoneHeight
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4517138807874186986, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_BoundingShape2D
@@ -2591,7 +2591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
-  <peek_extend>k__BackingField: 1.5
+  <peek_extend>k__BackingField: 4
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
   bins: []
@@ -2666,10 +2666,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 20.5, y: 13}
-      - {x: -20.5, y: 13}
-      - {x: -20.5, y: -13}
-      - {x: 20.5, y: -13}
+    - - {x: 23, y: 15.5}
+      - {x: -23, y: 15.5}
+      - {x: -23, y: -15.5}
+      - {x: 23, y: -15.5}
   m_UseDelaunayMesh: 0
 --- !u!1001 &1764429230
 PrefabInstance:
