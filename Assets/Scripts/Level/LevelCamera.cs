@@ -30,54 +30,54 @@ namespace Level
 
         private void Adjust()
         {
-            // reference https://www.youtube.com/watch?v=PClWqhfQlpU
+            // // reference https://www.youtube.com/watch?v=PClWqhfQlpU
 
-            float current_aspect = (float)Screen.width / Screen.height;
-            float scaleHeight = current_aspect / aspect_ratio;
+            // float current_aspect = (float)Screen.width / Screen.height;
+            // float scaleHeight = current_aspect / aspect_ratio;
 
-            if (scaleHeight < 1)
-            {
-                // add pillarbox
-                Rect rect = camera.rect;
-                rect.width = 1;
-                rect.height = scaleHeight;
-                rect.x = 0;
-                rect.y = (1 - scaleHeight) / 2;
-                camera.rect = rect;
-            }
-            else
-            {
-                // add letterbox
-                float scaleWidth = 1 / scaleHeight;
-                Rect rect = camera.rect;
-                rect.width = scaleWidth;
-                rect.height = 1;
-                rect.x = (1 - scaleWidth) / 2;
-                rect.y = 0;
-                camera.rect = rect;
-            }
+            // if (scaleHeight < 1)
+            // {
+            //     // add pillarbox
+            //     Rect rect = camera.rect;
+            //     rect.width = 1;
+            //     rect.height = scaleHeight;
+            //     rect.x = 0;
+            //     rect.y = (1 - scaleHeight) / 2;
+            //     camera.rect = rect;
+            // }
+            // else
+            // {
+            //     // add letterbox
+            //     float scaleWidth = 1 / scaleHeight;
+            //     Rect rect = camera.rect;
+            //     rect.width = scaleWidth;
+            //     rect.height = 1;
+            //     rect.x = (1 - scaleWidth) / 2;
+            //     rect.y = 0;
+            //     camera.rect = rect;
+            // }
 
         }
         private void Update()
         {
-            if (lastScreenSize.x != Screen.width || lastScreenSize.y != Screen.height)
-            {
-                lastScreenSize = new Vector2(Screen.width, Screen.height);
-                Adjust();
-            }
+            // if (lastScreenSize.x != Screen.width || lastScreenSize.y != Screen.height)
+            // {
+            //     lastScreenSize = new Vector2(Screen.width, Screen.height);
+            //     Adjust();
+            // }
 
-            Vector3 target_position;
-            if (allowPeeking)
-            {
-                target_position = Vector3.Lerp(PlayerController.Instance.transform.position, zone_position, 0.8f);
+            // Vector3 target_position;
+            // if (allowPeeking)
+            // {
+            //     target_position = Vector3.Lerp(PlayerController.Instance.transform.position, zone_position, 0.8f);
 
-            }
-            else
-            {
-                target_position = zone_position;
-            }
-            target_position.z = camera.transform.position.z;
-            transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
+            // }
+            // else
+            // {
+            //     target_position = zone_position;
+            // }
+            // target_position.z = camera.transform.position.z;
+            // transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
         }
     }
 }
