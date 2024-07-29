@@ -23,10 +23,15 @@ public class ContaminantConfig
     [Tooltip("Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.")]
     public GameObject contaminantPrefab;
     /// <summary>
-    /// The attack range of the contaminant. If target is within this range, the contaminant will start attacking.
+    /// The attack range of the contaminant. If target is within this range, target will get hit.
     /// </summary>
-    [Tooltip("The attack range of the contaminant. If target is within this range, the contaminant will start attacking.")]
-    public float attackRange = 1f;
+    [Tooltip("The attack range of the contaminant. If target is within this range, target will get hit.")]
+    public float attackRange = 2f;
+    /// <summary>
+    /// If target is within this range, the contaminant will stop and start attacking.
+    /// </summary>
+    [Tooltip("If target is within this range, the contaminant will stop and start attacking")]
+    public float startAttackRange = 1f;
     /// <summary>
     /// The delay before each attack. in seconds.
     /// </summary>
@@ -83,7 +88,7 @@ public class CommonConfig
     [Tooltip("Max health for this contaminant / recyclable.")]
     public float maxHealth = 100f;
     [Tooltip("Movement speed for this contaminant / recyclable.")]
-    public float movementSpeed = 250f;
+    public float movementSpeed = 100f;
     [Tooltip("How far this contaminant / recyclable can see. (Detection range)")]
     public float sightRange = 3f;
 }

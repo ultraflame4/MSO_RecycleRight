@@ -61,6 +61,8 @@ namespace NPC.Contaminants.States
         public void TriggerHit()
         {
             if (target == null) return;
+            Debug.Log($"Hitting target {target}");
+            if (fsm.currentState != this) return;
 
             OnAttackTarget();
         }

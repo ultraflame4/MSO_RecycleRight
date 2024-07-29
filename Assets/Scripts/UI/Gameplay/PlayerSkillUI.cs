@@ -53,6 +53,14 @@ namespace UI
                 characterManager.character_instances[activeIndex].skillCooldownMultiplier));
         }
 
+        /// <summary>
+        /// Externally trigger the player's skill
+        /// </summary>
+        public void TriggerSkill()
+        {
+            PlayerController.Instance?.DefaultState?.ExternalTriggerSkill();
+        }
+
         void SetCooldownManager()
         {
             // ensure character manager is not null

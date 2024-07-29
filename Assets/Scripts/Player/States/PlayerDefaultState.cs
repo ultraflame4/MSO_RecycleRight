@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Patterns.FSM;
 
 namespace Player.FSM
@@ -38,10 +39,10 @@ namespace Player.FSM
             // update animation
             character.anim?.SetBool("IsMoving", 
                 move_input != Vector2.zero && character.Data.movementSpeed > 0f);
-            // set attack input
-            attack_input = Input.GetMouseButtonDown(0);
-            // set skill input
-            skill_input = Input.GetKeyDown(KeyCode.E);
+            // set attack input on left click when pointer is not over UI elements
+            attack_input = !EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonDown(0);
+            // set skill input when E key is pressed
+            skill_input = skill_input || Input.GetKeyDown(KeyCode.E);
         }
 
         public override void LogicUpdate()
@@ -92,6 +93,11 @@ namespace Player.FSM
             character.CharacterManager.CanSwitchCharacters = false;
             // reset velocity when exiting state
             rb.velocity = Vector2.zero;
+        }
+
+        public void ExternalTriggerSkill()
+        {
+            skill_input = true;
         }
     }
 }

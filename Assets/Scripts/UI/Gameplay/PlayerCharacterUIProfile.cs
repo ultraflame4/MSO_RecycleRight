@@ -79,6 +79,15 @@ namespace UI
             profileImage.color = characterToShow.characterSprite == null ? cacheOriginalProfileColor : Color.white;
         }
 
+        /// <summary>
+        /// Method to be called to switch to current character in the UI profile
+        /// </summary>
+        public void SwitchToCharacter()
+        {
+            if (cacheCharacterData == null) return;
+            characterManager.SwitchCharacter(Array.IndexOf(characterManager.character_instances, cacheCharacterData));
+        }
+
         // methods to update UI
         void UpdateCharacterHealth()
         {

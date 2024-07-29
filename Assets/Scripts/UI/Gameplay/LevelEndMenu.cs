@@ -21,7 +21,6 @@ public class LevelEndMenu : MonoBehaviour {
         float current_p = score / maxScore;
         foreach (var grade in GameManager.Instance.config.grades.passGrades.OrderByDescending(x => x.percentage))
         {
-
             if (current_p >= grade.percentage)
             {
                 return grade;

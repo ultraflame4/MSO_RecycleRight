@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,9 +564,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingLayerID: 164409863
+  m_SortingLayer: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -28297,6 +28297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticBottle_Contaminant
       objectReference: {fileID: 0}
+    - target: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2091930917230474811, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -28355,11 +28359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8611568359990708359, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.52408475
       objectReference: {fileID: 0}
     - target: {fileID: 8611568359990708359, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28663,7 +28667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29231,6 +29235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_Contaminant
       objectReference: {fileID: 0}
+    - target: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2338699509537195694, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.31
@@ -29273,11 +29281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8413110272752032090, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.52408475
       objectReference: {fileID: 0}
     - target: {fileID: 8413110272752032090, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29312,7 +29320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29528,6 +29536,7 @@ MonoBehaviour:
   minCompletionDuration: 5
   UIElements:
   - {fileID: 1094460797}
+  - {fileID: 1345394516}
   recyclables:
   - gameObject: {fileID: 1345394516}
     prefab: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
@@ -29860,7 +29869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30142,7 +30151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30342,7 +30351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298206162855661916, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -705,7 +705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bbcf0d3bacf5d48b4f13a00984470b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabPath: Prefabs/Player/Characters
   partySize: 3
   loadLevelDelay: 1
   config: {fileID: 11400000, guid: 4c5f914acc7877248ad6477e193426d9, type: 2}
