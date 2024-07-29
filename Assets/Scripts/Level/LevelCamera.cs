@@ -1,3 +1,4 @@
+using Cinemachine;
 using Player;
 using UnityEngine;
 
@@ -5,8 +6,8 @@ namespace Level
 {
     public class LevelCamera : MonoBehaviour
     {
-        [field: SerializeField, Tooltip("The camera component.")]
-        public new Camera camera { get; private set; }
+        [SerializeField]
+        private CinemachineConfiner2D confiner2D;
 
         [Tooltip("The target position for the camera.")]
         public Vector3 zone_position;
@@ -26,6 +27,7 @@ namespace Level
         private void Start()
         {
             Adjust();
+
         }
 
         private void Adjust()
@@ -78,6 +80,7 @@ namespace Level
             // }
             // target_position.z = camera.transform.position.z;
             // transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
+            confiner2D.m_BoundingShape2D = LevelManager.Instance.current_zone.boundary;
         }
     }
 }

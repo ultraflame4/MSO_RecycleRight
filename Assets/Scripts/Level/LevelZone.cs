@@ -33,8 +33,8 @@ namespace Level
         public bool zoneComplete { get; private set; }
         public ILevelEntity[] entities;
         public RecyclingBin[] bins;
-        [SerializeField]
-        private PolygonCollider2D boundary;
+        [field: SerializeField]
+        public PolygonCollider2D boundary {get; private set;}
 
         [Header("Debug draw")]
         public bool debug_drawLevelZone = true;

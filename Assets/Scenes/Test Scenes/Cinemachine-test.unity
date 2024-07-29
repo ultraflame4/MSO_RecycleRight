@@ -230,10 +230,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 55.5, y: 13}
-      - {x: 14.5, y: 13}
-      - {x: 14.5, y: -13}
-      - {x: 55.5, y: -13}
+    - - {x: 20.5, y: 13}
+      - {x: -20.5, y: 13}
+      - {x: -20.5, y: -13}
+      - {x: 20.5, y: -13}
   m_UseDelaunayMesh: 0
 --- !u!1001 &51455069
 PrefabInstance:
@@ -2216,22 +2216,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 742053681}
-    - target: {fileID: 7126330843778069134, guid: e30992eac08a718408820dd6e92c8862, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.376507
-      objectReference: {fileID: 0}
-    - target: {fileID: 7126330843778069134, guid: e30992eac08a718408820dd6e92c8862, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.38741004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8564434415938832313, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -2606,10 +2590,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 90.46, y: 13}
-      - {x: 49.46, y: 13}
-      - {x: 49.46, y: -13}
-      - {x: 90.46, y: -13}
+    - - {x: 20.5, y: 13}
+      - {x: -20.5, y: 13}
+      - {x: -20.5, y: -13}
+      - {x: 20.5, y: -13}
   m_UseDelaunayMesh: 0
 --- !u!1001 &1764429230
 PrefabInstance:
