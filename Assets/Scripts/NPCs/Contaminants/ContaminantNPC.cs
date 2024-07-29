@@ -10,7 +10,7 @@ using UnityEngine.AI;
 
 namespace NPC.Contaminant
 {
-    public class ContaminantNPC : FSMRecyclableNPC, ILevelEntity, IDamagable, ICleanable, IStunnable
+    public class ContaminantNPC : FSMRecyclableNPC, IDamagable, ICleanable, IStunnable
     {
         #region States
         public Stunned state_Stunned { get; private set; }
@@ -49,6 +49,8 @@ namespace NPC.Contaminant
         public bool attract_pests=false;
         [Tooltip("The prefab to instantiate when the contaminant is cleaned.")]
         public GameObject clean_prefab;
+        [Tooltip("The delay before the attack hits the target. This is used to sync the attack animation with the actual attack. In seconds.")]
+        public float attack_hit_delay = 0f;
 
         [Tooltip("The npc data to configure this npc. Please note that this will override the above settings (on awake).")]
         public TrashNpcSO npcData;
@@ -59,10 +61,12 @@ namespace NPC.Contaminant
 
         public override bool cause_infestation => attract_pests;
 
+        private bool spawned_cleaned_prefab = false;
+
         public void LoadConfig()
         {
             if (npcData == null) return;
-            Debug.Log("Overriding data using npc config...");
+
             maxHealth = npcData.common.maxHealth;
             sightRange = npcData.common.sightRange;
             attackRange = npcData.contaminantConfig.attackRange;
@@ -70,6 +74,7 @@ namespace NPC.Contaminant
             attackDamage = npcData.contaminantConfig.attackDamage;
             attackDuration = npcData.contaminantConfig.attackDuration;
             attract_pests = npcData.contaminantConfig.attract_pests;
+            attack_hit_delay = npcData.contaminantConfig.attack_hit_delay;
             cleanable = npcData.contaminantConfig.cleanable;
             if (cleanable)
             {
@@ -103,6 +108,9 @@ namespace NPC.Contaminant
             state_AttackPlayer = new AttackPlayer(this);
             state_Stunned = new Stunned(state_Idle, this, this);
             state_Death = new Death( this);
+            
+            grimeController.GrimeAmount = cleanable ? 1 : 0;
+            healthbar.value = 1f;
             SwitchState(state_Idle);
         }
 
@@ -114,11 +122,6 @@ namespace NPC.Contaminant
             Gizmos.DrawWireSphere(transform.position, sightRange);
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackRange);
-        }
-
-        public void OnZoneStart()
-        {
-            // activate the contaminant
         }
 
         public void Damage(float damage)
@@ -136,6 +139,8 @@ namespace NPC.Contaminant
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
             {
+                if (spawned_cleaned_prefab) return;
+                spawned_cleaned_prefab = true;
                 Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
                 Destroy(gameObject);
             }

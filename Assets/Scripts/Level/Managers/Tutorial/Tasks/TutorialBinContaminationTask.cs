@@ -1,7 +1,6 @@
 using System.Linq;
 using UnityEngine;
 using Level.Bins;
-using NPC;
 
 namespace Level.Tutorial
 {
@@ -20,8 +19,9 @@ namespace Level.Tutorial
             // reset recyclables
             ResetRecyclables();
             // ensure cleaned contaminant does not spawn a recyclable
-            Collider2D hit = Physics2D.OverlapCircle(recyclables[0].gameObject.transform.position, 
-                5f, LayerMask.GetMask("Recyclable"));
+            LevelZone currZone = LevelManager.Instance.zones[LevelManager.Instance.current_zone_index];
+            Collider2D hit = Physics2D.OverlapBox(currZone.transform.position, 
+                currZone.size, LayerMask.GetMask("Recyclable"));
             if (hit == null) return; 
             Destroy(hit.gameObject);
         }

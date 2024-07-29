@@ -25,21 +25,22 @@ namespace Level.Tutorial
 
         void FixedUpdate()
         {
-            if (recyclables == null || recyclables.Length <= 0 || contaminant == null) return;
+            if (completed || recyclables == null || recyclables.Length <= 0 || contaminant == null) return;
             contaminant.transform.position = recyclables[0].originalPosition;
         }
 
         public override bool CheckTaskCompletion()
         {
-            if (completed || (contaminant.healthbar.value > minHealthPercent && contaminant != null)) return false;
+            if (completed || (contaminant.healthbar.value >= minHealthPercent && contaminant != null)) return false;
 
             if (recyclables != null && recyclables.Length > 0)
             {
                 Collider2D hit = Physics2D.OverlapCircle(recyclables[0].originalPosition, 1.5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) 
+                if (hit != null || contaminant == null) 
                 {
-                    Destroy(hit.gameObject);
+                    if (hit != null) Destroy(hit.gameObject);
                     ResetRecyclables();
+                    return false;
                 }
             }
 

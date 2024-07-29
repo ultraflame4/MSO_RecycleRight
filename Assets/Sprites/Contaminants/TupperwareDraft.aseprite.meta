@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: TupperwareDraft
     originalName: 
-    pivot: {x: 0.5, y: -0.53333336}
+    pivot: {x: 0.5, y: -0.083333336}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 26
-      height: 15
+      width: 32
+      height: 24
     spriteID: 7c11e7c28ff444e49a07009ff6cff94d
     spriteBone: []
     spriteOutline: []
@@ -141,6 +141,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: TupperwareDraft_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 32
+      height: 24
+    spriteID: 2b305c17dff37b54d84a2bbbdf8612f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 36}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,14 +170,22 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: TupperwareDraft
+    - name: TupperwareDraft_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
-        y: 8
-        width: 26
-        height: 15
+        x: 0
+        y: 2
+        width: 32
+        height: 24
       spriteId: 7c11e7c28ff444e49a07009ff6cff94d
+    - name: TupperwareDraft_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 2
+        width: 32
+        height: 24
+      spriteId: 2b305c17dff37b54d84a2bbbdf8612f0
     linkedCells: []
     parentIndex: -1
   platformSettings: []

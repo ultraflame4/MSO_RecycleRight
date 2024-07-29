@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-    - NPC
-    - Bin
-    - Pest
+  - NPC
+  - Bin
+  - Pest
   layers:
   - Default
   - TransparentFX
@@ -41,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 164409863
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 3303279405
+    locked: 0
+  - name: Overlay
+    uniqueID: 4222339183
     locked: 0

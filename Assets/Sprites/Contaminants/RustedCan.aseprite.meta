@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 124
+      x: 38
+      y: 219
       width: 25
       height: 29
     spriteID: 5e7b6bb27002bf84d9d7f34810c145ed
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 124}
+    uvTransform: {x: 38, y: 219}
   - name: RustedCan_Frame_1
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -149,7 +149,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 161
+      y: 84
       width: 25
       height: 29
     spriteID: 49b9a0abad8860447862798e5a63a899
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 161}
+    uvTransform: {x: 4, y: 84}
   - name: RustedCan_Frame_2
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -169,7 +169,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 198
+      y: 121
       width: 25
       height: 29
     spriteID: eb942e68f3a36b8498154d1a054caa16
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 198}
+    uvTransform: {x: 4, y: 121}
   - name: RustedCan_Frame_3
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -188,8 +188,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 38
-      y: 4
+      x: 4
+      y: 158
       width: 25
       height: 29
     spriteID: 1d93fce18c319364bb7af158412e9e7d
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 4}
+    uvTransform: {x: 4, y: 158}
   - name: RustedCan_Frame_4
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -208,8 +208,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 38
-      y: 41
+      x: 4
+      y: 195
       width: 25
       height: 29
     spriteID: 31c88db042955b042a9d700887484f0c
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 41}
+    uvTransform: {x: 4, y: 195}
   - name: RustedCan_Frame_5
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -228,8 +228,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 38
-      y: 78
+      x: 73
+      y: 40
       width: 25
       height: 29
     spriteID: b7d49825b8ece224c8edf7c251c58e84
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 78}
+    uvTransform: {x: 73, y: 40}
   - name: RustedCan_Frame_6
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -248,8 +248,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 38
-      y: 115
+      x: 73
+      y: 77
       width: 25
       height: 29
     spriteID: b3f17e37fafbb7f4c9731b884a234c26
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 115}
+    uvTransform: {x: 73, y: 77}
   - name: RustedCan_Frame_7
     originalName: 
     pivot: {x: 0.48, y: 0}
@@ -268,8 +268,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 38
-      y: 152
+      x: 73
+      y: 114
       width: 25
       height: 29
     spriteID: 3c52cc8004379bc4e910555b983a62d4
@@ -280,8 +280,188 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 152}
+    uvTransform: {x: 73, y: 114}
   - name: RustedCan_Frame_8
+    originalName: 
+    pivot: {x: 0.5925926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 79
+      width: 27
+      height: 27
+    spriteID: 7bbf00cf760944e4f9d04a27f3c38749
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 79}
+  - name: RustedCan_Frame_9
+    originalName: 
+    pivot: {x: 0.5925926, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 114
+      width: 27
+      height: 27
+    spriteID: b3a51446f9c796c4da6682f269d86219
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 114}
+  - name: RustedCan_Frame_10
+    originalName: 
+    pivot: {x: 0.5925926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 42
+      width: 27
+      height: 29
+    spriteID: 93f3eb9be6bd2f848aeb33b3c13177e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 42}
+  - name: RustedCan_Frame_11
+    originalName: 
+    pivot: {x: 0.5925926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 149
+      width: 27
+      height: 27
+    spriteID: f7c4126dc90dc9f47a66aab92d515780
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 149}
+  - name: RustedCan_Frame_12
+    originalName: 
+    pivot: {x: 0.5925926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 184
+      width: 27
+      height: 27
+    spriteID: 3f8082bb960c2544780c915e2537f15e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 184}
+  - name: RustedCan_Frame_13
+    originalName: 
+    pivot: {x: 0.5769231, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 73
+      y: 151
+      width: 26
+      height: 24
+    spriteID: c0ae3fa3405e749408108b0383fe6aca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 73, y: 151}
+  - name: RustedCan_Frame_14
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 73
+      y: 183
+      width: 27
+      height: 23
+    spriteID: 276945e14d0ccbe469cf469544f3742b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 73, y: 183}
+  - name: RustedCan_Frame_15
+    originalName: 
+    pivot: {x: 0.42857146, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 73
+      y: 4
+      width: 28
+      height: 28
+    spriteID: 3f52115be07ec8c47882c6ae73c05624
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 73, y: 4}
+  - name: RustedCan_Frame_16
+    originalName: 
+    pivot: {x: 0.5925926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 4
+      width: 27
+      height: 30
+    spriteID: 8944a4134b37cda47a0f4d62054ad721
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 4}
+  - name: RustedCan_Frame_17
     originalName: 
     pivot: {x: 0.61538464, y: 0}
     alignment: 9
@@ -292,7 +472,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 32
-    spriteID: 7bbf00cf760944e4f9d04a27f3c38749
+    spriteID: ea542f56472301f4aa1495f936b04c67
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -301,7 +481,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: RustedCan_Frame_9
+  - name: RustedCan_Frame_18
     originalName: 
     pivot: {x: 0.61538464, y: 0}
     alignment: 9
@@ -312,7 +492,7 @@ ScriptedImporter:
       y: 44
       width: 26
       height: 32
-    spriteID: b3a51446f9c796c4da6682f269d86219
+    spriteID: 8d5aa7b96c83dda45ab392cfe366d98d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -321,26 +501,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 44}
-  - name: RustedCan_Frame_10
-    originalName: 
-    pivot: {x: 0.61538464, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 84
-      width: 26
-      height: 32
-    spriteID: 93f3eb9be6bd2f848aeb33b3c13177e9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 84}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -419,25 +579,89 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 26
-        height: 32
+        width: 27
+        height: 27
       spriteId: 7bbf00cf760944e4f9d04a27f3c38749
     - name: RustedCan_Frame_9
       frameIndex: 9
       cellRect:
         x: 0
-        y: 0
-        width: 26
-        height: 32
+        y: 3
+        width: 27
+        height: 27
       spriteId: b3a51446f9c796c4da6682f269d86219
     - name: RustedCan_Frame_10
       frameIndex: 10
       cellRect:
         x: 0
         y: 0
+        width: 27
+        height: 29
+      spriteId: 93f3eb9be6bd2f848aeb33b3c13177e9
+    - name: RustedCan_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 0
+        width: 27
+        height: 27
+      spriteId: f7c4126dc90dc9f47a66aab92d515780
+    - name: RustedCan_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: 0
+        width: 27
+        height: 27
+      spriteId: 3f8082bb960c2544780c915e2537f15e
+    - name: RustedCan_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 1
+        y: 0
+        width: 26
+        height: 24
+      spriteId: c0ae3fa3405e749408108b0383fe6aca
+    - name: RustedCan_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 4
+        y: 0
+        width: 27
+        height: 23
+      spriteId: 276945e14d0ccbe469cf469544f3742b
+    - name: RustedCan_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 4
+        y: 0
+        width: 28
+        height: 28
+      spriteId: 3f52115be07ec8c47882c6ae73c05624
+    - name: RustedCan_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: 0
+        width: 27
+        height: 30
+      spriteId: 8944a4134b37cda47a0f4d62054ad721
+    - name: RustedCan_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: 0
         width: 26
         height: 32
-      spriteId: 93f3eb9be6bd2f848aeb33b3c13177e9
+      spriteId: ea542f56472301f4aa1495f936b04c67
+    - name: RustedCan_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: 0
+        width: 26
+        height: 32
+      spriteId: 8d5aa7b96c83dda45ab392cfe366d98d
     linkedCells: []
     parentIndex: -1
   platformSettings: []

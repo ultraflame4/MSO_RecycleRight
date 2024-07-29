@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Player;
 
 namespace Level.Tutorial
@@ -19,6 +20,11 @@ namespace Level.Tutorial
         {
             if (attackCooldown != null) return;
             base.Update();
+        }
+
+        public override bool CheckTaskCompletion()
+        {
+            return !EventSystem.current.IsPointerOverGameObject() && base.CheckTaskCompletion();
         }
 
         void HandleAttack(int count)

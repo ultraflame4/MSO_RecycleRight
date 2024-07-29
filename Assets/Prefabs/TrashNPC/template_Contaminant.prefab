@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2151013705622909294}
+  grimeMaterial: {fileID: 2100000, guid: 42dae454a2376484795a82bb5b09c52d, type: 2}
   _grimeAmount: 0
 --- !u!1 &565254662581941418
 GameObject:
@@ -234,6 +235,7 @@ GameObject:
   - component: {fileID: 8032888024164147659}
   - component: {fileID: 2992538052419691700}
   - component: {fileID: 6699648712919308335}
+  - component: {fileID: 3186219814549289085}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -359,7 +361,7 @@ SpriteMask:
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &8032888024164147659
 Animator:
   serializedVersion: 5
@@ -407,6 +409,19 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &3186219814549289085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511511319222990329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc0af29284fd2c4d992ab08c46423cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contaminantNPC: {fileID: 3481361625278285539}
 --- !u!1 &2936377198808519908
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +662,7 @@ MonoBehaviour:
   m_MinValue: -0.038
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.565
+  m_Value: 0.506
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -789,7 +804,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &4470070128566506984
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -851,8 +866,8 @@ MonoBehaviour:
   attackDamage: 0
   cleanable: 0
   attract_pests: 0
-  attract_pests: 0
   clean_prefab: {fileID: 8656371540688080386, guid: 48663fa3388925d4bbdaf97a288b4d83, type: 3}
+  attack_hit_delay: 0
   npcData: {fileID: 0}
 --- !u!114 &8690451943301939409
 MonoBehaviour:

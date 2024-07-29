@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using Interfaces;
 using Level;
 using NPC;
@@ -12,13 +13,13 @@ namespace NPC.Contaminants.States
 {
     public class AttackTarget : BaseRecyclableState
     {
-        
+
         protected ContaminantNPC npc;
         public virtual IDamagable target { get; }
 
         private Coroutine attackCoroutine;
         public static int animParamTriggerAttack = Animator.StringToHash("Attack");
-        
+
 
         public AttackTarget(ContaminantNPC npc) : base(npc, npc)
         {
@@ -29,8 +30,13 @@ namespace NPC.Contaminants.States
         public override void Enter()
         {
             base.Enter();
-            navigation.ClearDestination();
-            navigation.SetDestination(PlayerController.Instance.transform);
+            // Navigation component may be disabled!
+            if (navigation != null && navigation.enabled)
+            {
+                navigation.ClearDestination();
+                navigation.StopVelocity();
+            }
+
             // Start attack coroutine
             if (attackCoroutine != null) // if coroutine active, stop it
             {
@@ -44,15 +50,24 @@ namespace NPC.Contaminants.States
             yield return new WaitForSeconds(npc.attackDelay);
             // Attack target
             // Debug.Log($"Attacking target {target}");
-            OnAttackTarget();
-            yield return new WaitForSeconds(npc.attackDuration);
-            npc.SwitchState(npc.state_Idle);
+            npc.animator?.SetTrigger(animParamTriggerAttack);
         }
 
         protected virtual void OnAttackTarget()
         {
-            npc.animator?.SetTrigger(animParamTriggerAttack);
             target?.Damage(npc.attackDamage);
+        }
+
+        public void TriggerHit()
+        {
+            if (target == null) return;
+
+            OnAttackTarget();
+        }
+
+        public void EndAttack()
+        {
+            npc.SwitchState(npc.state_Idle);
         }
 
         public override void Exit()

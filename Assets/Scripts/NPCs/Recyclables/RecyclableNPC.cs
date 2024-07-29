@@ -9,7 +9,7 @@ using System;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, IStunnable, ILevelEntity
+    public class RecyclableNPC : FSMRecyclableNPC, IStunnable
     {
 
         #region States
@@ -40,11 +40,12 @@ namespace NPC.Recyclable
         /// Recyclables do not cause infestation and hence this is always false.
         /// </summary>
         public override bool cause_infestation => false;
+        private bool spawned_contaminant = false;
 
         public void LoadConfig()
         {
             if (npcData == null) return;
-            Debug.Log("Overriding data using npc config...");
+
             if (npcData.trashNPCType != TrashNPCType.Recyclable)
             {
                 throw new ArgumentException("This RecyclableNPC is not configured as a Recyclable! Please change trashNPCType to Recyclable or use ContaminantNPC instead!");
@@ -73,6 +74,8 @@ namespace NPC.Recyclable
                 secret_cleanliness--;
                 return;
             }
+            if (spawned_contaminant) return;
+            spawned_contaminant = true;
             var contaminant = Instantiate(contaminant_prefab);
             contaminant.transform.position = transform.position;
             Destroy(gameObject);
@@ -101,11 +104,6 @@ namespace NPC.Recyclable
             {
                 Debug.LogWarning("IMPORTANT! contaminant_prefab is a required field! When null, it will cause this recyclable to never spawn it's contaminated version");
             }
-        }
-
-        public void OnZoneStart()
-        {
-            // todo activate the recyclable
         }
     }
 }

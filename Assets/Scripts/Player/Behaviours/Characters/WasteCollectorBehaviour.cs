@@ -1,5 +1,6 @@
 using UnityEngine;
 using Interfaces;
+using NPC.Contaminant;
 
 namespace Player.Behaviours
 {
@@ -165,8 +166,8 @@ namespace Player.Behaviours
 
         void FixedUpdate()
         {
-            // do not run if nothing is grabbed
-            if (!grabbed) return;
+            // do not run if nothing is grabbed, or grabbed contaminant is dead
+            if (!grabbed || hit.GetComponent<ContaminantNPC>()?.healthbar.value <= 0f) return;
             // lock position of hit enemy
             hit.transform.position = grabPosition;
             // set character movement speed to 0 to prevent movement

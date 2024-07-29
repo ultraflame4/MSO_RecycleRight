@@ -1,3 +1,5 @@
+using System.Linq;
+using Level.Bins;
 using UnityEngine;
 
 namespace Level
@@ -25,21 +27,60 @@ namespace Level
         /// The position the camera should target
         /// </summary>
         public Vector2 camera_target_pos=> transform.position;
+        public bool zoneComplete {get; private set;}
         public ILevelEntity[] entities;
-
+        public RecyclingBin[] bins;
+        
         private void Start()
+        {
+            entities = GetComponentsInChildren<ILevelEntity>();
+            bins = GetComponentsInChildren<RecyclingBin>();
+        }
+
+        public void RefreshEntities()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
         }
 
-        public void StartZone()
+        /// <summary>
+        /// Activates the zone. This is called when the player enters the zone.
+        /// </summary>
+        public void ActivateZone()
         {
-            Debug.Log("Zone started");
-            foreach (var enemy in entities)
+            foreach (var entity in entities)
             {
-                enemy.OnZoneStart();
+                entity.OnZoneStart();
             }
         }
+
+        /// <summary>
+        /// Deactivates the zone. This is called when the player leaves the zone.
+        /// </summary>
+        public void DeactiveZone()
+        {
+            var activeEntities = GetComponentsInChildren<ILevelEntity>();
+            foreach (var entity in activeEntities)
+            {
+                // Some entities may be destroyed before the zone is deactivated (i.e enemies)
+                if (entity != null) entity.OnZoneEnd();
+            }
+        }
+
+        /// <summary>
+        /// Check if the zone is finished. This is done by checking if there are any trash items left in the zone.
+        /// 
+        /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckZoneFinished(){
+            return GetComponentsInChildren<IBinTrashItem>().Length < 1;
+        }
+
+        private void OnTransformChildrenChanged() {
+            zoneComplete = CheckZoneFinished();
+        }
+
+        #region Zone Bounds
         public bool PositionWithinZone(Vector3 position)
         {
             bool x = position.x >= center.x - size.x / 2 && position.x <= center.x + size.x / 2;
@@ -70,7 +111,7 @@ namespace Level
             
             return DistanceFromEdge(position) < buffer_zone_size;
         }
-
+        #endregion
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.white;
@@ -82,7 +123,6 @@ namespace Level
 
             Gizmos.color = Color.green * .5f;
             Gizmos.DrawSphere(player_startpos,.25f);
-            
         }
     }
 }

@@ -16,11 +16,20 @@ namespace Player.FSM
             rb = character.GetComponent<Rigidbody2D>();
         }
 
+        public override void Enter()
+        {
+            base.Enter();
+            // disable collider when changing zones
+            character.Data.collider.enabled = false;
+        }
+
         public override void Exit()
         {
             base.Exit();
             // reset running animation
             character.anim?.SetBool("IsMoving", false);
+            // enable collider after zone start
+            character.Data.collider.enabled = true;
         }
 
         public override void PhysicsUpdate()
@@ -42,7 +51,7 @@ namespace Player.FSM
             
             // start zone once player reached zone
             // return to default state once moved to zone
-            currentZone.StartZone();
+            currentZone.ActivateZone();
             fsm.SwitchState(character.DefaultState);
         }
 
