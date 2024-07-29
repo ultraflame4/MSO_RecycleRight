@@ -182,7 +182,7 @@ MonoBehaviour:
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
   bins: []
-  boundary: {fileID: 22862169}
+  <boundary>k__BackingField: {fileID: 22862169}
   debug_drawLevelZone: 1
   debug_drawBufferZone: 1
   debug_drawPlayerStartPos: 1
@@ -2216,6 +2216,22 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 742053681}
+    - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537920564938440454, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537920564938440454, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.07
+      objectReference: {fileID: 0}
     - target: {fileID: 8564434415938832313, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -2294,7 +2310,7 @@ MonoBehaviour:
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 6, y: 0}
   bins: []
-  boundary: {fileID: 1640138193}
+  <boundary>k__BackingField: {fileID: 1640138193}
   debug_drawLevelZone: 1
   debug_drawBufferZone: 1
   debug_drawPlayerStartPos: 1
@@ -2519,7 +2535,7 @@ MonoBehaviour:
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 8, y: 0}
   bins: []
-  boundary: {fileID: 1724240674}
+  <boundary>k__BackingField: {fileID: 1724240674}
   debug_drawLevelZone: 1
   debug_drawBufferZone: 1
   debug_drawPlayerStartPos: 1

@@ -1,3 +1,4 @@
+using System.Collections;
 using Cinemachine;
 using Player;
 using UnityEngine;
@@ -24,6 +25,9 @@ namespace Level
         private Vector2 lastScreenSize = Vector2.zero;
         [Tooltip("Make the camera lerp between the player and the zone position. This is an experimental solution to reveal zone areas covered by the UI.")]
         public bool allowPeeking = false;
+
+
+        public bool pendingBoundsUpdate;
         private void Start()
         {
             Adjust();
@@ -60,27 +64,34 @@ namespace Level
             // }
 
         }
+
+        public void UpdateBoundingShape()
+        {
+            confiner2D.m_BoundingShape2D = LevelManager.Instance.current_zone.boundary;
+
+        }
+
         private void Update()
         {
-            // if (lastScreenSize.x != Screen.width || lastScreenSize.y != Screen.height)
-            // {
-            //     lastScreenSize = new Vector2(Screen.width, Screen.height);
-            //     Adjust();
-            // }
-
-            // Vector3 target_position;
-            // if (allowPeeking)
-            // {
-            //     target_position = Vector3.Lerp(PlayerController.Instance.transform.position, zone_position, 0.8f);
-
-            // }
-            // else
-            // {
-            //     target_position = zone_position;
-            // }
-            // target_position.z = camera.transform.position.z;
-            // transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
-            confiner2D.m_BoundingShape2D = LevelManager.Instance.current_zone.boundary;
+            if (pendingBoundsUpdate)
+            {
+                var player = PlayerController.Instance;
+                // Skip if player not found
+                if (!player) return;
+                var playerWithinZone = LevelManager.Instance?.current_zone.PositionWithinZone(player.transform.position);
+                // Skip if player not in zone
+                if (playerWithinZone != true) return;
+                // If player is in current zone,
+                pendingBoundsUpdate = false;
+                StartCoroutine(Delayed_UpdateBoundingShape());
+            }
         }
+
+        IEnumerator Delayed_UpdateBoundingShape()
+        {
+            yield return new WaitForSeconds(0.5f);
+            UpdateBoundingShape();
+        }
+
     }
 }
