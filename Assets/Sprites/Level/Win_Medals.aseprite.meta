@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Win_Medals
     originalName: 
-    pivot: {x: 0.51666665, y: 0.46774194}
+    pivot: {x: -0.11538462, y: 1.16}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 42
       y: 4
-      width: 30
-      height: 31
+      width: 26
+      height: 25
     spriteID: 0ed26a858d184ab429bee60bf924ef2c
     spriteBone: []
     spriteOutline: []
@@ -140,7 +140,287 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: 42, y: 4}
+  - name: Win_Medals_Frame_1
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 37
+      width: 26
+      height: 25
+    spriteID: bb3f1ae402297f44d86d27f1a6e1ddf4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 37}
+  - name: Win_Medals_Frame_2
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 70
+      width: 26
+      height: 25
+    spriteID: d015c022de621a347a6f05302131697e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 70}
+  - name: Win_Medals_Frame_3
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 103
+      width: 26
+      height: 25
+    spriteID: d2dfa338eee09f14db77edf016d60e1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 103}
+  - name: Win_Medals_Frame_4
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 136
+      width: 26
+      height: 25
+    spriteID: 4457084ccd6133e47a5c921bdbed6615
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 136}
+  - name: Win_Medals_Frame_3
+    originalName: 
+    pivot: {x: -0.071428575, y: 1.0689656}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 28
+      height: 29
+    spriteID: bea5536fb680cc248b4821246076700f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 124}
+  - name: Win_Medals_Frame_4
+    originalName: 
+    pivot: {x: -0.033333335, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 30
+      height: 32
+    spriteID: 24d2d16ef8775424a9781afe89539fd9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Win_Medals_Frame_6
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 169
+      width: 26
+      height: 25
+    spriteID: b029d0fcc185dec498182919094f28ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 169}
+  - name: Win_Medals_Frame_7
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 202
+      width: 26
+      height: 25
+    spriteID: ea8daad103fe07f499ef94371d6e8364
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 202}
+  - name: Win_Medals_Frame_8
+    originalName: 
+    pivot: {x: -0.071428575, y: 1.0689656}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 161
+      width: 28
+      height: 29
+    spriteID: d7aa898575746fe4a88b666921f918d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 161}
+  - name: Win_Medals_Frame_9
+    originalName: 
+    pivot: {x: -0.033333335, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 30
+      height: 32
+    spriteID: cc8dcb05f2b07dc4aa69226aec8c0855
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: Win_Medals_Frame_11
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 4
+      width: 26
+      height: 25
+    spriteID: 6365ee04e0b8da54eafe4af22f132168
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 4}
+  - name: Win_Medals_Frame_12
+    originalName: 
+    pivot: {x: -0.11538462, y: 1.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 37
+      width: 26
+      height: 25
+    spriteID: 02a0637696815fa4fa3abb7a27a61c9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 37}
+  - name: Win_Medals_Frame_13
+    originalName: 
+    pivot: {x: -0.071428575, y: 1.0689656}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 198
+      width: 28
+      height: 29
+    spriteID: 87276ae7980d67f4caa3ee0c093abbfa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 198}
+  - name: Win_Medals_Frame_14
+    originalName: 
+    pivot: {x: -0.033333335, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 84
+      width: 30
+      height: 32
+    spriteID: e1dc54dbb3ea4ad4685a24f842d1682d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 84}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,14 +430,126 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Win_Medals
+    - name: Win_Medals_Frame_0
       frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: 0ed26a858d184ab429bee60bf924ef2c
+    - name: Win_Medals_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: bb3f1ae402297f44d86d27f1a6e1ddf4
+    - name: Win_Medals_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: d015c022de621a347a6f05302131697e
+    - name: Win_Medals_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: d2dfa338eee09f14db77edf016d60e1d
+    - name: Win_Medals_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: 4457084ccd6133e47a5c921bdbed6615
+    - name: Win_Medals_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 2
+        y: 1
+        width: 28
+        height: 29
+      spriteId: bea5536fb680cc248b4821246076700f
+    - name: Win_Medals_Frame_4
+      frameIndex: 4
       cellRect:
         x: 1
         y: 0
         width: 30
-        height: 31
-      spriteId: 0ed26a858d184ab429bee60bf924ef2c
+        height: 32
+      spriteId: 24d2d16ef8775424a9781afe89539fd9
+    - name: Win_Medals_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: b029d0fcc185dec498182919094f28ec
+    - name: Win_Medals_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: ea8daad103fe07f499ef94371d6e8364
+    - name: Win_Medals_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 2
+        y: 1
+        width: 28
+        height: 29
+      spriteId: d7aa898575746fe4a88b666921f918d3
+    - name: Win_Medals_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 1
+        y: 0
+        width: 30
+        height: 32
+      spriteId: cc8dcb05f2b07dc4aa69226aec8c0855
+    - name: Win_Medals_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: 6365ee04e0b8da54eafe4af22f132168
+    - name: Win_Medals_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 3
+        y: 3
+        width: 26
+        height: 25
+      spriteId: 02a0637696815fa4fa3abb7a27a61c9b
+    - name: Win_Medals_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 2
+        y: 1
+        width: 28
+        height: 29
+      spriteId: 87276ae7980d67f4caa3ee0c093abbfa
+    - name: Win_Medals_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 1
+        y: 0
+        width: 30
+        height: 32
+      spriteId: e1dc54dbb3ea4ad4685a24f842d1682d
     linkedCells: []
     parentIndex: -1
   platformSettings:

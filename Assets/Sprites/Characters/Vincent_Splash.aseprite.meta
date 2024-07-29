@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd289fd8732c77a478b7595b8a58d6ab
+guid: 763c5b928645e7644bbf24ed1f13cc40
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BossDraft
+  - name: Vincent_Splash
     originalName: 
-    pivot: {x: 0.4464286, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 56
-      height: 53
-    spriteID: 9ce2e133704a7c946acd2b4e5ae8a3d2
+      width: 350
+      height: 197
+    spriteID: 2fcf4dadcbf8bae4e8cc60a7eee30b95
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,55 +141,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: BossDraft_Frame_1
-    originalName: 
-    pivot: {x: 0.4464286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 65
-      width: 56
-      height: 53
-    spriteID: 7384c2251029ba9428f2827b44c01f14
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 65}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 461920078
-    name: BossDraft
+    guid: 1749422759
+    name: Vincent_Splash
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: BossDraft_Frame_0
+    - name: Vincent_Splash
       frameIndex: 0
       cellRect:
-        x: 7
+        x: 0
         y: 0
-        width: 56
-        height: 53
-      spriteId: 9ce2e133704a7c946acd2b4e5ae8a3d2
-    - name: BossDraft_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 7
-        y: 0
-        width: 56
-        height: 53
-      spriteId: 7384c2251029ba9428f2827b44c01f14
+        width: 350
+        height: 197
+      spriteId: 2fcf4dadcbf8bae4e8cc60a7eee30b95
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 350, y: 197}
