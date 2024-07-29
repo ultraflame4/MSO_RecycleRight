@@ -2246,7 +2246,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LookaheadTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398392272276177953, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_DeadZoneHeight
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4517138807874186986, guid: e30992eac08a718408820dd6e92c8862, type: 3}
@@ -2267,11 +2275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.002278328
+      value: -2.5022755
       objectReference: {fileID: 0}
     - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.38741004
       objectReference: {fileID: 0}
     - target: {fileID: 7537920564938440454, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2358,7 +2366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <size>k__BackingField: {x: 38, y: 23}
   <offset>k__BackingField: {x: 0, y: 0}
-  <peek_extend>k__BackingField: 1.5
+  <peek_extend>k__BackingField: 4
   <buffer_zone_size>k__BackingField: 2.4
   <player_startpos_offset>k__BackingField: {x: 6, y: 0}
   bins: []
@@ -2410,10 +2418,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 20.5, y: 13}
-      - {x: -20.5, y: 13}
-      - {x: -20.5, y: -13}
-      - {x: 20.5, y: -13}
+    - - {x: 23, y: 15.5}
+      - {x: -23, y: 15.5}
+      - {x: -23, y: -15.5}
+      - {x: 23, y: -15.5}
   m_UseDelaunayMesh: 0
 --- !u!1001 &1666893046
 PrefabInstance:
