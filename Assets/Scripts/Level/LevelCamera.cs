@@ -9,9 +9,6 @@ namespace Level
     {
         [SerializeField]
         private CinemachineConfiner2D confiner2D;
-    
-        [Tooltip("Make the camera lerp between the player and the zone position. This is an experimental solution to reveal zone areas covered by the UI.")]
-        public bool allowPeeking = false;
         public bool pendingBoundsUpdate;
 
         public void UpdateBoundingShape()
