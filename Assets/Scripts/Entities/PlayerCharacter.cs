@@ -36,13 +36,11 @@ namespace Entity.Data
         #region Multipliers
         [HideInInspector] public float movementMultiplier = 1f;
         [HideInInspector] public float attackMultiplier = 1f;
-        [HideInInspector] public float skillCooldownMultiplier = 1f;
         #endregion
 
         #region Multiplied Data
         public float netMovementSpeed => movementSpeed * movementMultiplier;
         public float netAttackDuration => attackDuration * attackMultiplier;
-        public float netSkillCooldown => skillCooldown * skillCooldownMultiplier;
         #endregion
 
         #region Properties

@@ -1,4 +1,3 @@
-using Entity.Data;
 using Player;
 using Behaviour = Player.Behaviours.Behaviour;
 
@@ -6,9 +5,8 @@ namespace Level.Tutorial
 {
     public class TutorialSkillTask : TutorialTaskWithInfoBox
     {
-        CharacterManager characterManager;
-        Behaviour behaviour;
-        bool conditionTriggered, tutorialActivated = false;
+        Behaviour behaviour => PlayerController.Instance.CharacterBehaviour;
+        bool conditionTriggered = false;
         int currentCount;
 
         // Start is called before the first frame update
@@ -16,60 +14,21 @@ namespace Level.Tutorial
         {
             base.Start();
             currentCount = 0;
-            characterManager = PlayerController.Instance.CharacterManager;
-        }
-
-        new void Update()
-        {
-            // check for activating tutorial
-            if (!tutorialActivated && IsActive)
-            {
-                tutorialActivated = true;
-                characterManager.CharacterChanged += OnCharacterChange;
-                if (behaviour == null) behaviour = PlayerController.Instance.CharacterBehaviour;
-                behaviour.SkillTriggered += SkillTriggered;
-                behaviour.OverrideTriggerSkill = true;
-                behaviour.CanTriggerSkill = true;
-                PlayerController.Instance.Data.skillCooldownMultiplier = 0f;
-            }
-            base.Update();
         }
         
         public override bool CheckTaskCompletion()
         {
+            if (IsActive && behaviour.CooldownElasped < PlayerController.Instance.Data.skillCooldown) 
+            {
+                conditionTriggered = true;
+                behaviour.CooldownElasped = PlayerController.Instance.Data.skillCooldown;
+            }
             if (!conditionTriggered) return false;
             currentCount++;
             conditionTriggered = false;
             box.IncrementCount();
             if (count != 0 && currentCount < count) return false;
-            PlayerController.Instance.Data.skillCooldownMultiplier = 1f;
-            characterManager.CharacterChanged -= OnCharacterChange;
-            behaviour.SkillTriggered -= SkillTriggered;
-            behaviour.OverrideTriggerSkill = false;
             return true;
-        }
-
-        void OnCharacterChange(PlayerCharacter prev, PlayerCharacter curr)
-        {
-            curr.skillCooldownMultiplier = 0f;
-            behaviour = curr.GetComponent<Behaviour>();
-            if (behaviour != null) 
-            {
-                behaviour.SkillTriggered += SkillTriggered;
-                behaviour.OverrideTriggerSkill = false;
-            }
-            if (prev == null) return;
-            prev.skillCooldownMultiplier = 1f;
-            behaviour = prev.GetComponent<Behaviour>();
-            if (behaviour == null) return; 
-            behaviour.SkillTriggered -= SkillTriggered;
-            behaviour.OverrideTriggerSkill = true;
-        }
-
-        void SkillTriggered(PlayerCharacter data)
-        {
-            conditionTriggered = true;
-            behaviour.CanTriggerSkill = true;
         }
     }
 }

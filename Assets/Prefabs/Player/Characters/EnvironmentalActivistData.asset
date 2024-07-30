@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6428e1feadfac2b44842b36725aae1f5, type: 3}
+  m_Name: EnvironmentalActivistData
+  m_EditorClassIdentifier: 
+  characterName: Environmental Activist Asan
+  characterDesc: 
+  characterSprite: {fileID: -5500267626175664500, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+  maxHealth: 100
+  movementSpeed: 250
+  attackTriggerTimeFrame: 0.65
+  skillCooldown: 15
+  skillTriggerTimeFrame: 0
+  skillIcon: {fileID: -8023002164498716864, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+  attackDuration: 1.12
+  skillDuration: 1.2
+  deathDuration: 3.5
+  prefab: {fileID: 5137057441427609284, guid: 5b16f2def832224448a1264c34d1acca, type: 3}

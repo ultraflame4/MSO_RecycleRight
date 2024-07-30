@@ -31,6 +31,7 @@ namespace NPC
         }
         public SpriteRenderer spriteRenderer;
 
+        public virtual void SpawnRecyclable() {}
 
         public void OnEnterBin(RecyclingBin bin)
         {
