@@ -139,7 +139,7 @@ namespace Player.Behaviours
         void Start()
         {
             // get reference to animator
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
             // set original movement speed
             originalMovementSpeed = data.movementSpeed;
         }

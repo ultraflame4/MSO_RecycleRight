@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1197034505934309080, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e9fb227a65fc4e4ba9d2b4d28c700a7, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: objectData
       value: 
@@ -68,6 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268136941399560414, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2484056009103433632, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
     - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Name
       value: Environmental Activist Asan
@@ -76,6 +84,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8925904200375796287, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

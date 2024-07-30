@@ -74,7 +74,7 @@ ScriptedImporter:
     fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 1
+    defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
@@ -87,7 +87,7 @@ ScriptedImporter:
     fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 1
+    defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638555224099470296
+  platformSettingsDirtyTick: 638579626017975316
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Activist_Asan_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.625, y: -0.33333334}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 200}
   - name: Activist_Asan_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.6363636, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 445}
   - name: Activist_Asan_Frame_13
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.68421054, y: -0.33333334}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 251}
   - name: Activist_Asan_Frame_14
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.68421054, y: -0.3255814}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 152}
   - name: Activist_Asan_Frame_15
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.68421054, y: -0.33333334}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 301}
   - name: Activist_Asan_Frame_16
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.65217394, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 347}
   - name: Activist_Asan_Frame_17
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.65217394, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 396}
   - name: Activist_Asan_Frame_18
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.86666673, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -283,8 +283,8 @@ ScriptedImporter:
     uvTransform: {x: 86, y: 445}
   - name: Activist_Asan_Frame_19
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.8947368, y: -0.33333334}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -303,8 +303,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 351}
   - name: Activist_Asan_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.8095238, y: -0.33333334}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -323,8 +323,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 53}
   - name: Activist_Asan_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.7916667, y: -0.35}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -343,8 +343,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 299}
   - name: Activist_Asan_Frame_9
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.88235295, y: -0.35897437}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -363,8 +363,8 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 246}
   - name: Activist_Asan_Frame_10
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.88235295, y: -0.33333334}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -383,8 +383,8 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 148}
   - name: Activist_Asan_Frame_11
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.8333333, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -403,8 +403,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 401}
   - name: Activist_Asan_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.8333333, y: -0.35}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -423,8 +423,8 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 4}
   - name: Activist_Asan_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.88235295, y: -0.35}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -443,8 +443,8 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 198}
   - name: Activist_Asan_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.6363636, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -463,8 +463,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 4}
   - name: Activist_Asan_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.7222222, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -483,8 +483,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 450}
   - name: Activist_Asan_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.7222222, y: -0.35}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -503,8 +503,8 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 52}
   - name: Activist_Asan_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.7222222, y: -0.35}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -523,8 +523,8 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 100}
   - name: Activist_Asan_Frame_31
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.65000004, y: -0.35}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -543,8 +543,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 203}
   - name: Activist_Asan_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5714286, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -563,8 +563,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 310}
   - name: Activist_Asan_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5714286, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -583,8 +583,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 359}
   - name: Activist_Asan_Frame_9
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5714286, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -603,8 +603,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 408}
   - name: Activist_Asan_Frame_10
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5714286, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -623,8 +623,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 457}
   - name: Activist_Asan_Frame_11
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5714286, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -643,8 +643,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 53}
   - name: Activist_Asan_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.61904764, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -663,8 +663,8 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 103}
   - name: Activist_Asan_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.68, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -683,8 +683,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 151}
   - name: Activist_Asan_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.6666667, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -703,8 +703,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 250}
   - name: Activist_Asan_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -723,8 +723,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 102}
   - name: Activist_Asan_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.44827586, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -743,8 +743,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 261}
   - name: Activist_Asan_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.30952382, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -763,8 +763,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 163}
   - name: Activist_Asan_Frame_33
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.2888889, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -783,8 +783,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 4}
   - name: Activist_Asan_Frame_34
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.29545456, y: -0.31111112}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -803,8 +803,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Activist_Asan_Frame_35
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.32500002, y: -0.31111112}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -823,8 +823,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 57}
   - name: Activist_Asan_Frame_36
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.32500002, y: -0.31111112}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -843,8 +843,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 110}
   - name: Activist_Asan_Frame_37
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.38235295, y: -0.3414634}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
