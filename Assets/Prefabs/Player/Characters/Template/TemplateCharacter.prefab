@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1738559877431449790}
   - component: {fileID: -6801794928883840886}
+  - component: {fileID: 3779683878582211262}
   - component: {fileID: 1214702141452971629}
   - component: {fileID: 5478115462021916385}
   m_Layer: 6
@@ -176,6 +177,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!210 &3779683878582211262
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443563819890852365}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!114 &1214702141452971629
 MonoBehaviour:
   m_ObjectHideFlags: 0
