@@ -59,7 +59,7 @@ namespace NPC.Recyclable
             LoadConfig();
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             state_Idle = new(this);
             state_Stunned = new(state_Idle, this, this);
@@ -106,7 +106,7 @@ namespace NPC.Recyclable
             }
         }
 
-        public void Damage(float damage)
+        public virtual void Damage(float damage)
         {
             // Recyclables cannot be damaged (by player)
             // They can still be damaged by contaminants.
