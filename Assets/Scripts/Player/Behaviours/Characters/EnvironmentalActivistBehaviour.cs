@@ -19,6 +19,7 @@ namespace Player.Behaviours
 
         [Header("Passive")]
         [SerializeField] float cooldownDecrease = 2f;
+        
         float originalSkillCooldown, lastScore, currScore;
         int scoreDifference;
         
