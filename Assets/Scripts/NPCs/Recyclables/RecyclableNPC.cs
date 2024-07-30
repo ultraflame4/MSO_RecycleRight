@@ -67,7 +67,7 @@ namespace NPC.Recyclable
 
             Initialize(state_Idle);
         }
-        public void Contaminate(float damage)
+        public virtual void Contaminate(float damage)
         {
             if (secret_cleanliness > 0)
             {
