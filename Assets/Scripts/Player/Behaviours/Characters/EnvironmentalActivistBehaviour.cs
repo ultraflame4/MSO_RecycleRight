@@ -18,7 +18,7 @@ namespace Player.Behaviours
         [SerializeField] LayerMask hitMask;
 
         [Header("Passive")]
-        [SerializeField, Range(0f, 1f)] float cooldownDecrease = 0.2f;
+        [SerializeField] float cooldownDecrease = 2f;
         float originalSkillCooldown, lastScore, currScore;
         int scoreDifference;
         
@@ -109,11 +109,11 @@ namespace Player.Behaviours
         #region Passive
         void TriggerPassive()
         {
-            // scoreDifference = (int) (currScore - lastScore);
-            // if (scoreDifference <= 0) return;
-            // data.skillCooldown -= cooldownDecrease * scoreDifference;
-            // OverrideTriggerSkill = true;
-            // CanTriggerSkill 
+            scoreDifference = (int) (currScore - lastScore);
+            if (scoreDifference <= 0) return;
+            CooldownElasped += cooldownDecrease * scoreDifference;
+            if (CooldownElasped <= data.skillCooldown) return;
+            CooldownElasped = data.skillCooldown;
         }
         #endregion
 
