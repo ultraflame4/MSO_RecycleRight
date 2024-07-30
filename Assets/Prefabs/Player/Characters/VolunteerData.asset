@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Volunteer Vicent
   characterDesc: 
-  characterSprite: {fileID: -3249646083560479351, guid: fb8f4b826a57bae4d9d1e4cfc50f16cd, type: 3}
+  characterSprite: {fileID: 3635251773814090647, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
   movementSpeed: 250
   attackTriggerTimeFrame: 0.5

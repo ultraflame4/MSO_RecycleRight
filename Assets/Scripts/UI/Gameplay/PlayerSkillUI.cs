@@ -58,7 +58,9 @@ namespace UI
             // update active index
             activeIndex = Array.IndexOf(characterManager.character_instances, curr);
             // set character skill icon, ensure icon image is not null
-            if (iconImage != null) iconImage.sprite = curr.skillIcon;
+            if (iconImage == null) return;
+            iconImage.sprite = curr.skillIcon;
+            iconImage.SetNativeSize();
         }
     }
 }

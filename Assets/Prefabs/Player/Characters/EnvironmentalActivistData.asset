@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Environmental Activist Asan
   characterDesc: 
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: -5500267626175664500, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
   movementSpeed: 250
   attackTriggerTimeFrame: 0.65
   skillCooldown: 15
   skillTriggerTimeFrame: 0
-  skillIcon: {fileID: 0}
+  skillIcon: {fileID: -8023002164498716864, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
   attackDuration: 1.12
   skillDuration: 1.2
   deathDuration: 3.5
