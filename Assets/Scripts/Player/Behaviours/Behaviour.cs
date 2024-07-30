@@ -10,9 +10,6 @@ namespace Player.Behaviours
         protected PlayerController character;
         protected PlayerCharacter data;
 
-        // public events to be called when skill is triggered
-        public event Action<PlayerCharacter> SkillTriggered;
-
         // handle skill cooldown
         Coroutine cooldown;
         protected bool canTriggerSkill = false;
@@ -29,7 +26,7 @@ namespace Player.Behaviours
             set
             {
                 // if value is false, just set value
-                if (!value || OverrideTriggerSkill)
+                if (!value)
                 {
                     canTriggerSkill = value;
                     return;
@@ -38,16 +35,11 @@ namespace Player.Behaviours
                 // if value is true, check if coroutine is running
                 if (cooldown != null) StopCoroutine(cooldown);
                 // start a coroutine to count duration of skill cooldown
-                cooldown = StartCoroutine(CountDuration(data.netSkillCooldown, () => 
-                    {
-                        canTriggerSkill = true;
-                        cooldown = null;
-                    }
-                ));
+                cooldown = StartCoroutine(CountCooldown());
             }
         }
 
-        [HideInInspector] public bool OverrideTriggerSkill = false;
+        [HideInInspector] public float CooldownElasped = 0f;
 
         void Awake()
         {
@@ -69,8 +61,8 @@ namespace Player.Behaviours
         public virtual void TriggerAttack() {}
         public virtual void TriggerSkill() 
         {
-            // invoke event whenever skill is triggered
-            SkillTriggered?.Invoke(data);
+            // reset cooldown elasped to 0
+            CooldownElasped = 0f;
         }
 
         /// <summary>
@@ -83,6 +75,20 @@ namespace Player.Behaviours
         {
             yield return new WaitForSeconds(duration);
             callback?.Invoke();
+        }
+
+        // coroutine to count skill cooldown and update a public float based on cooldown remaining
+        private IEnumerator CountCooldown()
+        {
+            while (CooldownElasped < data.skillCooldown)
+            {
+                CooldownElasped += Time.deltaTime;
+                yield return CooldownElasped;
+            }
+
+            CooldownElasped = data.skillCooldown;
+            canTriggerSkill = true;
+            cooldown = null;
         }
     }
 }
