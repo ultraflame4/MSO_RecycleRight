@@ -16,23 +16,40 @@ namespace Player.Behaviours
         [SerializeField] float knockback = 5f;
         [SerializeField, Range(0f, 1f)] float cleanAmount = 0.6f;
         [SerializeField] LayerMask hitMask;
+        [SerializeField] GameObject attackRangeIndicator;
 
         [Header("Passive")]
         [SerializeField] float cooldownDecrease = 2f;
         
-        float originalSkillCooldown, lastScore, currScore;
+        GameObject indicatorPrefab;
+        SpriteRenderer pointerSprite;
+        bool replaceIndicator = true;
+        float lastScore, currScore;
         int scoreDifference;
         
         #region MonoBehaviour Callbacks
         void Start()
         {
-            originalSkillCooldown = data.skillCooldown;
+            // reset variables
             lastScore = 0;
+            // instantiate attack range indicator prefab
+            if (attackRangeIndicator == null) return;
+            indicatorPrefab = Instantiate(
+                attackRangeIndicator, 
+                Vector3.zero, 
+                Quaternion.identity, 
+                character.pointer
+            );
+            // get reference to pointer sprite
+            pointerSprite = character.pointer.GetComponentInChildren<SpriteRenderer>();
         }
 
         void Update()
         {
-            if (LevelManager.Instance == null) return;
+            // check whether to show attack indicator (when character is active)
+            indicatorPrefab?.SetActive(data.Enabled && replaceIndicator);
+            if (indicatorPrefab != null) pointerSprite.enabled = !data.Enabled || !replaceIndicator;
+            // check if passive is triggered
             currScore = LevelManager.Instance.GetCurrentScore();
             if (currScore > lastScore) TriggerPassive();
             lastScore = currScore;
@@ -43,6 +60,11 @@ namespace Player.Behaviours
         public override void TriggerAttack()
         {
             base.TriggerAttack();
+
+            // show original indicator when triggering attack
+            replaceIndicator = false;
+            StartCoroutine(CountDuration(data.attackDuration - (data.attackDuration * data.attackTriggerTimeFrame), 
+                () => replaceIndicator = true));
 
             // get hit enemies
             Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range, hitMask);
@@ -82,8 +104,11 @@ namespace Player.Behaviours
         public override void TriggerSkill()
         {
             base.TriggerSkill();
-            // reset skill cooldown to original cooldown
-            data.skillCooldown = originalSkillCooldown;
+
+            // show original indicator when triggering attack
+            replaceIndicator = false;
+            StartCoroutine(CountDuration(data.skillCooldown - (data.skillCooldown * data.skillTriggerTimeFrame), 
+                () => replaceIndicator = true));
 
             // ensure level manager is not null
             if (LevelManager.Instance == null)

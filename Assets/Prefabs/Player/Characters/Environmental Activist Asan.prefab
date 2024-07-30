@@ -104,11 +104,12 @@ MonoBehaviour:
   CooldownElasped: 0
   attackDamage: 5
   attackStunDuration: 0.5
-  range: 5
-  angle: 0.45
+  range: 5.5
+  angle: 0.75
   knockback: 5
   cleanAmount: 0.6
   hitMask:
     serializedVersion: 2
     m_Bits: 384
+  attackRangeIndicator: {fileID: 4567356070770474032, guid: 4bbe5576d9ba3f049a4f8ab74c1bb28b, type: 3}
   cooldownDecrease: 2
