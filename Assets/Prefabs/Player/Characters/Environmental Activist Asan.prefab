@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e9fb227a65fc4e4ba9d2b4d28c700a7, type: 2}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: objectData
       value: 
@@ -59,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4569150126318188678, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
+      objectReference: {fileID: 8925904200375796287, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85,6 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac4bd4d5cf0b494aba852b9d2ef46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OverrideTriggerSkill: 0
+  CooldownElasped: 0
+  attackDamage: 5
+  attackStunDuration: 0.5
   range: 5
   angle: 0.45
+  knockback: 5
+  cleanAmount: 0.6
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
+  cooldownDecrease: 2
