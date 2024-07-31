@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04f1f6599f6361246b8527e256f6e895
+guid: 59ab680fc9a88e44f8db9b1efbb595ae
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 8
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638578453445843551
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Fountain_Frame_0
+  - name: BigBin
     originalName: 
-    pivot: {x: 0.47826087, y: 0}
+    pivot: {x: 0.5, y: -0.03448276}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 23
-      height: 31
-    spriteID: 7b5e114a9c40a4b4bb43472cf51fb308
+      width: 28
+      height: 29
+    spriteID: f569217dd761ac24a91944b373345349
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,106 +141,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Fountain_Frame_1
-    originalName: 
-    pivot: {x: 0.47826087, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 43
-      width: 23
-      height: 31
-    spriteID: de1ea7b141ec88e40b45ba21aa136e14
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 43}
-  - name: Fountain_Frame_2
-    originalName: 
-    pivot: {x: 0.47826087, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 82
-      width: 23
-      height: 31
-    spriteID: 3cc89734198389a4aa5a7be93888d64c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 82}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1250968922
-    name: Fountain
+    guid: 1312021077
+    name: BigBin
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Fountain_Frame_0
+    - name: BigBin
       frameIndex: 0
       cellRect:
-        x: 5
-        y: 0
-        width: 23
-        height: 31
-      spriteId: 7b5e114a9c40a4b4bb43472cf51fb308
-    - name: Fountain_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 5
-        y: 0
-        width: 23
-        height: 31
-      spriteId: de1ea7b141ec88e40b45ba21aa136e14
-    - name: Fountain_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 5
-        y: 0
-        width: 23
-        height: 31
-      spriteId: 3cc89734198389a4aa5a7be93888d64c
+        x: 2
+        y: 1
+        width: 28
+        height: 29
+      spriteId: f569217dd761ac24a91944b373345349
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
