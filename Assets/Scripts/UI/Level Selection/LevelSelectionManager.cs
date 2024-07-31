@@ -7,6 +7,7 @@ namespace UI.LevelSelection
     {
         [SerializeField] TrainDoorAnimation doorAnimation;
         [SerializeField] LevelDetailsMenu levelDetailsMenu;
+        [SerializeField] UIFadeAnimation exitSceneBackground;
         SceneReference selectedLevel;
 
         // Start is called before the first frame update
@@ -81,6 +82,7 @@ namespace UI.LevelSelection
 
             doorAnimation?.PlayAnimation();
             levelDetailsMenu?.anim?.SetActive(false);
+            exitSceneBackground?.SetActive(true);
             GameManager.Instance.LoadLevel(selectedLevel.Name);
         }
         #endregion

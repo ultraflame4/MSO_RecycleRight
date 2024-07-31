@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c01cff58beb80704ba9e155c8d5284b1
+guid: 3560f475a373e9240aee591ec1bc0b49
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 12
+    spritePixelsToUnits: 8
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638578459887763784
+  platformSettingsDirtyTick: 638578546207892489
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: ItsJustALamp
+  - name: Tree
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.55, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 8
-      height: 30
-    spriteID: 22c2eb8098a02a3419d2e964c46de7ac
+      width: 20
+      height: 27
+    spriteID: 3ef53738c16efc043a9ed657bd288cb8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 854535787
-    name: ItsJustALamp
+    guid: 780980726
+    name: Tree
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: ItsJustALamp
+    - name: Tree
       frameIndex: 0
       cellRect:
-        x: 12
+        x: 5
         y: 0
-        width: 8
-        height: 30
-      spriteId: 22c2eb8098a02a3419d2e964c46de7ac
+        width: 20
+        height: 27
+      spriteId: 3ef53738c16efc043a9ed657bd288cb8
     linkedCells: []
     parentIndex: -1
   platformSettings:

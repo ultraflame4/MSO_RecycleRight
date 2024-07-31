@@ -104,7 +104,7 @@ namespace Player
             // set data to new character
             Data = data;
             // set animator
-            _anim = data.GetComponent<Animator>();
+            _anim = data.GetComponentInChildren<Animator>();
             // set behaviour to new character behaviour
             Behaviour newBehaviour = data.GetComponent<Behaviour>();
             // ensure behaviour is not null before assigning to variable

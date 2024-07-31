@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1178533468244114721
+--- !u!1001 &8854300372648236233
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,11 @@ PrefabInstance:
     - target: {fileID: -6992295730688417858, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 5bc120c1cafb8f245b430aa283b08bc4, type: 2}
+      objectReference: {fileID: 9100000, guid: 0e9fb227a65fc4e4ba9d2b4d28c700a7, type: 2}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Size.y
       value: 3.5
@@ -23,39 +27,11 @@ PrefabInstance:
     - target: {fileID: 1197034505934309080, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 5bc120c1cafb8f245b430aa283b08bc4, type: 2}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: skillIcon
-      value: 
-      objectReference: {fileID: 3155246883752744553, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+      objectReference: {fileID: 9100000, guid: 0e9fb227a65fc4e4ba9d2b4d28c700a7, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: characterName
-      value: Waste Collector Wilson
-      objectReference: {fileID: 0}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: skillCooldown
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: skillDuration
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: attackDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: characterSprite
-      value: 
-      objectReference: {fileID: -4739837699357375595, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
-    - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-      propertyPath: skillTriggerTimeFrame
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: c5935cf5ed5773e42878dc2941262a1e, type: 2}
     - target: {fileID: 1738559877431449790, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -99,22 +75,22 @@ PrefabInstance:
     - target: {fileID: 4268136941399560414, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6869229262029090571, guid: 6b55b990c9a95a54790a068214a3905d, type: 3}
+      objectReference: {fileID: 2484056009103433632, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
     - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Name
-      value: Waste Collector Wilson
+      value: Environmental Activist Asan
       objectReference: {fileID: 0}
     - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6869229262029090571, guid: 6b55b990c9a95a54790a068214a3905d, type: 3}
+      objectReference: {fileID: 8925904200375796287, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
     - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -122,35 +98,34 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2666946962269136698}
+      addedObject: {fileID: 7519846797922421828}
   m_SourcePrefab: {fileID: 100100000, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
---- !u!1 &3310225104491134764 stripped
+--- !u!1 &5137057441427609284 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
-  m_PrefabInstance: {fileID: 1178533468244114721}
+  m_PrefabInstance: {fileID: 8854300372648236233}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2666946962269136698
+--- !u!114 &7519846797922421828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310225104491134764}
+  m_GameObject: {fileID: 5137057441427609284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3507b157e337ff54fa256935d14db22c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ac4bd4d5cf0b494aba852b9d2ef46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CooldownElasped: 0
-  grabDamage: 7
-  grabRange: 1.5
-  grabOffset: {x: 1, y: 0.5}
+  attackDamage: 5
+  attackStunDuration: 0.5
+  range: 5.5
+  angle: 0.75
+  knockback: 5
+  cleanAmount: 0.6
   hitMask:
     serializedVersion: 2
     m_Bits: 384
-  grabEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
-  throwDamage: 15
-  throwStunDuration: 0.75
-  throwForce: 25
-  throwEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
-  garbageTruckPrefab: {fileID: 1001936688018432966, guid: db588a3d9116d5d44aee3b344c406de9, type: 3}
+  attackRangeIndicator: {fileID: 4567356070770474032, guid: 4bbe5576d9ba3f049a4f8ab74c1bb28b, type: 3}
+  cooldownDecrease: 2

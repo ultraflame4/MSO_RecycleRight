@@ -6,7 +6,6 @@ namespace Player.FSM
 {
     public class PlayerMoveToZoneState : State<PlayerController>
     {
-        LevelZone currentZone;
         Vector3 dest;
         Rigidbody2D rb;
 
@@ -58,8 +57,6 @@ namespace Player.FSM
         {
             // ignore zone 1
             if (LevelManager.Instance.current_zone_index == 0) return;
-            // set current zone
-            currentZone = current_zone;
             // set move force
             dest = (Vector3)current_zone.player_startpos;
             dest.z = character.transform.position.z;

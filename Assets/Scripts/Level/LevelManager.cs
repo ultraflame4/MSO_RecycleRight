@@ -111,9 +111,10 @@ namespace Level
         public void MoveToZone(int index)
         {
             current_zone_index = index;
-            camera.zone_position = current_zone.transform.position;
             // call event when moving to new zone
+            // camera.ClearBounding();
             ZoneChanged?.Invoke(current_zone);
+            camera.pendingBoundsUpdate=true;
         }
 
         private void OnValidate()
