@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 8925904200375796287, guid: f76092d2b9572d0429952bc23a77b40d, type: 3}
     - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_LocalPosition.y
@@ -118,10 +118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CooldownElasped: 0
-  attackDamage: 5
+  attackDamage: 10
+  damageDropoffRange: 0.32
   attackStunDuration: 0.5
   range: 5.5
-  angle: 0.75
+  angle: 0.65
   knockback: 5
   cleanAmount: 0.6
   hitMask:
