@@ -56,7 +56,7 @@ namespace Player.BinCleaning
             // get reference to the character data of this character
             currentCharacterData = GetComponent<PlayerCharacter>();
             // get reference to animator
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
             // subscribe to character change event
             controller.CharacterManager.CharacterChanged += OnCharacterChange;
             // subscribe to zone change event

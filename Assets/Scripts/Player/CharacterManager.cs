@@ -30,7 +30,6 @@ namespace Player
             {
                 GameObject new_character = Instantiate(characters[i], container);
                 character_instances[i] = new_character.GetComponent<PlayerCharacter>();
-                new_character.GetComponent<Renderer>().enabled = false;
             }
 
             // ensure character instances is filled before setting first active character

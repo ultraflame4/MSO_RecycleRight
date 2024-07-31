@@ -75,6 +75,8 @@ namespace UI
             if (profileImage == null) return;
             // set profile image of character
             profileImage.sprite = characterToShow.characterSprite;
+            // set the profile to native size
+            profileImage.SetNativeSize();
             // if no sprite is found, set default sprite, otherwise set color to white to show sprite
             profileImage.color = characterToShow.characterSprite == null ? cacheOriginalProfileColor : Color.white;
         }
