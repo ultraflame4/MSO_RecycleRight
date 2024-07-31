@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CooldownElasped: 0
-  attackDamage: 5
+  attackDamage: 10
   attackStunDuration: 0.5
   range: 5.5
-  angle: 0.75
+  angle: 0.65
   knockback: 5
   cleanAmount: 0.6
   hitMask:
