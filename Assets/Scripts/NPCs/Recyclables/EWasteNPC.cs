@@ -88,6 +88,7 @@ namespace NPC.Recyclable
             yield return null;
             // Stop all brains.
             state_Stunned.pause_timer=true;
+            navigation.StopVelocity();
             SwitchState(state_Stunned);
             animator.enabled=false;
             // Queue explosion;
@@ -101,7 +102,7 @@ namespace NPC.Recyclable
                 yield return null;
             }
             spriteRenderer.enabled = false;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
 

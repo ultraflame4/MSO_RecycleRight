@@ -10150,7 +10150,7 @@ MonoBehaviour:
   fireParticles: {fileID: 4040353800357091445}
   mask: {fileID: 283965770635387757}
   timeToDestroy: 10
-  timeToDisintegrate: 1
+  timeToDisintegrate: 3
 --- !u!70 &5984690008351332758
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
