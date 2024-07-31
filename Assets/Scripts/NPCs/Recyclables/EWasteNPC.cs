@@ -11,16 +11,22 @@ namespace NPC.Recyclable
         public ParticleSystem smokeParticles;
         public SpriteRenderer fireSpriteR;
         public ParticleSystem fireParticles;
+        public SpriteMask mask;
 
         [Tooltip("Once on fire, how long does it take to destroy the NPC?")]
         public float timeToDestroy = 10f;
-        private float progress = 0;
-        bool onFire => progress > 0f;
+        [Tooltip("Once on destroyed, how long does it take to disintegrate the NPC?")]
+        public float timeToDisintegrate = 1f;
+        private float fire_progress = 0;
+        private float disintegrate_progress = 0;
+        bool onFire => fire_progress > 0f;
 
         Coroutine fireCoroutine;
 
-        protected override void Start() {
+        protected override void Start()
+        {
             base.Start();
+            mask.alphaCutoff = 0;
             fireSpriteR.enabled = false;
         }
 
@@ -51,13 +57,13 @@ namespace NPC.Recyclable
         IEnumerator FireDamageProgress_Coroutine()
         {
             bool startedFire = false;
-            while (progress < 1)
+            while (fire_progress < 1)
             {
                 var emission = smokeParticles.emission;
-                emission.rateOverTime = Mathf.Lerp(startSmokeParticleCount, endSmokeParticleCount, progress);
-                progress += Time.deltaTime / timeToDestroy;
+                emission.rateOverTime = Mathf.Lerp(startSmokeParticleCount, endSmokeParticleCount, fire_progress);
+                fire_progress += Time.deltaTime / timeToDestroy;
 
-                if (progress > 0.25f)
+                if (fire_progress > 0.25f)
                 {
                     // https://discussions.unity.com/t/particlesystem-play-does-not-play-particle/78698/3
                     // Particle systems stops emitting particles when play is called while it is already playing.
@@ -68,12 +74,34 @@ namespace NPC.Recyclable
                         fireParticles.Play();
                     }
                 }
-                if (progress > 0.5f)
+                if (fire_progress > 0.5f)
                 {
                     fireSpriteR.enabled = true;
                 }
                 yield return null;
             }
+            fireSpriteR.enabled = false;
+
+            smokeParticles.Stop();
+            fireParticles.Stop();
+
+            yield return null;
+            // Stop all brains.
+            state_Stunned.pause_timer=true;
+            SwitchState(state_Stunned);
+            animator.enabled=false;
+            // Queue explosion;
+
+            yield return new WaitForSeconds(0.25f);
+            while (disintegrate_progress < 1)
+            {
+                disintegrate_progress += Time.deltaTime / timeToDisintegrate;
+                spriteRenderer.color = Color.black;
+                mask.alphaCutoff = disintegrate_progress;
+                yield return null;
+            }
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(2f);
             Destroy(gameObject);
         }
 

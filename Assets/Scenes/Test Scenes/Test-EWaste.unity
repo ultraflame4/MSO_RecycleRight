@@ -457,14 +457,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Battery_Recyclable
       objectReference: {fileID: 0}
-    - target: {fileID: 9119363732313757664, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119363732313757664, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
