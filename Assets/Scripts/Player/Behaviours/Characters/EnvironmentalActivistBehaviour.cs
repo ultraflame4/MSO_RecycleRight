@@ -77,7 +77,7 @@ namespace Player.Behaviours
                         float dot = Vector3.Dot((character.pointer.position - character.transform.position).normalized, 
                             (x.transform.position - character.transform.position).normalized);
                         return (dot <= 1f && dot >= angle) || 
-                            Vector3.Distance(x.transform.position, character.transform.position) <= (range * dropoffScale);
+                            Vector3.Distance(x.transform.position, character.transform.position) <= (range * damageDropoffRange);
                     })
                 .ToArray();
 
@@ -89,8 +89,7 @@ namespace Player.Behaviours
 
                 // calculate dropoff
                 distance = Vector3.Distance(hit.transform.position, character.transform.position);
-                dropoffScale = distance <= (range * dropoffScale) ? 2f : (distance / range);
-                Debug.Log($"distance: {distance}, scale: {dropoffScale}");
+                dropoffScale = distance <= (range * damageDropoffRange) ? 2f : Mathf.Clamp01(1f - (distance / range));
 
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
