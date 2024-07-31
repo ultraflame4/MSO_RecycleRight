@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ca37f1e734179940bb2767308d49b5d
+guid: d79009e87940228458c01bc3972b21b7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: OldPhone
+  - name: BombSmoke_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
+    pivot: {x: 0.56, y: -1.0952381}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 42
-      width: 14
-      height: 29
-    spriteID: 7147e4855d59ed544a012f874ff60d2e
+      x: 4
+      y: 75
+      width: 25
+      height: 21
+    spriteID: a8cc4b633484227498f231685d187389
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,59 +140,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 35, y: 42}
-  - name: OldPhone_Frame_1
+    uvTransform: {x: 4, y: 75}
+  - name: BombSmoke_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 35
-      y: 79
-      width: 14
-      height: 29
-    spriteID: 77dc6313f26ede7459accbcca2a44fb0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 35, y: 79}
-  - name: OldPhone_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 60
-      y: 4
-      width: 14
-      height: 29
-    spriteID: 74bc2eac5c01afd49853b8d242ad0aac
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 60, y: 4}
-  - name: OldPhone_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
+    pivot: {x: 0.5, y: -0.84}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 42
-      width: 20
-      height: 29
-    spriteID: 6c09d7dc2a7c6c848a706c7f2f69141b
+      width: 32
+      height: 25
+    spriteID: e8b870a7c9dbea041ac0dca4e19fcbdc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,18 +161,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 42}
-  - name: OldPhone_Frame_4
+  - name: BombSmoke_Frame_2
     originalName: 
-    pivot: {x: 0.5217391, y: -0.033333335}
+    pivot: {x: 0.48387095, y: -0.5666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 23
+      width: 31
       height: 30
-    spriteID: b9247bb3fed38a64e80a0fcdf55eae88
+    spriteID: 3a8ec4da8e5ad7449ac18521abb6b03b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -221,115 +181,43 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: OldPhone_Frame_5
-    originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 79
-      width: 20
-      height: 29
-    spriteID: 14d1f8febbaa09640a722ce1e0e9f2cf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 79}
-  - name: OldPhone_Frame_6
-    originalName: 
-    pivot: {x: 0.5294118, y: -0.033333335}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 35
-      y: 4
-      width: 17
-      height: 30
-    spriteID: 31290233bb8ef404aa7eff804c8eb1b5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 35, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1437739675
-    name: OldPhone
+    guid: 877831685
+    name: BombSmoke
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: OldPhone_Frame_0
+    - name: BombSmoke_Frame_0
       frameIndex: 0
       cellRect:
-        x: 9
-        y: 1
-        width: 14
-        height: 29
-      spriteId: 7147e4855d59ed544a012f874ff60d2e
-    - name: OldPhone_Frame_1
+        x: 18
+        y: 23
+        width: 25
+        height: 21
+      spriteId: a8cc4b633484227498f231685d187389
+    - name: BombSmoke_Frame_1
       frameIndex: 1
       cellRect:
-        x: 9
-        y: 1
-        width: 14
-        height: 29
-      spriteId: 77dc6313f26ede7459accbcca2a44fb0
-    - name: OldPhone_Frame_2
+        x: 16
+        y: 21
+        width: 32
+        height: 25
+      spriteId: e8b870a7c9dbea041ac0dca4e19fcbdc
+    - name: BombSmoke_Frame_2
       frameIndex: 2
       cellRect:
-        x: 9
-        y: 1
-        width: 14
-        height: 29
-      spriteId: 74bc2eac5c01afd49853b8d242ad0aac
-    - name: OldPhone_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 6
-        y: 1
-        width: 20
-        height: 29
-      spriteId: 6c09d7dc2a7c6c848a706c7f2f69141b
-    - name: OldPhone_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 4
-        y: 1
-        width: 23
+        x: 17
+        y: 17
+        width: 31
         height: 30
-      spriteId: b9247bb3fed38a64e80a0fcdf55eae88
-    - name: OldPhone_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 6
-        y: 1
-        width: 20
-        height: 29
-      spriteId: 14d1f8febbaa09640a722ce1e0e9f2cf
-    - name: OldPhone_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 7
-        y: 1
-        width: 17
-        height: 30
-      spriteId: 31290233bb8ef404aa7eff804c8eb1b5
+      spriteId: 3a8ec4da8e5ad7449ac18521abb6b03b
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 64, y: 64}

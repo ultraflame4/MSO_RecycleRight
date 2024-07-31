@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ca37f1e734179940bb2767308d49b5d
+guid: 13ca91f24e3560e47883e45b6b4330d9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,78 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: OldPhone
+  - name: Fire FX_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 35
-      y: 42
-      width: 14
-      height: 29
-    spriteID: 7147e4855d59ed544a012f874ff60d2e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 35, y: 42}
-  - name: OldPhone_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 35
-      y: 79
-      width: 14
-      height: 29
-    spriteID: 77dc6313f26ede7459accbcca2a44fb0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 35, y: 79}
-  - name: OldPhone_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 60
-      y: 4
-      width: 14
-      height: 29
-    spriteID: 74bc2eac5c01afd49853b8d242ad0aac
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 60, y: 4}
-  - name: OldPhone_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
+    pivot: {x: 0.6, y: -0.8333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 42
-      width: 20
-      height: 29
-    spriteID: 6c09d7dc2a7c6c848a706c7f2f69141b
+      y: 54
+      width: 5
+      height: 6
+    spriteID: d3aa500d923460b40af0c3e0c9945746
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,19 +140,79 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 42}
-  - name: OldPhone_Frame_4
+    uvTransform: {x: 4, y: 54}
+  - name: Fire FX_Frame_1
     originalName: 
-    pivot: {x: 0.5217391, y: -0.033333335}
+    pivot: {x: 0.5, y: -0.71428573}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 20
+      width: 6
+      height: 7
+    spriteID: c2f92b65c7b5b7d4e8683e46a6279b86
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 20}
+  - name: Fire FX_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 38
+      width: 6
+      height: 8
+    spriteID: cb726b47a4a24cf4bad339651a880673
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 38}
+  - name: Fire FX_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.5555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 21
+      width: 6
+      height: 9
+    spriteID: 8245ee9d0097c824e98cb8074c260236
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 21}
+  - name: Fire FX_Frame_4
+    originalName: 
+    pivot: {x: 0.5714286, y: -0.5555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 23
-      height: 30
-    spriteID: b9247bb3fed38a64e80a0fcdf55eae88
+      width: 7
+      height: 9
+    spriteID: 20ab33a33e55835499d80f299ad64aae
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -221,38 +221,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: OldPhone_Frame_5
+  - name: Fire FX_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.03448276}
+    pivot: {x: 0.5, y: -0.625}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 79
-      width: 20
-      height: 29
-    spriteID: 14d1f8febbaa09640a722ce1e0e9f2cf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 79}
-  - name: OldPhone_Frame_6
-    originalName: 
-    pivot: {x: 0.5294118, y: -0.033333335}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 35
+      x: 19
       y: 4
-      width: 17
-      height: 30
-    spriteID: 31290233bb8ef404aa7eff804c8eb1b5
+      width: 6
+      height: 8
+    spriteID: 5cc7bf6faac3191428a5ab87abe5bb62
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -260,76 +240,152 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 35, y: 4}
+    uvTransform: {x: 19, y: 4}
+  - name: Fire FX_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -1.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 35
+      width: 6
+      height: 5
+    spriteID: 57ae70dafb766e34fbd0e5f8cd734ae2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 35}
+  - name: Fire FX_Frame_7
+    originalName: 
+    pivot: {x: 0.6, y: -1.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 48
+      width: 5
+      height: 4
+    spriteID: c24bd331ebfda5e46bb484cb2706d501
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 48}
+  - name: Fire FX_Frame_8
+    originalName: 
+    pivot: {x: 0.6, y: -2.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 4
+      width: 5
+      height: 3
+    spriteID: 9c14f028cf94f9743b357042b3d30a5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1437739675
-    name: OldPhone
+    guid: -1367037916
+    name: Fire FX
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: OldPhone_Frame_0
+    - name: Fire FX_Frame_0
       frameIndex: 0
       cellRect:
-        x: 9
-        y: 1
-        width: 14
-        height: 29
-      spriteId: 7147e4855d59ed544a012f874ff60d2e
-    - name: OldPhone_Frame_1
+        x: 5
+        y: 5
+        width: 5
+        height: 6
+      spriteId: d3aa500d923460b40af0c3e0c9945746
+    - name: Fire FX_Frame_1
       frameIndex: 1
       cellRect:
-        x: 9
-        y: 1
-        width: 14
-        height: 29
-      spriteId: 77dc6313f26ede7459accbcca2a44fb0
-    - name: OldPhone_Frame_2
+        x: 5
+        y: 5
+        width: 6
+        height: 7
+      spriteId: c2f92b65c7b5b7d4e8683e46a6279b86
+    - name: Fire FX_Frame_2
       frameIndex: 2
       cellRect:
-        x: 9
-        y: 1
-        width: 14
-        height: 29
-      spriteId: 74bc2eac5c01afd49853b8d242ad0aac
-    - name: OldPhone_Frame_3
+        x: 5
+        y: 5
+        width: 6
+        height: 8
+      spriteId: cb726b47a4a24cf4bad339651a880673
+    - name: Fire FX_Frame_3
       frameIndex: 3
       cellRect:
-        x: 6
-        y: 1
-        width: 20
-        height: 29
-      spriteId: 6c09d7dc2a7c6c848a706c7f2f69141b
-    - name: OldPhone_Frame_4
+        x: 5
+        y: 5
+        width: 6
+        height: 9
+      spriteId: 8245ee9d0097c824e98cb8074c260236
+    - name: Fire FX_Frame_4
       frameIndex: 4
       cellRect:
         x: 4
-        y: 1
-        width: 23
-        height: 30
-      spriteId: b9247bb3fed38a64e80a0fcdf55eae88
-    - name: OldPhone_Frame_5
+        y: 5
+        width: 7
+        height: 9
+      spriteId: 20ab33a33e55835499d80f299ad64aae
+    - name: Fire FX_Frame_5
       frameIndex: 5
       cellRect:
-        x: 6
-        y: 1
-        width: 20
-        height: 29
-      spriteId: 14d1f8febbaa09640a722ce1e0e9f2cf
-    - name: OldPhone_Frame_6
+        x: 5
+        y: 5
+        width: 6
+        height: 8
+      spriteId: 5cc7bf6faac3191428a5ab87abe5bb62
+    - name: Fire FX_Frame_6
       frameIndex: 6
       cellRect:
-        x: 7
-        y: 1
-        width: 17
-        height: 30
-      spriteId: 31290233bb8ef404aa7eff804c8eb1b5
+        x: 5
+        y: 6
+        width: 6
+        height: 5
+      spriteId: 57ae70dafb766e34fbd0e5f8cd734ae2
+    - name: Fire FX_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 5
+        y: 7
+        width: 5
+        height: 4
+      spriteId: c24bd331ebfda5e46bb484cb2706d501
+    - name: Fire FX_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 5
+        y: 8
+        width: 5
+        height: 3
+      spriteId: 9c14f028cf94f9743b357042b3d30a5d
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 16, y: 16}
