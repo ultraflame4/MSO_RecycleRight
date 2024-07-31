@@ -1,9 +1,10 @@
 using System.Collections;
+using Interfaces;
 using UnityEngine;
 
 namespace NPC.Recyclable
 {
-    public class EWasteNPC : RecyclableNPC
+    public class EWasteNPC : RecyclableNPC, ICleanable
     {
 
         public int startSmokeParticleCount = 2;
@@ -33,11 +34,16 @@ namespace NPC.Recyclable
         public override void Contaminate(float dmg)
         {
             // EWasteNPCs are immune to contamination, but can be damaged.
-            Damage(0);
+            SetOnFire();
         }
 
 
         public override void Damage(float damage)
+        {
+            // SetOnFire();
+        }
+        // EWaste cannot be cleaned hence cleaning it will break stuff and set things on fire.
+        public void Clean(float clean_amount)
         {
             SetOnFire();
         }
@@ -87,10 +93,10 @@ namespace NPC.Recyclable
 
             yield return null;
             // Stop all brains.
-            state_Stunned.pause_timer=true;
+            state_Stunned.pause_timer = true;
             navigation.StopVelocity();
             SwitchState(state_Stunned);
-            animator.enabled=false;
+            animator.enabled = false;
             // Queue explosion;
 
             yield return new WaitForSeconds(0.25f);
@@ -105,6 +111,7 @@ namespace NPC.Recyclable
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
+
 
     }
 }
