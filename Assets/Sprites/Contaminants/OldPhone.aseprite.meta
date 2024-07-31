@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
+      x: 35
+      y: 42
       width: 14
       height: 29
     spriteID: 7147e4855d59ed544a012f874ff60d2e
@@ -140,7 +140,127 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: 35, y: 42}
+  - name: OldPhone_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.03448276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 79
+      width: 14
+      height: 29
+    spriteID: 77dc6313f26ede7459accbcca2a44fb0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 79}
+  - name: OldPhone_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.03448276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 60
+      y: 4
+      width: 14
+      height: 29
+    spriteID: 74bc2eac5c01afd49853b8d242ad0aac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 60, y: 4}
+  - name: OldPhone_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.03448276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 42
+      width: 20
+      height: 29
+    spriteID: 6c09d7dc2a7c6c848a706c7f2f69141b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 42}
+  - name: OldPhone_Frame_4
+    originalName: 
+    pivot: {x: 0.5217391, y: -0.033333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 23
+      height: 30
+    spriteID: b9247bb3fed38a64e80a0fcdf55eae88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: OldPhone_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.03448276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 79
+      width: 20
+      height: 29
+    spriteID: 14d1f8febbaa09640a722ce1e0e9f2cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 79}
+  - name: OldPhone_Frame_6
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.033333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 4
+      width: 17
+      height: 30
+    spriteID: 31290233bb8ef404aa7eff804c8eb1b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,7 +270,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: OldPhone
+    - name: OldPhone_Frame_0
       frameIndex: 0
       cellRect:
         x: 9
@@ -158,6 +278,54 @@ ScriptedImporter:
         width: 14
         height: 29
       spriteId: 7147e4855d59ed544a012f874ff60d2e
+    - name: OldPhone_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 9
+        y: 1
+        width: 14
+        height: 29
+      spriteId: 77dc6313f26ede7459accbcca2a44fb0
+    - name: OldPhone_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 9
+        y: 1
+        width: 14
+        height: 29
+      spriteId: 74bc2eac5c01afd49853b8d242ad0aac
+    - name: OldPhone_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 6
+        y: 1
+        width: 20
+        height: 29
+      spriteId: 6c09d7dc2a7c6c848a706c7f2f69141b
+    - name: OldPhone_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 4
+        y: 1
+        width: 23
+        height: 30
+      spriteId: b9247bb3fed38a64e80a0fcdf55eae88
+    - name: OldPhone_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 6
+        y: 1
+        width: 20
+        height: 29
+      spriteId: 14d1f8febbaa09640a722ce1e0e9f2cf
+    - name: OldPhone_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 7
+        y: 1
+        width: 17
+        height: 30
+      spriteId: 31290233bb8ef404aa7eff804c8eb1b5
     linkedCells: []
     parentIndex: -1
   platformSettings: []
