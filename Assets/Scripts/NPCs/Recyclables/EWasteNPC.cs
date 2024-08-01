@@ -12,6 +12,7 @@ namespace NPC.Recyclable
         public ParticleSystem smokeParticles;
         public SpriteRenderer fireSpriteR;
         public ParticleSystem fireParticles;
+        public ParticleSystem explodeParticles;
         public SpriteMask mask;
 
         [Tooltip("Once on fire, how long does it take to destroy the NPC?")]
@@ -62,7 +63,6 @@ namespace NPC.Recyclable
 
         IEnumerator FireDamageProgress_Coroutine()
         {
-            bool startedFire = false;
             while (fire_progress < 1)
             {
                 var emission = smokeParticles.emission;
@@ -73,10 +73,8 @@ namespace NPC.Recyclable
                 {
                     // https://discussions.unity.com/t/particlesystem-play-does-not-play-particle/78698/3
                     // Particle systems stops emitting particles when play is called while it is already playing.
-                    if (!startedFire)
+                    if (!fireParticles.isPlaying)
                     {
-                        startedFire = true;
-                        fireParticles.Stop();
                         fireParticles.Play();
                     }
                 }
@@ -98,7 +96,10 @@ namespace NPC.Recyclable
             SwitchState(state_Stunned);
             animator.enabled = false;
             // Queue explosion;
-
+            if (!explodeParticles.isPlaying)
+            {
+                explodeParticles.Play();
+            }
             yield return new WaitForSeconds(0.25f);
             while (disintegrate_progress < 1)
             {
