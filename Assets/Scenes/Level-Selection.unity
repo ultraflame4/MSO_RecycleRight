@@ -2913,7 +2913,7 @@ GameObject:
   - component: {fileID: 1215667379}
   - component: {fileID: 1215667381}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Cloud Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2990,13 +2990,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1726909683}
   clouds:
-  - ySpawnRange: {x: 135, y: 180}
+  - ySpawnRange: {x: 95, y: 180}
     spawnCooldownRange: {x: 7, y: 12}
     prefab: {fileID: 6352006557019985686, guid: c45e49dc95b67c946873d7114701b7ef, type: 3}
-  - ySpawnRange: {x: 87, y: 348}
+  - ySpawnRange: {x: 47, y: 348}
     spawnCooldownRange: {x: 3, y: 7}
     prefab: {fileID: 2430113177466412301, guid: f93cb8f6c825f1544926597277863ed8, type: 3}
-  - ySpawnRange: {x: 78, y: 330}
+  - ySpawnRange: {x: 38, y: 330}
     spawnCooldownRange: {x: 1, y: 3}
     prefab: {fileID: 4569421880132582261, guid: eae231256fdba0249a2bd48abf7e7726, type: 3}
 --- !u!1 &1262446953

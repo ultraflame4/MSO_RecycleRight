@@ -29,16 +29,14 @@ namespace UI.LevelSelection
             xBoundary = canvas.sizeDelta.x / 2f;
             cloudPrefabs = new List<RectTransform>();
             cloudObjectPool = new List<GameObject>[clouds.Length];
-
-            foreach (Cloud cloud in clouds)
-            {
-                StartCoroutine(SpawnClouds(cloud));
-            }
+            StartClouds();
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (cloudPrefabs.Count <= 0) StartClouds();
+
             for (int i = 0; i < cloudPrefabs.Count; i++)
             {
                 RectTransform cloud = cloudPrefabs[i];
@@ -46,6 +44,16 @@ namespace UI.LevelSelection
                 cloudPrefabs.Remove(cloud);
                 cloud.gameObject.SetActive(false);
                 cloudObjectPool[cloud.GetComponent<CloudMovement>().index].Add(cloud.gameObject);
+            }
+        }
+
+        void StartClouds()
+        {
+            StopAllCoroutines();
+
+            foreach (Cloud cloud in clouds)
+            {
+                StartCoroutine(SpawnClouds(cloud));
             }
         }
 
