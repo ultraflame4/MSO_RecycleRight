@@ -40,7 +40,7 @@ namespace UI.LevelSelection
             for (int i = 0; i < cloudPrefabs.Count; i++)
             {
                 RectTransform cloud = cloudPrefabs[i];
-                if (cloud.localPosition.x >= -xBoundary - (cloud.sizeDelta.x / 2f)) continue;
+                if (cloud.localPosition.x >= -xBoundary - (cloud.sizeDelta.x * 0.5f * cloud.localScale.x)) continue;
                 cloudPrefabs.Remove(cloud);
                 cloud.gameObject.SetActive(false);
                 cloudObjectPool[cloud.GetComponent<CloudMovement>().index].Add(cloud.gameObject);
@@ -66,7 +66,7 @@ namespace UI.LevelSelection
             if (cloudObjectPool[index] == null) cloudObjectPool[index] = new List<GameObject>();
             GameObject gameObject = cloudObjectPool[index].Count <= 0 ? 
                 CreateObject(cloud.prefab.gameObject, index) : GetFromPool(cloud.prefab.gameObject, index);
-            gameObject.transform.localPosition = new Vector2(xBoundary + (cloud.prefab.sizeDelta.x / 2f), 
+            gameObject.transform.localPosition = new Vector2(xBoundary + (cloud.prefab.sizeDelta.x * 0.5f * cloud.prefab.localScale.x), 
                 Random.Range(cloud.ySpawnRange.x, cloud.ySpawnRange.y));
             cloudPrefabs.Add(gameObject.GetComponent<RectTransform>());
             // set sorting index
