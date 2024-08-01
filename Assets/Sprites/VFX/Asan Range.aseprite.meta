@@ -130,9 +130,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 48
+      width: 72
       height: 48
-    spriteID: ee2e133bbf9c2204eaafc1ec02b3789d
+    spriteID: 074501de6bef76a42b6b405901b708b7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,11 +153,11 @@ ScriptedImporter:
     - name: Asan Range
       frameIndex: 0
       cellRect:
-        x: 0
+        x: 4
         y: 0
-        width: 48
+        width: 72
         height: 48
-      spriteId: ee2e133bbf9c2204eaafc1ec02b3789d
+      spriteId: 074501de6bef76a42b6b405901b708b7
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -248,4 +248,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 48, y: 48}
+  canvasSize: {x: 80, y: 48}

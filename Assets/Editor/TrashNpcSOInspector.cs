@@ -39,11 +39,13 @@ public class TrashNpcSOInspector : Editor
 
 
 
-        if (trashNpcData.trashNPCType == TrashNPCType.Recyclable)
+        if (trashNpcData.trashNPCType != TrashNPCType.OnlyContaminant)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("recyclableConfig"));
         }
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("contaminantConfig"));
+        if (trashNpcData.trashNPCType != TrashNPCType.OnlyRecyclable){
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("contaminantConfig"));
+        }
 
 
         // -------------------- CREATOR TOOLING ------------------
@@ -83,7 +85,7 @@ public class TrashNpcSOInspector : Editor
             }
         }
 
-        if (trashNpcData.contaminantConfig.contaminantPrefab == null)
+        if (trashNpcData.contaminantConfig.contaminantPrefab == null && trashNpcData.trashNPCType != TrashNPCType.OnlyRecyclable)
         {
             missingContaminantPrefab = true;
             errors_string.Add("Missing contaminant prefab");
