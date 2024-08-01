@@ -304,8 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2d149a2d84f2944926f53c5d5b5920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 0.15
   fadeDelay: 0.5
-  fadeDuration: 0.5
+  fadeType: 2
   startActive: 0
 --- !u!1001 &160092232
 PrefabInstance:
@@ -1773,8 +1774,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2d149a2d84f2944926f53c5d5b5920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDelay: 0
   fadeDuration: 0.5
+  fadeDelay: 0
+  fadeType: 0
   startActive: 0
 --- !u!1 &636134001
 GameObject:
@@ -2681,8 +2683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2d149a2d84f2944926f53c5d5b5920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDelay: 0.5
   fadeDuration: 0.5
+  fadeDelay: 0.5
+  fadeType: 0
   startActive: 0
 --- !u!1 &1080613450
 GameObject:
@@ -3113,8 +3116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2d149a2d84f2944926f53c5d5b5920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDelay: 0
-  fadeDuration: 0.25
+  fadeDuration: 0.5
+  fadeDelay: 0.5
+  fadeType: 1
   startActive: 1
 --- !u!1 &1294455826
 GameObject:

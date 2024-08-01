@@ -64,8 +64,8 @@ namespace UI.LevelSelection
 
             // if forward direction, show background
             if (forward_direction) background?.SetActive(true);
-            // if not forward direction, show station door
-            else stationDoorFade?.SetActive(true);
+            // toggle station door active
+            stationDoorFade?.SetActive(!forward_direction);
 
             while (timeElapsed <= moveAnimationDuration)
             {
@@ -85,8 +85,6 @@ namespace UI.LevelSelection
             
             // hide background if not forward direction, and animation ended
             if (!forward_direction) background?.SetActive(false);
-            // hide station door after animation if forward direction
-            else stationDoorFade?.SetActive(false);
         }
 
         void UpdateAnimation(bool forward_direction)
