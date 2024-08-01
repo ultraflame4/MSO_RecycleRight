@@ -57,7 +57,7 @@ namespace UI.LevelSelection
             // get cloud prefab, check if there are any objects pooled
             if (cloudObjectPool[index] == null) cloudObjectPool[index] = new List<GameObject>();
             GameObject gameObject = cloudObjectPool[index].Count <= 0 ? 
-                CreateObject(cloud.prefab.gameObject, index) : GetFromPool(index);
+                CreateObject(cloud.prefab.gameObject, index) : GetFromPool(cloud.prefab.gameObject, index);
             gameObject.transform.localPosition = new Vector2(xBoundary + (cloud.prefab.sizeDelta.x / 2f), 
                 Random.Range(cloud.ySpawnRange.x, cloud.ySpawnRange.y));
             cloudPrefabs.Add(gameObject.GetComponent<RectTransform>());
@@ -83,12 +83,20 @@ namespace UI.LevelSelection
             return obj;
         }
 
-        GameObject GetFromPool(int index)
+        GameObject GetFromPool(GameObject prefab, int index)
         {
-            GameObject obj = cloudObjectPool[index][0];
-            cloudObjectPool[index].RemoveAt(0);
-            obj.SetActive(true);
-            return obj;
+            GameObject obj;
+            // search for available object in pool
+            for (int i = 0; i < cloudObjectPool[index].Count; i++)
+            {
+                obj = cloudObjectPool[index][i];
+                if (obj.activeSelf) continue;
+                cloudObjectPool[index].RemoveAt(i);
+                obj.SetActive(true);
+                return obj;
+            }
+            // if there are no objects left, create new object
+            return CreateObject(prefab, index);
         }
         #endregion
     }
