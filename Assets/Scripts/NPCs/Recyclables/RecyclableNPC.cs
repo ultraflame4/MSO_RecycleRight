@@ -46,7 +46,7 @@ namespace NPC.Recyclable
         {
             if (npcData == null) return;
 
-            if (npcData.trashNPCType != TrashNPCType.Recyclable)
+            if (!npcData.containsRecyclable)
             {
                 throw new ArgumentException("This RecyclableNPC is not configured as a Recyclable! Please change trashNPCType to Recyclable or use ContaminantNPC instead!");
             }
@@ -59,7 +59,7 @@ namespace NPC.Recyclable
             LoadConfig();
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             state_Idle = new(this);
             state_Stunned = new(state_Idle, this, this);
@@ -67,7 +67,7 @@ namespace NPC.Recyclable
 
             Initialize(state_Idle);
         }
-        public void Contaminate(float damage)
+        public virtual void Contaminate(float damage)
         {
             if (secret_cleanliness > 0)
             {
@@ -112,7 +112,7 @@ namespace NPC.Recyclable
             }
         }
 
-        public void Damage(float damage)
+        public virtual void Damage(float damage)
         {
             // Recyclables cannot be damaged (by player)
             // They can still be damaged by contaminants.

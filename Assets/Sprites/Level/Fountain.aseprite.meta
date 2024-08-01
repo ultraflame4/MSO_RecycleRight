@@ -123,14 +123,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Fountain_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.47826087, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 22
+      width: 23
       height: 31
     spriteID: 7b5e114a9c40a4b4bb43472cf51fb308
     spriteBone: []
@@ -143,14 +143,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Fountain_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.47826087, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 43
-      width: 22
+      width: 23
       height: 31
     spriteID: de1ea7b141ec88e40b45ba21aa136e14
     spriteBone: []
@@ -163,14 +163,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 43}
   - name: Fountain_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.47826087, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 82
-      width: 22
+      width: 23
       height: 31
     spriteID: 3cc89734198389a4aa5a7be93888d64c
     spriteBone: []
@@ -195,7 +195,7 @@ ScriptedImporter:
       cellRect:
         x: 5
         y: 0
-        width: 22
+        width: 23
         height: 31
       spriteId: 7b5e114a9c40a4b4bb43472cf51fb308
     - name: Fountain_Frame_1
@@ -203,7 +203,7 @@ ScriptedImporter:
       cellRect:
         x: 5
         y: 0
-        width: 22
+        width: 23
         height: 31
       spriteId: de1ea7b141ec88e40b45ba21aa136e14
     - name: Fountain_Frame_2
@@ -211,7 +211,7 @@ ScriptedImporter:
       cellRect:
         x: 5
         y: 0
-        width: 22
+        width: 23
         height: 31
       spriteId: 3cc89734198389a4aa5a7be93888d64c
     linkedCells: []

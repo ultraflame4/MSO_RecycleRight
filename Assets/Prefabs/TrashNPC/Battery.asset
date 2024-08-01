@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
+  m_Name: Battery
+  m_EditorClassIdentifier: 
+  characterName: Mr Battery
+  characterDesc: A battery
+  characterSprite: {fileID: 9010341683300859747, guid: 7c2e2764d32aa6d42a9f77f0f16ee44c, type: 3}
+  trashNPCType: 2
+  common:
+    maxHealth: 100
+    movementSpeed: 100
+    sightRange: 3
+  recyclableConfig:
+    recyclableType: 3
+    recyclablePrefab: {fileID: 8202214878067815596, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
+  contaminantConfig:
+    contaminantPrefab: {fileID: 2532554820010743525, guid: 399d5c333bafd4c46a0111bdd9e2351e, type: 3}
+    attackRange: 2
+    startAttackRange: 1
+    attackDelay: 0.1
+    attackDamage: 0
+    attackDuration: 1.5
+    attract_pests: 0
+    attack_hit_delay: 0
+    cleanable: 0

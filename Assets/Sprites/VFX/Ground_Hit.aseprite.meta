@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d79009e87940228458c01bc3972b21b7
+guid: 4b6b38680367bc84aa4a301c31536717
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 6
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638581235825524764
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,58 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BombSmoke_Frame_0
+  - name: Ground_Hit_Frame_0
     originalName: 
-    pivot: {x: 0.56, y: -1.0952381}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 75
-      width: 25
-      height: 21
-    spriteID: a8cc4b633484227498f231685d187389
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 75}
-  - name: BombSmoke_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: -0.84}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 42
-      width: 32
-      height: 25
-    spriteID: e8b870a7c9dbea041ac0dca4e19fcbdc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 42}
-  - name: BombSmoke_Frame_2
-    originalName: 
-    pivot: {x: 0.48387095, y: -0.5666667}
+    pivot: {x: 0.5, y: -0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 30
-    spriteID: 3a8ec4da8e5ad7449ac18521abb6b03b
+      width: 30
+      height: 10
+    spriteID: dc492c62bb1fc3041b893e72e54d3f46
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,43 +141,79 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Ground_Hit_Frame_1
+    originalName: 
+    pivot: {x: 0.516129, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 22
+      width: 31
+      height: 8
+    spriteID: 98847d835758b564b8e078fbe6541b63
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 22}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 877831685
-    name: BombSmoke
+    guid: 682534251
+    name: Ground_Hit
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: BombSmoke_Frame_0
+    - name: Ground_Hit_Frame_0
       frameIndex: 0
       cellRect:
-        x: 18
-        y: 23
-        width: 25
-        height: 21
-      spriteId: a8cc4b633484227498f231685d187389
-    - name: BombSmoke_Frame_1
+        x: 1
+        y: 5
+        width: 30
+        height: 10
+      spriteId: dc492c62bb1fc3041b893e72e54d3f46
+    - name: Ground_Hit_Frame_1
       frameIndex: 1
       cellRect:
-        x: 16
-        y: 21
-        width: 32
-        height: 25
-      spriteId: e8b870a7c9dbea041ac0dca4e19fcbdc
-    - name: BombSmoke_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 17
-        y: 17
+        x: 0
+        y: 8
         width: 31
-        height: 30
-      spriteId: 3a8ec4da8e5ad7449ac18521abb6b03b
+        height: 8
+      spriteId: 98847d835758b564b8e078fbe6541b63
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 32, y: 32}
