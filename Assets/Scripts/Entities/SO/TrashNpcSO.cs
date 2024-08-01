@@ -12,6 +12,10 @@ public enum TrashNPCType
     /// Can be recycled, can also be contaminated
     /// </summary>
     Recyclable,
+    /// <summary>
+    /// Can only be recycled. Never contaminated. 
+    /// </summary>
+    OnlyRecyclable,
 }
 
 [Serializable]
@@ -119,5 +123,7 @@ public class TrashNpcSO : EntitySO
     /// </summary>
     [Tooltip("Contaminant Specific Configuration")]
     public ContaminantConfig contaminantConfig;
+    
+    public bool containsRecyclable => trashNPCType == TrashNPCType.Recyclable || trashNPCType == TrashNPCType.OnlyRecyclable;
 
 }

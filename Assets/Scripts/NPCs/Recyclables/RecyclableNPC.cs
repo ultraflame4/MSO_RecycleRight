@@ -46,7 +46,7 @@ namespace NPC.Recyclable
         {
             if (npcData == null) return;
 
-            if (npcData.trashNPCType != TrashNPCType.Recyclable)
+            if (!npcData.containsRecyclable)
             {
                 throw new ArgumentException("This RecyclableNPC is not configured as a Recyclable! Please change trashNPCType to Recyclable or use ContaminantNPC instead!");
             }
