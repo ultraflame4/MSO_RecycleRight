@@ -223,15 +223,15 @@ ScriptedImporter:
     uvTransform: {x: 171, y: 4}
   - name: BossSpawn_Frame_5
     originalName: 
-    pivot: {x: 0.44, y: -0.5}
+    pivot: {x: 0.4489796, y: -0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 171
       y: 26
-      width: 50
-      height: 14
+      width: 49
+      height: 13
     spriteID: 0e5e1476174a10348ac865176c8e45f5
     spriteBone: []
     spriteOutline: []
@@ -249,7 +249,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 214
-      y: 48
+      y: 47
       width: 36
       height: 13
     spriteID: c9b7ce8ab6a81d14b8db02fd57a4a57c
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 214, y: 48}
+    uvTransform: {x: 214, y: 47}
   - name: BossSpawn_Frame_7
     originalName: 
     pivot: {x: 0.4, y: -0.4666667}
@@ -269,7 +269,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 171
-      y: 48
+      y: 47
       width: 35
       height: 15
     spriteID: 5c7e4f08a2614de4c8c62b43776f8d98
@@ -280,7 +280,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 171, y: 48}
+    uvTransform: {x: 171, y: 47}
   - name: BossSpawn_Frame_8
     originalName: 
     pivot: {x: 0.5588235, y: -0.1891892}
@@ -815,8 +815,8 @@ ScriptedImporter:
       cellRect:
         x: 10
         y: 7
-        width: 50
-        height: 14
+        width: 49
+        height: 13
       spriteId: 0e5e1476174a10348ac865176c8e45f5
     - name: BossSpawn_Frame_6
       frameIndex: 6

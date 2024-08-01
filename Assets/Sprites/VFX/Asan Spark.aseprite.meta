@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bb7cafbe8de95454fa595eaecb29bd85
+guid: 217756cfb352836479860af2d1e21bfa
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Boss_Frame_0
+  - name: Asan Spark_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.16216217}
+    pivot: {x: 0.42857146, y: -0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 57
-      width: 64
-      height: 37
-    spriteID: 29eabe5ea5c16a04e941e0d55dcffb9e
+      x: 42
+      y: 21
+      width: 7
+      height: 7
+    spriteID: 451863f08d137ca4a8191a9c4ed02031
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,179 +140,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 57}
-  - name: Boss_Frame_1
+    uvTransform: {x: 42, y: 21}
+  - name: Asan Spark_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.16216217}
+    pivot: {x: 0.44444445, y: -0.33333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 103
-      width: 64
-      height: 37
-    spriteID: 15f1493c84ba0bc4a91655efc399fab4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 103}
-  - name: Boss_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.16216217}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 76
-      y: 103
-      width: 64
-      height: 37
-    spriteID: 48f72a102ccc852458534c60a236e2f7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 76, y: 103}
-  - name: Boss_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: -0.13157895}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 57
-      width: 64
-      height: 38
-    spriteID: 1e4f65da090a1aa4a8a31bfca33c3eec
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 57}
-  - name: Boss_Frame_4
-    originalName: 
-    pivot: {x: 0.5, y: -0.13157895}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 76
-      y: 57
-      width: 64
-      height: 38
-    spriteID: 08e460214a140734c914a67d0a833153
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 76, y: 57}
-  - name: Boss_Frame_5
-    originalName: 
-    pivot: {x: 0.53333336, y: -0.18421052}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 148
-      width: 60
-      height: 38
-    spriteID: 5a3d41f7a1cbf9d499b56041240321f0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 148}
-  - name: Boss_Frame_6
-    originalName: 
-    pivot: {x: 0.5423729, y: -0.18421052}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 72
-      y: 148
-      width: 59
-      height: 38
-    spriteID: f057e63f7de61c543b1c9fe7c4266bc5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 72, y: 148}
-  - name: Boss_Frame_7
-    originalName: 
-    pivot: {x: 0.55172414, y: -0.18421052}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 139
-      y: 148
-      width: 58
-      height: 38
-    spriteID: bac3e7acd1637644688f5418d7998016
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 139, y: 148}
-  - name: Boss_Frame_8
-    originalName: 
-    pivot: {x: 0.55172414, y: -0.18421052}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 194
-      width: 58
-      height: 38
-    spriteID: 352fc6538f647be4381552cceecf0d6e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 194}
-  - name: Boss_Frame_9
-    originalName: 
-    pivot: {x: 0.55172414, y: -0.022727273}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 136
+      x: 42
       y: 4
-      width: 58
-      height: 44
-    spriteID: 03fd5177ac2acd843a2e2870fedc7b07
+      width: 9
+      height: 9
+    spriteID: 15d3bd18de77e2a45ac7cb8e80dc5df1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -320,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 136, y: 4}
-  - name: Boss_Frame_10
+    uvTransform: {x: 42, y: 4}
+  - name: Asan Spark_Frame_2
     originalName: 
-    pivot: {x: 0.55172414, y: 0}
+    pivot: {x: 0.45454547, y: -0.18181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 58
-      height: 45
-    spriteID: 4821ff255bc28194db5ada5cf678ba91
+      width: 11
+      height: 11
+    spriteID: b46d70e851096b54bb345a31cbd34d14
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -341,18 +181,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Boss_Frame_11
+  - name: Asan Spark_Frame_3
     originalName: 
-    pivot: {x: 0.55172414, y: 0}
+    pivot: {x: 0.45454547, y: -0.18181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 70
-      y: 4
-      width: 58
-      height: 45
-    spriteID: 21a9982f2f5d7ee46977cf5fe706a5bc
+      x: 4
+      y: 23
+      width: 11
+      height: 11
+    spriteID: 8c606a0b9f8e329498c994314a7c907c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -360,116 +200,164 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 70, y: 4}
+    uvTransform: {x: 4, y: 23}
+  - name: Asan Spark_Frame_4
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 42
+      width: 11
+      height: 11
+    spriteID: 46b6aada82355f244acfa015bb7620ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 42}
+  - name: Asan Spark_Frame_5
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 4
+      width: 11
+      height: 11
+    spriteID: 0a2c2de815697af4b8a4d929a115685b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 4}
+  - name: Asan Spark_Frame_6
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 23
+      width: 11
+      height: 11
+    spriteID: 905176f52883c0946aa53c8fe5fd67cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 23}
+  - name: Asan Spark_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 42
+      width: 10
+      height: 9
+    spriteID: d7bb1c2027792cc499c535904af47848
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 42}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1350520637
-    name: Boss
+    guid: 128987324
+    name: Asan Spark
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Boss_Frame_0
+    - name: Asan Spark_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 6
-        width: 64
-        height: 37
-      spriteId: 29eabe5ea5c16a04e941e0d55dcffb9e
-    - name: Boss_Frame_1
+        x: 5
+        y: 4
+        width: 7
+        height: 7
+      spriteId: 451863f08d137ca4a8191a9c4ed02031
+    - name: Asan Spark_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
-        y: 6
-        width: 64
-        height: 37
-      spriteId: 15f1493c84ba0bc4a91655efc399fab4
-    - name: Boss_Frame_2
+        x: 4
+        y: 3
+        width: 9
+        height: 9
+      spriteId: 15d3bd18de77e2a45ac7cb8e80dc5df1
+    - name: Asan Spark_Frame_2
       frameIndex: 2
       cellRect:
-        x: 0
-        y: 6
-        width: 64
-        height: 37
-      spriteId: 48f72a102ccc852458534c60a236e2f7
-    - name: Boss_Frame_3
+        x: 3
+        y: 2
+        width: 11
+        height: 11
+      spriteId: b46d70e851096b54bb345a31cbd34d14
+    - name: Asan Spark_Frame_3
       frameIndex: 3
       cellRect:
-        x: 0
-        y: 5
-        width: 64
-        height: 38
-      spriteId: 1e4f65da090a1aa4a8a31bfca33c3eec
-    - name: Boss_Frame_4
+        x: 3
+        y: 2
+        width: 11
+        height: 11
+      spriteId: 8c606a0b9f8e329498c994314a7c907c
+    - name: Asan Spark_Frame_4
       frameIndex: 4
       cellRect:
-        x: 0
-        y: 5
-        width: 64
-        height: 38
-      spriteId: 08e460214a140734c914a67d0a833153
-    - name: Boss_Frame_5
+        x: 3
+        y: 2
+        width: 11
+        height: 11
+      spriteId: 46b6aada82355f244acfa015bb7620ac
+    - name: Asan Spark_Frame_5
       frameIndex: 5
       cellRect:
-        x: 0
-        y: 7
-        width: 60
-        height: 38
-      spriteId: 5a3d41f7a1cbf9d499b56041240321f0
-    - name: Boss_Frame_6
+        x: 3
+        y: 2
+        width: 11
+        height: 11
+      spriteId: 0a2c2de815697af4b8a4d929a115685b
+    - name: Asan Spark_Frame_6
       frameIndex: 6
       cellRect:
-        x: 0
-        y: 7
-        width: 59
-        height: 38
-      spriteId: f057e63f7de61c543b1c9fe7c4266bc5
-    - name: Boss_Frame_7
+        x: 3
+        y: 2
+        width: 11
+        height: 11
+      spriteId: 905176f52883c0946aa53c8fe5fd67cf
+    - name: Asan Spark_Frame_7
       frameIndex: 7
       cellRect:
-        x: 0
-        y: 7
-        width: 58
-        height: 38
-      spriteId: bac3e7acd1637644688f5418d7998016
-    - name: Boss_Frame_8
-      frameIndex: 8
-      cellRect:
-        x: 0
-        y: 7
-        width: 58
-        height: 38
-      spriteId: 352fc6538f647be4381552cceecf0d6e
-    - name: Boss_Frame_9
-      frameIndex: 9
-      cellRect:
-        x: 0
-        y: 1
-        width: 58
-        height: 44
-      spriteId: 03fd5177ac2acd843a2e2870fedc7b07
-    - name: Boss_Frame_10
-      frameIndex: 10
-      cellRect:
-        x: 0
-        y: 0
-        width: 58
-        height: 45
-      spriteId: 4821ff255bc28194db5ada5cf678ba91
-    - name: Boss_Frame_11
-      frameIndex: 11
-      cellRect:
-        x: 0
-        y: 0
-        width: 58
-        height: 45
-      spriteId: 21a9982f2f5d7ee46977cf5fe706a5bc
+        x: 3
+        y: 3
+        width: 10
+        height: 9
+      spriteId: d7bb1c2027792cc499c535904af47848
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 16, y: 16}
