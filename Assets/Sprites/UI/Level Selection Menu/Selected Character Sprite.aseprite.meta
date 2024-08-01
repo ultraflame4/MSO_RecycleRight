@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638580391102543545
+  platformSettingsDirtyTick: 638581026592584859
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,9 +121,29 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Wilson Selected
+  - name: Selected Character Sprite_Frame_0
     originalName: 
-    pivot: {x: 0.5409836, y: 0.49586776}
+    pivot: {x: 0.4634146, y: 0.56565654}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 133
+      width: 41
+      height: 99
+    spriteID: 9fda3ef6d75882c43ace9457ed63f218
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 133}
+  - name: Selected Character Sprite_Frame_1
+    originalName: 
+    pivot: {x: 0.49180326, y: 0.49586776}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -132,7 +152,7 @@ ScriptedImporter:
       y: 4
       width: 61
       height: 121
-    spriteID: 4c0c1f35f65ce074e99b73b8ec9f936f
+    spriteID: 706c05da75ab34b4b896aca92fa96bed
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,23 +161,59 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Selected Character Sprite_Frame_2
+    originalName: 
+    pivot: {x: 0.45945948, y: 0.37142858}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 73
+      y: 4
+      width: 37
+      height: 70
+    spriteID: 4a64ae5545fd3fa40a50d0623d2e02ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 73, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -452915499
-    name: Wilson Selected
+    guid: 1287265905
+    name: Selected Character Sprite
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Wilson Selected
+    - name: Selected Character Sprite_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
+        x: 13
+        y: 8
+        width: 41
+        height: 99
+      spriteId: 9fda3ef6d75882c43ace9457ed63f218
+    - name: Selected Character Sprite_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 2
         y: 4
         width: 61
         height: 121
-      spriteId: 4c0c1f35f65ce074e99b73b8ec9f936f
+      spriteId: 706c05da75ab34b4b896aca92fa96bed
+    - name: Selected Character Sprite_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 15
+        y: 38
+        width: 37
+        height: 70
+      spriteId: 4a64ae5545fd3fa40a50d0623d2e02ad
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -236,4 +292,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 72, y: 128}
+  canvasSize: {x: 64, y: 128}
