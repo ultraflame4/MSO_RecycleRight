@@ -10,6 +10,7 @@ namespace Player.Behaviours
     {
         [Header("Attack")]
         [SerializeField] float attackDamage = 5f;
+        [SerializeField, Range(0f, 1f)] float damageDropoffRange = 0.25f;
         [SerializeField] float attackStunDuration = .5f;
         [SerializeField] float range = 2.5f;
         [SerializeField, Range(0f, 1f)] float angle = 0.45f;
@@ -24,7 +25,7 @@ namespace Player.Behaviours
         GameObject indicatorPrefab;
         SpriteRenderer pointerSprite;
         bool replaceIndicator = true;
-        float lastScore, currScore;
+        float lastScore, currScore, dropoffScale, distance;
         int scoreDifference;
         
         #region MonoBehaviour Callbacks
@@ -68,13 +69,15 @@ namespace Player.Behaviours
 
             // get hit enemies
             Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range, hitMask);
+            if (hits.Length <= 0) return;
             // filter based on angle
             hits = hits
                 .Where(x => 
                     {
                         float dot = Vector3.Dot((character.pointer.position - character.transform.position).normalized, 
                             (x.transform.position - character.transform.position).normalized);
-                        return dot <= 1f && dot >= angle;
+                        return (dot <= 1f && dot >= angle) || 
+                            Vector3.Distance(x.transform.position, character.transform.position) <= (range * damageDropoffRange);
                     })
                 .ToArray();
 
@@ -84,20 +87,25 @@ namespace Player.Behaviours
                 // ensure hit is not null
                 if (hit == null) continue;
 
+                // calculate dropoff
+                distance = Vector3.Distance(hit.transform.position, character.transform.position);
+                dropoffScale = distance <= (range * damageDropoffRange) ? 2f : Mathf.Clamp01(1f - (distance / range));
+
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
                 // clean contaminant that is hit if it is cleanable
                 if (cleanAmount > 0f && contaminant != null && contaminant.cleanable)
-                    hit.GetComponent<ICleanable>()?.Clean(cleanAmount);
+                    hit.GetComponent<ICleanable>()?.Clean(cleanAmount * dropoffScale);
                 else
                     // deal damage if cannot clean
-                    hit.GetComponent<IDamagable>()?.Damage(attackDamage);
+                    hit.GetComponent<IDamagable>()?.Damage(attackDamage * dropoffScale);
                 
                 // stun and apply knockback to enemy that was hit
-                hit.GetComponent<IStunnable>()?.Stun(attackStunDuration);
+                hit.GetComponent<IStunnable>()?.Stun(attackStunDuration * dropoffScale);
                 // try add knockback by getting rigidbody and adding force in hit direction
                 hit.GetComponent<Rigidbody2D>()?
-                    .AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
+                    .AddForce((character.pointer.position - character.transform.position).normalized * 
+                    knockback * dropoffScale, ForceMode2D.Impulse);
             }
         }
 
@@ -151,6 +159,8 @@ namespace Player.Behaviours
             if (character == null) return;
             // draw attack range
             Gizmos.DrawWireSphere(character.transform.position, range);
+            // draw dropoff range
+            Gizmos.DrawWireSphere(character.transform.position, range * damageDropoffRange);
             // draw angle boundaries
             float rotationAngle = 90f * (1f - angle);
             Vector3 directionVector = (character.pointer.position - character.transform.position).normalized;
