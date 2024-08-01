@@ -7,6 +7,7 @@ namespace UI.LevelSelection
     {
         [SerializeField] TrainDoorAnimation doorAnimation;
         [SerializeField] LevelDetailsMenu levelDetailsMenu;
+        [SerializeField] UIFadeAnimation skyBackground;
         [SerializeField] UIFadeAnimation exitSceneBackground;
         SceneReference selectedLevel;
 
@@ -25,6 +26,7 @@ namespace UI.LevelSelection
         {
             doorAnimation?.PlayAnimation();
             levelDetailsMenu?.anim?.SetActive(true);
+            skyBackground?.SetActive(true);
 
             if (GameManager.Instance == null)
             {
@@ -59,6 +61,7 @@ namespace UI.LevelSelection
         {
             doorAnimation?.PlayAnimation();
             levelDetailsMenu?.anim?.SetActive(false);
+            skyBackground?.SetActive(false);
             selectedLevel = null;
         }
 
