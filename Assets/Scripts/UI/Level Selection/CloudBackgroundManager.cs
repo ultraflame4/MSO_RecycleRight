@@ -10,7 +10,6 @@ namespace UI.LevelSelection
     {
         [SerializeField] RectTransform canvas;
         [SerializeField] Cloud[] clouds;
-        [SerializeField] int maxPoolSize = 10;
 
         [Serializable]
         public struct Cloud
