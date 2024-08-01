@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Mr Battery
   characterDesc: A battery
   characterSprite: {fileID: 9010341683300859747, guid: 7c2e2764d32aa6d42a9f77f0f16ee44c, type: 3}
-  trashNPCType: 1
+  trashNPCType: 2
   common:
     maxHealth: 100
     movementSpeed: 100
