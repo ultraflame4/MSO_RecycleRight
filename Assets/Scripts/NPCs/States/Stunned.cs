@@ -7,6 +7,7 @@ namespace NPC.States
     public class Stunned : BaseRecyclableState
     {
         public float stun_timer;
+        public bool pause_timer = false;
         private BaseRecyclableState Idle;
 
         public Stunned(BaseRecyclableState idle, StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
@@ -31,6 +32,7 @@ namespace NPC.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            if (pause_timer) return;
             stun_timer -= Time.deltaTime;
             if (stun_timer <= 0)
             {

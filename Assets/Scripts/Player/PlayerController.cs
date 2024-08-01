@@ -33,7 +33,7 @@ namespace Player
         public Transform pointer => transform.GetChild(0);
 
         
-        private static PlayerController _instance;
+        public static PlayerController _instance;
         public static PlayerController Instance
         {
             get

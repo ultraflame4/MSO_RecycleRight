@@ -58,6 +58,7 @@ namespace Level
         /// </summary>
         public void ActivateZone()
         {
+            if (entities == null) return;
             foreach (var entity in entities)
             {
                 entity.OnZoneStart();

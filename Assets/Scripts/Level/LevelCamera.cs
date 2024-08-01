@@ -21,7 +21,7 @@ namespace Level
         {
             if (pendingBoundsUpdate)
             {
-                var player = PlayerController.Instance;
+                var player = PlayerController._instance;
                 // Skip if player not found
                 if (!player) return;
                 var playerWithinZone = LevelManager.Instance?.current_zone.PositionWithinZone(player.transform.position);
