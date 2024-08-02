@@ -73,7 +73,7 @@ namespace UI.LevelSelection.CharacterSelection
         }
         #endregion
 
-        #region Hologram Menu
+        #region Button Event Handlers
         /// <summary>
         /// Set the active state of the hologram menu
         /// </summary>
@@ -82,8 +82,31 @@ namespace UI.LevelSelection.CharacterSelection
         {
             if (hologramMenu?.Active == active) return;
             hologramMenu?.SetActive(active);
-            if (!active) return;
+
+            if (GameManager.Instance == null || GameManager.Instance.selectedCharacters == null)
+                party.Clear();
+            else
+                party = GameManager.Instance.selectedCharacters.ToList();
+
             UpdateSelectedCharactersUI();
+        }
+
+        /// <summary>
+        /// apply party changes to 
+        /// </summary>
+        public void ConfirmSelection()
+        {
+            GameManager.Instance.selectedCharacters = party.ToArray();
+        }
+
+        /// <summary>
+        /// return to previous page;
+        /// </summary>
+        public void Back()
+        {
+            if (hologramMenu.pageState == HologramMenuManager.PageState.CHARACTER_LIST)
+                SetHologramActive(false);
+            hologramMenu.Back();
         }
         #endregion
 
@@ -143,7 +166,6 @@ namespace UI.LevelSelection.CharacterSelection
                 party.Add(profile.currentCharacter);
             
             UpdateSelectedCharactersUI();
-            GameManager.Instance.selectedCharacters = party.ToArray();
         }
         #endregion
 

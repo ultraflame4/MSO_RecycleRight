@@ -134,11 +134,6 @@ namespace UI.LevelSelection.CharacterSelection
         /// </summary>
         public void Back()
         {
-            if (pageState == PageState.CHARACTER_LIST)
-            {
-                SetActive(false);
-                return;
-            }
             pageState = PageState.CHARACTER_LIST;
         }
         #endregion

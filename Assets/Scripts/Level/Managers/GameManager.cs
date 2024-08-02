@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         set 
         {
             selected_characters = value;
-            if (selected_characters.Length <= partySize) return;
+            if (selected_characters == null || selected_characters.Length <= partySize) return;
             PlayerCharacterSO[] tempArray = (PlayerCharacterSO[]) selected_characters.Clone();
             selected_characters = new PlayerCharacterSO[partySize];
             for (int i = 0; i < selected_characters.Length; i++)
