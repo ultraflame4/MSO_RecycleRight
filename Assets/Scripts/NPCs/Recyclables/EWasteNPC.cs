@@ -85,7 +85,11 @@ namespace NPC.Recyclable
                 explodeParticles.Play();
             }
             var tilemap = GameObject.FindWithTag("FireTilemap").GetComponent<Tilemap>();
-
+            if (tilemap == null)
+            {
+                Debug.LogWarning("No fire tilemap found. No tiles will be set on fire.");
+                return;
+            }
 
             // Calculate the square bounds of the explosion. (min and max)
             var min = tilemap.WorldToCell(new Vector3(
@@ -100,7 +104,6 @@ namespace NPC.Recyclable
                 transform.position.z
             ));
 
-            Debug.Log($"Min {min} Max {max}");
             // Loop through the bounds and set the tiles on fire.
             for (int x = min.x; x <= max.x; x++)
             {
