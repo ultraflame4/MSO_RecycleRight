@@ -7,7 +7,7 @@ namespace UI.LevelSelection.CharacterSelection
 {
     public class CharacterSelectProfile : MonoBehaviour
     {
-        [SerializeField] Image image, border;
+        [SerializeField] Image image, border, selection;
         [SerializeField] TextMeshProUGUI selectText;
         public PlayerCharacterSO currentCharacter { get; private set; }
 
@@ -23,6 +23,15 @@ namespace UI.LevelSelection.CharacterSelection
             if (image == null) return;
             image.sprite = currentCharacter.characterSprite;
             image.SetNativeSize();
+        }
+
+        /// <summary>
+        /// Set active of the border indicator for if profile is selected
+        /// </summary>
+        /// <param name="select">Selection indicator active state</param>
+        public void SetSelection(bool select)
+        {
+            selection?.gameObject.SetActive(select);
         }
 
         /// <summary>

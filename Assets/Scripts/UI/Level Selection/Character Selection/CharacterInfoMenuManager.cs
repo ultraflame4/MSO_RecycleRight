@@ -8,6 +8,7 @@ namespace UI.LevelSelection.CharacterSelection
     {
         [SerializeField] Image profileImage, characterImage;
         [SerializeField] TextMeshProUGUI characterName, description, desciptionTitle, errorText;
+        public PlayerCharacterSO selectedCharacter { get; private set; }
 
         void Start()
         {
@@ -16,11 +17,14 @@ namespace UI.LevelSelection.CharacterSelection
 
         public void SetCharacter(PlayerCharacterSO characterData)
         {
+            selectedCharacter = characterData;
+
             if (characterData == null) 
             {
                 SetUIActive(false);
                 return;
             }
+            
             SetUIActive(true);
             characterName.text = characterData.characterName;
             description.text = characterData.characterDesc;

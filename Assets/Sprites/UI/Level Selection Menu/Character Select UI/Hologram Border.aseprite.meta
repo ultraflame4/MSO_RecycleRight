@@ -148,7 +148,7 @@ ScriptedImporter:
     border: {x: 5, y: 5, z: 5, w: 5}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 58
       y: 58
       width: 40
       height: 40
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 58}
+    uvTransform: {x: 58, y: 58}
   - name: Hologram Border_Frame_2
     originalName: 
     pivot: {x: 0.45999998, y: 0.5}
@@ -181,6 +181,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Hologram Border_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 6, y: 6, z: 6, w: 6}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 58
+      width: 46
+      height: 46
+    spriteID: 18a5c8f5f8305a44eb1cd91e2a0645c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 58}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -214,6 +234,14 @@ ScriptedImporter:
         width: 50
         height: 46
       spriteId: ab69ffe63909e40489ccea4b26daef2e
+    - name: Hologram Border_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 9
+        y: 9
+        width: 46
+        height: 46
+      spriteId: 18a5c8f5f8305a44eb1cd91e2a0645c4
     linkedCells: []
     parentIndex: -1
   platformSettings:

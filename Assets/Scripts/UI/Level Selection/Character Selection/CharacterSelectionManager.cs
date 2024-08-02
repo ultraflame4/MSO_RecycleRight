@@ -183,6 +183,7 @@ namespace UI.LevelSelection.CharacterSelection
             {
                 CharacterSelectProfile profile = hologramMenu.CharacterList.objectPool[i];
                 profile.HideBorder();
+                profile.SetSelection(profile.currentCharacter == hologramMenu.CharacterInfo.selectedCharacter);
                 if (!party.Contains(profile.currentCharacter)) continue;
                 int index = party.FindIndex(x => x == profile.currentCharacter);
                 if (index == -1) continue;
