@@ -1,4 +1,5 @@
 using System.Collections;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -26,4 +27,9 @@ public class FireTile : MonoBehaviour {
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other) {
+        if (other.TryGetComponent(out IFireTick fireTick)){
+            fireTick.ApplyFireDamage(1);
+        }
+    }
 }
