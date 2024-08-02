@@ -13,7 +13,7 @@ namespace UI.Animations
         void Start()
         {
             // play first animation
-            animations[0].Play();
+            Play(animations[0].Name);
         }
 
         /// <summary>
