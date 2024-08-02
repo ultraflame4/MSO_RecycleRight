@@ -1,6 +1,7 @@
 using System.Collections;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace NPC.Recyclable
 {
@@ -22,6 +23,8 @@ namespace NPC.Recyclable
         public float timeToDisintegrate = 1f;
         [Tooltip("The radius to set tiles on fire.")]
         public float explosionFireRadius = 1f;
+        [Tooltip("The prefab for fire tiles."), SerializeField]
+        private GameObject fireTilePrefab;
 
 
         private float fire_progress = 0;
@@ -75,10 +78,40 @@ namespace NPC.Recyclable
         [EasyButtons.Button]
         private void Explode()
         {
+            if (!Application.isPlaying) return;
             if (!explodeParticles.isPlaying)
             {
                 explodeParticles.Play();
             }
+            var tilemap = GameObject.FindWithTag("FireTilemap").GetComponent<Tilemap>();
+
+            var center = tilemap.WorldToCell(transform.position);
+            var half_size = tilemap.WorldToCell(Vector3.one * explosionFireRadius).x / 2f;
+
+            // Create a bounds around the explosion radius.
+            // Bounds is a square that contains the radius
+            var bounds = new BoundsInt(
+                Mathf.FloorToInt(center.x - half_size),
+                Mathf.FloorToInt(center.y - half_size),
+                0,
+                Mathf.FloorToInt(center.x + half_size),
+                Mathf.FloorToInt(center.y + half_size),
+                1
+            );
+             
+
+            // Loop through the bounds and set the tiles on fire.
+            foreach (var pos in bounds.allPositionsWithin)
+            {
+                Debug.Log($"Tile pos {pos}");
+                if (Vector3.Distance(pos, transform.position) < explosionFireRadius)
+                {
+                    var newTile = ScriptableObject.CreateInstance<Tile>();
+                    newTile.gameObject = fireTilePrefab;
+                    tilemap.SetTile(pos, newTile);
+                }
+            }
+
         }
 
         IEnumerator FireDamageProgress_Coroutine()

@@ -9857,7 +9857,7 @@ Transform:
   m_GameObject: {fileID: 2526313347859313159}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.057, y: -0.123, z: -0.008186462}
+  m_LocalPosition: {x: 0.057, y: 0.04, z: -0.008186462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9942,7 +9942,7 @@ Transform:
   m_GameObject: {fileID: 3322748715655202789}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.048, z: 0}
+  m_LocalPosition: {x: 0, y: 0.115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -15047,6 +15047,7 @@ MonoBehaviour:
   timeToDestroy: 10
   timeToDisintegrate: 3
   explosionFireRadius: 1.5
+  fireTilePrefab: {fileID: 531007759239420580, guid: 9ee07fcb3e449f64f8f3a1401159e318, type: 3}
 --- !u!70 &5984690008351332758
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

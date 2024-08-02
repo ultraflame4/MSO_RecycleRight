@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5137239732842726699}
   - component: {fileID: 7571986533132507678}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: FireTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,4 +83,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
