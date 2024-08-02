@@ -85,6 +85,8 @@ namespace NPC.Recyclable
             }
             var tilemap = GameObject.FindWithTag("FireTilemap").GetComponent<Tilemap>();
 
+
+            // Calculate the square bounds of the explosion. (min and max)
             var min = tilemap.WorldToCell(new Vector3(
                 transform.position.x - explosionFireRadius,
                 transform.position.y - explosionFireRadius,
@@ -92,9 +94,9 @@ namespace NPC.Recyclable
                 ));
 
             var max = tilemap.WorldToCell(new Vector3(
-            transform.position.x + explosionFireRadius,
-            transform.position.y + explosionFireRadius,
-            transform.position.z
+                transform.position.x + explosionFireRadius,
+                transform.position.y + explosionFireRadius,
+                transform.position.z
             ));
 
             Debug.Log($"Min {min} Max {max}");
@@ -103,9 +105,15 @@ namespace NPC.Recyclable
             {
                 for (int y = min.y; y <= max.y; y++)
                 {
+                    var pos = new Vector3Int(x, y, min.z);
+                    // Check if the distance is within the radius. needed because the bounds are square.
+                    if (Vector3.Distance(tilemap.GetCellCenterWorld(pos), transform.position) > explosionFireRadius)
+                    {
+                        continue;
+                    }
                     var a = ScriptableObject.CreateInstance<Tile>();
                     a.gameObject = fireTilePrefab;
-                    tilemap.SetTile(new Vector3Int(x,y,min.z), a);
+                    tilemap.SetTile(pos, a);
                 }
             }
 
