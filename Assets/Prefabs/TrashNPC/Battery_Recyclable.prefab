@@ -15047,7 +15047,7 @@ MonoBehaviour:
   timeToDestroy: 10
   timeToDisintegrate: 3
   explosionFireRadius: 2
-  fireTilePrefab: {fileID: 531007759239420580, guid: 3114c23a953c2a34a9eaccbf2f61f35a, type: 3}
+  fireTilePrefab: {fileID: 6478641030721138840, guid: c0015c0ea3aa852439125eba9481b463, type: 3}
 --- !u!70 &5984690008351332758
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
