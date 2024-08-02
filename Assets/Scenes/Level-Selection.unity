@@ -476,6 +476,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1969423668}
+    - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetHologramActive
+      objectReference: {fileID: 0}
     - target: {fileID: 1149792410436654323, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_SizeDelta.x
       value: 95.3125
@@ -487,6 +495,18 @@ PrefabInstance:
     - target: {fileID: 1607024195158323930, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_Name
       value: Character Select Slot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1969423668}
+    - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetHologramActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2772,6 +2792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d698df98afac24f9ac4f9efb414c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationDuration: 0.25
+  maxScale: 1
   anim: {fileID: 678959726}
   glitchCooldown: {x: 3, y: 7}
 --- !u!1 &687527846
@@ -6927,6 +6949,7 @@ MonoBehaviour:
   - {fileID: 1032228277}
   characterSelectionMenu:
   - {fileID: 563652084}
+  hologramMenu: {fileID: 678959728}
   transitionDuration: 1
   transitionAnimation: {fileID: 88247174}
 --- !u!1 &1975364348
@@ -7272,6 +7295,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1969423668}
+    - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetHologramActive
+      objectReference: {fileID: 0}
     - target: {fileID: 1149792410436654323, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_SizeDelta.x
       value: 57.8125
@@ -7283,6 +7314,14 @@ PrefabInstance:
     - target: {fileID: 1607024195158323930, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_Name
       value: Character Select Slot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1969423668}
+    - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetHologramActive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7541,10 +7580,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1969423668}
     - target: {fileID: 1607024195158323930, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_Name
       value: Character Select Slot (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1969423668}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -8,8 +8,12 @@ namespace UI.LevelSelection.CharacterSelection
 {
     public class CharacterSelectionManager : MonoBehaviour
     {
+        [Header("Menus")]
         [SerializeField] GameObject[] levelSelectionMenu;
         [SerializeField] GameObject[] characterSelectionMenu;
+
+        [Header("Character Selection Menu")]
+        [SerializeField] HologramMenuManager hologramMenu;
 
         [Header("Transition")]
         [SerializeField] float transitionDuration = 1f;
@@ -31,6 +35,7 @@ namespace UI.LevelSelection.CharacterSelection
             SetMenuActive(true, levelSelectionMenu, levelMenuAnimators);
             SetMenuActive(false, characterSelectionMenu, characterMenuAnimators);
             transitionAnimation?.SetActive(false);
+            hologramMenu?.gameObject.SetActive(false);
         }
 
         // Update is called once per frame
@@ -63,6 +68,18 @@ namespace UI.LevelSelection.CharacterSelection
         }
         #endregion
 
+        #region Hologram Menu
+        /// <summary>
+        /// Set the active state of the hologram menu
+        /// </summary>
+        /// <param name="active">Active state to set to</param>
+        public void SetHologramActive(bool active)
+        {
+            if (hologramMenu?.Active == active) return;
+            hologramMenu?.SetActive(active);
+        }
+        #endregion
+
         #region Active Management
         void LoadAnimators(GameObject[] objectsToSearch, out UIAnimator[] animators)
         {
@@ -92,7 +109,7 @@ namespace UI.LevelSelection.CharacterSelection
 
             foreach (UIAnimator anim in animators)
             {
-                if (anim.currentAnimation == null) continue;
+                if (anim.currentAnimation == null || !anim.gameObject.activeSelf) continue;
                 anim.Play(anim.currentAnimation.Name);
             }
         }
