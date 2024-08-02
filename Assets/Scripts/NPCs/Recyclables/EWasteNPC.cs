@@ -15,10 +15,15 @@ namespace NPC.Recyclable
         public ParticleSystem explodeParticles;
         public SpriteMask mask;
 
+        [Header("EWaste Settings")]
         [Tooltip("Once on fire, how long does it take to destroy the NPC?")]
         public float timeToDestroy = 10f;
         [Tooltip("Once on destroyed, how long does it take to disintegrate the NPC?")]
         public float timeToDisintegrate = 1f;
+        [Tooltip("The radius to set tiles on fire.")]
+        public float explosionFireRadius = 1f;
+
+
         private float fire_progress = 0;
         private float disintegrate_progress = 0;
         bool onFire => fire_progress > 0f;
@@ -30,6 +35,13 @@ namespace NPC.Recyclable
             base.Start();
             mask.alphaCutoff = 0;
             fireSpriteR.enabled = false;
+        }
+
+        protected override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, explosionFireRadius);
         }
 
         public override void Contaminate(float dmg)
@@ -60,6 +72,14 @@ namespace NPC.Recyclable
             smokeParticles.Play();
         }
 
+        [EasyButtons.Button]
+        private void Explode()
+        {
+            if (!explodeParticles.isPlaying)
+            {
+                explodeParticles.Play();
+            }
+        }
 
         IEnumerator FireDamageProgress_Coroutine()
         {
@@ -96,10 +116,7 @@ namespace NPC.Recyclable
             SwitchState(state_Stunned);
             animator.enabled = false;
             // Queue explosion;
-            if (!explodeParticles.isPlaying)
-            {
-                explodeParticles.Play();
-            }
+            Explode();
             yield return new WaitForSeconds(0.25f);
             while (disintegrate_progress < 1)
             {

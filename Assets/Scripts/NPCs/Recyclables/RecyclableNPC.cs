@@ -93,7 +93,7 @@ namespace NPC.Recyclable
             Destroy(gameObject);
         }
 
-        private void OnDrawGizmosSelected()
+        protected virtual void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, sightRange);
