@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 740def5fab39c5c46919eb1a5563c4a1
+guid: 681bc18125a1361418464410884bacab
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638581623046438541
+  platformSettingsDirtyTick: 638581978662020745
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Hologram Sprite
+  - name: Hologram Border
     originalName: 
-    pivot: {x: 0.53061223, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
-    border: {x: 31, y: 12, z: 13, w: 22}
+    border: {x: 6, y: 6, z: 6, w: 6}
     rect:
       serializedVersion: 2
-      x: 65
-      y: 64
-      width: 49
-      height: 52
-    spriteID: 26fa84a674f9a8d4cb4cf063f931dba9
+      x: 62
+      y: 4
+      width: 46
+      height: 46
+    spriteID: 811741aa5f3907f49b43264b6cf13ad3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,19 +140,39 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 65, y: 64}
-  - name: Hologram Sprite_Frame_1
+    uvTransform: {x: 62, y: 4}
+  - name: Hologram Border_Frame_1
     originalName: 
-    pivot: {x: 0.5283019, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
-    border: {x: 31, y: 12, z: 13, w: 22}
+    border: {x: 5, y: 5, z: 5, w: 5}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 58
+      width: 40
+      height: 40
+    spriteID: 29abc04d1d9665649830f3aec222db7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 58}
+  - name: Hologram Border_Frame_2
+    originalName: 
+    pivot: {x: 0.45999998, y: 0.5}
+    alignment: 9
+    border: {x: 6, y: 6, z: 10, w: 6}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 53
-      height: 52
-    spriteID: 9453555036353154e9da4811c7e14755
+      width: 50
+      height: 46
+    spriteID: ab69ffe63909e40489ccea4b26daef2e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,143 +181,39 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Hologram Sprite_Frame_2
-    originalName: 
-    pivot: {x: 0.5192308, y: 0.5}
-    alignment: 9
-    border: {x: 31, y: 12, z: 13, w: 22}
-    rect:
-      serializedVersion: 2
-      x: 65
-      y: 4
-      width: 52
-      height: 52
-    spriteID: 29caacf1e6637924baa2d652bed183cb
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 65, y: 4}
-  - name: Hologram Sprite_Frame_3
-    originalName: 
-    pivot: {x: 0.5283019, y: 0.5}
-    alignment: 9
-    border: {x: 31, y: 12, z: 13, w: 22}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 64
-      width: 53
-      height: 52
-    spriteID: 831fdf0c0eb012742846b4df03cff54e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 64}
-  - name: Hologram Sprite_Frame_4
-    originalName: 
-    pivot: {x: 0.5283019, y: 0.5}
-    alignment: 9
-    border: {x: 31, y: 12, z: 13, w: 22}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 124
-      width: 53
-      height: 52
-    spriteID: e68c9d2b37669f24a99ef56f490c120d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 124}
-  - name: Hologram Sprite_Frame_5
-    originalName: 
-    pivot: {x: 0.5283019, y: 0.5}
-    alignment: 9
-    border: {x: 31, y: 12, z: 13, w: 22}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 184
-      width: 53
-      height: 52
-    spriteID: b83e1720c7fb2314f88f803a8e7447c2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 184}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1468319566
-    name: Hologram Sprite
+    guid: -1562501931
+    name: Hologram Border
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Hologram Sprite_Frame_0
+    - name: Hologram Border_Frame_0
       frameIndex: 0
       cellRect:
-        x: 6
-        y: 6
-        width: 49
-        height: 52
-      spriteId: 26fa84a674f9a8d4cb4cf063f931dba9
-    - name: Hologram Sprite_Frame_1
+        x: 9
+        y: 9
+        width: 46
+        height: 46
+      spriteId: 811741aa5f3907f49b43264b6cf13ad3
+    - name: Hologram Border_Frame_1
       frameIndex: 1
       cellRect:
-        x: 4
-        y: 6
-        width: 53
-        height: 52
-      spriteId: 9453555036353154e9da4811c7e14755
-    - name: Hologram Sprite_Frame_2
+        x: 12
+        y: 12
+        width: 40
+        height: 40
+      spriteId: 29abc04d1d9665649830f3aec222db7e
+    - name: Hologram Border_Frame_2
       frameIndex: 2
       cellRect:
-        x: 5
-        y: 6
-        width: 52
-        height: 52
-      spriteId: 29caacf1e6637924baa2d652bed183cb
-    - name: Hologram Sprite_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 4
-        y: 6
-        width: 53
-        height: 52
-      spriteId: 831fdf0c0eb012742846b4df03cff54e
-    - name: Hologram Sprite_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 4
-        y: 6
-        width: 53
-        height: 52
-      spriteId: e68c9d2b37669f24a99ef56f490c120d
-    - name: Hologram Sprite_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 4
-        y: 6
-        width: 53
-        height: 52
-      spriteId: b83e1720c7fb2314f88f803a8e7447c2
+        x: 9
+        y: 9
+        width: 50
+        height: 46
+      spriteId: ab69ffe63909e40489ccea4b26daef2e
     linkedCells: []
     parentIndex: -1
   platformSettings:
