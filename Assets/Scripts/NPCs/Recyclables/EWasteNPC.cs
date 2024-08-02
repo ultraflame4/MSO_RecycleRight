@@ -32,6 +32,8 @@ namespace NPC.Recyclable
         private float disintegrate_progress = 0;
         bool onFire => fire_progress > 0f;
 
+        public bool AllowCleanable => true;
+
         Coroutine fireCoroutine;
 
         protected override void Start()
@@ -84,7 +86,7 @@ namespace NPC.Recyclable
             {
                 explodeParticles.Play();
             }
-            var tilemap = GameObject.FindWithTag("FireTilemap").GetComponent<Tilemap>();
+            var tilemap = GameObject.FindWithTag("FireTilemap")?.GetComponent<Tilemap>();
             if (tilemap == null)
             {
                 Debug.LogWarning("No fire tilemap found. No tiles will be set on fire.");

@@ -64,6 +64,8 @@ namespace NPC.Contaminant
 
         public override bool cause_infestation => attract_pests;
 
+        public bool AllowCleanable => cleanable;
+
         private bool spawned_cleaned_prefab = false;
 
         public void LoadConfig()
