@@ -12,11 +12,10 @@ namespace UI.LevelSelection.CharacterSelection
         [SerializeField] GameObject[] levelSelectionMenu;
         [SerializeField] GameObject[] characterSelectionMenu;
 
-        [Header("Character Selection Menu")]
+        [Header("Character Selection")]
         [SerializeField] HologramMenuManager hologramMenu;
-
-        [Header("Character Selection Functionality")]
         [SerializeField] Color[] selectionColor;
+        [SerializeField] CharacterSelectSlot[] characterSlots;
 
         [Header("Transition")]
         [SerializeField] float transitionDuration = 1f;
@@ -83,6 +82,8 @@ namespace UI.LevelSelection.CharacterSelection
         {
             if (hologramMenu?.Active == active) return;
             hologramMenu?.SetActive(active);
+            if (!active) return;
+            UpdateSelectedCharactersUI();
         }
         #endregion
 
@@ -111,7 +112,9 @@ namespace UI.LevelSelection.CharacterSelection
                 obj?.SetActive(active);
             }
 
-            if (!active || animators == null) return;
+            if (!active) return;
+            UpdateSelectedCharactersUI();
+            if (animators == null) return;
 
             foreach (UIAnimator anim in animators)
             {
@@ -131,14 +134,20 @@ namespace UI.LevelSelection.CharacterSelection
         void SelectCharacter(CharacterSelectProfile profile)
         {
              if (GameManager.Instance == null) return;
-             
+
             if (party.Contains(profile.currentCharacter))
                 party.Remove(profile.currentCharacter);
             else if (party.Count < GameManager.Instance.PartySize)
                 party.Add(profile.currentCharacter);
             
-            SetBorder();
+            UpdateSelectedCharactersUI();
             GameManager.Instance.selectedCharacters = party.ToArray();
+        }
+
+        void UpdateSelectedCharactersUI()
+        {
+            ResetCharacterSlot();
+            SetBorder();
         }
 
         void SetBorder()
@@ -152,7 +161,22 @@ namespace UI.LevelSelection.CharacterSelection
                 if (index == -1) continue;
                 profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ? 
                     Color.white : selectionColor[index], index);
+                UpdateCharacterSlot(index, profile.currentCharacter.characterSelectionSprite);
             }
+        }
+
+        void ResetCharacterSlot()
+        {
+            foreach (CharacterSelectSlot slot in characterSlots)
+            {
+                slot.SetCharacter();
+            }
+        }
+
+        void UpdateCharacterSlot(int index, Sprite characterSprite)
+        {
+            if (characterSlots == null || index >= characterSlots.Length) return;
+            characterSlots[index].SetCharacter(characterSprite);
         }
         #endregion
     }

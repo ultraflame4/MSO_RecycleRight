@@ -19,18 +19,24 @@ namespace UI.LevelSelection.CharacterSelection
             }
 
             rectTransform = image.GetComponent<RectTransform>();
-            SetCharacter(image.sprite);
+            SetCharacter();
         }
 
         /// <summary>
         /// Set the image on the character slot to the currently selected character
         /// </summary>
-        /// <param name="sprite">Sprite of character to display</param>
-        public void SetCharacter(Sprite sprite)
+        /// <param name="sprite">Sprite of character to display, leave as 'null' to deselect</param>
+        public void SetCharacter(Sprite sprite = null)
         {
             if (image == null) 
             {
                 Debug.LogWarning("Image is not set! (CharacterSelectSlot.cs)");
+                return;
+            }
+            
+            if (sprite == null)
+            {
+                image.enabled = false;
                 return;
             }
 
@@ -38,6 +44,7 @@ namespace UI.LevelSelection.CharacterSelection
             rectTransform.pivot = GetPivot();
             image.sprite = this.sprite;
             image.SetNativeSize();
+            image.enabled = true;
         }
 
         Vector2 GetPivot()
