@@ -2437,7 +2437,6 @@ GameObject:
   - component: {fileID: 678959723}
   - component: {fileID: 678959722}
   - component: {fileID: 678959728}
-  - component: {fileID: 678959729}
   - component: {fileID: 678959727}
   - component: {fileID: 678959726}
   - component: {fileID: 678959725}
@@ -2586,24 +2585,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d698df98afac24f9ac4f9efb414c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterList: {fileID: 844162021}
   animationDuration: 0.25
   maxScale: 1
   anim: {fileID: 678959726}
   glitchCooldown: {x: 3, y: 7}
---- !u!114 &678959729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678959720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cabe016fccce9a4a9a30ac580051e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 1744677496}
-  prefab: {fileID: 8852448321667680537, guid: bbf7c4637f1ca5a4a94b09842e1a7efe, type: 3}
 --- !u!1 &687527846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,6 +3088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 844162019}
+  - component: {fileID: 844162021}
   - component: {fileID: 844162020}
   m_Layer: 5
   m_Name: Character List
@@ -3144,6 +3131,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMoveAmount: 10
+--- !u!114 &844162021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844162018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cabe016fccce9a4a9a30ac580051e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 1744677496}
+  prefab: {fileID: 8852448321667680537, guid: bbf7c4637f1ca5a4a94b09842e1a7efe, type: 3}
 --- !u!1 &866588271
 GameObject:
   m_ObjectHideFlags: 0
@@ -6518,6 +6519,10 @@ MonoBehaviour:
   characterSelectionMenu:
   - {fileID: 563652084}
   hologramMenu: {fileID: 678959728}
+  selectionColor:
+  - {r: 0.08756865, g: 0.6320754, b: 0.068574235, a: 1}
+  - {r: 0.7176471, g: 0.67189, b: 0.1254902, a: 1}
+  - {r: 0.6415094, g: 0.17965867, b: 0.12406549, a: 1}
   transitionDuration: 1
   transitionAnimation: {fileID: 88247174}
 --- !u!1 &1975364348

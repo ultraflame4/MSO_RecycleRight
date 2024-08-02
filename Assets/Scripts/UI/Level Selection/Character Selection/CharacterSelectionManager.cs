@@ -15,12 +15,16 @@ namespace UI.LevelSelection.CharacterSelection
         [Header("Character Selection Menu")]
         [SerializeField] HologramMenuManager hologramMenu;
 
+        [Header("Character Selection Functionality")]
+        [SerializeField] Color[] selectionColor;
+
         [Header("Transition")]
         [SerializeField] float transitionDuration = 1f;
         [SerializeField] GameObject transitionAnimation;
         Coroutine coroutine_transition;
 
         UIAnimator[] levelMenuAnimators, characterMenuAnimators;
+        List<PlayerCharacterSO> party = new List<PlayerCharacterSO>();
 
         /// <summary>
         /// Active state of character selection
@@ -35,7 +39,9 @@ namespace UI.LevelSelection.CharacterSelection
             SetMenuActive(true, levelSelectionMenu, levelMenuAnimators);
             SetMenuActive(false, characterSelectionMenu, characterMenuAnimators);
             transitionAnimation?.SetActive(false);
-            hologramMenu?.gameObject.SetActive(false);
+            if (hologramMenu == null) return;
+            hologramMenu.gameObject.SetActive(false);
+            hologramMenu.CharacterList.CharacterProfileCreated += SubscribeToClick;
         }
 
         // Update is called once per frame
@@ -111,6 +117,41 @@ namespace UI.LevelSelection.CharacterSelection
             {
                 if (anim.currentAnimation == null || !anim.gameObject.activeSelf) continue;
                 anim.Play(anim.currentAnimation.Name);
+            }
+        }
+        #endregion
+
+        #region Character Selection Management
+        void SubscribeToClick(CharacterSelectProfile profile)
+        {
+            if (profile == null) return;
+            profile.CharacterSelected += SelectCharacter;
+        }
+
+        void SelectCharacter(CharacterSelectProfile profile)
+        {
+             if (GameManager.Instance == null) return;
+             
+            if (party.Contains(profile.currentCharacter))
+                party.Remove(profile.currentCharacter);
+            else if (party.Count < GameManager.Instance.PartySize)
+                party.Add(profile.currentCharacter);
+            
+            SetBorder();
+            GameManager.Instance.selectedCharacters = party.ToArray();
+        }
+
+        void SetBorder()
+        {
+            for (int i = 0; i < hologramMenu.CharacterList.objectPool.Count; i++)
+            {
+                CharacterSelectProfile profile = hologramMenu.CharacterList.objectPool[i];
+                profile.HideBorder();
+                if (!party.Contains(profile.currentCharacter)) continue;
+                int index = party.FindIndex(x => x == profile.currentCharacter);
+                if (index == -1) continue;
+                profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ? 
+                    Color.white : selectionColor[index], index);
             }
         }
         #endregion

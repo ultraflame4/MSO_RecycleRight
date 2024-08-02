@@ -6,6 +6,9 @@ namespace UI.LevelSelection.CharacterSelection
 {
     public class HologramMenuManager : MonoBehaviour
     {
+        [Header("Menu Pages")]
+        [SerializeField] CharacterSelectProfileManager characterList;
+
         [Header("Transition Animation")]
         [SerializeField] float animationDuration = 1f;
         [SerializeField] float maxScale = 1f;
@@ -15,14 +18,13 @@ namespace UI.LevelSelection.CharacterSelection
         [SerializeField] Vector2 glitchCooldown;
 
         Coroutine coroutine_glitch_effect, coroutine_transition;
-        CharacterSelectProfileManager characterSelectSlotManager;
-
+        
+        public CharacterSelectProfileManager CharacterList => characterList;
         public bool Active { get; private set; } = false;
 
         // Start is called before the first frame update
         void Start()
         {
-            characterSelectSlotManager = GetComponent<CharacterSelectProfileManager>();
             coroutine_glitch_effect = StartCoroutine(Glitch());
         }
 
@@ -38,7 +40,7 @@ namespace UI.LevelSelection.CharacterSelection
             if (active) 
             {
                 gameObject.SetActive(true);
-                characterSelectSlotManager?.LoadCharacters();
+                characterList?.LoadCharacters();
             }
 
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
