@@ -1,6 +1,7 @@
 using System.Collections;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace NPC.Recyclable
 {
@@ -15,13 +16,23 @@ namespace NPC.Recyclable
         public ParticleSystem explodeParticles;
         public SpriteMask mask;
 
+        [Header("EWaste Settings")]
         [Tooltip("Once on fire, how long does it take to destroy the NPC?")]
         public float timeToDestroy = 10f;
         [Tooltip("Once on destroyed, how long does it take to disintegrate the NPC?")]
         public float timeToDisintegrate = 1f;
+        [Tooltip("The radius to set tiles on fire.")]
+        public float explosionFireRadius = 1f;
+        [Tooltip("The prefab for fire tiles."), SerializeField]
+        private GameObject fireTilePrefab;
+
+
+
         private float fire_progress = 0;
         private float disintegrate_progress = 0;
         bool onFire => fire_progress > 0f;
+
+        public bool AllowCleanable => true;
 
         Coroutine fireCoroutine;
 
@@ -30,6 +41,13 @@ namespace NPC.Recyclable
             base.Start();
             mask.alphaCutoff = 0;
             fireSpriteR.enabled = false;
+        }
+
+        protected override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, explosionFireRadius);
         }
 
         public override void Contaminate(float dmg)
@@ -60,6 +78,54 @@ namespace NPC.Recyclable
             smokeParticles.Play();
         }
 
+        [EasyButtons.Button]
+        private void Explode()
+        {
+            if (!Application.isPlaying) return;
+            if (!explodeParticles.isPlaying)
+            {
+                explodeParticles.Play();
+            }
+            var tilemap = GameObject.FindWithTag("FireTilemap")?.GetComponent<Tilemap>();
+            if (tilemap == null)
+            {
+                Debug.LogWarning("No fire tilemap found. No tiles will be set on fire.");
+                return;
+            }
+
+            // Calculate the square bounds of the explosion. (min and max)
+            var min = tilemap.WorldToCell(new Vector3(
+                transform.position.x - explosionFireRadius,
+                transform.position.y - explosionFireRadius,
+                transform.position.z
+                ));
+
+            var max = tilemap.WorldToCell(new Vector3(
+                transform.position.x + explosionFireRadius,
+                transform.position.y + explosionFireRadius,
+                transform.position.z
+            ));
+
+            // Loop through the bounds and set the tiles on fire.
+            for (int x = min.x; x <= max.x; x++)
+            {
+                for (int y = min.y; y <= max.y; y++)
+                {
+                    var pos = new Vector3Int(x, y, min.z);
+                    // Check if the distance is within the radius. needed because the bounds are square.
+                    if (Vector3.Distance(tilemap.GetCellCenterWorld(pos), transform.position) > explosionFireRadius)
+                    {
+                        continue;
+                    }
+                    var a = ScriptableObject.CreateInstance<Tile>();
+                    a.gameObject = fireTilePrefab;
+                    var fireTile = a.gameObject.GetComponent<FireTile>();
+                    fireTile.associatedTilemap = tilemap;
+                    tilemap.SetTile(pos, a);
+                }
+            }
+
+        }
 
         IEnumerator FireDamageProgress_Coroutine()
         {
@@ -96,10 +162,7 @@ namespace NPC.Recyclable
             SwitchState(state_Stunned);
             animator.enabled = false;
             // Queue explosion;
-            if (!explodeParticles.isPlaying)
-            {
-                explodeParticles.Play();
-            }
+            Explode();
             yield return new WaitForSeconds(0.25f);
             while (disintegrate_progress < 1)
             {
