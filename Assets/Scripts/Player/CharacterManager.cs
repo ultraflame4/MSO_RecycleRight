@@ -14,7 +14,7 @@ namespace Player
         [field: SerializeField, Tooltip("A temporary placeholder for the character.")]
         public GameObject placeholder { get; private set; }
         public PlayerCharacter[] character_instances { get; private set; }
-
+        [SerializeField] bool debug_characters = false;
         [HideInInspector] public bool CanSwitchCharacters = true;
 
         /// <summary>
@@ -25,8 +25,16 @@ namespace Player
         public void Awake()
         {
             placeholder.SetActive(false);
-            if (GameManager.Instance != null && GameManager.Instance.selectedCharacters.Length > 0)
-                characters = GameManager.Instance.selectedCharacters.Select(x => x.prefab).ToArray();
+
+            if (!debug_characters && GameManager.Instance != null &&
+                GameManager.Instance.selectedCharacters != null && 
+                GameManager.Instance.selectedCharacters.Length > 0)
+            {
+                characters = GameManager.Instance.selectedCharacters
+                        .Select(x => x.prefab)
+                        .ToArray();
+            }  
+
             LoadCharacterInstance();
         }
 
