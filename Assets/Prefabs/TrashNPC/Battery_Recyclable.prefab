@@ -9997,7 +9997,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &2659308429111436673
@@ -15046,8 +15046,8 @@ MonoBehaviour:
   mask: {fileID: 283965770635387757}
   timeToDestroy: 10
   timeToDisintegrate: 3
-  explosionFireRadius: 1.5
-  fireTilePrefab: {fileID: 531007759239420580, guid: 9ee07fcb3e449f64f8f3a1401159e318, type: 3}
+  explosionFireRadius: 2
+  fireTilePrefab: {fileID: 531007759239420580, guid: 3114c23a953c2a34a9eaccbf2f61f35a, type: 3}
 --- !u!70 &5984690008351332758
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

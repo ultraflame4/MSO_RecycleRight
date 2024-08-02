@@ -27,6 +27,7 @@ namespace NPC.Recyclable
         private GameObject fireTilePrefab;
 
 
+
         private float fire_progress = 0;
         private float disintegrate_progress = 0;
         bool onFire => fire_progress > 0f;
@@ -113,6 +114,8 @@ namespace NPC.Recyclable
                     }
                     var a = ScriptableObject.CreateInstance<Tile>();
                     a.gameObject = fireTilePrefab;
+                    var fireTile = a.gameObject.GetComponent<FireTile>();
+                    fireTile.associatedTilemap = tilemap;
                     tilemap.SetTile(pos, a);
                 }
             }

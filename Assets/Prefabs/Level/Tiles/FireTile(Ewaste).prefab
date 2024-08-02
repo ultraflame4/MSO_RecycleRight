@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6362674102393733683}
   - component: {fileID: 545476688236685244}
   m_Layer: 0
-  m_Name: FireTile
+  m_Name: FireTile(Ewaste)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4741dbb238dfc1444aef34b52bd36c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1
+  lifetime: 3
   associatedTilemap: {fileID: 0}
