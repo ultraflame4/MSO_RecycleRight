@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UI.Animations;
 
@@ -14,20 +13,17 @@ namespace UI.LevelSelection.CharacterSelection
         [Header("Sprite Animation")]
         [SerializeField] UIAnimator anim;
         [SerializeField] Vector2 glitchCooldown;
+
         Coroutine coroutine_glitch_effect, coroutine_transition;
+        CharacterSelectProfileManager characterSelectSlotManager;
 
         public bool Active { get; private set; } = false;
 
         // Start is called before the first frame update
         void Start()
         {
+            characterSelectSlotManager = GetComponent<CharacterSelectProfileManager>();
             coroutine_glitch_effect = StartCoroutine(Glitch());
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
         }
 
         #region Active Management
@@ -38,7 +34,13 @@ namespace UI.LevelSelection.CharacterSelection
         public void SetActive(bool active)
         {
             Active = active;
-            if (active) gameObject.SetActive(true);
+
+            if (active) 
+            {
+                gameObject.SetActive(true);
+                characterSelectSlotManager?.LoadCharacters();
+            }
+
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(AnimateTransition(active));
         }
@@ -58,6 +60,8 @@ namespace UI.LevelSelection.CharacterSelection
                 timeElasped += Time.deltaTime;
                 yield return timeElasped;
             }
+
+            coroutine_transition = null;
 
             if (active)
             {
