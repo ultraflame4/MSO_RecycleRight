@@ -82,6 +82,7 @@ namespace UI.LevelSelection.CharacterSelection
         {
             if (hologramMenu?.Active == active) return;
             hologramMenu?.SetActive(active);
+            hologramMenu?.CharacterInfo?.SetCharacter(null);
 
             if (GameManager.Instance == null || GameManager.Instance.selectedCharacters == null)
                 party.Clear();
