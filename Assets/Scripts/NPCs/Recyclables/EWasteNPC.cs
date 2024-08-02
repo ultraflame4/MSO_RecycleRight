@@ -85,30 +85,27 @@ namespace NPC.Recyclable
             }
             var tilemap = GameObject.FindWithTag("FireTilemap").GetComponent<Tilemap>();
 
-            var center = tilemap.WorldToCell(transform.position);
-            var half_size = tilemap.WorldToCell(Vector3.one * explosionFireRadius).x / 2f;
+            var min = tilemap.WorldToCell(new Vector3(
+                transform.position.x - explosionFireRadius,
+                transform.position.y - explosionFireRadius,
+                transform.position.z
+                ));
 
-            // Create a bounds around the explosion radius.
-            // Bounds is a square that contains the radius
-            var bounds = new BoundsInt(
-                Mathf.FloorToInt(center.x - half_size),
-                Mathf.FloorToInt(center.y - half_size),
-                0,
-                Mathf.FloorToInt(center.x + half_size),
-                Mathf.FloorToInt(center.y + half_size),
-                1
-            );
-             
+            var max = tilemap.WorldToCell(new Vector3(
+            transform.position.x + explosionFireRadius,
+            transform.position.y + explosionFireRadius,
+            transform.position.z
+            ));
 
+            Debug.Log($"Min {min} Max {max}");
             // Loop through the bounds and set the tiles on fire.
-            foreach (var pos in bounds.allPositionsWithin)
+            for (int x = min.x; x <= max.x; x++)
             {
-                Debug.Log($"Tile pos {pos}");
-                if (Vector3.Distance(pos, transform.position) < explosionFireRadius)
+                for (int y = min.y; y <= max.y; y++)
                 {
-                    var newTile = ScriptableObject.CreateInstance<Tile>();
-                    newTile.gameObject = fireTilePrefab;
-                    tilemap.SetTile(pos, newTile);
+                    var a = ScriptableObject.CreateInstance<Tile>();
+                    a.gameObject = fireTilePrefab;
+                    tilemap.SetTile(new Vector3Int(x,y,min.z), a);
                 }
             }
 
