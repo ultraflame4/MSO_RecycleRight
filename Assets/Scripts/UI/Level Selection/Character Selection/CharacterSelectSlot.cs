@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.LevelSelection
+namespace UI.LevelSelection.CharacterSelection
 {
     public class CharacterSelectSlot : MonoBehaviour
     {

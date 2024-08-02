@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UI.LevelSelection.CharacterSelection
 {
-    public class CharacterSelectionManager : MonoBehaviour
+    public class HologramMenuManager : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
