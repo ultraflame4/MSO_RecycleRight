@@ -15,6 +15,7 @@ namespace UI.Animations
         int currentSprite = 0;
 
         public string Name => animationName;
+        public float duration => sprites == null ? 0f : (durationBetweenFrames / 1000f) * sprites.Length;
 
         /// <summary>
         /// Play animation

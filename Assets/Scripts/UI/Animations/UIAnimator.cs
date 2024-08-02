@@ -7,6 +7,7 @@ namespace UI.Animations
     public class UIAnimator : MonoBehaviour
     {
         [SerializeField] UIAnimation[] animations;
+        public UIAnimation currentAnimation { get; private set; }
 
         // Start is called before the first frame update
         void Start()
@@ -34,7 +35,8 @@ namespace UI.Animations
                 animation.Stop();
             }
             // play animation with the name
-            animations.Where(x => x.Name == name).ToArray()[0].Play();
+            currentAnimation = animations.Where(x => x.Name == name).ToArray()[0];
+            currentAnimation.Play();
         }
     }
 }
