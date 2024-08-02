@@ -8,6 +8,23 @@ namespace UI.LevelSelection.CharacterSelection
     {
         [Header("Menu Pages")]
         [SerializeField] CharacterSelectProfileManager characterList;
+        [SerializeField] CharacterInfoMenuManager characterInfo;
+        [SerializeField] PageState page_state = PageState.CHARACTER_INFO;
+        public PageState pageState
+        {
+            get { return page_state; }
+            set { 
+                page_state = value; 
+                UpdatePage(); 
+            }
+        }
+        public enum PageState
+        {
+            CHARACTER_LIST, CHARACTER_INFO
+        }
+
+        [Header("UI")]
+        [SerializeField] GameObject backButton;
 
         [Header("Transition Animation")]
         [SerializeField] float animationDuration = 1f;
@@ -20,6 +37,7 @@ namespace UI.LevelSelection.CharacterSelection
         Coroutine coroutine_glitch_effect, coroutine_transition;
         
         public CharacterSelectProfileManager CharacterList => characterList;
+        public CharacterInfoMenuManager CharacterInfo => characterInfo;
         public bool Active { get; private set; } = false;
 
         // Start is called before the first frame update
@@ -40,7 +58,9 @@ namespace UI.LevelSelection.CharacterSelection
             if (active) 
             {
                 gameObject.SetActive(true);
+                backButton?.SetActive(true);
                 characterList?.LoadCharacters();
+                pageState = PageState.CHARACTER_LIST;
             }
 
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
@@ -83,10 +103,43 @@ namespace UI.LevelSelection.CharacterSelection
         IEnumerator Glitch()
         {
             yield return new WaitForSeconds(Random.Range(glitchCooldown.x, glitchCooldown.y));
+            backButton?.SetActive(false);
             anim.Play("Glitch");
             yield return new WaitForSeconds(anim.currentAnimation.duration);
+            backButton?.SetActive(true);
             anim.Play("Default");
             coroutine_glitch_effect = StartCoroutine(Glitch());
+        }
+        #endregion
+
+        #region Menu Pages Management
+        void UpdatePage()
+        {
+            characterList.gameObject.SetActive(pageState == PageState.CHARACTER_LIST);
+            characterInfo.gameObject.SetActive(pageState != PageState.CHARACTER_LIST);
+        }
+        #endregion
+
+        #region Button Event Handlers
+        /// <summary>
+        /// Show character info page
+        /// </summary>
+        public void ShowDetails()
+        {
+            pageState = PageState.CHARACTER_INFO;
+        }
+        
+        /// <summary>
+        /// Return to previous page
+        /// </summary>
+        public void Back()
+        {
+            if (pageState == PageState.CHARACTER_LIST)
+            {
+                SetActive(false);
+                return;
+            }
+            pageState = PageState.CHARACTER_LIST;
         }
         #endregion
     }

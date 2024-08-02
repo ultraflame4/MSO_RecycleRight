@@ -241,6 +241,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 184}
+  - name: Hologram Sprite_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 244
+      width: 9
+      height: 4
+    spriteID: 52c533d3c58dc9b41923b7230aca3457
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 244}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -298,6 +318,14 @@ ScriptedImporter:
         width: 53
         height: 52
       spriteId: b83e1720c7fb2314f88f803a8e7447c2
+    - name: Hologram Sprite_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 44
+        y: 49
+        width: 9
+        height: 4
+      spriteId: 52c533d3c58dc9b41923b7230aca3457
     linkedCells: []
     parentIndex: -1
   platformSettings:

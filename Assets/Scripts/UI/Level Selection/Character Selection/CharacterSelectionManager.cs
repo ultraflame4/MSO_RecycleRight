@@ -133,7 +133,9 @@ namespace UI.LevelSelection.CharacterSelection
 
         void SelectCharacter(CharacterSelectProfile profile)
         {
-             if (GameManager.Instance == null) return;
+            if (GameManager.Instance == null) return;
+
+            hologramMenu?.CharacterInfo?.SetCharacter(profile.currentCharacter);
 
             if (party.Contains(profile.currentCharacter))
                 party.Remove(profile.currentCharacter);
@@ -143,7 +145,9 @@ namespace UI.LevelSelection.CharacterSelection
             UpdateSelectedCharactersUI();
             GameManager.Instance.selectedCharacters = party.ToArray();
         }
+        #endregion
 
+        #region Character Selection UI Management
         void UpdateSelectedCharactersUI()
         {
             ResetCharacterSlot();
