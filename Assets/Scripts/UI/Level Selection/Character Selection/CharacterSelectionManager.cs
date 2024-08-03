@@ -143,7 +143,7 @@ namespace UI.LevelSelection.CharacterSelection
 
             foreach (UIAnimator anim in animators)
             {
-                if (anim.currentAnimation == null || !anim.gameObject.activeSelf) continue;
+                if (anim.currentAnimation == null || !anim.gameObject.activeInHierarchy) continue;
                 anim.Play(anim.currentAnimation.Name);
             }
         }
