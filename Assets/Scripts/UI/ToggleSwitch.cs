@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UI.Animations;
@@ -11,6 +12,7 @@ namespace UI
         Coroutine coroutine_transition;
 
         public bool activated { get; private set; } = false;
+        public event Action OnToggle;
 
         void Awake()
         {
@@ -25,6 +27,7 @@ namespace UI
         {
             activated = !activated;
             SetAnimation();
+            OnToggle?.Invoke();
         }
 
         void SetAnimation()
