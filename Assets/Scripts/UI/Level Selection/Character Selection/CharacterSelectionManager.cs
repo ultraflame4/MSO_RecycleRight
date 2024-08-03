@@ -182,6 +182,7 @@ namespace UI.LevelSelection.CharacterSelection
             for (int i = 0; i < hologramMenu.CharacterList.objectPool.Count; i++)
             {
                 CharacterSelectProfile profile = hologramMenu.CharacterList.objectPool[i];
+                if (!profile.gameObject.activeSelf) continue;
                 profile.HideBorder();
                 profile.SetSelection(profile.currentCharacter == hologramMenu.CharacterInfo.selectedCharacter);
                 if (!party.Contains(profile.currentCharacter)) continue;
