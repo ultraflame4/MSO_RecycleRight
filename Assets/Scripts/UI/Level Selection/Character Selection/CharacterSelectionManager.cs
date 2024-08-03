@@ -159,15 +159,29 @@ namespace UI.LevelSelection.CharacterSelection
         void SelectCharacter(CharacterSelectProfile profile)
         {
             if (GameManager.Instance == null) return;
+            HandleCharacterProfileSelection(profile);
+            UpdateSelectedCharactersUI();
+        }
 
-            hologramMenu?.CharacterInfo?.SetCharacter(profile.currentCharacter);
+        void HandleCharacterProfileSelection(CharacterSelectProfile profile)
+        {
+            if (hologramMenu != null && hologramMenu.CharacterInfo.selectedCharacter == profile.currentCharacter)
+            {
+                hologramMenu.CharacterInfo?.SetCharacter(null);
+                return;
+            }
 
             if (party.Contains(profile.currentCharacter))
+            {
                 party.Remove(profile.currentCharacter);
-            else if (party.Count < GameManager.Instance.PartySize)
+                hologramMenu?.CharacterInfo?.SetCharacter(profile.currentCharacter);
+                return;
+            }
+
+            if (party.Count < GameManager.Instance.PartySize)
+            {
                 party.Add(profile.currentCharacter);
-            
-            UpdateSelectedCharactersUI();
+            }
         }
         #endregion
 
