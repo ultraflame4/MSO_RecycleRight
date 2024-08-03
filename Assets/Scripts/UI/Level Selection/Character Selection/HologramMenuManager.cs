@@ -102,12 +102,12 @@ namespace UI.LevelSelection.CharacterSelection
         #region Sprite Animation
         IEnumerator Glitch()
         {
+            anim.Play("Default");
             yield return new WaitForSeconds(Random.Range(glitchCooldown.x, glitchCooldown.y));
             backButton?.SetActive(false);
             anim.Play("Glitch");
             yield return new WaitForSeconds(anim.currentAnimation.duration);
             backButton?.SetActive(true);
-            anim.Play("Default");
             coroutine_glitch_effect = StartCoroutine(Glitch());
         }
         #endregion
