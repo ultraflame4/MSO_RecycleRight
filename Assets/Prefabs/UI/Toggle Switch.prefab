@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 3653651235643736456}
   - {fileID: 8925332002505971267}
   - {fileID: 5836773615748857031}
+  playOnAwake: 0
 --- !u!114 &8967682658381271444
 MonoBehaviour:
   m_ObjectHideFlags: 0

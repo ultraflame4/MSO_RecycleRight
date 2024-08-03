@@ -12,11 +12,10 @@ namespace UI
 
         public bool activated { get; private set; } = false;
 
-        // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             activated = defaultActive;
-            SetAnimation();
+            anim.Play(activated ? "On" : "Off");
         }
 
         /// <summary>

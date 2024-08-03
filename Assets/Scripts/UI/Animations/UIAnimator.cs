@@ -6,12 +6,14 @@ namespace UI.Animations
 {
     public class UIAnimator : MonoBehaviour
     {
+        [SerializeField] bool playOnAwake = true;
         [SerializeField] UIAnimation[] animations;
         public UIAnimation currentAnimation { get; private set; }
 
-        // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
+            // check if need to play animation on awake
+            if (!playOnAwake) return;
             // play first animation
             Play(animations[0].Name);
         }
