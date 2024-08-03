@@ -38,5 +38,32 @@ namespace UI.Animations
             currentAnimation = animations.Where(x => x.Name == name).ToArray()[0];
             currentAnimation.Play();
         }
+
+        /// <summary>
+        /// Stop playing current animation and reset sprite
+        /// </summary>
+        public void Stop()
+        {
+            if (currentAnimation == null) return;
+            currentAnimation.Stop();
+        }
+
+        /// <summary>
+        /// Pause current animation
+        /// </summary>
+        public void Pause()
+        {
+            if (currentAnimation == null) return;
+            currentAnimation.Stop(false);
+        }
+
+        /// <summary>
+        /// Continue current animation without resetting progress
+        /// </summary>
+        public void Continue()
+        {
+            if (currentAnimation == null) return;
+            currentAnimation.Play(false);
+        }
     }
 }

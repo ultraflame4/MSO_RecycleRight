@@ -16,11 +16,13 @@ namespace UI.Animations
 
         public string Name => animationName;
         public float duration => sprites == null ? 0f : (durationBetweenFrames / 1000f) * sprites.Length;
+        public float progress => sprites == null && sprites.Length <= 1 ? 0f : currentSprite / (sprites.Length - 1);
 
         /// <summary>
         /// Play animation
         /// </summary>
-        public void Play()
+        /// <param name="reset">Whether the animation should be reseted</param>
+        public void Play(bool reset = true)
         {
             // ensure required fields are not null
             if (targetImage == null || sprites.Length <= 0)
@@ -30,7 +32,7 @@ namespace UI.Animations
             }
 
             // reset current sprite
-            currentSprite = 0;
+            if (reset) currentSprite = 0;
             // ensure coroutine is null
             if (playAnimationCoroutine != null) StopCoroutine(playAnimationCoroutine);
             // play animation
@@ -40,7 +42,8 @@ namespace UI.Animations
         /// <summary>
         /// Stop playing animation
         /// </summary>
-        public void Stop()
+        /// <param name="reset">Whether the animation should be reseted</param>
+        public void Stop(bool reset = true)
         {
             // ensure required fields are not null
             if (targetImage == null || sprites.Length <= 0)
@@ -55,7 +58,7 @@ namespace UI.Animations
             // reset coroutine variable to null
             playAnimationCoroutine = null;
             // reset sprite to first sprite in animation
-            targetImage.sprite = sprites[0];
+            if (reset) targetImage.sprite = sprites[0];
         }
 
         IEnumerator PlayAnimation()
