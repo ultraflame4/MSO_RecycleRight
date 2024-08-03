@@ -56,6 +56,7 @@ namespace UI.LevelSelection.CharacterSelection
         public void ToggleMenu()
         {
             MenuActive = !MenuActive;
+            SetHologramActive(false);
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(Transition());
         }

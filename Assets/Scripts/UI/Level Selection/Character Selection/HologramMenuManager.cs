@@ -117,6 +117,8 @@ namespace UI.LevelSelection.CharacterSelection
         {
             characterList.gameObject.SetActive(pageState == PageState.CHARACTER_LIST);
             characterInfo.gameObject.SetActive(pageState != PageState.CHARACTER_LIST);
+            if (pageState != PageState.CHARACTER_INFO) return;
+            characterInfo.SetUI();
         }
         #endregion
 
