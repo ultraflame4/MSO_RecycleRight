@@ -19,7 +19,12 @@ namespace UI.LevelSelection
         protected Coroutine coroutine_glitch_effect, coroutine_transition;
         public bool Active { get; protected set; } = false;
 
-        protected IEnumerator AnimateTransition(bool active, Action active_callback = null, Action inactive_callback = null)
+        /// <summary>
+        /// Animate hologram when activating and deactivating by changing horizontal scale
+        /// </summary>
+        /// <param name="active">Active state</param>
+        /// <param name="callback">Callback after transition is complete</param>
+        protected IEnumerator AnimateTransition(bool active, Action callback = null)
         {
             float timeElasped = 0f;
             Vector3 scale = transform.localScale;
@@ -35,21 +40,25 @@ namespace UI.LevelSelection
                 yield return timeElasped;
             }
 
-            coroutine_transition = null;
-
             if (active)
             {
                 scale.x = maxScale;
                 transform.localScale = scale;
-                active_callback?.Invoke();
             }
             else 
             {
                 gameObject.SetActive(false);
-                inactive_callback?.Invoke();
             }
+
+            coroutine_transition = null;
+            callback?.Invoke();
         }
 
+        /// <summary>
+        /// Periodically play glitching animation
+        /// </summary>
+        /// <param name="glitch_callback">Callback when playing glitch animation</param>
+        /// <param name="default_callback">Callback when returning to default state</param>
         protected IEnumerator Glitch(Action glitch_callback = null, Action default_callback = null)
         {
             anim?.Play("Default");

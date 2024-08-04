@@ -53,7 +53,7 @@ namespace UI.LevelSelection.CharacterSelection
             }
 
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(AnimateTransition(active, active_callback: StartGlitch));
+            coroutine_transition = StartCoroutine(AnimateTransition(active, StartGlitch));
         }
 
         void StartGlitch()
