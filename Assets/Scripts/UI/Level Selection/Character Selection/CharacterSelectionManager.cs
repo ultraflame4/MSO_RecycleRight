@@ -87,12 +87,7 @@ namespace UI.LevelSelection.CharacterSelection
             hologramMenu?.SetActive(active);
             hologramMenu?.CharacterInfo?.SetCharacter(null);
             selectedIndex = -1;
-
-            if (GameManager.Instance == null || GameManager.Instance.selectedCharacters == null)
-                party.Clear();
-            else
-                party = GameManager.Instance.selectedCharacters.ToList();
-
+            ResetLocalParty();
             UpdateSelectedCharactersUI();
         }
 
@@ -231,6 +226,9 @@ namespace UI.LevelSelection.CharacterSelection
 
         void ToggleHandler()
         {
+            if (toggleQuickSelect != null && !toggleQuickSelect.activated)
+                ResetLocalParty();
+            hologramMenu?.CharacterInfo?.SetCharacter(null);
             UpdateSelectedCharactersUI();
         }
         #endregion
@@ -279,6 +277,14 @@ namespace UI.LevelSelection.CharacterSelection
         {
             if (characterSlots == null || index >= characterSlots.Length) return;
             characterSlots[index].SetCharacter(characterSprite);
+        }
+
+        void ResetLocalParty()
+        {
+            if (GameManager.Instance == null || GameManager.Instance.selectedCharacters == null)
+                party.Clear();
+            else
+                party = GameManager.Instance.selectedCharacters.ToList();
         }
         #endregion
     }
