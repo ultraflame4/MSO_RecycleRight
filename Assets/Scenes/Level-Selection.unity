@@ -4425,6 +4425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937d8f47bb7035d4c8278f6e4c1a1290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1726909683}
   leftDoor: {fileID: 1784908789}
   rightDoor: {fileID: 259332015}
   leftStationDoor: {fileID: 2045376082}
