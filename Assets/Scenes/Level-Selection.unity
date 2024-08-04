@@ -2509,6 +2509,9 @@ GameObject:
   - component: {fileID: 612612361}
   - component: {fileID: 612612360}
   - component: {fileID: 612612362}
+  - component: {fileID: 612612365}
+  - component: {fileID: 612612364}
+  - component: {fileID: 612612363}
   m_Layer: 5
   m_Name: Level Information
   m_TagString: Untagged
@@ -2588,6 +2591,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMoveAmount: 5
+--- !u!114 &612612363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612612357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67159b98c7e926419e35a35b9f0a964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationName: Glitch
+  durationBetweenFrames: 50
+  targetImage: {fileID: 612612360}
+  sprites:
+  - {fileID: -6826714413406099857, guid: 740def5fab39c5c46919eb1a5563c4a1, type: 3}
+  - {fileID: 817560754777716394, guid: 740def5fab39c5c46919eb1a5563c4a1, type: 3}
+  - {fileID: 1216627569073558153, guid: 740def5fab39c5c46919eb1a5563c4a1, type: 3}
+  - {fileID: -499974348355896944, guid: 740def5fab39c5c46919eb1a5563c4a1, type: 3}
+  - {fileID: -6361083426632958487, guid: 740def5fab39c5c46919eb1a5563c4a1, type: 3}
+--- !u!114 &612612364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612612357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67159b98c7e926419e35a35b9f0a964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationName: Default
+  durationBetweenFrames: 100
+  targetImage: {fileID: 612612360}
+  sprites:
+  - {fileID: -5342712101315030508, guid: 740def5fab39c5c46919eb1a5563c4a1, type: 3}
+--- !u!114 &612612365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612612357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90b5ea22fdfd074e9e3360d1923c440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 1
+  animations:
+  - {fileID: 612612364}
+  - {fileID: 612612363}
 --- !u!1 &613292065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,9 +4424,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457bdad01250f004a8d9da2b33bc2765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationDuration: 1
+  maxScale: 1
+  anim: {fileID: 612612365}
+  glitchCooldown: {x: 3, y: 7}
+  image: {fileID: 1453567329}
   levelNameText: {fileID: 1082759646}
   levelDescText: {fileID: 1446949764}
-  <anim>k__BackingField: {fileID: 1032228281}
+  fadeAnim: {fileID: 1032228281}
 --- !u!114 &1032228281
 MonoBehaviour:
   m_ObjectHideFlags: 0

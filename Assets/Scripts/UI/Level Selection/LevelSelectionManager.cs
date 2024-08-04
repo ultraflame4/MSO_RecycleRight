@@ -25,7 +25,7 @@ namespace UI.LevelSelection
         public void LevelSelected(int index)
         {
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.anim?.SetActive(true);
+            levelDetailsMenu?.SetActive(true);
             skyBackground?.SetActive(true);
 
             if (GameManager.Instance == null)
@@ -35,8 +35,7 @@ namespace UI.LevelSelection
             }
 
             selectedLevel = GameManager.Instance.config.levels[index].scene;
-            levelDetailsMenu?.SetText(GameManager.Instance.config.levels[index].levelInfo.data.levelName, 
-                GameManager.Instance.config.levels[index].levelInfo.data.levelDescription);
+            levelDetailsMenu?.SetDetails(GameManager.Instance.config.levels[index].levelInfo);
         }
 
         /// <summary>
@@ -60,7 +59,7 @@ namespace UI.LevelSelection
         public void LevelSelectionBack()
         {
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.anim?.SetActive(false);
+            levelDetailsMenu?.SetActive(false);
             skyBackground?.SetActive(false);
             selectedLevel = null;
         }
@@ -84,7 +83,7 @@ namespace UI.LevelSelection
             }
 
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.anim?.SetActive(false);
+            levelDetailsMenu?.SetActive(false);
             exitSceneBackground?.SetActive(true);
             GameManager.Instance.LoadLevel(selectedLevel.Name);
         }
