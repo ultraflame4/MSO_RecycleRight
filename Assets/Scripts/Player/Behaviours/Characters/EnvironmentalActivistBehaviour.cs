@@ -37,7 +37,7 @@ namespace Player.Behaviours
             if (attackRangeIndicator == null) return;
             indicatorPrefab = Instantiate(
                 attackRangeIndicator, 
-                Vector3.zero, 
+                character.transform.position, 
                 Quaternion.identity, 
                 character.pointer
             );

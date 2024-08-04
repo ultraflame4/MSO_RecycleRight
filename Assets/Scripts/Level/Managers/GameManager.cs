@@ -13,6 +13,29 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Whether this is the root game manager. if it is, it will not be destroyed on scene load.")]
     public bool is_root = false;
+    
+    // array of characters that are currently in the party
+    private PlayerCharacterSO[] selected_characters;
+    public PlayerCharacterSO[] selectedCharacters
+    { 
+        get 
+        {
+            return selected_characters;
+        } 
+        set 
+        {
+            selected_characters = value;
+            if (selected_characters == null || selected_characters.Length <= partySize) return;
+            PlayerCharacterSO[] tempArray = (PlayerCharacterSO[]) selected_characters.Clone();
+            selected_characters = new PlayerCharacterSO[partySize];
+            for (int i = 0; i < selected_characters.Length; i++)
+            {
+                selected_characters[i] = tempArray[i];
+            }
+        } 
+    }
+
+    public int PartySize => partySize;
 
     // singleton instance
     private static GameManager _instance;

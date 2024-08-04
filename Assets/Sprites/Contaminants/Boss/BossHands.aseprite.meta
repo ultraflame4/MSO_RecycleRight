@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 12
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638581223676648552
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -163,15 +163,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 72}
   - name: BossHands_Frame_2
     originalName: 
-    pivot: {x: 0.43478262, y: -0.30769232}
+    pivot: {x: 0.3809524, y: -0.45714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 68
-      y: 48
-      width: 46
-      height: 39
+      y: 201
+      width: 42
+      height: 35
     spriteID: b0f99fbe30b364b499c178777f06f8f8
     spriteBone: []
     spriteOutline: []
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 68, y: 48}
+    uvTransform: {x: 68, y: 201}
   - name: BossHands_Frame_3
     originalName: 
     pivot: {x: 0.53658533, y: -0.023255814}
@@ -189,7 +189,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 68
-      y: 95
+      y: 150
       width: 41
       height: 43
     spriteID: 3c3fe33e567491b41bd8b55412149a9d
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 68, y: 95}
+    uvTransform: {x: 68, y: 150}
   - name: BossHands_Frame_4
     originalName: 
     pivot: {x: 0.42857146, y: -0.016666668}
@@ -223,14 +223,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: BossHands_Frame_5
     originalName: 
-    pivot: {x: 0.5849057, y: -0.47222224}
+    pivot: {x: 0.47272727, y: -0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 68
-      y: 4
-      width: 53
+      y: 106
+      width: 55
       height: 36
     spriteID: 0151d5ed95a0f704c92a29b1d7e79c04
     spriteBone: []
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 68, y: 4}
+    uvTransform: {x: 68, y: 106}
   - name: BossHands_Frame_6
     originalName: 
     pivot: {x: 0.56363636, y: -0.31578946}
@@ -248,11 +248,71 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 185
+      x: 68
+      y: 60
       width: 55
       height: 38
     spriteID: d62c72d9113996040b2735237dcedfc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 60}
+  - name: BossHands_Frame_7
+    originalName: 
+    pivot: {x: 0.50793654, y: -0.041666668}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 4
+      width: 63
+      height: 48
+    spriteID: b3c4184db7b86ee40a3ba9ad0f9755f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 4}
+  - name: BossHands_Frame_8
+    originalName: 
+    pivot: {x: 0.47826087, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 139
+      y: 4
+      width: 46
+      height: 24
+    spriteID: ef130e7201152d3438ccd9b53b302785
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 139, y: 4}
+  - name: BossHands_Frame_9
+    originalName: 
+    pivot: {x: 0.55357146, y: -0.45000002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 185
+      width: 56
+      height: 40
+    spriteID: 18cd376fdff51754a9f1d5cfe1646891
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -289,10 +349,10 @@ ScriptedImporter:
     - name: BossHands_Frame_2
       frameIndex: 2
       cellRect:
-        x: 12
-        y: 12
-        width: 46
-        height: 39
+        x: 16
+        y: 16
+        width: 42
+        height: 35
       spriteId: b0f99fbe30b364b499c178777f06f8f8
     - name: BossHands_Frame_3
       frameIndex: 3
@@ -313,9 +373,9 @@ ScriptedImporter:
     - name: BossHands_Frame_5
       frameIndex: 5
       cellRect:
-        x: 1
-        y: 17
-        width: 53
+        x: 6
+        y: 18
+        width: 55
         height: 36
       spriteId: 0151d5ed95a0f704c92a29b1d7e79c04
     - name: BossHands_Frame_6
@@ -326,9 +386,57 @@ ScriptedImporter:
         width: 55
         height: 38
       spriteId: d62c72d9113996040b2735237dcedfc3
+    - name: BossHands_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 2
+        width: 63
+        height: 48
+      spriteId: b3c4184db7b86ee40a3ba9ad0f9755f8
+    - name: BossHands_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 10
+        y: 21
+        width: 46
+        height: 24
+      spriteId: ef130e7201152d3438ccd9b53b302785
+    - name: BossHands_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 1
+        y: 18
+        width: 56
+        height: 40
+      spriteId: 18cd376fdff51754a9f1d5cfe1646891
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

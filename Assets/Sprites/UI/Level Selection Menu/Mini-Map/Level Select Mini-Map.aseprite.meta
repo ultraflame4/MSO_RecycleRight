@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638581384226168225
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Level Select Mini-Map_Frame_0
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 128
-      height: 32
+      width: 88
+      height: 10
     spriteID: d588a87674f01f0469bce4238340568a
     spriteBone: []
     spriteOutline: []
@@ -143,15 +143,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Level Select Mini-Map_Frame_1
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
+      x: 100
       y: 4
-      width: 128
-      height: 32
+      width: 88
+      height: 10
     spriteID: 94837bce0ac2f30448c86500e6f95ccc
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 4}
+    uvTransform: {x: 100, y: 4}
   - name: Level Select Mini-Map_Frame_2
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 4
-      width: 128
-      height: 32
+      x: 4
+      y: 22
+      width: 88
+      height: 10
     spriteID: 9be5ee341c674674cadeaf5c03452ce1
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 4}
+    uvTransform: {x: 4, y: 22}
   - name: Level Select Mini-Map_Frame_3
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 44
-      width: 128
-      height: 32
+      x: 100
+      y: 22
+      width: 88
+      height: 10
     spriteID: eff3e415408495a4a961292784c28807
     spriteBone: []
     spriteOutline: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 44}
+    uvTransform: {x: 100, y: 22}
   - name: Level Select Mini-Map_Frame_4
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 44
-      width: 128
-      height: 32
+      x: 4
+      y: 40
+      width: 88
+      height: 10
     spriteID: 61104404a2907e94fa19f99aa855a24b
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 44}
+    uvTransform: {x: 4, y: 40}
   - name: Level Select Mini-Map_Frame_5
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 44
-      width: 128
-      height: 32
+      x: 100
+      y: 40
+      width: 88
+      height: 10
     spriteID: e3642753d64f3e440bb187c9ba04fe5d
     spriteBone: []
     spriteOutline: []
@@ -240,18 +240,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 44}
+    uvTransform: {x: 100, y: 40}
   - name: Level Select Mini-Map_Frame_6
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 84
-      width: 128
-      height: 32
+      y: 58
+      width: 88
+      height: 10
     spriteID: d560fb193e26871448137201fa31af91
     spriteBone: []
     spriteOutline: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 84}
+    uvTransform: {x: 4, y: 58}
   - name: Level Select Mini-Map_Frame_7
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 84
-      width: 128
-      height: 32
+      x: 100
+      y: 58
+      width: 88
+      height: 10
     spriteID: b4397d6a0fd77804d892bffb4d4915d1
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 84}
+    uvTransform: {x: 100, y: 58}
   - name: Level Select Mini-Map_Frame_8
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 84
-      width: 128
-      height: 32
+      x: 4
+      y: 76
+      width: 88
+      height: 10
     spriteID: cbc43b5f8aa8f6d4b9aa0c2db94a7730
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 84}
+    uvTransform: {x: 4, y: 76}
   - name: Level Select Mini-Map_Frame_9
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 124
-      width: 128
-      height: 32
+      x: 100
+      y: 76
+      width: 88
+      height: 10
     spriteID: 4218b7812e737d741ac676e471cefc68
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 124}
+    uvTransform: {x: 100, y: 76}
   - name: Level Select Mini-Map_Frame_10
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 124
-      width: 128
-      height: 32
+      x: 4
+      y: 94
+      width: 88
+      height: 10
     spriteID: 8185eb3b9e4f5f042a4f980b519c27c3
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 124}
+    uvTransform: {x: 4, y: 94}
   - name: Level Select Mini-Map_Frame_11
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 124
-      width: 128
-      height: 32
+      x: 100
+      y: 94
+      width: 88
+      height: 10
     spriteID: ee1e5ff9da1a15b41964624da59ff553
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 124}
+    uvTransform: {x: 100, y: 94}
   - name: Level Select Mini-Map_Frame_12
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 164
-      width: 128
-      height: 32
+      y: 112
+      width: 88
+      height: 10
     spriteID: 09a076f2d42a1c9419f98e57471f26f4
     spriteBone: []
     spriteOutline: []
@@ -380,18 +380,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 164}
+    uvTransform: {x: 4, y: 112}
   - name: Level Select Mini-Map_Frame_13
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 164
-      width: 128
-      height: 32
+      x: 100
+      y: 112
+      width: 88
+      height: 10
     spriteID: 8f254085cd2608d45a761a447c45a54f
     spriteBone: []
     spriteOutline: []
@@ -400,18 +400,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 164}
+    uvTransform: {x: 100, y: 112}
   - name: Level Select Mini-Map_Frame_14
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 164
-      width: 128
-      height: 32
+      x: 4
+      y: 130
+      width: 88
+      height: 10
     spriteID: e791fc0501ec2fc4d8ed6ea3cb2b11b4
     spriteBone: []
     spriteOutline: []
@@ -420,18 +420,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 164}
+    uvTransform: {x: 4, y: 130}
   - name: Level Select Mini-Map_Frame_15
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 204
-      width: 128
-      height: 32
+      x: 100
+      y: 130
+      width: 88
+      height: 10
     spriteID: 3eb5ee057a2e35d4c99a8bac7180c499
     spriteBone: []
     spriteOutline: []
@@ -440,18 +440,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 204}
+    uvTransform: {x: 100, y: 130}
   - name: Level Select Mini-Map_Frame_16
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 204
-      width: 128
-      height: 32
+      x: 4
+      y: 148
+      width: 88
+      height: 10
     spriteID: 26267db71cad3af4987f9f50341d9a97
     spriteBone: []
     spriteOutline: []
@@ -460,18 +460,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 204}
+    uvTransform: {x: 4, y: 148}
   - name: Level Select Mini-Map_Frame_17
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 204
-      width: 128
-      height: 32
+      x: 100
+      y: 148
+      width: 88
+      height: 10
     spriteID: d23b55b9aa6248044920d429975b732a
     spriteBone: []
     spriteOutline: []
@@ -480,18 +480,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 204}
+    uvTransform: {x: 100, y: 148}
   - name: Level Select Mini-Map_Frame_18
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 244
-      width: 128
-      height: 32
+      y: 166
+      width: 88
+      height: 10
     spriteID: 475136cebc8ef37439bcbcbec202180c
     spriteBone: []
     spriteOutline: []
@@ -500,18 +500,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 244}
+    uvTransform: {x: 4, y: 166}
   - name: Level Select Mini-Map_Frame_19
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 244
-      width: 128
-      height: 32
+      x: 100
+      y: 166
+      width: 88
+      height: 10
     spriteID: b4f0198f4928fd748ab20287aafb78c6
     spriteBone: []
     spriteOutline: []
@@ -520,18 +520,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 244}
+    uvTransform: {x: 100, y: 166}
   - name: Level Select Mini-Map_Frame_20
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 244
-      width: 128
-      height: 32
+      x: 4
+      y: 184
+      width: 88
+      height: 10
     spriteID: f5705c8d1b2969b4983fea56c4e12973
     spriteBone: []
     spriteOutline: []
@@ -540,18 +540,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 244}
+    uvTransform: {x: 4, y: 184}
   - name: Level Select Mini-Map_Frame_21
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 284
-      width: 128
-      height: 32
+      x: 100
+      y: 184
+      width: 88
+      height: 10
     spriteID: 360403f260a720e4584cf948d8523c99
     spriteBone: []
     spriteOutline: []
@@ -560,18 +560,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 284}
+    uvTransform: {x: 100, y: 184}
   - name: Level Select Mini-Map_Frame_22
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 284
-      width: 128
-      height: 32
+      x: 4
+      y: 202
+      width: 88
+      height: 10
     spriteID: 5acbc83988b17b740b2413bf74c375fc
     spriteBone: []
     spriteOutline: []
@@ -580,18 +580,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 284}
+    uvTransform: {x: 4, y: 202}
   - name: Level Select Mini-Map_Frame_23
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 284
-      width: 128
-      height: 32
+      x: 100
+      y: 202
+      width: 88
+      height: 10
     spriteID: 4d0cdf21c3222484aa7e054eb1919de9
     spriteBone: []
     spriteOutline: []
@@ -600,18 +600,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 284}
+    uvTransform: {x: 100, y: 202}
   - name: Level Select Mini-Map_Frame_24
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 324
-      width: 128
-      height: 32
+      y: 220
+      width: 88
+      height: 10
     spriteID: 932113d2bf945cc42b035039121fc44b
     spriteBone: []
     spriteOutline: []
@@ -620,18 +620,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 324}
+    uvTransform: {x: 4, y: 220}
   - name: Level Select Mini-Map_Frame_25
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 324
-      width: 128
-      height: 32
+      x: 100
+      y: 220
+      width: 88
+      height: 10
     spriteID: 3e2bc9d2682bb46489b924082cee3b89
     spriteBone: []
     spriteOutline: []
@@ -640,18 +640,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 324}
+    uvTransform: {x: 100, y: 220}
   - name: Level Select Mini-Map_Frame_26
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 324
-      width: 128
-      height: 32
+      x: 4
+      y: 238
+      width: 88
+      height: 10
     spriteID: 6d3fded5b525f8343b9e5394630d242a
     spriteBone: []
     spriteOutline: []
@@ -660,18 +660,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 324}
+    uvTransform: {x: 4, y: 238}
   - name: Level Select Mini-Map_Frame_27
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 364
-      width: 128
-      height: 32
+      x: 100
+      y: 238
+      width: 88
+      height: 10
     spriteID: 5522b0c98ec67224e9f8bb772e27414b
     spriteBone: []
     spriteOutline: []
@@ -680,18 +680,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 364}
+    uvTransform: {x: 100, y: 238}
   - name: Level Select Mini-Map_Frame_28
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 364
-      width: 128
-      height: 32
+      x: 4
+      y: 256
+      width: 88
+      height: 10
     spriteID: 9ca5118107625c74793bbfde67bbd1e1
     spriteBone: []
     spriteOutline: []
@@ -700,18 +700,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 140, y: 364}
+    uvTransform: {x: 4, y: 256}
   - name: Level Select Mini-Map_Frame_29
     originalName: 
-    pivot: {x: 0.44531253, y: 0}
+    pivot: {x: 0.49999997, y: 1.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 276
-      y: 364
-      width: 128
-      height: 32
+      x: 100
+      y: 256
+      width: 88
+      height: 10
     spriteID: 3344847d12de9474cb8b351548039c6a
     spriteBone: []
     spriteOutline: []
@@ -720,7 +720,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 276, y: 364}
+    uvTransform: {x: 100, y: 256}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -733,246 +733,330 @@ ScriptedImporter:
     - name: Level Select Mini-Map_Frame_0
       frameIndex: 0
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: d588a87674f01f0469bce4238340568a
     - name: Level Select Mini-Map_Frame_1
       frameIndex: 1
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 94837bce0ac2f30448c86500e6f95ccc
     - name: Level Select Mini-Map_Frame_2
       frameIndex: 2
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 9be5ee341c674674cadeaf5c03452ce1
     - name: Level Select Mini-Map_Frame_3
       frameIndex: 3
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: eff3e415408495a4a961292784c28807
     - name: Level Select Mini-Map_Frame_4
       frameIndex: 4
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 61104404a2907e94fa19f99aa855a24b
     - name: Level Select Mini-Map_Frame_5
       frameIndex: 5
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: e3642753d64f3e440bb187c9ba04fe5d
     - name: Level Select Mini-Map_Frame_6
       frameIndex: 6
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: d560fb193e26871448137201fa31af91
     - name: Level Select Mini-Map_Frame_7
       frameIndex: 7
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: b4397d6a0fd77804d892bffb4d4915d1
     - name: Level Select Mini-Map_Frame_8
       frameIndex: 8
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: cbc43b5f8aa8f6d4b9aa0c2db94a7730
     - name: Level Select Mini-Map_Frame_9
       frameIndex: 9
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 4218b7812e737d741ac676e471cefc68
     - name: Level Select Mini-Map_Frame_10
       frameIndex: 10
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 8185eb3b9e4f5f042a4f980b519c27c3
     - name: Level Select Mini-Map_Frame_11
       frameIndex: 11
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: ee1e5ff9da1a15b41964624da59ff553
     - name: Level Select Mini-Map_Frame_12
       frameIndex: 12
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 09a076f2d42a1c9419f98e57471f26f4
     - name: Level Select Mini-Map_Frame_13
       frameIndex: 13
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 8f254085cd2608d45a761a447c45a54f
     - name: Level Select Mini-Map_Frame_14
       frameIndex: 14
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: e791fc0501ec2fc4d8ed6ea3cb2b11b4
     - name: Level Select Mini-Map_Frame_15
       frameIndex: 15
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 3eb5ee057a2e35d4c99a8bac7180c499
     - name: Level Select Mini-Map_Frame_16
       frameIndex: 16
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 26267db71cad3af4987f9f50341d9a97
     - name: Level Select Mini-Map_Frame_17
       frameIndex: 17
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: d23b55b9aa6248044920d429975b732a
     - name: Level Select Mini-Map_Frame_18
       frameIndex: 18
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 475136cebc8ef37439bcbcbec202180c
     - name: Level Select Mini-Map_Frame_19
       frameIndex: 19
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: b4f0198f4928fd748ab20287aafb78c6
     - name: Level Select Mini-Map_Frame_20
       frameIndex: 20
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: f5705c8d1b2969b4983fea56c4e12973
     - name: Level Select Mini-Map_Frame_21
       frameIndex: 21
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 360403f260a720e4584cf948d8523c99
     - name: Level Select Mini-Map_Frame_22
       frameIndex: 22
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 5acbc83988b17b740b2413bf74c375fc
     - name: Level Select Mini-Map_Frame_23
       frameIndex: 23
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 4d0cdf21c3222484aa7e054eb1919de9
     - name: Level Select Mini-Map_Frame_24
       frameIndex: 24
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 932113d2bf945cc42b035039121fc44b
     - name: Level Select Mini-Map_Frame_25
       frameIndex: 25
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 3e2bc9d2682bb46489b924082cee3b89
     - name: Level Select Mini-Map_Frame_26
       frameIndex: 26
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 6d3fded5b525f8343b9e5394630d242a
     - name: Level Select Mini-Map_Frame_27
       frameIndex: 27
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 5522b0c98ec67224e9f8bb772e27414b
     - name: Level Select Mini-Map_Frame_28
       frameIndex: 28
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 9ca5118107625c74793bbfde67bbd1e1
     - name: Level Select Mini-Map_Frame_29
       frameIndex: 29
       cellRect:
-        x: -1
-        y: 0
-        width: 128
-        height: 32
+        x: 12
+        y: 4
+        width: 88
+        height: 10
       spriteId: 3344847d12de9474cb8b351548039c6a
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: tvOS
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

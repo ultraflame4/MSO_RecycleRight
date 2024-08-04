@@ -6,8 +6,9 @@ namespace UI.LevelSelection
     public class TrainDoorAnimation : MonoBehaviour
     {
         [Header("Door Movement")]
-        [SerializeField] RectTransform leftDoor;
-        [SerializeField] RectTransform rightDoor, leftStationDoor, rightStationDoor;
+        [SerializeField] RectTransform canvas;
+        [SerializeField] RectTransform leftDoor, rightDoor, leftStationDoor, rightStationDoor;
+        [SerializeField] UIFadeAnimation stationDoorFade;
         [SerializeField, Range(0f, 1f)] float stationDoorOffset = 0.15f;
         [SerializeField, Range(0f, 1f)] float doorPosition = 1f;
         [SerializeField] bool debug_update_door_position = false;
@@ -31,7 +32,7 @@ namespace UI.LevelSelection
             // set default values
             transform.localPosition = Vector3.zero;
             originalDoorPosX = rightDoor.localPosition.x;
-            screenWidth = (Screen.width / 2f) + originalDoorPosX;
+            screenWidth = (canvas.sizeDelta.x / 2f) + originalDoorPosX;
             // reset animation
             doorPosition = 0f;
             animationProgress = 0f;
@@ -63,6 +64,8 @@ namespace UI.LevelSelection
 
             // if forward direction, show background
             if (forward_direction) background?.SetActive(true);
+            // toggle station door active
+            stationDoorFade?.SetActive(!forward_direction);
 
             while (timeElapsed <= moveAnimationDuration)
             {
@@ -79,6 +82,7 @@ namespace UI.LevelSelection
             UpdateDoorPosition();
             moveAnimation = null;
             debug_play = false;
+            
             // hide background if not forward direction, and animation ended
             if (!forward_direction) background?.SetActive(false);
         }
