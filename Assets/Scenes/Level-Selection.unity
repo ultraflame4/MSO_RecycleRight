@@ -271,7 +271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &84810265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -304,6 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5102a4ced2f56f41be3bcb0aa6eedfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  image: {fileID: 0}
+  levelName: {fileID: 0}
+  levelCode: {fileID: 0}
+  transitionDuration: 1
 --- !u!1 &84987099
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &84987100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2599,7 +2604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &613292066
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3203,14 +3208,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d698df98afac24f9ac4f9efb414c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterList: {fileID: 844162021}
-  characterInfo: {fileID: 1686857924}
-  page_state: 1
-  backButton: {fileID: 1312592558}
   animationDuration: 0.25
   maxScale: 1
   anim: {fileID: 678959726}
   glitchCooldown: {x: 3, y: 7}
+  characterList: {fileID: 844162021}
+  characterInfo: {fileID: 1686857924}
+  page_state: 1
+  backButton: {fileID: 1312592558}
 --- !u!1 &687527846
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,7 +4331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1032228278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4918,7 +4923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1262446954
 RectTransform:
   m_ObjectHideFlags: 0
