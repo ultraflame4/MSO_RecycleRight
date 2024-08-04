@@ -1,17 +1,19 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 namespace UI.LevelSelection
 {
-    public class LevelDetailsPopupMenu : MonoBehaviour
+    public class LevelDetailsPopupMenu : Hologram
     {
-        [SerializeField] GameObject menu;
+        [Header("Popup Menu")]
         [SerializeField] Image image;
         [SerializeField] TextMeshProUGUI levelName, levelCode;
-        [SerializeField] float transitionDuration = 1f;
-        Coroutine coroutine_transition;
+
+        [Header("On Click Behaviour")]
+        [SerializeField] Vector3 lockPosition;
+        [SerializeField] RectTransform map, canvas;
+        [SerializeField] RectTransform[] levelButtons;
 
         /// <summary>
         /// Set details of level to show
@@ -30,22 +32,34 @@ namespace UI.LevelSelection
         /// Set active state of menu
         /// </summary>
         /// <param name="active">Active state to set to</param>
-        public void SetActive(bool active)
+        public void SetActive(bool active, int index)
         {
-            menu?.SetActive(active);
+            if (active) gameObject.SetActive(active);
+            if (!gameObject.activeInHierarchy) return;
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(AnimateTransition(active, () => EndTransition(active, index)));
         }
 
-        IEnumerator Transition(bool active)
+        void EndTransition(bool active, int index)
         {
-            float timeElasped = 0f;
-            Vector3 scale = menu.transform.localScale;
-            scale.x = active ? 0f : 1f;
+            if (!active || index < 0) return;
+            SetButtonLocation(index);
+        }
 
-            while (timeElasped < transitionDuration)
-            {
-                timeElasped += Time.deltaTime;
-                yield return timeElasped;
-            }
+        /// <summary>
+        /// Move button to location of popup menu
+        /// </summary>
+        /// <param name="index">Index of button position to move to</param>
+        public void SetButtonLocation(int index)
+        {
+            if (levelButtons == null || index < 0 || index >= levelButtons.Length) return;
+            map.localPosition = (-levelButtons[index].localPosition * map.localScale.x) + lockPosition;
+        }
+
+        void OnDrawGizmosSelected() 
+        {
+            if (canvas == null) return;
+            Gizmos.DrawSphere(lockPosition + canvas.position, 100f);
         }
     }
 }
