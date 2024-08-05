@@ -5731,7 +5731,7 @@ MonoBehaviour:
   autoChangeZone: 1
   <camera>k__BackingField: {fileID: 1636265044}
   debug_move_to_current_zone: 0
-  levelInfo: {fileID: 7641254686706731873}
+  <levelInfo>k__BackingField: {fileID: 7641254686706731873}
   levelEnd: {fileID: 1633215134}
 --- !u!114 &7641254686706731873
 MonoBehaviour:
