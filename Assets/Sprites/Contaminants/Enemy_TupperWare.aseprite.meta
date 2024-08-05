@@ -148,8 +148,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 83
-      y: 4
+      x: 43
+      y: 36
       width: 32
       height: 24
     spriteID: 17d57e7f917f92c439357da1aad80fad
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 83, y: 4}
+    uvTransform: {x: 43, y: 36}
   - name: Enemy_TupperWare_Frame_2
     originalName: 
     pivot: {x: 0.5, y: -0.875}
@@ -168,8 +168,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 37
+      x: 43
+      y: 68
       width: 32
       height: 24
     spriteID: b01ed1318be070c49b06aa5ac30c1710
@@ -180,8 +180,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 37}
+    uvTransform: {x: 43, y: 68}
   - name: Enemy_TupperWare_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 100
+      width: 32
+      height: 24
+    spriteID: 6f38ceadd1f4ce34b8711782bedaccb7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 100}
+  - name: Enemy_TupperWare_Frame_4
     originalName: 
     pivot: {x: 0.516129, y: -0.84}
     alignment: 9
@@ -192,26 +212,6 @@ ScriptedImporter:
       y: 4
       width: 31
       height: 25
-    spriteID: 6f38ceadd1f4ce34b8711782bedaccb7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: Enemy_TupperWare_Frame_4
-    originalName: 
-    pivot: {x: 0.5, y: -0.875}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 37
-      width: 32
-      height: 24
     spriteID: e286356975254784caccf1c79d7be2c7
     spriteBone: []
     spriteOutline: []
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 37}
+    uvTransform: {x: 4, y: 4}
   - name: Enemy_TupperWare_Frame_5
     originalName: 
     pivot: {x: 0.5151515, y: -0.95652175}
@@ -228,8 +228,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 84
-      y: 37
+      x: 83
+      y: 4
       width: 33
       height: 23
     spriteID: 94ebf6f80dc1d4f45bba779af459c633
@@ -240,7 +240,127 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 84, y: 37}
+    uvTransform: {x: 83, y: 4}
+  - name: Enemy_TupperWare_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 132
+      width: 32
+      height: 24
+    spriteID: fc033c1ebf7d61c46b46450b54ca1047
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 132}
+  - name: Enemy_TupperWare_Frame_7
+    originalName: 
+    pivot: {x: 0.78125, y: -0.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 164
+      width: 32
+      height: 24
+    spriteID: 5effb4ddefe742f4c83ba6b0c8abca2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 164}
+  - name: Enemy_TupperWare_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 196
+      width: 32
+      height: 24
+    spriteID: 4f329edcc66cd7942bbba0d746f4b0a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 196}
+  - name: Enemy_TupperWare_Frame_9
+    originalName: 
+    pivot: {x: 0.516129, y: -0.84}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 37
+      width: 31
+      height: 25
+    spriteID: 3ba24cdf1d86ae44d99a0e5a4bede395
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 37}
+  - name: Enemy_TupperWare_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 228
+      width: 32
+      height: 24
+    spriteID: a723fbe1266c11c41bfbb62437ff1350
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 228}
+  - name: Enemy_TupperWare_Frame_11
+    originalName: 
+    pivot: {x: 0.516129, y: -0.84}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 70
+      width: 31
+      height: 25
+    spriteID: 3f7e213ff833b5244bc3d5fbb751ccaf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 70}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -279,16 +399,16 @@ ScriptedImporter:
       cellRect:
         x: 16
         y: 21
-        width: 31
-        height: 25
+        width: 32
+        height: 24
       spriteId: 6f38ceadd1f4ce34b8711782bedaccb7
     - name: Enemy_TupperWare_Frame_4
       frameIndex: 4
       cellRect:
         x: 16
         y: 21
-        width: 32
-        height: 24
+        width: 31
+        height: 25
       spriteId: e286356975254784caccf1c79d7be2c7
     - name: Enemy_TupperWare_Frame_5
       frameIndex: 5
@@ -298,6 +418,54 @@ ScriptedImporter:
         width: 33
         height: 23
       spriteId: 94ebf6f80dc1d4f45bba779af459c633
+    - name: Enemy_TupperWare_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 16
+        y: 21
+        width: 32
+        height: 24
+      spriteId: fc033c1ebf7d61c46b46450b54ca1047
+    - name: Enemy_TupperWare_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 7
+        y: 20
+        width: 32
+        height: 24
+      spriteId: 5effb4ddefe742f4c83ba6b0c8abca2b
+    - name: Enemy_TupperWare_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 16
+        y: 21
+        width: 32
+        height: 24
+      spriteId: 4f329edcc66cd7942bbba0d746f4b0a8
+    - name: Enemy_TupperWare_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 16
+        y: 21
+        width: 31
+        height: 25
+      spriteId: 3ba24cdf1d86ae44d99a0e5a4bede395
+    - name: Enemy_TupperWare_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 16
+        y: 21
+        width: 32
+        height: 24
+      spriteId: a723fbe1266c11c41bfbb62437ff1350
+    - name: Enemy_TupperWare_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 16
+        y: 21
+        width: 31
+        height: 25
+      spriteId: 3f7e213ff833b5244bc3d5fbb751ccaf
     linkedCells: []
     parentIndex: -1
   platformSettings: []
