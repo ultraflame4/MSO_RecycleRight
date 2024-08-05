@@ -4,7 +4,7 @@ using UI.Animations;
 
 namespace UI.LevelSelection.CharacterSelection
 {
-    public class HologramMenuManager : MonoBehaviour
+    public class HologramMenuManager : Hologram
     {
         [Header("Menu Pages")]
         [SerializeField] CharacterSelectProfileManager characterList;
@@ -25,25 +25,14 @@ namespace UI.LevelSelection.CharacterSelection
 
         [Header("UI")]
         [SerializeField] GameObject backButton;
-
-        [Header("Transition Animation")]
-        [SerializeField] float animationDuration = 1f;
-        [SerializeField] float maxScale = 1f;
-
-        [Header("Sprite Animation")]
-        [SerializeField] UIAnimator anim;
-        [SerializeField] Vector2 glitchCooldown;
-
-        Coroutine coroutine_glitch_effect, coroutine_transition;
         
         public CharacterSelectProfileManager CharacterList => characterList;
         public CharacterInfoMenuManager CharacterInfo => characterInfo;
-        public bool Active { get; private set; } = false;
 
         // Start is called before the first frame update
         void Start()
         {
-            coroutine_glitch_effect = StartCoroutine(Glitch());
+            StartGlitch();
         }
 
         #region Active Management
@@ -64,51 +53,16 @@ namespace UI.LevelSelection.CharacterSelection
             }
 
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(AnimateTransition(active));
+            coroutine_transition = StartCoroutine(AnimateTransition(active, StartGlitch));
         }
 
-        IEnumerator AnimateTransition(bool active)
+        void StartGlitch()
         {
-            float timeElasped = 0f;
-            Vector3 scale = transform.localScale;
-
-            if (active) scale.x = 0f;
-
-            while (timeElasped < animationDuration)
-            {
-                transform.localScale = scale;
-                scale.x = maxScale * (active ? (timeElasped / animationDuration) : 
-                    1f - (timeElasped / animationDuration));
-                timeElasped += Time.deltaTime;
-                yield return timeElasped;
-            }
-
-            coroutine_transition = null;
-
-            if (active)
-            {
-                scale.x = maxScale;
-                transform.localScale = scale;
-                if (coroutine_glitch_effect != null) StopCoroutine(coroutine_glitch_effect);
-                coroutine_glitch_effect = StartCoroutine(Glitch());
-            }
-            else 
-            {
-                gameObject.SetActive(false);
-            }
-        }
-        #endregion
-        
-        #region Sprite Animation
-        IEnumerator Glitch()
-        {
-            anim.Play("Default");
-            yield return new WaitForSeconds(Random.Range(glitchCooldown.x, glitchCooldown.y));
-            backButton?.SetActive(false);
-            anim.Play("Glitch");
-            yield return new WaitForSeconds(anim.currentAnimation.duration);
-            backButton?.SetActive(true);
-            coroutine_glitch_effect = StartCoroutine(Glitch());
+            if (coroutine_glitch_effect != null) StopCoroutine(coroutine_glitch_effect);
+            coroutine_glitch_effect = StartCoroutine(Glitch(
+                () => backButton?.SetActive(false), 
+                () => backButton?.SetActive(true)
+            ));
         }
         #endregion
 

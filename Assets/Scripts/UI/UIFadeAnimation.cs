@@ -11,6 +11,8 @@ namespace UI
     {
         [SerializeField] float fadeDuration = .75f;
         [SerializeField] float fadeDelay = 1f;
+        public float FadeDelay => fadeDelay;
+        public float FadeDuration => fadeDuration;
 
         [SerializeField] FadeType fadeType = FadeType.FADE_IN;
         private enum FadeType
