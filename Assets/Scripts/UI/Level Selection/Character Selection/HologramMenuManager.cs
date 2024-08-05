@@ -58,6 +58,7 @@ namespace UI.LevelSelection.CharacterSelection
 
         void StartGlitch()
         {
+            if (!gameObject.activeInHierarchy) return;
             if (coroutine_glitch_effect != null) StopCoroutine(coroutine_glitch_effect);
             coroutine_glitch_effect = StartCoroutine(Glitch(
                 () => backButton?.SetActive(false), 
