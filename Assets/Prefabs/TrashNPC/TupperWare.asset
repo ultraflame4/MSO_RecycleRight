@@ -32,4 +32,4 @@ MonoBehaviour:
     attackDuration: 1.5
     attract_pests: 0
     attack_hit_delay: 0
-    cleanable: 0
+    cleanable: 1
