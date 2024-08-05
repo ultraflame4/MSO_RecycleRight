@@ -4,7 +4,7 @@ using Player;
 
 namespace Entity.Data
 {
-    public class PlayerCharacter : Entity, IDamagable
+    public class PlayerCharacter : Entity, IDamagable, IFireTick
     {
         // inspector fields
         [SerializeField] PlayerCharacterSO objectData;
@@ -62,6 +62,11 @@ namespace Entity.Data
             // check if died, if so, switch to death state
             if (PlayerController.Instance == null || Health > 0) return;
             PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
+        }
+
+        public void ApplyFireDamage(float damage)
+        {
+            Damage(damage);
         }
         #endregion
 
