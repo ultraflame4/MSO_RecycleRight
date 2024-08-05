@@ -10,6 +10,7 @@ namespace UI.LevelSelection
         [SerializeField] UIFadeAnimation skyBackground;
         [SerializeField] UIFadeAnimation exitSceneBackground;
         [SerializeField] LevelDetailsPopupMenu levelDetailsPopupMenu;
+        [SerializeField] UIPointerHandler backgroundHandler;
         SceneReference selectedLevel;
         int selectedIndex = -1;
 
@@ -18,6 +19,8 @@ namespace UI.LevelSelection
         {
             selectedLevel = null;
             DeselectLevel();
+            if (backgroundHandler == null) return;
+            backgroundHandler.PointerDown += DeselectLevel;
         }
 
         #region Main Level Selection Menu
@@ -27,6 +30,8 @@ namespace UI.LevelSelection
         /// <param name="index">Index of level in levels array</param>
         public void LevelSelected(int index)
         {
+            if (levelDetailsPopupMenu == null || levelDetailsPopupMenu.Active) return;
+
             selectedIndex = index;
             levelDetailsPopupMenu?.SetActive(true, selectedIndex);
 

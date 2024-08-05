@@ -271,7 +271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &84987100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2299,6 +2299,7 @@ GameObject:
   - component: {fileID: 585237345}
   - component: {fileID: 585237347}
   - component: {fileID: 585237348}
+  - component: {fileID: 585237349}
   m_Layer: 5
   m_Name: Map Background
   m_TagString: Untagged
@@ -2397,6 +2398,18 @@ MonoBehaviour:
   target: {fileID: 1080613451}
   scaleBoundaries: {x: 3, y: 3}
   scaleAmount: 30
+--- !u!114 &585237349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585237343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b055cecc0a6c240968947a717354f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &603469540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,7 +2712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &613292066
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4426,7 +4439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1032228278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5023,7 +5036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1262446954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8679,6 +8692,7 @@ MonoBehaviour:
   skyBackground: {fileID: 84987101}
   exitSceneBackground: {fileID: 613292069}
   levelDetailsPopupMenu: {fileID: 491974445}
+  backgroundHandler: {fileID: 585237349}
 --- !u!114 &1969423668
 MonoBehaviour:
   m_ObjectHideFlags: 0

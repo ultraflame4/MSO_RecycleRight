@@ -39,7 +39,7 @@ namespace UI.LevelSelection
 
         IEnumerator DelayedAnimation()
         {
-            yield return new WaitForSeconds(fadeAnim.FadeDelay + fadeAnim.FadeDuration);
+            yield return new WaitForSeconds(fadeAnim.FadeDelay + fadeAnim.FadeDuration + .05f);
             if (coroutine_glitch_effect != null) StopCoroutine(coroutine_glitch_effect);
             coroutine_glitch_effect = StartCoroutine(Glitch());
         }
