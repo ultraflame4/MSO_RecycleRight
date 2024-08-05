@@ -198,7 +198,18 @@ namespace UI.LevelSelection.CharacterSelection
 
         void HandleDefaultSelect(CharacterSelectProfile profile)
         {
-            if (party.Contains(profile.currentCharacter)) return;
+            if (party.Contains(profile.currentCharacter))
+            {
+                int index = party.FindIndex(x => x == profile.currentCharacter);
+                party.Remove(profile.currentCharacter);
+                if (party.Count <= 0 || selectedIndex < 0 || index == selectedIndex) return;
+
+                if (selectedIndex >= party.Count)
+                    party.Add(profile.currentCharacter);
+                else
+                    party.Insert(selectedIndex, profile.currentCharacter);
+            }
+
             hologramMenu?.CharacterInfo?.SetCharacter(profile.currentCharacter);
             hologramMenu?.ShowDetails();
         }
@@ -226,8 +237,8 @@ namespace UI.LevelSelection.CharacterSelection
 
         void ToggleHandler()
         {
-            if (toggleQuickSelect != null && !toggleQuickSelect.activated)
-                ResetLocalParty();
+            // if (toggleQuickSelect != null && !toggleQuickSelect.activated)
+            //     ResetLocalParty();
             hologramMenu?.CharacterInfo?.SetCharacter(null);
             UpdateSelectedCharactersUI();
         }
