@@ -59,11 +59,7 @@ namespace Player.Behaviours
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
                 // clean contaminant that is hit if it is cleanable
-                if (cleanAmount > 0f && contaminant != null && contaminant.cleanable)
-                    hit.GetComponent<ICleanable>()?.Clean(cleanAmount);
-                else
-                    // deal damage if cannot clean
-                    hit.GetComponent<IDamagable>()?.Damage(attackDamage);
+                CleanOrDamage(hit.gameObject, cleanAmount, attackDamage);
                 
                 // stun and apply knockback to enemy that was hit
                 hit.GetComponent<IStunnable>()?.Stun(attackStunDuration);

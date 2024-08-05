@@ -6,13 +6,16 @@ namespace UI.Animations
 {
     public class UIAnimator : MonoBehaviour
     {
+        [SerializeField] bool playOnAwake = true;
         [SerializeField] UIAnimation[] animations;
+        public UIAnimation currentAnimation { get; private set; }
 
-        // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
+            // check if need to play animation on awake
+            if (!playOnAwake) return;
             // play first animation
-            animations[0].Play();
+            Play(animations[0].Name);
         }
 
         /// <summary>
@@ -34,7 +37,35 @@ namespace UI.Animations
                 animation.Stop();
             }
             // play animation with the name
-            animations.Where(x => x.Name == name).ToArray()[0].Play();
+            currentAnimation = animations.Where(x => x.Name == name).ToArray()[0];
+            currentAnimation.Play();
+        }
+
+        /// <summary>
+        /// Stop playing current animation and reset sprite
+        /// </summary>
+        public void Stop()
+        {
+            if (currentAnimation == null) return;
+            currentAnimation.Stop();
+        }
+
+        /// <summary>
+        /// Pause current animation
+        /// </summary>
+        public void Pause()
+        {
+            if (currentAnimation == null) return;
+            currentAnimation.Stop(false);
+        }
+
+        /// <summary>
+        /// Continue current animation without resetting progress
+        /// </summary>
+        public void Continue()
+        {
+            if (currentAnimation == null) return;
+            currentAnimation.Play(false);
         }
     }
 }

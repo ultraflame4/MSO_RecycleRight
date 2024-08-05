@@ -37,6 +37,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: clean_prefab
+      value: 
+      objectReference: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: attack_hit_delay
       value: 0.42
       objectReference: {fileID: 0}

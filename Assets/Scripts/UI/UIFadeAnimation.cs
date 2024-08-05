@@ -9,8 +9,19 @@ namespace UI
 {
     public class UIFadeAnimation : MonoBehaviour
     {
-        [SerializeField] float fadeDelay = 1f;
         [SerializeField] float fadeDuration = .75f;
+        [SerializeField] float fadeDelay = 1f;
+        public float FadeDelay => fadeDelay;
+        public float FadeDuration => fadeDuration;
+
+        [SerializeField] FadeType fadeType = FadeType.FADE_IN;
+        private enum FadeType
+        {
+            FADE_IN, 
+            FADE_OUT, 
+            BOTH
+        }
+
         [SerializeField] bool startActive = false;
         
         List<UIItem> uiItems;
@@ -64,11 +75,12 @@ namespace UI
 
         IEnumerator Fade(UIItem item, bool active)
         {
-            if (active) 
-            {
-                yield return new WaitForSeconds(fadeDelay);
-                item.gameObject.SetActive(true);
-            }
+            if ((fadeType == FadeType.FADE_IN && active) || 
+                (fadeType == FadeType.FADE_OUT && !active) ||
+                fadeType == FadeType.BOTH)
+                    yield return new WaitForSeconds(fadeDelay);
+            
+            if (active) item.gameObject.SetActive(true);
 
             float timeElasped = 0f;
             Color color = item.color;

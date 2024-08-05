@@ -27,8 +27,8 @@ namespace Level
         [field: SerializeField, Tooltip("The level camera")]
         public new LevelCamera camera { get; private set; }
         public bool debug_move_to_current_zone = false;
-        [SerializeField, Tooltip("The level info for this level. When missing, some features may not work.")]
-        private LevelInfo levelInfo;
+        [field: SerializeField, Tooltip("The level info for this level. When missing, some features may not work.")]
+        public LevelInfo levelInfo { get; private set; }
         [SerializeField, Tooltip("The level end menu for this level. When missing, some features may not work.")]
         private LevelEndMenu levelEnd;
         #endregion

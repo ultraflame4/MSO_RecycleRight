@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6428e1feadfac2b44842b36725aae1f5, type: 3}
   m_Name: VolunteerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
-  characterName: Volunteer Vicent
+  characterName: Volunteer Vincent
   characterDesc: 
   characterSprite: {fileID: 3635251773814090647, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
@@ -24,4 +24,5 @@ MonoBehaviour:
   attackDuration: 1.2
   skillDuration: 1
   deathDuration: 3.5
+  characterSelectionSprite: {fileID: -2114259048583956285, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
   prefab: {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}

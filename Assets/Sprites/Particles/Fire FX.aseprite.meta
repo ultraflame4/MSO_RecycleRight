@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: 13ca91f24e3560e47883e45b6b4330d9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Fire FX_Frame_0
+    originalName: 
+    pivot: {x: 0.6, y: -0.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 5
+      height: 6
+    spriteID: d3aa500d923460b40af0c3e0c9945746
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: Fire FX_Frame_1
+    originalName: 
+    pivot: {x: 0.4, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 4
+      width: 5
+      height: 6
+    spriteID: c2f92b65c7b5b7d4e8683e46a6279b86
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 4}
+  - name: Fire FX_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 4
+      height: 8
+    spriteID: cb726b47a4a24cf4bad339651a880673
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 36}
+  - name: Fire FX_Frame_3
+    originalName: 
+    pivot: {x: 0.6, y: -0.71428573}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 21
+      width: 5
+      height: 7
+    spriteID: 8245ee9d0097c824e98cb8074c260236
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 21}
+  - name: Fire FX_Frame_4
+    originalName: 
+    pivot: {x: 0.5714286, y: -0.5555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 7
+      height: 9
+    spriteID: 20ab33a33e55835499d80f299ad64aae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Fire FX_Frame_5
+    originalName: 
+    pivot: {x: 0.75, y: -0.8571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 18
+      width: 4
+      height: 7
+    spriteID: 5cc7bf6faac3191428a5ab87abe5bb62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 18}
+  - name: Fire FX_Frame_6
+    originalName: 
+    pivot: {x: 0.75, y: -1.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 33
+      width: 4
+      height: 5
+    spriteID: 57ae70dafb766e34fbd0e5f8cd734ae2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 33}
+  - name: Fire FX_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -2.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 57
+      width: 4
+      height: 3
+    spriteID: c24bd331ebfda5e46bb484cb2706d501
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 57}
+  - name: Fire FX_Frame_8
+    originalName: 
+    pivot: {x: 0.6, y: -2.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 46
+      width: 5
+      height: 3
+    spriteID: 9c14f028cf94f9743b357042b3d30a5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 46}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1367037916
+    name: Fire FX
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Fire FX_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 5
+        height: 6
+      spriteId: d3aa500d923460b40af0c3e0c9945746
+    - name: Fire FX_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 6
+        y: 6
+        width: 5
+        height: 6
+      spriteId: c2f92b65c7b5b7d4e8683e46a6279b86
+    - name: Fire FX_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 6
+        y: 5
+        width: 4
+        height: 8
+      spriteId: cb726b47a4a24cf4bad339651a880673
+    - name: Fire FX_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 5
+        y: 5
+        width: 5
+        height: 7
+      spriteId: 8245ee9d0097c824e98cb8074c260236
+    - name: Fire FX_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 4
+        y: 5
+        width: 7
+        height: 9
+      spriteId: 20ab33a33e55835499d80f299ad64aae
+    - name: Fire FX_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 5
+        y: 6
+        width: 4
+        height: 7
+      spriteId: 5cc7bf6faac3191428a5ab87abe5bb62
+    - name: Fire FX_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 5
+        y: 6
+        width: 4
+        height: 5
+      spriteId: 57ae70dafb766e34fbd0e5f8cd734ae2
+    - name: Fire FX_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 6
+        y: 8
+        width: 4
+        height: 3
+      spriteId: c24bd331ebfda5e46bb484cb2706d501
+    - name: Fire FX_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 5
+        y: 8
+        width: 5
+        height: 3
+      spriteId: 9c14f028cf94f9743b357042b3d30a5d
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 16, y: 16}

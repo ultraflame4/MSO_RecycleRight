@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Entity.Data;
+using Interfaces;
 
 namespace Player.Behaviours
 {
@@ -90,6 +91,20 @@ namespace Player.Behaviours
             canTriggerSkill = true;
             cooldown = null;
         }
+
+        protected void CleanOrDamage(GameObject gameObject, float clean_amount, float damage_amount){
+            var damagable = gameObject.GetComponent<IDamagable>();
+            if (gameObject.TryGetComponent(out ICleanable cleanable)){
+                if (cleanable.AllowCleanable && clean_amount > 0){
+                    cleanable.Clean(clean_amount);
+                }else{
+                    damagable?.Damage(damage_amount);
+                }
+            }else{
+                damagable?.Damage(damage_amount);
+            }
+        }
     }
+
 }
 
