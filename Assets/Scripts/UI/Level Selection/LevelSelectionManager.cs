@@ -9,12 +9,18 @@ namespace UI.LevelSelection
         [SerializeField] LevelDetailsMenu levelDetailsMenu;
         [SerializeField] UIFadeAnimation skyBackground;
         [SerializeField] UIFadeAnimation exitSceneBackground;
+        [SerializeField] LevelDetailsPopupMenu levelDetailsPopupMenu;
+        [SerializeField] UIPointerHandler backgroundHandler;
         SceneReference selectedLevel;
+        int selectedIndex = -1;
 
         // Start is called before the first frame update
         void Start()
         {
             selectedLevel = null;
+            DeselectLevel();
+            if (backgroundHandler == null) return;
+            backgroundHandler.PointerDown += DeselectLevel;
         }
 
         #region Main Level Selection Menu
@@ -24,9 +30,16 @@ namespace UI.LevelSelection
         /// <param name="index">Index of level in levels array</param>
         public void LevelSelected(int index)
         {
-            doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.anim?.SetActive(true);
-            skyBackground?.SetActive(true);
+            if (levelDetailsPopupMenu == null || levelDetailsPopupMenu.Active) return;
+
+            selectedIndex = index;
+            levelDetailsPopupMenu?.SetActive(true, selectedIndex);
+
+            if (selectedIndex < 0 || selectedIndex >= GameManager.Instance.config.levels.Length)
+            {
+                Debug.LogWarning($"Selected index {selectedIndex} is out of range {GameManager.Instance.config.levels.Length}, task has been aborted! (LevelSelectionManager.cs)");
+                return;
+            }
 
             if (GameManager.Instance == null)
             {
@@ -34,9 +47,42 @@ namespace UI.LevelSelection
                 return;
             }
 
-            selectedLevel = GameManager.Instance.config.levels[index].scene;
-            levelDetailsMenu?.SetText(GameManager.Instance.config.levels[index].levelInfo.data.levelName, 
-                GameManager.Instance.config.levels[index].levelInfo.data.levelDescription);
+            levelDetailsPopupMenu?.SetDetails(GameManager.Instance.config.levels[selectedIndex].levelInfo);
+        }
+
+        /// <summary>
+        /// Handle deselecting level
+        /// </summary>
+        public void DeselectLevel()
+        {
+            selectedIndex = -1;
+            levelDetailsPopupMenu?.SetActive(false, selectedIndex);
+        }
+
+        /// <summary>
+        /// Show level details menu to prepare to start level
+        /// </summary>
+        public void ShowLevelDetails()
+        {
+            if (selectedIndex < 0 || selectedIndex >= GameManager.Instance.config.levels.Length)
+            {
+                Debug.LogWarning($"Selected index {selectedIndex} is out of range {GameManager.Instance.config.levels.Length}, task has been aborted! (LevelSelectionManager.cs)");
+                return;
+            }
+
+            doorAnimation?.PlayAnimation();
+            levelDetailsMenu?.SetActive(true);
+            skyBackground?.SetActive(true);
+            
+            if (GameManager.Instance == null)
+            {
+                Debug.LogWarning("Game manager instance is null, unable to show level details. (LevelSelectionManager.cs)");
+                return;
+            }
+
+            selectedLevel = GameManager.Instance.config.levels[selectedIndex].scene;
+            levelDetailsMenu?.SetDetails(GameManager.Instance.config.levels[selectedIndex].levelInfo);
+            DeselectLevel();
         }
 
         /// <summary>
@@ -60,7 +106,7 @@ namespace UI.LevelSelection
         public void LevelSelectionBack()
         {
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.anim?.SetActive(false);
+            levelDetailsMenu?.SetActive(false);
             skyBackground?.SetActive(false);
             selectedLevel = null;
         }
@@ -84,7 +130,7 @@ namespace UI.LevelSelection
             }
 
             doorAnimation?.PlayAnimation();
-            levelDetailsMenu?.anim?.SetActive(false);
+            levelDetailsMenu?.SetActive(false);
             exitSceneBackground?.SetActive(true);
             GameManager.Instance.LoadLevel(selectedLevel.Name);
         }
