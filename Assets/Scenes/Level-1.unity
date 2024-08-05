@@ -7253,7 +7253,7 @@ MonoBehaviour:
   autoChangeZone: 1
   <camera>k__BackingField: {fileID: 1636265044}
   debug_move_to_current_zone: 0
-  levelInfo: {fileID: 7641254686706731873}
+  <levelInfo>k__BackingField: {fileID: 7641254686706731873}
   levelEnd: {fileID: 1633215134}
 --- !u!114 &7641254686706731873
 MonoBehaviour:
@@ -7269,9 +7269,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info: {fileID: 11400000, guid: 2bd7a8086155b164988459e91d2bce4c, type: 2}
   data:
-    levelName: Shanbi Park
-    levelDescription: Yes
-    maxScore: 14
+    levelName: Level 1
+    levelCode: LV - 1
+    levelDescription: 'This level introduces the player to the pest infestation mechanic.
+
+      (This
+      description is to be edited)'
+    levelImage: {fileID: 0}
+    maxScore: 0
 --- !u!1001 &8648655690964249216
 PrefabInstance:
   m_ObjectHideFlags: 0
