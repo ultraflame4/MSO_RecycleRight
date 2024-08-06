@@ -10,5 +10,16 @@ namespace Bosses.Pilotras.FSM
         public DefaultState(StateMachine<PilotrasController> fsm, PilotrasController character) : base(fsm, character)
         {
         }
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            if (character.PlacingState.CanEnter)
+            {
+                fsm.SwitchState(character.PlacingState);
+                return;
+            }
+        }
     }
 }
