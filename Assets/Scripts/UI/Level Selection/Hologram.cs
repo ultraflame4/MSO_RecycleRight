@@ -67,7 +67,9 @@ namespace UI.LevelSelection
             anim?.Play("Glitch");
             yield return new WaitForSeconds(anim.currentAnimation.duration);
             default_callback?.Invoke();
-            coroutine_glitch_effect = StartCoroutine(Glitch(glitch_callback, default_callback));
+            
+            if (gameObject.activeInHierarchy)
+                coroutine_glitch_effect = StartCoroutine(Glitch(glitch_callback, default_callback));
         }
     }
 }
