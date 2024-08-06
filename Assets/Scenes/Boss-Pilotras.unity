@@ -1127,7 +1127,7 @@ MonoBehaviour:
   <current_zone_index>k__BackingField: 0
   zoneChangeDelay: 2.5
   binTag: Bin
-  autoChangeZone: 1
+  autoChangeZone: 0
   <camera>k__BackingField: {fileID: 1515659083}
   debug_move_to_current_zone: 0
   <levelInfo>k__BackingField: {fileID: 1763705686}
