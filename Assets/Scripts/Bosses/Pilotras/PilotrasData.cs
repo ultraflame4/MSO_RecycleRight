@@ -13,13 +13,15 @@ namespace Bosses.Pilotras
     {
         #region Inspector Fields
         [SerializeField] EntitySO data;
+        [SerializeField] float maxHealth = 500f;
         [SerializeField] int numberOfPhases = 2;
         [SerializeField] SpawnableInPhase[] spawnableNPC;
         #endregion
 
         #region Public Properties
         public EntitySO entityData => data;
-        public int number_of_phases => number_of_phases;
+        public float max_health => maxHealth;
+        public int number_of_phases => numberOfPhases;
         public SpawnableInPhase[] spawnable_npcs => spawnableNPC;
         #endregion
 

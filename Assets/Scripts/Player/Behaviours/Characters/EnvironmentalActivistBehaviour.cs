@@ -99,8 +99,9 @@ namespace Player.Behaviours
                 // stun and apply knockback to enemy that was hit
                 hit.GetComponent<IStunnable>()?.Stun(attackStunDuration * dropoffScale);
                 // try add knockback by getting rigidbody and adding force in hit direction
-                hit.GetComponent<Rigidbody2D>()?
-                    .AddForce((character.pointer.position - character.transform.position).normalized * 
+                Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+                if (rb == null) return;
+                rb.AddForce((character.pointer.position - character.transform.position).normalized * 
                     knockback * dropoffScale, ForceMode2D.Impulse);
             }
         }

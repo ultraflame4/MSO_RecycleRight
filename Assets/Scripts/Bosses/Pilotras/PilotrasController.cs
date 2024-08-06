@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Bosses.Pilotras.FSM;
+using Interfaces;
 using Patterns.FSM;
 using Level;
+using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras
 {
-    public class PilotrasController : StateMachine<PilotrasController>
+    public class PilotrasController : StateMachine<PilotrasController>, IDamagable
     {
         #region Data
         [field: SerializeField] public PilotrasData data { get; private set; }
@@ -25,7 +28,18 @@ namespace Bosses.Pilotras
         #endregion
 
         #region Other Properties
+        private float _health = 0f;
+        public float Health
+        {
+            get { return _health; }
+            set { _health = Mathf.Clamp(value, 0f, data.max_health); }
+        }
+
         public int currentPhase { get; private set; } = 0;
+        #endregion
+
+        #region Events
+        public event Action EndLevel;
         #endregion
 
         #region Public Methods
@@ -91,10 +105,29 @@ namespace Bosses.Pilotras
         }
         #endregion
 
+        #region Interface Methods
+        public void Damage(float damage)
+        {
+            Health -= damage;
+            if (Health > 0f) return;
+
+            if (currentPhase >= data.number_of_phases) 
+            {
+                // handle death state
+                EndLevel?.Invoke();
+                return;
+            }
+
+            Health = data.max_health;
+            currentPhase++;
+        }
+        #endregion
+
         #region MonoBehaviour Callbacks
         void Start()
         {
-            // set current phase
+            // reset variables
+            Health = data.max_health;
             currentPhase = 1;
             // initialize states
             DefaultState = new DefaultState(this, this);

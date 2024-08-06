@@ -1084,6 +1084,7 @@ GameObject:
   - component: {fileID: 1763705688}
   - component: {fileID: 1763705687}
   - component: {fileID: 1763705686}
+  - component: {fileID: 1763705689}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1148,6 +1149,19 @@ Transform:
   - {fileID: 843036385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763705689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763705685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92304337a0b56be4e8f766de8ed7e11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1519737337020142534}
 --- !u!1 &1828818306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,6 +1287,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+--- !u!114 &1519737337020142534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7426227777418501112, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+  m_PrefabInstance: {fileID: 1519737337020142533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6d2b49b03ae844c935a314e15f29ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
