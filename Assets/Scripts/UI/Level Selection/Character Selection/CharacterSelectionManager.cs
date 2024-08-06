@@ -20,7 +20,7 @@ namespace UI.LevelSelection.CharacterSelection
 
         [Header("Transition")]
         [SerializeField] float transitionDuration = 1f;
-        [SerializeField] GameObject transitionAnimation;
+        [SerializeField] CharacterSelectionTransitionManager transitionAnimation;
         Coroutine coroutine_transition;
 
         UIAnimator[] levelMenuAnimators, characterMenuAnimators;
@@ -39,8 +39,12 @@ namespace UI.LevelSelection.CharacterSelection
             LoadAnimators(characterSelectionMenu, out characterMenuAnimators);
             SetMenuActive(true, levelSelectionMenu, levelMenuAnimators);
             SetMenuActive(false, characterSelectionMenu, characterMenuAnimators);
-            transitionAnimation?.SetActive(false);
-            if (toggleQuickSelect != null) toggleQuickSelect.OnToggle += ToggleHandler;
+            transitionAnimation?.gameObject.SetActive(false);
+
+            if (toggleQuickSelect != null) 
+                toggleQuickSelect.OnToggle += ToggleHandler;
+            if (transitionAnimation != null) 
+                transitionAnimation.MakeTransition += MakeTransition;
             if (hologramMenu == null) return;
             hologramMenu.gameObject.SetActive(false);
             hologramMenu.CharacterList.CharacterProfileCreated += SubscribeToClick;
@@ -63,16 +67,21 @@ namespace UI.LevelSelection.CharacterSelection
             coroutine_transition = StartCoroutine(Transition());
         }
 
-        IEnumerator Transition()
+        void MakeTransition()
         {
-            // handle showing transition
-            transitionAnimation?.SetActive(true);
-            yield return new WaitForSeconds(transitionDuration);
-            transitionAnimation?.SetActive(false);
-            coroutine_transition = null;
             // set menu renderers
             SetMenuActive(!MenuActive, levelSelectionMenu, levelMenuAnimators);
             SetMenuActive(MenuActive, characterSelectionMenu, characterMenuAnimators);
+        }
+
+        IEnumerator Transition()
+        {
+            // handle showing transition
+            transitionAnimation?.gameObject.SetActive(true);
+            transitionAnimation?.PlayTransition(MenuActive);
+            yield return new WaitForSeconds(transitionDuration);
+            transitionAnimation?.gameObject.SetActive(false);
+            coroutine_transition = null;
         }
         #endregion
 
