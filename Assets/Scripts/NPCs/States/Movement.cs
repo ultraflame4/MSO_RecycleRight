@@ -36,9 +36,8 @@ namespace NPC.States
             base.Enter();
             character.animator?.SetBool(animParamBoolWalk, true);
         }
-        public override void OnDrawGizmosSelected()
+        public void OnDrawGizmosSelected()
         {
-            base.OnDrawGizmosSelected();
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, current_edge_force);
         }

@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
 namespace Patterns.FSM
 {
     public class State<T>
@@ -22,7 +26,16 @@ namespace Patterns.FSM
         public virtual void PhysicsUpdate() {}
         public virtual void Exit() {}
 
-        public virtual void OnDrawGizmosSelected() {}
-        public virtual void OnDrawGizmos() {}
+        /// <summary>
+        /// Coroutine to wait for a set duration in a state
+        /// </summary>
+        /// <param name="duration">Duration to wait</param>
+        /// <param name="callback">Method to call after the wait duration</param>
+        /// <returns></returns>
+        protected IEnumerator WaitForSeconds(float duration, Action callback = null)
+        {
+            yield return new WaitForSeconds(duration);
+            callback?.Invoke();
+        }
     }
 }
