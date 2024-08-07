@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
   m_Name: PlasticBottle
   m_EditorClassIdentifier: 
-  characterName: Plastic Bottle
+  characterName: Bottle
   characterDesc: 
   characterSprite: {fileID: 0}
   trashNPCType: 1
@@ -24,6 +24,7 @@ MonoBehaviour:
     recyclableType: 1
     recyclablePrefab: {fileID: 6531889305799652985, guid: 4a42f65ff9f6c2e4594677a64040ada9, type: 3}
   contaminantConfig:
+    nameOverride: Soda Bottle
     contaminantPrefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     attackRange: 2
     startAttackRange: 1

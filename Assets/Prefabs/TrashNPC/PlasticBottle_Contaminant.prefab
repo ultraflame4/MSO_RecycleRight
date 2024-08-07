@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3459501042672568818, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: npcData
       value: 
@@ -55,6 +59,10 @@ PrefabInstance:
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: startAttackRange
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288516772591241683, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_text
+      value: Plastic Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 5090525263914492313, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -111,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4796279524644775078, guid: 9146297e04a62884db0dd8736d589517, type: 3}
+      objectReference: {fileID: -2642328633650392307, guid: 9146297e04a62884db0dd8736d589517, type: 3}
     - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

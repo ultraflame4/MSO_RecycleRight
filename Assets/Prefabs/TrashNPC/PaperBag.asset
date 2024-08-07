@@ -24,6 +24,7 @@ MonoBehaviour:
     recyclableType: 0
     recyclablePrefab: {fileID: 9071025310280361308, guid: 14b472ffa2f654640bf146bcde20dc71, type: 3}
   contaminantConfig:
+    nameOverride: Greasy Paper Bag
     contaminantPrefab: {fileID: 3013555632393553417, guid: f103b1a415779604c8050974d043d4b9, type: 3}
     attackRange: 2
     startAttackRange: 1

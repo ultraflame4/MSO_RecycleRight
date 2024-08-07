@@ -81,6 +81,15 @@ namespace NPC.Contaminant
             attract_pests = npcData.contaminantConfig.attract_pests;
             attack_hit_delay = npcData.contaminantConfig.attack_hit_delay;
             cleanable = npcData.contaminantConfig.cleanable;
+
+            if (nameText)
+            {
+                var trimmed = npcData.contaminantConfig.nameOverride.Trim(' ');
+                if (trimmed.Length > 0)
+                {
+                    nameText.text = trimmed;
+                }
+            }
             if (cleanable)
             {
                 if (npcData.recyclableConfig.recyclablePrefab != null)
@@ -145,7 +154,7 @@ namespace NPC.Contaminant
             if (!cleanable) return;
             // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
             grimeController.GrimeAmount -= clean_amount;
-            if (grimeController.GrimeAmount <= 0.1) 
+            if (grimeController.GrimeAmount <= 0.1)
                 SpawnRecyclable();
         }
 

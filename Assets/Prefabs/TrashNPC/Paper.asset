@@ -24,6 +24,7 @@ MonoBehaviour:
     recyclableType: 0
     recyclablePrefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
   contaminantConfig:
+    nameOverride: Soiled Tissue
     contaminantPrefab: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
     attackRange: 2
     startAttackRange: 1
