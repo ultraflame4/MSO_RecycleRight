@@ -4,30 +4,23 @@ using Patterns.FSM;
 
 namespace Bosses.Pilotras.FSM
 {
-    public class PlacingState : CoroutineState<PilotrasController>
+    public class PlacingState : CooldownState<PilotrasController>
     {
-        public bool CanEnter { get; private set; } = true;
         int amountToPlace;
         Coroutine coroutine_placing;
 
         public PlacingState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
-            base(fsm, character, character.DefaultState, character.behaviourData.placing_duration)
+            base(fsm, character, character.DefaultState, character.behaviourData.placing_duration, character.behaviourData.placing_cooldown)
         {
         }
 
         public override void Enter()
         {
-            if (!CanEnter)
-            {
-                fsm.SwitchState(character.DefaultState);
-                return;
-            }
-
-            CanEnter = false;
+            base.Enter();
             duration = character.behaviourData.placing_duration;
+            cooldown = character.behaviourData.placing_cooldown;
             amountToPlace = character.behaviourData.place_npc_amount;
             coroutine_placing = character.StartCoroutine(PlaceNPC());
-            base.Enter();
         }
 
         public override void Exit()
@@ -39,8 +32,6 @@ namespace Bosses.Pilotras.FSM
                 character.StopCoroutine(coroutine_placing);
                 coroutine_placing = null;
             }
-
-            character.StartCoroutine(WaitForSeconds(character.behaviourData.placing_cooldown, () => CanEnter = true));
         }
 
         IEnumerator PlaceNPC()
