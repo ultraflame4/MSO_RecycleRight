@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2522,7 +2522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 613292066}
-  - component: {fileID: 613292069}
   m_Layer: 5
   m_Name: Exit Scene Background
   m_TagString: Untagged
@@ -2550,21 +2549,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1820.0001, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &613292069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613292065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2d149a2d84f2944926f53c5d5b5920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDuration: 0.5
-  fadeDelay: 0
-  fadeType: 0
 --- !u!1 &614163784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,6 +3268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 704862565}
   - component: {fileID: 704862566}
+  - component: {fileID: 704862567}
   m_Layer: 5
   m_Name: LevelSelectHall
   m_TagString: Untagged
@@ -3326,6 +3311,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainDoorsAnim: {fileID: 1262446955}
+  animator: {fileID: 704862567}
+--- !u!95 &704862567
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704862564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daee52cc9c8dde146954134c7035e908, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &720809780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,8 +4306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032228278}
-  - component: {fileID: 1032228280}
-  - component: {fileID: 1032228281}
+  - component: {fileID: 1032228279}
   m_Layer: 5
   m_Name: Detailed Level Menu
   m_TagString: Untagged
@@ -4331,42 +4337,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1820.0001, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1032228280
-MonoBehaviour:
+--- !u!225 &1032228279
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032228277}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457bdad01250f004a8d9da2b33bc2765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationDuration: 1
-  maxScale: 1
-  anim: {fileID: 612612365}
-  glitchCooldown: {x: 3, y: 7}
-  <Active>k__BackingField: 0
-  image: {fileID: 1453567329}
-  levelNameText: {fileID: 1082759646}
-  levelDescText: {fileID: 1446949764}
-  fadeAnim: {fileID: 1032228281}
---- !u!114 &1032228281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032228277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2d149a2d84f2944926f53c5d5b5920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDuration: 0.5
-  fadeDelay: 0.5
-  fadeType: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1048714537
 GameObject:
   m_ObjectHideFlags: 0

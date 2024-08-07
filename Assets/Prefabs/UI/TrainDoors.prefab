@@ -164,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1550, y: 0}
+  m_AnchoredPosition: {x: 520, y: 0}
   m_SizeDelta: {x: 90.625, y: 128.38542}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7397759387275133221
@@ -334,7 +334,7 @@ MonoBehaviour:
   rightDoor: {fileID: 7686078130890083694}
   OpenedDistance: 3100
   ClosedDistance: 1040
-  openPercent: 1
+  openPercent: 0
 --- !u!1 &4437238317973500077
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1550, y: 0}
+  m_AnchoredPosition: {x: -520, y: 0}
   m_SizeDelta: {x: 90.625, y: 128.38542}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7387873188240771192
