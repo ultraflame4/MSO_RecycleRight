@@ -19,6 +19,61 @@ namespace UI.LevelSelection
         protected Coroutine coroutine_glitch_effect, coroutine_transition;
         public bool Active { get; protected set; } = false;
 
+
+
+        protected IEnumerator AnimateOpen()
+        {
+            var targetScaleX = maxScale;
+            var currentPercent = transform.localScale.x / targetScaleX;
+            // Calculate Start time progress from existing local scale.
+            float elapsed = currentPercent * animationDuration;
+            while (true)
+            {
+                yield return null;
+                elapsed += Time.deltaTime;
+                var progress = elapsed / animationDuration;
+                if (progress >= 1)
+                {
+                    break;
+                }
+
+                var current_scale = transform.localScale;
+                current_scale.x = progress * targetScaleX;
+                transform.localScale = current_scale;
+            }
+
+            var scale = transform.localScale;
+            scale.x = targetScaleX;
+            transform.localScale = scale;
+        }
+
+        
+        protected IEnumerator AnimateClose()
+        {
+            var targetScaleX = maxScale;
+            var currentPercent = 1 - transform.localScale.x / targetScaleX;
+            // Calculate Start time progress from existing local scale.
+            float elapsed = currentPercent * animationDuration;
+            while (true)
+            {
+                yield return null;
+                elapsed += Time.deltaTime;
+                var progress = 1 - elapsed / animationDuration;
+                if (progress >= 1)
+                {
+                    break;
+                }
+
+                var current_scale = transform.localScale;
+                current_scale.x = progress * targetScaleX;
+                transform.localScale = current_scale;
+            }
+
+            var scale = transform.localScale;
+            scale.x = 0;
+            transform.localScale = scale;
+        }
+
         /// <summary>
         /// Animate hologram when activating and deactivating by changing horizontal scale
         /// </summary>
@@ -34,7 +89,7 @@ namespace UI.LevelSelection
             while (timeElasped < animationDuration)
             {
                 transform.localScale = scale;
-                scale.x = maxScale * (active ? (timeElasped / animationDuration) : 
+                scale.x = maxScale * (active ? (timeElasped / animationDuration) :
                     1f - (timeElasped / animationDuration));
                 timeElasped += Time.deltaTime;
                 yield return timeElasped;
@@ -45,7 +100,7 @@ namespace UI.LevelSelection
                 scale.x = maxScale;
                 transform.localScale = scale;
             }
-            else 
+            else
             {
                 gameObject.SetActive(false);
             }
@@ -67,7 +122,7 @@ namespace UI.LevelSelection
             anim?.Play("Glitch");
             yield return new WaitForSeconds(anim.currentAnimation.duration);
             default_callback?.Invoke();
-            
+
             if (gameObject.activeInHierarchy)
                 coroutine_glitch_effect = StartCoroutine(Glitch(glitch_callback, default_callback));
         }
