@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Bosses.Pilotras.FSM;
 using Interfaces;
 using Patterns.FSM;
 using Level;
+using NPC;
 using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras
@@ -21,10 +21,11 @@ namespace Bosses.Pilotras
         #region States
         public DefaultState DefaultState { get; private set; }
         public PlacingState PlacingState { get; private set; }
+        public BinDropState BinDropState { get; private set; }
         #endregion
 
         #region References
-        LevelManager levelManager => LevelManager.Instance;
+        public LevelManager levelManager => LevelManager.Instance;
         #endregion
 
         #region Other Properties
@@ -49,7 +50,7 @@ namespace Bosses.Pilotras
         /// <returns>NPC that was spawned</returns>
         public GameObject PlaceNPC(Vector3 position)
         {
-            if (LevelManager.Instance == null || data.spawnable_npcs == null || data.spawnable_npcs.Length <= 0 ||
+            if (levelManager == null || data.spawnable_npcs == null || data.spawnable_npcs.Length <= 0 ||
                 data.spawnable_npcs[0].gameObjects == null || data.spawnable_npcs[0].gameObjects.Length <= 0)
                     return null;
             
@@ -71,7 +72,7 @@ namespace Bosses.Pilotras
                 placableNPCs[Random.Range(0, placableNPCs.Length)], 
                 position, 
                 Quaternion.identity, 
-                LevelManager.Instance.current_zone.transform
+                levelManager.current_zone.transform
             );
         }
 
@@ -81,7 +82,7 @@ namespace Bosses.Pilotras
         /// <returns>Generated position</returns>
         public Vector2 GetRandomPositionInZone()
         {
-            LevelZone currentZone = LevelManager.Instance.current_zone;
+            LevelZone currentZone = levelManager.current_zone;
             Vector2 boundary = (Vector2) currentZone.center + (currentZone.size * 0.5f);
             return new Vector2(Random.Range(-boundary.x, boundary.x), Random.Range(-boundary.y, boundary.y));
         }
@@ -135,6 +136,7 @@ namespace Bosses.Pilotras
             // initialize states
             DefaultState = new DefaultState(this, this);
             PlacingState = new PlacingState(this, this);
+            BinDropState = new BinDropState(this, this);
             // initialize FSM
             Initialize(DefaultState);
         }
