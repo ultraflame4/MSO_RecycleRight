@@ -8,8 +8,8 @@ namespace UI.LevelSelection.CharacterSelection
 {
     public class CharacterSelectionManager : MonoBehaviour
     {
-        [Header("Menus")]
-        [SerializeField] GameObject[] characterSelectionMenu;
+        [Tooltip("Canvas group to hide when the menu is active")]
+        [SerializeField] List<CanvasGroup> hideCanvasGroup = new();
 
         [Header("Character Selection")]
         [SerializeField] HologramMenuManager hologramMenu;
@@ -50,6 +50,7 @@ namespace UI.LevelSelection.CharacterSelection
             yield return null;
             yield return transitionAnimation.HalfTransition(true, false);
             canvasGroup.alpha = 1;
+            hideCanvasGroup.ToList().ForEach(x => x.alpha = 0);
             yield return transitionAnimation.HalfTransition(false, true);
             transitionAnimation?.gameObject.SetActive(false);
             coroutine_transition = null;
@@ -61,6 +62,7 @@ namespace UI.LevelSelection.CharacterSelection
             yield return null;
             yield return transitionAnimation.HalfTransition(false, false);
             canvasGroup.alpha = 0;
+            hideCanvasGroup.ToList().ForEach(x => x.alpha = 1);
             yield return transitionAnimation.HalfTransition(true, true);
             transitionAnimation?.gameObject.SetActive(false);
             coroutine_transition = null;
@@ -74,7 +76,11 @@ namespace UI.LevelSelection.CharacterSelection
             canvasGroup.alpha = 0;
             SetHologramActive(false);
 
-            if (skipTransition) return;
+            if (skipTransition)
+            {
+                hideCanvasGroup.ToList().ForEach(x => x.alpha = 0);
+                return;
+            }
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(EnterTransition());
         }
@@ -86,10 +92,10 @@ namespace UI.LevelSelection.CharacterSelection
             if (skipTransition)
             {
                 gameObject.SetActive(false);
+                hideCanvasGroup.ToList().ForEach(x => x.alpha = 1);
                 return;
             }
             canvasGroup.alpha = 1;
-
 
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(ExitTransition());
