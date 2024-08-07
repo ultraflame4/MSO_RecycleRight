@@ -4,9 +4,9 @@ using UnityEngine;
 namespace Bosses.Pilotras
 {
     [Serializable]
-    public struct SpawnableInPhase
+    public struct PhaseObjects
     {
-        public GameObject[] npcs;
+        public GameObject[] gameObjects;
     }
 
     public class PilotrasData : MonoBehaviour
@@ -15,14 +15,14 @@ namespace Bosses.Pilotras
         [SerializeField] EntitySO data;
         [SerializeField] float maxHealth = 500f;
         [SerializeField] int numberOfPhases = 2;
-        [SerializeField] SpawnableInPhase[] spawnableNPC;
+        [SerializeField] PhaseObjects[] spawnableNPC;
         #endregion
 
         #region Public Properties
         public EntitySO entityData => data;
         public float max_health => maxHealth;
         public int number_of_phases => numberOfPhases;
-        public SpawnableInPhase[] spawnable_npcs => spawnableNPC;
+        public PhaseObjects[] spawnable_npcs => spawnableNPC;
         #endregion
 
         #region MonoBehaviour Callbacks

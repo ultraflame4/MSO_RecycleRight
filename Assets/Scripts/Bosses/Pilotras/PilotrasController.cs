@@ -50,17 +50,17 @@ namespace Bosses.Pilotras
         public GameObject PlaceNPC(Vector3 position)
         {
             if (LevelManager.Instance == null || data.spawnable_npcs == null || data.spawnable_npcs.Length <= 0 ||
-                data.spawnable_npcs[0].npcs == null || data.spawnable_npcs[0].npcs.Length <= 0)
+                data.spawnable_npcs[0].gameObjects == null || data.spawnable_npcs[0].gameObjects.Length <= 0)
                     return null;
             
-            GameObject[] placableNPCs = data.spawnable_npcs[0].npcs;
+            GameObject[] placableNPCs = data.spawnable_npcs[0].gameObjects;
             
             for (int i = 1; i < currentPhase; i++)
             {
                 if (data.spawnable_npcs.Length <= i) break;
 
                 placableNPCs = placableNPCs
-                    .Concat(data.spawnable_npcs[i].npcs)
+                    .Concat(data.spawnable_npcs[i].gameObjects)
                     .Where(x => x != null)
                     .ToArray();
             }

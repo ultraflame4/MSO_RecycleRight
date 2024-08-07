@@ -47,7 +47,8 @@ namespace Bosses.Pilotras.FSM
         IEnumerator PlaceNPC()
         {
             GameObject obj = character.PlaceNPC(character.transform.position);
-            character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, obj, character.GetRandomPositionInZone()));
+            if (obj != null) character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, 
+                    obj, character.GetRandomPositionInZone()));
             yield return new WaitForSeconds(duration / amountToPlace);
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }

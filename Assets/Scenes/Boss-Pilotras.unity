@@ -1278,6 +1278,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[1].gameObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 6531889305799652985, guid: 4a42f65ff9f6c2e4594677a64040ada9, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 6849047566521263402, guid: 1c3074f0e06cf96488afe0c47f712594, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[0].gameObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 6848308265610111689, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[1].gameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 8202214878067815596, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[1].gameObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 673962853163920643, guid: f03ceb70198345a4dba10c1d4a797045, type: 3}
+    - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: spawnableNPC.Array.data[1].gameObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 8097417969370782324, guid: 3c10479c73eff34409d9c4ccaebcc17d, type: 3}
     - target: {fileID: 6242226410964193304, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
       propertyPath: m_Name
       value: Pilotras
