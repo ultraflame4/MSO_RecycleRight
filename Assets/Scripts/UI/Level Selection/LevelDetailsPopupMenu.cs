@@ -15,9 +15,13 @@ namespace UI.LevelSelection
         [Header("On Click Behaviour")]
         [SerializeField] Vector3 lockPosition;
         [SerializeField] RectTransform map, canvas;
-        [SerializeField] RectTransform[] levelButtons;
 
-
+        void Awake()
+        {
+            var localScale = transform.localScale;
+            localScale.x = 0;
+            transform.localScale = localScale;
+        }
         /// <summary>
         /// Set details of level to show
         /// </summary>
@@ -31,23 +35,23 @@ namespace UI.LevelSelection
             levelCode.text = data.data.levelCode;
         }
 
-        float MoveButtonToCenter_Step(int btnIndex)
+        float MoveButtonToCenter_Step(LevelButton btn)
         {
 
-            var dest = (-levelButtons[btnIndex].localPosition * map.localScale.x) + lockPosition;
+            var dest = (-btn.transform.localPosition * map.localScale.x) + lockPosition;
             map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
             var distance = Vector3.Distance(dest, map.localPosition);
             return distance;
         }
 
-        IEnumerator PlayOpeningForButton(int btnIndex)
+        IEnumerator PlayOpeningForButton(LevelButton btn)
         {
             yield return AnimateClose();
             Coroutine earlyOpen = null;
 
             while (true)
             {
-                var d = MoveButtonToCenter_Step(btnIndex);
+                var d = MoveButtonToCenter_Step(btn);
                 if (d < 0.1f) break;
                 if (d < 40f && earlyOpen == null)
                 {
@@ -63,18 +67,27 @@ namespace UI.LevelSelection
         /// Set active state of menu
         /// </summary>
         /// <param name="active">Active state to set to</param>
-        public void Activate(int index)
+        public void ShowForLevelBtn(LevelButton btn)
         {
             gameObject.SetActive(true);// if trying to active, ensure that gameobject is alr active
+            // Retrieve level details from game manager and set to popup menu
+            
+            if (GameManager.Instance.config.levels.Length > btn.levelIndex){
+                SetDetails(GameManager.Instance.config.levels[btn.levelIndex].levelInfo);
+            }
+            else{
+                Debug.LogWarning($"Could not get level details - No level found at index: {btn.levelIndex} in the GameManager config levels");
+            }
+
 
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(PlayOpeningForButton(index));
+            coroutine_transition = StartCoroutine(PlayOpeningForButton(btn));
         }
 
         /// <summary>
         /// Closes the popup menu.
         /// </summary>
-        public void Deactivate()
+        public void Hide()
         {
             if (!gameObject.activeInHierarchy) return; // Silences error
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
@@ -90,7 +103,7 @@ namespace UI.LevelSelection
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0) && !mouseHover) Deactivate();
+            if (Input.GetMouseButtonDown(0) && !mouseHover) Hide();
         }
 
         bool mouseHover = false;

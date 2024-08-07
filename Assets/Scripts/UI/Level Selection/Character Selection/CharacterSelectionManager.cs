@@ -37,7 +37,6 @@ namespace UI.LevelSelection.CharacterSelection
         {
             LoadAnimators(levelSelectionMenu, out levelMenuAnimators);
             LoadAnimators(characterSelectionMenu, out characterMenuAnimators);
-            SetMenuActive(true, levelSelectionMenu, levelMenuAnimators);
             SetMenuActive(false, characterSelectionMenu, characterMenuAnimators);
             transitionAnimation?.gameObject.SetActive(false);
 

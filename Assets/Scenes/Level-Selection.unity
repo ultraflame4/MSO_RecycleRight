@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: LevelSelected
         m_Mode: 3
@@ -307,7 +307,6 @@ MonoBehaviour:
   fadeDuration: 0.15
   fadeDelay: 0.5
   fadeType: 2
-  startActive: 0
 --- !u!1 &88247174
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,11 +634,11 @@ PrefabInstance:
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -691,11 +690,11 @@ PrefabInstance:
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -761,11 +760,11 @@ PrefabInstance:
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423667}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423667}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -984,6 +983,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7323052842091746584, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
   m_PrefabInstance: {fileID: 178969030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &209041508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+  m_PrefabInstance: {fileID: 178969030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &221827369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,17 +1243,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259332014}
   m_CullTransparentMesh: 1
---- !u!114 &280075461 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2451644263762677097, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
-  m_PrefabInstance: {fileID: 160092232}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d11339fff221da40bcaaf19bb3a500c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &331258428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1768,7 @@ PrefabInstance:
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423667}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1981,6 +1980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466618964}
+  - component: {fileID: 466618965}
   m_Layer: 5
   m_Name: Level Button (Level 2)
   m_TagString: Untagged
@@ -2009,6 +2009,22 @@ RectTransform:
   m_AnchoredPosition: {x: 18.08, y: -15.38}
   m_SizeDelta: {x: 19.23077, y: 19.23077}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &466618965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466618963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39090fea3d419ac4f8e61fb968808317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 2
+  buttons:
+  - {fileID: 53697018}
+  - {fileID: 1740739287}
 --- !u!1 &491974441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,7 +2644,6 @@ MonoBehaviour:
   fadeDuration: 0.5
   fadeDelay: 0
   fadeType: 0
-  startActive: 0
 --- !u!1 &614163784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,7 +2999,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: LevelSelectionBack
         m_Mode: 1
@@ -3494,7 +3509,7 @@ PrefabInstance:
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423667}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4002,7 +4017,7 @@ PrefabInstance:
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4252,7 +4267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 1
@@ -4359,6 +4374,7 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 612612365}
   glitchCooldown: {x: 3, y: 7}
+  <Active>k__BackingField: 0
   image: {fileID: 1453567329}
   levelNameText: {fileID: 1082759646}
   levelDescText: {fileID: 1446949764}
@@ -4378,7 +4394,6 @@ MonoBehaviour:
   fadeDuration: 0.5
   fadeDelay: 0.5
   fadeType: 0
-  startActive: 0
 --- !u!1 &1048714537
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,6 +4984,8 @@ MonoBehaviour:
   animationProgress: 0
   background: {fileID: 1294455826}
   debug_play: 0
+  originalDoorPosX: 0
+  screenWidth: 0
 --- !u!1 &1286320348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5022,7 +5039,6 @@ MonoBehaviour:
   fadeDuration: 0.5
   fadeDelay: 0.5
   fadeType: 1
-  startActive: 1
 --- !u!1 &1294455826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,7 +5234,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423668}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.CharacterSelection.CharacterSelectionManager,
           Assembly-CSharp
         m_MethodName: Back
@@ -5278,6 +5294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318483432}
+  - component: {fileID: 1318483433}
   m_Layer: 5
   m_Name: Main Level Select
   m_TagString: Untagged
@@ -5308,6 +5325,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1318483433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318483431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d5eb78be932f54d8001937e2ce3edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlSelect: {fileID: 0}
+  lvlDetailsPopup: {fileID: 491974445}
 --- !u!1 &1321409551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,6 +5348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1321409552}
+  - component: {fileID: 1321409553}
   m_Layer: 5
   m_Name: Level Button (Level 1)
   m_TagString: Untagged
@@ -5345,6 +5377,22 @@ RectTransform:
   m_AnchoredPosition: {x: -54.33, y: -15.38}
   m_SizeDelta: {x: 19.23077, y: 19.23077}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1321409553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321409551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39090fea3d419ac4f8e61fb968808317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 1
+  buttons:
+  - {fileID: 1876648749}
+  - {fileID: 209041508}
 --- !u!1 &1341505374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,6 +5468,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341505374}
   m_CullTransparentMesh: 1
+--- !u!114 &1361060538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+  m_PrefabInstance: {fileID: 438074064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366801331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6161,7 +6220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: LevelSelected
         m_Mode: 3
@@ -6654,6 +6713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696661096}
+  - component: {fileID: 1696661097}
   m_Layer: 5
   m_Name: Level Button (Tutorial)
   m_TagString: Untagged
@@ -6682,6 +6742,22 @@ RectTransform:
   m_AnchoredPosition: {x: -96.3, y: 15.4}
   m_SizeDelta: {x: 19.23077, y: 19.23077}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1696661097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696661095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39090fea3d419ac4f8e61fb968808317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 0
+  buttons:
+  - {fileID: 1713820857}
+  - {fileID: 2128550492}
 --- !u!1 &1700132280
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,7 +6841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423668}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.CharacterSelection.CharacterSelectionManager,
           Assembly-CSharp
         m_MethodName: ToggleMenu
@@ -6898,7 +6974,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: LevelSelected
         m_Mode: 3
@@ -7076,7 +7152,7 @@ PrefabInstance:
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423667}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7279,6 +7355,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7323052842091746584, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
   m_PrefabInstance: {fileID: 1740739285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740739287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+  m_PrefabInstance: {fileID: 1740739285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1744677495
 GameObject:
   m_ObjectHideFlags: 0
@@ -7726,7 +7813,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423668}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.CharacterSelection.CharacterSelectionManager,
           Assembly-CSharp
         m_MethodName: ToggleMenu
@@ -7999,17 +8086,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2258516022795373036, guid: 21739003b44140049a537a04996e9d1f, type: 3}
   m_PrefabInstance: {fileID: 174261159663520550}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1870991972 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2535998304514662227, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-  m_PrefabInstance: {fileID: 174261159663520550}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd40a5b00bfefe74091a508ad85882f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1874513673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8237,7 +8313,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: LevelSelected
         m_Mode: 3
@@ -8351,7 +8427,7 @@ PrefabInstance:
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8522,86 +8598,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7323052842091746584, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
   m_PrefabInstance: {fileID: 1922178684}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1969423665
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1969423666}
-  - component: {fileID: 1969423667}
-  - component: {fileID: 1969423668}
-  m_Layer: 0
-  m_Name: Level Selection Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1969423666
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969423665}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1969423667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969423665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1659ffc1b9733445903cf416feed161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnimation: {fileID: 1262446955}
-  levelDetailsMenu: {fileID: 1032228280}
-  skyBackground: {fileID: 84987101}
-  exitSceneBackground: {fileID: 613292069}
-  levelDetailsPopupMenu: {fileID: 491974445}
-  backgroundHandler: {fileID: 585237349}
---- !u!114 &1969423668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969423665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddaab6384be5f8f4d9e717576cea1c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelSelectionMenu:
-  - {fileID: 1262446953}
-  - {fileID: 1032228277}
-  characterSelectionMenu:
-  - {fileID: 563652084}
-  hologramMenu: {fileID: 678959728}
-  toggleQuickSelect: {fileID: 1870991972}
-  selectionColor:
-  - {r: 0.08756865, g: 0.6320754, b: 0.068574235, a: 1}
-  - {r: 0.7176471, g: 0.67189, b: 0.1254902, a: 1}
-  - {r: 0.6415094, g: 0.17965867, b: 0.12406549, a: 1}
-  characterSlots:
-  - {fileID: 2057706833}
-  - {fileID: 280075461}
-  - {fileID: 2083359907}
-  transitionDuration: 1
-  transitionAnimation: {fileID: 88247178}
 --- !u!1 &1975364348
 GameObject:
   m_ObjectHideFlags: 0
@@ -8611,6 +8607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975364349}
+  - component: {fileID: 1975364350}
   m_Layer: 5
   m_Name: Level Button (Boss)
   m_TagString: Untagged
@@ -8639,6 +8636,22 @@ RectTransform:
   m_AnchoredPosition: {x: 94.34, y: -15.38}
   m_SizeDelta: {x: 19.23077, y: 19.23077}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1975364350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975364348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39090fea3d419ac4f8e61fb968808317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 3
+  buttons:
+  - {fileID: 1532191124}
+  - {fileID: 1361060538}
 --- !u!1 &1976010504
 GameObject:
   m_ObjectHideFlags: 0
@@ -8722,7 +8735,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969423667}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
         m_MethodName: ShowLevelDetails
         m_Mode: 1
@@ -8986,17 +8999,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 760301286951032849, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
   m_PrefabInstance: {fileID: 3315700991268991230}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2057706833 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2451644263762677097, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
-  m_PrefabInstance: {fileID: 3315700991268991230}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d11339fff221da40bcaaf19bb3a500c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2083359905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9100,11 +9102,11 @@ PrefabInstance:
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -9156,11 +9158,11 @@ PrefabInstance:
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -9199,15 +9201,15 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 760301286951032849, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
   m_PrefabInstance: {fileID: 2083359905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2083359907 stripped
+--- !u!114 &2128550492 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2451644263762677097, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
-  m_PrefabInstance: {fileID: 2083359905}
+  m_CorrespondingSourceObject: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+  m_PrefabInstance: {fileID: 749857043}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d11339fff221da40bcaaf19bb3a500c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &174261159663520550
@@ -9459,11 +9461,11 @@ PrefabInstance:
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 1086854341746161543, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 1607024195158323930, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_Name
       value: Character Select Slot (0)
@@ -9471,11 +9473,11 @@ PrefabInstance:
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2239455573678414424, guid: a4ab87a895fb1044684db8cb1c0b0b84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1969423668}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9487,5 +9489,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 720809783}
   - {fileID: 1726909683}
-  - {fileID: 1969423666}
   - {fileID: 2792122248076205109}
