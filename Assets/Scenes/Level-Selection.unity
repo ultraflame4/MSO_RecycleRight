@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5102a4ced2f56f41be3bcb0aa6eedfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDuration: 0.25
+  animationDuration: 0.2
   maxScale: 1
   anim: {fileID: 0}
   glitchCooldown: {x: 0, y: 0}

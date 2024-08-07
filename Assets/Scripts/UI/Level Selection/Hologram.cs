@@ -23,8 +23,7 @@ namespace UI.LevelSelection
 
         protected IEnumerator AnimateOpen()
         {
-            var targetScaleX = maxScale;
-            var currentPercent = transform.localScale.x / targetScaleX;
+            var currentPercent = transform.localScale.x / maxScale;
             // Calculate Start time progress from existing local scale.
             float elapsed = currentPercent * animationDuration;
             while (true)
@@ -32,40 +31,34 @@ namespace UI.LevelSelection
                 yield return null;
                 elapsed += Time.deltaTime;
                 var progress = elapsed / animationDuration;
-                if (progress >= 1)
-                {
-                    break;
-                }
+                if (progress >= 1) break;
 
                 var current_scale = transform.localScale;
-                current_scale.x = progress * targetScaleX;
+                current_scale.x = Utils.CubicEase(0, maxScale, progress);
                 transform.localScale = current_scale;
             }
 
             var scale = transform.localScale;
-            scale.x = targetScaleX;
+            scale.x = maxScale;
             transform.localScale = scale;
         }
 
-        
+
         protected IEnumerator AnimateClose()
         {
-            var targetScaleX = maxScale;
-            var currentPercent = 1 - transform.localScale.x / targetScaleX;
+
+            var currentPercent = 1 - transform.localScale.x / maxScale;
             // Calculate Start time progress from existing local scale.
             float elapsed = currentPercent * animationDuration;
             while (true)
             {
                 yield return null;
                 elapsed += Time.deltaTime;
-                var progress = 1 - elapsed / animationDuration;
-                if (progress <= 0)
-                {
-                    break;
-                }
+                var progress = elapsed / animationDuration;
+                if (progress >= 1) break;
 
                 var current_scale = transform.localScale;
-                current_scale.x = progress * targetScaleX;
+                current_scale.x = Utils.CubicEase(maxScale, 0, progress);
                 transform.localScale = current_scale;
             }
 
