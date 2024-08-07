@@ -75,8 +75,6 @@ namespace UI.LevelSelection.CharacterSelection
             canvasGroup.alpha = 0;
             SetHologramActive(false);
 
-            if (toggleQuickSelect.activated) toggleQuickSelect.Toggle();
-
             if (skipTransition) return;
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(EnterTransition());
@@ -120,7 +118,7 @@ namespace UI.LevelSelection.CharacterSelection
         /// </summary>
         public void ConfirmSelection()
         {
-            if (toggleQuickSelect != null && !toggleQuickSelect.activated &&
+            if (!toggleQuickSelect.activated &&
                 hologramMenu != null && hologramMenu.CharacterInfo != null &&
                 hologramMenu.CharacterInfo.selectedCharacter != null)
             {
