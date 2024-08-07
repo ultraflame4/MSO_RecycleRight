@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,11 +16,17 @@ public class LevelSelectHall : MonoBehaviour
     private TextMeshProUGUI levelTitle;
     [SerializeField]
     private TextMeshProUGUI levelDesc;
+    
+    void Start()
+    {
+        Deactivate();
+    }
 
     public void Activate(LevelInfoSO levelInfo)
     {
         gameObject.SetActive(true);
         
+        trainDoorsAnim.SetBool("allowZoom", true);
         trainDoorsAnim.SetTrigger("closeDoors");
         animator.SetBool("Active", true);
 
@@ -31,10 +38,13 @@ public class LevelSelectHall : MonoBehaviour
         levelDesc.text = levelInfo.data.levelDescription;
 
     }
-
+    
     public void Deactivate()
     {
-        gameObject.SetActive(false);
+        trainDoorsAnim.SetBool("allowZoom", true);
+        Debug.Log("Deactivating level hall");
+        // gameObject.SetActive(false);
+        trainDoorsAnim.SetTrigger("openDoors");
         animator.SetBool("Active", false);
     }
 
