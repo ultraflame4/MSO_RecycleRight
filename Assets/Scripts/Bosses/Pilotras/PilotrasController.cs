@@ -6,7 +6,6 @@ using Bosses.Pilotras.FSM;
 using Interfaces;
 using Patterns.FSM;
 using Level;
-using NPC;
 using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras
@@ -102,6 +101,7 @@ namespace Bosses.Pilotras
 
             while (timeElasped < duration)
             {
+                if (obj == null) break;
                 obj.transform.position = Vector3.Lerp(originalPosition, targetPosition, timeElasped / duration);
                 timeElasped += Time.deltaTime;
                 yield return timeElasped;
