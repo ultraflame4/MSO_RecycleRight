@@ -2,8 +2,9 @@ namespace Patterns.FSM
 {
     public class CooldownState<T> : CoroutineState<T>
     {
-        public bool CanEnter { get; protected set; } = false;
         protected float cooldown;
+        private bool earlyExit = false;
+        public bool CanEnter { get; protected set; } = false;
 
         /// <summary>
         /// Constructor to create a state that can only be entered after a cooldown after exiting
@@ -23,6 +24,7 @@ namespace Patterns.FSM
         {
             if (!CanEnter)
             {
+                earlyExit = true;
                 fsm.SwitchState(nextState);
                 return;
             }
@@ -33,6 +35,12 @@ namespace Patterns.FSM
 
         public override void Exit()
         {
+            if (earlyExit)
+            {
+                earlyExit = false;
+                return;
+            }
+            
             base.Exit();
             fsm.StartCoroutine(WaitForSeconds(cooldown, () => CanEnter = true));
         }
