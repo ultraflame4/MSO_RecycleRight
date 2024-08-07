@@ -8,6 +8,7 @@ TagManager:
   - Bin
   - Pest
   - FireTilemap
+  - TrainDoors
   layers:
   - Default
   - TransparentFX

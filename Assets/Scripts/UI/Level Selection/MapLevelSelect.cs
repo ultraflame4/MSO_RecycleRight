@@ -22,6 +22,6 @@ public class MapLevelSelect : MonoBehaviour {
     }
 
     public void OpenLevelChoiceHall(LevelChoice choice){
-
+        lvlSelect.OpenLevelHallFor(choice);
     }
 }
