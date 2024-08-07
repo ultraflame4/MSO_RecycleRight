@@ -4277,8 +4277,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 704862566}
-        m_TargetAssemblyTypeName: LevelSelectHall, Assembly-CSharp
+      - m_Target: {fileID: 1726909684}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: LaunchLevel
         m_Mode: 1
         m_Arguments:
