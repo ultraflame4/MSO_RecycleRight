@@ -55,11 +55,11 @@ namespace UI.LevelSelection
             while (true)
             {
                 var d = MoveButtonToCenter_Step(btn);
-                if (d < 0.1f) break;
                 if (d < 40f && earlyOpen == null)
                 {
                     earlyOpen = StartCoroutine(AnimateOpen());
                 }
+                if (d < 0.1f) break;
                 yield return null;
             }
 
@@ -81,7 +81,6 @@ namespace UI.LevelSelection
             else{
                 Debug.LogWarning($"Could not get level details - No level found at index: {btn.levelIndex} in the GameManager config levels");
             }
-
 
             currentChoice = btn;
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
