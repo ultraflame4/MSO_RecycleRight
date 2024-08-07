@@ -57,7 +57,7 @@ namespace Bosses.Pilotras
             
             for (int i = 1; i < currentPhase; i++)
             {
-                if (data.spawnable_npcs.Length <= i) break;
+                if (data.spawnable_npcs.Length >= i) break;
                 placableNPCs.Concat(data.spawnable_npcs[i].npcs);
             }
 
