@@ -1,3 +1,4 @@
+using System.Collections;
 using UI.LevelSelection.CharacterSelection;
 using UnityEngine;
 
@@ -8,6 +9,11 @@ public class LevelSelectManager : MonoBehaviour {
     [SerializeField]
     private CharacterSelectionManager characterSelect;
     public int selectedLevel = -1;
+    bool launchingLevel = false;
+
+    private void Start() {
+        launchingLevel = false;
+    }
 
     public void OpenLevelHallFor(LevelChoice choice) {
         Debug.Log($"Opening level hall for level index: {choice.levelIndex}");
@@ -25,7 +31,16 @@ public class LevelSelectManager : MonoBehaviour {
             Debug.LogError("No level selected!");
             return;
         }
+        if (launchingLevel) return;
+        launchingLevel = true;
         Debug.Log("Launching level");
-        GameManager.Instance.LoadLevel(selectedLevel);
+        levelSelectHall.TriggerLaunchAnimations();
+        StartCoroutine(DelayedLaunchLevel(selectedLevel));
+    }
+
+    IEnumerator DelayedLaunchLevel(int levelIndex)
+    {
+        yield return new WaitForSeconds(2.5f);
+        GameManager.Instance.LoadLevel(levelIndex);
     }
 }
