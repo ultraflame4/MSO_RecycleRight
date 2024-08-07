@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class UIDrag :
+    public class MapUiDrag :
         MonoBehaviour,
         IBeginDragHandler,
         IDragHandler,

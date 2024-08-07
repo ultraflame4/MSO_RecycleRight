@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace UI.LevelSelection
 {
-    public class LevelDetailsPopupMenu : Hologram
+    public class LevelDetailsPopupMenu : Hologram, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Popup Menu")]
         [SerializeField] Image image;
@@ -43,23 +44,42 @@ namespace UI.LevelSelection
         void EndTransition(bool active, int index)
         {
             if (!active || index < 0) return;
-            SetButtonLocation(index);
+            MakeButtonCenter(index);
         }
 
         /// <summary>
-        /// Move button to location of popup menu
+        /// Move the level select button to location of popup menu
         /// </summary>
-        /// <param name="index">Index of button position to move to</param>
-        public void SetButtonLocation(int index)
+        /// <param name="btnIndex">Index of button position to move to</param>
+        public void MakeButtonCenter(int btnIndex)
         {
-            if (levelButtons == null || index < 0 || index >= levelButtons.Length) return;
-            map.localPosition = (-levelButtons[index].localPosition * map.localScale.x) + lockPosition;
+            if (levelButtons == null || btnIndex < 0 || btnIndex >= levelButtons.Length) return;
+            map.localPosition = (-levelButtons[btnIndex].localPosition * map.localScale.x) + lockPosition;
         }
 
-        void OnDrawGizmosSelected() 
+        void OnDrawGizmosSelected()
         {
             if (canvas == null) return;
             Gizmos.DrawSphere(lockPosition + canvas.position, 100f);
+        }
+
+
+        private void Update() {
+            if (Input.GetMouseButtonDown(0) && !mouseHover){
+                SetActive(false, 0);
+            }
+        }
+
+        bool mouseHover = false;
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            mouseHover = false;
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            mouseHover = true;
         }
     }
 }
