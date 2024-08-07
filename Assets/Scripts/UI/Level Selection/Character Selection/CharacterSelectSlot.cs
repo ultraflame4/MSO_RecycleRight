@@ -19,6 +19,10 @@ namespace UI.LevelSelection.CharacterSelection
             }
 
             rectTransform = image.GetComponent<RectTransform>();
+            foreach (var button in GetComponentsInChildren<Button>())
+            {
+                button.onClick.AddListener(OnClicked);
+            }
             SetCharacter();
         }
 
@@ -53,6 +57,11 @@ namespace UI.LevelSelection.CharacterSelection
             var pivotX = - bounds.center.x / bounds.extents.x / 2 + 0.5f;
             var pivotY = - bounds.center.y / bounds.extents.y / 2 + 0.5f;
             return new Vector2(pivotX, pivotY);
+        }
+
+        void OnClicked(){
+            Debug.Log("Character slot clicked!");
+            GetComponentInParent<CharacterSelectionManager>().SetHologramActive(true);
         }
     }
 }

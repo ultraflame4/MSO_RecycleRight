@@ -6,7 +6,7 @@ public class LevelSelectManager : MonoBehaviour {
     [SerializeField]
     private LevelSelectHall levelSelectHall;
     [SerializeField]
-    private CharacterSelect charSelect;
+    private CharacterSelectionManager charSelect;
 
     public void OpenLevelHallFor(LevelChoice choice) {
         Debug.Log($"Opening level hall for level index: {choice.levelIndex}");
@@ -15,7 +15,8 @@ public class LevelSelectManager : MonoBehaviour {
     
     public void OpenCharacterSelect() {
         Debug.Log("Opening character select");
-        charSelect.Activate();
+        charSelect.OpenMenu();
     }
+
 
 }

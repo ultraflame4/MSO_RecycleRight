@@ -9,7 +9,6 @@ namespace UI.LevelSelection.CharacterSelection
     public class CharacterSelectionManager : MonoBehaviour
     {
         [Header("Menus")]
-        [SerializeField] GameObject[] levelSelectionMenu;
         [SerializeField] GameObject[] characterSelectionMenu;
 
         [Header("Character Selection")]
@@ -20,68 +19,85 @@ namespace UI.LevelSelection.CharacterSelection
 
         [Header("Transition")]
         [SerializeField] float transitionDuration = 1f;
+        [SerializeField] CanvasGroup canvasGroup;
         [SerializeField] CharacterSelectionTransitionManager transitionAnimation;
         Coroutine coroutine_transition;
 
         UIAnimator[] levelMenuAnimators, characterMenuAnimators;
         List<PlayerCharacterSO> party = new List<PlayerCharacterSO>();
+
         int selectedIndex = -1;
 
-        /// <summary>
-        /// Active state of character selection
-        /// </summary>
-        public bool MenuActive { get; private set; } = false;
 
         // Start is called before the first frame update
         void Start()
         {
-            LoadAnimators(levelSelectionMenu, out levelMenuAnimators);
-            LoadAnimators(characterSelectionMenu, out characterMenuAnimators);
-            SetMenuActive(false, characterSelectionMenu, characterMenuAnimators);
-            transitionAnimation?.gameObject.SetActive(false);
-
-            if (toggleQuickSelect != null) 
+            CloseMenu(true);
+            if (toggleQuickSelect != null)
                 toggleQuickSelect.OnToggle += ToggleHandler;
-            if (transitionAnimation != null) 
-                transitionAnimation.MakeTransition += MakeTransition;
+
             if (hologramMenu == null) return;
             hologramMenu.gameObject.SetActive(false);
             hologramMenu.CharacterList.CharacterProfileCreated += SubscribeToClick;
         }
 
         #region Menu Toggling
-        /// <summary>
-        /// Toggle active state of character selection menu
-        /// </summary>
-        public void ToggleMenu()
-        {
-            MenuActive = !MenuActive;
-            SetHologramActive(false);
 
-            if (toggleQuickSelect != null && toggleQuickSelect.gameObject.activeInHierarchy && 
-                toggleQuickSelect.activated) 
-                    toggleQuickSelect.Toggle();
-            
-            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(Transition());
-        }
 
-        void MakeTransition()
-        {
-            // set menu renderers
-            SetMenuActive(!MenuActive, levelSelectionMenu, levelMenuAnimators);
-            SetMenuActive(MenuActive, characterSelectionMenu, characterMenuAnimators);
-        }
-
-        IEnumerator Transition()
+        IEnumerator EnterTransition()
         {
             // handle showing transition
-            transitionAnimation?.gameObject.SetActive(true);
-            transitionAnimation?.PlayTransition(MenuActive);
-            yield return new WaitForSeconds(transitionDuration);
+            transitionAnimation.gameObject.SetActive(true);
+            yield return null;
+            yield return transitionAnimation.HalfTransition(true, false);
+            canvasGroup.alpha = 1;
+            yield return transitionAnimation.HalfTransition(false, true);
             transitionAnimation?.gameObject.SetActive(false);
             coroutine_transition = null;
         }
+        IEnumerator ExitTransition()
+        {
+            // handle showing transition
+            transitionAnimation.gameObject.SetActive(true);
+            yield return null;
+            yield return transitionAnimation.HalfTransition(false, false);
+            canvasGroup.alpha = 0;
+            yield return transitionAnimation.HalfTransition(true, true);
+            transitionAnimation?.gameObject.SetActive(false);
+            coroutine_transition = null;
+            gameObject.SetActive(false);
+        }
+
+
+        public void OpenMenu(bool skipTransition = false)
+        {
+            gameObject.SetActive(true);
+            canvasGroup.alpha = 0;
+            SetHologramActive(false);
+
+            if (toggleQuickSelect.activated) toggleQuickSelect.Toggle();
+
+            if (skipTransition) return;
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(EnterTransition());
+        }
+
+        public void CloseMenu(bool skipTransition = false)
+        {
+
+            SetHologramActive(false);
+            if (skipTransition)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+            canvasGroup.alpha = 1;
+
+
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(ExitTransition());
+        }
+
         #endregion
 
         #region Button Event Handlers
@@ -105,7 +121,7 @@ namespace UI.LevelSelection.CharacterSelection
         public void ConfirmSelection()
         {
             if (toggleQuickSelect != null && !toggleQuickSelect.activated &&
-                hologramMenu != null && hologramMenu.CharacterInfo != null && 
+                hologramMenu != null && hologramMenu.CharacterInfo != null &&
                 hologramMenu.CharacterInfo.selectedCharacter != null)
             {
                 if (party.Count > selectedIndex && selectedIndex >= 0)
@@ -117,10 +133,10 @@ namespace UI.LevelSelection.CharacterSelection
                 {
                     party.Add(hologramMenu.CharacterInfo.selectedCharacter);
                 }
-                
+
                 UpdateSelectedCharactersUI();
             }
-                    
+
             GameManager.Instance.selectedCharacters = party.ToArray();
         }
 
@@ -134,7 +150,7 @@ namespace UI.LevelSelection.CharacterSelection
 
             if (toggleQuickSelect != null && !toggleQuickSelect.activated)
                 hologramMenu?.CharacterInfo?.SetCharacter(null);
-                
+
             hologramMenu.Back();
         }
 
@@ -151,7 +167,7 @@ namespace UI.LevelSelection.CharacterSelection
         #region Active Management
         void LoadAnimators(GameObject[] objectsToSearch, out UIAnimator[] animators)
         {
-            if (objectsToSearch == null) 
+            if (objectsToSearch == null)
             {
                 animators = null;
                 return;
@@ -200,7 +216,7 @@ namespace UI.LevelSelection.CharacterSelection
                 HandleDefaultSelect(profile);
             else
                 HandleQuickSelect(profile);
-            
+
             UpdateSelectedCharactersUI();
         }
 
@@ -277,9 +293,9 @@ namespace UI.LevelSelection.CharacterSelection
                 int index = party.FindIndex(x => x == profile.currentCharacter);
                 if (index == -1) continue;
 
-                profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ? 
+                profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ?
                     Color.white : selectionColor[index], index);
-                
+
                 UpdateCharacterSlot(index, profile.currentCharacter.characterSelectionSprite);
             }
         }
