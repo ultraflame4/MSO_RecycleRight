@@ -14,6 +14,8 @@ namespace Level.Bins
         #region Component Config
         [Tooltip("How long it will take for the bin to become infested, once contaminated with food items.")]
         public float infestation_secs;
+        [Tooltip("Whether or not this bin can be cleaned by players")]
+        public bool cleanable = true;
 
         [field: Header("Config")]
 
