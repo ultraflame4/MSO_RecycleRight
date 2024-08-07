@@ -19,7 +19,7 @@ public class LevelSelectHall : MonoBehaviour
     
     void Start()
     {
-        Deactivate();
+        // Deactivate();
     }
 
     public void Activate(LevelInfoSO levelInfo)
@@ -42,6 +42,7 @@ public class LevelSelectHall : MonoBehaviour
     
     public void Deactivate()
     {
+
         trainDoorsAnim.SetBool("zoom_out", false);
         Debug.Log("Deactivating level hall");
         // gameObject.SetActive(false);
