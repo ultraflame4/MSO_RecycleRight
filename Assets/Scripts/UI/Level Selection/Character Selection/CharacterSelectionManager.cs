@@ -22,8 +22,6 @@ namespace UI.LevelSelection.CharacterSelection
         [SerializeField] CanvasGroup canvasGroup;
         [SerializeField] CharacterSelectionTransitionManager transitionAnimation;
         Coroutine coroutine_transition;
-
-        UIAnimator[] levelMenuAnimators, characterMenuAnimators;
         List<PlayerCharacterSO> party = new List<PlayerCharacterSO>();
 
         int selectedIndex = -1;
@@ -162,43 +160,7 @@ namespace UI.LevelSelection.CharacterSelection
         }
         #endregion
 
-        #region Active Management
-        void LoadAnimators(GameObject[] objectsToSearch, out UIAnimator[] animators)
-        {
-            if (objectsToSearch == null)
-            {
-                animators = null;
-                return;
-            }
-
-            animators = objectsToSearch
-                .Select(x => x.GetComponentsInChildren<UIAnimator>()
-                    .Where(x => x != null))
-                .SelectMany(x => x)
-                .ToArray();
-        }
-
-        void SetMenuActive(bool active, GameObject[] objects, UIAnimator[] animators)
-        {
-            if (objects == null) return;
-
-            foreach (GameObject obj in objects)
-            {
-                obj?.SetActive(active);
-            }
-
-            if (!active) return;
-            UpdateSelectedCharactersUI();
-            if (animators == null) return;
-
-            foreach (UIAnimator anim in animators)
-            {
-                if (anim.currentAnimation == null || !anim.gameObject.activeInHierarchy) continue;
-                anim.Play(anim.currentAnimation.Name);
-            }
-        }
-        #endregion
-
+    
         #region Character Selection Management
         void SubscribeToClick(CharacterSelectProfile profile)
         {
