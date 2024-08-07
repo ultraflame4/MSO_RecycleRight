@@ -3312,6 +3312,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainDoorsAnim: {fileID: 1262446955}
   animator: {fileID: 704862567}
+  levelImage: {fileID: 1453567329}
+  levelTitle: {fileID: 1998691163}
+  levelDesc: {fileID: 1446949764}
 --- !u!95 &704862567
 Animator:
   serializedVersion: 5
