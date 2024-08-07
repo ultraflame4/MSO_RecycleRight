@@ -50,5 +50,5 @@ public class LevelSelectHall : MonoBehaviour
         animator.SetBool("Active", false);
     }
 
-    
+
 }

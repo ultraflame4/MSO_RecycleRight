@@ -45,7 +45,6 @@ namespace UI.LevelSelection.CharacterSelection
                 image.enabled = false;
                 return;
             }
-            Debug.Log("Setting");
             characterData = character;
             this.sprite = character?.characterSelectionSprite;
             rectTransform.pivot = GetPivot();

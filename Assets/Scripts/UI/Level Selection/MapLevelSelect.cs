@@ -22,6 +22,7 @@ public class MapLevelSelect : MonoBehaviour {
     }
 
     public void OpenLevelChoiceHall(LevelChoice choice){
+        lvlSelect.selectedLevel = choice.levelIndex;
         lvlSelect.OpenLevelHallFor(choice);
     }
 }
