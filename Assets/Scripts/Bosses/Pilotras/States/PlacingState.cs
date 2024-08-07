@@ -12,13 +12,14 @@ namespace Bosses.Pilotras.FSM
         public PlacingState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
             base(fsm, character, character.DefaultState, character.behaviourData.placing_duration, character.behaviourData.placing_cooldown)
         {
+            CanEnter = true;
         }
 
         public override void Enter()
         {
-            base.Enter();
             duration = character.behaviourData.placing_duration;
             cooldown = character.behaviourData.placing_cooldown;
+            base.Enter();
             amountToPlace = character.behaviourData.place_npc_amount;
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }

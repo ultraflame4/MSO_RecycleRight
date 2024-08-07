@@ -6,6 +6,8 @@ using Bosses.Pilotras.FSM;
 using Interfaces;
 using Patterns.FSM;
 using Level;
+using Level.Bins;
+using NPC;
 using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras
@@ -49,26 +51,11 @@ namespace Bosses.Pilotras
         /// <returns>NPC that was spawned</returns>
         public GameObject PlaceNPC(Vector3 position)
         {
-            if (levelManager == null || data.spawnable_npcs == null || data.spawnable_npcs.Length <= 0 ||
-                data.spawnable_npcs[0].gameObjects == null || data.spawnable_npcs[0].gameObjects.Length <= 0)
+            if (levelManager == null || data.currentPhaseNPCs == null || data.currentPhaseNPCs.Length <= 0)
                     return null;
-            
-            GameObject[] placableNPCs = data.spawnable_npcs[0].gameObjects;
-            
-            for (int i = 1; i < currentPhase; i++)
-            {
-                if (data.spawnable_npcs.Length <= i) break;
-
-                placableNPCs = placableNPCs
-                    .Concat(data.spawnable_npcs[i].gameObjects)
-                    .Where(x => x != null)
-                    .ToArray();
-            }
-
-            if (placableNPCs == null || placableNPCs.Length <= 0) return null;
 
             return Instantiate(
-                placableNPCs[Random.Range(0, placableNPCs.Length)], 
+                data.currentPhaseNPCs[Random.Range(0, data.currentPhaseNPCs.Length)], 
                 position, 
                 Quaternion.identity, 
                 levelManager.current_zone.transform
@@ -84,6 +71,28 @@ namespace Bosses.Pilotras
             LevelZone currentZone = levelManager.current_zone;
             Vector2 boundary = (Vector2) currentZone.center + (currentZone.size * 0.5f);
             return new Vector2(Random.Range(-boundary.x, boundary.x), Random.Range(-boundary.y, boundary.y));
+        }
+
+        /// <summary>
+        /// Update current number of NPCs in the scene
+        /// </summary>
+        public void UpdateNPCCount()
+        {
+            data.npcCount.Clear();
+            if (LevelManager.Instance == null) return;
+            data.recyclables = LevelManager.Instance.current_zone.GetComponentsInChildren<FSMRecyclableNPC>();
+            if (data.recyclables == null || data.recyclables.Length <= 0) return;
+
+            // count number of each recyclable
+            foreach (FSMRecyclableNPC recyclable in data.recyclables)
+            {
+                RecyclableType type = recyclable.recyclableType;
+
+                if (!data.npcCount.ContainsKey(type))
+                    data.npcCount.Add(type, 1);
+                else
+                    data.npcCount[type]++;
+            }
         }
         #endregion
 
@@ -124,6 +133,55 @@ namespace Bosses.Pilotras
 
             Health = data.max_health;
             currentPhase++;
+            HandlePhaseChange();
+        }
+        #endregion
+
+        #region Private Methods
+        void HandlePhaseChange()
+        {
+            LoadSpawnableNPCs();
+            SpawnBins();
+        }
+
+        void LoadSpawnableNPCs()
+        {
+            int index = currentPhase - 1;
+
+            if (index < 0 || data.spawnable_npcs == null || data.spawnable_npcs.Length == 0 || 
+                index >= data.spawnable_npcs.Length) 
+                    return;
+
+            if (index == 0)
+                data.currentPhaseNPCs = data.spawnable_npcs[0].gameObjects;
+            else
+                data.currentPhaseNPCs = data.currentPhaseNPCs
+                    .Concat(data.spawnable_npcs[index].gameObjects)
+                    .Where(x => x != null)
+                    .ToArray();
+        }
+
+        void SpawnBins()
+        {
+            int index = currentPhase - 1;
+
+            if (index < 0 || data.spawnable_bins == null || data.spawnable_bins.Length == 0 || 
+                index >= data.spawnable_bins.Length) 
+                    return;
+
+            if (index == 0)
+                data.spawnedBins = data.spawnable_bins[0].gameObjects
+                    .Select(x => Instantiate(x, behaviourData.inactive_bins))
+                    .Select(x => x.GetComponent<RecyclingBin>())
+                    .Where(x => x != null)
+                    .ToArray();
+            else
+                data.spawnedBins = data.spawnedBins
+                    .Concat(data.spawnable_bins[index].gameObjects
+                        .Select(x => Instantiate(x, behaviourData.inactive_bins))
+                        .Select(x => x.GetComponent<RecyclingBin>())
+                        .Where(x => x != null))
+                    .ToArray();
         }
         #endregion
 
@@ -133,6 +191,9 @@ namespace Bosses.Pilotras
             // reset variables
             Health = data.max_health;
             currentPhase = 1;
+            // initialize first phase
+            HandlePhaseChange();
+
             // initialize states
             DefaultState = new DefaultState(this, this);
             PlacingState = new PlacingState(this, this);

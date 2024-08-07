@@ -18,6 +18,7 @@ namespace Patterns.FSM
             : base(fsm, character, nextState, duration)
         {
             this.cooldown = cooldown;
+            if (!CanEnter) StartCooldown();
         }
 
         public override void Enter()
@@ -42,6 +43,11 @@ namespace Patterns.FSM
             }
             
             base.Exit();
+            StartCooldown();
+        }
+
+        protected virtual void StartCooldown()
+        {
             fsm.StartCoroutine(WaitForSeconds(cooldown, () => CanEnter = true));
         }
     }

@@ -20,6 +20,12 @@ namespace Bosses.Pilotras.FSM
                 fsm.SwitchState(character.PlacingState);
                 return;
             }
+
+            if (character.BinDropState.CanEnter)
+            {
+                fsm.SwitchState(character.BinDropState);
+                return;
+            }
         }
     }
 }
