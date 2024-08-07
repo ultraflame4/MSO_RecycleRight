@@ -26,7 +26,8 @@ public class LevelSelectHall : MonoBehaviour
     {
         gameObject.SetActive(true);
         
-        trainDoorsAnim.SetBool("allowZoom", true);
+        trainDoorsAnim.SetBool("zoom_out", true);
+        trainDoorsAnim.ResetTrigger("openDoors");
         trainDoorsAnim.SetTrigger("closeDoors");
         animator.SetBool("Active", true);
 
@@ -41,12 +42,12 @@ public class LevelSelectHall : MonoBehaviour
     
     public void Deactivate()
     {
-        trainDoorsAnim.SetBool("allowZoom", true);
+        trainDoorsAnim.SetBool("zoom_out", false);
         Debug.Log("Deactivating level hall");
         // gameObject.SetActive(false);
         trainDoorsAnim.SetTrigger("openDoors");
         animator.SetBool("Active", false);
     }
 
-
+    
 }

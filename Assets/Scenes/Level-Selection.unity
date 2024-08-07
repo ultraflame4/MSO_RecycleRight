@@ -2070,6 +2070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563652085}
+  - component: {fileID: 563652086}
   m_Layer: 5
   m_Name: Character Selection
   m_TagString: Untagged
@@ -2100,6 +2101,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &563652086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563652084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067055460efdd754799ad099631ff343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &585237343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6911,6 +6924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectHall: {fileID: 704862566}
+  charSelect: {fileID: 563652086}
 --- !u!1001 &1740739285
 PrefabInstance:
   m_ObjectHideFlags: 0
