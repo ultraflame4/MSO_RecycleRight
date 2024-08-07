@@ -59,7 +59,7 @@ namespace UI.LevelSelection
                 yield return null;
                 elapsed += Time.deltaTime;
                 var progress = 1 - elapsed / animationDuration;
-                if (progress >= 1)
+                if (progress <= 0)
                 {
                     break;
                 }

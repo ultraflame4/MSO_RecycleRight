@@ -17,7 +17,6 @@ namespace UI.LevelSelection
         [SerializeField] RectTransform map, canvas;
         [SerializeField] RectTransform[] levelButtons;
 
-        int targetLevelButton;
 
         /// <summary>
         /// Set details of level to show
@@ -32,6 +31,27 @@ namespace UI.LevelSelection
             levelCode.text = data.data.levelCode;
         }
 
+        IEnumerator MoveButtonToCenter(int btnIndex)
+        {
+            while (true)
+            {
+                var dest = (-levelButtons[btnIndex].localPosition * map.localScale.x) + lockPosition;
+                var distance = Vector3.Distance(dest, map.localPosition);
+                map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
+                if (distance < 0.1f) break;
+                yield return null;
+
+            }
+        }
+
+        IEnumerator PlayOpeningForButton(int btnIndex)
+        {
+            yield return AnimateClose();
+            // Move button location
+            yield return MoveButtonToCenter(btnIndex);
+            yield return AnimateOpen();
+        }
+
         /// <summary>
         /// Set active state of menu
         /// </summary>
@@ -39,8 +59,9 @@ namespace UI.LevelSelection
         public void Activate(int index)
         {
             gameObject.SetActive(true);// if trying to active, ensure that gameobject is alr active
+            
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(AnimateTransition(true, () => MakeButtonCenter(index)));
+            coroutine_transition = StartCoroutine(PlayOpeningForButton(index));
         }
 
         /// <summary>
@@ -50,17 +71,7 @@ namespace UI.LevelSelection
         {
             if (!gameObject.activeInHierarchy) return; // Silences error
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(AnimateTransition(false));
-            targetLevelButton = -1;
-        }
-
-        /// <summary>
-        /// Move the level select button to location of popup menu
-        /// </summary>
-        /// <param name="btnIndex">Index of button position to move to</param>
-        public void MakeButtonCenter(int btnIndex)
-        {
-            targetLevelButton = btnIndex;
+            coroutine_transition = StartCoroutine(AnimateClose());
         }
 
         void OnDrawGizmosSelected()
@@ -73,15 +84,6 @@ namespace UI.LevelSelection
         private void Update()
         {
             if (Input.GetMouseButtonDown(0) && !mouseHover) Deactivate();
-
-            if (levelButtons == null || targetLevelButton < 0 || targetLevelButton >= levelButtons.Length) return;
-            var dest = (-levelButtons[targetLevelButton].localPosition * map.localScale.x) + lockPosition;
-            var distance = Vector3.Distance(dest, map.localPosition);
-            map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
-            if (distance < 0.1f && targetLevelButton >= 0){
-                
-                targetLevelButton = -1;
-            }
         }
 
         bool mouseHover = false;
