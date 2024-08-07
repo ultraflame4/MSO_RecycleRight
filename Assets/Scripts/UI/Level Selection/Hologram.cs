@@ -9,7 +9,7 @@ namespace UI.LevelSelection
     public class Hologram : MonoBehaviour
     {
         [Header("Transition Animation")]
-        [SerializeField] float animationDuration = 1f;
+        [SerializeField] protected float animationDuration = 1f;
         [SerializeField] float maxScale = 1f;
 
         [Header("Sprite Animation")]

@@ -31,25 +31,32 @@ namespace UI.LevelSelection
             levelCode.text = data.data.levelCode;
         }
 
-        IEnumerator MoveButtonToCenter(int btnIndex)
+        float MoveButtonToCenter_Step(int btnIndex)
         {
-            while (true)
-            {
-                var dest = (-levelButtons[btnIndex].localPosition * map.localScale.x) + lockPosition;
-                var distance = Vector3.Distance(dest, map.localPosition);
-                map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
-                if (distance < 0.1f) break;
-                yield return null;
 
-            }
+            var dest = (-levelButtons[btnIndex].localPosition * map.localScale.x) + lockPosition;
+            map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
+            var distance = Vector3.Distance(dest, map.localPosition);
+            return distance;
         }
 
         IEnumerator PlayOpeningForButton(int btnIndex)
         {
             yield return AnimateClose();
-            // Move button location
-            yield return MoveButtonToCenter(btnIndex);
-            yield return AnimateOpen();
+            Coroutine earlyOpen = null;
+
+            while (true)
+            {
+                var d = MoveButtonToCenter_Step(btnIndex);
+                if (d < 0.1f) break;
+                if (d < 40f && earlyOpen == null)
+                {
+                    earlyOpen = StartCoroutine(AnimateOpen());
+                }
+                yield return null;
+            }
+
+            yield return earlyOpen;
         }
 
         /// <summary>
@@ -59,7 +66,7 @@ namespace UI.LevelSelection
         public void Activate(int index)
         {
             gameObject.SetActive(true);// if trying to active, ensure that gameobject is alr active
-            
+
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(PlayOpeningForButton(index));
         }

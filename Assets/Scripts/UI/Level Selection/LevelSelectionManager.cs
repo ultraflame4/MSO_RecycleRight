@@ -55,8 +55,7 @@ namespace UI.LevelSelection
         /// </summary>
         public void DeselectLevel()
         {
-            selectedIndex = -1;
-            levelDetailsPopupMenu?.Activate(selectedIndex);
+            levelDetailsPopupMenu?.Deactivate();
         }
 
         /// <summary>
