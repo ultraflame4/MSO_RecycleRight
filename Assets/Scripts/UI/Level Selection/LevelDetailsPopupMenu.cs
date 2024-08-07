@@ -33,18 +33,21 @@ namespace UI.LevelSelection
         /// Set active state of menu
         /// </summary>
         /// <param name="active">Active state to set to</param>
-        public void SetActive(bool active, int index)
+        public void Activate(int index)
         {
-            if (active) gameObject.SetActive(active);
-            if (!gameObject.activeInHierarchy) return;
+            gameObject.SetActive(true);// if trying to active, ensure that gameobject is alr active
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(AnimateTransition(active, () => EndTransition(active, index)));
+            coroutine_transition = StartCoroutine(AnimateTransition(true, () => MakeButtonCenter(index)));
         }
 
-        void EndTransition(bool active, int index)
+        /// <summary>
+        /// Closes the popup menu.
+        /// </summary>
+        public void Deactivate()
         {
-            if (!active || index < 0) return;
-            MakeButtonCenter(index);
+            gameObject.SetActive(false);
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(AnimateTransition(false));
         }
 
         /// <summary>
@@ -64,10 +67,9 @@ namespace UI.LevelSelection
         }
 
 
-        private void Update() {
-            if (Input.GetMouseButtonDown(0) && !mouseHover){
-                SetActive(false, 0);
-            }
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && !mouseHover) Deactivate();
         }
 
         bool mouseHover = false;

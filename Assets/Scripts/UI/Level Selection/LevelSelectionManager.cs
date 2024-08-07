@@ -33,7 +33,7 @@ namespace UI.LevelSelection
             if (levelDetailsPopupMenu == null || levelDetailsPopupMenu.Active) return;
 
             selectedIndex = index;
-            levelDetailsPopupMenu?.SetActive(true, selectedIndex);
+            levelDetailsPopupMenu?.Activate(selectedIndex);
 
             if (selectedIndex < 0 || selectedIndex >= GameManager.Instance.config.levels.Length)
             {
@@ -56,7 +56,7 @@ namespace UI.LevelSelection
         public void DeselectLevel()
         {
             selectedIndex = -1;
-            levelDetailsPopupMenu?.SetActive(false, selectedIndex);
+            levelDetailsPopupMenu?.Activate(selectedIndex);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace UI.LevelSelection
             doorAnimation?.PlayAnimation();
             levelDetailsMenu?.SetActive(true);
             skyBackground?.SetActive(true);
-            
+
             if (GameManager.Instance == null)
             {
                 Debug.LogWarning("Game manager instance is null, unable to show level details. (LevelSelectionManager.cs)");
@@ -122,7 +122,7 @@ namespace UI.LevelSelection
                 return;
             }
 
-            if (selectedLevel == null) 
+            if (selectedLevel == null)
             {
                 Debug.LogWarning("Selected level could not be found, returning to level selection scene. (LevelSelectionManager.cs)");
                 LevelSelectionBack();

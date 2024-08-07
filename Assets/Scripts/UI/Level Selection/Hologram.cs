@@ -22,7 +22,7 @@ namespace UI.LevelSelection
         /// <summary>
         /// Animate hologram when activating and deactivating by changing horizontal scale
         /// </summary>
-        /// <param name="active">Active state</param>
+        /// <param name="active">Active state. If true, animates opening. Else animates closing</param>
         /// <param name="callback">Callback after transition is complete</param>
         protected IEnumerator AnimateTransition(bool active, Action callback = null)
         {
