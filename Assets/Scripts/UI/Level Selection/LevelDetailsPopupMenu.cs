@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 namespace UI.LevelSelection
 {
@@ -15,6 +16,8 @@ namespace UI.LevelSelection
         [SerializeField] Vector3 lockPosition;
         [SerializeField] RectTransform map, canvas;
         [SerializeField] RectTransform[] levelButtons;
+
+        int targetLevelButton;
 
         /// <summary>
         /// Set details of level to show
@@ -45,9 +48,10 @@ namespace UI.LevelSelection
         /// </summary>
         public void Deactivate()
         {
-            gameObject.SetActive(false);
+            if (!gameObject.activeInHierarchy) return; // Silences error
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(AnimateTransition(false));
+            targetLevelButton = -1;
         }
 
         /// <summary>
@@ -56,8 +60,7 @@ namespace UI.LevelSelection
         /// <param name="btnIndex">Index of button position to move to</param>
         public void MakeButtonCenter(int btnIndex)
         {
-            if (levelButtons == null || btnIndex < 0 || btnIndex >= levelButtons.Length) return;
-            map.localPosition = (-levelButtons[btnIndex].localPosition * map.localScale.x) + lockPosition;
+            targetLevelButton = btnIndex;
         }
 
         void OnDrawGizmosSelected()
@@ -70,6 +73,15 @@ namespace UI.LevelSelection
         private void Update()
         {
             if (Input.GetMouseButtonDown(0) && !mouseHover) Deactivate();
+
+            if (levelButtons == null || targetLevelButton < 0 || targetLevelButton >= levelButtons.Length) return;
+            var dest = (-levelButtons[targetLevelButton].localPosition * map.localScale.x) + lockPosition;
+            var distance = Vector3.Distance(dest, map.localPosition);
+            map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
+            if (distance < 0.1f && targetLevelButton >= 0){
+                
+                targetLevelButton = -1;
+            }
         }
 
         bool mouseHover = false;
