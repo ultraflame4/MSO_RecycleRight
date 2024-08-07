@@ -8,13 +8,17 @@ namespace UI.LevelSelection
 {
     public class LevelDetailsPopupMenu : Hologram, IPointerEnterHandler, IPointerExitHandler
     {
+        [SerializeField] MapLevelSelect mapSelect;
         [Header("Popup Menu")]
         [SerializeField] Image image;
-        [SerializeField] TextMeshProUGUI levelName, levelCode;
+        [SerializeField] TextMeshProUGUI levelName;
+        [SerializeField] TextMeshProUGUI levelCode;
 
         [Header("On Click Behaviour")]
         [SerializeField] Vector3 lockPosition;
-        [SerializeField] RectTransform map, canvas;
+        [SerializeField] RectTransform canvas;
+        [SerializeField] RectTransform map;
+        LevelChoice currentChoice;
 
         void Awake()
         {
@@ -35,16 +39,15 @@ namespace UI.LevelSelection
             levelCode.text = data.data.levelCode;
         }
 
-        float MoveButtonToCenter_Step(LevelButton btn)
+        float MoveButtonToCenter_Step(LevelChoice btn)
         {
-
-            var dest = (-btn.transform.localPosition * map.localScale.x) + lockPosition;
+            var dest = lockPosition - btn.transform.localPosition * map.localScale.x;
             map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
             var distance = Vector3.Distance(dest, map.localPosition);
             return distance;
         }
 
-        IEnumerator PlayOpeningForButton(LevelButton btn)
+        IEnumerator PlayOpeningForButton(LevelChoice btn)
         {
             yield return AnimateClose();
             Coroutine earlyOpen = null;
@@ -67,7 +70,7 @@ namespace UI.LevelSelection
         /// Set active state of menu
         /// </summary>
         /// <param name="active">Active state to set to</param>
-        public void ShowForLevelBtn(LevelButton btn)
+        public void ShowForLevelBtn(LevelChoice btn)
         {
             gameObject.SetActive(true);// if trying to active, ensure that gameobject is alr active
             // Retrieve level details from game manager and set to popup menu
@@ -80,6 +83,7 @@ namespace UI.LevelSelection
             }
 
 
+            currentChoice = btn;
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(PlayOpeningForButton(btn));
         }
@@ -116,6 +120,11 @@ namespace UI.LevelSelection
         public void OnPointerEnter(PointerEventData eventData)
         {
             mouseHover = true;
+        }
+
+        public void OpenLevelChoiceHall()
+        {
+            mapSelect.OpenLevelChoiceHall(currentChoice);
         }
     }
 }

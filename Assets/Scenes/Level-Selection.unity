@@ -2044,7 +2044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &491974442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2119,17 +2119,13 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 0}
   glitchCooldown: {x: 0, y: 0}
+  mapSelect: {fileID: 1318483433}
   image: {fileID: 1577550078}
   levelName: {fileID: 152604351}
   levelCode: {fileID: 379583424}
   lockPosition: {x: -250, y: -300, z: 0}
-  map: {fileID: 1080613451}
   canvas: {fileID: 1726909683}
-  levelButtons:
-  - {fileID: 1696661096}
-  - {fileID: 1321409552}
-  - {fileID: 466618964}
-  - {fileID: 1975364349}
+  map: {fileID: 1080613451}
 --- !u!114 &491974446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8735,9 +8731,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.LevelSelection.LevelSelectionManager, Assembly-CSharp
-        m_MethodName: ShowLevelDetails
+      - m_Target: {fileID: 491974445}
+        m_TargetAssemblyTypeName: UI.LevelSelection.LevelDetailsPopupMenu, Assembly-CSharp
+        m_MethodName: OpenLevelChoiceHall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

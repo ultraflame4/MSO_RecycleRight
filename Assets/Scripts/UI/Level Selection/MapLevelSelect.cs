@@ -2,18 +2,18 @@ using System.Collections.Generic;
 using UI.LevelSelection;
 using UnityEngine;
 
-public class MainLevelSelect : MonoBehaviour {
+public class MapLevelSelect : MonoBehaviour {
 
     [SerializeField]
     private LevelSelectManager lvlSelect;
     [SerializeField]
     private LevelDetailsPopupMenu lvlDetailsPopup;
-    private List<LevelButton> levelButtons = new();
+    private List<LevelChoice> levelButtons = new();
 
     private void Start() {
-        LevelButton[] array = GetComponentsInChildren<LevelButton>();
+        LevelChoice[] array = GetComponentsInChildren<LevelChoice>();
         for (int i = 0; i < array.Length; i++) {
-            LevelButton button = array[i];
+            LevelChoice button = array[i];
             button.OnClicked += () => {
                 lvlDetailsPopup.ShowForLevelBtn(button);
                 Debug.Log($"Opening level details popup for level index: {button.levelIndex}");
@@ -21,5 +21,7 @@ public class MainLevelSelect : MonoBehaviour {
         }
     }
 
-    
+    public void OpenLevelChoiceHall(LevelChoice choice){
+
+    }
 }

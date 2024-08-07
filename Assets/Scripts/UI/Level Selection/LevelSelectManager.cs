@@ -1,8 +1,10 @@
 using UnityEngine;
 
 public class LevelSelectManager : MonoBehaviour {
-    public void OpenLevelSelectFor(int levelIndex) {
-        Debug.Log($"Opening level select for level index: {levelIndex}");
+    public void OpenLevelHallFor(LevelChoice choice) {
+        Debug.Log($"Opening level hall for level index: {choice.levelIndex}");
+        
         
     }
+    
 }

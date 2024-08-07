@@ -5,7 +5,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Utility class for automatic grouping of level buttons
 /// </summary>
-public class LevelButton : MonoBehaviour {
+public class LevelChoice : MonoBehaviour {
 
     public int levelIndex;
     public Button[] buttons;
