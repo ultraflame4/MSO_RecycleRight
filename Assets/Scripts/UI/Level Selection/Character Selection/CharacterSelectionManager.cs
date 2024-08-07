@@ -26,6 +26,7 @@ namespace UI.LevelSelection.CharacterSelection
 
         int selectedIndex = -1;
 
+        bool quickSelectActive => toggleQuickSelect != null && toggleQuickSelect.activated;
 
         // Start is called before the first frame update
         void Start()
@@ -108,7 +109,7 @@ namespace UI.LevelSelection.CharacterSelection
             hologramMenu?.CharacterInfo?.SetCharacter(null);
             selectedIndex = -1;
             ResetLocalParty();
-            UpdateSelectedCharactersUI();
+            UpdateCharacterSelectSlots();
         }
 
         /// <summary>
@@ -116,9 +117,7 @@ namespace UI.LevelSelection.CharacterSelection
         /// </summary>
         public void ConfirmSelection()
         {
-            if (!toggleQuickSelect.activated &&
-                hologramMenu != null && hologramMenu.CharacterInfo != null &&
-                hologramMenu.CharacterInfo.selectedCharacter != null)
+            if (!quickSelectActive && hologramMenu.CharacterInfo.selectedCharacter != null)
             {
                 if (party.Count > selectedIndex && selectedIndex >= 0)
                 {
@@ -129,10 +128,9 @@ namespace UI.LevelSelection.CharacterSelection
                 {
                     party.Add(hologramMenu.CharacterInfo.selectedCharacter);
                 }
-
-                UpdateSelectedCharactersUI();
             }
 
+            UpdateCharacterSelectSlots();
             GameManager.Instance.selectedCharacters = party.ToArray();
         }
 
@@ -160,7 +158,7 @@ namespace UI.LevelSelection.CharacterSelection
         }
         #endregion
 
-    
+
         #region Character Selection Management
         void SubscribeToClick(CharacterSelectProfile profile)
         {
@@ -177,7 +175,7 @@ namespace UI.LevelSelection.CharacterSelection
             else
                 HandleQuickSelect(profile);
 
-            UpdateSelectedCharactersUI();
+            UpdateCharacterSelectSlots();
         }
 
         void HandleDefaultSelect(CharacterSelectProfile profile)
@@ -209,7 +207,7 @@ namespace UI.LevelSelection.CharacterSelection
             if (party.Contains(profile.currentCharacter))
             {
                 party.Remove(profile.currentCharacter);
-                hologramMenu?.CharacterInfo?.SetCharacter(profile.currentCharacter);
+                hologramMenu.CharacterInfo.SetCharacter(profile.currentCharacter);
                 return;
             }
 
@@ -224,18 +222,23 @@ namespace UI.LevelSelection.CharacterSelection
             // if (toggleQuickSelect != null && !toggleQuickSelect.activated)
             //     ResetLocalParty();
             hologramMenu?.CharacterInfo?.SetCharacter(null);
-            UpdateSelectedCharactersUI();
+            UpdateCharacterSelectSlots();
         }
         #endregion
 
         #region Character Selection UI Management
-        void UpdateSelectedCharactersUI()
+        void UpdateCharacterSelectSlots()
         {
-            ResetCharacterSlot();
-            SetBorder();
+            for (int i = 0; i < characterSlots.Length; i++)
+            {
+                Debug.Log("Updating character slots");
+                UpdateCharacterSlot(i, i < party.Count ? party[i] : null);
+            }
+
+            UpdateProfileBorder();
         }
 
-        void SetBorder()
+        void UpdateProfileBorder()
         {
             for (int i = 0; i < hologramMenu.CharacterList.objectPool.Count; i++)
             {
@@ -256,8 +259,13 @@ namespace UI.LevelSelection.CharacterSelection
                 profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ?
                     Color.white : selectionColor[index], index);
 
-                UpdateCharacterSlot(index, profile.currentCharacter.characterSelectionSprite);
+                UpdateCharacterSlot(index, profile.currentCharacter);
             }
+        }
+        void UpdateCharacterSlot(int index, PlayerCharacterSO character)
+        {
+            if (characterSlots == null || index >= characterSlots.Length) return;
+            characterSlots[index].SetCharacter(character);
         }
 
         void ResetCharacterSlot()
@@ -268,11 +276,6 @@ namespace UI.LevelSelection.CharacterSelection
             }
         }
 
-        void UpdateCharacterSlot(int index, Sprite characterSprite)
-        {
-            if (characterSlots == null || index >= characterSlots.Length) return;
-            characterSlots[index].SetCharacter(characterSprite);
-        }
 
         void ResetLocalParty()
         {
