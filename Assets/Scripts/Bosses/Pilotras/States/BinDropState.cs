@@ -45,7 +45,7 @@ namespace Bosses.Pilotras.FSM
             float yPos = binContainerLocation.y;
 
             // push back NPCs under drop location
-            PushBackNPCs(binContainerLocation, new Vector2(xPos * 2f, yPos * 2f));
+            PushBackNPCs(binContainerLocation, new Vector2(xPos * 2.5f, yPos * 2.5f));
 
             // drop bin to designated location
             for (int i = 0; i < selectedBins.Count; i++)

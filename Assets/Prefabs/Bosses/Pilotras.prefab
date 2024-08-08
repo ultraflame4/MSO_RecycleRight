@@ -271,7 +271,7 @@ MonoBehaviour:
   dropDetectionMask:
     serializedVersion: 2
     m_Bits: 384
-  binSpacing: 10
+  binSpacing: 5
   binPositionOffset: {x: 0, y: -5}
   activeBins: {fileID: 7710731106806685172}
   inactiveBins: {fileID: 2787593228567009177}
