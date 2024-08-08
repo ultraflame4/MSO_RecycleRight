@@ -35,6 +35,15 @@ namespace Bosses.Pilotras.FSM
             }
         }
 
+        /// <summary>
+        /// Restart state cooldown
+        /// </summary>
+        public new void StartCooldown()
+        {
+            CanEnter = false;
+            base.StartCooldown();
+        }
+
         IEnumerator PlaceNPC()
         {
             GameObject obj = character.PlaceNPC(character.transform.position);

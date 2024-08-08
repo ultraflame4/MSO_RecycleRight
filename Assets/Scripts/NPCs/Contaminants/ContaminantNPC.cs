@@ -101,10 +101,6 @@ namespace NPC.Contaminant
         private void Awake()
         {
             LoadConfig();
-        }
-
-        private void Start()
-        {
             state_Idle = new DetectTarget(this);
             state_AttackRecyclable = new AttackRecyclable(this);
             state_ChaseRecyclable = new ChaseRecyclable(this);
@@ -113,10 +109,14 @@ namespace NPC.Contaminant
             state_AttackPlayer = new AttackPlayer(this);
             state_Stunned = new Stunned(state_Idle, this, this);
             state_Death = new Death(this);
+        }
 
+        private void Start()
+        {
             grimeController.GrimeAmount = cleanable ? 1 : 0;
             healthbar.value = 1f;
-            SwitchState(state_Idle);
+            if (currentState != null) return;
+            Initialize(state_Idle);
         }
 
 
@@ -151,11 +151,12 @@ namespace NPC.Contaminant
 
         public void Stun(float stun_duration)
         {
-            // Debug.Log($"Stunned for {stun_duration}");
             if (healthbar.value < 0 || currentState == state_Death)
             {
                 return;
             }
+
+            if (currentState == state_Stunned) return;
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }
@@ -165,7 +166,8 @@ namespace NPC.Contaminant
             base.SpawnRecyclable();
             if (spawned_cleaned_prefab) return;
             spawned_cleaned_prefab = true;
-            Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
+            var obj = Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
+            obj.GetComponent<IStunnable>()?.Stun(state_Stunned.stun_timer);
             Destroy(gameObject);
         }
     }

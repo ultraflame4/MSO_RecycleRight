@@ -266,7 +266,7 @@ MonoBehaviour:
   placingSpeed: 0.5
   binDropDuration: {x: 7, y: 10}
   binDropCooldown: {x: 5, y: 8}
-  binDropSpeed: 1
+  binDropSpeed: 0.5
   binDropForce: 25
   dropDetectionMask:
     serializedVersion: 2

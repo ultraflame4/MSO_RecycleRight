@@ -115,6 +115,8 @@ namespace Bosses.Pilotras
                 timeElasped += Time.deltaTime;
                 yield return timeElasped;
             }
+
+            if (obj != null) obj.transform.position = targetPosition;
         }
         #endregion
 
@@ -182,6 +184,12 @@ namespace Bosses.Pilotras
                         .Select(x => x.GetComponent<RecyclingBin>())
                         .Where(x => x != null))
                     .ToArray();
+            
+            foreach (RecyclingBin bin in data.spawnedBins)
+            {
+                if (data.binScore.ContainsKey(bin.recyclableType)) return;
+                data.binScore.Add(bin.recyclableType, 0);
+            }
         }
         #endregion
 

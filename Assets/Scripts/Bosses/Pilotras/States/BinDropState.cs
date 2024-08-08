@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Patterns.FSM;
 using Interfaces;
 using Level.Bins;
+using NPC;
 using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras.FSM
@@ -59,10 +61,27 @@ namespace Bosses.Pilotras.FSM
         public override void Exit()
         {
             base.Exit();
-            // return each bin to inactive bins
+
+            // restart cooldown for placing state to give a cooldown before placing NPCs again
+            character.PlacingState.StartCooldown();
+
+            // return each bin
             foreach (RecyclingBin bin in selectedBins)
             {
-                bin.transform.parent = character.behaviourData.inactive_bins;
+                // start coroutines to lift bin
+                character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin.gameObject, 
+                    new Vector2(bin.transform.position.x, yPosTop)));
+                character.StartCoroutine(DelayedBinInactive(bin));
+
+                // ensure bin score dictionary contains recyclable type
+                if (!character.data.binScore.ContainsKey(bin.recyclableType))
+                {
+                    Debug.LogWarning("Cannot find recyclable type in score dictionary. (BinDropState.cs)");
+                    continue;
+                }
+
+                // store, update, and reset bin score
+                character.data.binScore[bin.recyclableType] += bin.Score;
             }
         }
 
@@ -85,14 +104,10 @@ namespace Bosses.Pilotras.FSM
 
         void StunNPCs()
         {
-            Collider2D[] hits = Physics2D.OverlapBoxAll(character.levelManager.current_zone.transform.position, 
-                (Vector2) character.levelManager.current_zone.center + (character.levelManager.current_zone.size / 2f), 
-                character.behaviourData.drop_detection_mask);
-
-            foreach (Collider2D hit in hits)
+            foreach (FSMRecyclableNPC recyclable in character.data.recyclables)
             {
-                if (hit.transform == character.transform) continue;
-                hit.GetComponent<IStunnable>()?.Stun(duration);
+                if (recyclable == null) continue;
+                recyclable.GetComponent<IStunnable>()?.Stun(duration);
             }
         }
 
@@ -143,6 +158,16 @@ namespace Bosses.Pilotras.FSM
             }
             
             selectedBins.Add(usableBin);
+        }
+
+        IEnumerator DelayedBinInactive(RecyclingBin bin)
+        {
+            yield return new WaitForSeconds(character.behaviourData.bin_drop_speed);
+            bin.transform.parent = character.behaviourData.inactive_bins;
+            bin.CompleteClean();
+
+            if (character.data.binScore.ContainsKey(bin.recyclableType)) 
+                bin.Score = character.data.binScore[bin.recyclableType];
         }
     }
 }

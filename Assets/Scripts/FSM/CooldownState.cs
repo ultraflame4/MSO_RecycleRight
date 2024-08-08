@@ -1,8 +1,12 @@
+using UnityEngine;
+
 namespace Patterns.FSM
 {
     public class CooldownState<T> : CoroutineState<T>
     {
         protected float cooldown;
+        private Coroutine coroutine_cooldown;
+
         private bool earlyExit = false;
         public bool CanEnter { get; protected set; } = false;
 
@@ -48,7 +52,8 @@ namespace Patterns.FSM
 
         protected virtual void StartCooldown()
         {
-            fsm.StartCoroutine(WaitForSeconds(cooldown, () => CanEnter = true));
+            if (coroutine_cooldown != null) fsm.StopCoroutine(coroutine_cooldown);
+            coroutine_cooldown = fsm.StartCoroutine(WaitForSeconds(cooldown, () => CanEnter = true));
         }
     }
 }
