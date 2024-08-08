@@ -24,6 +24,7 @@ namespace Bosses.Pilotras
         public PlacingState PlacingState { get; private set; }
         public BinDropState BinDropState { get; private set; }
         public PostBinDropStunState PostBinDropStunState { get; private set; }
+        public ToppleState ToppleState { get; private set; }
         #endregion
 
         #region References
@@ -124,7 +125,7 @@ namespace Bosses.Pilotras
         #region Interface Methods
         public void Damage(float damage)
         {
-            Health -= damage;
+            Health -= damage * data.damageTakenScale;
             if (Health > 0f) return;
 
             if (currentPhase >= data.number_of_phases) 
@@ -208,6 +209,7 @@ namespace Bosses.Pilotras
             PlacingState = new PlacingState(this, this);
             PostBinDropStunState = new PostBinDropStunState(this, this);
             BinDropState = new BinDropState(this, this);
+            ToppleState = new ToppleState(this, this);
             // initialize FSM
             Initialize(DefaultState);
         }

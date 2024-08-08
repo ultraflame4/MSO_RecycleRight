@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Patterns.FSM;
 
 namespace Bosses.Pilotras.FSM

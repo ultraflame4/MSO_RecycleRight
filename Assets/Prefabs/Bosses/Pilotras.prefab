@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
-  maxHealth: 10
+  maxHealth: 500
   numberOfPhases: 2
   spawnableNPC:
   - gameObjects:
@@ -248,6 +248,7 @@ MonoBehaviour:
   currentPhaseNPCs: []
   spawnedBins: []
   recyclables: []
+  damageTakenScale: 1
 --- !u!114 &8480909623808237515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +269,9 @@ MonoBehaviour:
   binDropCooldown: {x: 7, y: 10}
   binDropSpeed: 0.5
   binDropForce: 25
+  postDropStunDuration: 5
+  scoredDamage: 100
+  contaminatedHeal: 50
   dropDetectionMask:
     serializedVersion: 2
     m_Bits: 384
@@ -275,6 +279,9 @@ MonoBehaviour:
   binPositionOffset: {x: 0, y: -5}
   activeBins: {fileID: 7710731106806685172}
   inactiveBins: {fileID: 2787593228567009177}
+  toppleThreshold: 1
+  toppleDuration: 8
+  toppleDamageMultiplier: 7
 --- !u!1 &8439104243452739913
 GameObject:
   m_ObjectHideFlags: 0

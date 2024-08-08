@@ -28,6 +28,8 @@ namespace Bosses.Pilotras
 
         [Header("Topple State")]
         [SerializeField] float toppleThreshold = 5f;
+        [SerializeField] float toppleDuration = 8f;
+        [SerializeField] float toppleDamageMultiplier = 7f;
         #endregion
 
         #region Public Properties
@@ -52,6 +54,11 @@ namespace Bosses.Pilotras
         public Vector2 bin_offset => binPositionOffset;
         public Transform active_bins => activeBins;
         public Transform inactive_bins => inactiveBins;
+
+        // topple state
+        public float topple_threshold => toppleThreshold;
+        public float topple_duration => toppleDuration;
+        public float topple_damage_multiplier => toppleDamageMultiplier;
         #endregion
 
         #region MonoBehaviour Callbacks

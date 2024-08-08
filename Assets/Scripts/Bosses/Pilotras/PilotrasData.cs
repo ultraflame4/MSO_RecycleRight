@@ -36,6 +36,7 @@ namespace Bosses.Pilotras
         [HideInInspector] public FSMRecyclableNPC[] recyclables;
         [HideInInspector] public Dictionary<RecyclableType, int> npcCount = new Dictionary<RecyclableType, int>();
         [HideInInspector] public Dictionary<RecyclableType, float> binScore = new Dictionary<RecyclableType, float>();
+        [HideInInspector] public float damageTakenScale = 1f;
         #endregion
 
         #region MonoBehaviour Callbacks

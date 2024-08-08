@@ -15,6 +15,7 @@ namespace Bosses.Pilotras.FSM
     {
         List<RecyclingBin> selectedBins = new List<RecyclingBin>();
         float yPosTop => character.levelManager.current_zone.center.y + (character.levelManager.current_zone.size.y / 2f);
+        float scoredInInstance;
 
         public BinDropState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
             base(fsm, character, character.PostBinDropStunState, character.behaviourData.bin_drop_duration, character.behaviourData.bin_drop_cooldown)
@@ -30,6 +31,8 @@ namespace Bosses.Pilotras.FSM
             // update current number of NPCs and reset selected bins
             character.UpdateNPCCount();
             selectedBins.Clear();
+            // reset bin points in this drop instance
+            scoredInInstance = 0f;
 
             // load bins to be dropped
             LoadBins();
@@ -56,6 +59,14 @@ namespace Bosses.Pilotras.FSM
                 bin.transform.position = new Vector2(xPos, yPosTop);
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin, new Vector2(xPos, yPos)));
             }
+        }
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            if (scoredInInstance < character.behaviourData.topple_threshold) return;
+            fsm.SwitchState(character.ToppleState);
         }
 
         public override void Exit()
@@ -168,6 +179,7 @@ namespace Bosses.Pilotras.FSM
             {
                 character.GetComponent<IDamagable>()?
                     .Damage(character.behaviourData.scored_damage * scoreChange);
+                scoredInInstance += scoreChange;
                 return;
             }
 
