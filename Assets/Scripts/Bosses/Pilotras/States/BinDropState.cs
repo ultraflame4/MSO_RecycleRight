@@ -14,6 +14,7 @@ namespace Bosses.Pilotras.FSM
     public class BinDropState : CooldownState<PilotrasController>
     {
         List<RecyclingBin> selectedBins = new List<RecyclingBin>();
+        Vector2 shockwaveCenter, shockwaveSize;
         float yPosTop => character.levelManager.current_zone.center.y + (character.levelManager.current_zone.size.y / 2f);
         float scoredInInstance;
 
@@ -47,8 +48,15 @@ namespace Bosses.Pilotras.FSM
             float xPos = binContainerLocation.x - (character.behaviourData.bin_spacing * ((selectedBins.Count - 1f) / 2f));
             float yPos = binContainerLocation.y;
 
+            // set shockwave values
+            shockwaveSize = new Vector2(Mathf.Abs(xPos) + character.behaviourData.bin_spacing, 
+                yPosTop - binContainerLocation.y + character.behaviourData.bin_spacing);
+            shockwaveCenter = binContainerLocation;
+            shockwaveCenter.y += (shockwaveSize.y - character.behaviourData.bin_spacing) / 2f;
             // push back NPCs under drop location
-            PushBackNPCs(binContainerLocation, new Vector2(xPos * 2.5f, yPos * 2.5f));
+            SendShockwave(shockwaveCenter, shockwaveSize);
+            // halve shockwave size for debugging method
+            shockwaveSize *= 0.5f;
 
             // drop bin to designated location
             for (int i = 0; i < selectedBins.Count; i++)
@@ -72,7 +80,8 @@ namespace Bosses.Pilotras.FSM
         public override void Exit()
         {
             base.Exit();
-
+            // reset bin points in this drop instance
+            scoredInInstance = 0f;
             // return each bin
             foreach (RecyclingBin bin in selectedBins)
             {
@@ -96,7 +105,23 @@ namespace Bosses.Pilotras.FSM
             }
         }
 
-        void PushBackNPCs(Vector2 center, Vector2 detectionSize)
+        /// <summary>
+        /// Method to draw debug lines to show shockwave range
+        /// </summary>
+        public void DrawDebug()
+        {
+            if (shockwaveCenter == Vector2.zero || shockwaveSize == Vector2.zero) return;
+            Vector2 topLeft = new Vector2(shockwaveCenter.x - shockwaveSize.x, shockwaveCenter.y + shockwaveSize.y);
+            Vector2 topRight = new Vector2(shockwaveCenter.x + shockwaveSize.x, shockwaveCenter.y + shockwaveSize.y);
+            Vector2 bottomLeft = new Vector2(shockwaveCenter.x - shockwaveSize.x, shockwaveCenter.y - shockwaveSize.y);
+            Vector2 bottomRight = new Vector2(shockwaveCenter.x + shockwaveSize.x, shockwaveCenter.y - shockwaveSize.y);
+            Debug.DrawLine(topLeft, topRight, Color.magenta);
+            Debug.DrawLine(topRight, bottomRight, Color.magenta);
+            Debug.DrawLine(bottomRight, bottomLeft, Color.magenta);
+            Debug.DrawLine(bottomLeft, topLeft, Color.magenta);
+        }
+
+        void SendShockwave(Vector2 center, Vector2 detectionSize)
         {
             Collider2D[] hits = Physics2D.OverlapBoxAll(center, detectionSize, 
                 character.behaviourData.drop_detection_mask);

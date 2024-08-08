@@ -11467,6 +11467,42 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[10].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9147188824333955889, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

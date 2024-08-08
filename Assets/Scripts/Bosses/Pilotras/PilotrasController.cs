@@ -17,6 +17,7 @@ namespace Bosses.Pilotras
         #region Data
         [field: SerializeField] public PilotrasData data { get; private set; }
         [field: SerializeField] public PilotrasBehaviourData behaviourData { get; private set; }
+        [SerializeField] bool showGizmos = true;
         #endregion
 
         #region States
@@ -224,6 +225,14 @@ namespace Bosses.Pilotras
         {
             if (Time.timeScale <= 0f) return;
             base.FixedUpdate();
+        }
+        #endregion
+
+        #region Gizmos
+        void OnDrawGizmosSelected() 
+        {
+            if (!showGizmos) return;
+            if (BinDropState != null) BinDropState.DrawDebug();
         }
         #endregion
     }
