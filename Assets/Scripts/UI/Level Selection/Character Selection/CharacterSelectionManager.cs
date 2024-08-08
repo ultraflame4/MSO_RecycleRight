@@ -137,6 +137,7 @@ namespace UI.LevelSelection.CharacterSelection
             }
 
             UpdateCharacterSelectSlots();
+            Debug.Log("Confirmed character selection");
             GameManager.Instance.selectedCharacters = party.ToArray();
         }
 
