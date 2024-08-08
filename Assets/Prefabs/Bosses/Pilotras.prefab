@@ -260,19 +260,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a3bfb4957c25b4ea41802f117577de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placingDuration: {x: 5, y: 7}
-  placingCooldown: {x: 7, y: 10}
-  placeNPCAmount: {x: 3, y: 5}
+  placingDuration: {x: 4, y: 6}
+  placingCooldown: {x: 4, y: 8}
+  placeNPCAmount: {x: 2, y: 4}
   placingSpeed: 0.5
   binDropDuration: {x: 7, y: 10}
-  binDropCooldown: {x: 5, y: 8}
+  binDropCooldown: {x: 7, y: 10}
   binDropSpeed: 0.5
   binDropForce: 25
   dropDetectionMask:
     serializedVersion: 2
     m_Bits: 384
-  binSpacing: 3
-  binPositionOffset: {x: 0, y: -3}
+  binSpacing: 10
+  binPositionOffset: {x: 0, y: -5}
   activeBins: {fileID: 7710731106806685172}
   inactiveBins: {fileID: 2787593228567009177}
 --- !u!1 &8439104243452739913
