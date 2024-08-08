@@ -167,9 +167,15 @@ namespace Bosses.Pilotras.FSM
 
         void BinScored(float scoreChange)
         {
+            if (scoreChange > 0)
+            {
+                character.GetComponent<IDamagable>()?
+                    .Damage(character.behaviourData.scored_damage * scoreChange);
+                return;
+            }
+
             character.GetComponent<IDamagable>()?
-                .Damage(scoreChange > 0 ? (character.behaviourData.scored_damage * scoreChange) : 
-                (character.behaviourData.contaminated_heal * scoreChange));
+                .Damage(character.behaviourData.contaminated_heal * scoreChange);
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)

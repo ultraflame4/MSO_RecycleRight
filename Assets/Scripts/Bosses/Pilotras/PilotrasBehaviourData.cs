@@ -24,6 +24,9 @@ namespace Bosses.Pilotras
         [SerializeField] float binSpacing = 3f;
         [SerializeField] Vector2 binPositionOffset;
         [SerializeField] Transform activeBins, inactiveBins;
+
+        [Header("Topple State")]
+        [SerializeField] float toppleThreshold = 5f;
         #endregion
 
         #region Public Properties
