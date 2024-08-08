@@ -64,7 +64,6 @@ namespace NPC.Recyclable
 
         protected virtual void Start()
         {
-            Debug.Log(currentState);
             if (currentState != null) return;
             Initialize(state_Idle);
         }
