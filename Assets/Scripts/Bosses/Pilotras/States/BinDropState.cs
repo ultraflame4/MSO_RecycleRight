@@ -68,6 +68,9 @@ namespace Bosses.Pilotras.FSM
             // return each bin
             foreach (RecyclingBin bin in selectedBins)
             {
+                // unsubcribe from bin scored event
+                bin.BinScored -= BinScored;
+
                 // start coroutines to lift bin
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin.gameObject, 
                     new Vector2(bin.transform.position.x, yPosTop)));
@@ -157,7 +160,16 @@ namespace Bosses.Pilotras.FSM
                 usableBin = binsFound[Random.Range(0, binsFound.Length)];
             }
             
+            // subscribe to bin scored event and add to selected bin list
+            usableBin.BinScored += BinScored;
             selectedBins.Add(usableBin);
+        }
+
+        void BinScored(float scoreChange)
+        {
+            character.GetComponent<IDamagable>()?
+                .Damage(scoreChange > 0 ? (character.behaviourData.scored_damage * scoreChange) : 
+                (character.behaviourData.contaminated_heal * scoreChange));
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)

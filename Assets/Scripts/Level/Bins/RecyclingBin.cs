@@ -1,16 +1,12 @@
-using TMPro;
-using UnityEngine;
-using NPC;
 using System;
-using System.Collections;
-using UnityEngine.Pool;
+using UnityEngine;
+using TMPro;
 
 namespace Level.Bins
 {
     [RequireComponent(typeof(SpriteRenderer), typeof(PestSpawner))]
     public class RecyclingBin : MonoBehaviour
     {
-
         #region Component Config
         [Tooltip("How long it will take for the bin to become infested, once contaminated with food items.")]
         public float infestation_secs;
@@ -60,6 +56,7 @@ namespace Level.Bins
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
 
+        public event Action<float> BinScored;
 
         private void Awake() {
             spriteR = GetComponent<SpriteRenderer>();
@@ -200,7 +197,9 @@ namespace Level.Bins
         {
             var item = other.GetComponent<IBinTrashItem>();
             if (item == null) return;
+            var prevScore = Score;
             item.OnEnterBin(this);
+            BinScored?.Invoke(Score - prevScore);
         }
     }
 }

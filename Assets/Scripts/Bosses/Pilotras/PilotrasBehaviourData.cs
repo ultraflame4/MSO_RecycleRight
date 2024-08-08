@@ -16,6 +16,8 @@ namespace Bosses.Pilotras
         [SerializeField] Vector2 binDropCooldown;
         [SerializeField] float binDropSpeed = 1f;
         [SerializeField] float binDropForce = 25f;
+        [SerializeField] float scoredDamage = 100f;
+        [SerializeField] float contaminatedHeal = 50f;
         [SerializeField] LayerMask dropDetectionMask;
 
         [Header("Bin Positioning")]
@@ -36,6 +38,8 @@ namespace Bosses.Pilotras
         public float bin_drop_cooldown => Random.Range(binDropCooldown.x, binDropCooldown.y);
         public float bin_drop_speed => binDropSpeed;
         public float bin_drop_force => binDropForce;
+        public float scored_damage => scoredDamage;
+        public float contaminated_heal => contaminatedHeal;
         public LayerMask drop_detection_mask => dropDetectionMask;
 
         // bin positioning
