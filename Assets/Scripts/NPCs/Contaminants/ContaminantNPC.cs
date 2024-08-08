@@ -167,6 +167,7 @@ namespace NPC.Contaminant
             if (spawned_cleaned_prefab) return;
             spawned_cleaned_prefab = true;
             var obj = Instantiate(clean_prefab, transform.position, Quaternion.identity, transform.parent);
+            // carry over stun timer to child
             obj.GetComponent<IStunnable>()?.Stun(state_Stunned.stun_timer);
             Destroy(gameObject);
         }

@@ -91,6 +91,7 @@ namespace NPC.Recyclable
             if (spawned_contaminant) return;
             spawned_contaminant = true;
             var obj = Instantiate(contaminant_prefab, transform.position, Quaternion.identity, transform.parent);
+            // carry over stun timer to child
             obj.GetComponent<IStunnable>()?.Stun(state_Stunned.stun_timer);
             Destroy(gameObject);
         }
