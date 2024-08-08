@@ -2102,8 +2102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddaab6384be5f8f4d9e717576cea1c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideCanvasGroup:
-  - {fileID: 1263227801}
+  hideCanvasGroup: []
   hologramMenu: {fileID: 678959728}
   toggleQuickSelect: {fileID: 1870991969}
   selectionColor:
@@ -2115,7 +2114,7 @@ MonoBehaviour:
   - {fileID: 1553587956}
   - {fileID: 2083359907}
   transitionDuration: 1
-  canvasGroup: {fileID: 563652087}
+  canvasGroup: {fileID: 0}
   transitionAnimation: {fileID: 88247178}
 --- !u!225 &563652087
 CanvasGroup:
@@ -2556,7 +2555,7 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 612612365}
   glitchCooldown: {x: 3, y: 3}
-  enableGlitch: 1
+  enableGlitch: 0
 --- !u!1 &613292065
 GameObject:
   m_ObjectHideFlags: 0
