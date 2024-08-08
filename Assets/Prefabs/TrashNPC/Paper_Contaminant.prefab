@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3459501042672568818, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 42.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: npcData
       value: 
@@ -43,6 +47,10 @@ PrefabInstance:
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: attack_hit_delay
       value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288516772591241683, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_text
+      value: Paper
       objectReference: {fileID: 0}
     - target: {fileID: 5090525263914492313, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,6 +99,22 @@ PrefabInstance:
     - target: {fileID: 6991750651239364505, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Name
       value: Paper_Contaminant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_Size.x
+      value: 2.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_Size.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -178858334524358921, guid: 32e053a4b6e7a2a45acc1f217f5674f2, type: 3}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032888024164147659, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Controller

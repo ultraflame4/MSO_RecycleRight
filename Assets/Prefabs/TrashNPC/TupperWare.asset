@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
   m_Name: TupperWare
   m_EditorClassIdentifier: 
-  characterName: Plastic Box
+  characterName: Tupperware
   characterDesc: 
   characterSprite: {fileID: 0}
   trashNPCType: 1
@@ -24,6 +24,7 @@ MonoBehaviour:
     recyclableType: 0
     recyclablePrefab: {fileID: 6849047566521263402, guid: 1c3074f0e06cf96488afe0c47f712594, type: 3}
   contaminantConfig:
+    nameOverride: Dirty Tupperware
     contaminantPrefab: {fileID: 6848308265610111689, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
     attackRange: 2
     startAttackRange: 1
