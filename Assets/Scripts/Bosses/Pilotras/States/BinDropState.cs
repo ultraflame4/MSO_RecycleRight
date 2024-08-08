@@ -185,6 +185,7 @@ namespace Bosses.Pilotras.FSM
 
             character.GetComponent<IDamagable>()?
                 .Damage(character.behaviourData.contaminated_heal * scoreChange);
+            fsm.SwitchState(nextState);
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)
