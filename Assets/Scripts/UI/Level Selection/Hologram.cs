@@ -19,7 +19,14 @@ namespace UI.LevelSelection
         protected Coroutine coroutine_glitch_effect, coroutine_transition;
         public bool Active { get; protected set; } = false;
 
+        public bool enableGlitch = false;
 
+
+        private void OnEnable() {
+            if (enableGlitch){
+                ForceStartGlitch();
+            }
+        }
 
         protected IEnumerator AnimateOpen()
         {
@@ -107,17 +114,22 @@ namespace UI.LevelSelection
         /// </summary>
         /// <param name="glitch_callback">Callback when playing glitch animation</param>
         /// <param name="default_callback">Callback when returning to default state</param>
-        protected IEnumerator Glitch(Action glitch_callback = null, Action default_callback = null)
+        public IEnumerator Glitch(Action glitch_callback = null, Action default_callback = null)
         {
-            anim?.Play("Default");
+            anim.Play("Default");
             yield return new WaitForSeconds(Random.Range(glitchCooldown.x, glitchCooldown.y));
             glitch_callback?.Invoke();
-            anim?.Play("Glitch");
+            anim.Play("Glitch");
             yield return new WaitForSeconds(anim.currentAnimation.duration);
             default_callback?.Invoke();
 
             if (gameObject.activeInHierarchy)
                 coroutine_glitch_effect = StartCoroutine(Glitch(glitch_callback, default_callback));
+        }
+
+        [EasyButtons.Button]
+        private void ForceStartGlitch(){
+            StartCoroutine(Glitch());
         }
     }
 }

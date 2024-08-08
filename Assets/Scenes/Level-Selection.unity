@@ -2028,6 +2028,7 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 0}
   glitchCooldown: {x: 0, y: 0}
+  enableGlitch: 0
   mapSelect: {fileID: 1318483433}
   image: {fileID: 1577550078}
   levelName: {fileID: 152604351}
@@ -2405,6 +2406,7 @@ GameObject:
   - component: {fileID: 612612365}
   - component: {fileID: 612612364}
   - component: {fileID: 612612363}
+  - component: {fileID: 612612366}
   m_Layer: 5
   m_Name: Level Information
   m_TagString: Untagged
@@ -2538,6 +2540,23 @@ MonoBehaviour:
   animations:
   - {fileID: 612612364}
   - {fileID: 612612363}
+--- !u!114 &612612366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612612357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b898f90ca0a93d4c8158550c2beac1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 1
+  maxScale: 1
+  anim: {fileID: 612612365}
+  glitchCooldown: {x: 3, y: 3}
+  enableGlitch: 1
 --- !u!1 &613292065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3145,6 +3164,7 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 678959726}
   glitchCooldown: {x: 3, y: 7}
+  enableGlitch: 0
   characterList: {fileID: 844162021}
   characterInfo: {fileID: 1686857924}
   page_state: 1
