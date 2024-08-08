@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using NPC;
+using Unity.VisualScripting;
 
 namespace Level.Bins
 {
@@ -56,7 +58,7 @@ namespace Level.Bins
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
 
-        public event Action<float> BinScored;
+        public event Action<float, RecyclableType?> BinScored;
 
         private void Awake() {
             spriteR = GetComponent<SpriteRenderer>();
@@ -199,7 +201,7 @@ namespace Level.Bins
             if (item == null) return;
             var prevScore = Score;
             item.OnEnterBin(this);
-            BinScored?.Invoke(Score - prevScore);
+            BinScored?.Invoke(Score - prevScore, other.GetComponent<FSMRecyclableNPC>()?.recyclableType);
         }
     }
 }

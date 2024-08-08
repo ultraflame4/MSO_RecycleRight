@@ -173,7 +173,7 @@ namespace Bosses.Pilotras.FSM
             selectedBins.Add(usableBin);
         }
 
-        void BinScored(float scoreChange)
+        void BinScored(float scoreChange, RecyclableType? type)
         {
             if (scoreChange > 0)
             {
@@ -186,6 +186,9 @@ namespace Bosses.Pilotras.FSM
             character.GetComponent<IDamagable>()?
                 .Damage(character.behaviourData.contaminated_heal * scoreChange);
             fsm.SwitchState(nextState);
+            
+            // TODO: do some shit if recyclable type is e-wates
+            if (type == null || type != RecyclableType.ELECTRONICS) return;
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)
