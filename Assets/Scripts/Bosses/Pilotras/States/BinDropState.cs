@@ -17,7 +17,7 @@ namespace Bosses.Pilotras.FSM
         float yPosTop => character.levelManager.current_zone.center.y + (character.levelManager.current_zone.size.y / 2f);
 
         public BinDropState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
-            base(fsm, character, character.DefaultState, character.behaviourData.bin_drop_duration, character.behaviourData.bin_drop_cooldown)
+            base(fsm, character, character.PostBinDropStunState, character.behaviourData.bin_drop_duration, character.behaviourData.bin_drop_cooldown)
         {
         }
 
@@ -61,9 +61,6 @@ namespace Bosses.Pilotras.FSM
         public override void Exit()
         {
             base.Exit();
-
-            // restart cooldown for placing state to give a cooldown before placing NPCs again
-            character.PlacingState.StartCooldown();
 
             // return each bin
             foreach (RecyclingBin bin in selectedBins)

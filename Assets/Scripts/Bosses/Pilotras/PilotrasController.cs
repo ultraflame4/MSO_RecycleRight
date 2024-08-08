@@ -23,6 +23,7 @@ namespace Bosses.Pilotras
         public DefaultState DefaultState { get; private set; }
         public PlacingState PlacingState { get; private set; }
         public BinDropState BinDropState { get; private set; }
+        public PostBinDropStunState PostBinDropStunState { get; private set; }
         #endregion
 
         #region References
@@ -205,6 +206,7 @@ namespace Bosses.Pilotras
             // initialize states
             DefaultState = new DefaultState(this, this);
             PlacingState = new PlacingState(this, this);
+            PostBinDropStunState = new PostBinDropStunState(this, this);
             BinDropState = new BinDropState(this, this);
             // initialize FSM
             Initialize(DefaultState);
