@@ -14,9 +14,17 @@ namespace Bosses.Pilotras
 {
     public class PilotrasController : StateMachine<PilotrasController>, IDamagable
     {
-        #region Data
+        #region Inspector
+        [field: Header("Data")]
         [field: SerializeField] public PilotrasData data { get; private set; }
         [field: SerializeField] public PilotrasBehaviourData behaviourData { get; private set; }
+
+        [field: Header("Components")]
+        [field: SerializeField] public PilotrasFireController fireController { get; private set; }
+
+        [Header("Debug")]
+        [SerializeField] int debugPhase = 2;
+        [SerializeField] bool debugMode = false;
         [SerializeField] bool showGizmos = true;
         #endregion
 
@@ -213,6 +221,15 @@ namespace Bosses.Pilotras
             ToppleState = new ToppleState(this, this);
             // initialize FSM
             Initialize(DefaultState);
+
+            // handle debug
+            if (!debugMode) return;
+            // debug phases
+            for (int i = 0; i < debugPhase - currentPhase; i++)
+            {
+                currentPhase = i + 2;
+                HandlePhaseChange();
+            }
         }
 
         new void Update()
@@ -231,8 +248,12 @@ namespace Bosses.Pilotras
         #region Gizmos
         void OnDrawGizmosSelected() 
         {
-            if (!showGizmos) return;
-            if (BinDropState != null) BinDropState.DrawDebug();
+            if (fireController != null) 
+                fireController.showGizmos = showGizmos;
+            if (!showGizmos) 
+                return;
+            if (BinDropState != null) 
+                BinDropState.DrawDebug();
         }
         #endregion
     }

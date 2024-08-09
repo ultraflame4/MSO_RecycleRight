@@ -11488,6 +11488,14 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[6].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
@@ -11501,7 +11509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[10].second.m_AnimationSpeed
-      value: 30
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 9147188824333955889, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11548,6 +11556,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41838358364bdfc43806156f72909678, type: 3}
+--- !u!1839735485 &226027109 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+  m_PrefabInstance: {fileID: 226027108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &475881149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12703,6 +12716,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4152754215727836793, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 226027109}
+    - target: {fileID: 4152754215727836793, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: debug_zone
+      value: 
+      objectReference: {fileID: 843036383}
     - target: {fileID: 6242226410964193304, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
       propertyPath: m_Name
       value: Pilotras

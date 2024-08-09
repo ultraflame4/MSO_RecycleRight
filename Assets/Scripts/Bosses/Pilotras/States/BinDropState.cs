@@ -212,8 +212,8 @@ namespace Bosses.Pilotras.FSM
                 .Damage(character.behaviourData.contaminated_heal * scoreChange);
             fsm.SwitchState(nextState);
             
-            // TODO: do some shit if recyclable type is e-wates
             if (type == null || type != RecyclableType.ELECTRONICS) return;
+            character.fireController?.SpawnFire();
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)

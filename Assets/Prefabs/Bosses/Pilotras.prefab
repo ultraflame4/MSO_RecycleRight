@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 3829974436455466479}
   - component: {fileID: 8561885408711713541}
   - component: {fileID: 7426227777418501112}
+  - component: {fileID: 4152754215727836793}
   - component: {fileID: 6189416132222840899}
   - component: {fileID: 8480909623808237515}
   m_Layer: 8
@@ -213,6 +214,31 @@ MonoBehaviour:
   current_state_name: None
   <data>k__BackingField: {fileID: 6189416132222840899}
   <behaviourData>k__BackingField: {fileID: 8480909623808237515}
+  <fireController>k__BackingField: {fileID: 4152754215727836793}
+  debugPhase: 2
+  debugMode: 1
+  showGizmos: 1
+--- !u!114 &4152754215727836793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242226410964193304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2692391d4036754f97d99ceed7b7088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanesToSpawn: 2
+  yOffset: 3
+  fireDuration: 7
+  fireSpreadSpeed: 0.05
+  minFireDistance: 2.5
+  tilemap: {fileID: 0}
+  fireTilePrefab: {fileID: 531007759239420580, guid: 9ee07fcb3e449f64f8f3a1401159e318, type: 3}
+  debug_zone: {fileID: 0}
+  showGizmos: 1
 --- !u!114 &6189416132222840899
 MonoBehaviour:
   m_ObjectHideFlags: 0
