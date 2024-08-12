@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
+  m_Name: Cardboardbox
+  m_EditorClassIdentifier: 
+  characterName: Flattened Cardboard Box
+  characterDesc: 
+  characterSprite: {fileID: 0}
+  trashNPCType: 2
+  common:
+    maxHealth: 100
+    movementSpeed: 100
+    sightRange: 3
+  recyclableConfig:
+    recyclableType: 0
+    recyclablePrefab: {fileID: 3436674809278473350, guid: 31004d4d912fc2f45964943b9cc5ed0e, type: 3}
+  contaminantConfig:
+    nameOverride: 
+    contaminantPrefab: {fileID: 0}
+    attackRange: 2
+    startAttackRange: 1
+    attackDelay: 0.1
+    attackDamage: 0
+    attackDuration: 1.5
+    attract_pests: 0
+    attack_hit_delay: 0
+    cleanable: 0
