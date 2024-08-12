@@ -6,7 +6,7 @@ public class CardboardBox : MonoBehaviour, IDamagable
     public SpriteRenderer spriteR;
     public Sprite[] states;
     public uint current_state;
-
+    public GameObject recyclableNpc;
 
     [EasyButtons.Button]
     private void Reset()
@@ -33,6 +33,7 @@ public class CardboardBox : MonoBehaviour, IDamagable
     private void OnFolded()
     {
         Destroy(gameObject);
+        Instantiate(recyclableNpc, transform.position, transform.rotation, transform.parent);
     }
 
     public void Damage(float damage)
