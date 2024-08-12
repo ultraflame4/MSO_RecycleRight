@@ -44984,12 +44984,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+      propertyPath: npcData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: cleanable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: attackDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+      propertyPath: attract_pests
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
       propertyPath: attackDuration
@@ -45569,7 +45577,7 @@ MonoBehaviour:
   - {fileID: 478013585}
   recyclables: []
   text: Use WASD to move your character
-  count: 2
+  count: 1
   box: {fileID: 2143212988}
   showBox: 0
   keys: 77000000610000007300000064000000
