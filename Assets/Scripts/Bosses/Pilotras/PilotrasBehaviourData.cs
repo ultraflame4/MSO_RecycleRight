@@ -30,6 +30,9 @@ namespace Bosses.Pilotras
         [SerializeField] float toppleThreshold = 5f;
         [SerializeField] float toppleDuration = 8f;
         [SerializeField] float toppleDamageMultiplier = 7f;
+
+        [Header("Phase Change State")]
+        [SerializeField] float phaseChangeDuration = 5f;
         #endregion
 
         #region Public Properties
@@ -59,6 +62,9 @@ namespace Bosses.Pilotras
         public float topple_threshold => toppleThreshold;
         public float topple_duration => toppleDuration;
         public float topple_damage_multiplier => toppleDamageMultiplier;
+
+        // phase change state
+        public float phase_change_duration => phaseChangeDuration;
         #endregion
 
         #region MonoBehaviour Callbacks

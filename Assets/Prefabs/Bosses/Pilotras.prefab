@@ -216,7 +216,7 @@ MonoBehaviour:
   <behaviourData>k__BackingField: {fileID: 8480909623808237515}
   <fireController>k__BackingField: {fileID: 4152754215727836793}
   debugPhase: 2
-  debugMode: 1
+  debugMode: 0
   showGizmos: 1
 --- !u!114 &4152754215727836793
 MonoBehaviour:
@@ -308,6 +308,7 @@ MonoBehaviour:
   toppleThreshold: 1
   toppleDuration: 8
   toppleDamageMultiplier: 7
+  phaseChangeDuration: 5
 --- !u!1 &8439104243452739913
 GameObject:
   m_ObjectHideFlags: 0

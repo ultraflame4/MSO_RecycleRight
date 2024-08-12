@@ -34,6 +34,7 @@ namespace Bosses.Pilotras
         public BinDropState BinDropState { get; private set; }
         public PostBinDropStunState PostBinDropStunState { get; private set; }
         public ToppleState ToppleState { get; private set; }
+        public PhaseChangeState PhaseChangeState { get; private set; }
         #endregion
 
         #region References
@@ -49,10 +50,6 @@ namespace Bosses.Pilotras
         }
 
         public int currentPhase { get; private set; } = 0;
-        #endregion
-
-        #region Events
-        public event Action EndLevel;
         #endregion
 
         #region Public Methods
@@ -105,6 +102,16 @@ namespace Bosses.Pilotras
                     data.npcCount[type]++;
             }
         }
+
+        /// <summary>
+        /// Handle changing phase
+        /// </summary>
+        public void HandlePhaseChange()
+        {
+            currentPhase++;
+            LoadSpawnableNPCs();
+            SpawnBins();
+        }
         #endregion
 
         #region Public Coroutines
@@ -136,27 +143,11 @@ namespace Bosses.Pilotras
         {
             Health -= damage * data.damageTakenScale;
             if (Health > 0f) return;
-
-            if (currentPhase >= data.number_of_phases) 
-            {
-                // handle death state
-                EndLevel?.Invoke();
-                return;
-            }
-
-            Health = data.max_health;
-            currentPhase++;
-            HandlePhaseChange();
+            SwitchState(PhaseChangeState);
         }
         #endregion
 
         #region Private Methods
-        void HandlePhaseChange()
-        {
-            LoadSpawnableNPCs();
-            SpawnBins();
-        }
-
         void LoadSpawnableNPCs()
         {
             int index = currentPhase - 1;
@@ -205,11 +196,11 @@ namespace Bosses.Pilotras
         #endregion
 
         #region MonoBehaviour Callbacks
-        void Start()
+        void Awake()
         {
             // reset variables
             Health = data.max_health;
-            currentPhase = 1;
+            currentPhase = 0;
             // initialize first phase
             HandlePhaseChange();
 
@@ -219,6 +210,7 @@ namespace Bosses.Pilotras
             PostBinDropStunState = new PostBinDropStunState(this, this);
             BinDropState = new BinDropState(this, this);
             ToppleState = new ToppleState(this, this);
+            PhaseChangeState = new PhaseChangeState(this, this);
             // initialize FSM
             Initialize(DefaultState);
 
@@ -227,7 +219,6 @@ namespace Bosses.Pilotras
             // debug phases
             for (int i = 0; i < debugPhase - currentPhase; i++)
             {
-                currentPhase = i + 2;
                 HandlePhaseChange();
             }
         }
