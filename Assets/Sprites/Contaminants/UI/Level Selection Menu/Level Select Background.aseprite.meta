@@ -168,7 +168,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 362
+      x: 428
       y: 209
       width: 60
       height: 85
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 362, y: 209}
+    uvTransform: {x: 428, y: 209}
   - name: Level Select Background_Frame_1
     originalName: 
     pivot: {x: 0.98275864, y: -0.3253968}
@@ -189,7 +189,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 362
-      y: 4
+      y: 209
       width: 58
       height: 126
     spriteID: 88e5e4cdb37f90049a9dd7bbd63b5569
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 362, y: 4}
+    uvTransform: {x: 362, y: 209}
   - name: Level Select Background_Frame_2
     originalName: 
     pivot: {x: 0.017241415, y: -0.3253968}
@@ -208,8 +208,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 428
-      y: 4
+      x: 362
+      y: 343
       width: 58
       height: 126
     spriteID: 68734a748b835ee4c97a13ed8ec8770b
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 428, y: 4}
+    uvTransform: {x: 362, y: 343}
   - name: Level Select Background_Frame_5
     originalName: 
     pivot: {x: -5.083333, y: -29.499998}
@@ -229,7 +229,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 362
-      y: 138
+      y: 477
       width: 12
       height: 6
     spriteID: bb97e2689718c9a45b724c71b497bdbf
@@ -240,7 +240,27 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 362, y: 138}
+    uvTransform: {x: 362, y: 477}
+  - name: Level Select Background_Frame_6
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.3046875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 362
+      y: 4
+      width: 118
+      height: 128
+    spriteID: a79561aa8772c7a47bda08e84f49df71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 362, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -298,6 +318,14 @@ ScriptedImporter:
         width: 12
         height: 6
       spriteId: bb97e2689718c9a45b724c71b497bdbf
+    - name: Level Select Background_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 116
+        y: 39
+        width: 118
+        height: 128
+      spriteId: a79561aa8772c7a47bda08e84f49df71
     linkedCells: []
     parentIndex: -1
   platformSettings:
