@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
   m_Name: Cardboardbox
   m_EditorClassIdentifier: 
-  characterName: Flattened Cardboard Box
+  characterName: Flat Box
   characterDesc: 
   characterSprite: {fileID: 0}
   trashNPCType: 2

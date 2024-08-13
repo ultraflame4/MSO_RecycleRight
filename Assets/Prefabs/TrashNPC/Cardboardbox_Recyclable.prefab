@@ -16,6 +16,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1704285733940377051, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 67.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704285733940377051, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 14.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704285733940377051, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704285733940377051, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19.57
+      objectReference: {fileID: 0}
     - target: {fileID: 2086369730254394613, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.357
@@ -35,6 +51,18 @@ PrefabInstance:
     - target: {fileID: 5928528250783536157, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: contaminant_prefab
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530925854829422535, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_text
+      value: Flat Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530925854829422535, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530925854829422535, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Enabled
