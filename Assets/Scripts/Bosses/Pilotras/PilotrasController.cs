@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras
 {
-    public class PilotrasController : StateMachine<PilotrasController>, IDamagable
+    public class PilotrasController : StateMachine<PilotrasController>, IDamagable, IMovable
     {
         #region Inspector
         [field: Header("Data")]
@@ -144,6 +144,11 @@ namespace Bosses.Pilotras
             Health -= damage * data.damageTakenScale;
             if (Health > 0f) return;
             SwitchState(PhaseChangeState);
+        }
+
+        public bool CanMove()
+        {
+            return false;
         }
         #endregion
 
