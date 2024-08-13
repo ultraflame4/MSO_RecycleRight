@@ -11,13 +11,13 @@ namespace Bosses.Pilotras.FSM
         Coroutine coroutine_placing;
 
         public MeteorShowerAttackState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
-            base(fsm, character, character.DefaultState, character.behaviourData.meteor_attack_duration)
+            base(fsm, character, character.DefaultState, character.behaviourData.meteor_attack_duration + character.data.attack_delay)
         {
         }
 
         public override void Enter()
         {
-            duration = character.behaviourData.meteor_attack_duration;
+            duration = character.behaviourData.meteor_attack_duration + character.data.attack_delay;
             base.Enter();
             amountToPlace = character.behaviourData.meteor_attack_place_npc;
             coroutine_placing = character.StartCoroutine(PlaceNPC());

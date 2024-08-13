@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 25
   moveDirection: {x: 1, y: 0}
-  rotationSpeed: 720
+  rotationSpeed: 3600
   spriteRenderer: {fileID: 1226361673947827050}
   damage: 25
   maxX: 0

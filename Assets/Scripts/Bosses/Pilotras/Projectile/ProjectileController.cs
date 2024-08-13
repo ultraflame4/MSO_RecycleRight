@@ -23,7 +23,7 @@ namespace Bosses.Pilotras.Projectile
             Destroy(gameObject);
         }
 
-        void OnTriggerEnter(Collider other) 
+        void OnTriggerEnter2D(Collider2D other) 
         {
             // when hit something, damage it and spawn a NPC in its place
             if (other.TryGetComponent<IDamagable>(out IDamagable damagable))

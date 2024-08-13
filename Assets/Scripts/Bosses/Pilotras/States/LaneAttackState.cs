@@ -8,7 +8,7 @@ namespace Bosses.Pilotras.FSM
     public class LaneAttackState : CooldownState<PilotrasController>
     {
         public LaneAttackState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
-            base(fsm, character, character.DefaultState, character.behaviourData.lane_attack_duration, character.behaviourData.lane_attack_cooldown)
+            base(fsm, character, character.DefaultState, character.behaviourData.lane_attack_duration + character.data.attack_delay, character.behaviourData.lane_attack_cooldown)
         {
         }
 
@@ -39,15 +39,15 @@ namespace Bosses.Pilotras.FSM
 
         IEnumerator DelayedProjectileActivation(ProjectileController projectile, Vector2 spawnPos)
         {
-            projectile.spriteRenderer.enabled = false;
+            if (projectile != null) projectile.spriteRenderer.enabled = false;
             yield return new WaitForSeconds(character.data.attack_delay - character.behaviourData.drop_speed);
             // throw projectile into position
-            projectile.spriteRenderer.enabled = true;
+            if (projectile != null) projectile.spriteRenderer.enabled = true;
             character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, projectile.gameObject, spawnPos));
             // wait for remaining time before launching projectile
             yield return new WaitForSeconds(character.behaviourData.drop_speed);
             // activate projectile after wait duration
-            projectile.enabled = true;
+            if (projectile != null) projectile.enabled = true;
         }
     }
 }
