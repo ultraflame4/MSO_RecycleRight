@@ -147,7 +147,7 @@ MonoBehaviour:
   grabOffset: {x: 1, y: 0.5}
   hitMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1408
   grabEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   throwDamage: 15
   throwStunDuration: 0.75
