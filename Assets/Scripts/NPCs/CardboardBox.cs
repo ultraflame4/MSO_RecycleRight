@@ -1,7 +1,7 @@
 using Interfaces;
 using UnityEngine;
 
-public class CardboardBox : MonoBehaviour, IDamagable, INotMovableByWilson
+public class CardboardBox : MonoBehaviour, IDamagable, IAmNotMovableByWilson
 {
     public SpriteRenderer spriteR;
     public Sprite[] states;

@@ -77,7 +77,7 @@ namespace Player.Behaviours
             SpawnVFX(grabEffect);
 
             // check if grabbed object can be grabbed
-            INotMovableByWilson movable = hit.GetComponent<INotMovableByWilson>();
+            IAmNotMovableByWilson movable = hit.GetComponent<IAmNotMovableByWilson>();
             // handle not grabbing object
             if (movable != null && !movable.CanMove())
             {
