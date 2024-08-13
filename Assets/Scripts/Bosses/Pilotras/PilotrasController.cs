@@ -35,6 +35,7 @@ namespace Bosses.Pilotras
         public PostBinDropStunState PostBinDropStunState { get; private set; }
         public ToppleState ToppleState { get; private set; }
         public PhaseChangeState PhaseChangeState { get; private set; }
+        public MeteorShowerAttackState MeteorShowerAttackState { get; private set; }
         #endregion
 
         #region References
@@ -50,6 +51,10 @@ namespace Bosses.Pilotras
         }
 
         public int currentPhase { get; private set; } = 0;
+        public float meteorAttackChance => behaviourData == null ? 0f : 
+            Mathf.Clamp01(behaviourData.base_enter_attack_chance + (behaviourData.attack_chance_increase * (currentPhase - 1)));
+        public float yPosTop => levelManager == null? 0f : 
+            levelManager.current_zone.center.y + (levelManager.current_zone.size.y / 2f);
         #endregion
 
         #region Public Methods
@@ -216,6 +221,7 @@ namespace Bosses.Pilotras
             BinDropState = new BinDropState(this, this);
             ToppleState = new ToppleState(this, this);
             PhaseChangeState = new PhaseChangeState(this, this);
+            MeteorShowerAttackState = new MeteorShowerAttackState(this, this);
             // initialize FSM
             Initialize(DefaultState);
 

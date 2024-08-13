@@ -15,17 +15,35 @@ namespace Bosses.Pilotras
     public class PilotrasData : MonoBehaviour
     {
         #region Inspector Fields
+        [Header("Scriptable Object Data")]
         [SerializeField] EntitySO data;
+
+        [Header("Additional Data")]
         [SerializeField] float maxHealth = 500f;
         [SerializeField] int numberOfPhases = 2;
+
+        [Header("Attack Data")]
+        [SerializeField] float meteorAttackDamage = 15f;
+        [SerializeField] LayerMask hitMask;
+
+        [Header("Spawnable Prefab Data")]
         [SerializeField] PhaseObjects[] spawnableNPC;
         [SerializeField] PhaseObjects[] spawnableBins;
         #endregion
 
         #region Public Properties
+        // scriptable object data
         public EntitySO entityData => data;
+
+        // additional data
         public float max_health => maxHealth;
         public int number_of_phases => numberOfPhases;
+
+        // attack data
+        public float meteor_attack_damage => meteorAttackDamage;
+        public LayerMask hit_mask => hitMask;
+
+        // spawnable prefab data
         public PhaseObjects[] spawnable_npcs => spawnableNPC;
         public PhaseObjects[] spawnable_bins => spawnableBins;
         #endregion
@@ -40,7 +58,7 @@ namespace Bosses.Pilotras
         #endregion
 
         #region MonoBehaviour Callbacks
-        void Start()
+        void Awake()
         {
             if (spawnableNPC == null)
                 Debug.LogWarning("Spawnable NPCs array is null, there are no NPCs to spawn! (PilotrasData.cs)");

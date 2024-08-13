@@ -254,6 +254,10 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
   maxHealth: 500
   numberOfPhases: 2
+  meteorAttackDamage: 15
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 64
   spawnableNPC:
   - gameObjects:
     - {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
@@ -291,6 +295,12 @@ MonoBehaviour:
   placingCooldown: {x: 4, y: 8}
   placeNPCAmount: {x: 2, y: 4}
   placingSpeed: 0.5
+  meteorAttackDuration: {x: 4, y: 6}
+  attackPlaceNPCAmount: {x: 4, y: 7}
+  baseEnterAttackChance: 0.15
+  attackChanceIncreasePerPhase: 0.3
+  dropAttackRange: 3
+  dropSpeed: 0.25
   binDropDuration: {x: 7, y: 10}
   binDropCooldown: {x: 7, y: 10}
   binDropSpeed: 0.5

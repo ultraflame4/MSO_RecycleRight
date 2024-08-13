@@ -15,7 +15,6 @@ namespace Bosses.Pilotras.FSM
     {
         List<RecyclingBin> selectedBins = new List<RecyclingBin>();
         Vector2 shockwaveCenter, shockwaveSize;
-        float yPosTop => character.levelManager.current_zone.center.y + (character.levelManager.current_zone.size.y / 2f);
         float scoredInInstance;
 
         public BinDropState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
@@ -50,7 +49,7 @@ namespace Bosses.Pilotras.FSM
 
             // set shockwave values
             shockwaveSize = new Vector2(Mathf.Abs(xPos) + character.behaviourData.bin_spacing, 
-                yPosTop - binContainerLocation.y + character.behaviourData.bin_spacing);
+                character.yPosTop - binContainerLocation.y + character.behaviourData.bin_spacing);
             shockwaveCenter = binContainerLocation;
             shockwaveCenter.y += (shockwaveSize.y - character.behaviourData.bin_spacing) / 2f;
             // push back NPCs under drop location
@@ -64,7 +63,7 @@ namespace Bosses.Pilotras.FSM
                 GameObject bin = selectedBins[i].gameObject;
                 bin.transform.parent = character.behaviourData.active_bins;
                 xPos += i * character.behaviourData.bin_spacing;
-                bin.transform.position = new Vector2(xPos, yPosTop);
+                bin.transform.position = new Vector2(xPos, character.yPosTop);
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin, new Vector2(xPos, yPos)));
             }
         }
@@ -90,7 +89,7 @@ namespace Bosses.Pilotras.FSM
 
                 // start coroutines to lift bin
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin.gameObject, 
-                    new Vector2(bin.transform.position.x, yPosTop)));
+                    new Vector2(bin.transform.position.x, character.yPosTop)));
                 character.StartCoroutine(DelayedBinInactive(bin));
 
                 // ensure bin score dictionary contains recyclable type

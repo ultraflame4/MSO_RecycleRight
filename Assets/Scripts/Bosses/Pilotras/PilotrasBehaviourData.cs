@@ -8,8 +8,16 @@ namespace Bosses.Pilotras
         [Header("Placing State")]
         [SerializeField] Vector2 placingDuration;
         [SerializeField] Vector2 placingCooldown;
-        [SerializeField] Vector2 placeNPCAmount;
+        [SerializeField] Vector2Int placeNPCAmount;
         [SerializeField] float placingSpeed = 0.5f;
+
+        [Header("Meteor Shower Attack State")]
+        [SerializeField] Vector2 meteorAttackDuration;
+        [SerializeField] Vector2Int attackPlaceNPCAmount;
+        [SerializeField, Range(0f, 1f)] float baseEnterAttackChance = 0.15f;
+        [SerializeField, Range(0f, 1f)] float attackChanceIncreasePerPhase = 0.3f;
+        [SerializeField] float dropAttackRange = 3f;
+        [SerializeField] float dropSpeed = 0.25f;
 
         [Header("Bin Drop State")]
         [SerializeField] Vector2 binDropDuration;
@@ -39,8 +47,16 @@ namespace Bosses.Pilotras
         // placing state
         public float placing_duration => Random.Range(placingDuration.x, placingDuration.y);
         public float placing_cooldown => Random.Range(placingCooldown.x, placingCooldown.y);
-        public int place_npc_amount => Mathf.RoundToInt(Random.Range(placeNPCAmount.x, placeNPCAmount.y));
+        public int place_npc_amount => Random.Range(placeNPCAmount.x, placeNPCAmount.y);
         public float placing_speed => placingSpeed;
+
+        // meteor shower attack state
+        public float meteor_attack_duration => Random.Range(meteorAttackDuration.x, meteorAttackDuration.y);
+        public int meteor_attack_place_npc =>  Random.Range(attackPlaceNPCAmount.x, attackPlaceNPCAmount.y);
+        public float base_enter_attack_chance => baseEnterAttackChance;
+        public float attack_chance_increase => attackChanceIncreasePerPhase;
+        public float drop_attack_range => dropAttackRange;
+        public float drop_speed => dropSpeed;
 
         // bin drop state
         public float bin_drop_duration => Random.Range(binDropDuration.x, binDropDuration.y);
@@ -65,14 +81,6 @@ namespace Bosses.Pilotras
 
         // phase change state
         public float phase_change_duration => phaseChangeDuration;
-        #endregion
-
-        #region MonoBehaviour Callbacks
-        void Start()
-        {
-            // ensure place npc amount is an integer
-            placeNPCAmount = new Vector2(Mathf.RoundToInt(placeNPCAmount.x), Mathf.RoundToInt(placeNPCAmount.y));
-        }
         #endregion
     }
 }

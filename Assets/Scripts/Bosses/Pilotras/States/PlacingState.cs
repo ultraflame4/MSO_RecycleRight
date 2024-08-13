@@ -17,6 +17,14 @@ namespace Bosses.Pilotras.FSM
 
         public override void Enter()
         {
+            // check for chance to enter meteor attack state
+            if (CanEnter && Random.Range(0f, 1f) <= character.meteorAttackChance)
+            {
+                fsm.SwitchState(character.MeteorShowerAttackState);
+                return;
+            }
+
+            // handle normal placing state
             duration = character.behaviourData.placing_duration;
             cooldown = character.behaviourData.placing_cooldown;
             base.Enter();
@@ -38,8 +46,7 @@ namespace Bosses.Pilotras.FSM
         IEnumerator PlaceNPC()
         {
             GameObject obj = character.PlaceNPC(character.transform.position);
-            if (obj != null) character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, 
-                    obj, character.GetRandomPositionInZone()));
+            character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, obj, character.GetRandomPositionInZone()));
             yield return new WaitForSeconds(duration / amountToPlace);
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }
