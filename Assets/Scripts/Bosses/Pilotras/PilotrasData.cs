@@ -20,6 +20,7 @@ namespace Bosses.Pilotras
 
         [Header("Additional Data")]
         [SerializeField] float maxHealth = 500f;
+        [SerializeField] float yOffset = 3f;
         [SerializeField] int numberOfPhases = 2;
 
         [Header("Attack Data")]
@@ -37,6 +38,7 @@ namespace Bosses.Pilotras
 
         // additional data
         public float max_health => maxHealth;
+        public float y_offset => yOffset;
         public int number_of_phases => numberOfPhases;
 
         // attack data

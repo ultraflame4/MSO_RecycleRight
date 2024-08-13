@@ -26,6 +26,11 @@ namespace Bosses.Pilotras
         [SerializeField] int debugPhase = 2;
         [SerializeField] bool debugMode = false;
         [SerializeField] bool showGizmos = true;
+        [SerializeField] LevelZone debug_zone;
+        #endregion
+
+        #region Private Fields
+        Vector2 minBounds, maxBounds;
         #endregion
 
         #region States
@@ -41,6 +46,7 @@ namespace Bosses.Pilotras
 
         #region References
         public LevelManager levelManager => LevelManager.Instance;
+        public LevelZone zone => levelManager == null ? null : levelManager.current_zone;
         #endregion
 
         #region Other Properties
@@ -82,9 +88,7 @@ namespace Bosses.Pilotras
         /// <returns>Generated position</returns>
         public Vector2 GetRandomPositionInZone()
         {
-            LevelZone currentZone = levelManager.current_zone;
-            Vector2 boundary = (Vector2) currentZone.center + (currentZone.size * 0.5f);
-            return new Vector2(Random.Range(-boundary.x, boundary.x), Random.Range(-boundary.y, boundary.y));
+            return new Vector2(Random.Range(minBounds.x, maxBounds.x), Random.Range(minBounds.y, maxBounds.y));
         }
 
         /// <summary>
@@ -204,6 +208,15 @@ namespace Bosses.Pilotras
                 data.binScore.Add(bin.recyclableType, 0);
             }
         }
+
+        void CalculateBounds(LevelZone zone)
+        {
+            minBounds.x = zone.center.x - (zone.size.x / 2f);
+            minBounds.y = zone.center.y - (zone.size.y / 2f);
+            maxBounds.x = zone.center.x + (zone.size.x / 2f);
+            maxBounds.y = zone.center.y + (zone.size.y / 2f);
+            maxBounds.y = maxBounds.y - (maxBounds.y - transform.position.y) - data.y_offset;
+        }
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -236,6 +249,14 @@ namespace Bosses.Pilotras
             }
         }
 
+        void Start()
+        {
+            CalculateBounds(zone);
+            if (fireController == null) return;
+            fireController.minBounds = minBounds;
+            fireController.maxBounds = maxBounds;
+        }
+
         new void Update()
         {
             if (Time.timeScale <= 0f) return;
@@ -252,12 +273,16 @@ namespace Bosses.Pilotras
         #region Gizmos
         void OnDrawGizmosSelected() 
         {
-            if (fireController != null) 
-                fireController.showGizmos = showGizmos;
-            if (!showGizmos) 
-                return;
+            if (!showGizmos) return;
+
             if (BinDropState != null) 
                 BinDropState.DrawDebug();
+            
+            if (debug_zone == null) return;
+            CalculateBounds(debug_zone);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawSphere(minBounds, 0.5f);
+            Gizmos.DrawSphere(maxBounds, 0.5f);
         }
         #endregion
     }

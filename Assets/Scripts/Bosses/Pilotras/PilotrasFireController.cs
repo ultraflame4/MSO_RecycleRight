@@ -9,7 +9,6 @@ namespace Bosses.Pilotras
     {
         [Header("Parameters")]
         [SerializeField] int lanesToSpawn = 2;
-        [SerializeField] float yOffset = 5f;
         [SerializeField] float fireDuration = 7f;
         [SerializeField] float fireSpreadSpeed = .15f;
         [SerializeField] float minFireDistance = 2.5f;
@@ -17,18 +16,8 @@ namespace Bosses.Pilotras
         [Header("Tile Instantiation")]
         [SerializeField] Tilemap tilemap;
         [SerializeField] GameObject fireTilePrefab;
-        [SerializeField] LevelZone debug_zone;
 
-        [HideInInspector] public bool showGizmos = true;
-
-        LevelManager levelManager => LevelManager.Instance;
-        LevelZone zone => levelManager == null ? null : levelManager.current_zone;
-        Vector2 minBounds, maxBounds;
-
-        void Start()
-        {
-            CalculateBounds(zone);
-        }
+        [HideInInspector] public Vector2 minBounds, maxBounds;
 
         /// <summary>
         /// Spawns 2 vertical lanes of fire below self at random x-positions
@@ -97,25 +86,6 @@ namespace Bosses.Pilotras
             fireTile.lifetime = duration;
             fireTile.associatedTilemap = tilemap;
             tilemap.SetTile(pos, tile);
-        }
-
-        void CalculateBounds(LevelZone zone)
-        {
-            minBounds.x = zone.center.x - (zone.size.x / 2f);
-            minBounds.y = zone.center.y - (zone.size.y / 2f);
-            maxBounds.x = zone.center.x + (zone.size.x / 2f);
-            maxBounds.y = zone.center.y + (zone.size.y / 2f);
-            maxBounds.y = maxBounds.y - (maxBounds.y - transform.position.y) - yOffset;
-        }
-
-        void OnDrawGizmosSelected() 
-        {
-            if (!showGizmos || debug_zone == null) return;
-            CalculateBounds(debug_zone);
-
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(minBounds, 0.5f);
-            Gizmos.DrawSphere(maxBounds, 0.5f);
         }
     }
 }
