@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1668163436747557476}
   - component: {fileID: 6708208847078424538}
   - component: {fileID: 195399445341661658}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: CardboardBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,11 +46,11 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 64
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4809739971203902385}
   - component: {fileID: 8663231943052041191}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
