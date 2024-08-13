@@ -31,7 +31,7 @@ namespace Bosses.Pilotras
         }
 
         /// <summary>
-        /// Spawns vertical lanes of fire below self at random x-positions
+        /// Spawns 2 vertical lanes of fire below self at random x-positions
         /// </summary>
         public void SpawnFire()
         {
@@ -40,6 +40,8 @@ namespace Bosses.Pilotras
             for (int i = 0; i < lanesToSpawn; i++)
             {
                 tilePos = GetAvailableLocation();
+                StartCoroutine(SpreadFire(tilePos));
+                tilePos.x++;
                 StartCoroutine(SpreadFire(tilePos));
             }
         }
@@ -61,19 +63,29 @@ namespace Bosses.Pilotras
             float xPos = Random.Range(minBounds.x, maxBounds.x);
             Vector3Int tmPos = tilemap.WorldToCell(new Vector3(xPos, maxBounds.y, transform.position.z));
             Vector3Int originalPos = tmPos;
+            Vector3Int tmPos2 = tmPos;
+            tmPos2.x++;
 
             // if randomly selected tiles have another tile, iterated till max and min bound to find an available tile
-            while (tilemap.HasTile(tmPos) && tmPos.x < maxBounds.x)
+            while ((tilemap.HasTile(tmPos) || tilemap.HasTile(tmPos2)) && tmPos.x < maxBounds.x)
             {
                 tmPos.x++;
+                tmPos2.x++;
             }
-            while (tilemap.HasTile(tmPos) && tmPos.x > minBounds.x)
+            while ((tilemap.HasTile(tmPos) || tilemap.HasTile(tmPos2)) && tmPos.x > minBounds.x)
             {
                 tmPos.x--;
+                tmPos2.x--;
             }
 
             // if still cannot find tile, just override the original generated tile
-            if (tilemap.HasTile(tmPos)) tmPos = originalPos;
+            if (tilemap.HasTile(tmPos)) 
+            {
+                tmPos = originalPos;
+                tmPos2 = originalPos;
+                tmPos2.x++;
+            }
+
             return tmPos;
         }
 
