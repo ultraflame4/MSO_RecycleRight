@@ -53,6 +53,8 @@ namespace NPC.Recyclable
             sightRange = npcData.common.sightRange;
             _recyclableType = npcData.recyclableConfig.recyclableType;
             contaminant_prefab = npcData.contaminantConfig.contaminantPrefab;
+
+            SetNameTag(npcData.characterName);
         }
         private void Awake()
         {
@@ -64,7 +66,7 @@ namespace NPC.Recyclable
             state_Idle = new RecyclableIdle(this);
             state_Stunned = new(state_Idle, this, this);
             state_Flee = new(this);
-
+            
             Initialize(state_Idle);
         }
         public virtual void Contaminate(float damage)

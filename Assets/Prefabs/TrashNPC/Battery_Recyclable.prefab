@@ -14909,6 +14909,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1704285733940377051, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 32.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3787632505832760229, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Controller
       value: 
@@ -14969,10 +14973,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9210024018305837625, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
     - {fileID: 5928528250783536157, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
@@ -15012,6 +15012,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8240820135913634244, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
   m_PrefabInstance: {fileID: 4219910016419487251}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6931782800690280916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6530925854829422535, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+  m_PrefabInstance: {fileID: 4219910016419487251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8202214878067815596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5423529344811936447, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
@@ -15033,6 +15044,7 @@ MonoBehaviour:
   <navigation>k__BackingField: {fileID: 4304380943193186871}
   _animator: {fileID: 1341904594854813104}
   spriteRenderer: {fileID: 4204145081533844008}
+  nameText: {fileID: 6931782800690280916}
   _recyclableType: 3
   contaminant_prefab: {fileID: 2532554820010743525, guid: 399d5c333bafd4c46a0111bdd9e2351e, type: 3}
   sightRange: 3

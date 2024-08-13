@@ -21,7 +21,7 @@ namespace Level.Tutorial
             // ensure cleaned contaminant does not spawn a recyclable
             LevelZone currZone = LevelManager.Instance.zones[LevelManager.Instance.current_zone_index];
             Collider2D hit = Physics2D.OverlapBox(currZone.transform.position, 
-                currZone.size, LayerMask.GetMask("Recyclable"));
+                currZone.size, 0f, LayerMask.GetMask("Recyclable"));
             if (hit == null) return; 
             Destroy(hit.gameObject);
         }

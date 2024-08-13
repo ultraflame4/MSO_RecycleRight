@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3258063050812681160, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27.9
+      objectReference: {fileID: 0}
     - target: {fileID: 4204145081533844008, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
       propertyPath: m_Sprite
       value: 
