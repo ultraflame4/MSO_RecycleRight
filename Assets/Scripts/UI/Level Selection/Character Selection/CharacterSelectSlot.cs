@@ -9,16 +9,22 @@ namespace UI.LevelSelection.CharacterSelection
         RectTransform rectTransform;
         Sprite sprite;
 
+        public PlayerCharacterSO characterData { get; private set; }
+
         // Start is called before the first frame update
         void Start()
         {
-            if (image == null) 
+            if (image == null)
             {
                 Debug.LogWarning("Image is not set! (CharacterSelectSlot.cs)");
                 return;
             }
 
             rectTransform = image.GetComponent<RectTransform>();
+            foreach (var button in GetComponentsInChildren<Button>())
+            {
+                button.onClick.AddListener(OnClicked);
+            }
             SetCharacter();
         }
 
@@ -26,21 +32,21 @@ namespace UI.LevelSelection.CharacterSelection
         /// Set the image on the character slot to the currently selected character
         /// </summary>
         /// <param name="sprite">Sprite of character to display, leave as 'null' to deselect</param>
-        public void SetCharacter(Sprite sprite = null)
+        public void SetCharacter(PlayerCharacterSO character = null)
         {
-            if (image == null) 
+            if (image == null)
             {
                 Debug.LogWarning("Image is not set! (CharacterSelectSlot.cs)");
                 return;
             }
-            
-            if (sprite == null)
+
+            if (character?.characterSelectionSprite == null)
             {
                 image.enabled = false;
                 return;
             }
-
-            this.sprite = sprite;
+            characterData = character;
+            this.sprite = character?.characterSelectionSprite;
             rectTransform.pivot = GetPivot();
             image.sprite = this.sprite;
             image.SetNativeSize();
@@ -50,9 +56,15 @@ namespace UI.LevelSelection.CharacterSelection
         Vector2 GetPivot()
         {
             Bounds bounds = sprite.bounds;
-            var pivotX = - bounds.center.x / bounds.extents.x / 2 + 0.5f;
-            var pivotY = - bounds.center.y / bounds.extents.y / 2 + 0.5f;
+            var pivotX = -bounds.center.x / bounds.extents.x / 2 + 0.5f;
+            var pivotY = -bounds.center.y / bounds.extents.y / 2 + 0.5f;
             return new Vector2(pivotX, pivotY);
+        }
+
+        void OnClicked()
+        {
+
+            GetComponentInParent<CharacterSelectionManager>().SetHologramActive(true);
         }
     }
 }

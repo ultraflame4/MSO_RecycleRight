@@ -34,6 +34,11 @@ public class GrimeController : MonoBehaviour
 
     private void InitMaterial()
     {
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer is not assigned", this);
+            return;
+        }
         material =  new Material(grimeMaterial);
         spriteRenderer.material = material;
     }

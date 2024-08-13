@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1463351803323325870, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58092487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463351803323325870, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086369730254394613, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.672
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787632505832760229, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ae7d2f110993d454e82496b76ef9f828, type: 2}
     - target: {fileID: 5423529344811936447, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Name
       value: TupperWare_Recyclable
@@ -20,10 +36,22 @@ PrefabInstance:
       propertyPath: contaminant_prefab
       value: 
       objectReference: {fileID: 6848308265610111689, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+    - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Radius
+      value: 0.85044473
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.005957544
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703782892095147996, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14037693
+      objectReference: {fileID: 0}
     - target: {fileID: 7167511950734399430, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -929756880408005534, guid: dfb010ac080ed60408eb2b53eaf92114, type: 3}
+      objectReference: {fileID: 849571467504021239, guid: 40d7cf3373b3aed4988b7cef83144546, type: 3}
     - target: {fileID: 8240820135913634244, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -62,6 +90,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240820135913634244, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210024018305837625, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

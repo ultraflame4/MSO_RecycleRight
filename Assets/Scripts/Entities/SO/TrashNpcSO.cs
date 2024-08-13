@@ -22,6 +22,11 @@ public enum TrashNPCType
 public class ContaminantConfig
 {
     /// <summary>
+    /// When not empty, uses this name for the npc when contaminated.
+    /// </summary>
+    [Tooltip("When not empty, uses this name for the npc when contaminated.")]
+    public string nameOverride;
+    /// <summary>
     /// Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.
     /// </summary>
     [Tooltip("Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.")]
@@ -123,7 +128,7 @@ public class TrashNpcSO : EntitySO
     /// </summary>
     [Tooltip("Contaminant Specific Configuration")]
     public ContaminantConfig contaminantConfig;
-    
+
     public bool containsRecyclable => trashNPCType == TrashNPCType.Recyclable || trashNPCType == TrashNPCType.OnlyRecyclable;
 
 }

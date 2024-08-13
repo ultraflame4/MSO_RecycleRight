@@ -8,9 +8,8 @@ namespace UI.LevelSelection.CharacterSelection
 {
     public class CharacterSelectionManager : MonoBehaviour
     {
-        [Header("Menus")]
-        [SerializeField] GameObject[] levelSelectionMenu;
-        [SerializeField] GameObject[] characterSelectionMenu;
+        [Tooltip("Canvas group to hide when the menu is active")]
+        [SerializeField] List<CanvasGroup> hideCanvasGroup = new();
 
         [Header("Character Selection")]
         [SerializeField] HologramMenuManager hologramMenu;
@@ -20,69 +19,88 @@ namespace UI.LevelSelection.CharacterSelection
 
         [Header("Transition")]
         [SerializeField] float transitionDuration = 1f;
+        [SerializeField] CanvasGroup canvasGroup;
         [SerializeField] CharacterSelectionTransitionManager transitionAnimation;
         Coroutine coroutine_transition;
-
-        UIAnimator[] levelMenuAnimators, characterMenuAnimators;
         List<PlayerCharacterSO> party = new List<PlayerCharacterSO>();
+
         int selectedIndex = -1;
 
-        /// <summary>
-        /// Active state of character selection
-        /// </summary>
-        public bool MenuActive { get; private set; } = false;
+        bool quickSelectActive => toggleQuickSelect != null && toggleQuickSelect.activated;
 
         // Start is called before the first frame update
         void Start()
         {
-            LoadAnimators(levelSelectionMenu, out levelMenuAnimators);
-            LoadAnimators(characterSelectionMenu, out characterMenuAnimators);
-            SetMenuActive(true, levelSelectionMenu, levelMenuAnimators);
-            SetMenuActive(false, characterSelectionMenu, characterMenuAnimators);
-            transitionAnimation?.gameObject.SetActive(false);
-
-            if (toggleQuickSelect != null) 
+            CloseMenu(true);
+            if (toggleQuickSelect != null)
                 toggleQuickSelect.OnToggle += ToggleHandler;
-            if (transitionAnimation != null) 
-                transitionAnimation.MakeTransition += MakeTransition;
+
             if (hologramMenu == null) return;
             hologramMenu.gameObject.SetActive(false);
             hologramMenu.CharacterList.CharacterProfileCreated += SubscribeToClick;
         }
 
         #region Menu Toggling
-        /// <summary>
-        /// Toggle active state of character selection menu
-        /// </summary>
-        public void ToggleMenu()
-        {
-            MenuActive = !MenuActive;
-            SetHologramActive(false);
 
-            if (toggleQuickSelect != null && toggleQuickSelect.gameObject.activeInHierarchy && 
-                toggleQuickSelect.activated) 
-                    toggleQuickSelect.Toggle();
-            
-            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(Transition());
-        }
 
-        void MakeTransition()
-        {
-            // set menu renderers
-            SetMenuActive(!MenuActive, levelSelectionMenu, levelMenuAnimators);
-            SetMenuActive(MenuActive, characterSelectionMenu, characterMenuAnimators);
-        }
-
-        IEnumerator Transition()
+        IEnumerator EnterTransition()
         {
             // handle showing transition
-            transitionAnimation?.gameObject.SetActive(true);
-            transitionAnimation?.PlayTransition(MenuActive);
-            yield return new WaitForSeconds(transitionDuration);
+            transitionAnimation.gameObject.SetActive(true);
+            yield return null;
+            yield return transitionAnimation.HalfTransition(true, false);
+            canvasGroup.alpha = 1;
+            hideCanvasGroup.ToList().ForEach(x => x.alpha = 0);
+            yield return transitionAnimation.HalfTransition(false, true);
             transitionAnimation?.gameObject.SetActive(false);
             coroutine_transition = null;
         }
+        IEnumerator ExitTransition()
+        {
+            // handle showing transition
+            transitionAnimation.gameObject.SetActive(true);
+            yield return null;
+            yield return transitionAnimation.HalfTransition(false, false);
+            canvasGroup.alpha = 0;
+            hideCanvasGroup.ToList().ForEach(x => x.alpha = 1);
+            yield return transitionAnimation.HalfTransition(true, true);
+            transitionAnimation?.gameObject.SetActive(false);
+            coroutine_transition = null;
+            gameObject.SetActive(false);
+        }
+
+
+        public void OpenMenu(bool skipTransition = false)
+        {
+            gameObject.SetActive(true);
+            canvasGroup.alpha = 0;
+            SetHologramActive(false);
+
+            if (skipTransition)
+            {
+                hideCanvasGroup.ToList().ForEach(x => x.alpha = 0);
+                return;
+            }
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(EnterTransition());
+        }
+
+        public void CloseMenu(bool skipTransition = false)
+        {
+
+            SetHologramActive(false);
+            if (skipTransition)
+            {
+                gameObject.SetActive(false);
+                hideCanvasGroup.ToList().ForEach(x => x.alpha = 1);
+                return;
+            }
+            canvasGroup.alpha = 1;
+
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(ExitTransition());
+        }
+
         #endregion
 
         #region Button Event Handlers
@@ -97,7 +115,7 @@ namespace UI.LevelSelection.CharacterSelection
             hologramMenu?.CharacterInfo?.SetCharacter(null);
             selectedIndex = -1;
             ResetLocalParty();
-            UpdateSelectedCharactersUI();
+            UpdateCharacterSelectSlots();
         }
 
         /// <summary>
@@ -105,9 +123,7 @@ namespace UI.LevelSelection.CharacterSelection
         /// </summary>
         public void ConfirmSelection()
         {
-            if (toggleQuickSelect != null && !toggleQuickSelect.activated &&
-                hologramMenu != null && hologramMenu.CharacterInfo != null && 
-                hologramMenu.CharacterInfo.selectedCharacter != null)
+            if (!quickSelectActive && hologramMenu.CharacterInfo.selectedCharacter != null)
             {
                 if (party.Count > selectedIndex && selectedIndex >= 0)
                 {
@@ -118,10 +134,10 @@ namespace UI.LevelSelection.CharacterSelection
                 {
                     party.Add(hologramMenu.CharacterInfo.selectedCharacter);
                 }
-                
-                UpdateSelectedCharactersUI();
             }
-                    
+
+            UpdateCharacterSelectSlots();
+            Debug.Log("Confirmed character selection");
             GameManager.Instance.selectedCharacters = party.ToArray();
         }
 
@@ -135,7 +151,7 @@ namespace UI.LevelSelection.CharacterSelection
 
             if (toggleQuickSelect != null && !toggleQuickSelect.activated)
                 hologramMenu?.CharacterInfo?.SetCharacter(null);
-                
+
             hologramMenu.Back();
         }
 
@@ -149,42 +165,6 @@ namespace UI.LevelSelection.CharacterSelection
         }
         #endregion
 
-        #region Active Management
-        void LoadAnimators(GameObject[] objectsToSearch, out UIAnimator[] animators)
-        {
-            if (objectsToSearch == null) 
-            {
-                animators = null;
-                return;
-            }
-
-            animators = objectsToSearch
-                .Select(x => x.GetComponentsInChildren<UIAnimator>()
-                    .Where(x => x != null))
-                .SelectMany(x => x)
-                .ToArray();
-        }
-
-        void SetMenuActive(bool active, GameObject[] objects, UIAnimator[] animators)
-        {
-            if (objects == null) return;
-
-            foreach (GameObject obj in objects)
-            {
-                obj?.SetActive(active);
-            }
-
-            if (!active) return;
-            UpdateSelectedCharactersUI();
-            if (animators == null) return;
-
-            foreach (UIAnimator anim in animators)
-            {
-                if (anim.currentAnimation == null || !anim.gameObject.activeInHierarchy) continue;
-                anim.Play(anim.currentAnimation.Name);
-            }
-        }
-        #endregion
 
         #region Character Selection Management
         void SubscribeToClick(CharacterSelectProfile profile)
@@ -201,8 +181,8 @@ namespace UI.LevelSelection.CharacterSelection
                 HandleDefaultSelect(profile);
             else
                 HandleQuickSelect(profile);
-            
-            UpdateSelectedCharactersUI();
+
+            UpdateCharacterSelectSlots();
         }
 
         void HandleDefaultSelect(CharacterSelectProfile profile)
@@ -234,7 +214,7 @@ namespace UI.LevelSelection.CharacterSelection
             if (party.Contains(profile.currentCharacter))
             {
                 party.Remove(profile.currentCharacter);
-                hologramMenu?.CharacterInfo?.SetCharacter(profile.currentCharacter);
+                hologramMenu.CharacterInfo.SetCharacter(profile.currentCharacter);
                 return;
             }
 
@@ -249,18 +229,23 @@ namespace UI.LevelSelection.CharacterSelection
             // if (toggleQuickSelect != null && !toggleQuickSelect.activated)
             //     ResetLocalParty();
             hologramMenu?.CharacterInfo?.SetCharacter(null);
-            UpdateSelectedCharactersUI();
+            UpdateCharacterSelectSlots();
         }
         #endregion
 
         #region Character Selection UI Management
-        void UpdateSelectedCharactersUI()
+        void UpdateCharacterSelectSlots()
         {
-            ResetCharacterSlot();
-            SetBorder();
+            for (int i = 0; i < characterSlots.Length; i++)
+            {
+                Debug.Log("Updating character slots");
+                UpdateCharacterSlot(i, i < party.Count ? party[i] : null);
+            }
+
+            UpdateProfileBorder();
         }
 
-        void SetBorder()
+        void UpdateProfileBorder()
         {
             for (int i = 0; i < hologramMenu.CharacterList.objectPool.Count; i++)
             {
@@ -278,11 +263,16 @@ namespace UI.LevelSelection.CharacterSelection
                 int index = party.FindIndex(x => x == profile.currentCharacter);
                 if (index == -1) continue;
 
-                profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ? 
+                profile.ShowBorder(selectionColor == null || selectionColor.Length <= index ?
                     Color.white : selectionColor[index], index);
-                
-                UpdateCharacterSlot(index, profile.currentCharacter.characterSelectionSprite);
+
+                UpdateCharacterSlot(index, profile.currentCharacter);
             }
+        }
+        void UpdateCharacterSlot(int index, PlayerCharacterSO character)
+        {
+            if (characterSlots == null || index >= characterSlots.Length) return;
+            characterSlots[index].SetCharacter(character);
         }
 
         void ResetCharacterSlot()
@@ -293,11 +283,6 @@ namespace UI.LevelSelection.CharacterSelection
             }
         }
 
-        void UpdateCharacterSlot(int index, Sprite characterSprite)
-        {
-            if (characterSlots == null || index >= characterSlots.Length) return;
-            characterSlots[index].SetCharacter(characterSprite);
-        }
 
         void ResetLocalParty()
         {
