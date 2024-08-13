@@ -25,6 +25,8 @@ namespace Bosses.Pilotras.FSM
 
             base.Enter();
             character.Health = 0f;
+            // do not allow taking damage in this state
+            character.data.damageTakenScale = 0f;
         }
 
         public override void LogicUpdate()
@@ -38,6 +40,8 @@ namespace Bosses.Pilotras.FSM
             base.Exit();
             character.Health = character.data.max_health;
             character.HandlePhaseChange();
+            // allow taking damage again when exitting
+            character.data.damageTakenScale = 1f;
         }
     }
 }
