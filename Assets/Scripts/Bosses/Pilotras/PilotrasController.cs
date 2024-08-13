@@ -28,10 +28,6 @@ namespace Bosses.Pilotras
         [SerializeField] LevelZone debug_zone;
         #endregion
 
-        #region Private Fields
-        Vector2 minBounds, maxBounds;
-        #endregion
-
         #region States
         public DefaultState DefaultState { get; private set; }
         public PlacingState PlacingState { get; private set; }
@@ -87,7 +83,7 @@ namespace Bosses.Pilotras
         /// <returns>Generated position</returns>
         public Vector2 GetRandomPositionInZone()
         {
-            return new Vector2(Random.Range(minBounds.x, maxBounds.x), Random.Range(minBounds.y, maxBounds.y));
+            return new Vector2(Random.Range(data.minBounds.x, data.maxBounds.x), Random.Range(data.minBounds.y, data.maxBounds.y));
         }
 
         /// <summary>
@@ -210,11 +206,11 @@ namespace Bosses.Pilotras
 
         void CalculateBounds(LevelZone zone)
         {
-            minBounds.x = zone.center.x - (zone.size.x / 2f);
-            minBounds.y = zone.center.y - (zone.size.y / 2f);
-            maxBounds.x = zone.center.x + (zone.size.x / 2f);
-            maxBounds.y = zone.center.y + (zone.size.y / 2f);
-            maxBounds.y = maxBounds.y - (maxBounds.y - transform.position.y) - data.y_offset;
+            data.minBounds.x = zone.center.x - (zone.size.x / 2f);
+            data.minBounds.y = zone.center.y - (zone.size.y / 2f);
+            data.maxBounds.x = zone.center.x + (zone.size.x / 2f);
+            data.maxBounds.y = zone.center.y + (zone.size.y / 2f);
+            data.maxBounds.y = data.maxBounds.y - (data.maxBounds.y - transform.position.y) - data.y_offset;
         }
         #endregion
 
@@ -252,8 +248,8 @@ namespace Bosses.Pilotras
         {
             CalculateBounds(zone);
             if (fireController == null) return;
-            fireController.minBounds = minBounds;
-            fireController.maxBounds = maxBounds;
+            fireController.minBounds = data.minBounds;
+            fireController.maxBounds = data.maxBounds;
         }
 
         new void Update()
@@ -280,8 +276,8 @@ namespace Bosses.Pilotras
             if (debug_zone == null) return;
             CalculateBounds(debug_zone);
             Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(minBounds, 0.5f);
-            Gizmos.DrawSphere(maxBounds, 0.5f);
+            Gizmos.DrawSphere(data.minBounds, 0.5f);
+            Gizmos.DrawSphere(data.maxBounds, 0.5f);
         }
         #endregion
     }
