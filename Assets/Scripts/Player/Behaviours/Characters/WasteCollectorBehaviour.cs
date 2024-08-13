@@ -76,6 +76,15 @@ namespace Player.Behaviours
             // spawn grab vfx
             SpawnVFX(grabEffect);
 
+            // check if grabbed object can be grabbed
+            IMovable movable = hit.GetComponent<IMovable>();
+            // handle not grabbing object
+            if (movable != null && !movable.CanMove())
+            {
+                hit = null;
+                return;
+            }
+
             // set grab position of enemy, and apply offset based on which direction the player is facing
             grabPosition = (Vector2) character.transform.position + 
                 ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
