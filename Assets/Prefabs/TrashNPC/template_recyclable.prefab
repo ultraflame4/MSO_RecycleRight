@@ -606,6 +606,7 @@ MonoBehaviour:
   slow_distance: 0.024
   move_speed: 90
   fix_overshoot: 1
+  disabled: 0
 --- !u!50 &2339856638650244569
 Rigidbody2D:
   serializedVersion: 4
@@ -775,7 +776,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7256499980783294791
 MonoBehaviour:
