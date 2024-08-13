@@ -20,10 +20,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 3459501042672568818, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 37.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: npcData
       value: 
       objectReference: {fileID: 11400000, guid: 8ae86968995048f478c47041ee7783e4, type: 2}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: cleanable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: sightRange
       value: 3
@@ -31,6 +39,14 @@ PrefabInstance:
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: attackRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: clean_prefab
+      value: 
+      objectReference: {fileID: 6849047566521263402, guid: 1c3074f0e06cf96488afe0c47f712594, type: 3}
+    - target: {fileID: 4288516772591241683, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_text
+      value: Dirty Tupperware
       objectReference: {fileID: 0}
     - target: {fileID: 4470070128566506984, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Radius
@@ -98,11 +114,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358624749756186191, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.88
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5358624749756186191, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566763687901887843, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_Name
+      value: name
       objectReference: {fileID: 0}
     - target: {fileID: 6991750651239364505, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Name
@@ -111,7 +131,11 @@ PrefabInstance:
     - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 849571467504021239, guid: 40d7cf3373b3aed4988b7cef83144546, type: 3}
+      objectReference: {fileID: 7334521129665825498, guid: 40d7cf3373b3aed4988b7cef83144546, type: 3}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032888024164147659, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Controller
       value: 

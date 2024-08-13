@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
+  m_Name: PaperBag
+  m_EditorClassIdentifier: 
+  characterName: Paper Bag
+  characterDesc: A paper bag. A bag that is made of paper.
+  characterSprite: {fileID: 7935141842648702695, guid: 01b75fc967d705147bc3a82c03d9de68, type: 3}
+  trashNPCType: 1
+  common:
+    maxHealth: 100
+    movementSpeed: 100
+    sightRange: 3
+  recyclableConfig:
+    recyclableType: 0
+    recyclablePrefab: {fileID: 9071025310280361308, guid: 14b472ffa2f654640bf146bcde20dc71, type: 3}
+  contaminantConfig:
+    nameOverride: Greasy Paper Bag
+    contaminantPrefab: {fileID: 3013555632393553417, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+    attackRange: 2
+    startAttackRange: 1
+    attackDelay: 0.1
+    attackDamage: 0
+    attackDuration: 1.5
+    attract_pests: 1
+    attack_hit_delay: 0
+    cleanable: 0

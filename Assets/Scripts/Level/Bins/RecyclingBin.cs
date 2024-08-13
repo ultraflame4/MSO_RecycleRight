@@ -1,8 +1,9 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using NPC;
-using Unity.VisualScripting;
 
 namespace Level.Bins
 {
@@ -24,11 +25,13 @@ namespace Level.Bins
         #endregion
 
         #region Component References
-        
+
         [Header("References")]
 
         public TMP_Text nameText;
         public TMP_Text scoreText;
+        public Image pestTimer;
+        public GameObject pestTimerCtn;
         public ParticleSystem[] cleaningEffects;
         public Sprite contaminatedSprite;
         private Sprite cleanedSprite;
@@ -47,12 +50,13 @@ namespace Level.Bins
             get => _score;
             set
             {
-                if (binState != BinState.CLEAN){
+                if (binState != BinState.CLEAN)
+                {
                     _score = 0;
                     return;
                 }
                 _score = value;
-                
+
 
             }
         }
@@ -60,19 +64,22 @@ namespace Level.Bins
 
         public event Action<float, RecyclableType?> BinScored;
 
-        private void Awake() {
+        private void Awake()
+        {
             spriteR = GetComponent<SpriteRenderer>();
             pestSpawner = GetComponent<PestSpawner>();
 
             cleanedSprite = spriteR.sprite; // Initialise here.
+            pestTimerCtn.SetActive(IsInfested);
         }
 
         private void Start()
         {
-            
+
             if (spriteR == null) return;
-            
+
             SetActiveCleaningEffects(false);
+            
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
             spriteR.sprite = contaminatedSprite;
@@ -83,16 +90,17 @@ namespace Level.Bins
             if (pending_infestation)
             {
                 infestation_percent += Time.deltaTime / infestation_secs;
+                pestTimer.fillAmount = infestation_percent;
                 if (infestation_percent >= 1)
                 {
                     // Bin is infested
-
                     pending_infestation = false;
                     infestation_percent = 0;
                     binState = BinState.INFESTED;
                     pestSpawner.StartPestSpawning();
                 }
             }
+
             scoreText.text = $"Score: {Score}";
         }
 
@@ -133,6 +141,10 @@ namespace Level.Bins
             infestation_percent = 0;
             Score = 0;
 
+            nameText.enabled = false;
+            scoreText.enabled = false;
+
+            pestTimerCtn.SetActive(true);
             if (spriteR == null) return;
             spriteR.sprite = contaminatedSprite;
         }
@@ -154,7 +166,8 @@ namespace Level.Bins
             scoreText.enabled = false;
             SetActiveCleaningEffects(true);
             pestSpawner.StopPestSpawning();
-            
+            pestTimerCtn.SetActive(false);
+
 
         }
 
@@ -173,6 +186,7 @@ namespace Level.Bins
             SetActiveCleaningEffects(false);
             pestSpawner.ClearPests();
             pestSpawner.StopPestSpawning();
+            pestTimerCtn.SetActive(false);
         }
 
         /// <summary>

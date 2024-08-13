@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   <navigation>k__BackingField: {fileID: 84471513037044772}
-  _animator: {fileID: 0}
+  _animator: {fileID: 3787632505832760229}
   spriteRenderer: {fileID: 7167511950734399430}
   _recyclableType: 0
   contaminant_prefab: {fileID: 2242677056016477077, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}

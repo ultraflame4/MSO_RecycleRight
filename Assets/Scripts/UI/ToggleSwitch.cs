@@ -33,6 +33,7 @@ namespace UI
         void SetAnimation()
         {
             if (anim == null) return;
+            if (!gameObject.activeInHierarchy) return;
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(PlayTransitionAnimation());
         }

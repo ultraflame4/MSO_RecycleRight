@@ -2,6 +2,7 @@ using UnityEngine;
 using Patterns.FSM;
 using Level.Bins;
 using UnityEngine.Serialization;
+using TMPro;
 
 namespace NPC
 {
@@ -30,6 +31,7 @@ namespace NPC
             }
         }
         public SpriteRenderer spriteRenderer;
+        public TextMeshProUGUI nameText;
 
         public virtual void SpawnRecyclable() {}
 

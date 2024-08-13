@@ -1,20 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 namespace UI.LevelSelection
 {
-    public class LevelDetailsPopupMenu : Hologram
+    public class LevelDetailsPopupMenu : Hologram, IPointerEnterHandler, IPointerExitHandler
     {
+        [SerializeField] MapLevelSelect mapSelect;
         [Header("Popup Menu")]
         [SerializeField] Image image;
-        [SerializeField] TextMeshProUGUI levelName, levelCode;
+        [SerializeField] TextMeshProUGUI levelName;
+        [SerializeField] TextMeshProUGUI levelCode;
 
         [Header("On Click Behaviour")]
         [SerializeField] Vector3 lockPosition;
-        [SerializeField] RectTransform map, canvas;
-        [SerializeField] RectTransform[] levelButtons;
+        [SerializeField] RectTransform canvas;
+        [SerializeField] RectTransform map;
+        LevelChoice currentChoice;
 
+        void Awake()
+        {
+            var localScale = transform.localScale;
+            localScale.x = 0;
+            transform.localScale = localScale;
+        }
         /// <summary>
         /// Set details of level to show
         /// </summary>
@@ -28,38 +39,91 @@ namespace UI.LevelSelection
             levelCode.text = data.data.levelCode;
         }
 
+        float MoveButtonToCenter_Step(LevelChoice btn)
+        {
+            var dest = lockPosition - btn.transform.localPosition * map.localScale.x;
+            map.localPosition = Vector3.Lerp(map.localPosition, dest, Time.deltaTime * 10);
+            var distance = Vector3.Distance(dest, map.localPosition);
+            return distance;
+        }
+
+        IEnumerator PlayOpeningForButton(LevelChoice btn)
+        {
+            yield return AnimateClose();
+            Coroutine earlyOpen = null;
+
+            while (true)
+            {
+                var d = MoveButtonToCenter_Step(btn);
+                if (d < 40f && earlyOpen == null)
+                {
+                    earlyOpen = StartCoroutine(AnimateOpen());
+                }
+                if (d < 0.1f) break;
+                yield return null;
+            }
+
+            yield return earlyOpen;
+        }
+
         /// <summary>
         /// Set active state of menu
         /// </summary>
         /// <param name="active">Active state to set to</param>
-        public void SetActive(bool active, int index)
+        public void ShowForLevelBtn(LevelChoice btn)
         {
-            if (active) gameObject.SetActive(active);
-            if (!gameObject.activeInHierarchy) return;
-            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
-            coroutine_transition = StartCoroutine(AnimateTransition(active, () => EndTransition(active, index)));
-        }
+            gameObject.SetActive(true);// if trying to active, ensure that gameobject is alr active
+            // Retrieve level details from game manager and set to popup menu
+            
+            if (GameManager.Instance.config.levels.Length > btn.levelIndex){
+                SetDetails(GameManager.Instance.config.levels[btn.levelIndex].levelInfo);
+            }
+            else{
+                Debug.LogWarning($"Could not get level details - No level found at index: {btn.levelIndex} in the GameManager config levels");
+            }
 
-        void EndTransition(bool active, int index)
-        {
-            if (!active || index < 0) return;
-            SetButtonLocation(index);
+            currentChoice = btn;
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(PlayOpeningForButton(btn));
         }
 
         /// <summary>
-        /// Move button to location of popup menu
+        /// Closes the popup menu.
         /// </summary>
-        /// <param name="index">Index of button position to move to</param>
-        public void SetButtonLocation(int index)
+        public void Hide()
         {
-            if (levelButtons == null || index < 0 || index >= levelButtons.Length) return;
-            map.localPosition = (-levelButtons[index].localPosition * map.localScale.x) + lockPosition;
+            if (!gameObject.activeInHierarchy) return; // Silences error
+            if (coroutine_transition != null) StopCoroutine(coroutine_transition);
+            coroutine_transition = StartCoroutine(AnimateClose());
         }
 
-        void OnDrawGizmosSelected() 
+        void OnDrawGizmosSelected()
         {
             if (canvas == null) return;
             Gizmos.DrawSphere(lockPosition + canvas.position, 100f);
+        }
+
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && !mouseHover) Hide();
+        }
+
+        bool mouseHover = false;
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            mouseHover = false;
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            mouseHover = true;
+        }
+
+        public void OpenLevelChoiceHall()
+        {
+            mapSelect.OpenLevelChoiceHall(currentChoice);
         }
     }
 }
