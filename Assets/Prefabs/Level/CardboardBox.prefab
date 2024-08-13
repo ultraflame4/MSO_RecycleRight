@@ -97,9 +97,8 @@ MonoBehaviour:
   - {fileID: -2011126193541923635, guid: 3e88a11ab312dec47a7ebe8e921d7d92, type: 3}
   - {fileID: 6672916248358138967, guid: 3e88a11ab312dec47a7ebe8e921d7d92, type: 3}
   - {fileID: 3591746640868820222, guid: 3e88a11ab312dec47a7ebe8e921d7d92, type: 3}
-  - {fileID: -4427537239625960035, guid: 3e88a11ab312dec47a7ebe8e921d7d92, type: 3}
-  - {fileID: -6010954932775084248, guid: 3e88a11ab312dec47a7ebe8e921d7d92, type: 3}
   current_state: 0
+  recyclableNpc: {fileID: 3436674809278473350, guid: 31004d4d912fc2f45964943b9cc5ed0e, type: 3}
 --- !u!1 &4585023692281261504
 GameObject:
   m_ObjectHideFlags: 0
