@@ -154,7 +154,8 @@ namespace Bosses.Pilotras.FSM
             // search for recycling type with the highest number of NPCs
             RecyclableType[] selectedTypes = selectedBins.Select(x => x.recyclableType).ToArray();
             RecyclableType maxType = character.data.npcCount
-                .Aggregate((l, r) => l.Value > r.Value && Array.IndexOf(selectedTypes, l.Key) == -1 ? l : r).Key;
+                .Where(x => Array.IndexOf(selectedTypes, x.Key) == -1)
+                .Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
             
             Debug.Log($"maxType: {maxType}, count: {character.data.npcCount[maxType]}");
 
