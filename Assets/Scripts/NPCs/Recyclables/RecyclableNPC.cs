@@ -13,9 +13,9 @@ namespace NPC.Recyclable
     {
 
         #region States
-        public RecyclableIdle state_Idle { get; private set; }
+        public BaseRecyclableState state_Idle { get; protected set; }
         public Flee state_Flee { get; private set; }
-        public Stunned state_Stunned { get; private set; }
+        public Stunned state_Stunned { get; protected set; }
         #endregion
 
         #region Config
@@ -63,7 +63,7 @@ namespace NPC.Recyclable
 
         protected virtual void Start()
         {
-            state_Idle = new(this);
+            state_Idle = new RecyclableIdle(this);
             state_Stunned = new(state_Idle, this, this);
             state_Flee = new(this);
             

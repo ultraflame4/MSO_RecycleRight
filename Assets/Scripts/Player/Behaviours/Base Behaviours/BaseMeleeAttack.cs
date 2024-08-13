@@ -9,7 +9,7 @@ namespace Player.Behaviours
     {
         // inspector fields
         [Header("Melee Attack")]
-        
+
         [Tooltip("Amount of damage applied to damagable enemies")]
         [SerializeField] protected float attackDamage = 5f;
 
@@ -60,12 +60,17 @@ namespace Player.Behaviours
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
                 // clean contaminant that is hit if it is cleanable
                 CleanOrDamage(hit.gameObject, cleanAmount, attackDamage);
-                
+
                 // stun and apply knockback to enemy that was hit
-                hit.GetComponent<IStunnable>()?.Stun(attackStunDuration);
+                if (hit.TryGetComponent<IStunnable>(out IStunnable outStun))
+                {
+                    outStun.Stun(attackStunDuration);
+                }
                 // try add knockback by getting rigidbody and adding force in hit direction
-                hit.GetComponent<Rigidbody2D>()?
-                    .AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
+                if (hit.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)){
+                    rb.AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
+                }
+                    
             }
 
             // spawn hit vfx
@@ -73,9 +78,9 @@ namespace Player.Behaviours
             if (hitEffects == null) return;
             // spawn hit vfx
             GameObject vfx = Instantiate(
-                hitEffects, 
-                character.pointer.position, 
-                Quaternion.identity, 
+                hitEffects,
+                character.pointer.position,
+                Quaternion.identity,
                 character.transform
             );
             // set vfx direction

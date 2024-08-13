@@ -9,20 +9,23 @@ namespace NPC
 
         [Tooltip("At what distance from the destination should this game object stop")]
         public float stop_distance = 0.1f;
-        [Tooltip("The distance from the destination at which this game object start slowing down."), Range(0.00001f,1f)]
+        [Tooltip("The distance from the destination at which this game object start slowing down."), Range(0.00001f, 1f)]
         public float slow_distance = 0.1f;
         [Tooltip("The movement speed")]
         public float move_speed = 100f;
         [Tooltip("Checks for target position overshooting and fixes it.")]
         public bool fix_overshoot = true;
-        
+        public bool disabled = false;
         private Rigidbody2D rb;
         private Transform target;
         private Vector3? current_target_pos;
 
-        public bool flipX {
-            get {
-                if (rb){
+        public bool flipX
+        {
+            get
+            {
+                if (rb)
+                {
                     return rb.velocity.x > 0;
                 }
                 return false;
@@ -47,7 +50,8 @@ namespace NPC
         }
 
         [EasyButtons.Button]
-        public void ClearDestination(){
+        public void ClearDestination()
+        {
             target = null;
             current_target_pos = null;
         }
@@ -57,7 +61,8 @@ namespace NPC
             current_target_pos = pos;
         }
 
-        public void StopVelocity(){
+        public void StopVelocity()
+        {
             rb.velocity = Vector3.zero;
         }
 
@@ -79,7 +84,8 @@ namespace NPC
             }
         }
 
-        private void DetectAndFixOvershoot(Vector3 target_pos, Vector3 current_dir){
+        private void DetectAndFixOvershoot(Vector3 target_pos, Vector3 current_dir)
+        {
             Vector3 next_pos = (Vector2)transform.position + rb.velocity * Time.deltaTime;
             Vector3 next_dir = target_pos - next_pos; // The direction from the next position to the target position
             // If the next position is in the opposite direction of the target position, then stop (to prevent overshooting)
@@ -92,11 +98,16 @@ namespace NPC
 
         private void MoveToStep(Vector3 target_pos)
         {
+            if (disabled)
+            {
+                rb.velocity = Vector2.zero;
+                return;
+            }
             Vector3 dir = target_pos - transform.position;
             Vector3 vel = dir.normalized * move_speed * Time.deltaTime;
-            rb.velocity = vel * Mathf.Clamp01(dir.magnitude * (1/slow_distance));
+            rb.velocity = vel * Mathf.Clamp01(dir.magnitude * (1 / slow_distance));
 
-            if (fix_overshoot) DetectAndFixOvershoot(target_pos,dir);
+            if (fix_overshoot) DetectAndFixOvershoot(target_pos, dir);
 
             if (reachedDestination) rb.velocity = Vector2.zero;
         }
