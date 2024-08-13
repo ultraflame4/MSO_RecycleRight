@@ -218,6 +218,7 @@ MonoBehaviour:
   debugPhase: 2
   debugMode: 0
   showGizmos: 1
+  debug_zone: {fileID: 0}
 --- !u!114 &4152754215727836793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,14 +232,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanesToSpawn: 2
-  yOffset: 3
   fireDuration: 7
   fireSpreadSpeed: 0.05
   minFireDistance: 2.5
   tilemap: {fileID: 0}
   fireTilePrefab: {fileID: 531007759239420580, guid: 9ee07fcb3e449f64f8f3a1401159e318, type: 3}
-  debug_zone: {fileID: 0}
-  showGizmos: 1
+  minBounds: {x: 0, y: 0}
+  maxBounds: {x: 0, y: 0}
 --- !u!114 &6189416132222840899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,8 +253,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
   maxHealth: 500
+  yOffset: 3
   numberOfPhases: 2
   meteorAttackDamage: 15
+  laneAttackDamage: 25
+  attackDelay: 2.5
+  laneAttackProjectilePrefab: {fileID: 5111101932681378442, guid: 9d0b1f7a2ee847245b4adb55e11158f8, type: 3}
   hitMask:
     serializedVersion: 2
     m_Bits: 64
@@ -278,6 +282,8 @@ MonoBehaviour:
   currentPhaseNPCs: []
   spawnedBins: []
   recyclables: []
+  minBounds: {x: -19, y: -11.5}
+  maxBounds: {x: 19, y: 7}
   damageTakenScale: 1
 --- !u!114 &8480909623808237515
 MonoBehaviour:
@@ -292,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placingDuration: {x: 4, y: 6}
-  placingCooldown: {x: 4, y: 8}
+  placingCooldown: {x: 6, y: 10}
   placeNPCAmount: {x: 2, y: 4}
   placingSpeed: 0.5
   meteorAttackDuration: {x: 4, y: 6}
@@ -302,7 +308,7 @@ MonoBehaviour:
   dropAttackRange: 3
   dropSpeed: 0.25
   binDropDuration: {x: 7, y: 10}
-  binDropCooldown: {x: 7, y: 10}
+  binDropCooldown: {x: 8, y: 12}
   binDropSpeed: 0.5
   binDropForce: 25
   postDropStunDuration: 5
@@ -319,6 +325,8 @@ MonoBehaviour:
   toppleDuration: 8
   toppleDamageMultiplier: 7
   phaseChangeDuration: 5
+  laneAttackDuration: 1
+  laneAttackCooldown: {x: 6, y: 12}
 --- !u!1 &8439104243452739913
 GameObject:
   m_ObjectHideFlags: 0

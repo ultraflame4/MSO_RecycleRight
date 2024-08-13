@@ -41,6 +41,10 @@ namespace Bosses.Pilotras
 
         [Header("Phase Change State")]
         [SerializeField] float phaseChangeDuration = 5f;
+
+        [Header("Lane Attack State")]
+        [SerializeField] float laneAttackDuration = 1f;
+        [SerializeField] Vector2 laneAttackCooldown;
         #endregion
 
         #region Public Properties
@@ -81,6 +85,10 @@ namespace Bosses.Pilotras
 
         // phase change state
         public float phase_change_duration => phaseChangeDuration;
+
+        // lane attack state
+        public float lane_attack_duration => laneAttackDuration;
+        public float lane_attack_cooldown => Random.Range(laneAttackCooldown.x, laneAttackCooldown.y);
         #endregion
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Patterns.FSM;
 
@@ -6,8 +5,6 @@ namespace Bosses.Pilotras.FSM
 {
     public class PhaseChangeState : CoroutineState<PilotrasController>
     {
-        
-
         public PhaseChangeState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
             base(fsm, character, character.DefaultState, character.behaviourData.phase_change_duration)
         {

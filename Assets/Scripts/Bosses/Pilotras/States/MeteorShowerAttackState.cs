@@ -37,27 +37,29 @@ namespace Bosses.Pilotras.FSM
 
         IEnumerator PlaceNPC()
         {
-            // pick a drop location and start dropping NPC
-            Vector3 dropLocation = character.GetRandomPositionInZone();
-            GameObject obj = character.PlaceNPC(new Vector3(dropLocation.x, character.yPosTop, character.transform.position.z));
-            character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, obj, dropLocation));
-            // wait for NPC to land and handle landing
-            character.StartCoroutine(WaitForLanding(dropLocation));
+            // spawn NPC on a delay (wait for indicator)
+            character.StartCoroutine(DelayedSpawn());
             // wait to throw next NPC
             yield return new WaitForSeconds(duration / amountToPlace);
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }
 
-        IEnumerator WaitForLanding(Vector3 dropLocation)
+        IEnumerator DelayedSpawn()
         {
+            // wait for attack delay
+            yield return new WaitForSeconds(character.data.attack_delay);
+            // pick a drop location and start dropping NPC
+            Vector3 dropLocation = character.GetRandomPositionInZone();
+            GameObject obj = character.PlaceNPC(new Vector3(dropLocation.x, character.yPosTop, character.transform.position.z));
+            character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, obj, dropLocation));
+            // wait for NPC to land and handle landing
             yield return new WaitForSeconds(character.behaviourData.drop_speed);
-
             // get hit objects when landing
             Collider2D[] hits = Physics2D.OverlapCircleAll(dropLocation, character.behaviourData.drop_attack_range, character.data.hit_mask);
-
             foreach (Collider2D hit in hits)
             {
-                hit.GetComponent<IDamagable>()?.Damage(character.data.meteor_attack_damage);
+                if (!hit.TryGetComponent<IDamagable>(out IDamagable damagable)) continue;
+                damagable.Damage(character.data.meteor_attack_damage);
             }
         }
     }

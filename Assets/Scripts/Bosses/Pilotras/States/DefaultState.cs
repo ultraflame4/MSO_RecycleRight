@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Patterns.FSM;
 
 namespace Bosses.Pilotras.FSM
@@ -14,6 +11,12 @@ namespace Bosses.Pilotras.FSM
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+
+            if (character.currentPhase > 1 && character.LaneAttackState.CanEnter)
+            {
+                fsm.SwitchState(character.LaneAttackState);
+                return;
+            }
 
             if (character.PlacingState.CanEnter)
             {

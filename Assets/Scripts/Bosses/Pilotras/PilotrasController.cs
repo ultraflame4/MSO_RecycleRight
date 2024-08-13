@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using Bosses.Pilotras.FSM;
+using Bosses.Pilotras.Projectile;
 using Interfaces;
 using Patterns.FSM;
 using Level;
@@ -35,6 +36,7 @@ namespace Bosses.Pilotras
         public PostBinDropStunState PostBinDropStunState { get; private set; }
         public ToppleState ToppleState { get; private set; }
         public MeteorShowerAttackState MeteorShowerAttackState { get; private set; }
+        public LaneAttackState LaneAttackState { get; private set; }
         public PhaseChangeState PhaseChangeState { get; private set; }
         public DeathState DeathState { get; private set; }
         #endregion
@@ -75,6 +77,18 @@ namespace Bosses.Pilotras
                 Quaternion.identity, 
                 levelManager.current_zone.transform
             );
+        }
+
+        /// <summary>
+        /// Spawns a projectile to be launched from the side of the zone
+        /// </summary>
+        /// <param name="projectile"></param>
+        /// <returns></returns>
+        public GameObject SpawnProjectile(Vector2 spawnPos, out ProjectileController projectile)
+        {
+            GameObject obj = Instantiate(data.projectile_prefab, spawnPos, Quaternion.identity, zone.transform);
+            projectile = obj.GetComponent<ProjectileController>();
+            return obj;
         }
 
         /// <summary>
@@ -230,6 +244,7 @@ namespace Bosses.Pilotras
             BinDropState = new BinDropState(this, this);
             ToppleState = new ToppleState(this, this);
             MeteorShowerAttackState = new MeteorShowerAttackState(this, this);
+            LaneAttackState = new LaneAttackState(this, this);
             PhaseChangeState = new PhaseChangeState(this, this);
             DeathState = new DeathState(this, this);
             // initialize FSM
@@ -270,9 +285,15 @@ namespace Bosses.Pilotras
         {
             if (!showGizmos) return;
 
+            // show range of bin drop shockwave
             if (BinDropState != null) 
                 BinDropState.DrawDebug();
             
+            // show meteor attack range at (0, 0)
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(Vector3.zero, behaviourData.drop_attack_range);
+            
+            // show boundaries
             if (debug_zone == null) return;
             CalculateBounds(debug_zone);
             Gizmos.color = Color.magenta;

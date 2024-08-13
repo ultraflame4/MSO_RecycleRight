@@ -25,6 +25,9 @@ namespace Bosses.Pilotras
 
         [Header("Attack Data")]
         [SerializeField] float meteorAttackDamage = 15f;
+        [SerializeField] float laneAttackDamage = 25f;
+        [SerializeField] float attackDelay = 2.5f;
+        [SerializeField] GameObject laneAttackProjectilePrefab;
         [SerializeField] LayerMask hitMask;
 
         [Header("Spawnable Prefab Data")]
@@ -43,6 +46,9 @@ namespace Bosses.Pilotras
 
         // attack data
         public float meteor_attack_damage => meteorAttackDamage;
+        public float lane_attack_damage => laneAttackDamage;
+        public float attack_delay => attackDelay;
+        public GameObject projectile_prefab => laneAttackProjectilePrefab;
         public LayerMask hit_mask => hitMask;
 
         // spawnable prefab data
