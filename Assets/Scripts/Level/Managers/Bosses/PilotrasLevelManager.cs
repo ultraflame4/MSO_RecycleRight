@@ -15,7 +15,7 @@ namespace Level.Tutorial
                 return;
             }
 
-            boss.PhaseChangeState.EndLevel += EndLevel;
+            boss.DeathState.EndLevel += EndLevel;
         }
 
         void EndLevel()
@@ -27,7 +27,7 @@ namespace Level.Tutorial
             }
 
             LevelManager.Instance.EndLevel();
-            boss.PhaseChangeState.EndLevel -= EndLevel;
+            boss.DeathState.EndLevel -= EndLevel;
         }
     }
 }

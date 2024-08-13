@@ -34,8 +34,9 @@ namespace Bosses.Pilotras
         public BinDropState BinDropState { get; private set; }
         public PostBinDropStunState PostBinDropStunState { get; private set; }
         public ToppleState ToppleState { get; private set; }
-        public PhaseChangeState PhaseChangeState { get; private set; }
         public MeteorShowerAttackState MeteorShowerAttackState { get; private set; }
+        public PhaseChangeState PhaseChangeState { get; private set; }
+        public DeathState DeathState { get; private set; }
         #endregion
 
         #region References
@@ -220,8 +221,9 @@ namespace Bosses.Pilotras
             PostBinDropStunState = new PostBinDropStunState(this, this);
             BinDropState = new BinDropState(this, this);
             ToppleState = new ToppleState(this, this);
-            PhaseChangeState = new PhaseChangeState(this, this);
             MeteorShowerAttackState = new MeteorShowerAttackState(this, this);
+            PhaseChangeState = new PhaseChangeState(this, this);
+            DeathState = new DeathState(this, this);
             // initialize FSM
             Initialize(DefaultState);
 

@@ -6,7 +6,7 @@ namespace Bosses.Pilotras.FSM
 {
     public class PhaseChangeState : CoroutineState<PilotrasController>
     {
-        public event Action EndLevel;
+        
 
         public PhaseChangeState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
             base(fsm, character, character.DefaultState, character.behaviourData.phase_change_duration)
@@ -17,9 +17,7 @@ namespace Bosses.Pilotras.FSM
         {
             if (character.currentPhase >= character.data.number_of_phases) 
             {
-                // handle death state
-                EndLevel?.Invoke();
-                Debug.Log("Boss Died.");
+                fsm.SwitchState(character.DeathState);
                 return;
             }
 
