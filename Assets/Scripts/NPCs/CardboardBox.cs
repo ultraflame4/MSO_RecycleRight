@@ -1,7 +1,7 @@
 using Interfaces;
 using UnityEngine;
 
-public class CardboardBox : MonoBehaviour, IDamagable
+public class CardboardBox : MonoBehaviour, IDamagable, INotMovableByWilson
 {
     public SpriteRenderer spriteR;
     public Sprite[] states;
@@ -40,5 +40,10 @@ public class CardboardBox : MonoBehaviour, IDamagable
     {
         Debug.Log("TEST");
         NextState();
+    }
+
+    public bool CanMove()
+    {
+        return false;
     }
 }
