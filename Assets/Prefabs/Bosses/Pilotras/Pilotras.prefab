@@ -298,17 +298,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placingDuration: {x: 4, y: 6}
-  placingCooldown: {x: 6, y: 10}
+  placingCooldown: {x: 10, y: 15}
   placeNPCAmount: {x: 2, y: 4}
   placingSpeed: 0.5
   meteorAttackDuration: {x: 4, y: 6}
-  attackPlaceNPCAmount: {x: 4, y: 7}
+  attackPlaceNPCAmount: {x: 3, y: 6}
   baseEnterAttackChance: 0.15
-  attackChanceIncreasePerPhase: 0.3
+  attackChanceIncreasePerPhase: 0.15
   dropAttackRange: 3
   dropSpeed: 0.25
   binDropDuration: {x: 7, y: 10}
-  binDropCooldown: {x: 8, y: 12}
+  binDropCooldown: {x: 12, y: 15}
   binDropSpeed: 0.5
   binDropForce: 25
   postDropStunDuration: 5
@@ -326,7 +326,7 @@ MonoBehaviour:
   toppleDamageMultiplier: 7
   phaseChangeDuration: 5
   laneAttackDuration: 1
-  laneAttackCooldown: {x: 6, y: 12}
+  laneAttackCooldown: {x: 8, y: 12}
 --- !u!1 &8439104243452739913
 GameObject:
   m_ObjectHideFlags: 0

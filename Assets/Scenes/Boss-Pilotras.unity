@@ -164,12 +164,16 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[10].second.m_AnimationSpeed
-      value: 30
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 9147188824333955889, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,7 +950,7 @@ Tilemap:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -34, y: 0, z: 0}
