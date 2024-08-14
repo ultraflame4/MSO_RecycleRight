@@ -249,7 +249,6 @@ namespace Bosses.Pilotras
         {
             for (int i = 0; i < data.phaseIndicators.Length; i++)
             {
-                Debug.Log($"i: {i}, phase: {currentPhase}");
                 data.phaseIndicators[i].transform.GetChild(0)
                     .gameObject.SetActive(i <= data.number_of_phases - currentPhase);
             }
