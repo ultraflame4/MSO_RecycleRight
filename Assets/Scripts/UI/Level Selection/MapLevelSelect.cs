@@ -14,10 +14,7 @@ public class MapLevelSelect : MonoBehaviour {
         LevelChoice[] array = GetComponentsInChildren<LevelChoice>();
         for (int i = 0; i < array.Length; i++) {
             LevelChoice button = array[i];
-            button.OnClicked += () => {
-                lvlDetailsPopup.ShowForLevelBtn(button);
-                Debug.Log($"Opening level details popup for level index: {button.levelIndex}");
-            };
+            button.OnClicked += () => lvlDetailsPopup.ShowForLevelBtn(button);
         }
     }
 

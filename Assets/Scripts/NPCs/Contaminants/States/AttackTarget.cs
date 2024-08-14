@@ -49,7 +49,6 @@ namespace NPC.Contaminants.States
         {
             yield return new WaitForSeconds(npc.attackDelay);
             // Attack target
-            // Debug.Log($"Attacking target {target}");
             npc.animator?.SetTrigger(animParamTriggerAttack);
         }
 

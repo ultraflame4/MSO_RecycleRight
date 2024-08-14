@@ -34,8 +34,6 @@ namespace NPC.States
                 current_direction = (randDir * rand_direction_strength) + (current_direction * current_direction_strength);
                 current_direction += current_edge_force;
                 current_direction.Normalize();
-
-                // Debug.Log($"Dir {current_direction}, mag {current_direction.magnitude}");
                 navigation.SetDestination(transform.position + current_direction * walk_distance);
             }
             // If within buffer zone, recalculate edge force and add it to the direction (to push away from edges)
