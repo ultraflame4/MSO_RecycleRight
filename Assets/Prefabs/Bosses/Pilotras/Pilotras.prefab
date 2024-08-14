@@ -281,6 +281,9 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 64
+  healthbar: {fileID: 0}
+  phaseIndicatorParent: {fileID: 0}
+  phaseIndicatorPrefab: {fileID: 5212493657992605512, guid: cf2f3e6010b506e4b9da71a055dbc045, type: 3}
   spawnableNPC:
   - gameObjects:
     - {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
@@ -299,6 +302,7 @@ MonoBehaviour:
     - {fileID: 4692704942311212617, guid: 7c53595c543d8dd408e9ccf02cd56f3c, type: 3}
     - {fileID: 1986338079234441321, guid: fec69f102b59acc48a281d1022e04f3f, type: 3}
   currentPhaseNPCs: []
+  phaseIndicators: []
   spawnedBins: []
   recyclables: []
   minBounds: {x: -19, y: -11.5}
@@ -316,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a3bfb4957c25b4ea41802f117577de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnDuration: 2.5
   placingDuration: {x: 4, y: 6}
   placingCooldown: {x: 10, y: 15}
   placeNPCAmount: {x: 2, y: 4}

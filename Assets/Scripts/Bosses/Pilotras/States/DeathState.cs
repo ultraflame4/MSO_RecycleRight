@@ -16,6 +16,8 @@ namespace Bosses.Pilotras.FSM
         {
             base.Enter();
             EndLevel?.Invoke();
+            // hide healthbar
+            character.data.health_bar.gameObject.SetActive(false);
             // do not allow taking damage in this state
             character.data.damageTakenScale = 0f;
         }

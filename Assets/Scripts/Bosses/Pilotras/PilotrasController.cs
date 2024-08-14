@@ -53,7 +53,11 @@ namespace Bosses.Pilotras
         public float Health
         {
             get { return _health; }
-            set { _health = Mathf.Clamp(value, 0f, data.max_health); }
+            set 
+            { 
+                _health = Mathf.Clamp(value, 0f, data.max_health);
+                data.health_bar.value = _health / data.max_health;
+            }
         }
 
         public int currentPhase { get; private set; } = 0;
@@ -134,6 +138,7 @@ namespace Bosses.Pilotras
             currentPhase++;
             LoadSpawnableNPCs();
             SpawnBins();
+            UpdatePhaseIndicator();
         }
         #endregion
 
@@ -230,6 +235,25 @@ namespace Bosses.Pilotras
             data.maxBounds.y = zone.center.y + (zone.size.y / 2f);
             data.maxBounds.y = data.maxBounds.y - (data.maxBounds.y - transform.position.y) - data.y_offset;
         }
+
+        void LoadPhaseIndicator()
+        {
+            data.phaseIndicators = new GameObject[data.number_of_phases];
+            for (int i = 0; i < data.phaseIndicators.Length; i++)
+            {
+                data.phaseIndicators[i] = Instantiate(data.phase_indicator_prefab, data.phase_indicator_parent);
+            }
+        }
+
+        void UpdatePhaseIndicator()
+        {
+            for (int i = 0; i < data.phaseIndicators.Length; i++)
+            {
+                Debug.Log($"i: {i}, phase: {currentPhase}");
+                data.phaseIndicators[i].transform.GetChild(0)
+                    .gameObject.SetActive(i <= data.number_of_phases - currentPhase);
+            }
+        }
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -237,6 +261,8 @@ namespace Bosses.Pilotras
         {
             // reset phase
             currentPhase = 0;
+            // load phase indicators
+            LoadPhaseIndicator();
             // initialize states
             DefaultState = new DefaultState(this, this);
             StartState = new StartState(this, this);
