@@ -59,7 +59,7 @@ namespace NPC.Recyclable
         private void Awake()
         {
             LoadConfig();
-            state_Idle = new(this);
+            state_Idle = new(this, this);
             state_Stunned = new(state_Idle, this, this);
             state_Flee = new(this);
         }

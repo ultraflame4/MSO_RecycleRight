@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 
 namespace Bosses.Pilotras
 {
-    public class PilotrasController : StateMachine<PilotrasController>, IDamagable, IMovable
+    public class PilotrasController : StateMachine<PilotrasController>, IDamagable, IAmNotMovableByWilson
     {
         #region Inspector
         [field: Header("Data")]
