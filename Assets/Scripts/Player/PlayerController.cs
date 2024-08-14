@@ -12,6 +12,7 @@ namespace Player
     {
         #region Inspector Fields
         [SerializeField] private CharacterManager characterManager;
+        [SerializeField] public Collider2D obstacleCollider;
         #endregion
 
         #region States
@@ -63,7 +64,6 @@ namespace Player
         void Start()
         {
             // get components
-            
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
             OnCharacterChange(null, CharacterManager.character_instances[0]);

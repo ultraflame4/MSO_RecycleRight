@@ -67,10 +67,10 @@ namespace Player.Behaviours
                     outStun.Stun(attackStunDuration);
                 }
                 // try add knockback by getting rigidbody and adding force in hit direction
-                if (hit.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)){
+                if (hit.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+                {
                     rb.AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
                 }
-                    
             }
 
             // spawn hit vfx

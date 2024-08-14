@@ -16,12 +16,10 @@ public class LevelSelectManager : MonoBehaviour {
     }
 
     public void OpenLevelHallFor(LevelChoice choice) {
-        Debug.Log($"Opening level hall for level index: {choice.levelIndex}");
         levelSelectHall.Activate(GameManager.Instance.config.levels[choice.levelIndex].levelInfo);
     }
     
     public void OpenCharacterSelect() {
-        Debug.Log("Opening character select");
         characterSelect.OpenMenu();
     }
 
@@ -33,7 +31,6 @@ public class LevelSelectManager : MonoBehaviour {
         }
         if (launchingLevel) return;
         launchingLevel = true;
-        Debug.Log("Launching level");
         levelSelectHall.TriggerLaunchAnimations();
         StartCoroutine(DelayedLaunchLevel(selectedLevel));
     }

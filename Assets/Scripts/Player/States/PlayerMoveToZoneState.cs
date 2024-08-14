@@ -20,6 +20,7 @@ namespace Player.FSM
             base.Enter();
             // disable collider when changing zones
             character.Data.collider.enabled = false;
+            character.obstacleCollider.enabled = false;
         }
 
         public override void Exit()
@@ -29,6 +30,7 @@ namespace Player.FSM
             character.anim?.SetBool("IsMoving", false);
             // enable collider after zone start
             character.Data.collider.enabled = true;
+            character.obstacleCollider.enabled = true;
         }
 
         public override void PhysicsUpdate()

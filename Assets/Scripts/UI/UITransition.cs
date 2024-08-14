@@ -15,8 +15,7 @@ public class UITransition : MonoBehaviour
     //Onlick function for the button to start transition
     public void TransitionStart()
     {
-         transitionStarted = true ;
-         Debug.Log("Transition Started");
+        transitionStarted = true ;
     }
     //Start is called before the first frame update
     void Start()
@@ -27,16 +26,10 @@ public class UITransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transitionStarted)
-        {
-            transitionProgress += Time.deltaTime * transitionSpeed;
-            sr.material.SetFloat ("_CutOff", transitionProgress);
-            if (transitionProgress >= 1f)
-            {
-                Debug.Log("Transition Done");
-                transitionStarted = false;
-            }
-        }
-        
+        if (!transitionStarted) return;
+        transitionProgress += Time.deltaTime * transitionSpeed;
+        sr.material.SetFloat ("_CutOff", transitionProgress);
+        if (transitionProgress < 1f) return;
+        transitionStarted = false;
     }
 }

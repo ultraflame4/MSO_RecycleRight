@@ -50,7 +50,7 @@ namespace Player.Behaviours
             // apply attack speed increase to all characters by looping through all characters
             foreach (PlayerCharacter otherCharaData in character.CharacterManager.character_instances)
             {
-                Animator otherCharaAnim = otherCharaData.GetComponent<Animator>();
+                Animator otherCharaAnim = otherCharaData.GetComponentInChildren<Animator>();
                 if (otherCharaAnim == null) continue;
                 otherCharaAnim.speed = active ? buffScale : 1f;
                 otherCharaData.movementMultiplier = active ? buffScale : 1f;

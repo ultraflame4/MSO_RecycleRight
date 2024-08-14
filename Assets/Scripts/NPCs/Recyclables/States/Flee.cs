@@ -8,7 +8,7 @@ namespace NPC.Recyclable.States
         RecyclableNPC npc;
         Vector3 direction;
 
-        public Flee(RecyclableNPC npc) : base(npc, npc, LevelManager.Instance)
+        public Flee(RecyclableNPC npc) : base(npc, npc)
         {
             this.npc = npc;
         }

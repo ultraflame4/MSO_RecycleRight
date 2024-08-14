@@ -137,7 +137,6 @@ namespace UI.LevelSelection.CharacterSelection
             }
 
             UpdateCharacterSelectSlots();
-            Debug.Log("Confirmed character selection");
             GameManager.Instance.selectedCharacters = party.ToArray();
         }
 
@@ -238,7 +237,6 @@ namespace UI.LevelSelection.CharacterSelection
         {
             for (int i = 0; i < characterSlots.Length; i++)
             {
-                Debug.Log("Updating character slots");
                 UpdateCharacterSlot(i, i < party.Count ? party[i] : null);
             }
 

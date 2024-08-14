@@ -28,18 +28,15 @@ public class UIEventTrigger : MonoBehaviour
     void OnPointerEnter()
     {
         btnStart.GetComponent<Image>().enabled = true;
-        Debug.Log("Pointer enter the UI element");
     }
     // When pointer exit the UI element it hides the UI
     void OnPointerExit()
     {
         btnStart.GetComponent<Image>().enabled = false;
-        Debug.Log("Pointer exit the UI element");
     }
 
     void OnPointerDown()
     {
-        Debug.Log("Pointer down on the UI element.");
     }
 }
 

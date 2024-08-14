@@ -20,7 +20,6 @@ namespace NPC.Contaminants.States
 
         protected override void OnAttackTarget()
         {
-            Debug.Log($"Attacking Recyclable {nearestRecyclable}");
             nearestRecyclable?.Contaminate(npc.attackDamage);
         }
     }
