@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
-      value: 30
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[6].second.m_AnimationSpeed
@@ -1140,7 +1140,7 @@ Tilemap:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      m_AnimationSpeed: 30.000002
+      m_AnimationSpeed: 30
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -12, y: 3, z: 0}
@@ -1288,7 +1288,7 @@ Tilemap:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -2091,10 +2091,6 @@ PrefabInstance:
     - target: {fileID: 6242226410964193304, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
       propertyPath: m_Name
       value: Pilotras
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426227777418501112, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
-      propertyPath: debugMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7426227777418501112, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
       propertyPath: debug_zone
