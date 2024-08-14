@@ -4925,8 +4925,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 678959728}
-        m_TargetAssemblyTypeName: UI.LevelSelection.CharacterSelection.HologramMenuManager,
+      - m_Target: {fileID: 563652086}
+        m_TargetAssemblyTypeName: UI.LevelSelection.CharacterSelection.CharacterSelectionManager,
           Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
