@@ -11,6 +11,12 @@ namespace Bosses.Pilotras.Projectile
         [HideInInspector] public float damage = 25f;
         [HideInInspector] public float maxX = 0f;
         [HideInInspector] public GameObject npcPrefab;
+        private bool hit = false;
+
+        void Start()
+        {
+            hit = false;
+        }
 
         protected override void Update()
         {
@@ -25,6 +31,9 @@ namespace Bosses.Pilotras.Projectile
 
         void OnTriggerEnter2D(Collider2D other) 
         {
+            // ensure only 1 object is hit and spawns a NPC
+            if (hit) return;
+            hit = true;
             // when hit something, damage it and spawn a NPC in its place
             if (other.TryGetComponent<IDamagable>(out IDamagable damagable))
                 damagable.Damage(damage);
