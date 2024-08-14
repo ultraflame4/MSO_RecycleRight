@@ -12,7 +12,7 @@ namespace NPC.States
 
 
         private Vector3 current_direction = Vector3.zero;
-        public RandomWalk(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character, LevelManager levelManager) : base(fsm, character, levelManager)
+        public RandomWalk(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
         {
         }
 

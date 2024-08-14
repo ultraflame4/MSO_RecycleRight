@@ -12,7 +12,7 @@ namespace NPC.Contaminants.States
         ContaminantNPC npc;
         Vector3 direction;
 
-        public ChaseRecyclable(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
+        public ChaseRecyclable(ContaminantNPC npc) : base(npc, npc)
         {
             this.npc = npc;
         }
