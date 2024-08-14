@@ -59,16 +59,17 @@ namespace NPC.Recyclable
         private void Awake()
         {
             LoadConfig();
+            state_Idle = new(this);
+            state_Stunned = new(state_Idle, this, this);
+            state_Flee = new(this);
         }
 
         protected virtual void Start()
         {
-            state_Idle = new RecyclableIdle(this);
-            state_Stunned = new(state_Idle, this, this);
-            state_Flee = new(this);
-            
+            if (currentState != null) return;
             Initialize(state_Idle);
         }
+
         public virtual void Contaminate(float damage)
         {
             if (secret_cleanliness > 0)
@@ -81,6 +82,7 @@ namespace NPC.Recyclable
 
         public void Stun(float stun_duration)
         {
+            if (currentState == state_Stunned) return;
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }
@@ -90,8 +92,9 @@ namespace NPC.Recyclable
             base.SpawnRecyclable();
             if (spawned_contaminant) return;
             spawned_contaminant = true;
-            var contaminant = Instantiate(contaminant_prefab);
-            contaminant.transform.position = transform.position;
+            var obj = Instantiate(contaminant_prefab, transform.position, Quaternion.identity, transform.parent);
+            // carry over stun timer to child
+            obj.GetComponent<IStunnable>()?.Stun(state_Stunned.stun_timer);
             Destroy(gameObject);
         }
 

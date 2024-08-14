@@ -100,9 +100,13 @@ namespace Player.Behaviours
             // apply stun to allow knockback
             hit.GetComponent<IStunnable>()?.Stun(throwStunDuration);
             // throw the hit enemy
-            hit.GetComponent<Rigidbody2D>()?.AddForce(
-                (character.pointer.position - character.transform.position).normalized * 
-                throwForce, ForceMode2D.Impulse);
+            Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+               rb.AddForce(
+                    (character.pointer.position - character.transform.position).normalized * 
+                    throwForce, ForceMode2D.Impulse);
+            }
             // spawn throw vfx
             SpawnVFX(throwEffect);
             // reset grab
