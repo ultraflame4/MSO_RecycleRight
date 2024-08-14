@@ -7,8 +7,6 @@ namespace Bosses.Pilotras.FSM
 {
     public class LaneAttackState : CooldownState<PilotrasController>
     {
-        GameObject indicator;
-
         public LaneAttackState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
             base(fsm, character, character.DefaultState, character.behaviourData.lane_attack_duration + character.data.attack_delay, character.behaviourData.lane_attack_cooldown)
         {
@@ -26,8 +24,6 @@ namespace Bosses.Pilotras.FSM
             Vector2 spawnPos = new Vector2(character.data.minBounds.x, Random.Range(character.data.minBounds.y, character.data.maxBounds.y));
             GameObject obj = character.SpawnProjectile(new Vector2(spawnPos.x, character.yPosTop), out ProjectileController projectile);
             if (obj == null || projectile == null) return;
-            // spawn indicator
-            indicator = character.indicatorManager.Instantiate(1, new Vector2(character.zone.transform.position.x, spawnPos.y));
             // get npc prefab and sprites
             GameObject prefab = character.data.currentPhaseNPCs[Random.Range(0, character.data.currentPhaseNPCs.Length)];
             SpriteRenderer prefabSprite = prefab.transform.GetChild(1).GetComponentInChildren<SpriteRenderer>();
@@ -43,6 +39,9 @@ namespace Bosses.Pilotras.FSM
 
         IEnumerator DelayedProjectileActivation(ProjectileController projectile, Vector2 spawnPos)
         {
+            // spawn indicator
+            GameObject indicator = character.indicatorManager.Instantiate(1, new Vector2(character.zone.transform.position.x, spawnPos.y));
+            // wait for duration to drop projectile
             if (projectile != null) projectile.spriteRenderer.enabled = false;
             yield return new WaitForSeconds(character.data.attack_delay - character.behaviourData.drop_speed);
             // hide indicator
