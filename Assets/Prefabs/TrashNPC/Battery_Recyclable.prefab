@@ -14929,6 +14929,14 @@ PrefabInstance:
       propertyPath: contaminant_prefab
       value: 
       objectReference: {fileID: 2532554820010743525, guid: 399d5c333bafd4c46a0111bdd9e2351e, type: 3}
+    - target: {fileID: 6530925854829422535, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_text
+      value: Mr Battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036348762873422137, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7167511950734399430, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_Sprite
       value: 

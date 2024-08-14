@@ -708,4 +708,4 @@ MonoBehaviour:
   partySize: 3
   loadLevelDelay: 1
   config: {fileID: 11400000, guid: 4c5f914acc7877248ad6477e193426d9, type: 2}
-  is_root: 1
+  is_root: 0

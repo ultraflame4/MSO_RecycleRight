@@ -90,7 +90,7 @@ namespace NPC.Recyclable
             base.SpawnRecyclable();
             if (spawned_contaminant) return;
             spawned_contaminant = true;
-            var contaminant = Instantiate(contaminant_prefab);
+            var contaminant = Instantiate(contaminant_prefab, transform.position, transform.rotation, transform.parent);
             contaminant.transform.position = transform.position;
             Destroy(gameObject);
         }
