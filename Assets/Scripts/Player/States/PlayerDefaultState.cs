@@ -40,7 +40,7 @@ namespace Player.FSM
             character.anim?.SetBool("IsMoving", 
                 move_input != Vector2.zero && character.Data.movementSpeed > 0f);
             // set attack input on left click when pointer is not over UI elements
-            attack_input = !EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonDown(0);
+            attack_input = (EventSystem.current == null || !EventSystem.current.IsPointerOverGameObject()) && Input.GetMouseButtonDown(0);
             // set skill input when E key is pressed
             skill_input = skill_input || Input.GetKeyDown(KeyCode.E);
         }

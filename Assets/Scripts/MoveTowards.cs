@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class MoveTowards : MonoBehaviour
 {
-    [SerializeField] float movementSpeed;
-    [SerializeField] Vector2 moveDirection;
+    [SerializeField] protected float movementSpeed;
+    [SerializeField] protected Vector2 moveDirection;
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         transform.Translate(moveDirection.normalized * movementSpeed * Time.deltaTime);
     }

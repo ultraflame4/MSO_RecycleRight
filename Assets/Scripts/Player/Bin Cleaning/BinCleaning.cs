@@ -167,6 +167,8 @@ namespace Player.BinCleaning
                 .ToArray();
             // check if anything still remains after the filter
             if (bins.Length <= 0) return;
+            // ensure bin is cleanable before starting cleaning proccess
+            if (!bins[0].cleanable) return;
             // set cleaning bin
             cleaningBin = bins[0];
             // handle starting bin cleaning

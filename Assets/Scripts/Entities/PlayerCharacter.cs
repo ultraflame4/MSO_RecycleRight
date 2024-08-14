@@ -66,7 +66,7 @@ namespace Entity.Data
 
         public void ApplyFireDamage(float damage)
         {
-            Damage(damage);
+            Damage(damage * Time.deltaTime);
         }
         #endregion
 
