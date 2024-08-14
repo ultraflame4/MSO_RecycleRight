@@ -4553,6 +4553,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168996925}
   m_CullTransparentMesh: 1
+--- !u!1 &1199204307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3224408176801615269, guid: d9efa553f715ebc46a3b26e112bfa4af, type: 3}
+  m_PrefabInstance: {fileID: 6674390529401218161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1199204310
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199204307}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1215667377
 GameObject:
   m_ObjectHideFlags: 0
@@ -9442,6 +9459,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1771890133}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3224408176801615269, guid: d9efa553f715ebc46a3b26e112bfa4af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1199204310}
     - targetCorrespondingSourceObject: {fileID: 43056933203148946, guid: d9efa553f715ebc46a3b26e112bfa4af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1761951928}

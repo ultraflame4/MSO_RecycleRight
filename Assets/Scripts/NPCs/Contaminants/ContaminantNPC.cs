@@ -82,14 +82,10 @@ namespace NPC.Contaminant
             attack_hit_delay = npcData.contaminantConfig.attack_hit_delay;
             cleanable = npcData.contaminantConfig.cleanable;
 
-            if (nameText)
-            {
-                var trimmed = npcData.contaminantConfig.nameOverride.Trim(' ');
-                if (trimmed.Length > 0)
-                {
-                    nameText.text = trimmed;
-                }
-            }
+            // Use original name
+            SetNameTag(npcData.name);
+            // Use override name if available.
+            SetNameTag(npcData.contaminantConfig.nameOverride, false);
             if (cleanable)
             {
                 if (npcData.recyclableConfig.recyclablePrefab != null)
