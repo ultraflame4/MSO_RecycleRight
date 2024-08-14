@@ -21,7 +21,7 @@ MonoBehaviour:
     movementSpeed: 100
     sightRange: 3
   recyclableConfig:
-    recyclableType: 0
+    recyclableType: 1
     recyclablePrefab: {fileID: 6849047566521263402, guid: 1c3074f0e06cf96488afe0c47f712594, type: 3}
   contaminantConfig:
     nameOverride: Dirty Tupperware
