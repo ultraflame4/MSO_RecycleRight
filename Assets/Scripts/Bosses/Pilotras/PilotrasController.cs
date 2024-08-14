@@ -21,6 +21,7 @@ namespace Bosses.Pilotras
 
         [field: Header("Components")]
         [field: SerializeField] public PilotrasFireController fireController { get; private set; }
+        [field: SerializeField] public IndicatorManager indicatorManager { get; private set; }
 
         [Header("Debug")]
         [SerializeField] int debugPhase = 2;

@@ -8,6 +8,8 @@ namespace Bosses.Pilotras.FSM
     public class MeteorShowerAttackState : CoroutineState<PilotrasController>
     {
         int amountToPlace;
+        Vector3 dropLocation;
+        GameObject indicator;
         Coroutine coroutine_placing;
 
         public MeteorShowerAttackState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
@@ -37,6 +39,10 @@ namespace Bosses.Pilotras.FSM
 
         IEnumerator PlaceNPC()
         {
+            // pick a random location to drop the NPC
+            dropLocation = character.GetRandomPositionInZone();
+            // show indicator
+            indicator = character.indicatorManager.Instantiate(0, dropLocation);
             // spawn NPC on a delay (wait for indicator)
             character.StartCoroutine(DelayedSpawn());
             // wait to throw next NPC
@@ -48,8 +54,9 @@ namespace Bosses.Pilotras.FSM
         {
             // wait for attack delay
             yield return new WaitForSeconds(character.data.attack_delay);
-            // pick a drop location and start dropping NPC
-            Vector3 dropLocation = character.GetRandomPositionInZone();
+            // hide indicator
+            indicator?.SetActive(false);
+            // start dropping NPC
             GameObject obj = character.PlaceNPC(new Vector3(dropLocation.x, character.yPosTop, character.transform.position.z));
             character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, obj, dropLocation));
             // wait for NPC to land and handle landing

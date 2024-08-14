@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 8561885408711713541}
   - component: {fileID: 7426227777418501112}
   - component: {fileID: 4152754215727836793}
+  - component: {fileID: 8593977467726869510}
   - component: {fileID: 6189416132222840899}
   - component: {fileID: 8480909623808237515}
   m_Layer: 8
@@ -150,6 +151,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4384170777564037646}
+  - {fileID: 1070498166784091656}
   - {fileID: 7710731106806685172}
   - {fileID: 2787593228567009177}
   m_Father: {fileID: 0}
@@ -215,6 +217,7 @@ MonoBehaviour:
   <data>k__BackingField: {fileID: 6189416132222840899}
   <behaviourData>k__BackingField: {fileID: 8480909623808237515}
   <fireController>k__BackingField: {fileID: 4152754215727836793}
+  <indicatorManager>k__BackingField: {fileID: 8593977467726869510}
   debugPhase: 2
   debugMode: 0
   showGizmos: 1
@@ -239,6 +242,22 @@ MonoBehaviour:
   fireTilePrefab: {fileID: 531007759239420580, guid: 9ee07fcb3e449f64f8f3a1401159e318, type: 3}
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
+--- !u!114 &8593977467726869510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242226410964193304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb489e24a08ef8449c81a899bba5092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicators:
+  - {fileID: 5944602439400701129, guid: 21f920474ee8b8546ae6d1e14c40f3ea, type: 3}
+  - {fileID: 891033910534830446, guid: 54a745a97c346e44ab5830a56eb2ac0c, type: 3}
+  indicatorParent: {fileID: 1070498166784091656}
 --- !u!114 &6189416132222840899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +346,37 @@ MonoBehaviour:
   phaseChangeDuration: 5
   laneAttackDuration: 1
   laneAttackCooldown: {x: 8, y: 12}
+--- !u!1 &6892449229383503775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070498166784091656}
+  m_Layer: 8
+  m_Name: Indicators
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1070498166784091656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892449229383503775}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3829974436455466479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8439104243452739913
 GameObject:
   m_ObjectHideFlags: 0
