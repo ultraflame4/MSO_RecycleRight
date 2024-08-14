@@ -12,6 +12,7 @@ namespace Player
     {
         #region Inspector Fields
         [SerializeField] private CharacterManager characterManager;
+        [SerializeField] public Collider2D obstacleCollider;
         #endregion
 
         #region States

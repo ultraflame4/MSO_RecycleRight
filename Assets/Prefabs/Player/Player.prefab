@@ -78,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_state_name: None
   characterManager: {fileID: 3098136573413635867}
+  obstacleCollider: {fileID: 7254983370774440619}
 --- !u!114 &3098136573413635867
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using System.Linq;
 using Level.Bins;
 using UnityEngine;
 
 namespace Level
 {
-    [RequireComponent(typeof(PolygonCollider2D))]
+    [RequireComponent(typeof(PolygonCollider2D), typeof(EdgeCollider2D))]
     public class LevelZone : MonoBehaviour
     {
         [field: SerializeField]
@@ -34,7 +35,8 @@ namespace Level
         public ILevelEntity[] entities;
         public RecyclingBin[] bins;
         [field: SerializeField]
-        public PolygonCollider2D boundary {get; private set;}
+        public PolygonCollider2D boundary { get; private set; }
+        public EdgeCollider2D edgeCollider { get; private set; }
 
         [Header("Debug draw")]
         public bool debug_drawLevelZone = true;
@@ -46,6 +48,7 @@ namespace Level
             entities = GetComponentsInChildren<ILevelEntity>();
             bins = GetComponentsInChildren<RecyclingBin>();
             GenerateBoundaries();
+            GenerateBoundaryColliders();
         }
 
         public void RefreshEntities()
@@ -58,6 +61,7 @@ namespace Level
         /// </summary>
         public void ActivateZone()
         {
+            edgeCollider.enabled = true;
             if (entities == null) return;
             foreach (var entity in entities)
             {
@@ -70,6 +74,7 @@ namespace Level
         /// </summary>
         public void DeactiveZone()
         {
+            edgeCollider.enabled = false;
             var activeEntities = GetComponentsInChildren<ILevelEntity>();
             foreach (var entity in activeEntities)
             {
@@ -131,17 +136,42 @@ namespace Level
         [EasyButtons.Button]
         public void GenerateBoundaries()
         {
-            if (boundary == null){
+            if (boundary == null)
+            {
                 boundary = GetComponent<PolygonCollider2D>();
             }
             boundary.isTrigger = true;
             var boundSize = size + Vector2.one * peek_extend * 2;
-            var top_right =  boundSize / 2;
-            var top_left =  new Vector2(-boundSize.x, boundSize.y) / 2;
-            var bottom_left =  new Vector2(-boundSize.x, -boundSize.y) / 2;
-            var bottom_right =  new Vector2(boundSize.x, -boundSize.y) / 2;
+            var top_right = boundSize / 2;
+            var top_left = new Vector2(-boundSize.x, boundSize.y) / 2;
+            var bottom_left = new Vector2(-boundSize.x, -boundSize.y) / 2;
+            var bottom_right = new Vector2(boundSize.x, -boundSize.y) / 2;
 
             boundary.SetPath(0, new Vector2[] { top_right, top_left, bottom_left, bottom_right });
+        }
+
+
+        [EasyButtons.Button]
+        public void GenerateBoundaryColliders()
+        {
+            if (edgeCollider == null)
+            {
+                edgeCollider = GetComponent<EdgeCollider2D>();
+                if (edgeCollider == null){
+                    edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+                }
+            }
+            var boundSize = size;
+            var top_right = boundSize / 2;
+            var top_left = new Vector2(-boundSize.x, boundSize.y) / 2;
+            var bottom_left = new Vector2(-boundSize.x, -boundSize.y) / 2;
+            var bottom_right = new Vector2(boundSize.x, -boundSize.y) / 2;
+
+            edgeCollider.SetPoints(new List<Vector2>(){
+                top_right,top_left,bottom_left,bottom_right,top_right
+            });
+
+
         }
 
         private void OnValidate()
