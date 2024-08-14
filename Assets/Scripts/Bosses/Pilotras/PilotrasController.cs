@@ -31,6 +31,7 @@ namespace Bosses.Pilotras
         #endregion
 
         #region States
+        public StartState StartState { get; private set; }
         public DefaultState DefaultState { get; private set; }
         public PlacingState PlacingState { get; private set; }
         public BinDropState BinDropState { get; private set; }
@@ -234,14 +235,11 @@ namespace Bosses.Pilotras
         #region MonoBehaviour Callbacks
         void Awake()
         {
-            // reset variables
-            Health = data.max_health;
+            // reset phase
             currentPhase = 0;
-            // initialize first phase
-            HandlePhaseChange();
-
             // initialize states
             DefaultState = new DefaultState(this, this);
+            StartState = new StartState(this, this);
             PlacingState = new PlacingState(this, this);
             PostBinDropStunState = new PostBinDropStunState(this, this);
             BinDropState = new BinDropState(this, this);
@@ -251,7 +249,7 @@ namespace Bosses.Pilotras
             PhaseChangeState = new PhaseChangeState(this, this);
             DeathState = new DeathState(this, this);
             // initialize FSM
-            Initialize(DefaultState);
+            Initialize(StartState);
 
             // handle debug
             if (!debugMode) return;

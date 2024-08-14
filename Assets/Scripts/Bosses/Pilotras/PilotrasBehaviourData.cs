@@ -5,6 +5,9 @@ namespace Bosses.Pilotras
     public class PilotrasBehaviourData : MonoBehaviour
     {
         #region Inspector Fields
+        [Header("Start State")]
+        [SerializeField] float spawnDuration = 2.5f;
+        
         [Header("Placing State")]
         [SerializeField] Vector2 placingDuration;
         [SerializeField] Vector2 placingCooldown;
@@ -48,6 +51,9 @@ namespace Bosses.Pilotras
         #endregion
 
         #region Public Properties
+        // start state
+        public float spawn_duration => spawnDuration;
+        
         // placing state
         public float placing_duration => Random.Range(placingDuration.x, placingDuration.y);
         public float placing_cooldown => Random.Range(placingCooldown.x, placingCooldown.y);

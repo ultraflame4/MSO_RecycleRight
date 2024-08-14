@@ -27,7 +27,7 @@ namespace Bosses.Pilotras.FSM
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            character.Health += character.data.max_health / character.behaviourData.phase_change_duration * Time.deltaTime;
+            character.Health += character.data.max_health / duration * Time.deltaTime;
         }
 
         public override void Exit()
