@@ -18,12 +18,13 @@ MonoBehaviour:
   trashNPCType: 2
   common:
     maxHealth: 100
-    movementSpeed: 100
+    movementSpeed: 50
     sightRange: 3
   recyclableConfig:
     recyclableType: 3
     recyclablePrefab: {fileID: 673962853163920643, guid: f03ceb70198345a4dba10c1d4a797045, type: 3}
   contaminantConfig:
+    nameOverride: 
     contaminantPrefab: {fileID: 0}
     attackRange: 2
     startAttackRange: 1

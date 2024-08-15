@@ -18,14 +18,14 @@ MonoBehaviour:
   trashNPCType: 0
   common:
     maxHealth: 100
-    movementSpeed: 100
+    movementSpeed: 50
     sightRange: 3
   recyclableConfig:
     recyclableType: 0
     recyclablePrefab: {fileID: 0}
   contaminantConfig:
     nameOverride: Rusted Can
-    contaminantPrefab: {fileID: 0}
+    contaminantPrefab: {fileID: 7012942309559121826, guid: 29d23458f0a82e44f94151ccc6e6fd80, type: 3}
     attackRange: 2
     startAttackRange: 1
     attackDelay: 0.1
