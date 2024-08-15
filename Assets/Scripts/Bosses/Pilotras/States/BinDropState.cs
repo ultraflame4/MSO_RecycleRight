@@ -45,7 +45,7 @@ namespace Bosses.Pilotras.FSM
             StunNPCs();
 
             // set bin location and activate bin
-            Vector2 binContainerLocation = (Vector2) character.behaviourData.active_bins.position + character.behaviourData.bin_offset;
+            Vector2 binContainerLocation = (Vector2) character.transform.position + character.behaviourData.bin_offset;
             float xPos = binContainerLocation.x - (character.behaviourData.bin_spacing * ((selectedBins.Count - 1f) / 2f));
             float yPos = binContainerLocation.y;
 
@@ -63,10 +63,8 @@ namespace Bosses.Pilotras.FSM
             for (int i = 0; i < selectedBins.Count; i++)
             {
                 GameObject bin = selectedBins[i].gameObject;
-                bin.transform.parent = character.behaviourData.active_bins;
                 xPos += i * character.behaviourData.bin_spacing;
                 bin.transform.position = new Vector2(xPos, character.yPosTop);
-                bin?.SetActive(false);
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
                     character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos)));
             }
@@ -105,7 +103,10 @@ namespace Bosses.Pilotras.FSM
                 }
 
                 // store, update, and reset bin score
+                if (!character.data.binScore.ContainsKey(bin.recyclableType)) return;
                 character.data.binScore[bin.recyclableType] += bin.Score;
+                bin.CompleteClean();
+                bin.Score = character.data.binScore[bin.recyclableType];
             }
         }
 
@@ -169,7 +170,7 @@ namespace Bosses.Pilotras.FSM
                 // search for recycling type with the highest number of NPCs
                 RecyclableType[] selectedTypes = selectedBins.Select(x => x.recyclableType).ToArray();
                 maxType = character.data.npcCount
-                    .Where(x => !selectedTypes.Contains(x.Key))
+                    .Where(x => !selectedTypes.Contains(x.Key) && x.Key != RecyclableType.OTHERS)
                     .Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
                 
                 Debug.Log($"maxType: {maxType}, count: {character.data.npcCount[maxType]}");
@@ -232,11 +233,7 @@ namespace Bosses.Pilotras.FSM
         IEnumerator DelayedBinInactive(RecyclingBin bin)
         {
             yield return new WaitForSeconds(character.behaviourData.bin_drop_speed);
-            bin.transform.parent = character.behaviourData.inactive_bins;
-            bin.CompleteClean();
-
-            if (character.data.binScore.ContainsKey(bin.recyclableType)) 
-                bin.Score = character.data.binScore[bin.recyclableType];
+            bin?.gameObject.SetActive(false);
         }
     }
 }

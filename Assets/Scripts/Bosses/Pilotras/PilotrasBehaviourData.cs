@@ -37,7 +37,6 @@ namespace Bosses.Pilotras
         [Header("Bin Positioning")]
         [SerializeField] float binSpacing = 3f;
         [SerializeField] Vector2 binPositionOffset;
-        [SerializeField] Transform activeBins, inactiveBins;
 
         [Header("Topple State")]
         [SerializeField] float toppleThreshold = 5f;
@@ -86,8 +85,6 @@ namespace Bosses.Pilotras
         // bin positioning
         public float bin_spacing => binSpacing;
         public Vector2 bin_offset => binPositionOffset;
-        public Transform active_bins => activeBins;
-        public Transform inactive_bins => inactiveBins;
 
         // topple state
         public float topple_threshold => toppleThreshold;

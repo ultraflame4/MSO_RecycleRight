@@ -223,21 +223,25 @@ namespace Bosses.Pilotras
 
             if (index == 0)
                 data.spawnedBins = data.spawnable_bins[0].gameObjects
-                    .Select(x => Instantiate(x, behaviourData.inactive_bins))
+                    .Select(x => Instantiate(x, zone.transform))
                     .Select(x => x.GetComponent<RecyclingBin>())
                     .Where(x => x != null)
                     .ToArray();
             else
                 data.spawnedBins = data.spawnedBins
                     .Concat(data.spawnable_bins[index].gameObjects
-                        .Select(x => Instantiate(x, behaviourData.inactive_bins))
+                        .Select(x => Instantiate(x, zone.transform))
                         .Select(x => x.GetComponent<RecyclingBin>())
                         .Where(x => x != null))
                     .ToArray();
+
+            // update bins
+            zone?.UpdateBinsArray();
             
             foreach (RecyclingBin bin in data.spawnedBins)
             {
-                if (data.binScore.ContainsKey(bin.recyclableType)) return;
+                bin?.gameObject.SetActive(false);
+                if (data.binScore.ContainsKey(bin.recyclableType)) continue;
                 data.binScore.Add(bin.recyclableType, 0);
             }
         }
