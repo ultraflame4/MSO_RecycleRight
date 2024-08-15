@@ -29,12 +29,9 @@ namespace Bosses.Pilotras.FSM
             base.Exit();
             character.PlacingState?.Exit();
             character.anim?.SetBool("SkillActive", false);
-
-            if (coroutine_placing != null) 
-            {
-                character.StopCoroutine(coroutine_placing);
-                coroutine_placing = null;
-            }
+            if (coroutine_placing == null) return;
+            character.StopCoroutine(coroutine_placing);
+            coroutine_placing = null;
         }
 
         IEnumerator PlaceNPC()

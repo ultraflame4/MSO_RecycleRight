@@ -36,15 +36,13 @@ namespace Bosses.Pilotras.FSM
 
         public override void Exit()
         {
+            CanEnter = false;
             base.Exit();
             character.anim?.SetBool("ThrowAlternative", false);
             character.anim?.ResetTrigger("Throw");
-
-            if (coroutine_placing != null) 
-            {
-                character.StopCoroutine(coroutine_placing);
-                coroutine_placing = null;
-            }
+            if (coroutine_placing == null) return;
+            character.StopCoroutine(coroutine_placing);
+            coroutine_placing = null;
         }
 
         IEnumerator PlaceNPC()
