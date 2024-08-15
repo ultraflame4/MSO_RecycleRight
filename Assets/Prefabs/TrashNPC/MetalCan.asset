@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00bbbcc4323417b42a777541dc934953, type: 3}
-  m_Name: Paper
+  m_Name: MetalCan
   m_EditorClassIdentifier: 
-  characterName: Paper
+  characterName: Rusted Can
   characterDesc: 
-  characterSprite: {fileID: 0}
-  trashNPCType: 1
+  characterSprite: {fileID: 1188420848584363016, guid: f5e03d0e6be4cb24a934c587a2ae1fba, type: 3}
+  trashNPCType: 0
   common:
     maxHealth: 100
     movementSpeed: 50
     sightRange: 3
   recyclableConfig:
     recyclableType: 0
-    recyclablePrefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
+    recyclablePrefab: {fileID: 0}
   contaminantConfig:
-    nameOverride: Soiled Tissue
-    contaminantPrefab: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
+    nameOverride: Rusted Can
+    contaminantPrefab: {fileID: 7012942309559121826, guid: 29d23458f0a82e44f94151ccc6e6fd80, type: 3}
     attackRange: 2
     startAttackRange: 1
     attackDelay: 0.1
-    attackDamage: 5
+    attackDamage: 0
     attackDuration: 1.5
     attract_pests: 0
-    attack_hit_delay: 0.42
+    attack_hit_delay: 0
     cleanable: 0

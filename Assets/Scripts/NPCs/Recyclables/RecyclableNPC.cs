@@ -53,6 +53,7 @@ namespace NPC.Recyclable
             sightRange = npcData.common.sightRange;
             _recyclableType = npcData.recyclableConfig.recyclableType;
             contaminant_prefab = npcData.contaminantConfig.contaminantPrefab;
+            navigation.move_speed = npcData.common.movementSpeed;
 
             SetNameTag(npcData.characterName);
         }
