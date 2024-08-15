@@ -7,6 +7,7 @@ namespace Bosses.Pilotras.FSM
     public class PlacingState : CooldownState<PilotrasController>
     {
         int amountToPlace;
+        bool throwAlternative;
         Coroutine coroutine_placing;
 
         public PlacingState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
@@ -28,6 +29,7 @@ namespace Bosses.Pilotras.FSM
             duration = character.behaviourData.placing_duration;
             cooldown = character.behaviourData.placing_cooldown;
             base.Enter();
+            throwAlternative = false;
             amountToPlace = character.behaviourData.place_npc_amount;
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }
@@ -35,6 +37,8 @@ namespace Bosses.Pilotras.FSM
         public override void Exit()
         {
             base.Exit();
+            character.anim?.SetBool("ThrowAlternative", false);
+            character.anim?.ResetTrigger("Throw");
 
             if (coroutine_placing != null) 
             {
@@ -46,6 +50,9 @@ namespace Bosses.Pilotras.FSM
         IEnumerator PlaceNPC()
         {
             GameObject obj = character.PlaceNPC(character.transform.position);
+            character.anim?.SetBool("ThrowAlternative", throwAlternative);
+            character.anim?.SetTrigger("Throw");
+            throwAlternative = !throwAlternative;
             character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, obj, character.GetRandomPositionInZone()));
             yield return new WaitForSeconds(duration / amountToPlace);
             coroutine_placing = character.StartCoroutine(PlaceNPC());

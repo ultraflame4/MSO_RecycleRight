@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4384170777564037646}
   - component: {fileID: 4893206788126953292}
+  - component: {fileID: 6244737026547022598}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6244737026547022598
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547308158607106438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4e49c0e96d02ff4a91686ecd64f86c9, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1403063608009231374
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +240,7 @@ MonoBehaviour:
   <behaviourData>k__BackingField: {fileID: 8480909623808237515}
   <fireController>k__BackingField: {fileID: 4152754215727836793}
   <indicatorManager>k__BackingField: {fileID: 8593977467726869510}
+  <anim>k__BackingField: {fileID: 6244737026547022598}
   debugPhase: 2
   debugMode: 0
   showGizmos: 1
@@ -320,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a3bfb4957c25b4ea41802f117577de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDuration: 2.5
+  spawnDuration: 3.5
   placingDuration: {x: 4, y: 6}
   placingCooldown: {x: 10, y: 15}
   placeNPCAmount: {x: 2, y: 4}
@@ -348,7 +371,7 @@ MonoBehaviour:
   toppleThreshold: 1
   toppleDuration: 8
   toppleDamageMultiplier: 7
-  phaseChangeDuration: 5
+  phaseChangeDuration: 5.5
   laneAttackDuration: 1
   laneAttackCooldown: {x: 8, y: 12}
 --- !u!1 &6892449229383503775

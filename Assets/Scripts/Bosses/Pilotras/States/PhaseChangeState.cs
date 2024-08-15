@@ -5,6 +5,8 @@ namespace Bosses.Pilotras.FSM
 {
     public class PhaseChangeState : CoroutineState<PilotrasController>
     {
+        protected bool playAnimation = true;
+
         public PhaseChangeState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
             base(fsm, character, character.DefaultState, character.behaviourData.phase_change_duration)
         {
@@ -22,6 +24,8 @@ namespace Bosses.Pilotras.FSM
             character.Health = 0f;
             // do not allow taking damage in this state
             character.data.damageTakenScale = 0f;
+            if (!playAnimation) return;
+            character.anim?.Play("Phase Change");
         }
 
         public override void LogicUpdate()

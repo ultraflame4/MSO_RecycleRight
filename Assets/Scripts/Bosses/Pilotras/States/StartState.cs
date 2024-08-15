@@ -6,6 +6,7 @@ namespace Bosses.Pilotras.FSM
     {
         public StartState(StateMachine<PilotrasController> fsm, PilotrasController character) : base(fsm, character)
         {
+            playAnimation = false;
         }
 
         public override void Enter()

@@ -39,6 +39,8 @@ namespace Bosses.Pilotras.FSM
             // load second bin if phase is more than one
             if (character.currentPhase > 1) LoadBins();
 
+            // play animation
+            character.anim?.Play("Slam");
             // stun all enemies within zone
             StunNPCs();
 
@@ -79,6 +81,7 @@ namespace Bosses.Pilotras.FSM
         public override void Exit()
         {
             base.Exit();
+            character.anim?.Play("Slam (Reverse)");
             // reset bin points in this drop instance
             scoredInInstance = 0f;
             // return each bin
@@ -151,24 +154,32 @@ namespace Bosses.Pilotras.FSM
             if (character.levelManager == null || character.data.spawnedBins == null || character.data.spawnedBins.Length <= 0)
                 return;
             
-            // search for recycling type with the highest number of NPCs
-            RecyclableType[] selectedTypes = selectedBins.Select(x => x.recyclableType).ToArray();
-            RecyclableType maxType = character.data.npcCount
-                .Where(x => !selectedTypes.Contains(x.Key))
-                .Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
-            
-            Debug.Log($"maxType: {maxType}, count: {character.data.npcCount[maxType]}");
-
-            // search for active bins that have the same type
-            RecyclingBin[] binsFound = character.data.spawnedBins
-                .Where(x => x.recyclableType == maxType)
-                .ToArray();
-
+            // array to store bins that can be used
+            RecyclingBin[] binsFound = new RecyclingBin[0];
             // store bin to be selected
             RecyclingBin usableBin = null;
+            // store the recycling type with the largest count, others is the default because it would not count contaminants
+            RecyclableType maxType = RecyclableType.OTHERS;
+
+            // check if dictionary contains any keys
+            if (character.data.npcCount.Keys.Count > 0)
+            {
+                // search for recycling type with the highest number of NPCs
+                RecyclableType[] selectedTypes = selectedBins.Select(x => x.recyclableType).ToArray();
+                maxType = character.data.npcCount
+                    .Where(x => !selectedTypes.Contains(x.Key))
+                    .Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
+                
+                Debug.Log($"maxType: {maxType}, count: {character.data.npcCount[maxType]}");
+
+                // search for active bins that have the same type
+                binsFound = character.data.spawnedBins
+                    .Where(x => x.recyclableType == maxType)
+                    .ToArray();
+            }
             
             // if no bins are found, try to find a random bin that is not selected
-            if (binsFound == null || binsFound.Length <= 0)
+            if (binsFound.Length <= 0)
             {
                 binsFound = character.data.spawnedBins
                     .Where(x => !selectedBins

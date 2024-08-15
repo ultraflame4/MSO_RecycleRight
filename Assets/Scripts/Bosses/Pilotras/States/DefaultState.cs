@@ -8,6 +8,12 @@ namespace Bosses.Pilotras.FSM
         {
         }
 
+        public override void Enter()
+        {
+            base.Enter();
+            character.anim?.Play("Idle");
+        }
+
         public override void LogicUpdate()
         {
             base.LogicUpdate();
