@@ -321,9 +321,11 @@ MonoBehaviour:
     - {fileID: 8097417969370782324, guid: 3c10479c73eff34409d9c4ccaebcc17d, type: 3}
   spawnableBins:
   - gameObjects:
-    - {fileID: 2127486948450122989, guid: 124d045367ab7654b95b27107a18631f, type: 3}
-    - {fileID: 4692704942311212617, guid: 7c53595c543d8dd408e9ccf02cd56f3c, type: 3}
-    - {fileID: 1986338079234441321, guid: fec69f102b59acc48a281d1022e04f3f, type: 3}
+    - {fileID: 4595985780520261683, guid: ab6d104f3e8de764286685218dd4e79a, type: 3}
+    - {fileID: 2730845173452390667, guid: 31a42e843e082fe44ba68d3504bffbc2, type: 3}
+    - {fileID: 3581852914486191720, guid: 47471c5994b1ad34daf3c95b163d9339, type: 3}
+  - gameObjects:
+    - {fileID: 3448456486740426187, guid: b2d1ba695e8267f4f95af04abcbcc8ce, type: 3}
   currentPhaseNPCs: []
   phaseIndicators: []
   spawnedBins: []
