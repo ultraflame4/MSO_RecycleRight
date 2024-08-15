@@ -22,6 +22,7 @@ namespace Bosses.Pilotras
         [field: Header("Components")]
         [field: SerializeField] public PilotrasFireController fireController { get; private set; }
         [field: SerializeField] public IndicatorManager indicatorManager { get; private set; }
+        [field: SerializeField] public Animator anim { get; private set; }
 
         [Header("Debug")]
         [SerializeField] int debugPhase = 2;
@@ -31,6 +32,7 @@ namespace Bosses.Pilotras
         #endregion
 
         #region States
+        public StartState StartState { get; private set; }
         public DefaultState DefaultState { get; private set; }
         public PlacingState PlacingState { get; private set; }
         public BinDropState BinDropState { get; private set; }
@@ -52,7 +54,11 @@ namespace Bosses.Pilotras
         public float Health
         {
             get { return _health; }
-            set { _health = Mathf.Clamp(value, 0f, data.max_health); }
+            set 
+            { 
+                _health = Mathf.Clamp(value, 0f, data.max_health);
+                data.health_bar.value = _health / data.max_health;
+            }
         }
 
         public int currentPhase { get; private set; } = 0;
@@ -133,6 +139,7 @@ namespace Bosses.Pilotras
             currentPhase++;
             LoadSpawnableNPCs();
             SpawnBins();
+            UpdatePhaseIndicator();
         }
         #endregion
 
@@ -157,6 +164,20 @@ namespace Bosses.Pilotras
             }
 
             if (obj != null) obj.transform.position = targetPosition;
+        }
+
+        /// <summary>
+        /// Moves an object from its current positin to the target position in a set duration
+        /// </summary>
+        /// <param name="duration">Duration of movement</param>
+        /// <param name="delay">Delay before starting movement</param>
+        /// <param name="obj">Object to move</param>
+        /// <param name="targetPosition">Final end position of movement</param>
+        public IEnumerator Throw(float duration, float delay, GameObject obj, Vector3 targetPosition)
+        {
+            yield return new WaitForSeconds(delay);
+            obj?.SetActive(true);
+            yield return StartCoroutine(Throw(duration, obj, targetPosition));
         }
         #endregion
 
@@ -202,21 +223,25 @@ namespace Bosses.Pilotras
 
             if (index == 0)
                 data.spawnedBins = data.spawnable_bins[0].gameObjects
-                    .Select(x => Instantiate(x, behaviourData.inactive_bins))
+                    .Select(x => Instantiate(x, zone.transform))
                     .Select(x => x.GetComponent<RecyclingBin>())
                     .Where(x => x != null)
                     .ToArray();
             else
                 data.spawnedBins = data.spawnedBins
                     .Concat(data.spawnable_bins[index].gameObjects
-                        .Select(x => Instantiate(x, behaviourData.inactive_bins))
+                        .Select(x => Instantiate(x, zone.transform))
                         .Select(x => x.GetComponent<RecyclingBin>())
                         .Where(x => x != null))
                     .ToArray();
+
+            // update bins
+            zone?.UpdateBinsArray();
             
             foreach (RecyclingBin bin in data.spawnedBins)
             {
-                if (data.binScore.ContainsKey(bin.recyclableType)) return;
+                bin?.gameObject.SetActive(false);
+                if (data.binScore.ContainsKey(bin.recyclableType)) continue;
                 data.binScore.Add(bin.recyclableType, 0);
             }
         }
@@ -229,19 +254,36 @@ namespace Bosses.Pilotras
             data.maxBounds.y = zone.center.y + (zone.size.y / 2f);
             data.maxBounds.y = data.maxBounds.y - (data.maxBounds.y - transform.position.y) - data.y_offset;
         }
+
+        void LoadPhaseIndicator()
+        {
+            data.phaseIndicators = new GameObject[data.number_of_phases];
+            for (int i = 0; i < data.phaseIndicators.Length; i++)
+            {
+                data.phaseIndicators[i] = Instantiate(data.phase_indicator_prefab, data.phase_indicator_parent);
+            }
+        }
+
+        void UpdatePhaseIndicator()
+        {
+            for (int i = 0; i < data.phaseIndicators.Length; i++)
+            {
+                data.phaseIndicators[i].transform.GetChild(0)
+                    .gameObject.SetActive(i <= data.number_of_phases - currentPhase);
+            }
+        }
         #endregion
 
         #region MonoBehaviour Callbacks
         void Awake()
         {
-            // reset variables
-            Health = data.max_health;
+            // reset phase
             currentPhase = 0;
-            // initialize first phase
-            HandlePhaseChange();
-
+            // load phase indicators
+            LoadPhaseIndicator();
             // initialize states
             DefaultState = new DefaultState(this, this);
+            StartState = new StartState(this, this);
             PlacingState = new PlacingState(this, this);
             PostBinDropStunState = new PostBinDropStunState(this, this);
             BinDropState = new BinDropState(this, this);
@@ -251,7 +293,7 @@ namespace Bosses.Pilotras
             PhaseChangeState = new PhaseChangeState(this, this);
             DeathState = new DeathState(this, this);
             // initialize FSM
-            Initialize(DefaultState);
+            Initialize(StartState);
 
             // handle debug
             if (!debugMode) return;

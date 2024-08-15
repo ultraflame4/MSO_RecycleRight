@@ -5,11 +5,15 @@ namespace Bosses.Pilotras
     public class PilotrasBehaviourData : MonoBehaviour
     {
         #region Inspector Fields
+        [Header("Start State")]
+        [SerializeField] float spawnDuration = 2.5f;
+        
         [Header("Placing State")]
         [SerializeField] Vector2 placingDuration;
         [SerializeField] Vector2 placingCooldown;
         [SerializeField] Vector2Int placeNPCAmount;
         [SerializeField] float placingSpeed = 0.5f;
+        [SerializeField] float placingDelay = 0.5f;
 
         [Header("Meteor Shower Attack State")]
         [SerializeField] Vector2 meteorAttackDuration;
@@ -23,6 +27,7 @@ namespace Bosses.Pilotras
         [SerializeField] Vector2 binDropDuration;
         [SerializeField] Vector2 binDropCooldown;
         [SerializeField] float binDropSpeed = 1f;
+        [SerializeField] float binDropDelay = 0.5f;
         [SerializeField] float binDropForce = 25f;
         [SerializeField] float postDropStunDuration = 5f;
         [SerializeField] float scoredDamage = 100f;
@@ -32,12 +37,12 @@ namespace Bosses.Pilotras
         [Header("Bin Positioning")]
         [SerializeField] float binSpacing = 3f;
         [SerializeField] Vector2 binPositionOffset;
-        [SerializeField] Transform activeBins, inactiveBins;
 
         [Header("Topple State")]
         [SerializeField] float toppleThreshold = 5f;
         [SerializeField] float toppleDuration = 8f;
         [SerializeField] float toppleDamageMultiplier = 7f;
+        [SerializeField] Vector2 colliderOffset;
 
         [Header("Phase Change State")]
         [SerializeField] float phaseChangeDuration = 5f;
@@ -48,11 +53,15 @@ namespace Bosses.Pilotras
         #endregion
 
         #region Public Properties
+        // start state
+        public float spawn_duration => spawnDuration;
+        
         // placing state
         public float placing_duration => Random.Range(placingDuration.x, placingDuration.y);
         public float placing_cooldown => Random.Range(placingCooldown.x, placingCooldown.y);
         public int place_npc_amount => Random.Range(placeNPCAmount.x, placeNPCAmount.y);
         public float placing_speed => placingSpeed;
+        public float placing_delay => placingDelay;
 
         // meteor shower attack state
         public float meteor_attack_duration => Random.Range(meteorAttackDuration.x, meteorAttackDuration.y);
@@ -66,6 +75,7 @@ namespace Bosses.Pilotras
         public float bin_drop_duration => Random.Range(binDropDuration.x, binDropDuration.y);
         public float bin_drop_cooldown => Random.Range(binDropCooldown.x, binDropCooldown.y);
         public float bin_drop_speed => binDropSpeed;
+        public float bin_drop_delay => binDropDelay;
         public float bin_drop_force => binDropForce;
         public float post_drop_stun_duration => postDropStunDuration;
         public float scored_damage => scoredDamage;
@@ -75,13 +85,12 @@ namespace Bosses.Pilotras
         // bin positioning
         public float bin_spacing => binSpacing;
         public Vector2 bin_offset => binPositionOffset;
-        public Transform active_bins => activeBins;
-        public Transform inactive_bins => inactiveBins;
 
         // topple state
         public float topple_threshold => toppleThreshold;
         public float topple_duration => toppleDuration;
         public float topple_damage_multiplier => toppleDamageMultiplier;
+        public Vector2 collider_offset => colliderOffset;
 
         // phase change state
         public float phase_change_duration => phaseChangeDuration;

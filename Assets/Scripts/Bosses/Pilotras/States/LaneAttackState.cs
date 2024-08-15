@@ -42,13 +42,14 @@ namespace Bosses.Pilotras.FSM
             // spawn indicator
             GameObject indicator = character.indicatorManager.Instantiate(1, new Vector2(character.zone.transform.position.x, spawnPos.y));
             // wait for duration to drop projectile
-            if (projectile != null) projectile.spriteRenderer.enabled = false;
+            projectile?.gameObject.SetActive(false);
             yield return new WaitForSeconds(character.data.attack_delay - character.behaviourData.drop_speed);
             // hide indicator
             indicator?.SetActive(false);
             // throw projectile into position
-            if (projectile != null) projectile.spriteRenderer.enabled = true;
-            character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, projectile.gameObject, spawnPos));
+            character.anim?.Play("Sweep");
+            character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, character.behaviourData.placing_delay, 
+                projectile.gameObject, spawnPos));
             // wait for remaining time before launching projectile
             yield return new WaitForSeconds(character.behaviourData.drop_speed);
             // activate projectile after wait duration

@@ -16,6 +16,10 @@ namespace Bosses.Pilotras.FSM
         {
             base.Enter();
             EndLevel?.Invoke();
+            // play topple over animation as death animation
+            character.anim?.Play("Topple Over");
+            // hide healthbar
+            character.data.health_bar.gameObject.SetActive(false);
             // do not allow taking damage in this state
             character.data.damageTakenScale = 0f;
         }
