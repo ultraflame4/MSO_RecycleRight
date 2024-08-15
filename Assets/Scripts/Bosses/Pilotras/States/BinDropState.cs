@@ -66,7 +66,9 @@ namespace Bosses.Pilotras.FSM
                 bin.transform.parent = character.behaviourData.active_bins;
                 xPos += i * character.behaviourData.bin_spacing;
                 bin.transform.position = new Vector2(xPos, character.yPosTop);
-                character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin, new Vector2(xPos, yPos)));
+                bin?.SetActive(false);
+                character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
+                    character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos)));
             }
         }
 

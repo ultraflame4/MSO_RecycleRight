@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 5525807942436296040, guid: bb7cafbe8de95454fa595eaecb29bd85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -348,6 +348,7 @@ MonoBehaviour:
   placingCooldown: {x: 10, y: 15}
   placeNPCAmount: {x: 2, y: 4}
   placingSpeed: 0.5
+  placingDelay: 0.5
   meteorAttackDuration: {x: 4, y: 6}
   attackPlaceNPCAmount: {x: 3, y: 6}
   baseEnterAttackChance: 0.15
@@ -357,6 +358,7 @@ MonoBehaviour:
   binDropDuration: {x: 7, y: 10}
   binDropCooldown: {x: 8, y: 12}
   binDropSpeed: 0.5
+  binDropDelay: 0.6
   binDropForce: 25
   postDropStunDuration: 5
   scoredDamage: 100

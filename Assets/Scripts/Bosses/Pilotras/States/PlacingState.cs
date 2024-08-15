@@ -53,7 +53,9 @@ namespace Bosses.Pilotras.FSM
             character.anim?.SetBool("ThrowAlternative", throwAlternative);
             character.anim?.SetTrigger("Throw");
             throwAlternative = !throwAlternative;
-            character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, obj, character.GetRandomPositionInZone()));
+            obj?.SetActive(false);
+            character.StartCoroutine(character.Throw(character.behaviourData.placing_speed, character.behaviourData.placing_delay, 
+                obj, character.GetRandomPositionInZone()));
             yield return new WaitForSeconds(duration / amountToPlace);
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }

@@ -13,6 +13,7 @@ namespace Bosses.Pilotras
         [SerializeField] Vector2 placingCooldown;
         [SerializeField] Vector2Int placeNPCAmount;
         [SerializeField] float placingSpeed = 0.5f;
+        [SerializeField] float placingDelay = 0.5f;
 
         [Header("Meteor Shower Attack State")]
         [SerializeField] Vector2 meteorAttackDuration;
@@ -26,6 +27,7 @@ namespace Bosses.Pilotras
         [SerializeField] Vector2 binDropDuration;
         [SerializeField] Vector2 binDropCooldown;
         [SerializeField] float binDropSpeed = 1f;
+        [SerializeField] float binDropDelay = 0.5f;
         [SerializeField] float binDropForce = 25f;
         [SerializeField] float postDropStunDuration = 5f;
         [SerializeField] float scoredDamage = 100f;
@@ -59,6 +61,7 @@ namespace Bosses.Pilotras
         public float placing_cooldown => Random.Range(placingCooldown.x, placingCooldown.y);
         public int place_npc_amount => Random.Range(placeNPCAmount.x, placeNPCAmount.y);
         public float placing_speed => placingSpeed;
+        public float placing_delay => placingDelay;
 
         // meteor shower attack state
         public float meteor_attack_duration => Random.Range(meteorAttackDuration.x, meteorAttackDuration.y);
@@ -72,6 +75,7 @@ namespace Bosses.Pilotras
         public float bin_drop_duration => Random.Range(binDropDuration.x, binDropDuration.y);
         public float bin_drop_cooldown => Random.Range(binDropCooldown.x, binDropCooldown.y);
         public float bin_drop_speed => binDropSpeed;
+        public float bin_drop_delay => binDropDelay;
         public float bin_drop_force => binDropForce;
         public float post_drop_stun_duration => postDropStunDuration;
         public float scored_damage => scoredDamage;

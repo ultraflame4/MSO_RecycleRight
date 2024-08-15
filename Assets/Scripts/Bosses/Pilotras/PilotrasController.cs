@@ -165,6 +165,20 @@ namespace Bosses.Pilotras
 
             if (obj != null) obj.transform.position = targetPosition;
         }
+
+        /// <summary>
+        /// Moves an object from its current positin to the target position in a set duration
+        /// </summary>
+        /// <param name="duration">Duration of movement</param>
+        /// <param name="delay">Delay before starting movement</param>
+        /// <param name="obj">Object to move</param>
+        /// <param name="targetPosition">Final end position of movement</param>
+        public IEnumerator Throw(float duration, float delay, GameObject obj, Vector3 targetPosition)
+        {
+            yield return new WaitForSeconds(delay);
+            obj?.SetActive(true);
+            yield return StartCoroutine(Throw(duration, obj, targetPosition));
+        }
         #endregion
 
         #region Interface Methods
