@@ -43,6 +43,7 @@ namespace Bosses.Pilotras
         [SerializeField] float toppleThreshold = 5f;
         [SerializeField] float toppleDuration = 8f;
         [SerializeField] float toppleDamageMultiplier = 7f;
+        [SerializeField] Vector2 colliderOffset;
 
         [Header("Phase Change State")]
         [SerializeField] float phaseChangeDuration = 5f;
@@ -92,6 +93,7 @@ namespace Bosses.Pilotras
         public float topple_threshold => toppleThreshold;
         public float topple_duration => toppleDuration;
         public float topple_damage_multiplier => toppleDamageMultiplier;
+        public Vector2 collider_offset => colliderOffset;
 
         // phase change state
         public float phase_change_duration => phaseChangeDuration;

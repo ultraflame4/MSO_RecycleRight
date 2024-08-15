@@ -297,6 +297,7 @@ MonoBehaviour:
   maxHealth: 500
   yOffset: 3
   numberOfPhases: 2
+  maxNPCCount: 10
   meteorAttackDamage: 15
   laneAttackDamage: 25
   attackDelay: 2.5
@@ -375,6 +376,7 @@ MonoBehaviour:
   toppleThreshold: 1
   toppleDuration: 8
   toppleDamageMultiplier: 7
+  colliderOffset: {x: 0, y: -2.3}
   phaseChangeDuration: 5.5
   laneAttackDuration: 1
   laneAttackCooldown: {x: 8, y: 12}
