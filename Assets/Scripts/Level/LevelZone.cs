@@ -61,7 +61,7 @@ namespace Level
         /// </summary>
         public void UpdateBinsArray()
         {
-            bins = GetComponentsInChildren<RecyclingBin>();
+            bins = GetComponentsInChildren<RecyclingBin>(true);
         }
 
         /// <summary>
