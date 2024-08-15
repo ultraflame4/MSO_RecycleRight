@@ -1,3 +1,4 @@
+using System.Linq;
 using Patterns.FSM;
 
 namespace Bosses.Pilotras.FSM
@@ -6,6 +7,18 @@ namespace Bosses.Pilotras.FSM
     {
         public DefaultState(StateMachine<PilotrasController> fsm, PilotrasController character) : base(fsm, character)
         {
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+            character.anim?.Play("Idle");
+        }
+
+        public override void HandleInputs()
+        {
+            base.HandleInputs();
+            character.UpdateNPCCount();
         }
 
         public override void LogicUpdate()
@@ -18,7 +31,7 @@ namespace Bosses.Pilotras.FSM
                 return;
             }
 
-            if (character.PlacingState.CanEnter)
+            if (character.PlacingState.CanEnter && character.data.npcCount.Values.Sum(x => x) < character.data.max_npc_count)
             {
                 fsm.SwitchState(character.PlacingState);
                 return;
