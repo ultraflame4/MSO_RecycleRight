@@ -19,12 +19,6 @@ namespace Bosses.Pilotras.FSM
             SpawnProjectile();
         }
 
-        public override void Exit()
-        {
-            base.Exit();
-            character.anim?.ResetTrigger("Throw");
-        }
-
         void SpawnProjectile()
         {
             Vector2 spawnPos = new Vector2(character.data.minBounds.x, Random.Range(character.data.minBounds.y, character.data.maxBounds.y));
@@ -53,7 +47,7 @@ namespace Bosses.Pilotras.FSM
             // hide indicator
             indicator?.SetActive(false);
             // throw projectile into position
-            character.anim?.SetTrigger("Throw");
+            character.anim?.Play("Sweep");
             character.StartCoroutine(character.Throw(character.behaviourData.drop_speed, character.behaviourData.placing_delay, 
                 projectile.gameObject, spawnPos));
             // wait for remaining time before launching projectile
