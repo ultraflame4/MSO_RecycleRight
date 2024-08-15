@@ -31,13 +31,13 @@ public class LevelSelectManager : MonoBehaviour {
         }
         if (launchingLevel) return;
         launchingLevel = true;
-        levelSelectHall.TriggerLaunchAnimations();
+        
         StartCoroutine(DelayedLaunchLevel(selectedLevel));
     }
 
     IEnumerator DelayedLaunchLevel(int levelIndex)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return levelSelectHall.LaunchAnimation();
         GameManager.Instance.LoadLevel(levelIndex);
     }
 }

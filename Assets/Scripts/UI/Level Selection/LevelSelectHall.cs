@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UI.LevelSelection;
 using UnityEngine;
@@ -44,19 +45,18 @@ public class LevelSelectHall : MonoBehaviour
     {
 
         trainDoorsAnim.SetBool("zoom_out", false);
-        Debug.Log("Deactivating level hall");
         // gameObject.SetActive(false);
         trainDoorsAnim.SetTrigger("openDoors");
         animator.SetBool("Active", false);
     }
 
-    public void TriggerLaunchAnimations()
-    {
 
+    public IEnumerator LaunchAnimation(){
+        animator.SetTrigger("launchScene");
+        yield return new WaitForSeconds(0.25f);
         trainDoorsAnim.SetBool("zoom_out", false);
-        Debug.Log("Deactivating level hall");
         // gameObject.SetActive(false);
         trainDoorsAnim.SetTrigger("openDoors");
-        animator.SetTrigger("launchScene");
+        yield return new WaitForSeconds(0.75f);
     }
 }
