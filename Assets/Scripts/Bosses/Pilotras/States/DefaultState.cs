@@ -25,21 +25,23 @@ namespace Bosses.Pilotras.FSM
         {
             base.LogicUpdate();
 
+            if (character.BinDropState.CanEnter)
+            {
+                fsm.SwitchState(character.BinDropState);
+                return;
+            }
+
+            if (character.data.npcCount.Values.Sum(x => x) >= character.data.max_npc_count) return;
+
             if (character.currentPhase > 1 && character.LaneAttackState.CanEnter)
             {
                 fsm.SwitchState(character.LaneAttackState);
                 return;
             }
 
-            if (character.PlacingState.CanEnter && character.data.npcCount.Values.Sum(x => x) < character.data.max_npc_count)
+            if (character.PlacingState.CanEnter)
             {
                 fsm.SwitchState(character.PlacingState);
-                return;
-            }
-
-            if (character.BinDropState.CanEnter)
-            {
-                fsm.SwitchState(character.BinDropState);
                 return;
             }
         }
