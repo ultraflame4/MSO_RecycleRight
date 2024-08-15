@@ -23,6 +23,7 @@ namespace Bosses.Pilotras
         [SerializeField] float maxHealth = 500f;
         [SerializeField] float yOffset = 3f;
         [SerializeField] int numberOfPhases = 2;
+        [SerializeField] int maxNPCCount = 10;
 
         [Header("Attack Data")]
         [SerializeField] float meteorAttackDamage = 15f;
@@ -49,6 +50,7 @@ namespace Bosses.Pilotras
         public float max_health => maxHealth;
         public float y_offset => yOffset;
         public int number_of_phases => numberOfPhases;
+        public int max_npc_count => maxNPCCount;
 
         // attack data
         public float meteor_attack_damage => meteorAttackDamage;
