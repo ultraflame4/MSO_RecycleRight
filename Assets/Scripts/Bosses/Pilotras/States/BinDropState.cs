@@ -172,14 +172,22 @@ namespace Bosses.Pilotras.FSM
                 maxType = character.data.npcCount
                     .Where(x => !selectedTypes.Contains(x.Key) && x.Key != RecyclableType.OTHERS)
                     .Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
-                
+            }
+            else if (character.data.npcCount.Keys.Count == 1)
+            {
+                maxType = character.data.npcCount.Keys.ToArray()[0];
+            }
+
+            // log type calculation proccess
+            if (maxType == RecyclableType.OTHERS)
+                Debug.Log("Unable to find bins with the most number of NPCs on the field, picking a random bin...");
+            else
                 Debug.Log($"maxType: {maxType}, count: {character.data.npcCount[maxType]}");
 
-                // search for active bins that have the same type
-                binsFound = character.data.spawnedBins
-                    .Where(x => x.recyclableType == maxType)
-                    .ToArray();
-            }
+            // search for active bins that have the same type
+            binsFound = character.data.spawnedBins
+                .Where(x => x.recyclableType == maxType)
+                .ToArray();
             
             // if no bins are found, try to find a random bin that is not selected
             if (binsFound.Length <= 0)
@@ -199,11 +207,12 @@ namespace Bosses.Pilotras.FSM
             // if there are still no bins found, log a warning
             if (binsFound == null || binsFound.Length <= 0)
             {
-                Debug.LogWarning($"Unable to find bin of type {maxType} (BinDropState.cs)");
+                Debug.LogWarning($"Unable to find a usable bin to drop. (BinDropState.cs)");
                 return;
             }
             else
             {
+                Debug.Log("Successfully selected a random bin.");
                 usableBin = binsFound[Random.Range(0, binsFound.Length)];
             }
             
