@@ -7,6 +7,7 @@ using NPC.States;
 using UnityEngine.UI;
 using Patterns.FSM;
 using UnityEngine.AI;
+using System.Collections;
 
 namespace NPC.Contaminant
 {
@@ -27,6 +28,7 @@ namespace NPC.Contaminant
         #region References
         public Slider healthbar;
         public GrimeController grimeController;
+        public GameObject cleaningParticlesEffect;
         #endregion
 
         [Header("Config")]
@@ -149,7 +151,9 @@ namespace NPC.Contaminant
         public void Clean(float clean_amount)
         {
             if (!cleanable) return;
-            // Debug.LogWarning("Contaminant cleaned! THIS IS WIP! PLEASE IMPLEMENT!");
+            
+            Instantiate(cleaningParticlesEffect, transform.position, Quaternion.identity);
+
             grimeController.GrimeAmount -= clean_amount;
             if (grimeController.GrimeAmount <= 0.1)
                 SpawnRecyclable();
