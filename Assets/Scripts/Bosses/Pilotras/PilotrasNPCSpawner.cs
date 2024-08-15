@@ -83,7 +83,6 @@ namespace Bosses.Pilotras
             // search for a type that has a higher weight than the random value
             foreach (RecyclableType type in weight.Keys)
             {
-                Debug.Log($"{type}, {weight[type]} - selected: {selectedType}");
                 // pass if weight is below random value, or currently selected value has a higher weight
                 if (randomValue > weight[type] || (selectedType != null && 
                     weight[type] < weight[(RecyclableType) selectedType])) 

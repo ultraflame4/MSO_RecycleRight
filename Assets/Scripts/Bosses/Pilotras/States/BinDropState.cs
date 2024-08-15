@@ -104,7 +104,14 @@ namespace Bosses.Pilotras.FSM
 
                 // store, update, and reset bin score
                 if (!character.data.binScore.ContainsKey(bin.recyclableType)) return;
-                character.data.binScore[bin.recyclableType] += bin.Score;
+
+                // store bin score depending on if the bin got contaminated
+                if (bin.binState != BinState.CLEAN)
+                    character.data.binScore[bin.recyclableType] += bin.Score;
+                else 
+                    character.data.binScore[bin.recyclableType] = bin.Score;
+                
+                // reset bin score
                 bin.CompleteClean();
                 bin.Score = character.data.binScore[bin.recyclableType];
             }
@@ -165,7 +172,7 @@ namespace Bosses.Pilotras.FSM
             RecyclableType maxType = RecyclableType.OTHERS;
 
             // check if dictionary contains more than 1 key (need at least 2 items to aggregate)
-            if (character.data.npcCount.Keys.Count > 1)
+            if (character.data.npcCount.Count > 1)
             {
                 // search for recycling type with the highest number of NPCs
                 RecyclableType[] selectedTypes = selectedBins.Select(x => x.recyclableType).ToArray();
@@ -173,7 +180,7 @@ namespace Bosses.Pilotras.FSM
                     .Where(x => !selectedTypes.Contains(x.Key) && x.Key != RecyclableType.OTHERS)
                     .Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
             }
-            else if (character.data.npcCount.Keys.Count == 1)
+            else if (character.data.npcCount.Count == 1)
             {
                 maxType = character.data.npcCount.Keys.ToArray()[0];
             }
