@@ -217,7 +217,7 @@ namespace Bosses.Pilotras.FSM
                 Debug.LogWarning($"Unable to find a usable bin to drop. (BinDropState.cs)");
                 return;
             }
-            else
+            else if (usableBin == null)
             {
                 Debug.Log("Successfully selected a random bin.");
                 usableBin = binsFound[Random.Range(0, binsFound.Length)];
