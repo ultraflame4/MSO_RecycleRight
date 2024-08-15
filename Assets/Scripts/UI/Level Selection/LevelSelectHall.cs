@@ -44,7 +44,6 @@ public class LevelSelectHall : MonoBehaviour
     {
 
         trainDoorsAnim.SetBool("zoom_out", false);
-        Debug.Log("Deactivating level hall");
         // gameObject.SetActive(false);
         trainDoorsAnim.SetTrigger("openDoors");
         animator.SetBool("Active", false);
@@ -54,7 +53,6 @@ public class LevelSelectHall : MonoBehaviour
     {
 
         trainDoorsAnim.SetBool("zoom_out", false);
-        Debug.Log("Deactivating level hall");
         // gameObject.SetActive(false);
         trainDoorsAnim.SetTrigger("openDoors");
         animator.SetTrigger("launchScene");

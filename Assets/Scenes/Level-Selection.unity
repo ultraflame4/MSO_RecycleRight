@@ -2421,8 +2421,8 @@ MonoBehaviour:
   animationDuration: 1
   maxScale: 1
   anim: {fileID: 612612365}
-  glitchCooldown: {x: 3, y: 3}
-  enableGlitch: 0
+  glitchCooldown: {x: 3, y: 7}
+  enableGlitch: 1
 --- !u!1 &613292065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3030,7 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 678959726}
   glitchCooldown: {x: 3, y: 7}
-  enableGlitch: 0
+  enableGlitch: 1
   characterList: {fileID: 844162021}
   characterInfo: {fileID: 1686857924}
   page_state: 1

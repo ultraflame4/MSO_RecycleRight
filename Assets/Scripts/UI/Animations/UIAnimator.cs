@@ -18,6 +18,12 @@ namespace UI.Animations
             Play(animations[0].Name);
         }
 
+        void OnEnable()
+        {
+            // continue playing animation when enabled
+            Continue();
+        }
+
         /// <summary>
         /// Play an animation in the animations list
         /// </summary>
