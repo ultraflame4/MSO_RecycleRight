@@ -46,7 +46,7 @@ namespace Level
         private void Start()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
-            bins = GetComponentsInChildren<RecyclingBin>();
+            UpdateBinsArray();
             GenerateBoundaries();
             GenerateBoundaryColliders();
         }
@@ -54,6 +54,14 @@ namespace Level
         public void RefreshEntities()
         {
             // entities = GetComponentsInChildren<ILevelEntity>();
+        }
+
+        /// <summary>
+        /// Update references to bins in the zone
+        /// </summary>
+        public void UpdateBinsArray()
+        {
+            bins = GetComponentsInChildren<RecyclingBin>(true);
         }
 
         /// <summary>
