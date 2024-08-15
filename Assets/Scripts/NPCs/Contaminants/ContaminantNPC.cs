@@ -114,6 +114,7 @@ namespace NPC.Contaminant
             state_AttackPlayer = new AttackPlayer(this);
             state_Stunned = new Stunned(state_Idle, this, this);
             state_Death = new Death(this);
+            navigation.move_speed = npcData.common.movementSpeed;
         }
 
         private void Start()
