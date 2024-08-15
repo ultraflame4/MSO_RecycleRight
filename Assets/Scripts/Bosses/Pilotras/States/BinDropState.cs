@@ -164,8 +164,8 @@ namespace Bosses.Pilotras.FSM
             // store the recycling type with the largest count, others is the default because it would not count contaminants
             RecyclableType maxType = RecyclableType.OTHERS;
 
-            // check if dictionary contains any keys
-            if (character.data.npcCount.Keys.Count > 0)
+            // check if dictionary contains more than 1 key (need at least 2 items to aggregate)
+            if (character.data.npcCount.Keys.Count > 1)
             {
                 // search for recycling type with the highest number of NPCs
                 RecyclableType[] selectedTypes = selectedBins.Select(x => x.recyclableType).ToArray();

@@ -121,8 +121,6 @@ namespace Bosses.Pilotras
             foreach (FSMRecyclableNPC recyclable in data.recyclables)
             {
                 RecyclableType type = recyclable.recyclableType;
-                // ignore contaminant count
-                if (type == RecyclableType.OTHERS) continue; 
                 // increment count
                 if (!data.npcCount.ContainsKey(type))
                     data.npcCount.Add(type, 1);
