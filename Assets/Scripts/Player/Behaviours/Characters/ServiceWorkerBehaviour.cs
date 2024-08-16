@@ -56,7 +56,11 @@ namespace Player.Behaviours
             if (characters == null || characters.Length <= 0 || hits == null) return;
 
             // sort characters array by health and heal lowest health character
-            Heal(passiveHealAmount * hits.Length, false, characters.OrderBy(x => x.Health).ToArray()[0]);
+            Heal(passiveHealAmount * hits.Length, false, 
+                characters
+                    .Where(x => x.Health > 0f)
+                    .OrderBy(x => x.Health)
+                    .ToArray()[0]);
         }
 
         void Heal(float amount, bool canRevive, PlayerCharacter target)
