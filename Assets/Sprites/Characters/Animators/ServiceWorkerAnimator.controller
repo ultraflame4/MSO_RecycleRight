@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc88e014b8375d4cab68f14faaa021b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownRange: {x: 5, y: 7}
+  cooldownRange: {x: 2, y: 5}
   triggerName: Stretch
 --- !u!1107 &-8808328558415609329
 AnimatorStateMachine:
