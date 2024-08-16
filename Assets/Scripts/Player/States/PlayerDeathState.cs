@@ -63,6 +63,7 @@ namespace Player.FSM
             // if there is a character found, switch to that character
             if (index >= 0)
             {
+                ResetAlpha();
                 character.CharacterManager.CanSwitchCharacters = true;
                 character.CharacterManager.SwitchCharacter(index);
                 fsm.SwitchState(character.DefaultState);
@@ -91,11 +92,21 @@ namespace Player.FSM
         // when character is available, this would be called, and would switch to new character
         void CharacterAvailable(PlayerCharacter prev, PlayerCharacter curr)
         {
+            ResetAlpha();
             character.PointerManager.gameObject.SetActive(true);
             character.CharacterManager.CharacterChanged -= CharacterAvailable;
             character.CharacterManager.CanSwitchCharacters = true;
             character.CharacterManager.SwitchCharacter(Array.IndexOf(character.CharacterManager.character_instances, curr));
             fsm.SwitchState(character.DefaultState);
+        }
+
+        // TODO: remove this after implementing death animation
+        void ResetAlpha()
+        {
+            // this is temp just for the alpha changing death animation
+            Color newColor = character.Data.renderer.color;
+            newColor.a = 1f;
+            character.Data.renderer.color = newColor;
         }
     }
 }

@@ -59,8 +59,11 @@ namespace Entity.Data
         {
             // apply damage
             Health -= damage;
-            // check if died, if so, switch to death state
-            if (PlayerController.Instance == null || Health > 0) return;
+            // check if died, if so, switch to death state, unless already in death state
+            if (PlayerController.Instance == null || Health > 0 || 
+                PlayerController.Instance.currentState == PlayerController.Instance.DeathState) 
+                    return;
+            // switch to death state to handle death
             PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
         }
 
