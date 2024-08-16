@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Idle : StateMachineBehaviour
 {
-    [SerializeField] float idleCooldown  = 5f;
+    [SerializeField] Vector2 cooldownRange = new Vector2(5f, 7f);
     [SerializeField] string triggerName;
-    float timeInState;
+    float cooldown, timeInState;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // reset time in state
         timeInState = 0f;
+        // set cooldown
+        cooldown = Random.Range(cooldownRange.x, cooldownRange.y);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,8 +21,10 @@ public class Idle : StateMachineBehaviour
        // increment time in state
        timeInState += Time.deltaTime;
        // check for state transition, if true, trigger transition
-       if (timeInState < idleCooldown) return;
+       if (timeInState < cooldown) return;
        animator.SetTrigger(triggerName);
+       // reset cooldown after playing idle animation
+        cooldown = Random.Range(cooldownRange.x, cooldownRange.y);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

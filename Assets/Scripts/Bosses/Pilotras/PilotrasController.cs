@@ -21,6 +21,7 @@ namespace Bosses.Pilotras
 
         [field: Header("Components")]
         [field: SerializeField] public PilotrasFireController fireController { get; private set; }
+        [field: SerializeField] public PilotrasNPCSpawner NPCSpawner{ get; private set; }
         [field: SerializeField] public IndicatorManager indicatorManager { get; private set; }
         [field: SerializeField] public Animator anim { get; private set; }
 
@@ -79,7 +80,7 @@ namespace Bosses.Pilotras
                     return null;
 
             return Instantiate(
-                data.currentPhaseNPCs[Random.Range(0, data.currentPhaseNPCs.Length)], 
+                NPCSpawner.GetNPC(), 
                 position, 
                 Quaternion.identity, 
                 levelManager.current_zone.transform
@@ -121,8 +122,6 @@ namespace Bosses.Pilotras
             foreach (FSMRecyclableNPC recyclable in data.recyclables)
             {
                 RecyclableType type = recyclable.recyclableType;
-                // ignore contaminant count
-                if (type == RecyclableType.OTHERS) continue; 
                 // increment count
                 if (!data.npcCount.ContainsKey(type))
                     data.npcCount.Add(type, 1);
@@ -211,6 +210,9 @@ namespace Bosses.Pilotras
                     .Concat(data.spawnable_npcs[index].gameObjects)
                     .Where(x => x != null)
                     .ToArray();
+            
+            // load NPCs into spawner script
+            NPCSpawner?.LoadNPCs();
         }
 
         void SpawnBins()
@@ -281,6 +283,10 @@ namespace Bosses.Pilotras
             currentPhase = 0;
             // load phase indicators
             LoadPhaseIndicator();
+            // reference self in npc spawner component
+            if (NPCSpawner != null && NPCSpawner.character == null)
+                NPCSpawner.character = this;
+            
             // initialize states
             DefaultState = new DefaultState(this, this);
             StartState = new StartState(this, this);

@@ -12,7 +12,7 @@ namespace Player.Behaviours
         protected PlayerCharacter data;
 
         // handle skill cooldown
-        Coroutine cooldown;
+        protected Coroutine cooldown;
         protected bool canTriggerSkill = false;
 
         /// <summary>

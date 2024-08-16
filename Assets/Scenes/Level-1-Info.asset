@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     levelName: Shanbi Park
-    levelCode: 
-    levelDescription: Yes
+    levelCode: LV - 1
+    levelDescription: 'There are pests everywhere! Stop food wastes from going into
+      bins to prevent pests! '
     levelImage: {fileID: 0}
     maxScore: 14
