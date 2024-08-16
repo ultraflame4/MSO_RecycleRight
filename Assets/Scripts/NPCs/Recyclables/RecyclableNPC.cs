@@ -83,7 +83,9 @@ namespace NPC.Recyclable
 
         public void Stun(float stun_duration)
         {
-            if (currentState == state_Stunned) return;
+            // if already stunned, reapply stun if new stun duration is longer
+            // otherwise, ignore new stun duration
+            if (currentState == state_Stunned && stun_duration <= state_Stunned.stun_timer) return;
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }

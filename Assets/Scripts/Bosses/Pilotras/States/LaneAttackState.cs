@@ -25,7 +25,7 @@ namespace Bosses.Pilotras.FSM
             GameObject obj = character.SpawnProjectile(new Vector2(spawnPos.x, character.yPosTop), out ProjectileController projectile);
             if (obj == null || projectile == null) return;
             // get npc prefab and sprites
-            GameObject prefab = character.data.currentPhaseNPCs[Random.Range(0, character.data.currentPhaseNPCs.Length)];
+            GameObject prefab = character.NPCSpawner.GetNPC();
             SpriteRenderer prefabSprite = prefab.transform.GetChild(1).GetComponentInChildren<SpriteRenderer>();
             // set projectile properties
             projectile.spriteRenderer.sprite = prefabSprite.sprite;

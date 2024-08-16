@@ -25,23 +25,24 @@ namespace Bosses.Pilotras.FSM
         {
             base.LogicUpdate();
 
-            if (character.currentPhase > 1 && character.LaneAttackState.CanEnter)
+            // only enter states that spawn more NPCs if NPC count is below the max count
+            if (character.data.npcCount.Values.Sum(x => x) < character.data.max_npc_count)
             {
-                fsm.SwitchState(character.LaneAttackState);
-                return;
+                if (character.currentPhase > 1 && character.LaneAttackState.CanEnter)
+                {
+                    fsm.SwitchState(character.LaneAttackState);
+                    return;
+                }
+
+                if (character.PlacingState.CanEnter)
+                {
+                    fsm.SwitchState(character.PlacingState);
+                    return;
+                }
             }
 
-            if (character.PlacingState.CanEnter && character.data.npcCount.Values.Sum(x => x) < character.data.max_npc_count)
-            {
-                fsm.SwitchState(character.PlacingState);
-                return;
-            }
-
-            if (character.BinDropState.CanEnter)
-            {
+            if (character.BinDropState.CanEnter) 
                 fsm.SwitchState(character.BinDropState);
-                return;
-            }
         }
     }
 }
