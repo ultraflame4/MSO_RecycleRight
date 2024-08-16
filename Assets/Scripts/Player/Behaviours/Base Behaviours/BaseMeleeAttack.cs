@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using Interfaces;
@@ -34,6 +35,11 @@ namespace Player.Behaviours
         [Header("VFX")]
         [Tooltip("Effect to spawn when attack is triggered")]
         [SerializeField] protected GameObject hitEffects;
+
+        /// <summary>
+        /// Event to be triggered when an enemy is hit
+        /// </summary>
+        public event Action<Collider2D[]> OnHit;
 
         // perform default melee attack
         public override void TriggerAttack()
@@ -85,6 +91,10 @@ namespace Player.Behaviours
             );
             // set vfx direction
             vfx.transform.up = character.pointer.up;
+
+            // invoke event if something is hit
+            if (hits == null || hits.Length <= 0) return;
+            OnHit?.Invoke(hits);
         }
 
         protected void OnDrawGizmosSelected()
