@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 12
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638594200564477062
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: ServiceWorker_Seraphine
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.7058824, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 292
-      y: 4
-      width: 64
-      height: 40
+      x: 80
+      y: 193
+      width: 17
+      height: 39
     spriteID: 2626a9ce77d06b64d9d13110ad5076fa
     spriteBone: []
     spriteOutline: []
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 292, y: 4}
+    uvTransform: {x: 80, y: 193}
   - name: ServiceWorker_Seraphine_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.5294118, y: -0.21428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 364
-      y: 4
-      width: 64
-      height: 40
+      x: 4
+      y: 193
+      width: 17
+      height: 42
     spriteID: d50963a3bb816d24281bbe620caed689
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 4}
+    uvTransform: {x: 4, y: 193}
   - name: ServiceWorker_Seraphine_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.47058824, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 4
-      width: 64
-      height: 40
+      x: 105
+      y: 193
+      width: 17
+      height: 39
     spriteID: 092606f0782305f4ea01dc01da0e3fbe
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 436, y: 4}
+    uvTransform: {x: 105, y: 193}
   - name: ServiceWorker_Seraphine_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.5, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 55
-      width: 64
-      height: 40
+      x: 223
+      y: 146
+      width: 18
+      height: 39
     spriteID: 4fb910e4a5c6b8d4f88a59114896c94a
     spriteBone: []
     spriteOutline: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 55}
+    uvTransform: {x: 223, y: 146}
   - name: ServiceWorker_Seraphine_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.5, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 55
-      width: 64
-      height: 40
+      x: 54
+      y: 193
+      width: 18
+      height: 39
     spriteID: d1665c2c1b19651428c367d451f98296
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 55}
+    uvTransform: {x: 54, y: 193}
   - name: ServiceWorker_Seraphine_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: -0.19512194}
+    pivot: {x: 0.5294118, y: -0.21428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 220
-      y: 4
-      width: 64
-      height: 41
+      x: 29
+      y: 193
+      width: 17
+      height: 42
     spriteID: 198463d24e25c7a46b51af0215d2c756
     spriteBone: []
     spriteOutline: []
@@ -240,17 +240,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 220, y: 4}
+    uvTransform: {x: 29, y: 193}
   - name: ServiceWorker_Seraphine_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: -0.20512821}
+    pivot: {x: 0.6875, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 220
-      y: 199
-      width: 64
+      x: 205
+      y: 193
+      width: 16
       height: 39
     spriteID: e08822bf86d5a9f46ae4e5b651f4e6b0
     spriteBone: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 220, y: 199}
+    uvTransform: {x: 205, y: 193}
   - name: ServiceWorker_Seraphine_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.7058824, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 55
-      width: 64
-      height: 40
+      x: 130
+      y: 193
+      width: 17
+      height: 39
     spriteID: 5e6aacb07d2dbb648875fa0474aa435b
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 55}
+    uvTransform: {x: 130, y: 193}
   - name: ServiceWorker_Seraphine_Frame_9
     originalName: 
-    pivot: {x: 0.5, y: -0.18604651}
+    pivot: {x: 0.7058824, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 64
-      height: 43
+      x: 155
+      y: 193
+      width: 17
+      height: 39
     spriteID: dc6ec1c91ccd09d48b10d475b44d8fd2
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 155, y: 193}
   - name: ServiceWorker_Seraphine_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.64705884, y: -0.25714287}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 220
-      y: 55
-      width: 64
-      height: 40
+      x: 229
+      y: 193
+      width: 17
+      height: 35
     spriteID: 92b0c9b44cfb4a9418d5d486b42e3ce4
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 220, y: 55}
+    uvTransform: {x: 229, y: 193}
   - name: ServiceWorker_Seraphine_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6666667, y: -0.25714287}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 292
-      y: 55
-      width: 64
-      height: 40
+      x: 159
+      y: 4
+      width: 27
+      height: 35
     spriteID: fe43ef19d86c8cb4c9543e9d823d5120
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 292, y: 55}
+    uvTransform: {x: 159, y: 4}
   - name: ServiceWorker_Seraphine_Frame_28
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.73913044, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 364
-      y: 55
-      width: 64
-      height: 40
+      x: 225
+      y: 4
+      width: 23
+      height: 36
     spriteID: 37b54d77017832d4ca4f6bf68d5d6d22
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 55}
+    uvTransform: {x: 225, y: 4}
   - name: ServiceWorker_Seraphine_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.18604651}
+    pivot: {x: 0.61904764, y: -0.24324325}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 4
-      width: 64
-      height: 43
+      x: 32
+      y: 146
+      width: 21
+      height: 37
     spriteID: e5a6d5304bd71a04c8bf8ede82a2df0b
     spriteBone: []
     spriteOutline: []
@@ -380,18 +380,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 4}
+    uvTransform: {x: 32, y: 146}
   - name: ServiceWorker_Seraphine_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6666667, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 55
-      width: 64
-      height: 40
+      x: 90
+      y: 4
+      width: 27
+      height: 36
     spriteID: d6b97a86467e6734eb6384c01b0b5049
     spriteBone: []
     spriteOutline: []
@@ -400,18 +400,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 436, y: 55}
+    uvTransform: {x: 90, y: 4}
   - name: ServiceWorker_Seraphine_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.7058824, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 103
-      width: 64
-      height: 40
+      x: 180
+      y: 193
+      width: 17
+      height: 39
     spriteID: 8d68364e18342c349975ea4aab916e5b
     spriteBone: []
     spriteOutline: []
@@ -420,18 +420,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 103}
+    uvTransform: {x: 180, y: 193}
   - name: ServiceWorker_Seraphine_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.54545456, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 103
-      width: 64
-      height: 40
+      x: 196
+      y: 49
+      width: 22
+      height: 39
     spriteID: 08c6c4206b4ca2247998aadc578eadb0
     spriteBone: []
     spriteOutline: []
@@ -440,18 +440,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 103}
+    uvTransform: {x: 196, y: 49}
   - name: ServiceWorker_Seraphine_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: -0.22222222}
+    pivot: {x: 0.54545456, y: -0.21428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 364
-      y: 247
-      width: 64
-      height: 36
+      x: 4
+      y: 96
+      width: 22
+      height: 42
     spriteID: 3bb1df51138dc6c46be46ee32469cc8c
     spriteBone: []
     spriteOutline: []
@@ -460,18 +460,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 247}
+    uvTransform: {x: 4, y: 96}
   - name: ServiceWorker_Seraphine_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: -0.22222222}
+    pivot: {x: 0.54545456, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 247
-      width: 64
-      height: 36
+      x: 226
+      y: 49
+      width: 22
+      height: 39
     spriteID: b8524a2b7ff4b6c4f8ca1bb953f6dc76
     spriteBone: []
     spriteOutline: []
@@ -480,18 +480,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 436, y: 247}
+    uvTransform: {x: 226, y: 49}
   - name: ServiceWorker_Seraphine_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: -0.21621622}
+    pivot: {x: 0.54545456, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 220
-      y: 247
-      width: 64
-      height: 37
+      x: 64
+      y: 96
+      width: 22
+      height: 39
     spriteID: 7af02c9ae64b9954691323b3d5fad59c
     spriteBone: []
     spriteOutline: []
@@ -500,18 +500,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 220, y: 247}
+    uvTransform: {x: 64, y: 96}
   - name: ServiceWorker_Seraphine_Frame_9
     originalName: 
-    pivot: {x: 0.5, y: -0.21052632}
+    pivot: {x: 0.6315789, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 292
-      y: 199
-      width: 64
-      height: 38
+      x: 61
+      y: 146
+      width: 19
+      height: 39
     spriteID: 21e1b71dde367104cb5c3de33182527f
     spriteBone: []
     spriteOutline: []
@@ -520,18 +520,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 292, y: 199}
+    uvTransform: {x: 61, y: 146}
   - name: ServiceWorker_Seraphine_Frame_10
     originalName: 
-    pivot: {x: 0.5, y: -0.21621622}
+    pivot: {x: 0.6315789, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 292
-      y: 247
-      width: 64
-      height: 37
+      x: 88
+      y: 146
+      width: 19
+      height: 39
     spriteID: 0f847d177b49b7f40851aafa70c2c648
     spriteBone: []
     spriteOutline: []
@@ -540,18 +540,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 292, y: 247}
+    uvTransform: {x: 88, y: 146}
   - name: ServiceWorker_Seraphine_Frame_11
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.65000004, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 103
-      width: 64
-      height: 40
+      x: 214
+      y: 96
+      width: 20
+      height: 39
     spriteID: fff142741e6fa5b43b124e9cb257a2bc
     spriteBone: []
     spriteOutline: []
@@ -560,18 +560,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 103}
+    uvTransform: {x: 214, y: 96}
   - name: ServiceWorker_Seraphine_Frame_12
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6956522, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 220
-      y: 103
-      width: 64
-      height: 40
+      x: 103
+      y: 49
+      width: 23
+      height: 39
     spriteID: e636b97d08dad284b9702012ad97d52c
     spriteBone: []
     spriteOutline: []
@@ -580,18 +580,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 220, y: 103}
+    uvTransform: {x: 103, y: 49}
   - name: ServiceWorker_Seraphine_Frame_13
     originalName: 
-    pivot: {x: 0.5, y: -0.18604651}
+    pivot: {x: 0.6956522, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 4
-      width: 64
-      height: 43
+      x: 134
+      y: 49
+      width: 23
+      height: 39
     spriteID: 2522ebc7d0d4dd44fa99f2fcff435e3e
     spriteBone: []
     spriteOutline: []
@@ -600,18 +600,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 4}
+    uvTransform: {x: 134, y: 49}
   - name: ServiceWorker_Seraphine_Frame_14
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.7083334, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 292
-      y: 103
-      width: 64
-      height: 40
+      x: 39
+      y: 49
+      width: 24
+      height: 39
     spriteID: b8f5b2b12279dfb499fe96c3db8b9064
     spriteBone: []
     spriteOutline: []
@@ -620,18 +620,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 292, y: 103}
+    uvTransform: {x: 39, y: 49}
   - name: ServiceWorker_Seraphine_Frame_15
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.7407408, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 364
-      y: 103
-      width: 64
-      height: 40
+      x: 4
+      y: 49
+      width: 27
+      height: 39
     spriteID: 651af9009e79b6d44993bd6371c59b19
     spriteBone: []
     spriteOutline: []
@@ -640,18 +640,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 103}
+    uvTransform: {x: 4, y: 49}
   - name: ServiceWorker_Seraphine_Frame_16
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.7083334, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 103
-      width: 64
-      height: 40
+      x: 71
+      y: 49
+      width: 24
+      height: 39
     spriteID: 37abf60ffa86f0342adbd559ebcd4232
     spriteBone: []
     spriteOutline: []
@@ -660,18 +660,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 436, y: 103}
+    uvTransform: {x: 71, y: 49}
   - name: ServiceWorker_Seraphine_Frame_17
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6956522, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 151
-      width: 64
-      height: 40
+      x: 165
+      y: 49
+      width: 23
+      height: 39
     spriteID: e673b3fb92ccf414da435e450d0bd507
     spriteBone: []
     spriteOutline: []
@@ -680,18 +680,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 151}
+    uvTransform: {x: 165, y: 49}
   - name: ServiceWorker_Seraphine_Frame_18
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.65000004, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 151
-      width: 64
-      height: 40
+      x: 4
+      y: 146
+      width: 20
+      height: 39
     spriteID: fc8bd39995370e3498d92136c612c43f
     spriteBone: []
     spriteOutline: []
@@ -700,18 +700,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 151}
+    uvTransform: {x: 4, y: 146}
   - name: ServiceWorker_Seraphine_Frame_22
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6315789, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 151
-      width: 64
-      height: 40
+      x: 115
+      y: 146
+      width: 19
+      height: 39
     spriteID: 83c46ebde3708f14d926f443a62c0a9a
     spriteBone: []
     spriteOutline: []
@@ -720,18 +720,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 151}
+    uvTransform: {x: 115, y: 146}
   - name: ServiceWorker_Seraphine_Frame_23
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.65217394, y: -0.24324325}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 220
-      y: 151
-      width: 64
-      height: 40
+      x: 194
+      y: 4
+      width: 23
+      height: 37
     spriteID: 8642048c36a2614478e7e5c7a808db21
     spriteBone: []
     spriteOutline: []
@@ -740,18 +740,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 220, y: 151}
+    uvTransform: {x: 194, y: 4}
   - name: ServiceWorker_Seraphine_Frame_24
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6216216, y: -0.24324325}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 292
-      y: 151
-      width: 64
-      height: 40
+      x: 4
+      y: 4
+      width: 37
+      height: 37
     spriteID: c2f80b8f5f9a2274cbde22f0ed822e8a
     spriteBone: []
     spriteOutline: []
@@ -760,18 +760,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 292, y: 151}
+    uvTransform: {x: 4, y: 4}
   - name: ServiceWorker_Seraphine_Frame_25
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.5757576, y: -0.24324325}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 364
-      y: 151
-      width: 64
-      height: 40
+      x: 49
+      y: 4
+      width: 33
+      height: 37
     spriteID: 26b83151b8312494b922587120efd3af
     spriteBone: []
     spriteOutline: []
@@ -780,18 +780,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 151}
+    uvTransform: {x: 49, y: 4}
   - name: ServiceWorker_Seraphine_Frame_27
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6923077, y: -0.24324325}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 151
-      width: 64
-      height: 40
+      x: 125
+      y: 4
+      width: 26
+      height: 37
     spriteID: 359fb1f31ec211c4daeef22c228617db
     spriteBone: []
     spriteOutline: []
@@ -800,18 +800,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 436, y: 151}
+    uvTransform: {x: 125, y: 4}
   - name: ServiceWorker_Seraphine_Frame_28
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6363636, y: -0.24324325}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 199
-      width: 64
-      height: 40
+      x: 184
+      y: 96
+      width: 22
+      height: 37
     spriteID: 2fc6444b2c6232e40a738f2dc3596d1d
     spriteBone: []
     spriteOutline: []
@@ -820,18 +820,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 199}
+    uvTransform: {x: 184, y: 96}
   - name: ServiceWorker_Seraphine_Frame_29
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.6315789, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 199
-      width: 64
-      height: 40
+      x: 142
+      y: 146
+      width: 19
+      height: 39
     spriteID: d007d3dc9d66d55459c35227899a5870
     spriteBone: []
     spriteOutline: []
@@ -840,18 +840,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 199}
+    uvTransform: {x: 142, y: 146}
   - name: ServiceWorker_Seraphine_Frame_30
     originalName: 
-    pivot: {x: 0.5, y: -0.21052632}
+    pivot: {x: 0.6315789, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 364
-      y: 199
-      width: 64
-      height: 38
+      x: 169
+      y: 146
+      width: 19
+      height: 39
     spriteID: e624dfe0369c208418683eddfef351a2
     spriteBone: []
     spriteOutline: []
@@ -860,18 +860,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 199}
+    uvTransform: {x: 169, y: 146}
   - name: ServiceWorker_Seraphine_Frame_31
     originalName: 
-    pivot: {x: 0.5, y: -0.21052632}
+    pivot: {x: 0.6315789, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 199
-      width: 64
-      height: 38
+      x: 196
+      y: 146
+      width: 19
+      height: 39
     spriteID: 47d1e64dc813e1144948d6524ed21c7c
     spriteBone: []
     spriteOutline: []
@@ -880,18 +880,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 436, y: 199}
+    uvTransform: {x: 196, y: 146}
   - name: ServiceWorker_Seraphine_Frame_32
     originalName: 
-    pivot: {x: 0.5, y: -0.21052632}
+    pivot: {x: 0.54545456, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 247
-      width: 64
-      height: 38
+      x: 94
+      y: 96
+      width: 22
+      height: 39
     spriteID: aaedd6f12521c5043ad67ee640b223e6
     spriteBone: []
     spriteOutline: []
@@ -900,18 +900,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 247}
+    uvTransform: {x: 94, y: 96}
   - name: ServiceWorker_Seraphine_Frame_33
     originalName: 
-    pivot: {x: 0.5, y: -0.21052632}
+    pivot: {x: 0.54545456, y: -0.22500001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 247
-      width: 64
-      height: 38
+      x: 34
+      y: 96
+      width: 22
+      height: 40
     spriteID: be787de82516f8241bcce941d2762f27
     spriteBone: []
     spriteOutline: []
@@ -920,17 +920,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 247}
+    uvTransform: {x: 34, y: 96}
   - name: ServiceWorker_Seraphine_Frame_34
     originalName: 
-    pivot: {x: 0.5, y: -0.21052632}
+    pivot: {x: 0.54545456, y: -0.23684211}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 247
-      width: 64
+      x: 154
+      y: 96
+      width: 22
       height: 38
     spriteID: c03933017434c2248aa378bada13b2bd
     spriteBone: []
@@ -940,18 +940,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 247}
+    uvTransform: {x: 154, y: 96}
   - name: ServiceWorker_Seraphine_Frame_35
     originalName: 
-    pivot: {x: 0.5, y: -0.2}
+    pivot: {x: 0.54545456, y: -0.23076923}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 199
-      width: 64
-      height: 40
+      x: 124
+      y: 96
+      width: 22
+      height: 39
     spriteID: 5faa1d0fbf0bd5c4cbb351bf77053b6e
     spriteBone: []
     spriteOutline: []
@@ -960,7 +960,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 199}
+    uvTransform: {x: 124, y: 96}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -973,342 +973,426 @@ ScriptedImporter:
     - name: ServiceWorker_Seraphine_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 2626a9ce77d06b64d9d13110ad5076fa
-    - name: ServiceWorker_Seraphine_Frame_26
-      frameIndex: 26
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: d50963a3bb816d24281bbe620caed689
-    - name: ServiceWorker_Seraphine_Frame_36
-      frameIndex: 36
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 092606f0782305f4ea01dc01da0e3fbe
-    - name: ServiceWorker_Seraphine_Frame_37
-      frameIndex: 37
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 4fb910e4a5c6b8d4f88a59114896c94a
-    - name: ServiceWorker_Seraphine_Frame_38
-      frameIndex: 38
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: d1665c2c1b19651428c367d451f98296
-    - name: ServiceWorker_Seraphine_Frame_39
-      frameIndex: 39
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 41
-      spriteId: 198463d24e25c7a46b51af0215d2c756
-    - name: ServiceWorker_Seraphine_Frame_40
-      frameIndex: 40
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
+        x: 20
+        y: 9
+        width: 17
         height: 39
-      spriteId: e08822bf86d5a9f46ae4e5b651f4e6b0
-    - name: ServiceWorker_Seraphine_Frame_41
-      frameIndex: 41
-      cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 5e6aacb07d2dbb648875fa0474aa435b
+      spriteId: 2626a9ce77d06b64d9d13110ad5076fa
     - name: ServiceWorker_Seraphine_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 43
-      spriteId: dc6ec1c91ccd09d48b10d475b44d8fd2
+        x: 23
+        y: 9
+        width: 17
+        height: 42
+      spriteId: d50963a3bb816d24281bbe620caed689
     - name: ServiceWorker_Seraphine_Frame_2
       frameIndex: 2
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 92b0c9b44cfb4a9418d5d486b42e3ce4
+        x: 24
+        y: 9
+        width: 17
+        height: 39
+      spriteId: 092606f0782305f4ea01dc01da0e3fbe
     - name: ServiceWorker_Seraphine_Frame_3
       frameIndex: 3
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: fe43ef19d86c8cb4c9543e9d823d5120
+        x: 23
+        y: 9
+        width: 18
+        height: 39
+      spriteId: 4fb910e4a5c6b8d4f88a59114896c94a
     - name: ServiceWorker_Seraphine_Frame_4
       frameIndex: 4
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 37b54d77017832d4ca4f6bf68d5d6d22
+        x: 23
+        y: 9
+        width: 18
+        height: 39
+      spriteId: d1665c2c1b19651428c367d451f98296
     - name: ServiceWorker_Seraphine_Frame_5
       frameIndex: 5
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 43
-      spriteId: e5a6d5304bd71a04c8bf8ede82a2df0b
+        x: 23
+        y: 9
+        width: 17
+        height: 42
+      spriteId: 198463d24e25c7a46b51af0215d2c756
     - name: ServiceWorker_Seraphine_Frame_6
       frameIndex: 6
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: d6b97a86467e6734eb6384c01b0b5049
+        x: 21
+        y: 9
+        width: 16
+        height: 39
+      spriteId: e08822bf86d5a9f46ae4e5b651f4e6b0
     - name: ServiceWorker_Seraphine_Frame_7
       frameIndex: 7
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 8d68364e18342c349975ea4aab916e5b
+        x: 20
+        y: 9
+        width: 17
+        height: 39
+      spriteId: 5e6aacb07d2dbb648875fa0474aa435b
     - name: ServiceWorker_Seraphine_Frame_8
       frameIndex: 8
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 08c6c4206b4ca2247998aadc578eadb0
+        x: 20
+        y: 9
+        width: 17
+        height: 39
+      spriteId: dc6ec1c91ccd09d48b10d475b44d8fd2
     - name: ServiceWorker_Seraphine_Frame_9
       frameIndex: 9
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 36
-      spriteId: 3bb1df51138dc6c46be46ee32469cc8c
+        x: 21
+        y: 9
+        width: 17
+        height: 35
+      spriteId: 92b0c9b44cfb4a9418d5d486b42e3ce4
     - name: ServiceWorker_Seraphine_Frame_10
       frameIndex: 10
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 36
-      spriteId: b8524a2b7ff4b6c4f8ca1bb953f6dc76
+        x: 14
+        y: 9
+        width: 27
+        height: 35
+      spriteId: fe43ef19d86c8cb4c9543e9d823d5120
     - name: ServiceWorker_Seraphine_Frame_11
       frameIndex: 11
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 37
-      spriteId: 7af02c9ae64b9954691323b3d5fad59c
+        x: 15
+        y: 9
+        width: 23
+        height: 36
+      spriteId: 37b54d77017832d4ca4f6bf68d5d6d22
     - name: ServiceWorker_Seraphine_Frame_12
       frameIndex: 12
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 38
-      spriteId: 21e1b71dde367104cb5c3de33182527f
+        x: 19
+        y: 9
+        width: 21
+        height: 37
+      spriteId: e5a6d5304bd71a04c8bf8ede82a2df0b
     - name: ServiceWorker_Seraphine_Frame_13
       frameIndex: 13
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 37
-      spriteId: 0f847d177b49b7f40851aafa70c2c648
+        x: 14
+        y: 9
+        width: 27
+        height: 36
+      spriteId: d6b97a86467e6734eb6384c01b0b5049
     - name: ServiceWorker_Seraphine_Frame_14
       frameIndex: 14
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: fff142741e6fa5b43b124e9cb257a2bc
+        x: 20
+        y: 9
+        width: 17
+        height: 39
+      spriteId: 8d68364e18342c349975ea4aab916e5b
     - name: ServiceWorker_Seraphine_Frame_15
       frameIndex: 15
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: e636b97d08dad284b9702012ad97d52c
+        x: 20
+        y: 9
+        width: 22
+        height: 39
+      spriteId: 08c6c4206b4ca2247998aadc578eadb0
     - name: ServiceWorker_Seraphine_Frame_16
       frameIndex: 16
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 43
-      spriteId: 2522ebc7d0d4dd44fa99f2fcff435e3e
+        x: 20
+        y: 9
+        width: 22
+        height: 42
+      spriteId: 3bb1df51138dc6c46be46ee32469cc8c
     - name: ServiceWorker_Seraphine_Frame_17
       frameIndex: 17
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: b8f5b2b12279dfb499fe96c3db8b9064
+        x: 20
+        y: 9
+        width: 22
+        height: 39
+      spriteId: b8524a2b7ff4b6c4f8ca1bb953f6dc76
     - name: ServiceWorker_Seraphine_Frame_18
       frameIndex: 18
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 651af9009e79b6d44993bd6371c59b19
+        x: 20
+        y: 9
+        width: 22
+        height: 39
+      spriteId: 7af02c9ae64b9954691323b3d5fad59c
     - name: ServiceWorker_Seraphine_Frame_19
       frameIndex: 19
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 37abf60ffa86f0342adbd559ebcd4232
+        x: 20
+        y: 9
+        width: 19
+        height: 39
+      spriteId: 21e1b71dde367104cb5c3de33182527f
     - name: ServiceWorker_Seraphine_Frame_20
       frameIndex: 20
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: e673b3fb92ccf414da435e450d0bd507
+        x: 20
+        y: 9
+        width: 19
+        height: 39
+      spriteId: 0f847d177b49b7f40851aafa70c2c648
     - name: ServiceWorker_Seraphine_Frame_21
       frameIndex: 21
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: fc8bd39995370e3498d92136c612c43f
+        x: 19
+        y: 9
+        width: 20
+        height: 39
+      spriteId: fff142741e6fa5b43b124e9cb257a2bc
     - name: ServiceWorker_Seraphine_Frame_22
       frameIndex: 22
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 83c46ebde3708f14d926f443a62c0a9a
+        x: 16
+        y: 9
+        width: 23
+        height: 39
+      spriteId: e636b97d08dad284b9702012ad97d52c
     - name: ServiceWorker_Seraphine_Frame_23
       frameIndex: 23
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 8642048c36a2614478e7e5c7a808db21
+        x: 16
+        y: 9
+        width: 23
+        height: 39
+      spriteId: 2522ebc7d0d4dd44fa99f2fcff435e3e
     - name: ServiceWorker_Seraphine_Frame_24
       frameIndex: 24
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: c2f80b8f5f9a2274cbde22f0ed822e8a
+        x: 15
+        y: 9
+        width: 24
+        height: 39
+      spriteId: b8f5b2b12279dfb499fe96c3db8b9064
     - name: ServiceWorker_Seraphine_Frame_25
       frameIndex: 25
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 26b83151b8312494b922587120efd3af
+        x: 12
+        y: 9
+        width: 27
+        height: 39
+      spriteId: 651af9009e79b6d44993bd6371c59b19
+    - name: ServiceWorker_Seraphine_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 15
+        y: 9
+        width: 24
+        height: 39
+      spriteId: 37abf60ffa86f0342adbd559ebcd4232
     - name: ServiceWorker_Seraphine_Frame_27
       frameIndex: 27
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 359fb1f31ec211c4daeef22c228617db
+        x: 16
+        y: 9
+        width: 23
+        height: 39
+      spriteId: e673b3fb92ccf414da435e450d0bd507
     - name: ServiceWorker_Seraphine_Frame_28
       frameIndex: 28
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: 2fc6444b2c6232e40a738f2dc3596d1d
+        x: 19
+        y: 9
+        width: 20
+        height: 39
+      spriteId: fc8bd39995370e3498d92136c612c43f
     - name: ServiceWorker_Seraphine_Frame_29
       frameIndex: 29
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 40
-      spriteId: d007d3dc9d66d55459c35227899a5870
+        x: 20
+        y: 9
+        width: 19
+        height: 39
+      spriteId: 83c46ebde3708f14d926f443a62c0a9a
     - name: ServiceWorker_Seraphine_Frame_30
       frameIndex: 30
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 38
-      spriteId: e624dfe0369c208418683eddfef351a2
+        x: 17
+        y: 9
+        width: 23
+        height: 37
+      spriteId: 8642048c36a2614478e7e5c7a808db21
     - name: ServiceWorker_Seraphine_Frame_31
       frameIndex: 31
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 38
-      spriteId: 47d1e64dc813e1144948d6524ed21c7c
+        x: 9
+        y: 9
+        width: 37
+        height: 37
+      spriteId: c2f80b8f5f9a2274cbde22f0ed822e8a
     - name: ServiceWorker_Seraphine_Frame_32
       frameIndex: 32
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 38
-      spriteId: aaedd6f12521c5043ad67ee640b223e6
+        x: 13
+        y: 9
+        width: 33
+        height: 37
+      spriteId: 26b83151b8312494b922587120efd3af
     - name: ServiceWorker_Seraphine_Frame_33
       frameIndex: 33
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 38
-      spriteId: be787de82516f8241bcce941d2762f27
+        x: 14
+        y: 9
+        width: 26
+        height: 37
+      spriteId: 359fb1f31ec211c4daeef22c228617db
     - name: ServiceWorker_Seraphine_Frame_34
       frameIndex: 34
       cellRect:
-        x: 0
-        y: 8
-        width: 64
-        height: 38
-      spriteId: c03933017434c2248aa378bada13b2bd
+        x: 18
+        y: 9
+        width: 22
+        height: 37
+      spriteId: 2fc6444b2c6232e40a738f2dc3596d1d
     - name: ServiceWorker_Seraphine_Frame_35
       frameIndex: 35
       cellRect:
-        x: 0
-        y: 8
-        width: 64
+        x: 20
+        y: 9
+        width: 19
+        height: 39
+      spriteId: d007d3dc9d66d55459c35227899a5870
+    - name: ServiceWorker_Seraphine_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 20
+        y: 9
+        width: 19
+        height: 39
+      spriteId: e624dfe0369c208418683eddfef351a2
+    - name: ServiceWorker_Seraphine_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 20
+        y: 9
+        width: 19
+        height: 39
+      spriteId: 47d1e64dc813e1144948d6524ed21c7c
+    - name: ServiceWorker_Seraphine_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 20
+        y: 9
+        width: 22
+        height: 39
+      spriteId: aaedd6f12521c5043ad67ee640b223e6
+    - name: ServiceWorker_Seraphine_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 20
+        y: 9
+        width: 22
         height: 40
+      spriteId: be787de82516f8241bcce941d2762f27
+    - name: ServiceWorker_Seraphine_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 20
+        y: 9
+        width: 22
+        height: 38
+      spriteId: c03933017434c2248aa378bada13b2bd
+    - name: ServiceWorker_Seraphine_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 20
+        y: 9
+        width: 22
+        height: 39
       spriteId: 5faa1d0fbf0bd5c4cbb351bf77053b6e
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: tvOS
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

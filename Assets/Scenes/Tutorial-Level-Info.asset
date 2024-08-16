@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial-Level-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: Tutorial
+    levelName: Simulation Training
     levelCode: TR - 0
     levelDescription: "This is a combat simulation to teach new volunteers the proper
       ways to recycle. \n(This description is to be edited)"

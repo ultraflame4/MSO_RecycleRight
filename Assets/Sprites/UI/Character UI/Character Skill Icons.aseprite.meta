@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 36
-      y: 4
+      x: 4
+      y: 65
       width: 22
       height: 21
     spriteID: 18724b2e730c80f4bafcc2572ffc51e0
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 36, y: 4}
+    uvTransform: {x: 4, y: 65}
   - name: Character Skill Icons_Frame_0
     originalName: 
     pivot: {x: 0.47826087, y: -0.23809524}
@@ -168,8 +168,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 36
-      y: 33
+      x: 4
+      y: 94
       width: 24
       height: 19
     spriteID: d9d661425911c2048bca24bf7dc81e5d
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 36, y: 33}
+    uvTransform: {x: 4, y: 94}
   - name: Character Skill Icons_Frame_3
     originalName: 
     pivot: {x: 0.5, y: -0.16666667}
@@ -201,6 +201,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Character Skill Icons_Frame_4
+    originalName: 
+    pivot: {x: 0.47619048, y: -0.3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 21
+      height: 20
+    spriteID: 19ce33fece9eaf644ae2b4e08479de1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -242,6 +262,14 @@ ScriptedImporter:
         width: 24
         height: 24
       spriteId: 7613277c2b5ddf04b821336fc494979a
+    - name: Character Skill Icons_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 6
+        y: 6
+        width: 21
+        height: 20
+      spriteId: 19ce33fece9eaf644ae2b4e08479de1f
     linkedCells: []
     parentIndex: -1
   platformSettings:

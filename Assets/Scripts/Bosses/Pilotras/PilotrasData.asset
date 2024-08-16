@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Pilotras
   characterDesc: 
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: -459471962243436463, guid: bb7cafbe8de95454fa595eaecb29bd85, type: 3}
