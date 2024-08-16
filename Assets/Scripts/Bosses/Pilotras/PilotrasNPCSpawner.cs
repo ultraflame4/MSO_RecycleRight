@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Level.Bins;
 using NPC;
@@ -48,15 +49,29 @@ namespace Bosses.Pilotras
             }
         }
 
+        /// <summary>
+        /// Get a random NPC based on weights, the smaller the amount of NPC of that type is spawned, the higher the weight
+        /// </summary>
+        /// <returns>Prefab of the randomly selected NPC game object</returns>
         public GameObject GetNPC()
         {
             // update NPC count before calculating which NPC to return
-            // actually, this should be called in the method calling this to avoid being called too much as it is inefficient
-            // character.UpdateNPCCount();
+            character.UpdateNPCCount();
 
             if (prefabs.Keys.Count < 2)
                 return defaultOutput;
 
+            // calculate weights for each recyclable type
+            CalculateWeight();
+            // return a random game object based on assigned weight
+            return GetRandomBasedOnWeight();
+        }
+
+        /// <summary>
+        /// Calculate weights for each recycling type
+        /// </summary>
+        public void CalculateWeight()
+        {
             // reset weight
             if (weight == null)
                 weight = new Dictionary<RecyclableType, float>();
@@ -76,17 +91,25 @@ namespace Bosses.Pilotras
                 else
                     weight.Add(type, Mathf.Clamp01(1f - (character.data.npcCount[type] / npcSum)));
             }
+        }
 
+        GameObject GetRandomBasedOnWeight()
+        {
             float randomValue = Random.Range(0f, 1f);
             RecyclableType? selectedType = null;
+            StringBuilder log = new StringBuilder();
 
             // search for a type that has a higher weight than the random value
             foreach (RecyclableType type in weight.Keys)
             {
+                // concat log, show recycling type and its weight
+                log.Append($"{type}: {weight[type]} \n");
+
                 // pass if weight is below random value, or currently selected value has a higher weight
                 if (randomValue > weight[type] || (selectedType != null && 
                     weight[type] < weight[(RecyclableType) selectedType])) 
                         continue;
+                
                 // if two objects have the same weight, randomely select 1 of them
                 if (selectedType != null && weight[type] == weight[(RecyclableType) selectedType])
                 {
@@ -96,6 +119,11 @@ namespace Bosses.Pilotras
                 // assign selected type
                 selectedType = type;
             }
+
+            // concant selected type
+            log.Append($"Selected Type: {selectedType}");
+            // log everything in one message
+            Debug.Log(log.ToString());
 
             // if none of the types got selected, return default output (pure random chance)
             if (selectedType == null) return defaultOutput;

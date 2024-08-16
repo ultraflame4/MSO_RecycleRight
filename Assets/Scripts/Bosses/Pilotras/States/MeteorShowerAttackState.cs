@@ -20,7 +20,6 @@ namespace Bosses.Pilotras.FSM
             duration = character.behaviourData.meteor_attack_duration + character.data.attack_delay;
             base.Enter();
             character.anim?.SetBool("SkillActive", true);
-            character.UpdateNPCCount();
             amountToPlace = character.behaviourData.meteor_attack_place_npc;
             coroutine_placing = character.StartCoroutine(PlaceNPC());
         }

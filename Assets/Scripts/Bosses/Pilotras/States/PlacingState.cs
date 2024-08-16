@@ -29,7 +29,6 @@ namespace Bosses.Pilotras.FSM
             duration = character.behaviourData.placing_duration;
             cooldown = character.behaviourData.placing_cooldown;
             base.Enter();
-            character.UpdateNPCCount();
             throwAlternative = false;
             amountToPlace = character.behaviourData.place_npc_amount;
             coroutine_placing = character.StartCoroutine(PlaceNPC());

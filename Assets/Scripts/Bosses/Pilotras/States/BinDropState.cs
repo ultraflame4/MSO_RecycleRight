@@ -162,7 +162,10 @@ namespace Bosses.Pilotras.FSM
         void LoadBins()
         {
             if (character.levelManager == null || character.data.spawnedBins == null || character.data.spawnedBins.Length <= 0)
+            {
+                Debug.LogWarning("Bins could not be loaded! (BinDropState.cs)");
                 return;
+            }
             
             // array to store bins that can be used
             RecyclingBin[] binsFound = new RecyclingBin[0];
@@ -217,6 +220,7 @@ namespace Bosses.Pilotras.FSM
                 Debug.LogWarning($"Unable to find a usable bin to drop. (BinDropState.cs)");
                 return;
             }
+            // if there are bin found, but no usable bin is selected, select a random bin
             else if (usableBin == null)
             {
                 Debug.Log("Successfully selected a random bin.");

@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
-  maxHealth: 500
+  maxHealth: 1200
   yOffset: 3
   numberOfPhases: 2
   maxNPCCount: 10
@@ -341,7 +341,7 @@ MonoBehaviour:
   dropAttackRange: 3
   dropSpeed: 0.25
   binDropDuration: {x: 7, y: 10}
-  binDropCooldown: {x: 8, y: 12}
+  binDropCooldown: {x: 12, y: 20}
   binDropSpeed: 0.5
   binDropDelay: 0.6
   binDropForce: 25
@@ -353,7 +353,7 @@ MonoBehaviour:
     m_Bits: 384
   binSpacing: 5
   binPositionOffset: {x: 0, y: -5}
-  toppleThreshold: 1
+  toppleThreshold: 3
   toppleDuration: 8
   toppleDamageMultiplier: 7
   colliderOffset: {x: 0, y: -2.3}

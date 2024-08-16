@@ -16,7 +16,6 @@ namespace Bosses.Pilotras.FSM
         {
             cooldown = character.behaviourData.lane_attack_cooldown;
             base.Enter();
-            character.UpdateNPCCount();
             SpawnProjectile();
         }
 
