@@ -353,7 +353,7 @@ MonoBehaviour:
     m_Bits: 384
   binSpacing: 5
   binPositionOffset: {x: 0, y: -5}
-  toppleThreshold: 3
+  toppleThreshold: 2
   toppleDuration: 8
   toppleDamageMultiplier: 7
   colliderOffset: {x: 0, y: -2.3}
