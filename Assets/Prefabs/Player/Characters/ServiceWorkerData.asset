@@ -17,11 +17,11 @@ MonoBehaviour:
   characterSprite: {fileID: -1758215695319470813, guid: e88b5231d08ce47489e1677fabccadf2, type: 3}
   maxHealth: 100
   movementSpeed: 250
-  attackTriggerTimeFrame: 0.75
+  attackTriggerTimeFrame: 0.65
   skillCooldown: 15
   skillTriggerTimeFrame: 0.5
   skillIcon: {fileID: 0}
-  attackDuration: 2
+  attackDuration: 1.4
   skillDuration: 1
   deathDuration: 3.5
   characterSelectionSprite: {fileID: -1758215695319470813, guid: e88b5231d08ce47489e1677fabccadf2, type: 3}
