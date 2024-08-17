@@ -27,6 +27,7 @@ namespace UI.LevelSelection.CharacterSelection
         int selectedIndex = -1;
 
         bool quickSelectActive => toggleQuickSelect != null && toggleQuickSelect.activated;
+        public float transition_duration => transitionDuration;
 
         // Start is called before the first frame update
         void Start()
@@ -280,7 +281,6 @@ namespace UI.LevelSelection.CharacterSelection
                 slot.SetCharacter();
             }
         }
-
 
         void ResetLocalParty()
         {

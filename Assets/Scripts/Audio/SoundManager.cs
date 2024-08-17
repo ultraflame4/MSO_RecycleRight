@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
+        // set singleton instance
         if (_instance == null)
         {
             _instance = this;
@@ -30,12 +31,14 @@ public class SoundManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Multiple sound manager detected! This is not allowed!");
-        }
-    }
 
-    void Start()
-    {
+            // check if instance is the singleton instance
+        }
+
+        // get sources for sound effects
         sfxSources = GetComponents<AudioSource>();
+        // play background music
+        PlayBackgroundMusic(0);
     }
 
     /// <summary>
@@ -61,7 +64,15 @@ public class SoundManager : MonoBehaviour
     /// <param name="index">Index of audio clip in clips array</param>
     public void PlayBackgroundMusic(int index)
     {
-        if (clips == null || clips.Length <= 0 || index < 0 || index >= clips.Length) return;
+        // check if there are any clips to play
+        if (clips == null || clips.Length <= 0 || index < 0 || index >= clips.Length)
+        {
+            Debug.LogWarning($"Background music clip of index {index} could not be found! (SoundManager.cs)");
+            return;
+        }
+        // check if current clip is already the new clip, if so, do not play
+        if (bgSource.clip == clips[index] && bgSource.isPlaying) return;
+        // set clip and play background music
         bgSource.clip = clips[index];
         bgSource.Play();
     }

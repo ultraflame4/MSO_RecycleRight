@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] float loadLevelDelay = 2.5f;
 
     public GameConfigSO config;
-
-    [Tooltip("Whether this is the root game manager. if it is, it will not be destroyed on scene load.")]
-    public bool is_root = false;
     
     // array of characters that are currently in the party
     private PlayerCharacterSO[] selected_characters;
@@ -60,12 +57,11 @@ public class GameManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            if (is_root) DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
-
-        if (_instance != this)
+        else
         {
-            if (_instance.is_root && _instance != this)
+            if (_instance != this)
             {
                 Debug.LogWarning("Detected existing root game manager. This game manager will be deactived!");
                 gameObject.SetActive(false);
