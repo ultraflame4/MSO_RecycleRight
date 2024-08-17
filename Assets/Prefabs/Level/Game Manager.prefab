@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgSource: {fileID: 4564917739623658011}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: cd5e7dcaf492adb4881abbcdf50c772a, type: 3}
+  - {fileID: 8300000, guid: 79129d5fe022620458e154742584e5c1, type: 3}
 --- !u!82 &3612100737761973442
 AudioSource:
   m_ObjectHideFlags: 0
