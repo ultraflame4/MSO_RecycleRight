@@ -262,6 +262,7 @@ MonoBehaviour:
   indicators:
   - {fileID: 5944602439400701129, guid: 21f920474ee8b8546ae6d1e14c40f3ea, type: 3}
   - {fileID: 891033910534830446, guid: 54a745a97c346e44ab5830a56eb2ac0c, type: 3}
+  - {fileID: 5021793109218903118, guid: bce18d9126524d542a3d99e173237c85, type: 3}
   indicatorParent: {fileID: 1070498166784091656}
 --- !u!114 &6189416132222840899
 MonoBehaviour:
@@ -314,7 +315,7 @@ MonoBehaviour:
   spawnedBins: []
   recyclables: []
   minBounds: {x: -19, y: -11.5}
-  maxBounds: {x: 19, y: 7}
+  maxBounds: {x: 19, y: 7.7}
   damageTakenScale: 1
 --- !u!114 &8480909623808237515
 MonoBehaviour:

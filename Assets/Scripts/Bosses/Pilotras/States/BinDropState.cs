@@ -14,17 +14,20 @@ namespace Bosses.Pilotras.FSM
     public class BinDropState : CooldownState<PilotrasController>
     {
         List<RecyclingBin> selectedBins = new List<RecyclingBin>();
-        Vector2 shockwaveCenter, shockwaveSize;
-        float scoredInInstance;
+        Vector2 binContainerLocation, shockwaveCenter, shockwaveSize;
+        float xPos, yPos, scoredInInstance;
 
         public BinDropState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
-            base(fsm, character, character.PostBinDropStunState, character.behaviourData.bin_drop_duration, character.behaviourData.bin_drop_cooldown)
+            base(fsm, character, character.PostBinDropStunState, 
+                character.behaviourData.bin_drop_duration + character.data.attack_delay, 
+                character.behaviourData.bin_drop_cooldown)
         {
         }
 
         public override void Enter()
         {
-            duration = character.behaviourData.bin_drop_duration;
+            duration = character.behaviourData.bin_drop_duration + 
+                character.data.attack_delay;
             cooldown = character.behaviourData.bin_drop_cooldown;
             base.Enter();
 
@@ -39,36 +42,8 @@ namespace Bosses.Pilotras.FSM
             // load second bin if phase is more than one
             if (character.currentPhase > 1) LoadBins();
 
-            // play animation
-            character.anim?.Play("Slam");
-            // stun all enemies within zone
-            StunNPCs();
-
-            // set bin location and activate bin
-            Vector2 binContainerLocation = (Vector2) character.transform.position + character.behaviourData.bin_offset;
-            float xPos = binContainerLocation.x - (character.behaviourData.bin_spacing * ((selectedBins.Count - 1f) / 2f));
-            float yPos = binContainerLocation.y;
-
-            // set shockwave values
-            shockwaveSize = new Vector2(Mathf.Abs(xPos) + character.behaviourData.bin_spacing, 
-                character.yPosTop - binContainerLocation.y + character.behaviourData.bin_spacing);
-            shockwaveCenter = binContainerLocation;
-            shockwaveCenter.y += (shockwaveSize.y - character.behaviourData.bin_spacing) / 2f;
-            // push back NPCs under drop location
-            SendShockwave(shockwaveCenter, shockwaveSize);
-            // halve shockwave size for debugging method
-            shockwaveSize *= 0.5f;
-
-            // drop bin to designated location
-            for (int i = 0; i < selectedBins.Count; i++)
-            {
-                GameObject bin = selectedBins[i].gameObject;
-                xPos += i * character.behaviourData.bin_spacing;
-                bin.transform.position = new Vector2(xPos, character.yPosTop);
-                character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
-                    character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos)));
-                character.StartCoroutine(DelayedBinEnable(selectedBins[i]));
-            }
+            // start coroutine to count delay before dropping bin
+            character.StartCoroutine(DelayedBinDrop());
         }
 
         public override void LogicUpdate()
@@ -135,6 +110,30 @@ namespace Bosses.Pilotras.FSM
             Debug.DrawLine(bottomLeft, topLeft, Color.magenta);
         }
 
+        void DropBin()
+        {
+            // play animation
+            character.anim?.Play("Slam");
+            // stun all enemies within zone
+            StunNPCs();
+
+            // push back NPCs under drop location
+            SendShockwave(shockwaveCenter, shockwaveSize);
+            // halve shockwave size for debugging method
+            shockwaveSize *= 0.5f;
+
+            // drop bin to designated location
+            for (int i = 0; i < selectedBins.Count; i++)
+            {
+                GameObject bin = selectedBins[i].gameObject;
+                xPos += i * character.behaviourData.bin_spacing;
+                bin.transform.position = new Vector2(xPos, character.yPosTop);
+                character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
+                    character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos)));
+                character.StartCoroutine(DelayedBinEnable(selectedBins[i]));
+            }
+        }
+
         void SendShockwave(Vector2 center, Vector2 detectionSize)
         {
             Collider2D[] hits = Physics2D.OverlapBoxAll(center, detectionSize, 
@@ -157,7 +156,8 @@ namespace Bosses.Pilotras.FSM
             foreach (FSMRecyclableNPC recyclable in character.data.recyclables)
             {
                 if (recyclable == null) continue;
-                recyclable.GetComponent<IStunnable>()?.Stun(duration);
+                if (!recyclable.TryGetComponent<IStunnable>(out IStunnable stunnable)) continue;
+                stunnable.Stun(character.behaviourData.bin_drop_duration);
             }
         }
 
@@ -253,6 +253,37 @@ namespace Bosses.Pilotras.FSM
             
             if (type == null || type != RecyclableType.ELECTRONICS) return;
             character.fireController?.SpawnFire();
+        }
+
+        IEnumerator DelayedBinDrop()
+        {
+            // set bin location and activate bin
+            binContainerLocation = (Vector2) character.transform.position + character.behaviourData.bin_offset;
+            xPos = binContainerLocation.x - (character.behaviourData.bin_spacing * ((selectedBins.Count - 1f) / 2f));
+            yPos = binContainerLocation.y;
+
+            // set shockwave values
+            shockwaveSize = new Vector2(Mathf.Abs(xPos) + character.behaviourData.bin_spacing, 
+                character.yPosTop - binContainerLocation.y + character.behaviourData.bin_spacing);
+            shockwaveCenter = binContainerLocation;
+            shockwaveCenter.y += (shockwaveSize.y - character.behaviourData.bin_spacing) / 2f;
+
+            // show indicator
+            Vector2 indicatorScale = shockwaveSize;
+            indicatorScale.y *= 0.5f;
+            GameObject indicator = character.indicatorManager.Instantiate(2, 
+                new Vector2(shockwaveCenter.x, shockwaveCenter.y - (indicatorScale.y * 0.5f)));
+            Transform indicatorSprite = indicator.transform.GetChild(0);
+            indicatorSprite.localScale *= indicatorScale;
+
+            // delay the attack by the attack indicator
+            yield return new WaitForSeconds(character.data.attack_delay);
+
+            // hide indicator after attack delay duration
+            indicatorSprite.localScale /= indicatorScale;
+            indicator.SetActive(false);
+            // drop bin after waiting for attack delay
+            DropBin();
         }
 
         IEnumerator DelayedBinEnable(RecyclingBin bin)
