@@ -257,7 +257,8 @@ namespace Bosses.Pilotras.FSM
 
         IEnumerator DelayedBinEnable(RecyclingBin bin)
         {
-            yield return new WaitForSeconds(character.behaviourData.bin_drop_speed);
+            yield return new WaitForSeconds(character.behaviourData.bin_drop_delay + 
+                character.behaviourData.bin_drop_speed);
             bin.enabled = true;
         }
 
