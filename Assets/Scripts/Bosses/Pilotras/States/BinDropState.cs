@@ -67,6 +67,7 @@ namespace Bosses.Pilotras.FSM
                 bin.transform.position = new Vector2(xPos, character.yPosTop);
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
                     character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos)));
+                character.StartCoroutine(DelayedBinEnable(selectedBins[i]));
             }
         }
 
@@ -89,7 +90,8 @@ namespace Bosses.Pilotras.FSM
             {
                 // unsubcribe from bin scored event
                 bin.BinScored -= BinScored;
-
+                // disable bin script when lifting up bin
+                bin.enabled = false;
                 // start coroutines to lift bin
                 character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin.gameObject, 
                     new Vector2(bin.transform.position.x, character.yPosTop)));
@@ -229,6 +231,9 @@ namespace Bosses.Pilotras.FSM
             
             // subscribe to bin scored event and add to selected bin list
             usableBin.BinScored += BinScored;
+            // disable bin script while still dropping down
+            usableBin.enabled = false;
+            // add bin to selected bin list
             selectedBins.Add(usableBin);
         }
 
@@ -248,6 +253,12 @@ namespace Bosses.Pilotras.FSM
             
             if (type == null || type != RecyclableType.ELECTRONICS) return;
             character.fireController?.SpawnFire();
+        }
+
+        IEnumerator DelayedBinEnable(RecyclingBin bin)
+        {
+            yield return new WaitForSeconds(character.behaviourData.bin_drop_speed);
+            bin.enabled = true;
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)
