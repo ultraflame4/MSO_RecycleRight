@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -771,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LevelSelected
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -791,7 +791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2389568814100847355, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2725661417663651049, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_Color.b
@@ -1902,6 +1902,8 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 0}
   glitchCooldown: {x: 0, y: 0}
+  openSound: {fileID: 8300000, guid: 8af51593b06334d44839395ab850be88, type: 3}
+  closeSound: {fileID: 8300000, guid: 9eacbef26fbbf174d9ad8bc193a216b7, type: 3}
   enableGlitch: 0
   mapSelect: {fileID: 1318483433}
   image: {fileID: 1577550078}
@@ -2430,6 +2432,8 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 612612365}
   glitchCooldown: {x: 3, y: 7}
+  openSound: {fileID: 8300000, guid: 8af51593b06334d44839395ab850be88, type: 3}
+  closeSound: {fileID: 8300000, guid: 9eacbef26fbbf174d9ad8bc193a216b7, type: 3}
   enableGlitch: 1
 --- !u!1 &613292065
 GameObject:
@@ -3038,6 +3042,8 @@ MonoBehaviour:
   maxScale: 1
   anim: {fileID: 678959726}
   glitchCooldown: {x: 3, y: 7}
+  openSound: {fileID: 8300000, guid: 8af51593b06334d44839395ab850be88, type: 3}
+  closeSound: {fileID: 8300000, guid: 9eacbef26fbbf174d9ad8bc193a216b7, type: 3}
   enableGlitch: 1
   characterList: {fileID: 844162021}
   characterInfo: {fileID: 1686857924}
@@ -3800,7 +3806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7012,7 +7018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8938,6 +8944,18 @@ MonoBehaviour:
       - m_Target: {fileID: 491974445}
         m_TargetAssemblyTypeName: UI.LevelSelection.LevelDetailsPopupMenu, Assembly-CSharp
         m_MethodName: OpenLevelChoiceHall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 491974445}
+        m_TargetAssemblyTypeName: UI.LevelSelection.LevelDetailsPopupMenu, Assembly-CSharp
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
