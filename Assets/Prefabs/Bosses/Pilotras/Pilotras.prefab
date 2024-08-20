@@ -347,14 +347,14 @@ MonoBehaviour:
   attackChanceIncreasePerPhase: 0.15
   dropAttackRange: 3
   dropSpeed: 0.25
-  binDropDuration: {x: 7, y: 10}
+  binDropDuration: {x: 12, y: 20}
   binDropCooldown: {x: 12, y: 20}
   binDropSpeed: 0.5
   binDropDelay: 0.6
   binDropForce: 25
   postDropStunDuration: 5
-  scoredDamage: 100
-  contaminatedHeal: 50
+  scoredDamage: 300
+  contaminatedHeal: 200
   dropDetectionMask:
     serializedVersion: 2
     m_Bits: 384
