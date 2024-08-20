@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -33,6 +34,10 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("Multiple sound manager detected! This is not allowed!");
 
             // check if instance is the singleton instance
+            if (_instance != this)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         // get sources for sound effects
@@ -42,19 +47,79 @@ public class SoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Play a one-shot sound effect
+    /// Play a continuous sound effect
     /// </summary>
     /// <param name="clip">Audio clip to play</param>
-    public void Play(AudioClip clip)
+    public void Play(AudioClip clip, bool loop = false)
     {
         if (sfxSources == null) return;
 
+        AudioSource availableSource = null;
+
+        if (sfxSources.Select(x => x.clip).Contains(clip)) return;
+
+        // search for an available audio source to play sound
         foreach (AudioSource source in sfxSources)
         {
-            if (source.isPlaying || source == sfxSources[^1]) continue;
-            source.clip = clip;
-            source.PlayOneShot(clip);
+            if (source.isPlaying) continue;
+            availableSource = source;
             break;
+        }
+
+        // if there are no audio sources found, add a new one
+        if (availableSource == null)
+        {
+            availableSource = gameObject.AddComponent<AudioSource>();
+            sfxSources = sfxSources.Concat(new AudioSource[]{availableSource}).ToArray();
+        }
+
+        availableSource.clip = clip;
+        availableSource.loop = loop;
+        availableSource.Play();
+    }
+
+    /// <summary>
+    /// Play a one-shot sound effect
+    /// </summary>
+    /// <param name="clip">Audio clip to play</param>
+    public void PlayOneShot(AudioClip clip)
+    {
+        if (sfxSources == null) return;
+
+        AudioSource availableSource = null;
+
+        // search for an available audio source to play sound
+        foreach (AudioSource source in sfxSources)
+        {
+            if (source.isPlaying) continue;
+            availableSource = source;
+            break;
+        }
+
+        // if there are no audio sources found, add a new one
+        if (availableSource == null)
+        {
+            availableSource = gameObject.AddComponent<AudioSource>();
+            sfxSources = sfxSources.Concat(new AudioSource[]{availableSource}).ToArray();
+        }
+        
+        // play audio
+        availableSource.loop = false;
+        availableSource.PlayOneShot(clip);
+    }
+
+    /// <summary>
+    /// Stop playing clip
+    /// </summary>
+    /// <param name="clip">Audio clip to stop playing</param>
+    public void Stop(AudioClip clip)
+    {
+        // search for audio source with clip
+        foreach (AudioSource source in sfxSources)
+        {
+            if (source.clip != clip) continue;
+            source.clip = null;
+            return;
         }
     }
 

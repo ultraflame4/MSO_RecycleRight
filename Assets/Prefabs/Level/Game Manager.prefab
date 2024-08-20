@@ -578,7 +578,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -710,4 +710,3 @@ MonoBehaviour:
   partySize: 3
   loadLevelDelay: 1
   config: {fileID: 11400000, guid: 4c5f914acc7877248ad6477e193426d9, type: 2}
-  is_root: 0
