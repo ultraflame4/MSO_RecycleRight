@@ -8,6 +8,7 @@ namespace UI
     public class PauseManager : MonoBehaviour
     {
         [SerializeField] KeyCode pauseKey = KeyCode.Escape;
+        [SerializeField] AudioClip pauseSFX;
         private GameObject pauseMenu;
 
         public bool Paused { get; private set; } = false;
@@ -54,6 +55,7 @@ namespace UI
         public void TogglePause()
         {
             Paused = !Paused;
+            SoundManager.Instance?.PlayOneShot(pauseSFX);
             Time.timeScale = Paused ? 0f : 1f;
             pauseMenu?.SetActive(Paused);
         }
