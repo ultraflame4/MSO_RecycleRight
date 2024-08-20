@@ -8,21 +8,34 @@ namespace UI
     {
         [SerializeField] PlayerCharacterUIProfile[] UIIcons;
         CharacterManager characterManager => PlayerController.Instance.CharacterManager;
+        bool started = false;
 
         // Start is called before the first frame update
         void Start()
         {
-            // ensure character manager is not null
-            if (characterManager == null) return;
+            // ensure character manager and character instance is not null
+            if (characterManager == null || characterManager.character_instances == null || 
+                characterManager.character_instances.Length <= 0) 
+                    return;
             // subscribe to character change event
             characterManager.CharacterChanged += OnCharacterChange;
             // start by setting all UI icons
             SetAllUI(characterManager.character_instances[0]);
+            // set boolean managing start to true
+            started = true;
         }
 
         // Update is called once per frame
         void Update()
         {
+            // ensure character manager and character instance is not null
+            if (characterManager == null || characterManager.character_instances == null || 
+                characterManager.character_instances.Length <= 0) 
+                    return;
+            // when not null, check whether started, if not, call start again
+            else if (!started)
+                Start();
+            
             // hide/show UI based on number of characters currently in the party
             UpdateUIShown();
         }
