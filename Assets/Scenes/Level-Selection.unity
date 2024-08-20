@@ -2183,6 +2183,7 @@ MonoBehaviour:
   right: 500
   up: 100
   down: -350
+  dragSound: {fileID: 8300000, guid: c962af3d48e40394591e9cc971b57c74, type: 3}
 --- !u!114 &585237348
 MonoBehaviour:
   m_ObjectHideFlags: 0

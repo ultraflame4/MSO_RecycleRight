@@ -17,6 +17,9 @@ namespace UI
         [SerializeField] private float padding = 15f;
         [SerializeField] private float left, right, up, down;
 
+        [Header("Sound Effects")]
+        [SerializeField] AudioClip dragSound;
+
         private Vector3 originalPosition;
         private Vector2 maxPos, minPos, originalLocalPointerPosition, tempPos;
 
@@ -39,6 +42,7 @@ namespace UI
                 );
 
             originalPosition = target.localPosition;
+            SoundManager.Instance?.PlayOneShot(dragSound);
         }
 
         public void OnDrag(PointerEventData data)
