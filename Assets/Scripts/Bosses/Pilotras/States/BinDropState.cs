@@ -157,7 +157,7 @@ namespace Bosses.Pilotras.FSM
             {
                 if (recyclable == null) continue;
                 if (!recyclable.TryGetComponent<IStunnable>(out IStunnable stunnable)) continue;
-                stunnable.Stun(character.behaviourData.bin_drop_duration);
+                stunnable.Stun(duration);
             }
         }
 
