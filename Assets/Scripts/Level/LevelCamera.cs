@@ -51,10 +51,14 @@ namespace Level
             CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
             if (cameraMultiChannelPerlin != null)
             {
+                var og_freq = cameraMultiChannelPerlin.m_FrequencyGain;
+                var og_amp = cameraMultiChannelPerlin.m_AmplitudeGain;
+
                 cameraMultiChannelPerlin.m_AmplitudeGain = overrideIntensity.GetValueOrDefault(intensity);
-                yield return new WaitForSeconds(time);
-                cameraMultiChannelPerlin.m_AmplitudeGain = 0;
                 cameraMultiChannelPerlin.m_FrequencyGain = frequency;
+                yield return new WaitForSeconds(time);
+                cameraMultiChannelPerlin.m_FrequencyGain = og_freq;
+                cameraMultiChannelPerlin.m_AmplitudeGain = og_amp;
             }
 
         }
