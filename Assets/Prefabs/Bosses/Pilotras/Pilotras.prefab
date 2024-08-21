@@ -288,6 +288,11 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 64
+  roar:
+  - {fileID: 8300000, guid: 825e7e5a1dc967440a688362b8d5af76, type: 3}
+  - {fileID: 8300000, guid: 9220e44a46fb96c44b848d77d9561da1, type: 3}
+  binDrop: {fileID: 8300000, guid: 1ba10a6fc9086804a8eedc5c94532221, type: 3}
+  meteorAttack: {fileID: 8300000, guid: 79c7d4f638fccde4d8c7eb4ab77870f0, type: 3}
   healthbar: {fileID: 0}
   phaseIndicatorParent: {fileID: 0}
   phaseIndicatorPrefab: {fileID: 5212493657992605512, guid: cf2f3e6010b506e4b9da71a055dbc045, type: 3}

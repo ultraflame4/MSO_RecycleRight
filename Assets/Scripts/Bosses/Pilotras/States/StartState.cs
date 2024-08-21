@@ -14,5 +14,11 @@ namespace Bosses.Pilotras.FSM
             duration = character.behaviourData.spawn_duration;
             base.Enter();
         }
+
+        public override void Exit()
+        {
+            base.Exit();
+            character.Roar();
+        }
     }
 }

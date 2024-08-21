@@ -247,8 +247,12 @@ namespace Bosses.Pilotras.FSM
                 return;
             }
 
+            // play roaring sound effect
+            character.Roar();
+            // heal self
             character.GetComponent<IDamagable>()?
                 .Damage(character.behaviourData.contaminated_heal * scoreChange);
+            // immidiately exit state
             fsm.SwitchState(nextState);
             
             if (type == null || type != RecyclableType.ELECTRONICS) return;
@@ -291,6 +295,8 @@ namespace Bosses.Pilotras.FSM
             yield return new WaitForSeconds(character.behaviourData.bin_drop_delay + 
                 character.behaviourData.bin_drop_speed);
             bin.enabled = true;
+            // play sfx when bin landed on ground
+            SoundManager.Instance?.PlayOneShot(character.data.sfx_bin_drop);
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)

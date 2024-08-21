@@ -140,6 +140,12 @@ namespace Bosses.Pilotras
             SpawnBins();
             UpdatePhaseIndicator();
         }
+
+        public void Roar()
+        {
+            if (data.sfx_roar == null || data.sfx_roar.Length <= 0) return;
+            SoundManager.Instance?.PlayOneShot(data.sfx_roar[Random.Range(0, data.sfx_roar.Length)]);
+        }
         #endregion
 
         #region Public Coroutines
