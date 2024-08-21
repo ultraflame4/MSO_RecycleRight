@@ -262,6 +262,7 @@ MonoBehaviour:
   indicators:
   - {fileID: 5944602439400701129, guid: 21f920474ee8b8546ae6d1e14c40f3ea, type: 3}
   - {fileID: 891033910534830446, guid: 54a745a97c346e44ab5830a56eb2ac0c, type: 3}
+  - {fileID: 5021793109218903118, guid: bce18d9126524d542a3d99e173237c85, type: 3}
   indicatorParent: {fileID: 1070498166784091656}
 --- !u!114 &6189416132222840899
 MonoBehaviour:
@@ -298,6 +299,12 @@ MonoBehaviour:
     - {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     - {fileID: 6849047566521263402, guid: 1c3074f0e06cf96488afe0c47f712594, type: 3}
     - {fileID: 6848308265610111689, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+    - {fileID: 9071025310280361308, guid: 14b472ffa2f654640bf146bcde20dc71, type: 3}
+    - {fileID: 3013555632393553417, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+    - {fileID: 1564597524434622808, guid: c7e1d65aa430fdc469413f324039d823, type: 3}
+    - {fileID: 3052286528121432579, guid: a0e4d281c121f604f90d756360b2e32c, type: 3}
+    - {fileID: 7012942309559121826, guid: 29d23458f0a82e44f94151ccc6e6fd80, type: 3}
+    - {fileID: 3436674809278473350, guid: 31004d4d912fc2f45964943b9cc5ed0e, type: 3}
   - gameObjects:
     - {fileID: 8202214878067815596, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
     - {fileID: 673962853163920643, guid: f03ceb70198345a4dba10c1d4a797045, type: 3}
@@ -314,7 +321,7 @@ MonoBehaviour:
   spawnedBins: []
   recyclables: []
   minBounds: {x: -19, y: -11.5}
-  maxBounds: {x: 19, y: 7}
+  maxBounds: {x: 19, y: 7.7}
   damageTakenScale: 1
 --- !u!114 &8480909623808237515
 MonoBehaviour:
@@ -340,14 +347,14 @@ MonoBehaviour:
   attackChanceIncreasePerPhase: 0.15
   dropAttackRange: 3
   dropSpeed: 0.25
-  binDropDuration: {x: 7, y: 10}
+  binDropDuration: {x: 12, y: 20}
   binDropCooldown: {x: 12, y: 20}
   binDropSpeed: 0.5
   binDropDelay: 0.6
   binDropForce: 25
   postDropStunDuration: 5
-  scoredDamage: 100
-  contaminatedHeal: 50
+  scoredDamage: 300
+  contaminatedHeal: 200
   dropDetectionMask:
     serializedVersion: 2
     m_Bits: 384
