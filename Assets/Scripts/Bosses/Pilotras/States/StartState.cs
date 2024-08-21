@@ -13,12 +13,8 @@ namespace Bosses.Pilotras.FSM
         {
             duration = character.behaviourData.spawn_duration;
             base.Enter();
-        }
-
-        public override void Exit()
-        {
-            base.Exit();
-            character.Roar();
+            // play roaring sfx before animation ends
+            character.StartCoroutine(WaitForSeconds(duration * 0.5f, character.Roar));
         }
     }
 }
