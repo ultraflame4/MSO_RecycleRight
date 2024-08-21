@@ -297,6 +297,8 @@ namespace Bosses.Pilotras.FSM
             bin.enabled = true;
             // play sfx when bin landed on ground
             SoundManager.Instance?.PlayOneShot(character.data.sfx_bin_drop);
+            // shake camera for effects
+            character.levelManager?.camera?.ShakeCamera(0.5f);
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)

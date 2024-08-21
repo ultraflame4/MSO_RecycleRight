@@ -147,6 +147,7 @@ namespace Bosses.Pilotras
         {
             if (data.sfx_roar == null || data.sfx_roar.Length <= 0) return;
             SoundManager.Instance?.PlayOneShot(data.sfx_roar[Random.Range(0, data.sfx_roar.Length)]);
+            levelManager?.camera?.ShakeCamera(1f);
         }
         #endregion
 
