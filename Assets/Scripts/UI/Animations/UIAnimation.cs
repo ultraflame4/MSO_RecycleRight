@@ -9,7 +9,7 @@ namespace UI.Animations
         [SerializeField] string animationName;
         [SerializeField] float durationBetweenFrames = 100f;
         [SerializeField] Image targetImage;
-        [SerializeField] Sprite[] sprites;
+        [SerializeField] public Sprite[] sprites;
 
         Coroutine playAnimationCoroutine;
         int currentSprite = 0;
