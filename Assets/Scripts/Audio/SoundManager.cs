@@ -50,13 +50,14 @@ public class SoundManager : MonoBehaviour
     /// Play a continuous sound effect
     /// </summary>
     /// <param name="clip">Audio clip to play</param>
-    public void Play(AudioClip clip, bool loop = false)
+    /// <param name="availableSource">Audio source that is playing the sound effect</param>
+    /// <param name="loop">Whether to loop the audio</param>
+    /// <returns>Boolean depending on if an available audio source was found</returns>
+    public bool Play(AudioClip clip, out AudioSource availableSource, bool loop = false)
     {
-        if (sfxSources == null) return;
+        availableSource = null;
 
-        AudioSource availableSource = null;
-
-        if (sfxSources.Select(x => x.clip).Contains(clip)) return;
+        if (sfxSources == null) return false;
 
         // search for an available audio source to play sound
         foreach (AudioSource source in sfxSources)
@@ -76,6 +77,7 @@ public class SoundManager : MonoBehaviour
         availableSource.clip = clip;
         availableSource.loop = loop;
         availableSource.Play();
+        return true;
     }
 
     /// <summary>
@@ -109,18 +111,15 @@ public class SoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Stop playing clip
+    /// Stop playing continuous sound effect and reset audio clip
     /// </summary>
-    /// <param name="clip">Audio clip to stop playing</param>
-    public void Stop(AudioClip clip)
+    /// <param name="source">Audio source to stop playing</param>
+    public void Stop(AudioSource source)
     {
-        // search for audio source with clip
-        foreach (AudioSource source in sfxSources)
-        {
-            if (source.clip != clip) continue;
-            source.clip = null;
-            return;
-        }
+        if (source == null) return;
+        source.Stop();
+        source.clip = null;
+        source.loop = false;
     }
 
     /// <summary>
