@@ -22,6 +22,9 @@ namespace Bosses.Pilotras.FSM
             character.anim?.SetBool("SkillActive", true);
             amountToPlace = character.behaviourData.meteor_attack_place_npc;
             coroutine_placing = character.StartCoroutine(PlaceNPC());
+            // play sfx
+            character.Roar();
+            SoundManager.Instance?.PlayOneShot(character.data.sfx_meteor_attack);
         }
 
         public override void Exit()

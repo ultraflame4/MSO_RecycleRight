@@ -1052,7 +1052,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2468097981035856190, guid: ffcb19e6411e5b64ba46f50bd5e32bb9, type: 3}
       propertyPath: clipIndex
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7458795414775214892, guid: ffcb19e6411e5b64ba46f50bd5e32bb9, type: 3}
       propertyPath: m_Name

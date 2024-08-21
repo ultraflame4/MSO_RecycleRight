@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Level;
 
 namespace Bosses.Pilotras
 {
@@ -16,6 +15,10 @@ namespace Bosses.Pilotras
         [Header("Tile Instantiation")]
         [SerializeField] Tilemap tilemap;
         [SerializeField] GameObject fireTilePrefab;
+
+        [Header("Sound Effect")]
+        [SerializeField] AudioClip fireSpawnSound;
+        [SerializeField] AudioClip fireSound;
 
         [HideInInspector] public Vector2 minBounds, maxBounds;
 
@@ -33,6 +36,10 @@ namespace Bosses.Pilotras
                 tilePos.x++;
                 StartCoroutine(SpreadFire(tilePos));
             }
+
+            if (SoundManager.Instance == null) return;
+            SoundManager.Instance.PlayOneShot(fireSpawnSound);
+            StartCoroutine(PlayFireSound());
         }
 
         IEnumerator SpreadFire(Vector3Int tilePos)
@@ -44,6 +51,15 @@ namespace Bosses.Pilotras
                 LoadTile(tilePos, fireDuration + (fireSpreadSpeed * (length - i)));
                 tilePos.y--;
                 yield return new WaitForSeconds(fireSpreadSpeed);
+            }
+        }
+
+        IEnumerator PlayFireSound()
+        {
+            if (SoundManager.Instance.Play(fireSound, out AudioSource source, true))
+            {
+                yield return new WaitForSeconds(fireDuration + fireSpreadSpeed * (maxBounds.y - minBounds.y));
+                SoundManager.Instance.Stop(source);
             }
         }
 
