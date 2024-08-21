@@ -129,7 +129,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 133
+      y: 136
       width: 41
       height: 99
     spriteID: 9fda3ef6d75882c43ace9457ed63f218
@@ -140,10 +140,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 133}
+    uvTransform: {x: 4, y: 136}
   - name: Selected Character Sprite_Frame_1
     originalName: 
-    pivot: {x: 0.47457626, y: 0.49586776}
+    pivot: {x: 0.47457626, y: 0.48387095}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -151,7 +151,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 59
-      height: 121
+      height: 124
     spriteID: 706c05da75ab34b4b896aca92fa96bed
     spriteBone: []
     spriteOutline: []
@@ -224,7 +224,7 @@ ScriptedImporter:
         x: 4
         y: 4
         width: 59
-        height: 121
+        height: 124
       spriteId: 706c05da75ab34b4b896aca92fa96bed
     - name: Selected Character Sprite_Frame_2
       frameIndex: 2
