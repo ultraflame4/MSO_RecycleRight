@@ -62,7 +62,7 @@ namespace Level
 
         public void ShakeCamera(float time, float? overrideIntensity = null)
         {
-            if (camera_shake_coroutine == null)
+            if (camera_shake_coroutine != null)
             {
                 StopCoroutine(camera_shake_coroutine);
             }
