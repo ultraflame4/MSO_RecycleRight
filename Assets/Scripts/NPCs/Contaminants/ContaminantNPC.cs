@@ -173,7 +173,7 @@ namespace NPC.Contaminant
             SwitchState(state_Stunned);
         }
 
-        public override void SpawnRecyclable()
+        protected override void SpawnRecyclable()
         {
             base.SpawnRecyclable();
             if (spawned_cleaned_prefab) return;

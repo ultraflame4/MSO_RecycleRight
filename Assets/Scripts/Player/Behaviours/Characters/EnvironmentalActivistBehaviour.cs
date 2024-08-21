@@ -134,7 +134,7 @@ namespace Player.Behaviours
             
             foreach (ContaminantNPC contaminant in contaminants)
             {
-                contaminant.SpawnRecyclable();
+                contaminant.Clean(1000);
             }
         }
         #endregion

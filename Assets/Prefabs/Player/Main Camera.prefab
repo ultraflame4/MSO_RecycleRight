@@ -427,9 +427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confiner2D: {fileID: 4517138807874186986}
-  virtualCamera: {fileID: 5916121004051317633}
   pendingBoundsUpdate: 0
   intensity: 15
+  frequency: 0.21
 --- !u!1001 &5343047118262627681
 PrefabInstance:
   m_ObjectHideFlags: 0
