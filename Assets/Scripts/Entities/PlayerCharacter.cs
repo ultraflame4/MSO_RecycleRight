@@ -4,7 +4,7 @@ using Player;
 
 namespace Entity.Data
 {
-    public class PlayerCharacter : Entity, IDamagable, IFireTick
+    public class PlayerCharacter : Entity, IDamagable, IFireTick, IStunnable
     {
         // inspector fields
         [SerializeField] PlayerCharacterSO objectData;
@@ -52,6 +52,7 @@ namespace Entity.Data
         }
 
         public bool Switchable => !OverrideSwitchable && !(IsCleaning || Health <= 0);
+        private PlayerController controller => PlayerController.Instance;
         #endregion
 
         #region Interface Methods
@@ -60,16 +61,24 @@ namespace Entity.Data
             // apply damage
             Health -= damage;
             // check if died, if so, switch to death state, unless already in death state
-            if (PlayerController.Instance == null || Health > 0 || 
-                PlayerController.Instance.currentState == PlayerController.Instance.DeathState) 
+            if (controller == null || Health > 0 || 
+                controller.currentState == controller.DeathState) 
                     return;
             // switch to death state to handle death
-            PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
+            controller.SwitchState(controller.DeathState);
         }
 
         public void ApplyFireDamage(float damage)
         {
             Damage(damage * Time.deltaTime);
+        }
+
+        public void Stun(float duration)
+        {
+            if (controller == null) return;
+            if (duration <= controller.StunState.duration) return;
+            controller.StunState.duration = duration;
+            controller.SwitchState(controller.StunState);
         }
         #endregion
 
