@@ -9,6 +9,7 @@ using Level;
 using Level.Bins;
 using NPC;
 using Random = UnityEngine.Random;
+using Cinemachine;
 
 namespace Bosses.Pilotras
 {
@@ -24,6 +25,7 @@ namespace Bosses.Pilotras
         [field: SerializeField] public PilotrasNPCSpawner NPCSpawner{ get; private set; }
         [field: SerializeField] public IndicatorManager indicatorManager { get; private set; }
         [field: SerializeField] public Animator anim { get; private set; }
+        [field: SerializeField] public CinemachineVirtualCamera bossPeek { get; private set; }
 
         [Header("Debug")]
         [SerializeField] int debugPhase = 2;

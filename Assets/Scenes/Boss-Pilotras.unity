@@ -172,6 +172,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
@@ -181,6 +185,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5070938545856957664, guid: a9fce7a00e1098843a2528213204b641, type: 3}
@@ -1103,6 +1119,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffcb19e6411e5b64ba46f50bd5e32bb9, type: 3}
+--- !u!114 &1426787646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2019871439605263355, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+  m_PrefabInstance: {fileID: 1519737337020142533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1450798903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1602,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28122139194736817, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: orthographic size
+      value: 11.19741
+      objectReference: {fileID: 0}
     - target: {fileID: 493971440476763513, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04
@@ -1615,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1362292167819739103, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_CustomBlends
+      value: 
+      objectReference: {fileID: 11400000, guid: 57d4c5c6ebeb28440921e9e446155f9e, type: 2}
     - target: {fileID: 4517138807874186986, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_Damping
       value: 1.5
@@ -1638,6 +1673,10 @@ PrefabInstance:
     - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203113563929096455, guid: e30992eac08a718408820dd6e92c8862, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8564434415938832313, guid: e30992eac08a718408820dd6e92c8862, type: 3}
       propertyPath: m_Name
@@ -1987,6 +2026,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 30632834}
+    - target: {fileID: 5834889440481102622, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6189416132222840899, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
       propertyPath: healthbar
       value: 
@@ -2003,6 +2046,10 @@ PrefabInstance:
       propertyPath: debug_zone
       value: 
       objectReference: {fileID: 843036383}
+    - target: {fileID: 7426227777418501112, guid: 93f6ab3e1e40e6f4a9e4cab8a4cf2346, type: 3}
+      propertyPath: <bossPeek>k__BackingField
+      value: 
+      objectReference: {fileID: 1426787646}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
