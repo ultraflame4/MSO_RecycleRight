@@ -15,6 +15,9 @@ namespace Bosses.Pilotras.FSM
     {
         List<RecyclingBin> selectedBins = new List<RecyclingBin>();
         Vector2 binContainerLocation, shockwaveCenter, shockwaveSize;
+        List<Coroutine> coroutine_throw, coroutine_enable;
+        Coroutine coroutine_drop;
+        GameObject indicator;
         float xPos, yPos, scoredInInstance;
 
         public BinDropState(StateMachine<PilotrasController> fsm, PilotrasController character) : 
@@ -22,6 +25,8 @@ namespace Bosses.Pilotras.FSM
                 character.behaviourData.bin_drop_duration + character.data.attack_delay, 
                 character.behaviourData.bin_drop_cooldown)
         {
+            coroutine_throw = new List<Coroutine>();
+            coroutine_enable = new List<Coroutine>();
         }
 
         public override void Enter()
@@ -36,6 +41,11 @@ namespace Bosses.Pilotras.FSM
             selectedBins.Clear();
             // reset bin points in this drop instance
             scoredInInstance = 0f;
+            // reset coroutine lists
+            coroutine_throw = ResetCoroutines(coroutine_throw);
+            coroutine_enable = ResetCoroutines(coroutine_enable);
+            coroutine_throw.Clear();
+            coroutine_enable.Clear();
 
             // load bins to be dropped
             LoadBins();
@@ -43,7 +53,7 @@ namespace Bosses.Pilotras.FSM
             if (character.currentPhase > 1) LoadBins();
 
             // start coroutine to count delay before dropping bin
-            character.StartCoroutine(DelayedBinDrop());
+            coroutine_drop = character.StartCoroutine(DelayedBinDrop());
         }
 
         public override void LogicUpdate()
@@ -58,6 +68,15 @@ namespace Bosses.Pilotras.FSM
         {
             base.Exit();
             character.anim?.Play("Slam (Reverse)");
+
+            // stop bin drop coroutine
+            if (coroutine_drop != null) character.StopCoroutine(coroutine_drop);
+            coroutine_throw = ResetCoroutines(coroutine_throw);
+            coroutine_enable = ResetCoroutines(coroutine_enable);
+            // reset indicator
+            indicator?.SetActive(false);
+            indicator = null;
+
             // reset bin points in this drop instance
             scoredInInstance = 0f;
             // return each bin
@@ -110,6 +129,17 @@ namespace Bosses.Pilotras.FSM
             Debug.DrawLine(bottomLeft, topLeft, Color.magenta);
         }
 
+        List<Coroutine> ResetCoroutines(List<Coroutine> coroutines)
+        {
+            foreach (Coroutine coroutine in coroutines)
+            {
+                if (coroutine == null) continue;
+                character.StopCoroutine(coroutine);
+            }
+
+            return coroutines;
+        }
+
         void DropBin()
         {
             // play animation
@@ -128,9 +158,9 @@ namespace Bosses.Pilotras.FSM
                 GameObject bin = selectedBins[i].gameObject;
                 xPos += i * character.behaviourData.bin_spacing;
                 bin.transform.position = new Vector2(xPos, character.yPosTop);
-                character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
-                    character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos)));
-                character.StartCoroutine(DelayedBinEnable(selectedBins[i]));
+                coroutine_throw.Add(character.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, 
+                    character.behaviourData.bin_drop_delay, bin, new Vector2(xPos, yPos))));
+                coroutine_enable.Add(character.StartCoroutine(DelayedBinEnable(selectedBins[i])));
             }
         }
 
@@ -293,7 +323,7 @@ namespace Bosses.Pilotras.FSM
             // show indicator
             Vector2 indicatorScale = shockwaveSize;
             indicatorScale.y *= 0.5f;
-            GameObject indicator = character.indicatorManager.Instantiate(2, 
+            indicator = character.indicatorManager.Instantiate(2, 
                 new Vector2(shockwaveCenter.x, shockwaveCenter.y - (indicatorScale.y * 0.5f)));
             Transform indicatorSprite = indicator.transform.GetChild(0);
             indicatorSprite.localScale *= indicatorScale;
@@ -301,6 +331,8 @@ namespace Bosses.Pilotras.FSM
             // delay the attack by the attack indicator
             yield return new WaitForSeconds(character.data.attack_delay);
 
+            // reset coroutine to null
+            coroutine_drop = null;
             // hide indicator after attack delay duration
             indicatorSprite.localScale /= indicatorScale;
             indicator.SetActive(false);
