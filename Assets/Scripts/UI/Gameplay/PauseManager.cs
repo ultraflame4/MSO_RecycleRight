@@ -63,6 +63,7 @@ namespace UI
         public void RestartLevel()
         {
             if (Paused) TogglePause();
+            SoundManager.Instance?.RestartBackgroundMusic();
             LoadScene(SceneManager.GetActiveScene().name);
         }
 

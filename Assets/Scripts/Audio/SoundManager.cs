@@ -141,4 +141,13 @@ public class SoundManager : MonoBehaviour
         bgSource.clip = clips[index];
         bgSource.Play();
     }
+
+    /// <summary>
+    /// Restarts current background music
+    /// </summary>
+    public void RestartBackgroundMusic()
+    {
+        bgSource.Stop();
+        bgSource.Play();
+    }
 }
