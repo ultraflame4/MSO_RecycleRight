@@ -10,6 +10,7 @@ using Level.Bins;
 using NPC;
 using Random = UnityEngine.Random;
 using Cinemachine;
+using Bosses.Pilotras.Bin;
 
 namespace Bosses.Pilotras
 {
@@ -23,6 +24,8 @@ namespace Bosses.Pilotras
         [field: Header("Components")]
         [field: SerializeField] public PilotrasFireController fireController { get; private set; }
         [field: SerializeField] public PilotrasNPCSpawner NPCSpawner{ get; private set; }
+        [field: SerializeField] public PilotrasBinManager binManager { get; private set; }
+        [field: SerializeField] public PilotrasBinCoroutineManager binCoroutineManager { get; private set; }
         [field: SerializeField] public IndicatorManager indicatorManager { get; private set; }
         [field: SerializeField] public Animator anim { get; private set; }
         [field: SerializeField] public CinemachineVirtualCamera bossPeek { get; private set; }
