@@ -14,6 +14,10 @@ public class LevelScoreGrade
     public float percentage;
     [Tooltip("The sprite to display for this grade.")]
     public Sprite gradeSprite;
+    
+    [Tooltip("The sprites (animation if multiple) to display for this grade")]
+    public Sprite[] gradeSpritesFrames;
+
     [Tooltip("The number of times to repeat the sprite (horizontal).")]
     public int spriteRepeat;
 
