@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6074362775189852417}
   - component: {fileID: 6684652518950387044}
   - component: {fileID: 2398392272276177953}
+  - component: {fileID: 2498676602108860920}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -88,6 +89,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &2498676602108860920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152091641695689989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0.21
+  mNoiseOffsets: {x: -428.22397, y: -43.654083, z: 372.8585}
 --- !u!1 &3520340102589339866
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confiner2D: {fileID: 4517138807874186986}
+  virtualCamera: {fileID: 5916121004051317633}
   pendingBoundsUpdate: 0
+  intensity: 15
 --- !u!1001 &5343047118262627681
 PrefabInstance:
   m_ObjectHideFlags: 0
