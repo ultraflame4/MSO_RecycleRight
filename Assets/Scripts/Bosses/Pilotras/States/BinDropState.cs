@@ -149,6 +149,24 @@ namespace Bosses.Pilotras.FSM
                 hitRB.AddForce((hit.transform.position - character.transform.position).normalized * 
                     character.behaviourData.bin_drop_force, ForceMode2D.Impulse);
             }
+
+            hits = Physics2D.OverlapBoxAll(center, detectionSize, 
+                character.data.hit_mask);
+            
+            // apply knockback and damage to player
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.TryGetComponent<IDamagable>(out IDamagable damagable))
+                    damagable.Damage(character.data.bin_drop_damage);
+
+                if (hit.TryGetComponent<IStunnable>(out IStunnable stunnable))
+                    stunnable.Stun(character.data.bin_drop_player_stun_duration);
+
+                hitRB = hit.GetComponentInParent<Rigidbody2D>();
+                if (hitRB == null) continue;
+                hitRB.AddForce((hit.transform.position - character.transform.position).normalized * 
+                    character.behaviourData.bin_drop_force, ForceMode2D.Impulse);
+            }
         }
 
         void StunNPCs()
@@ -297,6 +315,8 @@ namespace Bosses.Pilotras.FSM
             bin.enabled = true;
             // play sfx when bin landed on ground
             SoundManager.Instance?.PlayOneShot(character.data.sfx_bin_drop);
+            // shake camera for effects
+            character.levelManager?.camera?.ShakeCamera(0.5f);
         }
 
         IEnumerator DelayedBinInactive(RecyclingBin bin)
