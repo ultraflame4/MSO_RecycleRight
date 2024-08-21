@@ -29,8 +29,10 @@ namespace Player.Behaviours
         int scoreDifference;
         
         #region MonoBehaviour Callbacks
-        void Start()
+        protected override void Awake()
         {
+            // call awake in base state
+            base.Awake();
             // reset variables
             lastScore = 0;
             // instantiate attack range indicator prefab
@@ -112,7 +114,7 @@ namespace Player.Behaviours
 
             // show original indicator when triggering attack
             replaceIndicator = false;
-            StartCoroutine(CountDuration(data.skillCooldown - (data.skillCooldown * data.skillTriggerTimeFrame), 
+            StartCoroutine(CountDuration(data.skillDuration - (data.skillDuration * data.skillTriggerTimeFrame), 
                 () => replaceIndicator = true));
 
             // ensure level manager is not null
