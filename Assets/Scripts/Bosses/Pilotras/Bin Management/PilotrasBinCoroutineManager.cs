@@ -42,9 +42,9 @@ namespace Bosses.Pilotras.Bin
 
             // show indicator
             Vector2 indicatorScale = binDrop.shockwaveSize;
-            indicatorScale.y *= 0.5f;
+            indicatorScale.y -= (character.transform.position.y - character.data.maxBounds.y) * 0.5f;
             binDrop.indicator = character.indicatorManager.Instantiate(2, 
-                new Vector2(binDrop.shockwaveCenter.x, binDrop.shockwaveCenter.y - (indicatorScale.y * 0.5f)));
+                new Vector2(binDrop.shockwaveCenter.x, binDrop.shockwaveCenter.y - (indicatorScale.y * 0.25f)));
             indicatorSprite.localScale = originalIndicatorScale * indicatorScale;
 
             // delay the attack by the attack indicator

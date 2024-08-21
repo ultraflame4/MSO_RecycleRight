@@ -176,12 +176,16 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
-      value: 30.000002
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
@@ -205,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
-      value: 30
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[10].second.m_AnimationSpeed
@@ -217,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
-      value: 30.000002
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
@@ -237,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
-      value: 30
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
@@ -8393,7 +8397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add0bec2d3a39f4ab5ed89caee897cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <size>k__BackingField: {x: 38, y: 23}
+  <size>k__BackingField: {x: 38, y: 18}
   <offset>k__BackingField: {x: 0, y: 0}
   <peek_extend>k__BackingField: 4
   <buffer_zone_size>k__BackingField: 2.4
@@ -8447,10 +8451,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 23, y: 15.5}
-      - {x: -23, y: 15.5}
-      - {x: -23, y: -15.5}
-      - {x: 23, y: -15.5}
+    - - {x: 23, y: 13}
+      - {x: -23, y: 13}
+      - {x: -23, y: -13}
+      - {x: 23, y: -13}
   m_UseDelaunayMesh: 0
 --- !u!4 &843036385
 Transform:

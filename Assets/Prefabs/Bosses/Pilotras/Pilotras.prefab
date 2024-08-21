@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
   maxHealth: 1200
-  yOffset: 3
+  yOffset: 1.75
   numberOfPhases: 2
   maxNPCCount: 10
   meteorAttackDamage: 15
@@ -406,8 +406,8 @@ MonoBehaviour:
   phaseIndicators: []
   spawnedBins: []
   recyclables: []
-  minBounds: {x: -19, y: -11.5}
-  maxBounds: {x: 19, y: 7.7}
+  minBounds: {x: -19, y: -9}
+  maxBounds: {x: 19, y: 8.95}
   damageTakenScale: 1
 --- !u!114 &8480909623808237515
 MonoBehaviour:
