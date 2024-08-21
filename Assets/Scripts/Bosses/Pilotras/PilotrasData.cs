@@ -32,6 +32,10 @@ namespace Bosses.Pilotras
         [SerializeField] GameObject laneAttackProjectilePrefab;
         [SerializeField] LayerMask hitMask;
 
+        [Header("Sound Effect")]
+        [SerializeField] AudioClip[] roar;
+        [SerializeField] AudioClip binDrop, meteorAttack;
+
         [Header("Health Bar")]
         [SerializeField] Slider healthbar;
         [SerializeField] Transform phaseIndicatorParent;
@@ -58,6 +62,11 @@ namespace Bosses.Pilotras
         public float attack_delay => attackDelay;
         public GameObject projectile_prefab => laneAttackProjectilePrefab;
         public LayerMask hit_mask => hitMask;
+
+        // sound effects
+        public AudioClip[] sfx_roar => roar;
+        public AudioClip sfx_bin_drop => binDrop;
+        public AudioClip sfx_meteor_attack => meteorAttack;
 
         // health bar
         public Slider health_bar => healthbar;
