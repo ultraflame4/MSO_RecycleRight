@@ -9,11 +9,10 @@ namespace Level
     {
         [SerializeField]
         private CinemachineConfiner2D confiner2D;
-        [SerializeField]
-        private CinemachineVirtualCamera virtualCamera;
         public bool pendingBoundsUpdate;
 
         public float intensity = 15f;
+        public float frequency = 0.21f;
 
 
         public void UpdateBoundingShape()
@@ -47,10 +46,17 @@ namespace Level
         Coroutine camera_shake_coroutine;
         public IEnumerator ShakeCamera_Coroutine(float time, float? overrideIntensity = null)
         {
+            var brain = GetComponentInChildren<CinemachineBrain>();
+            var virtualCamera = brain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
             CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            cameraMultiChannelPerlin.m_AmplitudeGain = overrideIntensity.GetValueOrDefault(intensity);
-            yield return new WaitForSeconds(time);
-            cameraMultiChannelPerlin.m_AmplitudeGain = 0;
+            if (cameraMultiChannelPerlin != null)
+            {
+                cameraMultiChannelPerlin.m_AmplitudeGain = overrideIntensity.GetValueOrDefault(intensity);
+                yield return new WaitForSeconds(time);
+                cameraMultiChannelPerlin.m_AmplitudeGain = 0;
+                cameraMultiChannelPerlin.m_FrequencyGain = frequency;
+            }
+
         }
 
 
