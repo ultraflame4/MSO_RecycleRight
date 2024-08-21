@@ -232,6 +232,8 @@ MonoBehaviour:
   minFireDistance: 2.5
   tilemap: {fileID: 0}
   fireTilePrefab: {fileID: 531007759239420580, guid: 9ee07fcb3e449f64f8f3a1401159e318, type: 3}
+  fireSpawnSound: {fileID: 8300000, guid: 5519548d91269ea4e8c10df4d368bc54, type: 3}
+  fireSound: {fileID: 8300000, guid: a5ed6aa7ac2b3b84e9c99988375568cd, type: 3}
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
 --- !u!114 &5755631064165444409
