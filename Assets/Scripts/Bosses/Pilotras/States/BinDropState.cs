@@ -30,8 +30,6 @@ namespace Bosses.Pilotras.FSM
             cooldown = character.behaviourData.bin_drop_cooldown;
 
             base.Enter();
-            // disallow taking damage while waiting for bin to drop
-            character.data.damageTakenScale = 0f;
             
             // update current number of NPCs and reset selected bins
             character.UpdateNPCCount();
@@ -60,8 +58,6 @@ namespace Bosses.Pilotras.FSM
         public override void Exit()
         {
             base.Exit();
-            // allow boss to be damaged again
-            character.data.damageTakenScale = 1f;
             // reset coroutines
             coroutineManager.StopAllCoroutines();
 
@@ -69,7 +65,6 @@ namespace Bosses.Pilotras.FSM
             foreach (RecyclingBin bin in binManager.selectedBins)
             {
                 binManager.ResetBin(bin);
-                bin.gameObject.SetActive(false);
             }
 
             // reset indicator

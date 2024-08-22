@@ -72,8 +72,6 @@ namespace Bosses.Pilotras.Bin
 
         void HandleFirstBin()
         {
-            // allow boss to be damaged again
-            character.data.damageTakenScale = 1f;
             // play sfx when bin landed on ground
             SoundManager.Instance?.PlayOneShot(character.data.sfx_bin_drop);
             // shake camera for effects

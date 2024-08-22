@@ -25,6 +25,21 @@ namespace Bosses.Pilotras.Bin
             character = GetComponentInParent<PilotrasController>();
         }
 
+        void LateUpdate()
+        {
+            // ensure all selected bins are hidden when outside of bin drop state
+            if (character.currentState == binDrop) return;
+            if (selectedBins.Count <= 0) return;
+
+            foreach (RecyclingBin bin in selectedBins)
+            {
+                if (!bin.gameObject.activeInHierarchy) continue;
+                bin.gameObject.SetActive(false);
+            }
+
+            selectedBins.Clear();
+        }
+
         public void ResetBin(RecyclingBin bin)
         {
             // unsubcribe from bin scored event
