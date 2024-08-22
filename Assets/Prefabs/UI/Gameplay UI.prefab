@@ -176,9 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfe533d6aa8d00489c6e99ce12ef44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 3518692046125533307}
+  container: {fileID: 2742678187807135128}
   playerSprite: {fileID: 6714312021434686350}
   showDuration: 1
+  fadeOutDuration: 0.25
 --- !u!1 &647315790458813921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889598393883717630}
+  - component: {fileID: 2742678187807135128}
   m_Layer: 0
   m_Name: Container
   m_TagString: Untagged
@@ -1301,6 +1303,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &2742678187807135128
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518692046125533307}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3927954825308741683
 GameObject:
   m_ObjectHideFlags: 0
