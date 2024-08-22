@@ -135,7 +135,7 @@ namespace Player.Behaviours
             foreach (ContaminantNPC contaminant in contaminants)
             {
                 var recyclableVariant = contaminant.npcData.recyclableConfig.recyclablePrefab;
-                if (!recyclableVariant) continue;
+                if (recyclableVariant == null) continue;
                 
                 // Manually instantiate clean variant!
                 var obj = Instantiate(recyclableVariant, contaminant.transform.position, Quaternion.identity, contaminant.transform.parent);
