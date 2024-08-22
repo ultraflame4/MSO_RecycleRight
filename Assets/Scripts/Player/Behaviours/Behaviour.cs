@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Entity.Data;
+using Interfaces;
 
 namespace Player.Behaviours
 {
@@ -10,11 +11,8 @@ namespace Player.Behaviours
         protected PlayerController character;
         protected PlayerCharacter data;
 
-        // public events to be called when skill is triggered
-        public event Action<PlayerCharacter> SkillTriggered;
-
         // handle skill cooldown
-        Coroutine cooldown;
+        protected Coroutine cooldown;
         protected bool canTriggerSkill = false;
 
         /// <summary>
@@ -29,7 +27,7 @@ namespace Player.Behaviours
             set
             {
                 // if value is false, just set value
-                if (!value || OverrideTriggerSkill)
+                if (!value)
                 {
                     canTriggerSkill = value;
                     return;
@@ -38,18 +36,13 @@ namespace Player.Behaviours
                 // if value is true, check if coroutine is running
                 if (cooldown != null) StopCoroutine(cooldown);
                 // start a coroutine to count duration of skill cooldown
-                cooldown = StartCoroutine(CountDuration(data.netSkillCooldown, () => 
-                    {
-                        canTriggerSkill = true;
-                        cooldown = null;
-                    }
-                ));
+                cooldown = StartCoroutine(CountCooldown());
             }
         }
 
-        [HideInInspector] public bool OverrideTriggerSkill = false;
+        [HideInInspector] public float CooldownElasped = 0f;
 
-        void Awake()
+        protected virtual void Awake()
         {
             // get reference to player controller
             character = GetComponentInParent<PlayerController>();
@@ -69,8 +62,8 @@ namespace Player.Behaviours
         public virtual void TriggerAttack() {}
         public virtual void TriggerSkill() 
         {
-            // invoke event whenever skill is triggered
-            SkillTriggered?.Invoke(data);
+            // reset cooldown elasped to 0
+            CooldownElasped = 0f;
         }
 
         /// <summary>
@@ -84,6 +77,34 @@ namespace Player.Behaviours
             yield return new WaitForSeconds(duration);
             callback?.Invoke();
         }
+
+        // coroutine to count skill cooldown and update a public float based on cooldown remaining
+        private IEnumerator CountCooldown()
+        {
+            while (CooldownElasped < data.skillCooldown)
+            {
+                CooldownElasped += Time.deltaTime;
+                yield return CooldownElasped;
+            }
+
+            CooldownElasped = data.skillCooldown;
+            canTriggerSkill = true;
+            cooldown = null;
+        }
+
+        protected void CleanOrDamage(GameObject gameObject, float clean_amount, float damage_amount){
+            var damagable = gameObject.GetComponent<IDamagable>();
+            if (gameObject.TryGetComponent(out ICleanable cleanable)){
+                if (cleanable.AllowCleanable && clean_amount > 0){
+                    cleanable.Clean(clean_amount);
+                }else{
+                    damagable?.Damage(damage_amount);
+                }
+            }else{
+                damagable?.Damage(damage_amount);
+            }
+        }
     }
+
 }
 

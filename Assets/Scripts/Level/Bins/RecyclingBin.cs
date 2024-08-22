@@ -1,19 +1,19 @@
-using TMPro;
-using UnityEngine;
-using NPC;
 using System;
-using System.Collections;
-using UnityEngine.Pool;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using NPC;
 
 namespace Level.Bins
 {
     [RequireComponent(typeof(SpriteRenderer), typeof(PestSpawner))]
     public class RecyclingBin : MonoBehaviour
     {
-
         #region Component Config
         [Tooltip("How long it will take for the bin to become infested, once contaminated with food items.")]
         public float infestation_secs;
+        [Tooltip("Whether or not this bin can be cleaned by players")]
+        public bool cleanable = true;
 
         [field: Header("Config")]
 
@@ -24,11 +24,13 @@ namespace Level.Bins
         #endregion
 
         #region Component References
-        
+
         [Header("References")]
 
         public TMP_Text nameText;
         public TMP_Text scoreText;
+        public Image pestTimer;
+        public GameObject pestTimerCtn;
         public ParticleSystem[] cleaningEffects;
         public Sprite contaminatedSprite;
         private Sprite cleanedSprite;
@@ -47,31 +49,36 @@ namespace Level.Bins
             get => _score;
             set
             {
-                if (binState != BinState.CLEAN){
+                if (binState != BinState.CLEAN)
+                {
                     _score = 0;
                     return;
                 }
                 _score = value;
-                
+
 
             }
         }
         public bool IsInfested => infestation_percent > 0 || binState == BinState.INFESTED;
 
+        public event Action<float, RecyclableType?> BinScored;
 
-        private void Awake() {
+        private void Awake()
+        {
             spriteR = GetComponent<SpriteRenderer>();
             pestSpawner = GetComponent<PestSpawner>();
 
             cleanedSprite = spriteR.sprite; // Initialise here.
+            pestTimerCtn.SetActive(IsInfested);
         }
 
         private void Start()
         {
-            
+
             if (spriteR == null) return;
-            
+
             SetActiveCleaningEffects(false);
+            
             // check if already contaminated, if so change sprite to contaminated
             if (binState == BinState.CLEAN || contaminatedSprite == null) return;
             spriteR.sprite = contaminatedSprite;
@@ -82,16 +89,17 @@ namespace Level.Bins
             if (pending_infestation)
             {
                 infestation_percent += Time.deltaTime / infestation_secs;
+                pestTimer.fillAmount = infestation_percent;
                 if (infestation_percent >= 1)
                 {
                     // Bin is infested
-
                     pending_infestation = false;
                     infestation_percent = 0;
                     binState = BinState.INFESTED;
                     pestSpawner.StartPestSpawning();
                 }
             }
+
             scoreText.text = $"Score: {Score}";
         }
 
@@ -124,12 +132,18 @@ namespace Level.Bins
         {
             // Already infested skip
             if (binState == BinState.INFESTED || pending_infestation) return;
+            // If cleaning, skip infestation
+            if (binState == BinState.CLEANING) return;
 
             binState = BinState.CONTAMINATED;
             pending_infestation = true;
             infestation_percent = 0;
             Score = 0;
 
+            nameText.enabled = false;
+            scoreText.enabled = false;
+
+            pestTimerCtn.SetActive(true);
             if (spriteR == null) return;
             spriteR.sprite = contaminatedSprite;
         }
@@ -151,6 +165,8 @@ namespace Level.Bins
             scoreText.enabled = false;
             SetActiveCleaningEffects(true);
             pestSpawner.StopPestSpawning();
+            pestTimerCtn.SetActive(false);
+
 
         }
 
@@ -167,7 +183,9 @@ namespace Level.Bins
             nameText.enabled = true;
             scoreText.enabled = true;
             SetActiveCleaningEffects(false);
+            pestSpawner.ClearPests();
             pestSpawner.StopPestSpawning();
+            pestTimerCtn.SetActive(false);
         }
 
         /// <summary>
@@ -194,7 +212,9 @@ namespace Level.Bins
         {
             var item = other.GetComponent<IBinTrashItem>();
             if (item == null) return;
+            var prevScore = Score;
             item.OnEnterBin(this);
+            BinScored?.Invoke(Score - prevScore, other.GetComponent<FSMRecyclableNPC>()?.recyclableType);
         }
     }
 }

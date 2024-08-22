@@ -11,8 +11,30 @@ public class GameManager : MonoBehaviour
 
     public GameConfigSO config;
 
-    [Tooltip("Whether this is the root game manager. if it is, it will not be destroyed on scene load.")]
-    public bool is_root = false;
+    // array of characters that are currently in the party
+    private PlayerCharacterSO[] selected_characters;
+    public event Action onSelectedCharactersChanged;
+    public PlayerCharacterSO[] selectedCharacters
+    {
+        get
+        {
+            return selected_characters;
+        }
+        set
+        {
+            selected_characters = value;
+            onSelectedCharactersChanged?.Invoke();
+            if (selected_characters == null || selected_characters.Length <= partySize) return;
+            PlayerCharacterSO[] tempArray = (PlayerCharacterSO[])selected_characters.Clone();
+            selected_characters = new PlayerCharacterSO[partySize];
+            for (int i = 0; i < selected_characters.Length; i++)
+            {
+                selected_characters[i] = tempArray[i];
+            }
+        }
+    }
+
+    public int PartySize => partySize;
 
     // singleton instance
     private static GameManager _instance;
@@ -37,12 +59,11 @@ public class GameManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            if (is_root) DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
-
-        if (_instance != this)
+        else
         {
-            if (_instance.is_root && _instance != this)
+            if (_instance != this)
             {
                 Debug.LogWarning("Detected existing root game manager. This game manager will be deactived!");
                 gameObject.SetActive(false);
@@ -68,7 +89,7 @@ public class GameManager : MonoBehaviour
     /// <param name="name">Name of level scene to load</param>
     public void LoadLevel(string name)
     {
-        if (delayed_switch_scene_coroutine != null || !config.levels.Any(x => x.levelInfo.name == name)) return;
+        if (delayed_switch_scene_coroutine != null || config.levels.Any(x => x.levelInfo.name == name)) return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }
@@ -79,7 +100,8 @@ public class GameManager : MonoBehaviour
     /// <param name="index">Index of level name in array</param>
     public void LoadLevel(int index)
     {
-        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0)
+        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0 ||
+            index < 0 || index >= config.levels.Length)
             return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(config.levels[index].scene.Name, loadLevelDelay));
         StartedLevelLoad?.Invoke();

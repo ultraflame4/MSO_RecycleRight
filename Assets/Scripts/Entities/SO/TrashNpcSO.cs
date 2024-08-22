@@ -12,21 +12,35 @@ public enum TrashNPCType
     /// Can be recycled, can also be contaminated
     /// </summary>
     Recyclable,
+    /// <summary>
+    /// Can only be recycled. Never contaminated. 
+    /// </summary>
+    OnlyRecyclable,
 }
 
 [Serializable]
 public class ContaminantConfig
 {
     /// <summary>
+    /// When not empty, uses this name for the npc when contaminated.
+    /// </summary>
+    [Tooltip("When not empty, uses this name for the npc when contaminated.")]
+    public string nameOverride;
+    /// <summary>
     /// Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.
     /// </summary>
     [Tooltip("Reference to the prefab of the contaminant. Will be used to instantiate the contaminant form.")]
     public GameObject contaminantPrefab;
     /// <summary>
-    /// The attack range of the contaminant. If target is within this range, the contaminant will start attacking.
+    /// The attack range of the contaminant. If target is within this range, target will get hit.
     /// </summary>
-    [Tooltip("The attack range of the contaminant. If target is within this range, the contaminant will start attacking.")]
-    public float attackRange = 1f;
+    [Tooltip("The attack range of the contaminant. If target is within this range, target will get hit.")]
+    public float attackRange = 2f;
+    /// <summary>
+    /// If target is within this range, the contaminant will stop and start attacking.
+    /// </summary>
+    [Tooltip("If target is within this range, the contaminant will stop and start attacking")]
+    public float startAttackRange = 1f;
     /// <summary>
     /// The delay before each attack. in seconds.
     /// </summary>
@@ -83,7 +97,7 @@ public class CommonConfig
     [Tooltip("Max health for this contaminant / recyclable.")]
     public float maxHealth = 100f;
     [Tooltip("Movement speed for this contaminant / recyclable.")]
-    public float movementSpeed = 250f;
+    public float movementSpeed = 100f;
     [Tooltip("How far this contaminant / recyclable can see. (Detection range)")]
     public float sightRange = 3f;
 }
@@ -114,5 +128,7 @@ public class TrashNpcSO : EntitySO
     /// </summary>
     [Tooltip("Contaminant Specific Configuration")]
     public ContaminantConfig contaminantConfig;
+
+    public bool containsRecyclable => trashNPCType == TrashNPCType.Recyclable || trashNPCType == TrashNPCType.OnlyRecyclable;
 
 }

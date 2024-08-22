@@ -2,6 +2,7 @@ using UnityEngine;
 using Patterns.FSM;
 using Level.Bins;
 using UnityEngine.Serialization;
+using TMPro;
 
 namespace NPC
 {
@@ -18,7 +19,7 @@ namespace NPC
         /// Note that if this is true, recyclableType should be set to OTHERS as the NPC should be considered a "contaminant" and cannot be recycled.
         /// </summary>
         public virtual bool cause_infestation { get; } = false;
-        
+
         [SerializeField, FormerlySerializedAs("animator")]
         private Animator _animator;
         public Animator animator
@@ -30,12 +31,14 @@ namespace NPC
             }
         }
         public SpriteRenderer spriteRenderer;
+        public TextMeshProUGUI nameText;
 
+        protected virtual void SpawnRecyclable() { }
 
         public void OnEnterBin(RecyclingBin bin)
         {
             if (bin.binState != BinState.CLEAN) return;
-            
+
             if (cause_infestation)
             {
                 bin.StartInfestation();
@@ -51,6 +54,23 @@ namespace NPC
             // Destroy this NPC. In future if we want death animation we canb remove this
             // gameObject.SetActive(false);
             Destroy(gameObject);
+        }
+
+        /// <summary>
+        /// Sets the name tag of the NPC.
+        /// </summary>
+        /// <param name="always">When false, If trimmed (removing leading and trailing spaces) name is empty (length < 1), the name tag will not be set.</param>
+        /// <param name="name"></param>
+        protected void SetNameTag(string name,bool always = true)
+        {
+            if (nameText)
+            {
+                var trimmed = name.Trim(' ');
+                if (trimmed.Length > 0 || always)
+                {
+                    nameText.text = trimmed;
+                }
+            }
         }
 
         public void OnZoneEnd()

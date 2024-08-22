@@ -4,7 +4,7 @@ using Player;
 
 namespace Entity.Data
 {
-    public class PlayerCharacter : Entity, IDamagable
+    public class PlayerCharacter : Entity, IDamagable, IFireTick, IStunnable
     {
         // inspector fields
         [SerializeField] PlayerCharacterSO objectData;
@@ -36,13 +36,11 @@ namespace Entity.Data
         #region Multipliers
         [HideInInspector] public float movementMultiplier = 1f;
         [HideInInspector] public float attackMultiplier = 1f;
-        [HideInInspector] public float skillCooldownMultiplier = 1f;
         #endregion
 
         #region Multiplied Data
         public float netMovementSpeed => movementSpeed * movementMultiplier;
         public float netAttackDuration => attackDuration * attackMultiplier;
-        public float netSkillCooldown => skillCooldown * skillCooldownMultiplier;
         #endregion
 
         #region Properties
@@ -54,6 +52,7 @@ namespace Entity.Data
         }
 
         public bool Switchable => !OverrideSwitchable && !(IsCleaning || Health <= 0);
+        private PlayerController controller => PlayerController.Instance;
         #endregion
 
         #region Interface Methods
@@ -61,9 +60,25 @@ namespace Entity.Data
         {
             // apply damage
             Health -= damage;
-            // check if died, if so, switch to death state
-            if (PlayerController.Instance == null || Health > 0) return;
-            PlayerController.Instance.SwitchState(PlayerController.Instance.DeathState);
+            // check if died, if so, switch to death state, unless already in death state
+            if (controller == null || Health > 0 || 
+                controller.currentState == controller.DeathState) 
+                    return;
+            // switch to death state to handle death
+            controller.SwitchState(controller.DeathState);
+        }
+
+        public void ApplyFireDamage(float damage)
+        {
+            Damage(damage * Time.deltaTime);
+        }
+
+        public void Stun(float duration)
+        {
+            if (controller == null) return;
+            if (duration <= controller.StunState.duration) return;
+            controller.StunState.duration = duration;
+            controller.SwitchState(controller.StunState);
         }
         #endregion
 

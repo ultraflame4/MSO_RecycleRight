@@ -12,6 +12,7 @@ namespace Player
     {
         #region Inspector Fields
         [SerializeField] private CharacterManager characterManager;
+        [SerializeField] public Collider2D obstacleCollider;
         #endregion
 
         #region States
@@ -20,6 +21,7 @@ namespace Player
         public PlayerSkillState SkillState { get; private set; }
         public PlayerMoveToZoneState MoveToZoneState { get; private set; }
         public PlayerDeathState DeathState { get; private set; }
+        public PlayerStunState StunState { get; private set; }
         #endregion
 
         #region Other Properties
@@ -33,7 +35,7 @@ namespace Player
         public Transform pointer => transform.GetChild(0);
 
         
-        private static PlayerController _instance;
+        public static PlayerController _instance;
         public static PlayerController Instance
         {
             get
@@ -63,7 +65,6 @@ namespace Player
         void Start()
         {
             // get components
-            
             PointerManager = pointer.GetComponent<DirectionPointer>();
             // set character to first character instance
             OnCharacterChange(null, CharacterManager.character_instances[0]);
@@ -75,6 +76,7 @@ namespace Player
             SkillState = new PlayerSkillState(this, this);
             MoveToZoneState = new PlayerMoveToZoneState(this, this);
             DeathState = new PlayerDeathState(this, this);
+            StunState = new PlayerStunState(this, this);
             // initialize state machine
             Initialize(DefaultState);
 
@@ -104,7 +106,7 @@ namespace Player
             // set data to new character
             Data = data;
             // set animator
-            _anim = data.GetComponent<Animator>();
+            _anim = data.GetComponentInChildren<Animator>();
             // set behaviour to new character behaviour
             Behaviour newBehaviour = data.GetComponent<Behaviour>();
             // ensure behaviour is not null before assigning to variable

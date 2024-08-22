@@ -9,13 +9,13 @@ using System;
 
 namespace NPC.Recyclable
 {
-    public class RecyclableNPC : FSMRecyclableNPC, IStunnable
+    public class RecyclableNPC : FSMRecyclableNPC, IStunnable, IDamagable
     {
 
         #region States
-        public RecyclableIdle state_Idle { get; private set; }
+        public BaseRecyclableState state_Idle { get; protected set; }
         public Flee state_Flee { get; private set; }
-        public Stunned state_Stunned { get; private set; }
+        public Stunned state_Stunned { get; protected set; }
         #endregion
 
         #region Config
@@ -46,48 +46,61 @@ namespace NPC.Recyclable
         {
             if (npcData == null) return;
 
-            if (npcData.trashNPCType != TrashNPCType.Recyclable)
+            if (!npcData.containsRecyclable)
             {
                 throw new ArgumentException("This RecyclableNPC is not configured as a Recyclable! Please change trashNPCType to Recyclable or use ContaminantNPC instead!");
             }
             sightRange = npcData.common.sightRange;
             _recyclableType = npcData.recyclableConfig.recyclableType;
             contaminant_prefab = npcData.contaminantConfig.contaminantPrefab;
+            navigation.move_speed = npcData.common.movementSpeed;
+
+            SetNameTag(npcData.characterName);
         }
         private void Awake()
         {
             LoadConfig();
-        }
-
-        private void Start()
-        {
-            state_Idle = new(this);
+            state_Idle = new States.RecyclableIdle(this);
             state_Stunned = new(state_Idle, this, this);
             state_Flee = new(this);
+        }
 
+        protected virtual void Start()
+        {
+            if (currentState != null) return;
             Initialize(state_Idle);
         }
-        public void Contaminate(float damage)
+
+        public virtual void Contaminate(float damage)
         {
             if (secret_cleanliness > 0)
             {
                 secret_cleanliness--;
                 return;
             }
-            if (spawned_contaminant) return;
-            spawned_contaminant = true;
-            var contaminant = Instantiate(contaminant_prefab);
-            contaminant.transform.position = transform.position;
-            Destroy(gameObject);
+            SpawnRecyclable();
         }
 
         public void Stun(float stun_duration)
         {
+            // if already stunned, reapply stun if new stun duration is longer
+            // otherwise, ignore new stun duration
+            if (currentState == state_Stunned && stun_duration <= state_Stunned.stun_timer) return;
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }
 
-        private void OnDrawGizmosSelected()
+        protected override void SpawnRecyclable()
+        {
+            base.SpawnRecyclable();
+            if (spawned_contaminant) return;
+            spawned_contaminant = true;
+            var contaminant = Instantiate(contaminant_prefab, transform.position, transform.rotation, transform.parent);
+            contaminant.transform.position = transform.position;
+            Destroy(gameObject);
+        }
+
+        protected virtual void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, sightRange);
@@ -104,6 +117,15 @@ namespace NPC.Recyclable
             {
                 Debug.LogWarning("IMPORTANT! contaminant_prefab is a required field! When null, it will cause this recyclable to never spawn it's contaminated version");
             }
+        }
+
+        public virtual void Damage(float damage)
+        {
+            // Recyclables cannot be damaged (by player)
+            // They can still be damaged by contaminants.
+            // This method is here to satisfy the IDamagable interface.
+            // Please do not remove this method.
+            // Or remove IDamagable from this class.
         }
     }
 }

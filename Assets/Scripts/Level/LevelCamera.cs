@@ -1,3 +1,5 @@
+using System.Collections;
+using Cinemachine;
 using Player;
 using UnityEngine;
 
@@ -5,79 +7,82 @@ namespace Level
 {
     public class LevelCamera : MonoBehaviour
     {
-        [field: SerializeField, Tooltip("The camera component.")]
-        public new Camera camera { get; private set; }
+        [SerializeField]
+        private CinemachineConfiner2D confiner2D;
+        public bool pendingBoundsUpdate;
 
-        [Tooltip("The target position for the camera.")]
-        public Vector3 zone_position;
-        [Tooltip("Camera damping")]
-        public float smoothTime = 0.3f;
+        public float intensity = 15f;
+        public float frequency = 0.21f;
 
-        [Tooltip("Target camera aspect ratio (w/h). Will do funny stuff to the camera")]
-        public Vector2 aspect = new Vector2(16, 9);
 
-        public float aspect_ratio => aspect.x / aspect.y;
-
-        private Vector3 velocity = Vector3.zero;
-
-        private Vector2 lastScreenSize = Vector2.zero;
-        [Tooltip("Make the camera lerp between the player and the zone position. This is an experimental solution to reveal zone areas covered by the UI.")]
-        public bool allowPeeking = false;
-        private void Start()
+        public void UpdateBoundingShape()
         {
-            Adjust();
+            confiner2D.m_BoundingShape2D = LevelManager.Instance.current_zone.boundary;
+
         }
 
-        private void Adjust()
-        {
-            // reference https://www.youtube.com/watch?v=PClWqhfQlpU
-
-            float current_aspect = (float)Screen.width / Screen.height;
-            float scaleHeight = current_aspect / aspect_ratio;
-
-            if (scaleHeight < 1)
-            {
-                // add pillarbox
-                Rect rect = camera.rect;
-                rect.width = 1;
-                rect.height = scaleHeight;
-                rect.x = 0;
-                rect.y = (1 - scaleHeight) / 2;
-                camera.rect = rect;
-            }
-            else
-            {
-                // add letterbox
-                float scaleWidth = 1 / scaleHeight;
-                Rect rect = camera.rect;
-                rect.width = scaleWidth;
-                rect.height = 1;
-                rect.x = (1 - scaleWidth) / 2;
-                rect.y = 0;
-                camera.rect = rect;
-            }
-
-        }
         private void Update()
         {
-            if (lastScreenSize.x != Screen.width || lastScreenSize.y != Screen.height)
+            if (pendingBoundsUpdate)
             {
-                lastScreenSize = new Vector2(Screen.width, Screen.height);
-                Adjust();
+                var player = PlayerController._instance;
+                // Skip if player not found
+                if (!player) return;
+                var playerWithinZone = LevelManager.Instance?.current_zone.PositionWithinZone(player.transform.position);
+                // Skip if player not in zone
+                if (playerWithinZone != true) return;
+                // If player is in current zone,
+                pendingBoundsUpdate = false;
+                StartCoroutine(Delayed_UpdateBoundingShape());
             }
-
-            Vector3 target_position;
-            if (allowPeeking)
-            {
-                target_position = Vector3.Lerp(PlayerController.Instance.transform.position, zone_position, 0.8f);
-
-            }
-            else
-            {
-                target_position = zone_position;
-            }
-            target_position.z = camera.transform.position.z;
-            transform.position = Vector3.SmoothDamp(transform.position, target_position, ref velocity, smoothTime);
         }
+
+        IEnumerator Delayed_UpdateBoundingShape()
+        {
+            yield return new WaitForSeconds(0.5f);
+            UpdateBoundingShape();
+        }
+
+        Coroutine camera_shake_coroutine;
+        public IEnumerator ShakeCamera_Coroutine(float time, float? overrideIntensity = null)
+        {
+            var brain = GetComponentInChildren<CinemachineBrain>();
+            var virtualCamera = brain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
+            CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            if (cameraMultiChannelPerlin != null)
+            {
+                var og_freq = cameraMultiChannelPerlin.m_FrequencyGain;
+                var og_amp = cameraMultiChannelPerlin.m_AmplitudeGain;
+
+                cameraMultiChannelPerlin.m_AmplitudeGain = overrideIntensity.GetValueOrDefault(intensity);
+                cameraMultiChannelPerlin.m_FrequencyGain = frequency;
+                yield return new WaitForSeconds(time);
+                cameraMultiChannelPerlin.m_FrequencyGain = og_freq;
+                cameraMultiChannelPerlin.m_AmplitudeGain = og_amp;
+            }
+
+        }
+
+
+        public void ShakeCamera(float time, float? overrideIntensity = null)
+        {
+            if (camera_shake_coroutine != null)
+            {
+                StopCoroutine(camera_shake_coroutine);
+            }
+            camera_shake_coroutine = StartCoroutine(ShakeCamera_Coroutine(time, overrideIntensity));
+        }
+
+        [EasyButtons.Button]
+        void ShakeCamera_Inspector(float time, float overrideIntensity)
+        {
+            if (camera_shake_coroutine != null)
+            {
+                StopCoroutine(camera_shake_coroutine);
+            }
+            camera_shake_coroutine = StartCoroutine(ShakeCamera_Coroutine(time, overrideIntensity));
+        }
+
+
     }
 }

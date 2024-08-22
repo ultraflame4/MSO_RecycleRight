@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Information about the npcs in the level.
@@ -21,10 +22,11 @@ public struct LevelNPC{
 
 [Serializable]
 public struct LevelInfoData{
-
     public string levelName;
+    public string levelCode;
     [TextArea(5, 10)]
     public string levelDescription;
+    public Sprite levelImage;
     public float maxScore;
     public LevelNPC[] npcs;
 }

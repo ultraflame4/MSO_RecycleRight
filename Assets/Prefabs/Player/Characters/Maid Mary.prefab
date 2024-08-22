@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1197034505934309080, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4b9bcf10688f1b243a9f9233dcff291a, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillIcon
       value: 
@@ -100,6 +104,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268136941399560414, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2233654393134734872, guid: 9d8b1a2b053610249974972808b24269, type: 3}
     - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Name
       value: Maid Mary
@@ -119,6 +127,14 @@ PrefabInstance:
     - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -145,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183d0f9860849b14dba294c7e1db7915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OverrideTriggerSkill: 0
+  CooldownElasped: 0
   attackDamage: 15
   attackRange: 0.75
   attackStunDuration: 1.5
@@ -154,12 +170,12 @@ MonoBehaviour:
   areaOfEffect: 1
   hitMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1408
   hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   tickDamage: 1
   tickStunDuration: 0.15
   tickSpeed: 1
-  skillRange: 5
+  skillRange: 7.5
   skillPullForce: 150
   pullableType: 0
   pullableMask:

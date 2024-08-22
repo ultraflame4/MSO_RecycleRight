@@ -6,12 +6,11 @@ namespace NPC.States
 {
     public class Movement : BaseRecyclableState
     {
-        public LevelManager levelManager;
+        public LevelManager levelManager => LevelManager.Instance;
         public static int animParamBoolWalk = Animator.StringToHash("Walk");
         protected Vector3 current_edge_force; // The force that pushes NPC away from the edge. Gets stronger the closer to the edge. (Only starts to push when within buffer zone)
-        public Movement(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character, LevelManager levelManager) : base(fsm, character)
+        public Movement(StateMachine<FSMRecyclableNPC> fsm, FSMRecyclableNPC character) : base(fsm, character)
         {
-            this.levelManager = levelManager;
         }
 
 
@@ -36,9 +35,8 @@ namespace NPC.States
             base.Enter();
             character.animator?.SetBool(animParamBoolWalk, true);
         }
-        public override void OnDrawGizmosSelected()
+        public void OnDrawGizmosSelected()
         {
-            base.OnDrawGizmosSelected();
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, current_edge_force);
         }

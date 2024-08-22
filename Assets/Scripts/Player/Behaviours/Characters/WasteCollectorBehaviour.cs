@@ -24,8 +24,9 @@ namespace Player.Behaviours
 
         #region Grab Attack Variables
         Collider2D hit;
-        Vector2 grabPosition;
         Animator anim;
+        Vector2 grabPosition => (Vector2) character.transform.position + 
+            ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
         float originalMovementSpeed;
         bool flippedCanSkill, flippedCanSwitch = false;
         bool grabbed => hit != null;
@@ -76,9 +77,11 @@ namespace Player.Behaviours
             // spawn grab vfx
             SpawnVFX(grabEffect);
 
-            // set grab position of enemy, and apply offset based on which direction the player is facing
-            grabPosition = (Vector2) character.transform.position + 
-                ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
+            // check if grabbed object can be grabbed
+            IAmNotMovableByWilson movable = hit.GetComponent<IAmNotMovableByWilson>();
+            // handle not grabbing object
+            if (movable == null || movable.CanMove()) return;
+            hit = null;
         }
 
         void Throw()
@@ -91,9 +94,13 @@ namespace Player.Behaviours
             // apply stun to allow knockback
             hit.GetComponent<IStunnable>()?.Stun(throwStunDuration);
             // throw the hit enemy
-            hit.GetComponent<Rigidbody2D>()?.AddForce(
-                (character.pointer.position - character.transform.position).normalized * 
-                throwForce, ForceMode2D.Impulse);
+            Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+               rb.AddForce(
+                    (character.pointer.position - character.transform.position).normalized * 
+                    throwForce, ForceMode2D.Impulse);
+            }
             // spawn throw vfx
             SpawnVFX(throwEffect);
             // reset grab
@@ -139,7 +146,7 @@ namespace Player.Behaviours
         void Start()
         {
             // get reference to animator
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
             // set original movement speed
             originalMovementSpeed = data.movementSpeed;
         }

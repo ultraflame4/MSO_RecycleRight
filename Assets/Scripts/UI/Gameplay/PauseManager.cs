@@ -1,15 +1,18 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Level;
 
 namespace UI
 {
     public class PauseManager : MonoBehaviour
     {
         [SerializeField] KeyCode pauseKey = KeyCode.Escape;
+        [SerializeField] AudioClip pauseSFX;
         private GameObject pauseMenu;
 
         public bool Paused { get; private set; } = false;
+        private bool canPause = true;
 
         private static PauseManager _instance;
         public static PauseManager Instance
@@ -37,12 +40,14 @@ namespace UI
         {
             pauseMenu = transform.GetChild(0).gameObject;
             pauseMenu?.SetActive(false);
+            canPause = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (!Input.GetKeyDown(pauseKey)) return;
+            CheckEnded();
+            if (!canPause || !Input.GetKeyDown(pauseKey)) return;
             TogglePause();
         }
 
@@ -50,6 +55,7 @@ namespace UI
         public void TogglePause()
         {
             Paused = !Paused;
+            SoundManager.Instance?.PlayOneShot(pauseSFX);
             Time.timeScale = Paused ? 0f : 1f;
             pauseMenu?.SetActive(Paused);
         }
@@ -57,6 +63,7 @@ namespace UI
         public void RestartLevel()
         {
             if (Paused) TogglePause();
+            SoundManager.Instance?.RestartBackgroundMusic();
             LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -76,6 +83,14 @@ namespace UI
             }
 
             GameManager.Instance.LoadScene(scene_name);
+        }
+
+        void CheckEnded()
+        {
+            if (LevelManager.Instance == null || !LevelManager.Instance.LevelEnded) return;
+            canPause = false;
+            if (!Paused) return;
+            TogglePause();
         }
     }
 }

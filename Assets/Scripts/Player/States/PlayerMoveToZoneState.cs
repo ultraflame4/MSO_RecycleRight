@@ -6,7 +6,6 @@ namespace Player.FSM
 {
     public class PlayerMoveToZoneState : State<PlayerController>
     {
-        LevelZone currentZone;
         Vector3 dest;
         Rigidbody2D rb;
 
@@ -21,6 +20,7 @@ namespace Player.FSM
             base.Enter();
             // disable collider when changing zones
             character.Data.collider.enabled = false;
+            character.obstacleCollider.enabled = false;
         }
 
         public override void Exit()
@@ -30,6 +30,7 @@ namespace Player.FSM
             character.anim?.SetBool("IsMoving", false);
             // enable collider after zone start
             character.Data.collider.enabled = true;
+            character.obstacleCollider.enabled = true;
         }
 
         public override void PhysicsUpdate()
@@ -49,9 +50,7 @@ namespace Player.FSM
             if (dir.magnitude >= .1f) return;
             rb.velocity = Vector2.zero;
             
-            // start zone once player reached zone
             // return to default state once moved to zone
-            currentZone.ActivateZone();
             fsm.SwitchState(character.DefaultState);
         }
 
@@ -60,8 +59,6 @@ namespace Player.FSM
         {
             // ignore zone 1
             if (LevelManager.Instance.current_zone_index == 0) return;
-            // set current zone
-            currentZone = current_zone;
             // set move force
             dest = (Vector3)current_zone.player_startpos;
             dest.z = character.transform.position.z;

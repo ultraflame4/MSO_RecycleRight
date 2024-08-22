@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using Entity.Data;
 
@@ -13,7 +14,6 @@ namespace Player
         [field: SerializeField, Tooltip("A temporary placeholder for the character.")]
         public GameObject placeholder { get; private set; }
         public PlayerCharacter[] character_instances { get; private set; }
-
         [HideInInspector] public bool CanSwitchCharacters = true;
 
         /// <summary>
@@ -21,27 +21,20 @@ namespace Player
         /// </summary>
         public event Action<PlayerCharacter, PlayerCharacter> CharacterChanged;
 
-        public void Awake()
+        public void Start()
         {
             placeholder.SetActive(false);
-            character_instances = new PlayerCharacter[characters.Length];
-            // instantiate characters
-            for (int i = 0; i < characters.Length; i++)
-            {
-                GameObject new_character = Instantiate(characters[i], container);
-                character_instances[i] = new_character.GetComponent<PlayerCharacter>();
-                new_character.GetComponent<Renderer>().enabled = false;
-            }
 
-            // ensure character instances is filled before setting first active character
-            if (character_instances.Length <= 0) return;
-
-            // set first character as active
-            for (int i = 0; i < character_instances.Length; i++)
+            if (GameManager.Instance != null &&
+                GameManager.Instance.selectedCharacters != null && 
+                GameManager.Instance.selectedCharacters.Length > 0)
             {
-                PlayerCharacter character = character_instances[i];
-                character.SetSpawn(i == 0);
-            }
+                characters = GameManager.Instance.selectedCharacters
+                        .Select(x => x.prefab)
+                        .ToArray();
+            }  
+
+            LoadCharacterInstance();
         }
 
         /// <summary>
@@ -97,6 +90,27 @@ namespace Player
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 SwitchCharacter(3);
+            }
+        }
+
+        void LoadCharacterInstance()
+        {
+            character_instances = new PlayerCharacter[characters.Length];
+            // instantiate characters
+            for (int i = 0; i < characters.Length; i++)
+            {
+                GameObject new_character = Instantiate(characters[i], container);
+                character_instances[i] = new_character.GetComponent<PlayerCharacter>();
+            }
+
+            // ensure character instances is filled before setting first active character
+            if (character_instances.Length <= 0) return;
+
+            // set first character as active
+            for (int i = 0; i < character_instances.Length; i++)
+            {
+                PlayerCharacter character = character_instances[i];
+                character.SetSpawn(i == 0);
             }
         }
     }

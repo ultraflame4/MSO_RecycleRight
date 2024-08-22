@@ -8,7 +8,7 @@ namespace NPC.Recyclable.States
     public class RecyclableIdle : NPC.States.RandomWalk
     {
         RecyclableNPC npc;
-        public RecyclableIdle(RecyclableNPC npc) : base(npc, npc, LevelManager.Instance)
+        public RecyclableIdle(RecyclableNPC npc) : base(npc, npc)
         {
             this.npc = npc;
         }

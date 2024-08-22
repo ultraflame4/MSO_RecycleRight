@@ -141,6 +141,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: BossDraft_Frame_1
+    originalName: 
+    pivot: {x: 0.4464286, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 65
+      width: 56
+      height: 53
+    spriteID: 7384c2251029ba9428f2827b44c01f14
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 65}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,7 +170,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: BossDraft
+    - name: BossDraft_Frame_0
       frameIndex: 0
       cellRect:
         x: 7
@@ -158,6 +178,14 @@ ScriptedImporter:
         width: 56
         height: 53
       spriteId: 9ce2e133704a7c946acd2b4e5ae8a3d2
+    - name: BossDraft_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 7
+        y: 0
+        width: 56
+        height: 53
+      spriteId: 7384c2251029ba9428f2827b44c01f14
     linkedCells: []
     parentIndex: -1
   platformSettings: []

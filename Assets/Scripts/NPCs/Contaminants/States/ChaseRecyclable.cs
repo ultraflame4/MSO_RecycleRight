@@ -12,7 +12,7 @@ namespace NPC.Contaminants.States
         ContaminantNPC npc;
         Vector3 direction;
 
-        public ChaseRecyclable(ContaminantNPC npc) : base(npc, npc, LevelManager.Instance)
+        public ChaseRecyclable(ContaminantNPC npc) : base(npc, npc)
         {
             this.npc = npc;
         }
@@ -72,7 +72,7 @@ namespace NPC.Contaminants.States
                 return;
             }
 
-            if (Vector3.Distance(transform.position, closestRecyclable.transform.position) < npc.attackRange)
+            if (Vector3.Distance(transform.position, closestRecyclable.transform.position) < npc.startAttackRange)
             {
                 npc.state_AttackRecyclable.nearestRecyclable = closestRecyclable;
                 npc.SwitchState(npc.state_AttackRecyclable);

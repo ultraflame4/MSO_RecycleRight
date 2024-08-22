@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using UnityEngine;
-using Level.Bins;
 using System.Linq;
-using System.Xml.Serialization;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Level
@@ -29,8 +27,8 @@ namespace Level
         [field: SerializeField, Tooltip("The level camera")]
         public new LevelCamera camera { get; private set; }
         public bool debug_move_to_current_zone = false;
-        [SerializeField, Tooltip("The level info for this level. When missing, some features may not work.")]
-        private LevelInfo levelInfo;
+        [field: SerializeField, Tooltip("The level info for this level. When missing, some features may not work.")]
+        public LevelInfo levelInfo { get; private set; }
         [SerializeField, Tooltip("The level end menu for this level. When missing, some features may not work.")]
         private LevelEndMenu levelEnd;
         #endregion
@@ -66,11 +64,10 @@ namespace Level
 
         #endregion
 
+        Coroutine coroutine_zone_change;
 
         public LevelZone current_zone => zones[current_zone_index];
-
-        Coroutine coroutine_zone_change;
-        private bool levelEnded = false;
+        public bool LevelEnded { get; private set; } = false;
 
         public event Action<LevelZone> ZoneChanged;
 
@@ -85,7 +82,7 @@ namespace Level
         void LateUpdate()
         {
             // Skip logic if the level has ended
-            if (levelEnded) return;
+            if (LevelEnded) return;
             if (zones == null) return;
             // Skip change zone and end level logic if autoChangeZone is disabled
             if (!autoChangeZone) return;
@@ -94,7 +91,6 @@ namespace Level
             // check for level completion
             if (current_zone_index >= (zones.Length - 1))
             {
-                Debug.Log("Level Completed.");
                 EndLevel();
                 return;
             }
@@ -115,9 +111,10 @@ namespace Level
         public void MoveToZone(int index)
         {
             current_zone_index = index;
-            camera.zone_position = current_zone.transform.position;
             // call event when moving to new zone
+            // camera.ClearBounding();
             ZoneChanged?.Invoke(current_zone);
+            camera.pendingBoundsUpdate=true;
         }
 
         private void OnValidate()
@@ -133,6 +130,7 @@ namespace Level
         {
             current_zone_index = new_zone_index;
             MoveToZone(new_zone_index);
+            if (!autoChangeZone) return;
             
             // disable all other zones
             foreach (var zone in zones)
@@ -151,7 +149,7 @@ namespace Level
 
         public void EndLevel()
         {
-            if (levelEnded) return;
+            if (LevelEnded) return;
             if (levelInfo == null)
             {
                 Debug.LogWarning("LevelInfo is missing. Cannot end level.");
@@ -163,7 +161,7 @@ namespace Level
                 Debug.LogWarning("LevelEndMenu is missing. Cannot end level.");
                 return;
             }
-            levelEnded = true;
+            LevelEnded = true;
             levelEnd.ShowEndScreen(GetCurrentScore(), levelInfo.Data.maxScore);
         }
     }

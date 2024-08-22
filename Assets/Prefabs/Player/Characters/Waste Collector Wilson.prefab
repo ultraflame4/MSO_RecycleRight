@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1197034505934309080, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5bc120c1cafb8f245b430aa283b08bc4, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillIcon
       value: 
@@ -92,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268136941399560414, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6869229262029090571, guid: 6b55b990c9a95a54790a068214a3905d, type: 3}
     - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Name
       value: Waste Collector Wilson
@@ -100,6 +108,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6869229262029090571, guid: 6b55b990c9a95a54790a068214a3905d, type: 3}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -125,13 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3507b157e337ff54fa256935d14db22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OverrideTriggerSkill: 0
+  CooldownElasped: 0
   grabDamage: 7
   grabRange: 1.5
   grabOffset: {x: 1, y: 0.5}
   hitMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1408
   grabEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   throwDamage: 15
   throwStunDuration: 0.75

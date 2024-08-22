@@ -2,7 +2,22 @@ fileFormatVersion: 2
 guid: f5e03d0e6be4cb24a934c587a2ae1fba
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Attack
+    second: {fileID: 7400000, guid: 70cbc27cd7294c64a898da27a98c4969, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Rusty_Can
+    second: {fileID: 7400000, guid: 7294c7d0f510c6442abdd5822d81239b, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Soda Can
+    second: {fileID: 7400000, guid: c5b868a85e651904999dd5b9634deb69, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -35,7 +50,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +112,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638593242542320691
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -283,15 +298,15 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 114}
   - name: RustedCan_Frame_8
     originalName: 
-    pivot: {x: 0.5925926, y: 0}
+    pivot: {x: 0.5, y: -0.04}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 38
-      y: 79
-      width: 27
-      height: 27
+      x: 106
+      y: 40
+      width: 16
+      height: 25
     spriteID: 7bbf00cf760944e4f9d04a27f3c38749
     spriteBone: []
     spriteOutline: []
@@ -300,16 +315,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 79}
+    uvTransform: {x: 106, y: 40}
   - name: RustedCan_Frame_9
     originalName: 
-    pivot: {x: 0.5925926, y: -0.11111111}
+    pivot: {x: 0.5925926, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 38
-      y: 114
+      y: 79
       width: 27
       height: 27
     spriteID: b3a51446f9c796c4da6682f269d86219
@@ -320,8 +335,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 114}
+    uvTransform: {x: 38, y: 79}
   - name: RustedCan_Frame_10
+    originalName: 
+    pivot: {x: 0.5925926, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 114
+      width: 27
+      height: 27
+    spriteID: 93f3eb9be6bd2f848aeb33b3c13177e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 114}
+  - name: RustedCan_Frame_11
     originalName: 
     pivot: {x: 0.5925926, y: 0}
     alignment: 9
@@ -332,7 +367,7 @@ ScriptedImporter:
       y: 42
       width: 27
       height: 29
-    spriteID: 93f3eb9be6bd2f848aeb33b3c13177e9
+    spriteID: f7c4126dc90dc9f47a66aab92d515780
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -341,7 +376,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 42}
-  - name: RustedCan_Frame_11
+  - name: RustedCan_Frame_12
     originalName: 
     pivot: {x: 0.5925926, y: 0}
     alignment: 9
@@ -352,7 +387,7 @@ ScriptedImporter:
       y: 149
       width: 27
       height: 27
-    spriteID: f7c4126dc90dc9f47a66aab92d515780
+    spriteID: 3f8082bb960c2544780c915e2537f15e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -361,7 +396,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 149}
-  - name: RustedCan_Frame_12
+  - name: RustedCan_Frame_13
     originalName: 
     pivot: {x: 0.5925926, y: 0}
     alignment: 9
@@ -372,7 +407,7 @@ ScriptedImporter:
       y: 184
       width: 27
       height: 27
-    spriteID: 3f8082bb960c2544780c915e2537f15e
+    spriteID: c0ae3fa3405e749408108b0383fe6aca
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -381,7 +416,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 184}
-  - name: RustedCan_Frame_13
+  - name: RustedCan_Frame_14
     originalName: 
     pivot: {x: 0.5769231, y: 0}
     alignment: 9
@@ -392,7 +427,7 @@ ScriptedImporter:
       y: 151
       width: 26
       height: 24
-    spriteID: c0ae3fa3405e749408108b0383fe6aca
+    spriteID: 276945e14d0ccbe469cf469544f3742b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -401,7 +436,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 151}
-  - name: RustedCan_Frame_14
+  - name: RustedCan_Frame_15
     originalName: 
     pivot: {x: 0.44444445, y: 0}
     alignment: 9
@@ -412,7 +447,7 @@ ScriptedImporter:
       y: 183
       width: 27
       height: 23
-    spriteID: 276945e14d0ccbe469cf469544f3742b
+    spriteID: 3f52115be07ec8c47882c6ae73c05624
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -421,7 +456,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 183}
-  - name: RustedCan_Frame_15
+  - name: RustedCan_Frame_16
     originalName: 
     pivot: {x: 0.42857146, y: 0}
     alignment: 9
@@ -432,7 +467,7 @@ ScriptedImporter:
       y: 4
       width: 28
       height: 28
-    spriteID: 3f52115be07ec8c47882c6ae73c05624
+    spriteID: 8944a4134b37cda47a0f4d62054ad721
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -441,7 +476,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 4}
-  - name: RustedCan_Frame_16
+  - name: RustedCan_Frame_17
     originalName: 
     pivot: {x: 0.5925926, y: 0}
     alignment: 9
@@ -452,7 +487,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 30
-    spriteID: 8944a4134b37cda47a0f4d62054ad721
+    spriteID: ea542f56472301f4aa1495f936b04c67
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -461,7 +496,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 4}
-  - name: RustedCan_Frame_17
+  - name: RustedCan_Frame_18
     originalName: 
     pivot: {x: 0.61538464, y: 0}
     alignment: 9
@@ -472,7 +507,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 32
-    spriteID: ea542f56472301f4aa1495f936b04c67
+    spriteID: 8d5aa7b96c83dda45ab392cfe366d98d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -481,7 +516,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: RustedCan_Frame_18
+  - name: RustedCan_Frame_19
     originalName: 
     pivot: {x: 0.61538464, y: 0}
     alignment: 9
@@ -492,7 +527,7 @@ ScriptedImporter:
       y: 44
       width: 26
       height: 32
-    spriteID: 8d5aa7b96c83dda45ab392cfe366d98d
+    spriteID: eac5138864c02fa4589b18297aff9582
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -577,16 +612,16 @@ ScriptedImporter:
     - name: RustedCan_Frame_8
       frameIndex: 8
       cellRect:
-        x: 0
-        y: 0
-        width: 27
-        height: 27
+        x: 8
+        y: 1
+        width: 16
+        height: 25
       spriteId: 7bbf00cf760944e4f9d04a27f3c38749
     - name: RustedCan_Frame_9
       frameIndex: 9
       cellRect:
         x: 0
-        y: 3
+        y: 0
         width: 27
         height: 27
       spriteId: b3a51446f9c796c4da6682f269d86219
@@ -594,9 +629,9 @@ ScriptedImporter:
       frameIndex: 10
       cellRect:
         x: 0
-        y: 0
+        y: 3
         width: 27
-        height: 29
+        height: 27
       spriteId: 93f3eb9be6bd2f848aeb33b3c13177e9
     - name: RustedCan_Frame_11
       frameIndex: 11
@@ -604,7 +639,7 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 27
-        height: 27
+        height: 29
       spriteId: f7c4126dc90dc9f47a66aab92d515780
     - name: RustedCan_Frame_12
       frameIndex: 12
@@ -617,42 +652,42 @@ ScriptedImporter:
     - name: RustedCan_Frame_13
       frameIndex: 13
       cellRect:
-        x: 1
+        x: 0
         y: 0
-        width: 26
-        height: 24
+        width: 27
+        height: 27
       spriteId: c0ae3fa3405e749408108b0383fe6aca
     - name: RustedCan_Frame_14
       frameIndex: 14
       cellRect:
-        x: 4
+        x: 1
         y: 0
-        width: 27
-        height: 23
+        width: 26
+        height: 24
       spriteId: 276945e14d0ccbe469cf469544f3742b
     - name: RustedCan_Frame_15
       frameIndex: 15
       cellRect:
         x: 4
         y: 0
-        width: 28
-        height: 28
+        width: 27
+        height: 23
       spriteId: 3f52115be07ec8c47882c6ae73c05624
     - name: RustedCan_Frame_16
       frameIndex: 16
       cellRect:
-        x: 0
+        x: 4
         y: 0
-        width: 27
-        height: 30
+        width: 28
+        height: 28
       spriteId: 8944a4134b37cda47a0f4d62054ad721
     - name: RustedCan_Frame_17
       frameIndex: 17
       cellRect:
         x: 0
         y: 0
-        width: 26
-        height: 32
+        width: 27
+        height: 30
       spriteId: ea542f56472301f4aa1495f936b04c67
     - name: RustedCan_Frame_18
       frameIndex: 18
@@ -662,9 +697,65 @@ ScriptedImporter:
         width: 26
         height: 32
       spriteId: 8d5aa7b96c83dda45ab392cfe366d98d
+    - name: RustedCan_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: 0
+        width: 26
+        height: 32
+      spriteId: eac5138864c02fa4589b18297aff9582
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

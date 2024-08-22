@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using Interfaces;
@@ -9,7 +10,7 @@ namespace Player.Behaviours
     {
         // inspector fields
         [Header("Melee Attack")]
-        
+
         [Tooltip("Amount of damage applied to damagable enemies")]
         [SerializeField] protected float attackDamage = 5f;
 
@@ -35,6 +36,11 @@ namespace Player.Behaviours
         [Tooltip("Effect to spawn when attack is triggered")]
         [SerializeField] protected GameObject hitEffects;
 
+        /// <summary>
+        /// Event to be triggered when an enemy is hit
+        /// </summary>
+        public event Action<Collider2D[]> OnHit;
+
         // perform default melee attack
         public override void TriggerAttack()
         {
@@ -59,17 +65,18 @@ namespace Player.Behaviours
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
                 // clean contaminant that is hit if it is cleanable
-                if (cleanAmount > 0f && contaminant != null && contaminant.cleanable)
-                    hit.GetComponent<ICleanable>()?.Clean(cleanAmount);
-                else
-                    // deal damage if cannot clean
-                    hit.GetComponent<IDamagable>()?.Damage(attackDamage);
-                
+                CleanOrDamage(hit.gameObject, cleanAmount, attackDamage);
+
                 // stun and apply knockback to enemy that was hit
-                hit.GetComponent<IStunnable>()?.Stun(attackStunDuration);
+                if (hit.TryGetComponent<IStunnable>(out IStunnable outStun))
+                {
+                    outStun.Stun(attackStunDuration);
+                }
                 // try add knockback by getting rigidbody and adding force in hit direction
-                hit.GetComponent<Rigidbody2D>()?
-                    .AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
+                if (hit.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+                {
+                    rb.AddForce((character.pointer.position - character.transform.position).normalized * knockback, ForceMode2D.Impulse);
+                }
             }
 
             // spawn hit vfx
@@ -77,13 +84,17 @@ namespace Player.Behaviours
             if (hitEffects == null) return;
             // spawn hit vfx
             GameObject vfx = Instantiate(
-                hitEffects, 
-                character.pointer.position, 
-                Quaternion.identity, 
+                hitEffects,
+                character.pointer.position,
+                Quaternion.identity,
                 character.transform
             );
             // set vfx direction
             vfx.transform.up = character.pointer.up;
+
+            // invoke event if something is hit
+            if (hits == null || hits.Length <= 0) return;
+            OnHit?.Invoke(hits);
         }
 
         protected void OnDrawGizmosSelected()

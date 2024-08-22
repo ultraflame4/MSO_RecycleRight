@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Level-1-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: Level 1
-    levelDescription: 'This level introduces the player to the pest infestation mechanic.
-
-      (This
-      description is to be edited)'
-    maxScore: 0
+    levelName: Shanbi Park
+    levelCode: LV - 1
+    levelDescription: 'There are pests everywhere! Stop food wastes from going into
+      bins to prevent pests! '
+    levelImage: {fileID: 0}
+    maxScore: 14

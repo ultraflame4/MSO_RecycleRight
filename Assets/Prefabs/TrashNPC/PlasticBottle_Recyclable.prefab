@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1704285733940377051, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2086369730254394613, guid: 5aefa5189b984a14a96eb6cd027bf446, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.183
@@ -130,6 +134,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.073856354}
-  m_Size: {x: 0.8619932, y: 2.5298986}
+  m_Offset: {x: 0, y: 0.92038715}
+  m_Size: {x: 0.8619932, y: 2.8762066}
   m_Direction: 0

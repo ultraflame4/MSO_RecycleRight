@@ -7,6 +7,8 @@ TagManager:
   - NPC
   - Bin
   - Pest
+  - FireTilemap
+  - TrainDoors
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Recyclable
   - Contaminant
   - Bin
-  - 
+  - CardboardBoxes
   - 
   - 
   - 

@@ -129,7 +129,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 77
       width: 15
       height: 28
     spriteID: 65f3e354058cb9c4e8bb01895f1b26ca
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 77}
   - name: Character Profile Images_Frame_1
     originalName: 
     pivot: {x: 0.4666667, y: 0.5714286}
@@ -148,8 +148,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 40
+      x: 34
+      y: 4
       width: 15
       height: 28
     spriteID: 1d4a0e690ba2c874eab8a2029fb7f12d
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 40}
+    uvTransform: {x: 34, y: 4}
   - name: Character Profile Images_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5714286}
@@ -168,8 +168,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 76
+      x: 34
+      y: 40
       width: 14
       height: 28
     spriteID: 528650e3ea847e846867b4c9c1db03db
@@ -180,7 +180,47 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
+    uvTransform: {x: 34, y: 40}
+  - name: Character Profile Images_Frame_3
+    originalName: 
+    pivot: {x: 0.54545456, y: 0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 22
+      height: 28
+    spriteID: a0791be3a1cbfde44aa370b285ebd118
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Character Profile Images_Frame_4
+    originalName: 
+    pivot: {x: 0.5625, y: 0.55172414}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 40
+      width: 16
+      height: 29
+    spriteID: 40a91875ffb6b92438db5b118b600262
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 40}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -214,6 +254,22 @@ ScriptedImporter:
         width: 14
         height: 28
       spriteId: 528650e3ea847e846867b4c9c1db03db
+    - name: Character Profile Images_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 4
+        y: 0
+        width: 22
+        height: 28
+      spriteId: a0791be3a1cbfde44aa370b285ebd118
+    - name: Character Profile Images_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 7
+        y: 0
+        width: 16
+        height: 29
+      spriteId: 40a91875ffb6b92438db5b118b600262
     linkedCells: []
     parentIndex: -1
   platformSettings:

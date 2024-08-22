@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using System.Linq;
 using Level.Bins;
 using UnityEngine;
 
 namespace Level
 {
+    [RequireComponent(typeof(PolygonCollider2D), typeof(EdgeCollider2D))]
     public class LevelZone : MonoBehaviour
     {
         [field: SerializeField]
@@ -11,6 +13,8 @@ namespace Level
         [field: SerializeField, Tooltip("How much to offset the zone. Should not affect camera positioning.")]
         public Vector2 offset { get; private set; } = Vector2.zero;
         [field: SerializeField, Tooltip("The buffer zone size. This is mainly used for NPC Ai Navigation")]
+        public float peek_extend { get; private set; } = 1.5f;
+        [field: SerializeField, Tooltip("How far can the camera peek outside the zone. (Defines CinemachineConfiner boundary)")]
         public float buffer_zone_size { get; private set; } = 10f;
 
         [field: SerializeField, Tooltip("Determines where the player should start in the zone. This is the offset from the left edge of the zone.")]
@@ -22,24 +26,42 @@ namespace Level
         /// <summary>
         /// The center of the zone
         /// </summary>
-        public Vector3 center=> transform.position + (Vector3)offset;
+        public Vector3 center => transform.position + (Vector3)offset;
         /// <summary>
         /// The position the camera should target
         /// </summary>
-        public Vector2 camera_target_pos=> transform.position;
-        public bool zoneComplete {get; private set;}
+        public Vector2 camera_target_pos => transform.position;
+        public bool zoneComplete { get; private set; }
         public ILevelEntity[] entities;
         public RecyclingBin[] bins;
-        
+        [field: SerializeField]
+        public PolygonCollider2D boundary { get; private set; }
+        public EdgeCollider2D edgeCollider { get; private set; }
+
+        [Header("Debug draw")]
+        public bool debug_drawLevelZone = true;
+        public bool debug_drawBufferZone = true;
+        public bool debug_drawPlayerStartPos = true;
+
         private void Start()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
-            bins = GetComponentsInChildren<RecyclingBin>();
+            UpdateBinsArray();
+            GenerateBoundaries();
+            GenerateBoundaryColliders();
         }
 
         public void RefreshEntities()
         {
-            entities = GetComponentsInChildren<ILevelEntity>();
+            // entities = GetComponentsInChildren<ILevelEntity>();
+        }
+
+        /// <summary>
+        /// Update references to bins in the zone
+        /// </summary>
+        public void UpdateBinsArray()
+        {
+            bins = GetComponentsInChildren<RecyclingBin>(true);
         }
 
         /// <summary>
@@ -47,6 +69,8 @@ namespace Level
         /// </summary>
         public void ActivateZone()
         {
+            edgeCollider.enabled = true;
+            if (entities == null) return;
             foreach (var entity in entities)
             {
                 entity.OnZoneStart();
@@ -58,6 +82,7 @@ namespace Level
         /// </summary>
         public void DeactiveZone()
         {
+            edgeCollider.enabled = false;
             var activeEntities = GetComponentsInChildren<ILevelEntity>();
             foreach (var entity in activeEntities)
             {
@@ -72,11 +97,13 @@ namespace Level
         /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
         /// </summary>
         /// <returns></returns>
-        public bool CheckZoneFinished(){
+        public bool CheckZoneFinished()
+        {
             return GetComponentsInChildren<IBinTrashItem>().Length < 1;
         }
 
-        private void OnTransformChildrenChanged() {
+        private void OnTransformChildrenChanged()
+        {
             zoneComplete = CheckZoneFinished();
         }
 
@@ -108,21 +135,75 @@ namespace Level
 
         public bool PositionWithinBufferZone(Vector3 position)
         {
-            
+
             return DistanceFromEdge(position) < buffer_zone_size;
         }
         #endregion
+
+
+        [EasyButtons.Button]
+        public void GenerateBoundaries()
+        {
+            if (boundary == null)
+            {
+                boundary = GetComponent<PolygonCollider2D>();
+            }
+            boundary.isTrigger = true;
+            var boundSize = size + Vector2.one * peek_extend * 2;
+            var top_right = boundSize / 2;
+            var top_left = new Vector2(-boundSize.x, boundSize.y) / 2;
+            var bottom_left = new Vector2(-boundSize.x, -boundSize.y) / 2;
+            var bottom_right = new Vector2(boundSize.x, -boundSize.y) / 2;
+
+            boundary.SetPath(0, new Vector2[] { top_right, top_left, bottom_left, bottom_right });
+        }
+
+
+        [EasyButtons.Button]
+        public void GenerateBoundaryColliders()
+        {
+            if (edgeCollider == null)
+            {
+                edgeCollider = GetComponent<EdgeCollider2D>();
+                if (edgeCollider == null){
+                    edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+                }
+            }
+            var boundSize = size;
+            var top_right = boundSize / 2;
+            var top_left = new Vector2(-boundSize.x, boundSize.y) / 2;
+            var bottom_left = new Vector2(-boundSize.x, -boundSize.y) / 2;
+            var bottom_right = new Vector2(boundSize.x, -boundSize.y) / 2;
+
+            edgeCollider.SetPoints(new List<Vector2>(){
+                top_right,top_left,bottom_left,bottom_right,top_right
+            });
+
+
+        }
+
+        private void OnValidate()
+        {
+            GenerateBoundaries();
+        }
+
         public void OnDrawGizmos()
         {
-            Gizmos.color = Color.white;
-            Gizmos.DrawWireCube(center, size);
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(center, size - Vector2.one * buffer_zone_size * 2);
-            Gizmos.color = Color.cyan * .1f;
-            Gizmos.DrawCube(center, size);
+            if (debug_drawLevelZone)
+            {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireCube(center, size);
+            }
+
+            if (debug_drawBufferZone)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireCube(center, size - Vector2.one * buffer_zone_size * 2);
+
+            }
 
             Gizmos.color = Color.green * .5f;
-            Gizmos.DrawSphere(player_startpos,.25f);
+            Gizmos.DrawSphere(player_startpos, .25f);
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Player.BinCleaning
             // get reference to the character data of this character
             currentCharacterData = GetComponent<PlayerCharacter>();
             // get reference to animator
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
             // subscribe to character change event
             controller.CharacterManager.CharacterChanged += OnCharacterChange;
             // subscribe to zone change event
@@ -167,6 +167,8 @@ namespace Player.BinCleaning
                 .ToArray();
             // check if anything still remains after the filter
             if (bins.Length <= 0) return;
+            // ensure bin is cleanable before starting cleaning proccess
+            if (!bins[0].cleanable) return;
             // set cleaning bin
             cleaningBin = bins[0];
             // handle starting bin cleaning
