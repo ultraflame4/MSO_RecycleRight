@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: player_popup_background_Frame_0
     originalName: 
-    pivot: {x: 0.5151515, y: -0.01604278}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 208
-      width: 330
-      height: 187
+      y: 4
+      width: 350
+      height: 197
     spriteID: 6e8d83607f2586440b936011353337cf
     spriteBone: []
     spriteOutline: []
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 208}
+    uvTransform: {x: 4, y: 4}
   - name: player_popup_background_Frame_1
     originalName: 
-    pivot: {x: 0.5030303, y: -0.021390375}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 403
-      width: 330
-      height: 187
+      y: 209
+      width: 350
+      height: 197
     spriteID: 6ce50a3fc140b1b4d87568f7695bd66a
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 403}
+    uvTransform: {x: 4, y: 209}
   - name: player_popup_background_Frame_2
     originalName: 
-    pivot: {x: 0.4873418, y: -0.020725388}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 598
-      width: 316
-      height: 193
+      y: 414
+      width: 350
+      height: 197
     spriteID: ea2de048f08542040a7bea4eeae4bfe3
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 598}
+    uvTransform: {x: 4, y: 414}
   - name: player_popup_background_Frame_3
     originalName: 
-    pivot: {x: 0.49999997, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 338
-      height: 196
+      y: 619
+      width: 350
+      height: 197
     spriteID: 668b1f66c6dad314f8972a43eb50d08f
     spriteBone: []
     spriteOutline: []
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 619}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -213,34 +213,34 @@ ScriptedImporter:
     - name: player_popup_background_Frame_0
       frameIndex: 0
       cellRect:
-        x: 5
-        y: 3
-        width: 330
-        height: 187
+        x: 0
+        y: 0
+        width: 350
+        height: 197
       spriteId: 6e8d83607f2586440b936011353337cf
     - name: player_popup_background_Frame_1
       frameIndex: 1
       cellRect:
-        x: 9
-        y: 4
-        width: 330
-        height: 187
+        x: 0
+        y: 0
+        width: 350
+        height: 197
       spriteId: 6ce50a3fc140b1b4d87568f7695bd66a
     - name: player_popup_background_Frame_2
       frameIndex: 2
       cellRect:
-        x: 21
-        y: 4
-        width: 316
-        height: 193
+        x: 0
+        y: 0
+        width: 350
+        height: 197
       spriteId: ea2de048f08542040a7bea4eeae4bfe3
     - name: player_popup_background_Frame_3
       frameIndex: 3
       cellRect:
-        x: 6
+        x: 0
         y: 0
-        width: 338
-        height: 196
+        width: 350
+        height: 197
       spriteId: 668b1f66c6dad314f8972a43eb50d08f
     linkedCells: []
     parentIndex: -1
