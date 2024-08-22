@@ -68,6 +68,7 @@ public class LevelEndMenu : MonoBehaviour {
         GameManager.Instance.OpenScene_LevelSelection();
     }
     public void btnRestart(){
+        SoundManager.Instance?.RestartBackgroundMusic();
         GameManager.Instance.RestartScene();
     }
 
