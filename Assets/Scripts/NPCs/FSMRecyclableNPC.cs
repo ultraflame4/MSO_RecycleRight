@@ -33,7 +33,7 @@ namespace NPC
         public SpriteRenderer spriteRenderer;
         public TextMeshProUGUI nameText;
 
-        public virtual void SpawnRecyclable() { }
+        protected virtual void SpawnRecyclable() { }
 
         public void OnEnterBin(RecyclingBin bin)
         {

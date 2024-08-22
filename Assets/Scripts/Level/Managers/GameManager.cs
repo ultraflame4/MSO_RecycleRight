@@ -10,26 +10,28 @@ public class GameManager : MonoBehaviour
     [SerializeField] float loadLevelDelay = 2.5f;
 
     public GameConfigSO config;
-    
+
     // array of characters that are currently in the party
     private PlayerCharacterSO[] selected_characters;
+    public event Action onSelectedCharactersChanged;
     public PlayerCharacterSO[] selectedCharacters
-    { 
-        get 
+    {
+        get
         {
             return selected_characters;
-        } 
-        set 
+        }
+        set
         {
             selected_characters = value;
+            onSelectedCharactersChanged?.Invoke();
             if (selected_characters == null || selected_characters.Length <= partySize) return;
-            PlayerCharacterSO[] tempArray = (PlayerCharacterSO[]) selected_characters.Clone();
+            PlayerCharacterSO[] tempArray = (PlayerCharacterSO[])selected_characters.Clone();
             selected_characters = new PlayerCharacterSO[partySize];
             for (int i = 0; i < selected_characters.Length; i++)
             {
                 selected_characters[i] = tempArray[i];
             }
-        } 
+        }
     }
 
     public int PartySize => partySize;
@@ -98,9 +100,9 @@ public class GameManager : MonoBehaviour
     /// <param name="index">Index of level name in array</param>
     public void LoadLevel(int index)
     {
-        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0 || 
+        if (delayed_switch_scene_coroutine != null || config.levels.Length == 0 ||
             index < 0 || index >= config.levels.Length)
-                return;
+            return;
         delayed_switch_scene_coroutine = StartCoroutine(DelayedSwitchScene(config.levels[index].scene.Name, loadLevelDelay));
         StartedLevelLoad?.Invoke();
     }

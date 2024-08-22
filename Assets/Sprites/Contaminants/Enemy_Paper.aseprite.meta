@@ -148,8 +148,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 121
+      x: 172
+      y: 225
       width: 41
       height: 36
     spriteID: 60b39c67c195bd3409dc21ff198cc8a8
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 121}
+    uvTransform: {x: 172, y: 225}
   - name: Enemy_Paper_Frame_9
     originalName: 
     pivot: {x: 0.5, y: -0.28}
@@ -169,7 +169,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 429
+      y: 165
       width: 42
       height: 35
     spriteID: 42d847b6245f1454f9ad4c91deaa3937
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 429}
+    uvTransform: {x: 4, y: 165}
   - name: Enemy_Paper_Frame_2
     originalName: 
     pivot: {x: 0.34042552, y: -0.26486486}
@@ -208,8 +208,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 117
-      y: 453
+      x: 172
+      y: 183
       width: 45
       height: 34
     spriteID: f459f77af4a172847884591e0da49fef
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 117, y: 453}
+    uvTransform: {x: 172, y: 183}
   - name: Enemy_Paper_Frame_4
     originalName: 
     pivot: {x: 0.85, y: -0.102127664}
@@ -308,8 +308,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 4
+      x: 4
+      y: 251
       width: 43
       height: 34
     spriteID: e66e7a41ff6b4bc4cadb2d93d7e62d00
@@ -320,7 +320,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 4}
+    uvTransform: {x: 4, y: 251}
   - name: Enemy_Paper_Frame_1
     originalName: 
     pivot: {x: 0.74418604, y: -0.014814814}
@@ -368,8 +368,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 117
-      y: 409
+      x: 172
+      y: 139
       width: 46
       height: 36
     spriteID: ffeb13cf76e1735429bb9b4e5755dab6
@@ -380,7 +380,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 117, y: 409}
+    uvTransform: {x: 172, y: 139}
   - name: Enemy_Paper_Frame_1
     originalName: 
     pivot: {x: 0.4255319, y: -0.2918919}
@@ -463,7 +463,7 @@ ScriptedImporter:
     uvTransform: {x: 55, y: 408}
   - name: Enemy_Paper_Frame_24
     originalName: 
-    pivot: {x: 0.4468085, y: -0.21081083}
+    pivot: {x: 0.4255319, y: -0.2918919}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -663,15 +663,15 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 364}
   - name: Enemy_Paper_Frame_6
     originalName: 
-    pivot: {x: 0.5121951, y: -0.32777777}
+    pivot: {x: 0.59574467, y: -0.23783785}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 165
-      width: 41
-      height: 36
+      x: 117
+      y: 409
+      width: 47
+      height: 37
     spriteID: 0b7136a4225e2ff44a8ab7927ba6f484
     spriteBone: []
     spriteOutline: []
@@ -680,18 +680,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 165}
+    uvTransform: {x: 117, y: 409}
   - name: Enemy_Paper_Frame_3
     originalName: 
-    pivot: {x: 0.4634146, y: -0.32777777}
+    pivot: {x: 0.5531915, y: -0.48108107}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 209
-      width: 41
-      height: 36
+      x: 117
+      y: 454
+      width: 47
+      height: 37
     spriteID: 7cc17f43ad7e8cf4e8ec00ab857e2a82
     spriteBone: []
     spriteOutline: []
@@ -700,18 +700,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 209}
+    uvTransform: {x: 117, y: 454}
   - name: Enemy_Paper_Frame_4
     originalName: 
-    pivot: {x: 0.41463414, y: -0.32777777}
+    pivot: {x: 0.31914893, y: -0.2918919}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 253
-      width: 41
-      height: 36
+      x: 172
+      y: 4
+      width: 47
+      height: 37
     spriteID: c37978126d863424f96923ee31e46536
     spriteBone: []
     spriteOutline: []
@@ -720,18 +720,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 253}
+    uvTransform: {x: 172, y: 4}
   - name: Enemy_Paper_Frame_5
     originalName: 
-    pivot: {x: 0.36585364, y: -0.32777777}
+    pivot: {x: 0.4255319, y: -0.2918919}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 297
-      width: 41
-      height: 36
+      x: 172
+      y: 49
+      width: 47
+      height: 37
     spriteID: 33198184d07883a499e301847071ef96
     spriteBone: []
     spriteOutline: []
@@ -740,18 +740,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 297}
+    uvTransform: {x: 172, y: 49}
   - name: Enemy_Paper_Frame_6
     originalName: 
-    pivot: {x: 0.31707317, y: -0.32777777}
+    pivot: {x: 0.4468085, y: -0.21081083}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 341
-      width: 41
-      height: 36
+      x: 172
+      y: 94
+      width: 47
+      height: 37
     spriteID: f2addd1cb3c8b734aad0acf537736d82
     spriteBone: []
     spriteOutline: []
@@ -760,7 +760,107 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 341}
+    uvTransform: {x: 172, y: 94}
+  - name: Enemy_Paper_Frame_7
+    originalName: 
+    pivot: {x: 0.5121951, y: -0.32777777}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 269
+      width: 41
+      height: 36
+    spriteID: dbcb3caf5237f6648ae7fb1de516a981
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 269}
+  - name: Enemy_Paper_Frame_0
+    originalName: 
+    pivot: {x: 0.4634146, y: -0.32777777}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 313
+      width: 41
+      height: 36
+    spriteID: 094bba19bdd8ec944bc410b5aa8bd7cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 313}
+  - name: Enemy_Paper_Frame_1
+    originalName: 
+    pivot: {x: 0.41463414, y: -0.32777777}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 357
+      width: 41
+      height: 36
+    spriteID: aaf9543c388e45e44abd3adcfd4e9244
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 357}
+  - name: Enemy_Paper_Frame_5
+    originalName: 
+    pivot: {x: 0.36585364, y: -0.32777777}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 401
+      width: 41
+      height: 36
+    spriteID: f8571e12682e9464aa84590e412a5dea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 401}
+  - name: Enemy_Paper_Frame_6
+    originalName: 
+    pivot: {x: 0.31707317, y: -0.32777777}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 445
+      width: 41
+      height: 36
+    spriteID: 9dcb1ed32dc899040a39242bbaeb3dca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 445}
   - name: Enemy_Paper_Frame_7
     originalName: 
     pivot: {x: 0.537037, y: -0.32777777}
@@ -772,7 +872,7 @@ ScriptedImporter:
       y: 4
       width: 54
       height: 36
-    spriteID: dbcb3caf5237f6648ae7fb1de516a981
+    spriteID: aaf7352d0dc670f4286e0e8989331060
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -789,10 +889,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 385
+      y: 121
       width: 41
       height: 36
-    spriteID: 094bba19bdd8ec944bc410b5aa8bd7cd
+    spriteID: 01fabb28031524f4cb688ff22b4c87eb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -800,7 +900,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 385}
+    uvTransform: {x: 4, y: 121}
   - name: Enemy_Paper_Frame_1
     originalName: 
     pivot: {x: 0.5, y: -0.28}
@@ -809,10 +909,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 472
+      y: 208
       width: 42
       height: 35
-    spriteID: aaf9543c388e45e44abd3adcfd4e9244
+    spriteID: ddd13f9c495da1440be7edc6ae440a71
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -820,7 +920,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 472}
+    uvTransform: {x: 4, y: 208}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -961,8 +1061,8 @@ ScriptedImporter:
     - name: Enemy_Paper_Frame_24
       frameIndex: 24
       cellRect:
-        x: 11
-        y: 11
+        x: 12
+        y: 14
         width: 47
         height: 37
       spriteId: 1864f83694793e1498dd5134e606efd0
@@ -1038,6 +1138,46 @@ ScriptedImporter:
         width: 47
         height: 37
       spriteId: dc464adfd710f9b469b5497fa4011b0d
+    - name: Enemy_Paper_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 4
+        y: 12
+        width: 47
+        height: 37
+      spriteId: 0b7136a4225e2ff44a8ab7927ba6f484
+    - name: Enemy_Paper_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 6
+        y: 21
+        width: 47
+        height: 37
+      spriteId: 7cc17f43ad7e8cf4e8ec00ab857e2a82
+    - name: Enemy_Paper_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 17
+        y: 14
+        width: 47
+        height: 37
+      spriteId: c37978126d863424f96923ee31e46536
+    - name: Enemy_Paper_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 12
+        y: 14
+        width: 47
+        height: 37
+      spriteId: 33198184d07883a499e301847071ef96
+    - name: Enemy_Paper_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 11
+        y: 11
+        width: 47
+        height: 37
+      spriteId: f2addd1cb3c8b734aad0acf537736d82
     - name: Enemy_Paper_Frame_2
       frameIndex: 2
       cellRect:
@@ -1045,7 +1185,7 @@ ScriptedImporter:
         y: 15
         width: 41
         height: 36
-      spriteId: 0b7136a4225e2ff44a8ab7927ba6f484
+      spriteId: dbcb3caf5237f6648ae7fb1de516a981
     - name: Enemy_Paper_Frame_3
       frameIndex: 3
       cellRect:
@@ -1053,7 +1193,7 @@ ScriptedImporter:
         y: 15
         width: 41
         height: 36
-      spriteId: 7cc17f43ad7e8cf4e8ec00ab857e2a82
+      spriteId: 094bba19bdd8ec944bc410b5aa8bd7cd
     - name: Enemy_Paper_Frame_4
       frameIndex: 4
       cellRect:
@@ -1061,7 +1201,7 @@ ScriptedImporter:
         y: 15
         width: 41
         height: 36
-      spriteId: c37978126d863424f96923ee31e46536
+      spriteId: aaf9543c388e45e44abd3adcfd4e9244
     - name: Enemy_Paper_Frame_5
       frameIndex: 5
       cellRect:
@@ -1069,7 +1209,7 @@ ScriptedImporter:
         y: 15
         width: 41
         height: 36
-      spriteId: 33198184d07883a499e301847071ef96
+      spriteId: f8571e12682e9464aa84590e412a5dea
     - name: Enemy_Paper_Frame_6
       frameIndex: 6
       cellRect:
@@ -1077,7 +1217,7 @@ ScriptedImporter:
         y: 15
         width: 41
         height: 36
-      spriteId: f2addd1cb3c8b734aad0acf537736d82
+      spriteId: 9dcb1ed32dc899040a39242bbaeb3dca
     - name: Enemy_Paper_Frame_7
       frameIndex: 7
       cellRect:
@@ -1085,7 +1225,7 @@ ScriptedImporter:
         y: 15
         width: 54
         height: 36
-      spriteId: dbcb3caf5237f6648ae7fb1de516a981
+      spriteId: aaf7352d0dc670f4286e0e8989331060
     - name: Enemy_Paper_Frame_0
       frameIndex: 0
       cellRect:
@@ -1093,7 +1233,7 @@ ScriptedImporter:
         y: 15
         width: 41
         height: 36
-      spriteId: 094bba19bdd8ec944bc410b5aa8bd7cd
+      spriteId: 01fabb28031524f4cb688ff22b4c87eb
     - name: Enemy_Paper_Frame_1
       frameIndex: 1
       cellRect:
@@ -1101,7 +1241,7 @@ ScriptedImporter:
         y: 13
         width: 42
         height: 35
-      spriteId: aaf9543c388e45e44abd3adcfd4e9244
+      spriteId: ddd13f9c495da1440be7edc6ae440a71
     linkedCells: []
     parentIndex: -1
   platformSettings:

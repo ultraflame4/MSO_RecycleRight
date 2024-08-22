@@ -47,6 +47,8 @@ public class LevelEndMenu : MonoBehaviour {
             }
             badgeChild.SetActive(true);
             badgeChild.GetComponent<Image>().sprite = grade.gradeSprite;
+            badgeChild.GetComponent<UI.Animations.UIAnimation>().sprites = grade.gradeSpritesFrames;
+            badgeChild.GetComponent<UI.Animations.UIAnimation>().Play();
         }
     }
 

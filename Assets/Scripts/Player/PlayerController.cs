@@ -21,6 +21,7 @@ namespace Player
         public PlayerSkillState SkillState { get; private set; }
         public PlayerMoveToZoneState MoveToZoneState { get; private set; }
         public PlayerDeathState DeathState { get; private set; }
+        public PlayerStunState StunState { get; private set; }
         #endregion
 
         #region Other Properties
@@ -75,6 +76,7 @@ namespace Player
             SkillState = new PlayerSkillState(this, this);
             MoveToZoneState = new PlayerMoveToZoneState(this, this);
             DeathState = new PlayerDeathState(this, this);
+            StunState = new PlayerStunState(this, this);
             // initialize state machine
             Initialize(DefaultState);
 

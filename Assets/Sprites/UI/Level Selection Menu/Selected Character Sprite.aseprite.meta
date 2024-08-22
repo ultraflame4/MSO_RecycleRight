@@ -129,7 +129,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 133
+      y: 136
       width: 41
       height: 99
     spriteID: 9fda3ef6d75882c43ace9457ed63f218
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 133}
+    uvTransform: {x: 4, y: 136}
   - name: Selected Character Sprite_Frame_1
     originalName: 
-    pivot: {x: 0.49180326, y: 0.49586776}
+    pivot: {x: 0.47457626, y: 0.48387095}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 61
-      height: 121
+      width: 59
+      height: 124
     spriteID: 706c05da75ab34b4b896aca92fa96bed
     spriteBone: []
     spriteOutline: []
@@ -168,8 +168,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 73
-      y: 4
+      x: 71
+      y: 110
       width: 37
       height: 70
     spriteID: 4a64ae5545fd3fa40a50d0623d2e02ad
@@ -180,7 +180,27 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 73, y: 4}
+    uvTransform: {x: 71, y: 110}
+  - name: Selected Character Sprite_Frame_3
+    originalName: 
+    pivot: {x: 0.47222224, y: 0.5510204}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 4
+      width: 36
+      height: 98
+    spriteID: bfbbc2bce9671ed4ebd1a910408bb4fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -201,10 +221,10 @@ ScriptedImporter:
     - name: Selected Character Sprite_Frame_1
       frameIndex: 1
       cellRect:
-        x: 2
+        x: 4
         y: 4
-        width: 61
-        height: 121
+        width: 59
+        height: 124
       spriteId: 706c05da75ab34b4b896aca92fa96bed
     - name: Selected Character Sprite_Frame_2
       frameIndex: 2
@@ -214,6 +234,14 @@ ScriptedImporter:
         width: 37
         height: 70
       spriteId: 4a64ae5545fd3fa40a50d0623d2e02ad
+    - name: Selected Character Sprite_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 15
+        y: 10
+        width: 36
+        height: 98
+      spriteId: bfbbc2bce9671ed4ebd1a910408bb4fe
     linkedCells: []
     parentIndex: -1
   platformSettings:

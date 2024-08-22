@@ -21,6 +21,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4fe374fabf888aa4b801d29d3c0aff4f, type: 2}
     - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: cleanable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: sightRange
       value: 3
       objectReference: {fileID: 0}
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: clean_prefab
+      value: 
+      objectReference: {fileID: 1564597524434622808, guid: c7e1d65aa430fdc469413f324039d823, type: 3}
     - target: {fileID: 4288516772591241683, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_text
       value: Soda Can
