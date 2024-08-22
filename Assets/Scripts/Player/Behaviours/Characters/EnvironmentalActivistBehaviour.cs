@@ -108,11 +108,6 @@ namespace Player.Behaviours
             }
         }
 
-        GameObject TryGetRecyclableFromContaminant(ContaminantNPC npc)
-        {
-            return npc.npcData.recyclableConfig.recyclablePrefab;
-        }
-
         public override void TriggerSkill()
         {
             base.TriggerSkill();
@@ -139,14 +134,14 @@ namespace Player.Behaviours
 
             foreach (ContaminantNPC contaminant in contaminants)
             {
-                var recyclableVariant = TryGetRecyclableFromContaminant(contaminant);
-                if (!recyclableVariant) return;
+                var recyclableVariant = contaminant.npcData.recyclableConfig.recyclablePrefab;
+                if (!recyclableVariant) continue;
                 
                 // Manually instantiate clean variant!
                 var obj = Instantiate(recyclableVariant, contaminant.transform.position, Quaternion.identity, contaminant.transform.parent);
                 // carry over stun timer to child
                 obj.GetComponent<IStunnable>()?.Stun(contaminant.state_Stunned.stun_timer);
-                Destroy(contaminant);
+                Destroy(contaminant.gameObject);
             }
         }
         #endregion
