@@ -44,7 +44,6 @@ namespace UI
                 // increment time elasped
                 timeElasped += Time.deltaTime;
                 yield return timeElasped;
-
             }
 
             container?.SetActive(false);
