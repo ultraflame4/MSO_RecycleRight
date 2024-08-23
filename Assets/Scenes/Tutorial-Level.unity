@@ -46779,6 +46779,10 @@ PrefabInstance:
       propertyPath: debug_characters
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3098136573413635867, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
+      propertyPath: <characters>k__BackingField.Array.data[1]
+      value: 
+      objectReference: {fileID: 5137057441427609284, guid: 5b16f2def832224448a1264c34d1acca, type: 3}
     - target: {fileID: 4417281709216151005, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
