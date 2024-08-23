@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UI.Animations;
 using Random = UnityEngine.Random;
+using UnityEngine.UIElements;
 
 namespace UI.LevelSelection
 {
@@ -16,20 +17,25 @@ namespace UI.LevelSelection
         [SerializeField] UIAnimator anim;
         [SerializeField] Vector2 glitchCooldown;
 
+        [Header("Sound Effects")]
+        [SerializeField] AudioClip openSound;
+        [SerializeField] AudioClip closeSound;
+
         protected Coroutine coroutine_glitch_effect, coroutine_transition;
         public bool Active { get; protected set; } = false;
 
         public bool enableGlitch = false;
 
-
-        private void OnEnable() {
-            if (enableGlitch){
-                ForceStartGlitch();
-            }
+        private void OnEnable() 
+        {
+            if (enableGlitch) ForceStartGlitch();
         }
 
         protected IEnumerator AnimateOpen()
         {
+            // play sound effect, only play when just starting animation
+            if (transform.localScale.x == 0f) PlaySoundEffect(true);
+            // open menu
             var currentPercent = transform.localScale.x / maxScale;
             // Calculate Start time progress from existing local scale.
             float elapsed = currentPercent * animationDuration;
@@ -53,7 +59,9 @@ namespace UI.LevelSelection
 
         protected IEnumerator AnimateClose()
         {
-
+            // play sound effect, only play when just starting animation
+            if (transform.localScale.x == 1f) PlaySoundEffect(false);
+            // close menu
             var currentPercent = 1 - transform.localScale.x / maxScale;
             // Calculate Start time progress from existing local scale.
             float elapsed = currentPercent * animationDuration;
@@ -83,6 +91,7 @@ namespace UI.LevelSelection
         {
             float timeElasped = 0f;
             Vector3 scale = transform.localScale;
+            PlaySoundEffect(active);
 
             if (active) scale.x = 0f;
 
@@ -127,8 +136,14 @@ namespace UI.LevelSelection
                 coroutine_glitch_effect = StartCoroutine(Glitch(glitch_callback, default_callback));
         }
 
+        private void PlaySoundEffect(bool active)
+        {
+            SoundManager.Instance?.PlayOneShot((active ? openSound : closeSound));
+        }
+
         [EasyButtons.Button]
-        private void ForceStartGlitch(){
+        private void ForceStartGlitch()
+        {
             StartCoroutine(Glitch());
         }
     }

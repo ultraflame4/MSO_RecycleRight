@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2162117837107865114}
   - component: {fileID: 3506537846467988749}
   m_Layer: 0
-  m_Name: Sprite (0)
+  m_Name: Sprite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,9 +244,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3596317876390961528}
-  - {fileID: 2445860188071534816}
   - {fileID: 557693585612459207}
+  - {fileID: 2445860188071534816}
+  - {fileID: 3596317876390961528}
   - {fileID: 1244461434683217949}
   - {fileID: 2901029722846094593}
   m_Father: {fileID: 0}
@@ -310,6 +310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 15
   moveDirection: {x: 1, y: 0}
+  boxCollider: {fileID: 1238397554832459093}
+  destroyManager: {fileID: 4697791480758576993}
+  zoneSpace: 1.2
 --- !u!114 &4697791480758576993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +444,7 @@ GameObject:
   - component: {fileID: 3745143003095319782}
   - component: {fileID: 1244066177586933379}
   m_Layer: 0
-  m_Name: Sprite (2)
+  m_Name: Sprite (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

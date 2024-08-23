@@ -14,12 +14,15 @@ namespace UI
         CharacterManager characterManager => PlayerController.Instance.CharacterManager;
         Behaviour[] behaviours;
         int activeIndex;
+        bool started = false;
 
         // Start is called before the first frame update
         void Start()
         {
-            // ensure character manager is not null
-            if (characterManager == null) return;
+            // ensure character manager and character instance is not null
+            if (characterManager == null || characterManager.character_instances == null || 
+                characterManager.character_instances.Length <= 0) 
+                    return;
             // reset active index to 0
             activeIndex = 0;
              // set character skill icon of first character, ensure icon image is not null
@@ -32,11 +35,21 @@ namespace UI
             }
             // subscribe to character change event
             characterManager.CharacterChanged += OnCharacterChange;
+            // set boolean managing start to true
+            started = true;
         }
 
         // Update is called once per frame
         void Update()
         {
+            // ensure character manager and character instance is not null
+            if (characterManager == null || characterManager.character_instances == null || 
+                characterManager.character_instances.Length <= 0) 
+                    return;
+            // when not null, check whether started, if not, call start again
+            else if (!started)
+                Start();
+            
             // update cooldown overlay
             cooldownOverlay.fillAmount = 1f - (behaviours[activeIndex].CooldownElasped / 
                 characterManager.character_instances[activeIndex].skillCooldown);

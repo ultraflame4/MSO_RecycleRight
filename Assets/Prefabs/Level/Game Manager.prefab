@@ -52,8 +52,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgSource: {fileID: 4564917739623658011}
   clips:
-  - {fileID: 8300000, guid: cd5e7dcaf492adb4881abbcdf50c772a, type: 3}
-  - {fileID: 8300000, guid: 79129d5fe022620458e154742584e5c1, type: 3}
+  - {fileID: 8300000, guid: 84c2389c24116eb46b9161e97bcb216a, type: 3}
+  - {fileID: 8300000, guid: 30ace5286155dcf4eb949e35490e4efe, type: 3}
+  - {fileID: 8300000, guid: 1974c4e33ce8dc8448ef75547b23fa40, type: 3}
 --- !u!82 &3612100737761973442
 AudioSource:
   m_ObjectHideFlags: 0
@@ -578,7 +579,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -710,4 +711,3 @@ MonoBehaviour:
   partySize: 3
   loadLevelDelay: 1
   config: {fileID: 11400000, guid: 4c5f914acc7877248ad6477e193426d9, type: 2}
-  is_root: 0

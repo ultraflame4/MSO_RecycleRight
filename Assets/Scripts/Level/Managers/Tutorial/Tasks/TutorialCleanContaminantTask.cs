@@ -21,9 +21,14 @@ namespace Level.Tutorial
 
         new void Update()
         {
+            if (completed) return;
+            hit = Physics2D.OverlapCircle(recyclables[0].originalPosition, 1.5f, LayerMask.GetMask("Recyclable"));
+            if (hit != null) hit.GetComponent<Navigation>().enabled = false;
             base.Update();
-            if (!completed && contaminant == null || contaminant.healthbar.value < minHealthPercent)
+
+            if (contaminant == null || contaminant.healthbar.value < minHealthPercent)
             {
+                if (hit != null) return;
                 ResetRecyclables();
                 if (recyclables == null || recyclables.Length <= 0) return;
                 contaminant = recyclables[0].gameObject.GetComponent<ContaminantNPC>();
@@ -40,20 +45,13 @@ namespace Level.Tutorial
 
         public override bool CheckTaskCompletion()
         {
-            if (completed || contaminant.grimeController.GrimeAmount > minGrimeAmount) return false;
+            if ((contaminant != null || hit == null) && contaminant.grimeController.GrimeAmount > minGrimeAmount) return false;
 
             // clean up game objects after completing task
             if (contaminant != null) Destroy(contaminant.gameObject);
 
             if (recyclables != null && recyclables.Length > 0)
-            {
-                hit = Physics2D.OverlapCircle(recyclables[0].originalPosition, 1.5f, LayerMask.GetMask("Recyclable"));
-                if (hit != null) 
-                {
-                    hit.GetComponent<Navigation>().enabled = false;
-                    TaskCompleted += DestroyRecyclable;
-                }
-            }
+                TaskCompleted += DestroyRecyclable;
 
             // increment box count
             box.IncrementCount();

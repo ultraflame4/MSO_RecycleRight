@@ -24,8 +24,9 @@ namespace Player.Behaviours
 
         #region Grab Attack Variables
         Collider2D hit;
-        Vector2 grabPosition;
         Animator anim;
+        Vector2 grabPosition => (Vector2) character.transform.position + 
+            ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
         float originalMovementSpeed;
         bool flippedCanSkill, flippedCanSwitch = false;
         bool grabbed => hit != null;
@@ -79,15 +80,8 @@ namespace Player.Behaviours
             // check if grabbed object can be grabbed
             IAmNotMovableByWilson movable = hit.GetComponent<IAmNotMovableByWilson>();
             // handle not grabbing object
-            if (movable != null && !movable.CanMove())
-            {
-                hit = null;
-                return;
-            }
-
-            // set grab position of enemy, and apply offset based on which direction the player is facing
-            grabPosition = (Vector2) character.transform.position + 
-                ((grabOffset * (Vector3.right * (character.Data.renderer.flipX ? -1f : 1f))) + (grabOffset * Vector3.up));
+            if (movable == null || movable.CanMove()) return;
+            hit = null;
         }
 
         void Throw()

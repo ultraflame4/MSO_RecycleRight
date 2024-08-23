@@ -788,6 +788,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586948166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &521560900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.7291198
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.412282
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040561364689358857, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013555632393553417, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_Name
+      value: PaperBag_Contaminant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540692220910325757, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540692220910325757, guid: f103b1a415779604c8050974d043d4b9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f103b1a415779604c8050974d043d4b9, type: 3}
 --- !u!1 &586948162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3098136573413635867, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
+      propertyPath: <characters>k__BackingField.Array.data[1]
+      value: 
+      objectReference: {fileID: 5137057441427609284, guid: 5b16f2def832224448a1264c34d1acca, type: 3}
     - target: {fileID: 4417281709216151005, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1936,6 +2005,10 @@ PrefabInstance:
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 7838679145695429165, guid: 41838358364bdfc43806156f72909678, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
@@ -4228,3 +4301,4 @@ SceneRoots:
   - {fileID: 1709637556}
   - {fileID: 1375170308}
   - {fileID: 613167930}
+  - {fileID: 521560900}

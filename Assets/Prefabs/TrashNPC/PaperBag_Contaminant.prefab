@@ -28,6 +28,14 @@ PrefabInstance:
       propertyPath: attackRange
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: attract_pests
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288516772591241683, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_text
+      value: Greasy Paper Bag
+      objectReference: {fileID: 0}
     - target: {fileID: 4470070128566506984, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Radius
       value: 1.1047796
@@ -92,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 632998969021843212, guid: 01b75fc967d705147bc3a82c03d9de68, type: 3}
+    - target: {fileID: 7100357504067239762, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032888024164147659, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_Controller
       value: 

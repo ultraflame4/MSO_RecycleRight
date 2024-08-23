@@ -9,6 +9,8 @@ using Level;
 using Level.Bins;
 using NPC;
 using Random = UnityEngine.Random;
+using Cinemachine;
+using Bosses.Pilotras.Bin;
 
 namespace Bosses.Pilotras
 {
@@ -22,8 +24,11 @@ namespace Bosses.Pilotras
         [field: Header("Components")]
         [field: SerializeField] public PilotrasFireController fireController { get; private set; }
         [field: SerializeField] public PilotrasNPCSpawner NPCSpawner{ get; private set; }
+        [field: SerializeField] public PilotrasBinManager binManager { get; private set; }
+        [field: SerializeField] public PilotrasBinCoroutineManager binCoroutineManager { get; private set; }
         [field: SerializeField] public IndicatorManager indicatorManager { get; private set; }
         [field: SerializeField] public Animator anim { get; private set; }
+        [field: SerializeField] public CinemachineVirtualCamera bossPeek { get; private set; }
 
         [Header("Debug")]
         [SerializeField] int debugPhase = 2;
@@ -139,6 +144,13 @@ namespace Bosses.Pilotras
             LoadSpawnableNPCs();
             SpawnBins();
             UpdatePhaseIndicator();
+        }
+
+        public void Roar()
+        {
+            if (data.sfx_roar == null || data.sfx_roar.Length <= 0) return;
+            SoundManager.Instance?.PlayOneShot(data.sfx_roar[Random.Range(0, data.sfx_roar.Length)]);
+            levelManager?.camera?.ShakeCamera(1.5f);
         }
         #endregion
 

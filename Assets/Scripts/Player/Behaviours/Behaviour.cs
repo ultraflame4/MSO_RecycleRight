@@ -42,7 +42,7 @@ namespace Player.Behaviours
 
         [HideInInspector] public float CooldownElasped = 0f;
 
-        void Awake()
+        protected virtual void Awake()
         {
             // get reference to player controller
             character = GetComponentInParent<PlayerController>();

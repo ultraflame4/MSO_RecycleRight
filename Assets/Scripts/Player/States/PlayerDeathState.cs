@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Patterns.FSM;
 using Entity.Data;
+using Level;
 
 namespace Player.FSM
 {
@@ -85,8 +86,7 @@ namespace Player.FSM
             }
 
             // if index is -1, it is the end of the game
-            // TODO: trigger end of the game
-            Debug.Log("End of game, all player characters have died. ");
+            LevelManager.Instance?.EndLevel();
         }
 
         // when character is available, this would be called, and would switch to new character

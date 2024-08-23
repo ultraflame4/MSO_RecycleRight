@@ -90,7 +90,7 @@ namespace NPC.Recyclable
             SwitchState(state_Stunned);
         }
 
-        public override void SpawnRecyclable()
+        protected override void SpawnRecyclable()
         {
             base.SpawnRecyclable();
             if (spawned_contaminant) return;

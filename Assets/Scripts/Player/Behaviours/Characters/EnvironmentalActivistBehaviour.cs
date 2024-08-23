@@ -21,24 +21,26 @@ namespace Player.Behaviours
 
         [Header("Passive")]
         [SerializeField] float cooldownDecrease = 2f;
-        
+
         GameObject indicatorPrefab;
         SpriteRenderer pointerSprite;
         bool replaceIndicator = true;
         float lastScore, currScore, dropoffScale, distance;
         int scoreDifference;
-        
+
         #region MonoBehaviour Callbacks
-        void Start()
+        protected override void Awake()
         {
+            // call awake in base state
+            base.Awake();
             // reset variables
             lastScore = 0;
             // instantiate attack range indicator prefab
             if (attackRangeIndicator == null) return;
             indicatorPrefab = Instantiate(
-                attackRangeIndicator, 
-                character.transform.position, 
-                Quaternion.identity, 
+                attackRangeIndicator,
+                character.transform.position,
+                Quaternion.identity,
                 character.pointer
             );
             // get reference to pointer sprite
@@ -64,7 +66,7 @@ namespace Player.Behaviours
 
             // show original indicator when triggering attack
             replaceIndicator = false;
-            StartCoroutine(CountDuration(data.attackDuration - (data.attackDuration * data.attackTriggerTimeFrame), 
+            StartCoroutine(CountDuration(data.attackDuration - (data.attackDuration * data.attackTriggerTimeFrame),
                 () => replaceIndicator = true));
 
             // get hit enemies
@@ -72,11 +74,11 @@ namespace Player.Behaviours
             if (hits.Length <= 0) return;
             // filter based on angle
             hits = hits
-                .Where(x => 
+                .Where(x =>
                     {
-                        float dot = Vector3.Dot((character.pointer.position - character.transform.position).normalized, 
+                        float dot = Vector3.Dot((character.pointer.position - character.transform.position).normalized,
                             (x.transform.position - character.transform.position).normalized);
-                        return (dot <= 1f && dot >= angle) || 
+                        return (dot <= 1f && dot >= angle) ||
                             Vector3.Distance(x.transform.position, character.transform.position) <= (range * damageDropoffRange);
                     })
                 .ToArray();
@@ -93,15 +95,15 @@ namespace Player.Behaviours
 
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
-                
+
                 CleanOrDamage(hit.gameObject, cleanAmount, attackDamage * dropoffScale);
-                
+
                 // stun and apply knockback to enemy that was hit
                 hit.GetComponent<IStunnable>()?.Stun(attackStunDuration * dropoffScale);
                 // try add knockback by getting rigidbody and adding force in hit direction
                 Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
                 if (rb == null) return;
-                rb.AddForce((character.pointer.position - character.transform.position).normalized * 
+                rb.AddForce((character.pointer.position - character.transform.position).normalized *
                     knockback * dropoffScale, ForceMode2D.Impulse);
             }
         }
@@ -112,7 +114,7 @@ namespace Player.Behaviours
 
             // show original indicator when triggering attack
             replaceIndicator = false;
-            StartCoroutine(CountDuration(data.skillCooldown - (data.skillCooldown * data.skillTriggerTimeFrame), 
+            StartCoroutine(CountDuration(data.skillDuration - (data.skillDuration * data.skillTriggerTimeFrame),
                 () => replaceIndicator = true));
 
             // ensure level manager is not null
@@ -123,16 +125,23 @@ namespace Player.Behaviours
             }
 
             // get contaminants
-            Collider2D[] hits = Physics2D.OverlapBoxAll(LevelManager.Instance.current_zone.transform.position, 
+            Collider2D[] hits = Physics2D.OverlapBoxAll(LevelManager.Instance.current_zone.transform.position,
                 LevelManager.Instance.current_zone.size, hitMask);
             ContaminantNPC[] contaminants = hits
                 .Select(x => x.GetComponent<ContaminantNPC>())
                 .Where(x => x != null)
                 .ToArray();
-            
+
             foreach (ContaminantNPC contaminant in contaminants)
             {
-                contaminant.SpawnRecyclable();
+                var recyclableVariant = contaminant.npcData.recyclableConfig.recyclablePrefab;
+                if (recyclableVariant == null) continue;
+                
+                // Manually instantiate clean variant!
+                var obj = Instantiate(recyclableVariant, contaminant.transform.position, Quaternion.identity, contaminant.transform.parent);
+                // carry over stun timer to child
+                obj.GetComponent<IStunnable>()?.Stun(contaminant.state_Stunned.stun_timer);
+                Destroy(contaminant.gameObject);
             }
         }
         #endregion
@@ -140,7 +149,7 @@ namespace Player.Behaviours
         #region Passive
         void TriggerPassive()
         {
-            scoreDifference = (int) (currScore - lastScore);
+            scoreDifference = (int)(currScore - lastScore);
             if (scoreDifference <= 0) return;
             CooldownElasped += cooldownDecrease * scoreDifference;
             if (CooldownElasped <= data.skillCooldown) return;
@@ -148,9 +157,9 @@ namespace Player.Behaviours
         }
         #endregion
 
-        protected void OnDrawGizmosSelected() 
+        protected void OnDrawGizmosSelected()
         {
-             // ensure character is not null
+            // ensure character is not null
             if (character == null) character = GetComponentInParent<PlayerController>();
             // if character cannot be found, do not draw gizmos
             if (character == null) return;
@@ -161,14 +170,14 @@ namespace Player.Behaviours
             // draw angle boundaries
             float rotationAngle = 90f * (1f - angle);
             Vector3 directionVector = (character.pointer.position - character.transform.position).normalized;
-            Debug.DrawLine(character.transform.position, character.transform.position + 
+            Debug.DrawLine(character.transform.position, character.transform.position +
                 Quaternion.Euler(0f, 0f, rotationAngle) * (directionVector * range), Color.magenta);
-            Debug.DrawLine(character.transform.position, character.transform.position + 
+            Debug.DrawLine(character.transform.position, character.transform.position +
                 Quaternion.Euler(0f, 0f, -rotationAngle) * (directionVector * range), Color.magenta);
             // draw skill range
             if (LevelManager.Instance == null) return;
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(LevelManager.Instance.current_zone.transform.position, 
+            Gizmos.DrawWireCube(LevelManager.Instance.current_zone.transform.position,
                 LevelManager.Instance.current_zone.size);
         }
     }

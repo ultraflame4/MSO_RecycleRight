@@ -18,6 +18,7 @@ MonoBehaviour:
     gradeDescription: 
     percentage: 0
     gradeSprite: {fileID: 0}
+    gradeSpritesFrames: []
     spriteRepeat: 0
   passGrades:
   - grade: Survived
@@ -25,28 +26,53 @@ MonoBehaviour:
     gradeDescription: 
     percentage: 0
     gradeSprite: {fileID: 0}
+    gradeSpritesFrames: []
     spriteRepeat: 0
   - grade: Pass
     gradeColor: {r: 0.042452812, g: 1, b: 0.35203934, a: 1}
     gradeDescription: 
     percentage: 0.25
     gradeSprite: {fileID: 0}
-    spriteRepeat: 0
+    gradeSpritesFrames:
+    - {fileID: 450912739526813749, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 8632932673965248515, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: -1900327473108512951, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 3830020128174874497, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 2169852293461486305, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    spriteRepeat: 1
   - grade: Great Effort
     gradeColor: {r: 0.25943398, g: 0.43259028, b: 1, a: 1}
     gradeDescription: 
     percentage: 0.5
     gradeSprite: {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
-    spriteRepeat: 1
+    gradeSpritesFrames:
+    - {fileID: 63870127892169731, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 8924720515751866812, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 6448559628198096167, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 1355219415142613987, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 7515666867534182532, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    spriteRepeat: 2
   - grade: Excellent
     gradeColor: {r: 0.72743374, g: 0.2216981, b: 1, a: 1}
     gradeDescription: 
     percentage: 0.75
     gradeSprite: {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    gradeSpritesFrames:
+    - {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: -2504715918349504449, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: -8396151107789246629, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 5095318326520983523, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 610077627853789919, guid: e368b4a666e16694b9fadfed68762222, type: 3}
     spriteRepeat: 2
   - grade: Perfect
     gradeColor: {r: 0.9960785, g: 0.7058824, b: 0, a: 1}
     gradeDescription: 
     percentage: 1
     gradeSprite: {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    gradeSpritesFrames:
+    - {fileID: 124275063970930348, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: -2504715918349504449, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: -8396151107789246629, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 5095318326520983523, guid: e368b4a666e16694b9fadfed68762222, type: 3}
+    - {fileID: 610077627853789919, guid: e368b4a666e16694b9fadfed68762222, type: 3}
     spriteRepeat: 3
