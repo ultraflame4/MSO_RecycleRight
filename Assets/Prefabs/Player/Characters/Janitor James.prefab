@@ -93,3 +93,13 @@ MonoBehaviour:
   knockback: 5
   stunDuration: 0.5
   cleanAmount: 0.25
+  skillDamage: 60
+  skillDuration: 5
+  skillRange: 3.5
+  hitForce: 80
+  defaultZoneHitThreshold: 1.5
+  zoneHitThresholdScale: 1.2
+  maxHitAmount: 2
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 1408

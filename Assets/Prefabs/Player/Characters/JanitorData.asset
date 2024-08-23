@@ -18,7 +18,7 @@ MonoBehaviour:
   maxHealth: 100
   movementSpeed: 250
   attackTriggerTimeFrame: 0.5
-  skillCooldown: 15
+  skillCooldown: 5
   skillTriggerTimeFrame: 0.9
   skillIcon: {fileID: 0}
   attackDuration: 0.5
