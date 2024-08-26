@@ -17,6 +17,7 @@ namespace Player.Behaviours
         [SerializeField] float skillRange = 5f;
         [SerializeField] float minDropoffRange = 3f;
         [SerializeField] float skillPullForce = 25f;
+        [SerializeField] GameObject skillVFX;
 
         [Header("Skill Pulling")]
         [SerializeField] RecyclableType pullableType = RecyclableType.PAPER;
@@ -25,6 +26,7 @@ namespace Player.Behaviours
         // variables to handle skill
         Collider2D[] hits;
         Coroutine tick;
+        GameObject skill_vfx_prefab;
         Rigidbody2D rb;
         float distance, force;
         bool skillActive = false;
@@ -39,19 +41,28 @@ namespace Player.Behaviours
             base.TriggerSkill();
             // set skill active to true
             skillActive = true;
+            // show skill vfx
+            skill_vfx_prefab = Instantiate(skillVFX, character.transform.position, Quaternion.identity, transform);
             // start coroutine to tick damage
             tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
             // start coroutine to count skill duration, skill duration is calculated by subtracting time from skill duration that the skill is not active
-            StartCoroutine(CountDuration(data.skillDuration - (data.skillTriggerTimeFrame * data.skillDuration), () => 
-                {
-                    // reset skill active to false
-                    skillActive = false;
-                    // stop damage tick
-                    if (tick == null) return;
-                    StopCoroutine(tick);
-                    tick = null;
-                }
-            ));
+            StartCoroutine(CountDuration(data.skillDuration - (data.skillTriggerTimeFrame * data.skillDuration), EndSkill));
+        }
+
+        void EndSkill()
+        {
+            // reset skill active to false
+            skillActive = false;
+            // reset skill vfx prefab
+            if (skill_vfx_prefab != null)
+            {
+                Destroy(skill_vfx_prefab);
+                skill_vfx_prefab = null;
+            }
+            // stop damage tick
+            if (tick == null) return;
+            StopCoroutine(tick);
+            tick = null;
         }
 
         void PerformSkill()

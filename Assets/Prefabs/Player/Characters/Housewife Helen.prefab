@@ -178,6 +178,7 @@ MonoBehaviour:
   skillRange: 7.5
   minDropoffRange: 4
   skillPullForce: 150
+  skillVFX: {fileID: 8826427523223597110, guid: 9d53cbaa280c84e408ba8f45ffc65e2d, type: 3}
   pullableType: 0
   pullableMask:
     serializedVersion: 2
