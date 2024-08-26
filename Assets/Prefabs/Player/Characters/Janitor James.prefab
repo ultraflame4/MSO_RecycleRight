@@ -98,7 +98,7 @@ MonoBehaviour:
   skillRange: 3.5
   hitForce: 80
   defaultZoneHitThreshold: 1.5
-  zoneHitThresholdScale: 1.2
+  zoneHitThresholdScale: 1.5
   maxHitAmount: 2
   hitMask:
     serializedVersion: 2

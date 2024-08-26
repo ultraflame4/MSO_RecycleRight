@@ -85,7 +85,7 @@ namespace Player.Behaviours
                 if (i >= hitColliders.Length) break;
                 if (hitRBs[i] == null) continue;
                 // set variables for calculation
-                zoneHitThreshold = GetZoneHitThreshold(hitColliders[i]) * 1.2f;
+                zoneHitThreshold = GetZoneHitThreshold(hitColliders[i]) * zoneHitThresholdScale;
                 position = hitColliders[i].transform.position;
                 velocity = hitRBs[i].velocity;
 
