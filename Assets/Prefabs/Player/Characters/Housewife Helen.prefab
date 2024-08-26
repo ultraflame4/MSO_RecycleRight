@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 1197034505934309080, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 4b9bcf10688f1b243a9f9233dcff291a, type: 2}
+      objectReference: {fileID: 9100000, guid: dad1d401a45361443a9b1f3328a317bb, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: skillIcon
       value: 
@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: cb3733b86c1c40c4dbec36e795501fda, type: 2}
+      objectReference: {fileID: 11400000, guid: 507197c998ae79c46be9895f7db58996, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: characterName
       value: Maid Mary
@@ -107,10 +107,10 @@ PrefabInstance:
     - target: {fileID: 4268136941399560414, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2233654393134734872, guid: 9d8b1a2b053610249974972808b24269, type: 3}
+      objectReference: {fileID: -8637108878070464553, guid: 38655bad90482e94791d268161aa9a9b, type: 3}
     - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Name
-      value: Maid Mary
+      value: Housewife Helen
       objectReference: {fileID: 0}
     - target: {fileID: 8198512540640695824, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Size.x

@@ -15,6 +15,7 @@ namespace Player.Behaviours
 
         [Header("Skill Fields")]
         [SerializeField] float skillRange = 5f;
+        [SerializeField] float minDropoffRange = 3f;
         [SerializeField] float skillPullForce = 25f;
 
         [Header("Skill Pulling")]
@@ -24,6 +25,8 @@ namespace Player.Behaviours
         // variables to handle skill
         Collider2D[] hits;
         Coroutine tick;
+        Rigidbody2D rb;
+        float distance, force;
         bool skillActive = false;
 
         void FixedUpdate()
@@ -70,12 +73,16 @@ namespace Player.Behaviours
             foreach (Collider2D hit in hits)
             {
                 // get rigidbody of component to apply force
-                Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+                rb = hit.GetComponent<Rigidbody2D>();
                 // ensure enemy that was hit has a rigidbody component
                 if (rb == null) continue;
+                // get distance of hit collider
+                distance = Vector3.Distance(character.transform.position, hit.transform.position);
+                // calculate force to add
+                force = distance <= minDropoffRange ? 1f : 1f - Mathf.Clamp01(distance - minDropoffRange / skillRange - minDropoffRange);
                 // pull enemy towards self
                 rb.AddForce((character.transform.position - hit.transform.position).normalized * 
-                    (1f - (Mathf.Clamp(Vector3.Distance(character.transform.position, hit.transform.position), 0f, skillRange) / skillRange)) * skillPullForce);
+                    force * skillPullForce);
             }
         }
 
