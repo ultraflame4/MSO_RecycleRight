@@ -30,9 +30,9 @@ MonoBehaviour:
       guid: 0a6f7b993b9c80b4899030c22f1b866e
     levelInfo: {fileID: 11400000, guid: 2bd7a8086155b164988459e91d2bce4c, type: 2}
   - scene:
-      asset: {fileID: 102900000, guid: 0a6f7b993b9c80b4899030c22f1b866e, type: 3}
-      guid: 0a6f7b993b9c80b4899030c22f1b866e
-    levelInfo: {fileID: 11400000, guid: 2bd7a8086155b164988459e91d2bce4c, type: 2}
+      asset: {fileID: 102900000, guid: 2a398b10af881f54ab2c918a6d4bb845, type: 3}
+      guid: 2a398b10af881f54ab2c918a6d4bb845
+    levelInfo: {fileID: 11400000, guid: 62d8d032046c40d48a03fac0ee84bcbd, type: 2}
   - scene:
       asset: {fileID: 102900000, guid: bef9fc202e415254488ded22dd2a5966, type: 3}
       guid: bef9fc202e415254488ded22dd2a5966
