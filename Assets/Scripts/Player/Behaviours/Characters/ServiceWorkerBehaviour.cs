@@ -11,6 +11,11 @@ namespace Player.Behaviours
         [SerializeField] float healAmount = 50f;
         [SerializeField, Range(0f, 1f)] float passiveHealScale = 0.25f;
 
+        [Header("Effects")]
+        [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip passiveSFX;
+        [SerializeField] AudioClip skillSFX;
+
         CharacterManager manager => character.CharacterManager;
         PlayerCharacter[] characters => manager.character_instances;
         float passiveHealAmount => healAmount * passiveHealScale;
@@ -26,6 +31,13 @@ namespace Player.Behaviours
             cooldown = null;
         }
 
+        public override void TriggerAttack()
+        {
+            base.TriggerAttack();
+            // play attack sfx
+            SoundManager.Instance?.PlayOneShot(attackSFX);
+        }
+
         public override void TriggerSkill()
         {
             if (manager == null)
@@ -38,6 +50,8 @@ namespace Player.Behaviours
             
             base.TriggerSkill();
 
+            // play skill sfx
+            SoundManager.Instance?.PlayOneShot(skillSFX);
             // apply healing to all characters
             foreach (PlayerCharacter character in characters)
             {
@@ -55,12 +69,17 @@ namespace Player.Behaviours
 
             if (characters == null || characters.Length <= 0 || hits == null) return;
 
+            // select character with lowest health
+            PlayerCharacter selectedCharacter = characters
+                .Where(x => x.Health > 0f)
+                .OrderBy(x => x.Health)
+                .ToArray()[0];
+            // do not heal if character is at max health
+            if (selectedCharacter.Health >= selectedCharacter.maxHealth) return;
             // sort characters array by health and heal lowest health character
-            Heal(passiveHealAmount * hits.Length, false, 
-                characters
-                    .Where(x => x.Health > 0f)
-                    .OrderBy(x => x.Health)
-                    .ToArray()[0]);
+            Heal(passiveHealAmount * hits.Length, false, selectedCharacter);
+            // play passive sfx
+            SoundManager.Instance?.PlayOneShot(passiveSFX);
         }
 
         void Heal(float amount, bool canRevive, PlayerCharacter target)
