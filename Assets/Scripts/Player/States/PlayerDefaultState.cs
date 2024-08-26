@@ -91,8 +91,6 @@ namespace Player.FSM
             character.Data.renderer.flipX = character.pointer.up.x < 0f;
             // disallow character switching when not in default state
             character.CharacterManager.CanSwitchCharacters = false;
-            // reset velocity when exiting state
-            rb.velocity = Vector2.zero;
         }
 
         public void ExternalTriggerSkill()
