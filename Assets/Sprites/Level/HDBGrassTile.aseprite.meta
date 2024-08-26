@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: HDBGrassTile
+  - name: HDBGrassTile_Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
