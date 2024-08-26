@@ -149,8 +149,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1408
   grabEffect: {fileID: 1319334646391704565, guid: 8d52ee1c76f7b8343a96c57d99759cbc, type: 3}
+  grabSFX: {fileID: 8300000, guid: bd7ace13a8a2f9e4c9daf5c6407bdaae, type: 3}
   throwDamage: 15
   throwStunDuration: 0.75
   throwForce: 25
   throwEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
+  throwSFX: {fileID: 8300000, guid: 05e50cc5424e802488ffe6d86a35e80b, type: 3}
   garbageTruckPrefab: {fileID: 1001936688018432966, guid: db588a3d9116d5d44aee3b344c406de9, type: 3}
+  skillTruckSFX: {fileID: 8300000, guid: 68e9837d8e0c3394d8fb48435766a625, type: 3}
+  skillHonkSFX: {fileID: 8300000, guid: c8cfd719c30ba624f8227f6cc9f9faae, type: 3}
+  skillCameraShakeDuration: 2.5
