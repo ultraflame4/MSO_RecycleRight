@@ -52,7 +52,7 @@ namespace Player.Behaviours
         
         void LateUpdate() 
         {
-            if (character.currentState != character.SkillState) return;
+            if (!data.Enabled || character.currentState != character.SkillState) return;
             StartSkill();
         }
 
