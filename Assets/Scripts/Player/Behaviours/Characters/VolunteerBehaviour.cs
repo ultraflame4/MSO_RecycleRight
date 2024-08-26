@@ -17,6 +17,8 @@ namespace Player.Behaviours
         [SerializeField] AudioClip attackSFX;
         [SerializeField] AudioClip attackStrongSFX;
         [SerializeField] AudioClip skillSFX;
+        [SerializeField] GameObject skillVFX;
+        GameObject vfx_prefab;
 
         public override void TriggerAttack()
         {
@@ -57,6 +59,8 @@ namespace Player.Behaviours
             StartCoroutine(CountDuration(buffDuration, () => SetBuffActive(false)));
             // play sfx
             SoundManager.Instance?.PlayOneShot(skillSFX);
+            // create vfx prefab
+            vfx_prefab = Instantiate(skillVFX, transform.position, Quaternion.identity, transform.parent.parent);
         }
 
         // private methods
@@ -71,6 +75,11 @@ namespace Player.Behaviours
                 otherCharaData.movementMultiplier = active ? buffScale : 1f;
                 otherCharaData.attackMultiplier = active ? 1f / buffScale : 1f;
             }
+
+            // destroy vfx prefab after skill duration
+            if (active || vfx_prefab == null) return;
+            Destroy(vfx_prefab);
+            vfx_prefab = null;
         }
     }
 }
