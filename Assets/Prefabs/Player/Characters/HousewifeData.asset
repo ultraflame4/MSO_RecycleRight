@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Maid Mary
   characterDesc: 
-  characterSprite: {fileID: -2199317966230432783, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+  characterSprite: {fileID: 8821091299396333678, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
   movementSpeed: 250
   attackTriggerTimeFrame: 0.85
