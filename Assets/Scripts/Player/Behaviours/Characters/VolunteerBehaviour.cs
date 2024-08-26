@@ -1,5 +1,6 @@
 using UnityEngine;
 using Entity.Data;
+using Level;
 
 namespace Player.Behaviours
 {
@@ -24,7 +25,8 @@ namespace Player.Behaviours
                 // double damage and knockback
                 attackDamage *= 2;
                 knockback *= 2;
-                // todo: add some effect to indicate this has been triggered
+                // play effects to show a critical hit
+                LevelManager.Instance?.camera?.ShakeCamera(0.15f);
             }
             // trigger base attack
             base.TriggerAttack();
