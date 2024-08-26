@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7
+guid: c66710695693b47448c78206a4d136f5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638581026592584859
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Selected Character Sprite_Frame_0
+  - name: HDBGrassTile_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 128
-    spriteID: 9fda3ef6d75882c43ace9457ed63f218
+      width: 32
+      height: 32
+    spriteID: 88e65c510e082564cb474ad3ef4ec71b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Selected Character Sprite_Frame_1
+  - name: HDBGrassTile_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 140
-      width: 64
-      height: 128
-    spriteID: 706c05da75ab34b4b896aca92fa96bed
+      y: 44
+      width: 32
+      height: 32
+    spriteID: e521341a4cf60d64ebad38358f93911c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 140}
-  - name: Selected Character Sprite_Frame_2
+    uvTransform: {x: 4, y: 44}
+  - name: HDBGrassTile_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 276
-      width: 64
-      height: 128
-    spriteID: 4a64ae5545fd3fa40a50d0623d2e02ad
+      y: 84
+      width: 32
+      height: 32
+    spriteID: 5fb4228a77cc3a24f8ecfa44e58c59c5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,19 +180,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 276}
-  - name: Selected Character Sprite_Frame_3
+    uvTransform: {x: 4, y: 84}
+  - name: HDBGrassTile_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
+      x: 44
       y: 4
-      width: 64
-      height: 128
-    spriteID: bfbbc2bce9671ed4ebd1a910408bb4fe
+      width: 32
+      height: 32
+    spriteID: 3beda5235a40bd749b82b6fd9ae49abc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,19 +200,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 4}
-  - name: Selected Character Sprite_Frame_4
+    uvTransform: {x: 44, y: 4}
+  - name: HDBGrassTile_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 140
-      width: 64
-      height: 128
-    spriteID: 551032ca18bf2094c9297fd9008db213
+      x: 44
+      y: 44
+      width: 32
+      height: 32
+    spriteID: a112743ecbce5ea4dbb364a0bd29d6d0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -220,19 +220,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 140}
-  - name: Selected Character Sprite_Frame_5
+    uvTransform: {x: 44, y: 44}
+  - name: HDBGrassTile_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 276
-      width: 64
-      height: 128
-    spriteID: f8ddf34b56eb38141838fc6cc4ded1a6
+      x: 44
+      y: 84
+      width: 32
+      height: 32
+    spriteID: b3a6ed4b1c727b640b269a2c1aca58e4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -240,140 +240,152 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 276}
+    uvTransform: {x: 44, y: 84}
+  - name: HDBGrassTile_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 4
+      width: 32
+      height: 32
+    spriteID: b887c3b89722a824ba4de3f90860af42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 4}
+  - name: HDBGrassTile_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 44
+      width: 32
+      height: 32
+    spriteID: 4c4d996d1344fad4697c9402d65d7cc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 44}
+  - name: HDBGrassTile_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 84
+      width: 32
+      height: 32
+    spriteID: d5b0e653f11a76f42ba58e8790bb79d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 84}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1287265905
-    name: Selected Character Sprite
+    guid: -602639274
+    name: HDBGrassTile
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Selected Character Sprite_Frame_0
+    - name: HDBGrassTile_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 128
-      spriteId: 9fda3ef6d75882c43ace9457ed63f218
-    - name: Selected Character Sprite_Frame_1
+        width: 32
+        height: 32
+      spriteId: 88e65c510e082564cb474ad3ef4ec71b
+    - name: HDBGrassTile_Frame_1
       frameIndex: 1
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 128
-      spriteId: 706c05da75ab34b4b896aca92fa96bed
-    - name: Selected Character Sprite_Frame_2
+        width: 32
+        height: 32
+      spriteId: e521341a4cf60d64ebad38358f93911c
+    - name: HDBGrassTile_Frame_2
       frameIndex: 2
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 128
-      spriteId: 4a64ae5545fd3fa40a50d0623d2e02ad
-    - name: Selected Character Sprite_Frame_3
+        width: 32
+        height: 32
+      spriteId: 5fb4228a77cc3a24f8ecfa44e58c59c5
+    - name: HDBGrassTile_Frame_3
       frameIndex: 3
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 128
-      spriteId: bfbbc2bce9671ed4ebd1a910408bb4fe
-    - name: Selected Character Sprite_Frame_4
+        width: 32
+        height: 32
+      spriteId: 3beda5235a40bd749b82b6fd9ae49abc
+    - name: HDBGrassTile_Frame_4
       frameIndex: 4
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 128
-      spriteId: 551032ca18bf2094c9297fd9008db213
-    - name: Selected Character Sprite_Frame_5
+        width: 32
+        height: 32
+      spriteId: a112743ecbce5ea4dbb364a0bd29d6d0
+    - name: HDBGrassTile_Frame_5
       frameIndex: 5
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 128
-      spriteId: f8ddf34b56eb38141838fc6cc4ded1a6
+        width: 32
+        height: 32
+      spriteId: b3a6ed4b1c727b640b269a2c1aca58e4
+    - name: HDBGrassTile_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      spriteId: b887c3b89722a824ba4de3f90860af42
+    - name: HDBGrassTile_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      spriteId: 4c4d996d1344fad4697c9402d65d7cc5
+    - name: HDBGrassTile_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      spriteId: d5b0e653f11a76f42ba58e8790bb79d4
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: iPhone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Windows Store Apps
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 128}
+  canvasSize: {x: 32, y: 32}
