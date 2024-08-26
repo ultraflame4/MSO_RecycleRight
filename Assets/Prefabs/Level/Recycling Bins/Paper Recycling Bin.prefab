@@ -5083,8 +5083,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infestation_secs: 4
+  cleanable: 1
   <recyclableType>k__BackingField: 0
   <binState>k__BackingField: 0
+  splashingSFX: {fileID: 8300000, guid: 87c546dfd92542c48a43ea6defc7db8a, type: 3}
+  bubbleSFX: {fileID: 8300000, guid: a1c78d9920d93284a9c67bf5555c0d6d, type: 3}
   nameText: {fileID: 4218542349674180466}
   scoreText: {fileID: 9108521643822776249}
   pestTimer: {fileID: 6677803824322237858}

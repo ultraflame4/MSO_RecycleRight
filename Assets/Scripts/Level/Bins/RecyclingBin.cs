@@ -21,6 +21,10 @@ namespace Level.Bins
         public RecyclableType recyclableType { get; private set; }
         [field: SerializeField]
         public BinState binState { get; private set; }
+
+        [Header("Sound Effects")]
+        [SerializeField] AudioClip splashingSFX;
+        [SerializeField] AudioClip bubbleSFX;
         #endregion
 
         #region Component References
@@ -160,14 +164,15 @@ namespace Level.Bins
             pending_infestation = false;
             infestation_percent = 0;
 
+            // play cleaning sfx
+            SoundManager.Instance?.PlayOneShot(splashingSFX);
+            SoundManager.Instance?.PlayOneShot(bubbleSFX);
             // Disable text as they are not used anyways
             nameText.enabled = false;
             scoreText.enabled = false;
             SetActiveCleaningEffects(true);
             pestSpawner.StopPestSpawning();
             pestTimerCtn.SetActive(false);
-
-
         }
 
         /// <summary>

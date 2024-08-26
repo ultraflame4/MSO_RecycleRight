@@ -44,45 +44,45 @@ namespace Level
         }
 
         Coroutine camera_shake_coroutine;
-        public IEnumerator ShakeCamera_Coroutine(float time, float? overrideIntensity = null)
+        float og_freq, og_amp;
+        IEnumerator ShakeCamera_Coroutine(CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin, float time, float? overrideIntensity = null)
         {
-            var brain = GetComponentInChildren<CinemachineBrain>();
-            var virtualCamera = brain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
-            CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
             if (cameraMultiChannelPerlin != null)
             {
-                var og_freq = cameraMultiChannelPerlin.m_FrequencyGain;
-                var og_amp = cameraMultiChannelPerlin.m_AmplitudeGain;
+                og_freq = cameraMultiChannelPerlin.m_FrequencyGain;
+                og_amp = cameraMultiChannelPerlin.m_AmplitudeGain;
 
                 cameraMultiChannelPerlin.m_AmplitudeGain = overrideIntensity.GetValueOrDefault(intensity);
                 cameraMultiChannelPerlin.m_FrequencyGain = frequency;
                 yield return new WaitForSeconds(time);
-                cameraMultiChannelPerlin.m_FrequencyGain = og_freq;
-                cameraMultiChannelPerlin.m_AmplitudeGain = og_amp;
+                ResetCameraShake(cameraMultiChannelPerlin);
             }
 
+            camera_shake_coroutine = null;
         }
-
 
         public void ShakeCamera(float time, float? overrideIntensity = null)
         {
-            if (camera_shake_coroutine != null)
-            {
-                StopCoroutine(camera_shake_coroutine);
-            }
-            camera_shake_coroutine = StartCoroutine(ShakeCamera_Coroutine(time, overrideIntensity));
+            var brain = GetComponentInChildren<CinemachineBrain>();
+            var virtualCamera = brain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
+            CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+            if (camera_shake_coroutine != null) ResetCameraShake(cameraMultiChannelPerlin);
+            camera_shake_coroutine = StartCoroutine(ShakeCamera_Coroutine(cameraMultiChannelPerlin, time, overrideIntensity));
+        }
+
+        void ResetCameraShake(CinemachineBasicMultiChannelPerlin cameraMultiChannelPerlin)
+        {
+            if (cameraMultiChannelPerlin == null) return;
+            StopCoroutine(camera_shake_coroutine);
+            cameraMultiChannelPerlin.m_FrequencyGain = og_freq;
+            cameraMultiChannelPerlin.m_AmplitudeGain = og_amp;
         }
 
         [EasyButtons.Button]
         void ShakeCamera_Inspector(float time, float overrideIntensity)
         {
-            if (camera_shake_coroutine != null)
-            {
-                StopCoroutine(camera_shake_coroutine);
-            }
-            camera_shake_coroutine = StartCoroutine(ShakeCamera_Coroutine(time, overrideIntensity));
+            ShakeCamera(time, overrideIntensity);
         }
-
-
     }
 }
