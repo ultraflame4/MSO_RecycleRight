@@ -148,7 +148,7 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 1408
-  grabEffect: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
+  grabEffect: {fileID: 1319334646391704565, guid: 8d52ee1c76f7b8343a96c57d99759cbc, type: 3}
   throwDamage: 15
   throwStunDuration: 0.75
   throwForce: 25
