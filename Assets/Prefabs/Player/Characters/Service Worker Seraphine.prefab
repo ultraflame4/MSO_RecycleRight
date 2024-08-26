@@ -118,3 +118,9 @@ MonoBehaviour:
   hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   healAmount: 50
   passiveHealScale: 0.25
+  gradualHealDuration: 1
+  attackSFX: {fileID: 8300000, guid: 4f043ef1cd513fd4c84c54c9262b91a5, type: 3}
+  passiveSFX: {fileID: 8300000, guid: 1ec0bd0ab11825d47aa7ba7a09a57472, type: 3}
+  skillSFX: {fileID: 8300000, guid: a6198d20734e1d442a69e5b1d9aa3542, type: 3}
+  passiveVFX: {fileID: 8858701298132252785, guid: 8ef786e189365ca4c8fcc3f2340e7db7, type: 3}
+  skillVFX: {fileID: 8858701298132252785, guid: 8bd35341f0638fc4281b36010922e29e, type: 3}

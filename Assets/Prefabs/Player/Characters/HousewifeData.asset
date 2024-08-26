@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6428e1feadfac2b44842b36725aae1f5, type: 3}
+  m_Name: HousewifeData
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
+  characterName: Maid Mary
+  characterDesc: 
+  characterSprite: {fileID: 8821091299396333678, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+  maxHealth: 100
+  movementSpeed: 250
+  attackTriggerTimeFrame: 0.85
+  skillCooldown: 12
+  skillTriggerTimeFrame: 0.25
+  skillIcon: {fileID: -7817459201985428684, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+  attackDuration: 1.2
+  skillDuration: 5
+  deathDuration: 3.5
+  characterSelectionSprite: {fileID: 4388333010386191989, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
+  prefab: {fileID: 5950129485960200443, guid: b52789876ef97eb4a87a6d0af1f60979, type: 3}

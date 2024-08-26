@@ -22,6 +22,11 @@ namespace Player.Behaviours
         [Header("Passive")]
         [SerializeField] float cooldownDecrease = 2f;
 
+        [Header("Effects")]
+        [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip skillSFX;
+        [SerializeField] GameObject skillVFX;
+
         GameObject indicatorPrefab;
         SpriteRenderer pointerSprite;
         bool replaceIndicator = true;
@@ -72,6 +77,9 @@ namespace Player.Behaviours
             // get hit enemies
             Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range, hitMask);
             if (hits.Length <= 0) return;
+            // play sfx
+            SoundManager.Instance?.PlayOneShot(attackSFX);
+
             // filter based on angle
             hits = hits
                 .Where(x =>
@@ -124,9 +132,11 @@ namespace Player.Behaviours
                 return;
             }
 
+            // play sfx
+            SoundManager.Instance?.PlayOneShot(skillSFX);
             // get contaminants
-            Collider2D[] hits = Physics2D.OverlapBoxAll(LevelManager.Instance.current_zone.transform.position,
-                LevelManager.Instance.current_zone.size, hitMask);
+            Collider2D[] hits = Physics2D.OverlapBoxAll(LevelManager.Instance.current_zone.center,
+                LevelManager.Instance.current_zone.size, 0f, hitMask);
             ContaminantNPC[] contaminants = hits
                 .Select(x => x.GetComponent<ContaminantNPC>())
                 .Where(x => x != null)
@@ -136,7 +146,8 @@ namespace Player.Behaviours
             {
                 var recyclableVariant = contaminant.npcData.recyclableConfig.recyclablePrefab;
                 if (recyclableVariant == null) continue;
-                
+                // spawn vfx
+                Instantiate(skillVFX, contaminant.transform.position, Quaternion.identity);
                 // Manually instantiate clean variant!
                 var obj = Instantiate(recyclableVariant, contaminant.transform.position, Quaternion.identity, contaminant.transform.parent);
                 // carry over stun timer to child
