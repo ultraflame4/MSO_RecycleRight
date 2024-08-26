@@ -1,8 +1,11 @@
+using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
+using TMPro;
+using Interfaces;
 using Level.Bins;
 using NPC;
-using Interfaces;
 
 namespace Player.Behaviours
 {
@@ -17,11 +20,12 @@ namespace Player.Behaviours
         [SerializeField] float skillRange = 5f;
         [SerializeField] float minDropoffRange = 3f;
         [SerializeField] float skillPullForce = 25f;
+        [SerializeField] TextMeshProUGUI selectedTypeText;
         [SerializeField] GameObject skillVFX;
 
         [Header("Skill Pulling")]
-        [SerializeField] RecyclableType pullableType = RecyclableType.PAPER;
         [SerializeField] LayerMask pullableMask;
+        [SerializeField] LayerMask binMask;
 
         [Header("Sound Effects")]
         [SerializeField] AudioClip attackSFX;
@@ -33,17 +37,32 @@ namespace Player.Behaviours
         // variables to handle skill
         Collider2D[] hits;
         Coroutine tick;
+        Rigidbody2D rb;
         GameObject skill_vfx_prefab;
         AudioSource skill_hold_source;
-        Rigidbody2D rb;
+        RecyclableType? pullableType = null;
         float distance, force;
         bool skillActive = false;
+
+        #region MonoBehaviour Callbacks
+        void Start()
+        {
+            selectedTypeText?.gameObject.SetActive(false);
+        }
+        
+        void LateUpdate() 
+        {
+            if (character.currentState != character.SkillState) return;
+            StartSkill();
+        }
 
         void FixedUpdate()
         {
             PerformSkill();
         }
+        #endregion
 
+        #region Inherited Methods
         public override void TriggerAttack()
         {
             base.TriggerAttack();
@@ -54,13 +73,6 @@ namespace Player.Behaviours
         public override void TriggerSkill()
         {
             base.TriggerSkill();
-            // set skill active to true
-            skillActive = true;
-            // play skill sfx
-            SoundManager.Instance?.PlayOneShot(skillStartSFX);
-            // wait for length of skill start sfx before playing hold sfx (slightly less to blend sfx)
-            StartCoroutine(CountDuration(skillStartSFX.length - skillAudioBlendAmount, () => 
-                SoundManager.Instance?.Play(skillHoldSFX, out skill_hold_source, true)));
             // show skill vfx
             skill_vfx_prefab = Instantiate(skillVFX, character.transform.position, Quaternion.identity, transform);
             // start coroutine to tick damage
@@ -68,42 +80,55 @@ namespace Player.Behaviours
             // start coroutine to count skill duration, skill duration is calculated by subtracting time from skill duration that the skill is not active
             StartCoroutine(CountDuration(data.skillDuration - (data.skillTriggerTimeFrame * data.skillDuration), EndSkill));
         }
-
-        void EndSkill()
+        #endregion
+        
+        #region Handle Skill Start
+        void StartSkill()
         {
-            // reset skill active to false
-            skillActive = false;
-            // handle resetting effects
-            HandleVFX();
-            HandleSFX();
-            // stop damage tick
-            if (tick == null) return;
-            StopCoroutine(tick);
-            tick = null;
+            // do not run if skill is already active
+            if (skillActive) return;
+            // set skill active to true
+            skillActive = true;
+            // play skill sfx
+            SoundManager.Instance?.PlayOneShot(skillStartSFX);
+            // wait for length of skill start sfx before playing hold sfx (slightly less to blend sfx)
+            StartCoroutine(CountDuration(skillStartSFX.length - skillAudioBlendAmount, () => 
+                SoundManager.Instance?.Play(skillHoldSFX, out skill_hold_source, true)));
+            // show selected type text
+            selectedTypeText?.gameObject.SetActive(true);
+            // select recyclable type
+            StartCoroutine(DelaySelectRecyclableType(data.skillDuration * data.skillTriggerTimeFrame));
         }
 
-        void HandleVFX()
+        void SelectRecyclableType()
         {
-            if (skill_vfx_prefab == null) return;
-            // reset skill vfx prefab
-            Destroy(skill_vfx_prefab);
-            skill_vfx_prefab = null;
+            Collider2D[] bins = Physics2D.OverlapCircleAll(character.transform.position, skillRange, binMask);
+            // find closest bin within range
+            if (bins != null && bins.Length > 0)
+            {
+                bins = bins.OrderBy(x => Vector3.Distance(character.transform.position, x.transform.position)).ToArray();
+                pullableType = bins[0].GetComponent<RecyclingBin>().recyclableType;
+            }
+            // set selected type text
+            if (selectedTypeText == null) return;
+            selectedTypeText.text = $"> {(pullableType == null ? "ALL" : pullableType)} <";
         }
 
-        void HandleSFX()
+        IEnumerator DelaySelectRecyclableType(float duration)
         {
-            if (skill_hold_source == null) return;
-            // stop playing skill hold sfx, and play skill end sfx
-            SoundManager.Instance?.PlayOneShot(skillEndSFX);
-            // slightly delay stopping the sound the blend the sfx
-            StartCoroutine(CountDuration(skillAudioBlendAmount, () => 
-                {
-                    SoundManager.Instance?.Stop(skill_hold_source);
-                    skill_hold_source = null;
-                }
-            ));
+            string[] recyclableTypes = Enum.GetNames(typeof(RecyclableType));
+            foreach (string recyclableType in recyclableTypes)
+            {
+                if (selectedTypeText == null) break;
+                selectedTypeText.text = $"> {recyclableType} <";
+                yield return new WaitForSeconds(duration / recyclableTypes.Length);
+            }
+            // select recyclable type after duration
+            SelectRecyclableType();
         }
+        #endregion
 
+        #region Handle Skill Hold
         void PerformSkill()
         {
             // only run if skill is active
@@ -114,7 +139,7 @@ namespace Player.Behaviours
             // filter out non recyclables that are not pullable
             hits = hits
                 .Select(x => x.GetComponent<FSMRecyclableNPC>())
-                .Where(x => x != null && x.recyclableType == pullableType)
+                .Where(x => x != null && (pullableType == null || x.recyclableType == (RecyclableType) pullableType))
                 .Select(x => x.GetComponent<Collider2D>())
                 .Where(x => x != null)
                 .ToArray();
@@ -147,6 +172,48 @@ namespace Player.Behaviours
             // start another coroutine to tick again
             tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
         }
+        #endregion
+
+        #region Handle Ending
+        void EndSkill()
+        {
+            // reset skill active to false
+            skillActive = false;
+            // reset pullable type
+            pullableType = null;
+            // hide selected type text
+            selectedTypeText?.gameObject.SetActive(false);
+            // handle resetting effects
+            HandleVFX();
+            HandleSFX();
+            // stop damage tick
+            if (tick == null) return;
+            StopCoroutine(tick);
+            tick = null;
+        }
+
+        void HandleVFX()
+        {
+            if (skill_vfx_prefab == null) return;
+            // reset skill vfx prefab
+            Destroy(skill_vfx_prefab);
+            skill_vfx_prefab = null;
+        }
+
+        void HandleSFX()
+        {
+            if (skill_hold_source == null) return;
+            // stop playing skill hold sfx, and play skill end sfx
+            SoundManager.Instance?.PlayOneShot(skillEndSFX);
+            // slightly delay stopping the sound the blend the sfx
+            StartCoroutine(CountDuration(skillAudioBlendAmount, () => 
+                {
+                    SoundManager.Instance?.Stop(skill_hold_source);
+                    skill_hold_source = null;
+                }
+            ));
+        }
+        #endregion
 
         new void OnDrawGizmosSelected() 
         {
