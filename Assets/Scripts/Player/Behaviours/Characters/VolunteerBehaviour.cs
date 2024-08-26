@@ -13,6 +13,11 @@ namespace Player.Behaviours
         [SerializeField] float buffScale = 1.5f;
         [SerializeField] float buffDuration = 15f;
 
+        [Header("Effects")]
+        [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip attackStrongSFX;
+        [SerializeField] AudioClip skillSFX;
+
         public override void TriggerAttack()
         {
             // boolean to check if passive is triggered
@@ -26,7 +31,13 @@ namespace Player.Behaviours
                 attackDamage *= 2;
                 knockback *= 2;
                 // play effects to show a critical hit
+                SoundManager.Instance?.PlayOneShot(attackStrongSFX);
                 LevelManager.Instance?.camera?.ShakeCamera(0.15f);
+            }
+            else 
+            {
+                // play effects for normal attack (no crit)
+                SoundManager.Instance?.PlayOneShot(attackSFX);
             }
             // trigger base attack
             base.TriggerAttack();
@@ -44,6 +55,8 @@ namespace Player.Behaviours
             SetBuffActive(true);
             // start coroutine to count buff duration
             StartCoroutine(CountDuration(buffDuration, () => SetBuffActive(false)));
+            // play sfx
+            SoundManager.Instance?.PlayOneShot(skillSFX);
         }
 
         // private methods

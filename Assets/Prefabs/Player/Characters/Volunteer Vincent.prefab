@@ -176,3 +176,6 @@ MonoBehaviour:
   passiveChance: 0.45
   buffScale: 1.5
   buffDuration: 10
+  attackSFX: {fileID: 8300000, guid: 02758e17c6819ad4fb47b43be96aa9a3, type: 3}
+  attackStrongSFX: {fileID: 8300000, guid: 8bc0dddb7858ec74ea09d56d67b1d28a, type: 3}
+  skillSFX: {fileID: 8300000, guid: f39085c91007fc249a7914358eef9722, type: 3}
