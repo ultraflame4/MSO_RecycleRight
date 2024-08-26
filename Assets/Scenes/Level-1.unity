@@ -503,6 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 232029152}
+  - component: {fileID: 232029153}
   m_Layer: 0
   m_Name: DoubleBench (8)
   m_TagString: Untagged
@@ -527,6 +528,18 @@ Transform:
   - {fileID: 1015732433}
   m_Father: {fileID: 686687557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &232029153
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232029151}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &232469602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -608,6 +621,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_Name
       value: ItsJustALamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -868,6 +885,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 3560f475a373e9240aee591ec1bc0b49, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 3560f475a373e9240aee591ec1bc0b49, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3560f475a373e9240aee591ec1bc0b49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1198,6 +1219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 433576483}
+  - component: {fileID: 433576484}
   m_Layer: 0
   m_Name: DoubleBench
   m_TagString: Untagged
@@ -1222,6 +1244,18 @@ Transform:
   - {fileID: 466599671}
   m_Father: {fileID: 1495563974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &433576484
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433576482}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &434919357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1726,6 +1760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543797109}
+  - component: {fileID: 543797110}
   m_Layer: 0
   m_Name: DoubleBench (4)
   m_TagString: Untagged
@@ -1750,6 +1785,18 @@ Transform:
   - {fileID: 269019506}
   m_Father: {fileID: 525891096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &543797110
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543797108}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &557255131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,6 +1806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557255132}
+  - component: {fileID: 557255133}
   m_Layer: 0
   m_Name: DoubleBench (5)
   m_TagString: Untagged
@@ -1783,6 +1831,18 @@ Transform:
   - {fileID: 1057563200}
   m_Father: {fileID: 525891096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &557255133
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557255131}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &586948162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +2035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItsJustALamp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.86
@@ -2074,6 +2138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698368008}
+  - component: {fileID: 698368009}
   m_Layer: 0
   m_Name: DoubleBench (5)
   m_TagString: Untagged
@@ -2098,6 +2163,18 @@ Transform:
   - {fileID: 1336241771}
   m_Father: {fileID: 686687557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &698368009
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698368007}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &732529523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +2184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732529524}
+  - component: {fileID: 732529525}
   m_Layer: 0
   m_Name: DoubleBench (7)
   m_TagString: Untagged
@@ -2131,6 +2209,18 @@ Transform:
   - {fileID: 271229167}
   m_Father: {fileID: 686687557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &732529525
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732529523}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &801707943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2605,6 +2695,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 04f1f6599f6361246b8527e256f6e895, type: 3}
       propertyPath: m_Name
       value: Fountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 04f1f6599f6361246b8527e256f6e895, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 04f1f6599f6361246b8527e256f6e895, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3126,6 +3220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301455330}
+  - component: {fileID: 1301455331}
   m_Layer: 0
   m_Name: DoubleBench (6)
   m_TagString: Untagged
@@ -3150,6 +3245,18 @@ Transform:
   - {fileID: 1257790897}
   m_Father: {fileID: 686687557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1301455331
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301455329}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &1304344408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3424,6 +3531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItsJustALamp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.108929
@@ -3480,6 +3591,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_Name
       value: ItsJustALamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3542,6 +3657,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_Name
       value: ItsJustALamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3668,6 +3787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1490480824}
+  - component: {fileID: 1490480825}
   m_Layer: 0
   m_Name: DoubleBench (3)
   m_TagString: Untagged
@@ -3692,6 +3812,18 @@ Transform:
   - {fileID: 295361121}
   m_Father: {fileID: 525891096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1490480825
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490480823}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1495563973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5107,6 +5239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItsJustALamp
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c01cff58beb80704ba9e155c8d5284b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.25687
@@ -5406,6 +5542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845590095}
+  - component: {fileID: 1845590096}
   m_Layer: 0
   m_Name: DoubleBench (2)
   m_TagString: Untagged
@@ -5430,6 +5567,18 @@ Transform:
   - {fileID: 2087432395}
   m_Father: {fileID: 1495563974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1845590096
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845590094}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &1846562211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6093,6 +6242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087784171}
+  - component: {fileID: 2087784172}
   m_Layer: 0
   m_Name: DoubleBench (1)
   m_TagString: Untagged
@@ -6117,6 +6267,18 @@ Transform:
   - {fileID: 409089697}
   m_Father: {fileID: 1495563974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &2087784172
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087784170}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &2142894398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6128,6 +6290,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 3560f475a373e9240aee591ec1bc0b49, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 3560f475a373e9240aee591ec1bc0b49, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3560f475a373e9240aee591ec1bc0b49, type: 3}
       propertyPath: m_LocalPosition.x
