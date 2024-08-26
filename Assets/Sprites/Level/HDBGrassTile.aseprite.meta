@@ -241,6 +241,66 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 44, y: 84}
+  - name: HDBGrassTile_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 4
+      width: 32
+      height: 32
+    spriteID: 12d236b6639bd4e4d9ca3a794ed13366
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 4}
+  - name: HDBGrassTile_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 44
+      width: 32
+      height: 32
+    spriteID: 1fdeeb58ac5cfb946ba711da6a2c7ef9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 44}
+  - name: HDBGrassTile_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 84
+      width: 32
+      height: 32
+    spriteID: 612007d457b24fd4aae942943cb44abf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 84}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -298,6 +358,30 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: b0a1634c8437a5a48b655fa1d09c1fd1
+    - name: HDBGrassTile_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      spriteId: 12d236b6639bd4e4d9ca3a794ed13366
+    - name: HDBGrassTile_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      spriteId: 1fdeeb58ac5cfb946ba711da6a2c7ef9
+    - name: HDBGrassTile_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      spriteId: 612007d457b24fd4aae942943cb44abf
     linkedCells: []
     parentIndex: -1
   platformSettings:
