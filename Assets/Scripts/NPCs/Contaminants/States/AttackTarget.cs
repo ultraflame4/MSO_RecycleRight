@@ -68,6 +68,7 @@ namespace NPC.Contaminants.States
 
         public void EndAttack()
         {
+            if (fsm.currentState != this) return;
             npc.SwitchState(npc.state_Idle);
         }
 

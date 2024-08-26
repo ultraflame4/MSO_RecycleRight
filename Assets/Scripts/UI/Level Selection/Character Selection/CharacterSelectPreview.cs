@@ -19,6 +19,10 @@ public class CharacterSelectPreview : MonoBehaviour
         GameManager.Instance.onSelectedCharactersChanged += UpdateCharacters;
     }
 
+    private void OnDestroy() {
+         GameManager.Instance.onSelectedCharactersChanged -= UpdateCharacters;
+    }
+
     [EasyButtons.Button]
     void UpdateCharacters()
     {
