@@ -23,10 +23,18 @@ namespace Player.Behaviours
         [SerializeField] RecyclableType pullableType = RecyclableType.PAPER;
         [SerializeField] LayerMask pullableMask;
 
+        [Header("Sound Effects")]
+        [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip skillStartSFX;
+        [SerializeField] AudioClip skillHoldSFX;
+        [SerializeField] AudioClip skillEndSFX;
+        [SerializeField] float skillAudioBlendAmount = 0.15f;
+
         // variables to handle skill
         Collider2D[] hits;
         Coroutine tick;
         GameObject skill_vfx_prefab;
+        AudioSource skill_hold_source;
         Rigidbody2D rb;
         float distance, force;
         bool skillActive = false;
@@ -36,11 +44,23 @@ namespace Player.Behaviours
             PerformSkill();
         }
 
+        public override void TriggerAttack()
+        {
+            base.TriggerAttack();
+            // play attack sfx
+            SoundManager.Instance?.PlayOneShot(attackSFX);
+        }
+
         public override void TriggerSkill()
         {
             base.TriggerSkill();
             // set skill active to true
             skillActive = true;
+            // play skill sfx
+            SoundManager.Instance?.PlayOneShot(skillStartSFX);
+            // wait for length of skill start sfx before playing hold sfx (slightly less to blend sfx)
+            StartCoroutine(CountDuration(skillStartSFX.length - skillAudioBlendAmount, () => 
+                SoundManager.Instance?.Play(skillHoldSFX, out skill_hold_source, true)));
             // show skill vfx
             skill_vfx_prefab = Instantiate(skillVFX, character.transform.position, Quaternion.identity, transform);
             // start coroutine to tick damage
@@ -53,16 +73,35 @@ namespace Player.Behaviours
         {
             // reset skill active to false
             skillActive = false;
-            // reset skill vfx prefab
-            if (skill_vfx_prefab != null)
-            {
-                Destroy(skill_vfx_prefab);
-                skill_vfx_prefab = null;
-            }
+            // handle resetting effects
+            HandleVFX();
+            HandleSFX();
             // stop damage tick
             if (tick == null) return;
             StopCoroutine(tick);
             tick = null;
+        }
+
+        void HandleVFX()
+        {
+            if (skill_vfx_prefab == null) return;
+            // reset skill vfx prefab
+            Destroy(skill_vfx_prefab);
+            skill_vfx_prefab = null;
+        }
+
+        void HandleSFX()
+        {
+            if (skill_hold_source == null) return;
+            // stop playing skill hold sfx, and play skill end sfx
+            SoundManager.Instance?.PlayOneShot(skillEndSFX);
+            // slightly delay stopping the sound the blend the sfx
+            StartCoroutine(CountDuration(skillAudioBlendAmount, () => 
+                {
+                    SoundManager.Instance?.Stop(skill_hold_source);
+                    skill_hold_source = null;
+                }
+            ));
         }
 
         void PerformSkill()

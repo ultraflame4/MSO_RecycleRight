@@ -183,3 +183,7 @@ MonoBehaviour:
   pullableMask:
     serializedVersion: 2
     m_Bits: 128
+  attackSFX: {fileID: 8300000, guid: 78e1f08bfefe43342b4b62af6043894d, type: 3}
+  skillStartSFX: {fileID: 8300000, guid: 5431f3e660e9f90428ef5364be9017c8, type: 3}
+  skillHoldSFX: {fileID: 8300000, guid: b50a0a147ac5268489c9d1c05936d53b, type: 3}
+  skillEndSFX: {fileID: 8300000, guid: 533ea79e0b92f064d899147a2a1aceff, type: 3}
