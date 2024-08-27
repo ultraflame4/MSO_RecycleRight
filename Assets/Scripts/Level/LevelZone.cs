@@ -43,7 +43,7 @@ namespace Level
         public bool debug_drawBufferZone = true;
         public bool debug_drawPlayerStartPos = true;
 
-        private void Start()
+        private void Awake()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
             UpdateBinsArray();
