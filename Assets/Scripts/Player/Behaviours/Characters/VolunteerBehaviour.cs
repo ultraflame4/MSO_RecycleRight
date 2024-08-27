@@ -1,5 +1,6 @@
 using UnityEngine;
 using Entity.Data;
+using Level;
 
 namespace Player.Behaviours
 {
@@ -11,6 +12,13 @@ namespace Player.Behaviours
         [Header("Skill")]
         [SerializeField] float buffScale = 1.5f;
         [SerializeField] float buffDuration = 15f;
+
+        [Header("Effects")]
+        [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip attackStrongSFX;
+        [SerializeField] AudioClip skillSFX;
+        [SerializeField] GameObject skillVFX;
+        GameObject vfx_prefab;
 
         public override void TriggerAttack()
         {
@@ -24,7 +32,14 @@ namespace Player.Behaviours
                 // double damage and knockback
                 attackDamage *= 2;
                 knockback *= 2;
-                // todo: add some effect to indicate this has been triggered
+                // play effects to show a critical hit
+                SoundManager.Instance?.PlayOneShot(attackStrongSFX);
+                LevelManager.Instance?.camera?.ShakeCamera(0.15f);
+            }
+            else 
+            {
+                // play effects for normal attack (no crit)
+                SoundManager.Instance?.PlayOneShot(attackSFX);
             }
             // trigger base attack
             base.TriggerAttack();
@@ -42,6 +57,10 @@ namespace Player.Behaviours
             SetBuffActive(true);
             // start coroutine to count buff duration
             StartCoroutine(CountDuration(buffDuration, () => SetBuffActive(false)));
+            // play sfx
+            SoundManager.Instance?.PlayOneShot(skillSFX);
+            // create vfx prefab
+            vfx_prefab = Instantiate(skillVFX, transform.position, Quaternion.identity, transform.parent.parent);
         }
 
         // private methods
@@ -56,6 +75,11 @@ namespace Player.Behaviours
                 otherCharaData.movementMultiplier = active ? buffScale : 1f;
                 otherCharaData.attackMultiplier = active ? 1f / buffScale : 1f;
             }
+
+            // destroy vfx prefab after skill duration
+            if (active || vfx_prefab == null) return;
+            Destroy(vfx_prefab);
+            vfx_prefab = null;
         }
     }
 }

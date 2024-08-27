@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: 034f46f0974198449917a6a15a10cfec, type: 2}
-  - {fileID: 11400000, guid: cb3733b86c1c40c4dbec36e795501fda, type: 2}
   - {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
   - {fileID: 11400000, guid: c5935cf5ed5773e42878dc2941262a1e, type: 2}
   - {fileID: 11400000, guid: 2cf92e9e15534bd45b6a3dce65d5b2e9, type: 2}
+  - {fileID: 11400000, guid: 3dd593d242c860349abfcf83632a464d, type: 2}
+  - {fileID: 11400000, guid: 507197c998ae79c46be9895f7db58996, type: 2}
   grades: {fileID: 11400000, guid: 01569d7a4a1b99e4e851eca9fd425321, type: 2}
   levels:
   - scene:
@@ -29,9 +30,9 @@ MonoBehaviour:
       guid: 0a6f7b993b9c80b4899030c22f1b866e
     levelInfo: {fileID: 11400000, guid: 2bd7a8086155b164988459e91d2bce4c, type: 2}
   - scene:
-      asset: {fileID: 102900000, guid: 0a6f7b993b9c80b4899030c22f1b866e, type: 3}
-      guid: 0a6f7b993b9c80b4899030c22f1b866e
-    levelInfo: {fileID: 11400000, guid: 2bd7a8086155b164988459e91d2bce4c, type: 2}
+      asset: {fileID: 102900000, guid: 2a398b10af881f54ab2c918a6d4bb845, type: 3}
+      guid: 2a398b10af881f54ab2c918a6d4bb845
+    levelInfo: {fileID: 11400000, guid: 62d8d032046c40d48a03fac0ee84bcbd, type: 2}
   - scene:
       asset: {fileID: 102900000, guid: bef9fc202e415254488ded22dd2a5966, type: 3}
       guid: bef9fc202e415254488ded22dd2a5966

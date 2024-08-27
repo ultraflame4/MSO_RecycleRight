@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6428e1feadfac2b44842b36725aae1f5, type: 3}
+  m_Name: JanitorData
+  m_EditorClassIdentifier: 
+  characterName: Janitor James
+  characterDesc: "Passive: Attacks are ranged and can clean cleanable contaminants.
+    \n\nSkill: Hits up to 2 recyclables within range with massive knockback and damage,
+    sending recyclables bouncing around the zone. "
+  characterSprite: {fileID: -4435119063177729968, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
+  maxHealth: 100
+  movementSpeed: 450
+  attackTriggerTimeFrame: 0.5
+  skillCooldown: 10
+  skillTriggerTimeFrame: 0.9
+  skillIcon: {fileID: 4632596982820311362, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+  attackDuration: 0.4
+  skillDuration: 1
+  deathDuration: 3.5
+  characterSelectionSprite: {fileID: 7878371768809106963, guid: 0ddc9998a7c266d478f54e44e763a6d7, type: 3}
+  prefab: {fileID: 7302601935110272086, guid: 59b474ec81486764e9701d9c2bee78c3, type: 3}

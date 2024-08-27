@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 12
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638603702515507547
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,16 +123,556 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Janitor_James
     originalName: 
-    pivot: {x: 0.7777778, y: -0.37142858}
+    pivot: {x: 0.53333336, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 4
+      width: 15
+      height: 35
+    spriteID: a2920a28a46938f499021bfa42e48c12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 4}
+  - name: Janitor_James_Frame_1
+    originalName: 
+    pivot: {x: 0.47058824, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 47
+      width: 17
+      height: 36
+    spriteID: 38cde302a6dd21b42af4df45360f7111
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 47}
+  - name: Janitor_James_Frame_2
+    originalName: 
+    pivot: {x: 0.3809524, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 91
+      width: 21
+      height: 36
+    spriteID: 2b5355006a2eed049939ceaf54404c59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 91}
+  - name: Janitor_James_Frame_3
+    originalName: 
+    pivot: {x: 0.3809524, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 91
+      width: 21
+      height: 36
+    spriteID: 2d8340e2e3d338d44847791e8f139ddf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 91}
+  - name: Janitor_James_Frame_4
+    originalName: 
+    pivot: {x: 0.3809524, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 132
+      y: 91
+      width: 21
+      height: 36
+    spriteID: af0bbb5d45af39e49a590f6c2fd5e237
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 132, y: 91}
+  - name: Janitor_James_Frame_5
+    originalName: 
+    pivot: {x: 0.3809524, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 91
+      width: 21
+      height: 36
+    spriteID: 6a8b11aa4cd6f204f92a7e40db020534
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 91}
+  - name: Janitor_James_Frame_6
+    originalName: 
+    pivot: {x: 0.3809524, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 91
+      width: 21
+      height: 36
+    spriteID: 65634fa4c3d0b9b43984bf8d77d9c625
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 91}
+  - name: Janitor_James_Frame_7
+    originalName: 
+    pivot: {x: 0.47058824, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 75
+      y: 47
+      width: 17
+      height: 36
+    spriteID: 6f2c632fa9a441643b55772497feea89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 75, y: 47}
+  - name: Janitor_James_Frame_8
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 175
+      y: 47
+      width: 15
+      height: 35
+    spriteID: cdf9a6d28d309c64daff24b6bc244f03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 175, y: 47}
+  - name: Janitor_James_Frame_9
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 198
+      y: 47
+      width: 15
+      height: 35
+    spriteID: e867e75464fb06d43957c89facf39671
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 198, y: 47}
+  - name: Janitor_James_Frame_10
+    originalName: 
+    pivot: {x: 0.47368422, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 179
+      y: 4
+      width: 19
+      height: 35
+    spriteID: ff87eb0b933f7c740a748f8b0b65f1fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 179, y: 4}
+  - name: Janitor_James_Frame_11
+    originalName: 
+    pivot: {x: 0.4615385, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 185
+      width: 13
+      height: 36
+    spriteID: 5a7fce9ac44c56a41be9ac0e6d2ddcfa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 185}
+  - name: Janitor_James_Frame_12
+    originalName: 
+    pivot: {x: 0.47058824, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 47
+      width: 17
+      height: 36
+    spriteID: bd3ecc6cb3bb6fa49b836979def9aada
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 47}
+  - name: Janitor_James_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 206
+      y: 4
+      width: 18
+      height: 35
+    spriteID: 93ffad18131b78544a6d5576f7fe75eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 206, y: 4}
+  - name: Janitor_James_Frame_14
+    originalName: 
+    pivot: {x: 0.4615385, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 25
+      y: 185
+      width: 13
+      height: 36
+    spriteID: e72fa456c9bd6a04bb242f9ef4ca39f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 25, y: 185}
+  - name: Janitor_James_Frame_15
+    originalName: 
+    pivot: {x: 0.47058824, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 125
+      y: 47
+      width: 17
+      height: 36
+    spriteID: 2eb50c1e2a736c7409b4541b96bfdc4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 125, y: 47}
+  - name: Janitor_James_Frame_16
+    originalName: 
+    pivot: {x: 0.47058824, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 47
+      width: 17
+      height: 36
+    spriteID: df0b9a34b03e0144cab1e97b8a1d8aa5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 47}
+  - name: Janitor_James_Frame_17
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 221
+      y: 47
+      width: 15
+      height: 35
+    spriteID: ee66f545708416f48b63e51f71502bd2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 221, y: 47}
+  - name: Janitor_James_Frame_18
+    originalName: 
+    pivot: {x: 0.2857143, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 91
+      width: 21
+      height: 35
+    spriteID: 4a4b1ad04dbc0824b8109b8754d635bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 219, y: 91}
+  - name: Janitor_James_Frame_19
+    originalName: 
+    pivot: {x: 0.21428573, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 143
+      y: 4
+      width: 28
+      height: 35
+    spriteID: 1f6350b1afba31c4399ac028680f9ff7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 143, y: 4}
+  - name: Janitor_James_Frame_20
+    originalName: 
+    pivot: {x: 0.17142858, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 4
+      width: 35
+      height: 35
+    spriteID: c733d75a4dfe96e40a297dfb0840b8ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 4}
+  - name: Janitor_James_Frame_21
+    originalName: 
+    pivot: {x: 0.15789473, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 47
+      width: 38
+      height: 36
+    spriteID: a4b696264de0c25418c4eb94621e4464
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 47}
+  - name: Janitor_James_Frame_22
+    originalName: 
+    pivot: {x: 0.5, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 27
+      y: 142
+      width: 14
+      height: 35
+    spriteID: 7e7bf9ad467cc7a4d8eb29c8c4310bb6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 27, y: 142}
+  - name: Janitor_James_Frame_23
+    originalName: 
+    pivot: {x: 0.4666667, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 142
+      width: 15
+      height: 35
+    spriteID: a5eb16dfff212f7408148a70255b8bd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 142}
+  - name: Janitor_James_Frame_24
+    originalName: 
+    pivot: {x: 0.5185185, y: -0.23255813}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 91
+      width: 27
+      height: 43
+    spriteID: bdd4d1ae646dcfc4c9560f735fcd3162
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 91}
+  - name: Janitor_James_Frame_25
+    originalName: 
+    pivot: {x: 0.5185185, y: -0.23255813}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 39
+      y: 91
+      width: 27
+      height: 43
+    spriteID: 417401edd77c0ad43aa08c5bc157164d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 39, y: 91}
+  - name: Janitor_James_Frame_26
+    originalName: 
+    pivot: {x: 0.23076923, y: -0.29411766}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 4
+      width: 39
+      height: 34
+    spriteID: d0e6c417d7d0f4a4aa5835ea4145eb76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 4}
+  - name: Janitor_James_Frame_27
+    originalName: 
+    pivot: {x: 0.6829268, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 18
+      width: 41
       height: 35
-    spriteID: a2920a28a46938f499021bfa42e48c12
+    spriteID: d861ec344b556e043aeb2e22bca49c98
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -150,17 +690,317 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Janitor_James
+    - name: Janitor_James_Frame_0
       frameIndex: 0
       cellRect:
-        x: 18
-        y: 13
-        width: 18
+        x: 24
+        y: 10
+        width: 15
         height: 35
       spriteId: a2920a28a46938f499021bfa42e48c12
+    - name: Janitor_James_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 24
+        y: 10
+        width: 17
+        height: 36
+      spriteId: 38cde302a6dd21b42af4df45360f7111
+    - name: Janitor_James_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 24
+        y: 10
+        width: 21
+        height: 36
+      spriteId: 2b5355006a2eed049939ceaf54404c59
+    - name: Janitor_James_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 24
+        y: 10
+        width: 21
+        height: 36
+      spriteId: 2d8340e2e3d338d44847791e8f139ddf
+    - name: Janitor_James_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 24
+        y: 10
+        width: 21
+        height: 36
+      spriteId: af0bbb5d45af39e49a590f6c2fd5e237
+    - name: Janitor_James_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 24
+        y: 10
+        width: 21
+        height: 36
+      spriteId: 6a8b11aa4cd6f204f92a7e40db020534
+    - name: Janitor_James_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 24
+        y: 10
+        width: 21
+        height: 36
+      spriteId: 65634fa4c3d0b9b43984bf8d77d9c625
+    - name: Janitor_James_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 24
+        y: 10
+        width: 17
+        height: 36
+      spriteId: 6f2c632fa9a441643b55772497feea89
+    - name: Janitor_James_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 24
+        y: 10
+        width: 15
+        height: 35
+      spriteId: cdf9a6d28d309c64daff24b6bc244f03
+    - name: Janitor_James_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 24
+        y: 10
+        width: 15
+        height: 35
+      spriteId: e867e75464fb06d43957c89facf39671
+    - name: Janitor_James_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 23
+        y: 10
+        width: 19
+        height: 35
+      spriteId: ff87eb0b933f7c740a748f8b0b65f1fc
+    - name: Janitor_James_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 26
+        y: 10
+        width: 13
+        height: 36
+      spriteId: 5a7fce9ac44c56a41be9ac0e6d2ddcfa
+    - name: Janitor_James_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 24
+        y: 10
+        width: 17
+        height: 36
+      spriteId: bd3ecc6cb3bb6fa49b836979def9aada
+    - name: Janitor_James_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 23
+        y: 10
+        width: 18
+        height: 35
+      spriteId: 93ffad18131b78544a6d5576f7fe75eb
+    - name: Janitor_James_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 26
+        y: 10
+        width: 13
+        height: 36
+      spriteId: e72fa456c9bd6a04bb242f9ef4ca39f9
+    - name: Janitor_James_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 24
+        y: 10
+        width: 17
+        height: 36
+      spriteId: 2eb50c1e2a736c7409b4541b96bfdc4f
+    - name: Janitor_James_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 24
+        y: 10
+        width: 17
+        height: 36
+      spriteId: df0b9a34b03e0144cab1e97b8a1d8aa5
+    - name: Janitor_James_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 24
+        y: 10
+        width: 15
+        height: 35
+      spriteId: ee66f545708416f48b63e51f71502bd2
+    - name: Janitor_James_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 26
+        y: 10
+        width: 21
+        height: 35
+      spriteId: 4a4b1ad04dbc0824b8109b8754d635bb
+    - name: Janitor_James_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 26
+        y: 10
+        width: 28
+        height: 35
+      spriteId: 1f6350b1afba31c4399ac028680f9ff7
+    - name: Janitor_James_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 26
+        y: 10
+        width: 35
+        height: 35
+      spriteId: c733d75a4dfe96e40a297dfb0840b8ce
+    - name: Janitor_James_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 26
+        y: 10
+        width: 38
+        height: 36
+      spriteId: a4b696264de0c25418c4eb94621e4464
+    - name: Janitor_James_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 25
+        y: 10
+        width: 14
+        height: 35
+      spriteId: 7e7bf9ad467cc7a4d8eb29c8c4310bb6
+    - name: Janitor_James_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 25
+        y: 10
+        width: 15
+        height: 35
+      spriteId: a5eb16dfff212f7408148a70255b8bd4
+    - name: Janitor_James_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 18
+        y: 10
+        width: 27
+        height: 43
+      spriteId: bdd4d1ae646dcfc4c9560f735fcd3162
+    - name: Janitor_James_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 18
+        y: 10
+        width: 27
+        height: 43
+      spriteId: 417401edd77c0ad43aa08c5bc157164d
+    - name: Janitor_James_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 23
+        y: 10
+        width: 39
+        height: 34
+      spriteId: d0e6c417d7d0f4a4aa5835ea4145eb76
+    - name: Janitor_James_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 4
+        y: 10
+        width: 41
+        height: 35
+      spriteId: d861ec344b556e043aeb2e22bca49c98
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: tvOS
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using Interfaces;
 using NPC.Contaminant;
+using Level;
 
 namespace Player.Behaviours
 {
@@ -12,15 +13,21 @@ namespace Player.Behaviours
         [SerializeField] Vector2 grabOffset;
         [SerializeField] LayerMask hitMask;
         [SerializeField] GameObject grabEffect;
+        [SerializeField] AudioClip grabSFX;
 
         [Header("Attack: Throw")]
         [SerializeField] float throwDamage = 3f;
         [SerializeField] float throwStunDuration = .75f;
         [SerializeField] float throwForce = 25f;
         [SerializeField] GameObject throwEffect;
+        [SerializeField] AudioClip throwSFX;
 
         [Header("Skill")]
         [SerializeField] GameObject garbageTruckPrefab;
+        [SerializeField] AudioClip skillTruckSFX;
+        [SerializeField] AudioClip skillHonkSFX;
+        [SerializeField] float skillCameraShakeDuration = 1.5f;
+
 
         #region Grab Attack Variables
         Collider2D hit;
@@ -57,6 +64,10 @@ namespace Player.Behaviours
             edgePosition.x -= screenHorSize;
             // instantiate truck prefab
             Instantiate(garbageTruckPrefab, edgePosition, Quaternion.identity);
+            // handle truck spawn effects
+            SoundManager.Instance?.PlayOneShot(skillTruckSFX);
+            SoundManager.Instance?.PlayOneShot(skillHonkSFX);
+            LevelManager.Instance?.camera?.ShakeCamera(skillCameraShakeDuration);
         }
         #endregion
 
@@ -76,6 +87,8 @@ namespace Player.Behaviours
             hit.GetComponent<IDamagable>()?.Damage(grabDamage);
             // spawn grab vfx
             SpawnVFX(grabEffect);
+            // play grab sfx
+            SoundManager.Instance?.PlayOneShot(grabSFX);
 
             // check if grabbed object can be grabbed
             IAmNotMovableByWilson movable = hit.GetComponent<IAmNotMovableByWilson>();
@@ -103,6 +116,8 @@ namespace Player.Behaviours
             }
             // spawn throw vfx
             SpawnVFX(throwEffect);
+            // play throw sfx
+            SoundManager.Instance?.PlayOneShot(throwSFX);
             // reset grab
             ResetGrab();
         }

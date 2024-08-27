@@ -25,6 +25,7 @@ namespace UI.LevelSelection.CharacterSelection
 
         [Header("UI")]
         [SerializeField] GameObject backButton;
+        [SerializeField] RectTransform descriptionContent;
         
         public CharacterSelectProfileManager CharacterList => characterList;
         public CharacterInfoMenuManager CharacterInfo => characterInfo;
@@ -74,6 +75,11 @@ namespace UI.LevelSelection.CharacterSelection
             characterInfo.gameObject.SetActive(pageState != PageState.CHARACTER_LIST);
             if (pageState != PageState.CHARACTER_INFO) return;
             characterInfo.SetUI();
+            // set default description content y-pos
+            if (descriptionContent == null) return;
+            Vector3 pos = descriptionContent.position;
+            pos.y = descriptionContent.sizeDelta.y * -0.5f;
+            descriptionContent.position = pos;
         }
         #endregion
 
