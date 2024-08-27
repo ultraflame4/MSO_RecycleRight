@@ -11,9 +11,10 @@ namespace UI
         [SerializeField] Image playerSprite;
         [SerializeField] float showDuration = 1.5f;
         [SerializeField] float fadeOutDuration = 0.5f;
+        [SerializeField, Range(0f, 1f)] float cancelPopupWindow = 0.25f;
 
         PlayerController player => PlayerController.Instance;
-        Coroutine coroutine;
+        Coroutine coroutine_show, coroutine_hide;
 
         // Update is called once per frame
         void Update()
@@ -24,12 +25,21 @@ namespace UI
 
             if (player.currentState != player.SkillState) 
             {
-                coroutine = null;
+                coroutine_show = null;
+                coroutine_hide = null;
                 return;
             }
 
-            if (coroutine != null) return;
-            coroutine = StartCoroutine(ShowPopup());
+            if (coroutine_show != null) return;
+            coroutine_show = StartCoroutine(ShowPopup());
+        }
+
+        void CheckCancelPopup()
+        {
+            if (!Input.anyKeyDown) return;
+            if (coroutine_show == null || coroutine_hide != null) return;
+            StopCoroutine(coroutine_show);
+            coroutine_hide = StartCoroutine(HidePopup());
         }
 
         IEnumerator ShowPopup()
@@ -43,12 +53,22 @@ namespace UI
                 // update player sprite
                 playerSprite.sprite = player.Data.renderer.sprite;
                 playerSprite.SetNativeSize();
+                
+                // check if popup can be canceled
+                if (timeElasped >= showDuration * cancelPopupWindow) 
+                    CheckCancelPopup();
+                
                 // increment time elasped
                 timeElasped += Time.deltaTime;
                 yield return timeElasped;
             }
 
-            timeElasped = 0f;
+            coroutine_hide = StartCoroutine(HidePopup());
+        }
+
+        IEnumerator HidePopup()
+        {
+            float timeElasped = 0f;
 
             while (timeElasped < fadeOutDuration)
             {
