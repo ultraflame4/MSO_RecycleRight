@@ -17,8 +17,12 @@ public class LevelSelectHall : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI levelDesc;
     [SerializeField]
+    private AudioClip trainHallEnterSFX;
+    [SerializeField]
+    private AudioClip trainHallExitSFX;
+    [SerializeField]
     private AudioClip trainHallNoiseSFX;
-    AudioSource sfxSource;
+    AudioSource train_noise_sfx_source;
 
     public void Activate(LevelInfoSO levelInfo)
     {
@@ -36,7 +40,8 @@ public class LevelSelectHall : MonoBehaviour
         levelTitle.text = levelInfo.data.levelName;
         levelDesc.text = levelInfo.data.levelDescription;
 
-        SoundManager.Instance?.Play(trainHallNoiseSFX, out sfxSource, true);
+        SoundManager.Instance?.PlayOneShot(trainHallEnterSFX);
+        SoundManager.Instance?.Play(trainHallNoiseSFX, out train_noise_sfx_source, true);
     }
 
 
@@ -46,13 +51,17 @@ public class LevelSelectHall : MonoBehaviour
         // gameObject.SetActive(false);
         trainDoorsAnim.SetTrigger("openDoors");
         animator.SetBool("Active", false);
-        if (sfxSource != null) SoundManager.Instance?.Stop(sfxSource);
+        // SoundManager.Instance?.PlayOneShot(trainHallExitSFX);
+        if (train_noise_sfx_source != null) SoundManager.Instance?.Stop(train_noise_sfx_source);
     }
 
 
-    public IEnumerator LaunchAnimation(){
+    public IEnumerator LaunchAnimation()
+    {
         animator.SetTrigger("launchScene");
-        if (sfxSource != null) SoundManager.Instance?.Stop(sfxSource);
+        SoundManager.Instance?.PlayOneShot(trainHallExitSFX);
+        if (train_noise_sfx_source != null) SoundManager.Instance?.Stop(train_noise_sfx_source);
+
         yield return new WaitForSeconds(0.25f);
         trainDoorsAnim.SetBool("zoom_out", false);
         // gameObject.SetActive(false);
