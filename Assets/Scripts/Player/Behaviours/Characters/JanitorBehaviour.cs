@@ -21,6 +21,10 @@ namespace Player.Behaviours
         [SerializeField] int maxHitAmount = 2;
         [SerializeField] LayerMask hitMask;
 
+        [Header("Sound Effects")]
+        [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip skillSFX;
+
         Collider2D[] hitColliders;
         Rigidbody2D[] hitRBs;
         LevelZone zone => LevelManager.Instance.current_zone;
@@ -28,9 +32,19 @@ namespace Player.Behaviours
         Vector2 minPos => (Vector2) zone.center - (zone.size * 0.5f);
         float skillTimeElasped = 0f;
 
+        public override void TriggerAttack()
+        {
+            base.TriggerAttack();
+            // play sfx
+            SoundManager.Instance?.PlayOneShot(attackSFX);
+        }
+
         public override void TriggerSkill()
         {
             base.TriggerSkill();
+            // play effects
+            SoundManager.Instance?.PlayOneShot(skillSFX);
+            LevelManager.Instance?.camera?.ShakeCamera(0.5f);
             // detect enemies within range
             hitColliders = Physics2D.OverlapCircleAll(character.pointer.position, skillRange, hitMask);
             if (hitColliders == null || hitColliders.Length <= 0) return;
@@ -63,9 +77,16 @@ namespace Player.Behaviours
         void OnProjectileHit(Projectile ctx, Collider2D other)
         {
             ctx.OnHit -= OnProjectileHit;
+
             // clean contaminant
             if (other.TryGetComponent<ICleanable>(out ICleanable cleanable))
+            {
+                // reverse damage if cleaning
+                if (other.TryGetComponent<IDamagable>(out IDamagable damagable))
+                    damagable.Damage(-damage);
                 cleanable.Clean(cleanAmount);
+            }
+
             // stun before adding knockback
             if (other.TryGetComponent<IStunnable>(out IStunnable stunnable))
                 stunnable.Stun(stunDuration);

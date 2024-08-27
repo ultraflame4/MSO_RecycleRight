@@ -1174,7 +1174,7 @@ PrefabInstance:
     - target: {fileID: 3098136573413635867, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
       propertyPath: <characters>k__BackingField.Array.data[1]
       value: 
-      objectReference: {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}
+      objectReference: {fileID: 7302601935110272086, guid: 59b474ec81486764e9701d9c2bee78c3, type: 3}
     - target: {fileID: 3098136573413635867, guid: b8640cc2635dc0f45aff42d008ddf79b, type: 3}
       propertyPath: <characters>k__BackingField.Array.data[2]
       value: 
