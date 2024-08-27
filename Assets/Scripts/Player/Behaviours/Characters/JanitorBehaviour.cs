@@ -79,7 +79,7 @@ namespace Player.Behaviours
             ctx.OnHit -= OnProjectileHit;
 
             // clean contaminant
-            if (other.TryGetComponent<ICleanable>(out ICleanable cleanable))
+            if (other.TryGetComponent<ICleanable>(out ICleanable cleanable) && cleanable.AllowCleanable)
             {
                 // reverse damage if cleaning
                 if (other.TryGetComponent<IDamagable>(out IDamagable damagable))
