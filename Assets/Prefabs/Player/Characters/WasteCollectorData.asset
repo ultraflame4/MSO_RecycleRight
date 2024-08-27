@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: WasteCollectorData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Waste Collector Wilson
-  characterDesc: 
+  characterDesc: "Passive: Attacks are modified to a 2-hit grab and throw combo.
+    \n\nSkill: Summons an army of garbage trucks that disposes of everything in the
+    current zone. "
   characterSprite: {fileID: -4739837699357375595, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
-  maxHealth: 100
-  movementSpeed: 250
+  maxHealth: 120
+  movementSpeed: 350
   attackTriggerTimeFrame: 0.5
   skillCooldown: 7
   skillTriggerTimeFrame: 0

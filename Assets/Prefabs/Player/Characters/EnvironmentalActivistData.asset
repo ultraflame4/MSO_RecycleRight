@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: EnvironmentalActivistData
   m_EditorClassIdentifier: 
   characterName: Environmental Activist Asan
-  characterDesc: 
+  characterDesc: "Passive: Attacks in a wide Area of Effect (AoE) that can clean
+    cleanable contaminants. Does more damage and knockback when closer to the enemy.
+    \n\nSkill: Uses her special powers to clean all contaminants in the current zone. "
   characterSprite: {fileID: -5500267626175664500, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
-  maxHealth: 100
-  movementSpeed: 250
+  maxHealth: 80
+  movementSpeed: 500
   attackTriggerTimeFrame: 0.65
   skillCooldown: 15
   skillTriggerTimeFrame: 0.75
