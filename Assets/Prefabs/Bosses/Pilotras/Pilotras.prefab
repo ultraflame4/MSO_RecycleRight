@@ -360,11 +360,11 @@ MonoBehaviour:
   yOffset: 1.75
   numberOfPhases: 2
   maxNPCCount: 10
-  meteorAttackDamage: 15
-  laneAttackDamage: 25
-  binDropDamage: 25
+  meteorAttackDamage: 80
+  laneAttackDamage: 70
+  binDropDamage: 50
   binDropPlayerStunDuration: 1
-  attackDelay: 2.5
+  attackDelay: 1.5
   laneAttackProjectilePrefab: {fileID: 5111101932681378442, guid: 9d0b1f7a2ee847245b4adb55e11158f8, type: 3}
   hitMask:
     serializedVersion: 2
