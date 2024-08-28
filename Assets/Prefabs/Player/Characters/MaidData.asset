@@ -16,7 +16,7 @@ MonoBehaviour:
   characterDesc: 
   characterSprite: {fileID: -2199317966230432783, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
-  movementSpeed: 250
+  movementSpeed: 300
   attackTriggerTimeFrame: 0.85
   skillCooldown: 12
   skillTriggerTimeFrame: 0.25

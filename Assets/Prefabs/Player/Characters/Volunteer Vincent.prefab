@@ -166,7 +166,7 @@ MonoBehaviour:
   attackDamage: 25
   attackRange: 1.5
   attackStunDuration: 0.75
-  knockback: 15
+  knockback: 17
   cleanAmount: 0
   areaOfEffect: 0
   hitMask:
