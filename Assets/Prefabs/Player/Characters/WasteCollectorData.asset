@@ -27,4 +27,9 @@ MonoBehaviour:
   skillDuration: 2
   deathDuration: 3.5
   characterSelectionSprite: {fileID: -5435087207928647551, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
+  attackType: 0
+  attackTarget: 0
+  role1: 2
+  role2: 4
+  role3: 0
   prefab: {fileID: 3310225104491134764, guid: 0c01898533548bd47953b3e126cacd82, type: 3}
