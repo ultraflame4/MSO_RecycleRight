@@ -69,24 +69,11 @@ namespace Player.Behaviours
             }
         }
 
-        void SetClean(Projectile projectile)
-        {
-            projectile.OnHit += OnProjectileHit;
-        }
-
-        void OnProjectileHit(Projectile ctx, Collider2D other)
+        protected override void OnProjectileHit(Projectile ctx, Collider2D other)
         {
             ctx.OnHit -= OnProjectileHit;
-
-            // clean contaminant
-            if (other.TryGetComponent<ICleanable>(out ICleanable cleanable) && cleanable.AllowCleanable)
-            {
-                // reverse damage if cleaning
-                if (other.TryGetComponent<IDamagable>(out IDamagable damagable))
-                    damagable.Damage(-damage);
-                cleanable.Clean(cleanAmount);
-            }
-
+            // attempt to clean or damage contaminant
+            CleanOrDamage(other.gameObject, cleanAmount, damage);
             // stun before adding knockback
             if (other.TryGetComponent<IStunnable>(out IStunnable stunnable))
                 stunnable.Stun(stunDuration);
@@ -144,11 +131,6 @@ namespace Player.Behaviours
             }
 
             return defaultZoneHitThreshold;
-        }
-
-        void Start()
-        {
-            OnLaunch += SetClean;
         }
 
         void FixedUpdate()

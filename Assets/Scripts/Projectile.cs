@@ -1,11 +1,8 @@
 using System;
 using UnityEngine;
-using Interfaces;
 
 public class Projectile : MoveTowards
 {
-    [Tooltip("Damage done to damagable object on hit")]
-    public float damage = 15f;
     [Tooltip("Leave as -1 for infinite duration")]
     [SerializeField] protected float maxActiveDuration = 5f;
     [Tooltip("Whether or not object should be destroyed on hit, or set inactive")]
@@ -13,6 +10,15 @@ public class Projectile : MoveTowards
 
     [HideInInspector] public float? _movementSpeed = null;
     [HideInInspector] public Vector2? _moveDirection = null;
+
+    /// <summary>
+    /// Delegate that checks if object should be hit
+    /// </summary>
+    /// <param name="other">Object that was hit</param>
+    /// <returns>Boolean representing if hit should be detected</returns>
+    public delegate bool HitCondition(Collider2D other);
+    public HitCondition hitCondition = null;
+
     private float timeElasped = 0f;
 
     /// <summary>
@@ -41,9 +47,7 @@ public class Projectile : MoveTowards
 
     protected virtual void OnTriggerEnter2D(Collider2D other) 
     {
-        if (!other.TryGetComponent<IDamagable>(out IDamagable damagable)) return;
-        // apply damage
-        damagable?.Damage(damage);
+        if (hitCondition != null && !hitCondition.Invoke(other)) return;
         // invoke on hit event
         OnHit?.Invoke(this, other);
         // end object lifetime on hit
