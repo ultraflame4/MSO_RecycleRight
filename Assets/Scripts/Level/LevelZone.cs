@@ -56,6 +56,7 @@ namespace Level
         {
             entities = GetComponentsInChildren<ILevelEntity>();
             StringBuilder str = new StringBuilder();
+            str.Append($"Length: {entities?.Length}");
             foreach (var entity in entities)
             {
                 str.Append($"{entity} \n");
