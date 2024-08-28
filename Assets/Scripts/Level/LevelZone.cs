@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Level.Bins;
 using UnityEngine;
 
@@ -53,7 +54,13 @@ namespace Level
 
         public void RefreshEntities()
         {
-            // entities = GetComponentsInChildren<ILevelEntity>();
+            entities = GetComponentsInChildren<ILevelEntity>();
+            StringBuilder str = new StringBuilder();
+            foreach (var entity in entities)
+            {
+                str.Append($"{entity} \n");
+            }
+            Debug.Log(str.ToString());
         }
 
         /// <summary>
@@ -99,7 +106,8 @@ namespace Level
         /// <returns></returns>
         public bool CheckZoneFinished()
         {
-            return GetComponentsInChildren<IBinTrashItem>().Length < 1;
+            RefreshEntities();
+            return entities.Length < 1;
         }
 
         private void OnTransformChildrenChanged()
@@ -135,7 +143,6 @@ namespace Level
 
         public bool PositionWithinBufferZone(Vector3 position)
         {
-
             return DistanceFromEdge(position) < buffer_zone_size;
         }
         #endregion
@@ -178,8 +185,6 @@ namespace Level
             edgeCollider.SetPoints(new List<Vector2>(){
                 top_right,top_left,bottom_left,bottom_right,top_right
             });
-
-
         }
 
         private void OnValidate()
@@ -199,7 +204,6 @@ namespace Level
             {
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawWireCube(center, size - Vector2.one * buffer_zone_size * 2);
-
             }
 
             Gizmos.color = Color.green * .5f;
