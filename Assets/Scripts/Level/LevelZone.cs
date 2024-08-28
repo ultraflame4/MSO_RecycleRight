@@ -55,8 +55,9 @@ namespace Level
         private void LateUpdate()
         {
             if (zoneComplete) return;
-            entities = entities.Where(x => x != null).ToArray();
-            zoneComplete = entities.Length < 1;
+            // if any of the entities became null, check again if zone is completed
+            if (!entities.Contains(null)) return;
+            OnTransformChildrenChanged();
         }
 
         public void RefreshEntities()
