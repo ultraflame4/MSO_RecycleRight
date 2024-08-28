@@ -52,12 +52,19 @@ namespace Level
             GenerateBoundaryColliders();
         }
 
+        private void LateUpdate()
+        {
+            if (zoneComplete) return;
+            entities = entities.Where(x => x != null).ToArray();
+            zoneComplete = entities.Length < 1;
+        }
+
         public void RefreshEntities()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
             // debugging
             StringBuilder str = new StringBuilder();
-            str.Append($"Entities Array \n Length: {entities?.Length}");
+            str.Append($"Entities Array\nLength: {entities?.Length}\n");
             foreach (var entity in entities)
             {
                 str.Append($"{entity} \n");
