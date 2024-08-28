@@ -25,6 +25,38 @@ public class PlayerCharacterSO : EntitySO
     [Header("UI")]
     public Sprite characterSelectionSprite;
 
+    [Header("Character Tags")]
+    public CharacterAttackType attackType;
+    public CharacterAttackTarget attackTarget;
+    public CharacterRoles role1 = CharacterRoles.NONE;
+    public CharacterRoles role2 = CharacterRoles.NONE;
+    public CharacterRoles role3 = CharacterRoles.NONE;
+
     [Header("Prefab")]
     public GameObject prefab;
 }
+
+#region Character Tag Enums
+public enum CharacterAttackType
+{
+    MELEE, 
+    RANGE
+}
+
+public enum CharacterAttackTarget
+{
+    SINGLE_TARGET, 
+    MULTI_TARGET
+}
+
+public enum CharacterRoles
+{
+    NONE, 
+    DAMAGE, 
+    PUSHER, 
+    CLEANER, 
+    CROWD_CONTROL, 
+    SUPPORT, 
+    HEALER, 
+}
+#endregion
