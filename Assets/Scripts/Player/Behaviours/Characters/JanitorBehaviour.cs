@@ -18,6 +18,7 @@ namespace Player.Behaviours
         [SerializeField] float hitForce = 120f;
         [SerializeField] float defaultZoneHitThreshold = 1.5f;
         [SerializeField] float zoneHitThresholdScale = 1.2f;
+        [SerializeField] int hitsPerAttack = 5;
         [SerializeField] int maxHitAmount = 2;
         [SerializeField] LayerMask hitMask;
 
@@ -60,8 +61,15 @@ namespace Player.Behaviours
                 // ensure index is not out of range, and a rigidbody is found
                 if (i >= hitColliders.Length) break;
                 if (hitRBs[i] == null) continue;
-                // deal damage
-                if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) damagable.Damage(skillDamage);
+
+                // apply damage with multiple hits
+                for (int j = 0; j < hitsPerAttack; j++)
+                {
+                    // deal damage
+                    if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) 
+                        damagable.Damage(skillDamage / hitsPerAttack);
+                }
+                
                 // stun before adding knockback
                 if (hitColliders[i].TryGetComponent<IStunnable>(out IStunnable stunnable)) stunnable.Stun(skillDuration);
                 // add knockback
