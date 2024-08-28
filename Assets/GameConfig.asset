@@ -17,8 +17,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
   - {fileID: 11400000, guid: c5935cf5ed5773e42878dc2941262a1e, type: 2}
   - {fileID: 11400000, guid: 2cf92e9e15534bd45b6a3dce65d5b2e9, type: 2}
+  - {fileID: 11400000, guid: 3dd593d242c860349abfcf83632a464d, type: 2}
   - {fileID: 11400000, guid: 507197c998ae79c46be9895f7db58996, type: 2}
-  - {fileID: 11400000, guid: cb3733b86c1c40c4dbec36e795501fda, type: 2}
   grades: {fileID: 11400000, guid: 01569d7a4a1b99e4e851eca9fd425321, type: 2}
   levels:
   - scene:

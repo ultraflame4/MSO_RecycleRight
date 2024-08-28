@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6428e1feadfac2b44842b36725aae1f5, type: 3}
   m_Name: HousewifeData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
-  characterName: Maid Mary
-  characterDesc: 
+  characterName: Housewife Helen
+  characterDesc: 'Passive: Attacks have an Area of Effect (AoE) and can clean cleanable
+    contaminants.
+
+
+    Skill: Absorbs the recycling type of the nearest bin within
+    range and pulls all recyclables within range towards herself. '
   characterSprite: {fileID: 8821091299396333678, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
-  maxHealth: 100
+  maxHealth: 150
   movementSpeed: 250
   attackTriggerTimeFrame: 0.85
   skillCooldown: 12

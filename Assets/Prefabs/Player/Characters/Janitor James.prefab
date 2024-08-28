@@ -8,10 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6801794928883840886, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1197034505934309080, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 70a2448d1a543734f97d4508eb4d1aa6, type: 2}
+      objectReference: {fileID: 9100000, guid: 927e2a7a3099c0e4dbb74b8ad799fd96, type: 2}
     - target: {fileID: 1214702141452971629, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: objectData
       value: 
@@ -56,9 +64,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268136941399560414, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7878371768809106963, guid: 0ddc9998a7c266d478f54e44e763a6d7, type: 3}
     - target: {fileID: 4443563819890852365, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
       propertyPath: m_Name
       value: Janitor James
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685013669094704766, guid: 4fb52f99eb09b9743ad027030c3df331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -103,3 +119,5 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 1408
+  attackSFX: {fileID: 8300000, guid: 889a57f4039a38e44996b791884d9754, type: 3}
+  skillSFX: {fileID: 8300000, guid: b3c52a35f0f295141bf9d2ede5121ebf, type: 3}

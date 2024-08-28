@@ -9,16 +9,16 @@ namespace Player.Behaviours
     {
         [Header("Ranged Attack")]
         [Tooltip("Damage of projectile upon hitting target")]
-        [SerializeField] float damage = 15f;
+        [SerializeField] protected float damage = 15f;
         [Tooltip("Movement speed of projectile")]
-        [SerializeField] float movementSpeed = 15f;
+        [SerializeField] protected float movementSpeed = 15f;
         [Tooltip("Whether or not projectile should be rotated to face move direction")]
-        [SerializeField] bool rotateProjectile = true;
+        [SerializeField] protected bool rotateProjectile = true;
         [Tooltip("Prefab of projectile to fire (Must contain projectile script)")]
-        [SerializeField] Projectile projectilePrefab;
+        [SerializeField] protected Projectile projectilePrefab;
 
         // use object pooling
-        List<Projectile> projectilePool = new List<Projectile>();
+        protected List<Projectile> projectilePool = new List<Projectile>();
 
         /// <summary>
         /// Event to be triggered when a projectile is launched

@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: ServiceWorkerData
   m_EditorClassIdentifier: 
   characterName: Service Worker Seraphine
-  characterDesc: 
+  characterDesc: 'Passive: Heals the most injured ally.
+
+
+    Skill: Heals all allies
+    in the party for 50HP.'
   characterSprite: {fileID: -6550637313826903203, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
-  maxHealth: 100
-  movementSpeed: 250
+  maxHealth: 120
+  movementSpeed: 300
   attackTriggerTimeFrame: 0.65
-  skillCooldown: 15
+  skillCooldown: 25
   skillTriggerTimeFrame: 0.5
   skillIcon: {fileID: 8945362753512427449, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
   attackDuration: 1.4

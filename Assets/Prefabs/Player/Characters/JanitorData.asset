@@ -13,16 +13,18 @@ MonoBehaviour:
   m_Name: JanitorData
   m_EditorClassIdentifier: 
   characterName: Janitor James
-  characterDesc: 
-  characterSprite: {fileID: 0}
+  characterDesc: "Passive: Attacks are ranged and can clean cleanable contaminants.
+    \n\nSkill: Hits up to 2 recyclables within range with massive knockback and damage,
+    sending recyclables bouncing around the zone. "
+  characterSprite: {fileID: -4435119063177729968, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
-  movementSpeed: 250
+  movementSpeed: 450
   attackTriggerTimeFrame: 0.5
-  skillCooldown: 5
+  skillCooldown: 10
   skillTriggerTimeFrame: 0.9
-  skillIcon: {fileID: 0}
-  attackDuration: 0.5
+  skillIcon: {fileID: 4632596982820311362, guid: 69e66d80348491d4aa3237fbcec8c3de, type: 3}
+  attackDuration: 0.4
   skillDuration: 1
   deathDuration: 3.5
-  characterSelectionSprite: {fileID: 0}
-  prefab: {fileID: 0}
+  characterSelectionSprite: {fileID: 7878371768809106963, guid: 0ddc9998a7c266d478f54e44e763a6d7, type: 3}
+  prefab: {fileID: 7302601935110272086, guid: 59b474ec81486764e9701d9c2bee78c3, type: 3}
