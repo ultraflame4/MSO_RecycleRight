@@ -8469,8 +8469,10 @@ MonoBehaviour:
   profileImage: {fileID: 1874513675}
   characterName: {fileID: 1591808118}
   description: {fileID: 1867041771}
-  desciptionTitle: {fileID: 1428637552}
+  descriptionTitle: {fileID: 1428637552}
   errorText: {fileID: 1048714539}
+  scrollRect: {fileID: 1049194585}
+  characterTagsParent: {fileID: 1341505375}
   attackType: {fileID: 1258195563}
   attackTarget: {fileID: 194077188}
   role1: {fileID: 1916150130}

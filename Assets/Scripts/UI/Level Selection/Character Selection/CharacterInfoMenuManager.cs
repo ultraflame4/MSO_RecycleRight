@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 namespace UI.LevelSelection.CharacterSelection
 {
@@ -9,13 +8,13 @@ namespace UI.LevelSelection.CharacterSelection
     {
         [Header("Basic UI")]
         [SerializeField] Image profileImage;
-        [SerializeField] TextMeshProUGUI characterName, description, desciptionTitle, errorText;
+        [SerializeField] TextMeshProUGUI characterName, description, descriptionTitle, errorText;
+        [SerializeField] Transform scrollRect, characterTagsParent; 
 
         [Header("Character Tags UI")]
         [SerializeField] TextMeshProUGUI attackType;
         [SerializeField] TextMeshProUGUI attackTarget;
         [SerializeField] TextMeshProUGUI role1, role2, role3;
-
 
         public PlayerCharacterSO selectedCharacter { get; private set; }
 
@@ -63,9 +62,12 @@ namespace UI.LevelSelection.CharacterSelection
 
             errorText.gameObject.SetActive(!active);
             characterName.gameObject.SetActive(active);
-            desciptionTitle.gameObject.SetActive(active);
+            descriptionTitle.gameObject.SetActive(active);
             description.gameObject.SetActive(active);
             profileImage.transform.parent.parent.gameObject.SetActive(active);
+
+            scrollRect.gameObject.SetActive(active);
+            characterTagsParent.gameObject.SetActive(active);
 
             attackType.gameObject.SetActive(active);
             attackTarget.gameObject.SetActive(active);
