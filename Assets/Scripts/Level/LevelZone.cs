@@ -55,8 +55,9 @@ namespace Level
         public void RefreshEntities()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
+            // debugging
             StringBuilder str = new StringBuilder();
-            str.Append($"Length: {entities?.Length}");
+            str.Append($"Entities Array \n Length: {entities?.Length}");
             foreach (var entity in entities)
             {
                 str.Append($"{entity} \n");
