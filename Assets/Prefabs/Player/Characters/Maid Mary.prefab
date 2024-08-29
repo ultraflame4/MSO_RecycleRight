@@ -421,7 +421,7 @@ MonoBehaviour:
   skillVFX: {fileID: 8826427523223597110, guid: 9d53cbaa280c84e408ba8f45ffc65e2d, type: 3}
   pullableMask:
     serializedVersion: 2
-    m_Bits: 3456
+    m_Bits: 384
   binMask:
     serializedVersion: 2
     m_Bits: 512
