@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level-1-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: Shanbi Park
+    levelName: Pests in the Park
     levelCode: LV - 1
     levelDescription: Pests can be attracted to recyclables contaminated with food
       or sweet drinks. Ensure that contaminated items are cleaned before disposal.
