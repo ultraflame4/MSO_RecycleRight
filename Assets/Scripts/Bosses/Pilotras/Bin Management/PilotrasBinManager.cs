@@ -185,8 +185,6 @@ namespace Bosses.Pilotras.Bin
 
         void BinScored(float scoreChange, RecyclableType? type)
         {
-            Debug.Log(scoreChange);
-
             if (scoreChange > 0)
             {
                 character.GetComponent<IDamagable>()?

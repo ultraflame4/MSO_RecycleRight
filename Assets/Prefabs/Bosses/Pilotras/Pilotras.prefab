@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4384170777564037646}
   - component: {fileID: 4893206788126953292}
   - component: {fileID: 6244737026547022598}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6397769125793666714}
   - component: {fileID: 2019871439605263355}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossPeek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 8593977467726869510}
   - component: {fileID: 6189416132222840899}
   - component: {fileID: 8480909623808237515}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Pilotras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1070498166784091656}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Indicators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 7236468086161311765}
   - component: {fileID: 6642419772764198162}
   - component: {fileID: 3152837242372464660}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 909071479708654265}
   - component: {fileID: 4389185223863155951}
   - component: {fileID: 6572540510754303722}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Bin Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}

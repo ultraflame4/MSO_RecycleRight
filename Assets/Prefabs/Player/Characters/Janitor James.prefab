@@ -118,6 +118,6 @@ MonoBehaviour:
   maxHitAmount: 2
   hitMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 3456
   attackSFX: {fileID: 8300000, guid: 889a57f4039a38e44996b791884d9754, type: 3}
   skillSFX: {fileID: 8300000, guid: b3c52a35f0f295141bf9d2ede5121ebf, type: 3}
