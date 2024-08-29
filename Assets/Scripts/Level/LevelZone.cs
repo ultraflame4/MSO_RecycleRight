@@ -54,23 +54,20 @@ namespace Level
 
         private void LateUpdate()
         {
-            if (zoneComplete) return;
-            // if any of the entities became null, check again if zone is completed
-            if (!entities.Contains(null)) return;
-            OnTransformChildrenChanged();
+            if (zoneComplete || !edgeCollider.enabled) return;
+            zoneComplete = CheckZoneFinished();
         }
 
-        public void RefreshEntities()
+        /// <summary>
+        /// Check if the zone is finished. This is done by checking if there are any trash items left in the zone.
+        /// 
+        /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckZoneFinished()
         {
             entities = GetComponentsInChildren<ILevelEntity>();
-            // debugging
-            StringBuilder str = new StringBuilder();
-            str.Append($"Entities Array\nLength: {entities?.Length}\n");
-            foreach (var entity in entities)
-            {
-                str.Append($"{entity} \n");
-            }
-            Debug.Log(str.ToString());
+            return entities.Length < 1;
         }
 
         /// <summary>
@@ -106,23 +103,6 @@ namespace Level
                 // Some entities may be destroyed before the zone is deactivated (i.e enemies)
                 if (entity != null) entity.OnZoneEnd();
             }
-        }
-
-        /// <summary>
-        /// Check if the zone is finished. This is done by checking if there are any trash items left in the zone.
-        /// 
-        /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
-        /// </summary>
-        /// <returns></returns>
-        public bool CheckZoneFinished()
-        {
-            RefreshEntities();
-            return entities.Length < 1;
-        }
-
-        private void OnTransformChildrenChanged()
-        {
-            zoneComplete = CheckZoneFinished();
         }
 
         #region Zone Bounds

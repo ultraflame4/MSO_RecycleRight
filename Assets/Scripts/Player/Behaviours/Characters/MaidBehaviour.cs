@@ -53,6 +53,14 @@ namespace Player.Behaviours
         
         void LateUpdate() 
         {
+            // check if skill ended early
+            if (skillActive && character.currentState != character.SkillState)
+            {
+                EndSkill();
+                return;
+            }
+
+            // check if skill has started
             if (!data.Enabled || character.currentState != character.SkillState) return;
             StartSkill();
         }

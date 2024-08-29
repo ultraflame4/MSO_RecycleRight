@@ -127,7 +127,7 @@ MonoBehaviour:
   cleanAmount: 0.6
   hitMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 3456
   attackRangeIndicator: {fileID: 4567356070770474032, guid: 4bbe5576d9ba3f049a4f8ab74c1bb28b, type: 3}
   cooldownDecrease: 2
   attackSFX: {fileID: 8300000, guid: 44d92a5eeda6af8498bc065c15ee22dc, type: 3}
