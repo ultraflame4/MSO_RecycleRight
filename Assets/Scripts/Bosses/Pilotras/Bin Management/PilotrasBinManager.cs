@@ -185,6 +185,8 @@ namespace Bosses.Pilotras.Bin
 
         void BinScored(float scoreChange, RecyclableType? type)
         {
+            Debug.Log(scoreChange);
+
             if (scoreChange > 0)
             {
                 character.GetComponent<IDamagable>()?
@@ -197,7 +199,8 @@ namespace Bosses.Pilotras.Bin
             character.Roar();
             // heal self
             character.GetComponent<IDamagable>()?
-                .Damage(character.behaviourData.contaminated_heal * scoreChange);
+                .Damage(-character.behaviourData.contaminated_heal * 
+                    (scoreChange >= 0f ? 1f : Mathf.Abs(scoreChange)));
             // immidiately exit state
             character.SwitchState(character.PostBinDropStunState);
             
