@@ -33,10 +33,19 @@ public class LevelSelectHall : MonoBehaviour
         trainDoorsAnim.SetTrigger("closeDoors");
         animator.SetBool("Active", true);
 
-        if (levelInfo.data.levelImage != null)
+        // check if there is a preset team, if so, set the team
+        if (levelInfo.data.teamPreset != null && levelInfo.data.teamPreset.Length > 0)
         {
-            levelImage.sprite = levelInfo.data.levelImage;
+            GameManager.Instance.CanSetTeam = false;
+            GameManager.Instance.selectedCharacters = levelInfo.data.teamPreset;
         }
+        else
+        {
+            if (!GameManager.Instance.CanSetTeam) GameManager.Instance.selectedCharacters = null;
+            GameManager.Instance.CanSetTeam = true;
+        }
+
+        levelImage.sprite = levelInfo.data.levelImage;
         levelTitle.text = levelInfo.data.levelName;
         levelDesc.text = levelInfo.data.levelDescription;
 

@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     // array of characters that are currently in the party
     private PlayerCharacterSO[] selected_characters;
-    public event Action onSelectedCharactersChanged;
     public PlayerCharacterSO[] selectedCharacters
     {
         get
@@ -33,6 +32,9 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public event Action onSelectedCharactersChanged;
+    [HideInInspector] public bool CanSetTeam = true;
 
     public int PartySize => partySize;
 

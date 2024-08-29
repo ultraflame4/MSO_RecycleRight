@@ -1,4 +1,5 @@
 using System;
+using Entity.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,7 @@ public struct LevelInfoData{
     public string levelDescription;
     public Sprite levelImage;
     public float maxScore;
+    public PlayerCharacterSO[] teamPreset;
     public LevelNPC[] npcs;
 }
 

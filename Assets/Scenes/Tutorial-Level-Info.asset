@@ -21,3 +21,7 @@ MonoBehaviour:
 '
     levelImage: {fileID: 21300000, guid: 56e815b38a6eac14688fa56195182b3a, type: 3}
     maxScore: 1
+    teamPreset:
+    - {fileID: 11400000, guid: 034f46f0974198449917a6a15a10cfec, type: 2}
+    - {fileID: 11400000, guid: 33e16efec2ccdb046b6247d05eb2f6ad, type: 2}
+    - {fileID: 11400000, guid: c5935cf5ed5773e42878dc2941262a1e, type: 2}
