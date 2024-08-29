@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Boss-Pilotras-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: Return of Pilotras
+    levelName: The Rise of Pilotras
     levelCode: BO - 3
     levelDescription: An amalgamation of waste has come together and threatens the
       safety of the public in this parking lot! By recycling properly and teamwork,
       you can take him down!
     levelImage: {fileID: 21300000, guid: 53d89bd181fa188439300abcb3dfdd07, type: 3}
-    maxScore: 10
+    maxScore: 5

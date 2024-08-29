@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level-2-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: HDB Block
+    levelName: Boxes and Blocks
     levelCode: LV - 2
     levelDescription: Cardboard Boxes are everywhere in this HDB Block! Help fold
       boxes to clear paths while managing the recyclables to keep this HDB Block
