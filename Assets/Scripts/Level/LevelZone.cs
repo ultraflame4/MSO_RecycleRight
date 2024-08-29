@@ -54,10 +54,8 @@ namespace Level
 
         private void LateUpdate()
         {
-            if (zoneComplete) return;
-            // if any of the entities became null, check again if zone is completed
-            if (!entities.Contains(null)) return;
-            OnTransformChildrenChanged();
+            if (zoneComplete || !edgeCollider.enabled) return;
+            zoneComplete = CheckZoneFinished();
         }
 
         public void RefreshEntities()
@@ -118,11 +116,6 @@ namespace Level
         {
             RefreshEntities();
             return entities.Length < 1;
-        }
-
-        private void OnTransformChildrenChanged()
-        {
-            zoneComplete = CheckZoneFinished();
         }
 
         #region Zone Bounds
