@@ -3528,7 +3528,7 @@ MonoBehaviour:
     levelCode: LV - 2
     levelDescription: This takes place in a HDB block
     levelImage: {fileID: 0}
-    maxScore: 3
+    maxScore: 20
 --- !u!114 &784035370
 MonoBehaviour:
   m_ObjectHideFlags: 0
