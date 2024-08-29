@@ -16,6 +16,6 @@ MonoBehaviour:
     levelName: Simulation Training
     levelCode: TR - 0
     levelDescription: "This is a combat simulation to teach new volunteers the proper
-      ways to recycle. \n(This description is to be edited)"
+      ways to recycle. \n"
     levelImage: {fileID: 21300000, guid: 56e815b38a6eac14688fa56195182b3a, type: 3}
     maxScore: 1
