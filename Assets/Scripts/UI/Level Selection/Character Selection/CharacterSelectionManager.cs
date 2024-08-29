@@ -21,11 +21,6 @@ namespace UI.LevelSelection.CharacterSelection
         [SerializeField] CanvasGroup canvasGroup;
         [SerializeField] CharacterSelectionTransitionManager transitionAnimation;
         Coroutine coroutine_transition;
-
-        [Header("Error Handling")]
-        [SerializeField] GameObject errorText;
-        [SerializeField] float errorShowDuration = 2.5f;
-        
         List<PlayerCharacterSO> party = new List<PlayerCharacterSO>();
 
         int selectedIndex = -1;
@@ -72,12 +67,6 @@ namespace UI.LevelSelection.CharacterSelection
             gameObject.SetActive(false);
         }
 
-        IEnumerator ShowErrorText()
-        {
-            errorText?.SetActive(true);
-            yield return new WaitForSeconds(errorShowDuration);
-            errorText?.SetActive(false);
-        }
 
         public void OpenMenu(bool skipTransition = false)
         {
@@ -90,7 +79,6 @@ namespace UI.LevelSelection.CharacterSelection
                 hideCanvasGroup.ToList().ForEach(x => x.alpha = 0);
                 return;
             }
-
             if (coroutine_transition != null) StopCoroutine(coroutine_transition);
             coroutine_transition = StartCoroutine(EnterTransition());
         }
@@ -132,14 +120,7 @@ namespace UI.LevelSelection.CharacterSelection
         /// </summary>
         public void ConfirmSelection()
         {
-            // check if characters are preset, do not allow changing characters if already set
-            if (GameManager.Instance != null && !GameManager.Instance.CanSetTeam)
-            {
-                party = GameManager.Instance.selectedCharacters.ToList();
-                StartCoroutine(ShowErrorText());
-            }
-            // handle selecting character
-            else if (!quickSelectActive && hologramMenu.CharacterInfo.selectedCharacter != null)
+            if (!quickSelectActive && hologramMenu.CharacterInfo.selectedCharacter != null)
             {
                 if (party.Count > selectedIndex && selectedIndex >= 0)
                 {

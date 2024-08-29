@@ -11,6 +11,7 @@ public class LevelSelectManager : MonoBehaviour
 
     [Header("Error Handling")]
     [SerializeField] GameObject errorText;
+    [SerializeField] GameObject presetPartyErrorText;
     [SerializeField] float errorShowDuration = 2.5f;
 
     bool launchingLevel = false;
@@ -36,6 +37,12 @@ public class LevelSelectManager : MonoBehaviour
     
     public void OpenCharacterSelect() 
     {
+        if (GameManager.Instance != null && !GameManager.Instance.CanSetTeam)
+        {
+            StartCoroutine(ShowErrorText(presetPartyErrorText));
+            return;
+        }
+
         characterSelect.OpenMenu();
     }
 
@@ -51,7 +58,7 @@ public class LevelSelectManager : MonoBehaviour
         if (GameManager.Instance.selectedCharacters == null || GameManager.Instance.selectedCharacters.Length <= 0)
         {
             OpenCharacterSelect();
-            StartCoroutine(ShowErrorText());
+            StartCoroutine(ShowErrorText(errorText, true));
             return;
         }
 
@@ -66,11 +73,13 @@ public class LevelSelectManager : MonoBehaviour
         GameManager.Instance.LoadLevel(levelIndex);
     }
 
-    IEnumerator ShowErrorText()
+    IEnumerator ShowErrorText(GameObject textObject, bool waitForTransition = false)
     {
-        yield return new WaitForSeconds(characterSelect.transition_duration);
-        errorText?.SetActive(true);
+        if (waitForTransition)
+            yield return new WaitForSeconds(characterSelect.transition_duration);
+        
+        textObject?.SetActive(true);
         yield return new WaitForSeconds(errorShowDuration);
-        errorText?.SetActive(false);
+        textObject?.SetActive(false);
     }
 }

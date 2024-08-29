@@ -2539,8 +2539,6 @@ MonoBehaviour:
   transitionDuration: 1
   canvasGroup: {fileID: 563652087}
   transitionAnimation: {fileID: 88247178}
-  errorText: {fileID: 1974005569}
-  errorShowDuration: 2.5
 --- !u!225 &563652087
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9292,6 +9290,7 @@ MonoBehaviour:
   characterSelect: {fileID: 563652086}
   selectedLevel: -1
   errorText: {fileID: 1707163185}
+  presetPartyErrorText: {fileID: 1974005569}
   errorShowDuration: 2.5
 --- !u!1001 &1740739285
 PrefabInstance:
