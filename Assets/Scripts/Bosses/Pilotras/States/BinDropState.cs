@@ -92,7 +92,7 @@ namespace Bosses.Pilotras.FSM
         public void SendShockwave(Vector2 center, Vector2 detectionSize)
         {
             Collider2D[] hits = Physics2D.OverlapBoxAll(center, detectionSize, 
-                character.behaviourData.drop_detection_mask);
+                0f, character.behaviourData.drop_detection_mask);
             Rigidbody2D hitRB;
 
             // apply knockback to hit NPCs
