@@ -1,4 +1,5 @@
 using System.Linq;
+using Level;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ public class LevelEndMenu : MonoBehaviour {
     
     [SerializeField]    
     private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private TextMeshProUGUI maxScoreText;
     [SerializeField]
     private TextMeshProUGUI gradeTitle;
     [SerializeField]
@@ -56,11 +59,16 @@ public class LevelEndMenu : MonoBehaviour {
         scoreText.text = $"Score: {score}";
     }
 
+    public void ShowMaxScore(){
+        maxScoreText.text = $"Max Score: {LevelManager.Instance.levelInfo.Data.maxScore.ToString()}";
+    }
+
     public void ShowEndScreen(float score, float maxScore){
         gameObject.SetActive(true);
         var grade = GradeFromScore(score, maxScore);
         ShowGrade(grade);
         ShowScore(score);
+        ShowMaxScore();
     }
     
 
