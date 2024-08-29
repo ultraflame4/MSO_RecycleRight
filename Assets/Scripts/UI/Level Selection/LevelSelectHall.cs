@@ -17,6 +17,8 @@ public class LevelSelectHall : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI levelDesc;
     [SerializeField]
+    private RectTransform descRect;
+    [SerializeField]
     private AudioClip trainHallEnterSFX;
     [SerializeField]
     private AudioClip trainHallExitSFX;
@@ -48,6 +50,10 @@ public class LevelSelectHall : MonoBehaviour
         levelImage.sprite = levelInfo.data.levelImage;
         levelTitle.text = levelInfo.data.levelName;
         levelDesc.text = levelInfo.data.levelDescription;
+        
+        Vector2 pos = descRect.position;
+        pos.y = descRect.sizeDelta.y * -0.5f;
+        descRect.position = pos;
 
         SoundManager.Instance?.PlayOneShot(trainHallEnterSFX);
         SoundManager.Instance?.Play(trainHallNoiseSFX, out train_noise_sfx_source, true);
