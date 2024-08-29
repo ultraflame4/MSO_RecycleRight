@@ -18,7 +18,6 @@ namespace Player.Behaviours
         [SerializeField] float hitForce = 120f;
         [SerializeField] float defaultZoneHitThreshold = 1.5f;
         [SerializeField] float zoneHitThresholdScale = 1.2f;
-        [SerializeField] int hitsPerAttack = 5;
         [SerializeField] int maxHitAmount = 2;
         [SerializeField] LayerMask hitMask;
 
@@ -61,19 +60,35 @@ namespace Player.Behaviours
                 // ensure index is not out of range, and a rigidbody is found
                 if (i >= hitColliders.Length) break;
                 if (hitRBs[i] == null) continue;
-
-                // apply damage with multiple hits
-                for (int j = 0; j < hitsPerAttack; j++)
-                {
-                    // deal damage
-                    if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) 
-                        damagable.Damage(skillDamage / hitsPerAttack);
-                }
-                
+                // deal damage
+                HandleSkillDamage(i);
                 // stun before adding knockback
                 if (hitColliders[i].TryGetComponent<IStunnable>(out IStunnable stunnable)) stunnable.Stun(skillDuration);
                 // add knockback
                 hitRBs[i].AddForce((character.pointer.position - character.transform.position).normalized * hitForce, ForceMode2D.Impulse);
+            }
+        }
+
+        void HandleSkillDamage(int i)
+        {
+            CardboardBox cardboardBox = hitColliders[i].GetComponent<CardboardBox>();
+
+            // if not a cardboard box, just deal damage
+            if (cardboardBox == null)
+            {
+                if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) 
+                    damagable.Damage(skillDamage);
+                return;
+            }
+
+            // apply damage with multiple hits to insta-fold cardboard
+            int hitsPerAttack = cardboardBox.states.Length - (int) cardboardBox.current_state;
+
+            for (int j = 0; j < hitsPerAttack; j++)
+            {
+                // deal damage
+                if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) 
+                    damagable.Damage(skillDamage / hitsPerAttack);
             }
         }
 
