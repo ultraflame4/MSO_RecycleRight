@@ -10901,6 +10901,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1526197938324706880, guid: f6a08f8813e735745b1a16bfcba13366, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0.25046903
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526197938324706880, guid: f6a08f8813e735745b1a16bfcba13366, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0.25046903
+      objectReference: {fileID: 0}
     - target: {fileID: 2337901618916662265, guid: f6a08f8813e735745b1a16bfcba13366, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10940,6 +10948,10 @@ PrefabInstance:
     - target: {fileID: 2337901618916662265, guid: f6a08f8813e735745b1a16bfcba13366, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623189613591390949, guid: f6a08f8813e735745b1a16bfcba13366, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3623189613591390949, guid: f6a08f8813e735745b1a16bfcba13366, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
