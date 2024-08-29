@@ -38,7 +38,6 @@ public class CardboardBox : MonoBehaviour, IDamagable, IAmNotMovableByWilson
 
     public void Damage(float damage)
     {
-        Debug.Log("TEST");
         NextState();
     }
 
