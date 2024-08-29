@@ -106,7 +106,7 @@ namespace Bosses.Pilotras.FSM
             }
 
             hits = Physics2D.OverlapBoxAll(center, detectionSize, 
-                character.data.hit_mask);
+                0f, character.data.hit_mask);
             
             // apply knockback and damage to player
             foreach (Collider2D hit in hits)
