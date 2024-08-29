@@ -197,7 +197,8 @@ namespace Bosses.Pilotras.Bin
             character.Roar();
             // heal self
             character.GetComponent<IDamagable>()?
-                .Damage(character.behaviourData.contaminated_heal * scoreChange);
+                .Damage(-character.behaviourData.contaminated_heal * 
+                    (scoreChange >= 0f ? 1f : Mathf.Abs(scoreChange)));
             // immidiately exit state
             character.SwitchState(character.PostBinDropStunState);
             
