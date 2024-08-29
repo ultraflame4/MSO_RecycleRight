@@ -15,7 +15,7 @@ MonoBehaviour:
   data:
     levelName: Shanbi Park
     levelCode: LV - 1
-    levelDescription: 'There are pests everywhere! Stop food wastes from going into
-      bins to prevent pests! '
+    levelDescription: Pests can be attracted to recyclables contaminated with food
+      or sweet drinks. Ensure that contaminated items are cleaned before disposal.
     levelImage: {fileID: 21300000, guid: d0caa562539055e48b0e831b703081af, type: 3}
     maxScore: 14
