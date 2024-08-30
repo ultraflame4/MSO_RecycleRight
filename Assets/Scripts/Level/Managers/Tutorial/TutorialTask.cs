@@ -20,16 +20,19 @@ namespace Level.Tutorial
     {
         [Header("Task")]
         [Tooltip("Minimum duration to keep tutorial active.")]
-        [SerializeField] float minCompletionDuration = 5f;
+        [SerializeField] private float minCompletionDuration = 5f;
         [Tooltip("UI elements to show for the tutorial.")]
-        [SerializeField] GameObject[] UIElements;
+        [SerializeField] private GameObject[] UIElements;
 
         [Header("Reset")]
         [Tooltip("List of recyclables to be reset when the player needs to retry the tutorial. ")]
         [SerializeField] protected Recyclable[] recyclables;
-        [SerializeField] protected GameObject spawnVFX;
+        [SerializeField] private GameObject spawnVFX;
+        [SerializeField] private float vfxDuration = 0.5f;
+        [SerializeField] private int maxSpawnVFX = 2;
 
-        Coroutine coroutine;
+        private Coroutine coroutine;
+        private GameObject[] vfxPool;
 
         // public boolean properties
         public bool IsActive { get; private set; }
@@ -46,6 +49,8 @@ namespace Level.Tutorial
             // reset properties
             IsActive = false;
             IsCompleted = false;
+            // set length of vfx pool
+            vfxPool = new GameObject[maxSpawnVFX];
             // when game is starting, disable UI elements
             SetTutorialActive(false);
             // cache original recyclable positions and parents
@@ -82,7 +87,7 @@ namespace Level.Tutorial
                     recyclables[i].originalParent
                 );
                 // create spawn vfx
-                Instantiate(spawnVFX, recyclables[i].gameObject.transform.position, Quaternion.identity);
+                InstantiateVFX(recyclables[i].gameObject.transform.position);
 
                 if (!disableMovement) continue;
                 recyclables[i].gameObject.GetComponent<Navigation>().enabled = false;
@@ -106,6 +111,32 @@ namespace Level.Tutorial
         }
 
         public abstract bool CheckTaskCompletion();
+
+        void InstantiateVFX(Vector3 position)
+        {
+            for (int i = 0; i < vfxPool.Length; i++)
+            {
+                if (vfxPool[i] == null)
+                {
+                    vfxPool[i] = Instantiate(spawnVFX, position, Quaternion.identity);
+                    StartCoroutine(WaitForHideVFX(vfxPool[i]));
+                    return;
+                }
+
+                if (vfxPool[i].activeInHierarchy) continue;
+
+                vfxPool[i].SetActive(true);
+                vfxPool[i].transform.position = position;
+                StartCoroutine(WaitForHideVFX(vfxPool[i]));
+                return;
+            }
+        }
+
+        IEnumerator WaitForHideVFX(GameObject vfx)
+        {
+            yield return new WaitForSeconds(vfxDuration);
+            vfx.SetActive(false);
+        }
 
         IEnumerator CountDuration()
         {
