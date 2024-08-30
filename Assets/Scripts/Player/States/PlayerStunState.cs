@@ -17,7 +17,7 @@ namespace Player.FSM
         {
             base.Enter();
             // play stun animation
-            character.anim?.Play("Idle");
+            character.anim?.Play("On Hit");
         }
 
         public override void LogicUpdate()
