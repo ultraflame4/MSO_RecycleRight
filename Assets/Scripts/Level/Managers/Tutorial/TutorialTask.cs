@@ -27,6 +27,7 @@ namespace Level.Tutorial
         [Header("Reset")]
         [Tooltip("List of recyclables to be reset when the player needs to retry the tutorial. ")]
         [SerializeField] protected Recyclable[] recyclables;
+        [SerializeField] protected GameObject spawnVFX;
 
         Coroutine coroutine;
 
@@ -72,12 +73,17 @@ namespace Level.Tutorial
             for (int i = 0; i < recyclables.Length; i++)
             {
                 if (recyclables[i].gameObject != null) Destroy(recyclables[i].gameObject);
+
+                // reinstantiate recyclable
                 recyclables[i].gameObject = Instantiate(
                     recyclables[i].prefab, 
                     recyclables[i].originalPosition, 
                     Quaternion.identity, 
                     recyclables[i].originalParent
                 );
+                // create spawn vfx
+                Instantiate(spawnVFX, recyclables[i].gameObject.transform.position, Quaternion.identity);
+
                 if (!disableMovement) continue;
                 recyclables[i].gameObject.GetComponent<Navigation>().enabled = false;
             }

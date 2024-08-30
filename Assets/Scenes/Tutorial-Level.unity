@@ -176,6 +176,7 @@ MonoBehaviour:
     prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   bins:
   - {fileID: 1592388323}
   - {fileID: 478012651}
@@ -372,6 +373,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1273004897}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: 
   count: 0
   box: {fileID: 0}
@@ -576,6 +578,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1198889696}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: 
   count: 0
   box: {fileID: 0}
@@ -44449,6 +44452,7 @@ MonoBehaviour:
   - {fileID: 1980871870}
   - {fileID: 585797179}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Left Click to Push/Attack the Recyclable
   count: 1
   box: {fileID: 2143212988}
@@ -45299,6 +45303,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 1022943420}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Swap to another character in the party
   count: 1
   box: {fileID: 2143212988}
@@ -45486,6 +45491,7 @@ MonoBehaviour:
   - {fileID: 734448863}
   - {fileID: 478013585}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Use WASD to move your character
   count: 1
   box: {fileID: 2143212988}
@@ -46233,6 +46239,7 @@ MonoBehaviour:
     prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Clean the contaminant
   count: 1
   box: {fileID: 2143212988}
@@ -47490,6 +47497,7 @@ MonoBehaviour:
     prefab: {fileID: 6531889305799652985, guid: 4a42f65ff9f6c2e4594677a64040ada9, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Push the recyclables into their corresponding bins.
   count: 2
   box: {fileID: 2143212988}
@@ -48489,6 +48497,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 962701374}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: 
   count: 0
   box: {fileID: 0}
@@ -48544,6 +48553,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 840318915}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: 
   count: 0
   box: {fileID: 0}
@@ -48601,6 +48611,7 @@ MonoBehaviour:
   - {fileID: 374127006}
   - {fileID: 1267533548}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Clean the Bin.
   count: 1
   box: {fileID: 2143212988}
@@ -48718,6 +48729,7 @@ MonoBehaviour:
     prefab: {fileID: 564681949460058286, guid: 27d4a00d6aae14845a3c284ea76bc976, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Reduce the Hit Points of the contaminant to 0.
   count: 1
   box: {fileID: 2143212988}
@@ -49153,6 +49165,7 @@ MonoBehaviour:
     prefab: {fileID: 6652123010381414951, guid: 3df2a84ad8b8afa4480705d6993cbd4f, type: 3}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Push all the recyclables into the recycling bin
   count: 2
   box: {fileID: 2143212988}
@@ -49639,6 +49652,7 @@ MonoBehaviour:
   - {fileID: 326852217}
   - {fileID: 1910549484}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: Trigger the character's skill
   count: 2
   box: {fileID: 2143212988}
@@ -49701,6 +49715,7 @@ MonoBehaviour:
   UIElements:
   - {fileID: 472957625}
   recyclables: []
+  spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
   text: 
   count: 0
   box: {fileID: 0}
