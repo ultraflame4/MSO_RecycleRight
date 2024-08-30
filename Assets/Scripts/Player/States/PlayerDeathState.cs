@@ -22,14 +22,16 @@ namespace Player.FSM
             if (coroutine != null) return;
             // start coroutine to wait for death duration
             coroutine = fsm.StartCoroutine(WaitForDeath());
+            // play death animation (hit animation)
+            character.anim?.Play("On Hit");
         }
 
         IEnumerator WaitForDeath()
         {
             float duration = 0f;
+            // fade character
             while (duration < character.Data.deathDuration)
             {
-                // TODO: replace with death animation/effect
                 Color newColor = character.Data.renderer.color;
                 newColor.a -=  Time.deltaTime / character.Data.deathDuration;
                 character.Data.renderer.color = newColor;
@@ -86,7 +88,7 @@ namespace Player.FSM
             }
 
             // if index is -1, it is the end of the game
-            LevelManager.Instance?.EndLevel();
+            LevelManager.Instance?.EndLevel(true);
         }
 
         // when character is available, this would be called, and would switch to new character
@@ -100,7 +102,6 @@ namespace Player.FSM
             fsm.SwitchState(character.DefaultState);
         }
 
-        // TODO: remove this after implementing death animation
         void ResetAlpha()
         {
             // this is temp just for the alpha changing death animation

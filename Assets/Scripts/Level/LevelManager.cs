@@ -147,7 +147,7 @@ namespace Level
             return zones.Sum(x => x.bins.Sum(y => y.Score));
         }
 
-        public void EndLevel()
+        public void EndLevel(bool fail = false)
         {
             if (LevelEnded) return;
             if (levelInfo == null)
@@ -162,7 +162,7 @@ namespace Level
                 return;
             }
             LevelEnded = true;
-            levelEnd.ShowEndScreen(GetCurrentScore(), levelInfo.Data.maxScore);
+            levelEnd.ShowEndScreen(GetCurrentScore(), levelInfo.Data.maxScore, fail);
         }
     }
 }

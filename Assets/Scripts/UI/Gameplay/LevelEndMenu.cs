@@ -4,23 +4,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelEndMenu : MonoBehaviour {
-    
-    [SerializeField]    
-    private TextMeshProUGUI scoreText;
-    [SerializeField]
-    private TextMeshProUGUI maxScoreText;
-    [SerializeField]
-    private TextMeshProUGUI gradeTitle;
-    [SerializeField]
-    private TextMeshProUGUI gradeText;
-    [SerializeField]
-    private GameObject badgePrefab;
-    [SerializeField]
-    private GameObject badgeContainer;
+public class LevelEndMenu : MonoBehaviour
+{
+    [Header("Score")]
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI maxScoreText;
 
+    [Header("Grading")]
+    [SerializeField] private TextMeshProUGUI gradeTitle;
+    [SerializeField] private TextMeshProUGUI gradeText;
+    [SerializeField] private GameObject badgePrefab;
+    [SerializeField] private GameObject badgeContainer;
 
-    public static LevelScoreGrade GradeFromScore(float score, float maxScore){
+    [Header("Title")]
+    [SerializeField] private GameObject completeTitle;
+    [SerializeField] private GameObject failTitle;
+
+    [Header("Menu Content")]
+    [SerializeField] private GameObject gradeContent;
+    [SerializeField] private GameObject failContent;
+
+    public static LevelScoreGrade GradeFromScore(float score, float maxScore)
+    {
         float current_p = score / maxScore;
         foreach (var grade in GameManager.Instance.config.grades.passGrades.OrderByDescending(x => x.percentage))
         {
@@ -32,22 +37,22 @@ public class LevelEndMenu : MonoBehaviour {
         return GameManager.Instance.config.grades.failGrades;
     }
 
-    public void ShowGrade(LevelScoreGrade grade){
+    public void ShowGrade(LevelScoreGrade grade)
+    {
         gradeTitle.color = grade.gradeColor;
         gradeText.text = grade.grade;
         gradeText.color = grade.gradeColor;
         badgeContainer.transform.DisableAllChildren();
+
         for (int i = 0; i < grade.spriteRepeat; i++)
         {
             GameObject badgeChild;
+            
             if (badgeContainer.transform.childCount > i)
-            {
                 badgeChild = badgeContainer.transform.GetChild(i).gameObject;
-            }
             else
-            {
                 badgeChild = Instantiate(badgePrefab, badgeContainer.transform);
-            }
+
             badgeChild.SetActive(true);
             badgeChild.GetComponent<Image>().sprite = grade.gradeSprite;
             badgeChild.GetComponent<UI.Animations.UIAnimation>().sprites = grade.gradeSpritesFrames;
@@ -55,27 +60,37 @@ public class LevelEndMenu : MonoBehaviour {
         }
     }
 
-    public void ShowScore(float score){
+    public void ShowScore(float score)
+    {
         scoreText.text = $"Score: {score}";
     }
 
-    public void ShowMaxScore(){
+    public void ShowMaxScore()
+    {
         maxScoreText.text = $"Max Score: {LevelManager.Instance.levelInfo.Data.maxScore.ToString()}";
     }
 
-    public void ShowEndScreen(float score, float maxScore){
+    public void ShowEndScreen(float score, float maxScore, bool fail = false)
+    {
         gameObject.SetActive(true);
+        gradeContent.SetActive(!fail);
+        completeTitle.SetActive(!fail);
+        failContent.SetActive(fail);
+        failTitle.SetActive(fail);
+
         var grade = GradeFromScore(score, maxScore);
         ShowGrade(grade);
         ShowScore(score);
         ShowMaxScore();
     }
-    
 
-    public void btnContinue(){
+    public void btnContinue()
+    {
         GameManager.Instance.OpenScene_LevelSelection();
     }
-    public void btnRestart(){
+
+    public void btnRestart()
+    {
         SoundManager.Instance?.RestartBackgroundMusic();
         GameManager.Instance.RestartScene();
     }
