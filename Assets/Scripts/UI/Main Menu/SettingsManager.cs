@@ -10,6 +10,17 @@ namespace UI.MainMenu
         [SerializeField] Slider volumeSlider;
         [SerializeField] TextMeshProUGUI volumeText;
 
+        [Header("Back")]
+        [SerializeField] KeyCode backKey = KeyCode.Escape;
+        [SerializeField] Button backButton;
+
+        void Update()
+        {
+            // check if back key is pressed, if so, trigger button OnClick
+            if (!Input.GetKeyDown(backKey)) return;
+            backButton.onClick.Invoke();
+        }
+
         void OnEnable()
         {
             // update volume slider to actual volume

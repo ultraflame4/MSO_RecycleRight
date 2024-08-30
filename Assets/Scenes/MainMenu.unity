@@ -729,6 +729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 978633267}
   volumeText: {fileID: 1044854091}
+  backKey: 27
+  backButton: {fileID: 47721666}
 --- !u!1 &360282986
 GameObject:
   m_ObjectHideFlags: 0
