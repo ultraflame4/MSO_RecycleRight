@@ -33,6 +33,7 @@ public class SoundManager : MonoBehaviour
             return _instance;
         }
     }
+    public static bool hasInstance => _instance != null;
 
     void Awake()
     {
