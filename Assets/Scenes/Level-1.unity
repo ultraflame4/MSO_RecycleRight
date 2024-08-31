@@ -6549,7 +6549,7 @@ MonoBehaviour:
   _info: {fileID: 11400000, guid: 2bd7a8086155b164988459e91d2bce4c, type: 2}
   data:
     levelName: Shanbi Park
-    levelCode: 
+    levelCode: LV - 1
     levelDescription: 'Uncleaned bottles and greasy paper bags have been attracting
       pests like cockroaches to the public recyclic bins! '
     levelImage: {fileID: 0}
