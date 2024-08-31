@@ -169,14 +169,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCompletionDuration: 3
   UIElements:
-  - {fileID: 509999886}
+  - {fileID: 566631626}
   - {fileID: 983546158}
   recyclables:
-  - gameObject: {fileID: 509999886}
-    prefab: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
+  - gameObject: {fileID: 566631626}
+    prefab: {fileID: 566631626}
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   bins:
   - {fileID: 1592388323}
   - {fileID: 478012651}
@@ -374,6 +376,8 @@ MonoBehaviour:
   - {fileID: 1273004897}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: 
   count: 0
   box: {fileID: 0}
@@ -579,6 +583,8 @@ MonoBehaviour:
   - {fileID: 1198889696}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: 
   count: 0
   box: {fileID: 0}
@@ -44453,6 +44459,8 @@ MonoBehaviour:
   - {fileID: 585797179}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Left Click to Push/Attack the Recyclable
   count: 1
   box: {fileID: 2143212988}
@@ -44841,105 +44849,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478013585}
   m_CullTransparentMesh: 1
---- !u!1001 &509999884
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1644321658}
-    m_Modifications:
-    - target: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_Name
-      value: PlasticBottle_Contaminant (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2091930917230474811, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.320004
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: npcData
-      value: 
-      objectReference: {fileID: 11400000, guid: 55c47a878d49a5144a6cb4e71eab85cf, type: 2}
-    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: cleanable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: attackDamage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: attract_pests
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179748059960045577, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: attackDuration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8611568359990708359, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8611568359990708359, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
---- !u!4 &509999885 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2537648835857356659, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-  m_PrefabInstance: {fileID: 509999884}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &509999886 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 330196287104876915, guid: 92adb3a3d5fb01747ab5f49773d27618, type: 3}
-  m_PrefabInstance: {fileID: 509999884}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &510799179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45069,6 +44978,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586948166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &566631624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1644321658}
+    m_Modifications:
+    - target: {fileID: 3178815793521009469, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178815793521009469, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848308265610111689, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_Name
+      value: TupperWare_Contaminant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0656319
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.4803715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+--- !u!4 &566631625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8694350781885971657, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+  m_PrefabInstance: {fileID: 566631624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &566631626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6848308265610111689, guid: ed37a958cfd3ddf429b12c555a06e370, type: 3}
+  m_PrefabInstance: {fileID: 566631624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &585797179
 GameObject:
   m_ObjectHideFlags: 0
@@ -45304,6 +45288,8 @@ MonoBehaviour:
   - {fileID: 1022943420}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Swap to another character in the party
   count: 1
   box: {fileID: 2143212988}
@@ -45492,6 +45478,8 @@ MonoBehaviour:
   - {fileID: 478013585}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Use WASD to move your character
   count: 1
   box: {fileID: 2143212988}
@@ -46240,6 +46228,8 @@ MonoBehaviour:
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Clean the contaminant
   count: 1
   box: {fileID: 2143212988}
@@ -46819,7 +46809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try pushing this soiled bottle into the bin
+  m_text: Try pushing this dirty tupperware into the bin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e75494c0ea1def449b83dd6e1881f04, type: 2}
   m_sharedMaterial: {fileID: 8528087190751924140, guid: 1e75494c0ea1def449b83dd6e1881f04, type: 2}
@@ -47498,6 +47488,8 @@ MonoBehaviour:
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Push the recyclables into their corresponding bins.
   count: 2
   box: {fileID: 2143212988}
@@ -48498,6 +48490,8 @@ MonoBehaviour:
   - {fileID: 962701374}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: 
   count: 0
   box: {fileID: 0}
@@ -48554,6 +48548,8 @@ MonoBehaviour:
   - {fileID: 840318915}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: 
   count: 0
   box: {fileID: 0}
@@ -48612,6 +48608,8 @@ MonoBehaviour:
   - {fileID: 1267533548}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Clean the Bin.
   count: 1
   box: {fileID: 2143212988}
@@ -48730,6 +48728,8 @@ MonoBehaviour:
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Reduce the Hit Points of the contaminant to 0.
   count: 1
   box: {fileID: 2143212988}
@@ -48918,7 +48918,7 @@ Transform:
   - {fileID: 1317091342}
   - {fileID: 1592388322}
   - {fileID: 478012650}
-  - {fileID: 509999885}
+  - {fileID: 566631625}
   m_Father: {fileID: 1315312721146712386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1644321659
@@ -49166,6 +49166,8 @@ MonoBehaviour:
     originalPosition: {x: 0, y: 0, z: 0}
     originalParent: {fileID: 0}
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Push all the recyclables into the recycling bin
   count: 2
   box: {fileID: 2143212988}
@@ -49653,6 +49655,8 @@ MonoBehaviour:
   - {fileID: 1910549484}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: Trigger the character's skill
   count: 2
   box: {fileID: 2143212988}
@@ -49716,6 +49720,8 @@ MonoBehaviour:
   - {fileID: 472957625}
   recyclables: []
   spawnVFX: {fileID: 2443649084787566690, guid: 89c9742fcf43cfa40966ad7d31a5f610, type: 3}
+  vfxDuration: 0.5
+  maxSpawnVFX: 2
   text: 
   count: 0
   box: {fileID: 0}
