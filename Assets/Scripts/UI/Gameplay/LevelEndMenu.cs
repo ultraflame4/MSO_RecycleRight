@@ -67,7 +67,7 @@ public class LevelEndMenu : MonoBehaviour
 
     public void ShowMaxScore()
     {
-        maxScoreText.text = $"Max Score: {LevelManager.Instance.levelInfo.Data.maxScore.ToString()}";
+        maxScoreText.text = $"Target Score: {LevelManager.Instance.levelInfo.Data.maxScore.ToString()}";
     }
 
     public void ShowEndScreen(float score, float maxScore, bool fail = false)
