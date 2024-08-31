@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Level-1-Info
   m_EditorClassIdentifier: 
   data:
-    levelName: Pests in the Park
+    levelName: Shanbi Park
     levelCode: LV - 1
-    levelDescription: Pests can be attracted to recyclables contaminated with food
-      or sweet drinks. Ensure that contaminated items are cleaned before disposal.
-      Help keep Shanbi Park clean!
-    levelImage: {fileID: 21300000, guid: d0caa562539055e48b0e831b703081af, type: 3}
-    maxScore: 14
+    levelDescription: Uncleaned bottles and greasy paper bags have been attracting
+      pests like cockroaches to the public recyclic bins! Make sure to keep the bins
+      clean to prevent the spread of pests!
+    levelImage: {fileID: 0}
+    maxScore: 15
+    teamPreset: []
