@@ -12,10 +12,10 @@ public class FireTile : MonoBehaviour {
 
     private void Start() {
         StartCoroutine(LifeCycle());
-        var audioSource = GetComponent<AudioSource>();
-        if (SoundManager.hasInstance && audioSource != null) {
-            audioSource.volume *= SoundManager.Instance.volume;
-        }
+        // var audioSource = GetComponent<AudioSource>();
+        // if (SoundManager.hasInstance && audioSource != null) {
+        //     audioSource.volume *= SoundManager.Instance.volume;
+        // }
     }
 
     IEnumerator LifeCycle(){
