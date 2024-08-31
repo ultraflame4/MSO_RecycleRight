@@ -17,7 +17,7 @@ MonoBehaviour:
     levelCode: LV - 1
     levelDescription: Uncleaned bottles and greasy paper bags have been attracting
       pests like cockroaches to the public recyclic bins! Make sure to keep the bins
-      clean!
+      clean to prevent the spread of pests!
     levelImage: {fileID: 0}
     maxScore: 15
     teamPreset: []
