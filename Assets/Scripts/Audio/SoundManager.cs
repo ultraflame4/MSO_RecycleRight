@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour
         get
         {
             if (_instance == null)
-                throw new NullReferenceException("There is no Game Manager in the scene!");
+                throw new NullReferenceException("There is no Sound Manager in the scene!");
             return _instance;
         }
     }
