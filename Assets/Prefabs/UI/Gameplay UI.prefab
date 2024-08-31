@@ -180,6 +180,7 @@ MonoBehaviour:
   playerSprite: {fileID: 6714312021434686350}
   showDuration: 1
   fadeOutDuration: 0.25
+  cancelPopupWindow: 0.25
 --- !u!1 &647315790458813921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: Default
   durationBetweenFrames: 50
+  loop: 1
   targetImage: {fileID: 8518472012163998094}
   sprites:
   - {fileID: -7575677489911487902, guid: 8e5ccd5f7a3285d4b881fcea93f73462, type: 3}
@@ -2540,6 +2542,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Resume
       objectReference: {fileID: 0}
+    - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 48
+      objectReference: {fileID: 0}
     - target: {fileID: 3623843991278891482, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_Name
       value: Btn Resume
@@ -2903,6 +2913,14 @@ PrefabInstance:
     - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_text
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511723985372964879, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3623843991278891482, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_Name
