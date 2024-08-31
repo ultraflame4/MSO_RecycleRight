@@ -14,6 +14,7 @@ namespace NPC.Recyclable
         public SpriteRenderer fireSpriteR;
         public ParticleSystem fireParticles;
         public ParticleSystem explodeParticles;
+        public AudioSource fireAudioSrc; // only really used for burning sound.
         public SpriteMask mask;
 
         [Header("EWaste Settings")]
@@ -41,6 +42,7 @@ namespace NPC.Recyclable
             base.Start();
             mask.alphaCutoff = 0;
             fireSpriteR.enabled = false;
+            fireAudioSrc.Stop();
         }
 
         protected override void OnDrawGizmosSelected()
@@ -76,6 +78,7 @@ namespace NPC.Recyclable
             fireCoroutine = StartCoroutine(FireDamageProgress_Coroutine());
             smokeParticles.Stop();
             smokeParticles.Play();
+            fireAudioSrc.Play();
         }
 
         [EasyButtons.Button]
@@ -124,6 +127,8 @@ namespace NPC.Recyclable
                     tilemap.SetTile(pos, a);
                 }
             }
+
+            fireAudioSrc.Stop();
 
         }
 
