@@ -12866,42 +12866,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2535998304514662227, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: defaultActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3968870075555553974, guid: 21739003b44140049a537a04996e9d1f, type: 3}
       propertyPath: m_Name
       value: Toggle Switch
       objectReference: {fileID: 0}
     - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1966235420}
-    - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Click
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UISoundEffectsManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125156060530313927, guid: 21739003b44140049a537a04996e9d1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
