@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
-  maxHealth: 1200
+  maxHealth: 3000
   yOffset: 1.75
   numberOfPhases: 2
   maxNPCCount: 10
@@ -475,7 +475,7 @@ MonoBehaviour:
   binPositionOffset: {x: 0, y: -5}
   toppleThreshold: 2
   toppleDuration: 8
-  toppleDamageMultiplier: 7
+  toppleDamageMultiplier: 3
   colliderOffset: {x: 0, y: -2.3}
   phaseChangeDuration: 5.5
   laneAttackDuration: 1
