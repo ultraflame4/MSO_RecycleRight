@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         {
             if (_instance != this)
             {
-                Debug.LogWarning("Detected existing root game manager. This game manager will be deactived!");
+                Debug.LogWarning("Detected existing game manager. This game manager will be deactived!");
                 gameObject.SetActive(false);
                 return;
             }
