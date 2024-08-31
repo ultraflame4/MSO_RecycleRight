@@ -1,5 +1,6 @@
 using System.Collections;
 using Interfaces;
+using Level;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -15,6 +16,7 @@ namespace NPC.Recyclable
         public ParticleSystem fireParticles;
         public ParticleSystem explodeParticles;
         public AudioSource fireAudioSrc; // only really used for burning sound.
+        public AudioClip explosionClip; // only really used for explosion sound.
         public SpriteMask mask;
 
         [Header("EWaste Settings")]
@@ -129,6 +131,10 @@ namespace NPC.Recyclable
             }
 
             fireAudioSrc.Stop();
+            if (SoundManager.hasInstance){
+                SoundManager.Instance.PlayOneShot(explosionClip);
+                LevelManager._instance?.camera?.ShakeCamera(0.1f);
+            }
 
         }
 
