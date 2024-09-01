@@ -138,6 +138,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UISoundEffectsManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2535998304514662227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,12 +176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90b5ea22fdfd074e9e3360d1923c440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAwake: 0
   animations:
   - {fileID: 8967682658381271444}
   - {fileID: 3653651235643736456}
   - {fileID: 8925332002505971267}
   - {fileID: 5836773615748857031}
-  playOnAwake: 0
 --- !u!114 &8967682658381271444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: Off
   durationBetweenFrames: 10
+  loop: 1
   targetImage: {fileID: 7969025162422369918}
   sprites:
   - {fileID: -5872619781111728215, guid: cd39fe8b975027d47b09392f7645f438, type: 3}
@@ -201,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: On
   durationBetweenFrames: 10
+  loop: 1
   targetImage: {fileID: 7969025162422369918}
   sprites:
   - {fileID: -2020279971280686817, guid: cd39fe8b975027d47b09392f7645f438, type: 3}
@@ -218,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: Transition On
   durationBetweenFrames: 10
+  loop: 1
   targetImage: {fileID: 7969025162422369918}
   sprites:
   - {fileID: -5872619781111728215, guid: cd39fe8b975027d47b09392f7645f438, type: 3}
@@ -239,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: Transition Off
   durationBetweenFrames: 10
+  loop: 1
   targetImage: {fileID: 7969025162422369918}
   sprites:
   - {fileID: -2020279971280686817, guid: cd39fe8b975027d47b09392f7645f438, type: 3}

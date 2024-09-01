@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4384170777564037646}
   - component: {fileID: 4893206788126953292}
   - component: {fileID: 6244737026547022598}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6397769125793666714}
   - component: {fileID: 2019871439605263355}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossPeek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3829974436455466479}
+  - component: {fileID: 2806870499737410523}
   - component: {fileID: 8561885408711713541}
   - component: {fileID: 7426227777418501112}
   - component: {fileID: 4152754215727836793}
@@ -194,7 +195,7 @@ GameObject:
   - component: {fileID: 8593977467726869510}
   - component: {fileID: 6189416132222840899}
   - component: {fileID: 8480909623808237515}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Pilotras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,6 +221,33 @@ Transform:
   - {fileID: 1070498166784091656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2806870499737410523
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242226410964193304}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &8561885408711713541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -356,15 +384,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 004a5c8204ef5e64491b2e4b708d0cbb, type: 2}
-  maxHealth: 1200
+  maxHealth: 3000
   yOffset: 1.75
   numberOfPhases: 2
   maxNPCCount: 10
-  meteorAttackDamage: 15
-  laneAttackDamage: 25
-  binDropDamage: 25
+  meteorAttackDamage: 80
+  laneAttackDamage: 70
+  binDropDamage: 50
   binDropPlayerStunDuration: 1
-  attackDelay: 2.5
+  attackDelay: 1.5
   laneAttackProjectilePrefab: {fileID: 5111101932681378442, guid: 9d0b1f7a2ee847245b4adb55e11158f8, type: 3}
   hitMask:
     serializedVersion: 2
@@ -447,7 +475,7 @@ MonoBehaviour:
   binPositionOffset: {x: 0, y: -5}
   toppleThreshold: 2
   toppleDuration: 8
-  toppleDamageMultiplier: 7
+  toppleDamageMultiplier: 3
   colliderOffset: {x: 0, y: -2.3}
   phaseChangeDuration: 5.5
   laneAttackDuration: 1
@@ -461,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1070498166784091656}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Indicators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +524,7 @@ GameObject:
   - component: {fileID: 7236468086161311765}
   - component: {fileID: 6642419772764198162}
   - component: {fileID: 3152837242372464660}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +635,7 @@ GameObject:
   - component: {fileID: 909071479708654265}
   - component: {fileID: 4389185223863155951}
   - component: {fileID: 6572540510754303722}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Bin Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}

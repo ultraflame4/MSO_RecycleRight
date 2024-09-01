@@ -3,6 +3,7 @@ using UnityEngine;
 using Interfaces;
 using NPC.Contaminant;
 using Level;
+using UnityEngine.Serialization;
 
 namespace Player.Behaviours
 {
@@ -25,7 +26,10 @@ namespace Player.Behaviours
         [Header("Effects")]
         [SerializeField] AudioClip attackSFX;
         [SerializeField] AudioClip skillSFX;
+        [Tooltip("VFX to spawn when skill is used"), FormerlySerializedAs("skillVFXForContaminant")]
         [SerializeField] GameObject skillVFX;
+        // [Tooltip("VFX to spawn when asan skill is used")]
+        // [SerializeField] GameObject skillVFX;
 
         GameObject indicatorPrefab;
         SpriteRenderer pointerSprite;
@@ -141,6 +145,9 @@ namespace Player.Behaviours
                 .Select(x => x.GetComponent<ContaminantNPC>())
                 .Where(x => x != null)
                 .ToArray();
+
+
+            Instantiate(skillVFX, transform);
 
             foreach (ContaminantNPC contaminant in contaminants)
             {

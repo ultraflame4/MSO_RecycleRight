@@ -73,6 +73,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &-7745947122210177922
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: On Hit
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -2783590969047590280, guid: 9d8b1a2b053610249974972808b24269, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &-7554739006967388061
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -284,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc88e014b8375d4cab68f14faaa021b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleCooldown: 5
+  cooldownRange: {x: 5, y: 7}
   triggerName: Spin
 --- !u!1102 &-1452340086394172349
 AnimatorState:
@@ -413,6 +439,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -5300751874922596840}
     m_Position: {x: 540, y: 150, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7745947122210177922}
+    m_Position: {x: 540, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1036948996822138607}

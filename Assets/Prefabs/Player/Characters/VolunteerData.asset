@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: VolunteerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Volunteer Vincent
-  characterDesc: 'Passive: Attacks have a chance to be a critical hit that does double
-    the damage and knockback.
-
-
-    Skill: Buffs the movement and attack speed of
-    all allies in the party for the next 10s. '
+  characterDesc: "Passive: Attacks have a chance to be a critical hit that does double
+    the damage and knockback.\n\nSkill: Buffs the movement and attack speed of all
+    allies in the party for the next 10s. \n\nVincent is a happy and determined office
+    worker. Stuck in a dead end job, he is eager to try and make a change in the
+    world. Having seen the new recycling movement, he offered to volunteer in hopes
+    of steer  the world in a better direction."
   characterSprite: {fileID: 3635251773814090647, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
   movementSpeed: 400
@@ -30,4 +30,9 @@ MonoBehaviour:
   skillDuration: 1
   deathDuration: 3.5
   characterSelectionSprite: {fileID: -2114259048583956285, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
+  attackType: 0
+  attackTarget: 0
+  role1: 1
+  role2: 2
+  role3: 5
   prefab: {fileID: 7410547296858456504, guid: dce326109f7447843aa44bb366f9937d, type: 3}

@@ -15,7 +15,11 @@ MonoBehaviour:
   characterName: Environmental Activist Asan
   characterDesc: "Passive: Attacks in a wide Area of Effect (AoE) that can clean
     cleanable contaminants. Does more damage and knockback when closer to the enemy.
-    \n\nSkill: Uses her special powers to clean all contaminants in the current zone. "
+    \n\nSkill: Uses her special powers to clean all contaminants in the current zone.
+    \n\nAsan is a young environmental activist who seeks to empower the word of recycling
+    right within people her own age. Armed with a powerful water gun to help her
+    clean soiled tupperwares and bottles, she does the best she can and is an inspiration
+    to everyone."
   characterSprite: {fileID: -5500267626175664500, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 80
   movementSpeed: 500
@@ -27,4 +31,9 @@ MonoBehaviour:
   skillDuration: 1.2
   deathDuration: 3.5
   characterSelectionSprite: {fileID: -2380496281745720936, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
+  attackType: 1
+  attackTarget: 1
+  role1: 3
+  role2: 4
+  role3: 0
   prefab: {fileID: 5137057441427609284, guid: 5b16f2def832224448a1264c34d1acca, type: 3}

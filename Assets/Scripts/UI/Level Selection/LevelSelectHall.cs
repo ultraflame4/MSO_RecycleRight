@@ -17,6 +17,8 @@ public class LevelSelectHall : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI levelDesc;
     [SerializeField]
+    private RectTransform descRect;
+    [SerializeField]
     private AudioClip trainHallEnterSFX;
     [SerializeField]
     private AudioClip trainHallExitSFX;
@@ -33,12 +35,25 @@ public class LevelSelectHall : MonoBehaviour
         trainDoorsAnim.SetTrigger("closeDoors");
         animator.SetBool("Active", true);
 
-        if (levelInfo.data.levelImage != null)
+        // check if there is a preset team, if so, set the team
+        if (levelInfo.data.teamPreset != null && levelInfo.data.teamPreset.Length > 0)
         {
-            levelImage.sprite = levelInfo.data.levelImage;
+            GameManager.Instance.CanSetTeam = false;
+            GameManager.Instance.selectedCharacters = levelInfo.data.teamPreset;
         }
+        else
+        {
+            if (!GameManager.Instance.CanSetTeam) GameManager.Instance.selectedCharacters = null;
+            GameManager.Instance.CanSetTeam = true;
+        }
+
+        levelImage.sprite = levelInfo.data.levelImage;
         levelTitle.text = levelInfo.data.levelName;
         levelDesc.text = levelInfo.data.levelDescription;
+        
+        Vector2 pos = descRect.position;
+        pos.y = descRect.sizeDelta.y * -0.5f;
+        descRect.position = pos;
 
         SoundManager.Instance?.PlayOneShot(trainHallEnterSFX);
         SoundManager.Instance?.Play(trainHallNoiseSFX, out train_noise_sfx_source, true);

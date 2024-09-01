@@ -61,7 +61,7 @@ namespace Player.Behaviours
                 if (i >= hitColliders.Length) break;
                 if (hitRBs[i] == null) continue;
                 // deal damage
-                if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) damagable.Damage(skillDamage);
+                HandleSkillDamage(i);
                 // stun before adding knockback
                 if (hitColliders[i].TryGetComponent<IStunnable>(out IStunnable stunnable)) stunnable.Stun(skillDuration);
                 // add knockback
@@ -69,24 +69,34 @@ namespace Player.Behaviours
             }
         }
 
-        void SetClean(Projectile projectile)
+        void HandleSkillDamage(int i)
         {
-            projectile.OnHit += OnProjectileHit;
-        }
+            CardboardBox cardboardBox = hitColliders[i].GetComponent<CardboardBox>();
 
-        void OnProjectileHit(Projectile ctx, Collider2D other)
-        {
-            ctx.OnHit -= OnProjectileHit;
-
-            // clean contaminant
-            if (other.TryGetComponent<ICleanable>(out ICleanable cleanable) && cleanable.AllowCleanable)
+            // if not a cardboard box, just deal damage
+            if (cardboardBox == null)
             {
-                // reverse damage if cleaning
-                if (other.TryGetComponent<IDamagable>(out IDamagable damagable))
-                    damagable.Damage(-damage);
-                cleanable.Clean(cleanAmount);
+                if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) 
+                    damagable.Damage(skillDamage);
+                return;
             }
 
+            // apply damage with multiple hits to insta-fold cardboard
+            int hitsPerAttack = cardboardBox.states.Length - (int) cardboardBox.current_state;
+
+            for (int j = 0; j < hitsPerAttack; j++)
+            {
+                // deal damage
+                if (hitColliders[i].TryGetComponent<IDamagable>(out IDamagable damagable)) 
+                    damagable.Damage(skillDamage / hitsPerAttack);
+            }
+        }
+
+        protected override void OnProjectileHit(Projectile ctx, Collider2D other)
+        {
+            ctx.OnHit -= OnProjectileHit;
+            // attempt to clean or damage contaminant
+            CleanOrDamage(other.gameObject, cleanAmount, damage);
             // stun before adding knockback
             if (other.TryGetComponent<IStunnable>(out IStunnable stunnable))
                 stunnable.Stun(stunDuration);
@@ -144,11 +154,6 @@ namespace Player.Behaviours
             }
 
             return defaultZoneHitThreshold;
-        }
-
-        void Start()
-        {
-            OnLaunch += SetClean;
         }
 
         void FixedUpdate()

@@ -6,6 +6,7 @@ using TMPro;
 using Interfaces;
 using Level.Bins;
 using NPC;
+using Level;
 
 namespace Player.Behaviours
 {
@@ -52,6 +53,14 @@ namespace Player.Behaviours
         
         void LateUpdate() 
         {
+            // check if skill ended early
+            if (skillActive && character.currentState != character.SkillState)
+            {
+                EndSkill();
+                return;
+            }
+
+            // check if skill has started
             if (!data.Enabled || character.currentState != character.SkillState) return;
             StartSkill();
         }
@@ -75,6 +84,8 @@ namespace Player.Behaviours
             base.TriggerSkill();
             // show skill vfx
             skill_vfx_prefab = Instantiate(skillVFX, character.transform.position, Quaternion.identity, transform);
+            // shake camera
+            LevelManager.Instance?.camera?.ShakeCamera(1f);
             // start coroutine to tick damage
             tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
             // start coroutine to count skill duration, skill duration is calculated by subtracting time from skill duration that the skill is not active

@@ -161,14 +161,10 @@ namespace NPC.Contaminant
 
         public void Stun(float stun_duration)
         {
-            if (healthbar.value < 0 || currentState == state_Death)
-            {
-                return;
-            }
-
+            if (healthbar.value < 0 || currentState == state_Death) return;
             // if already stunned, reapply stun if new stun duration is longer
             // otherwise, ignore new stun duration
-            if (currentState == state_Stunned && stun_duration <= state_Stunned.stun_timer) return;
+            if (stun_duration <= state_Stunned.stun_timer) return;
             state_Stunned.stun_timer = stun_duration;
             SwitchState(state_Stunned);
         }

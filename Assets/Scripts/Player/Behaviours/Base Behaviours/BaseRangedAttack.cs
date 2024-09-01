@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Interfaces;
 
 namespace Player.Behaviours
 {
@@ -33,9 +34,17 @@ namespace Player.Behaviours
             projectile.transform.up = rotateProjectile ? direction : projectile.transform.up;
             projectile._moveDirection = rotateProjectile ? Vector3.up : direction;
             projectile._movementSpeed = movementSpeed;
-            projectile.damage = damage;
+            projectile.hitCondition = (Collider2D other) => !other.CompareTag("Player");
             projectile.UpdateValues();
             OnLaunch?.Invoke(projectile);
+            projectile.OnHit += OnProjectileHit;
+        }
+
+        protected virtual void OnProjectileHit(Projectile ctx, Collider2D other)
+        {
+            ctx.OnHit -= OnProjectileHit;
+            if(!other.TryGetComponent<IDamagable>(out IDamagable damagable)) return;
+            damagable.Damage(damage);
         }
 
         Projectile InstantiateProjectile()

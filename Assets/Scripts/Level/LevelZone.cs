@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Level.Bins;
 using UnityEngine;
 
@@ -51,9 +52,22 @@ namespace Level
             GenerateBoundaryColliders();
         }
 
-        public void RefreshEntities()
+        private void LateUpdate()
         {
-            // entities = GetComponentsInChildren<ILevelEntity>();
+            if (zoneComplete || !edgeCollider.enabled) return;
+            zoneComplete = CheckZoneFinished();
+        }
+
+        /// <summary>
+        /// Check if the zone is finished. This is done by checking if there are any trash items left in the zone.
+        /// 
+        /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckZoneFinished()
+        {
+            entities = GetComponentsInChildren<ILevelEntity>();
+            return entities.Length < 1;
         }
 
         /// <summary>
@@ -91,22 +105,6 @@ namespace Level
             }
         }
 
-        /// <summary>
-        /// Check if the zone is finished. This is done by checking if there are any trash items left in the zone.
-        /// 
-        /// This method is expensive and should not be called frequently. It is recommended to use zoneComplete property instead.
-        /// </summary>
-        /// <returns></returns>
-        public bool CheckZoneFinished()
-        {
-            return GetComponentsInChildren<IBinTrashItem>().Length < 1;
-        }
-
-        private void OnTransformChildrenChanged()
-        {
-            zoneComplete = CheckZoneFinished();
-        }
-
         #region Zone Bounds
         public bool PositionWithinZone(Vector3 position)
         {
@@ -135,7 +133,6 @@ namespace Level
 
         public bool PositionWithinBufferZone(Vector3 position)
         {
-
             return DistanceFromEdge(position) < buffer_zone_size;
         }
         #endregion
@@ -178,8 +175,6 @@ namespace Level
             edgeCollider.SetPoints(new List<Vector2>(){
                 top_right,top_left,bottom_left,bottom_right,top_right
             });
-
-
         }
 
         private void OnValidate()
@@ -199,7 +194,6 @@ namespace Level
             {
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawWireCube(center, size - Vector2.one * buffer_zone_size * 2);
-
             }
 
             Gizmos.color = Color.green * .5f;

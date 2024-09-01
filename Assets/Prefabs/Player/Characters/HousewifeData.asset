@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: HousewifeData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Housewife Helen
-  characterDesc: 'Passive: Attacks have an Area of Effect (AoE) and can clean cleanable
-    contaminants.
-
-
-    Skill: Absorbs the recycling type of the nearest bin within
-    range and pulls all recyclables within range towards herself. '
+  characterDesc: "Passive: Attacks have an Area of Effect (AoE) and can clean cleanable
+    contaminants.\n\nSkill: Absorbs the recycling type of the nearest bin within
+    range and pulls all recyclables within range towards herself. \n\nAs a friendly
+    neighborly figure with two children of her own, Helen has taken up the difficult
+    task of trying to better the world, one recyclable at a time. Using her cleaning
+    skills from her time as a housewife, she hopes to make the world a cleaner, safer
+    and better place."
   characterSprite: {fileID: 8821091299396333678, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 150
-  movementSpeed: 250
+  movementSpeed: 300
   attackTriggerTimeFrame: 0.85
   skillCooldown: 12
   skillTriggerTimeFrame: 0.25
@@ -30,4 +31,9 @@ MonoBehaviour:
   skillDuration: 5
   deathDuration: 3.5
   characterSelectionSprite: {fileID: 4388333010386191989, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
+  attackType: 0
+  attackTarget: 1
+  role1: 3
+  role2: 4
+  role3: 2
   prefab: {fileID: 5950129485960200443, guid: b52789876ef97eb4a87a6d0af1f60979, type: 3}

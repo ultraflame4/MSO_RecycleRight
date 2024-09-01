@@ -6,9 +6,10 @@ namespace UI.Animations
 {
     public class UIAnimation : MonoBehaviour
     {
-        [SerializeField] string animationName;
-        [SerializeField] float durationBetweenFrames = 100f;
-        [SerializeField] Image targetImage;
+        [SerializeField] private string animationName;
+        [SerializeField] private float durationBetweenFrames = 100f;
+        [SerializeField] private bool loop = true;
+        [SerializeField] private Image targetImage;
         [SerializeField] public Sprite[] sprites;
 
         Coroutine playAnimationCoroutine;
@@ -66,6 +67,8 @@ namespace UI.Animations
             // play animation
             while (true)
             {
+                // check if need to loop animations
+                if (!loop && currentSprite >= sprites.Length - 1f) break;
                 // increment current sprite, if it is last sprite, reset to 0
                 currentSprite += (currentSprite + 1 < sprites.Length) ? 1 : -currentSprite;
                 // update sprite animation

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UI.Animations;
 
 namespace UI.LevelSelection.CharacterSelection
 {
@@ -42,8 +41,6 @@ namespace UI.LevelSelection.CharacterSelection
         }
 
         #region Menu Toggling
-
-
         IEnumerator EnterTransition()
         {
             // handle showing transition
@@ -88,7 +85,6 @@ namespace UI.LevelSelection.CharacterSelection
 
         public void CloseMenu(bool skipTransition = false)
         {
-
             SetHologramActive(false);
             if (skipTransition)
             {
@@ -164,7 +160,6 @@ namespace UI.LevelSelection.CharacterSelection
             selectedIndex = index;
         }
         #endregion
-
 
         #region Character Selection Management
         void SubscribeToClick(CharacterSelectProfile profile)

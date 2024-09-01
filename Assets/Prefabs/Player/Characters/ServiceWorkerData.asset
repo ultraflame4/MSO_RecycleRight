@@ -17,10 +17,16 @@ MonoBehaviour:
 
 
     Skill: Heals all allies
-    in the party for 50HP.'
+    in the party for 50HP.
+
+
+    Seraphine has been a service worker for the better
+    part of her young life. Her upbeat and optimistic attitude serves to drive her
+    to help other people around her. Eager to support the other volunteers in the
+    recycling right movement, she helps to ensure everyone is in tip top shape.'
   characterSprite: {fileID: -6550637313826903203, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 120
-  movementSpeed: 300
+  movementSpeed: 350
   attackTriggerTimeFrame: 0.65
   skillCooldown: 25
   skillTriggerTimeFrame: 0.5
@@ -29,4 +35,9 @@ MonoBehaviour:
   skillDuration: 1
   deathDuration: 3.5
   characterSelectionSprite: {fileID: -8834619440561270687, guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7, type: 3}
+  attackType: 0
+  attackTarget: 0
+  role1: 6
+  role2: 2
+  role3: 0
   prefab: {fileID: 2511355259258957151, guid: 870fbede8bd52594899dabab9158ba8c, type: 3}

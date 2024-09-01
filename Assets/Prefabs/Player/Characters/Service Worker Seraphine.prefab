@@ -109,12 +109,12 @@ MonoBehaviour:
   attackDamage: 12
   attackRange: 1
   attackStunDuration: 0.75
-  knockback: 12
+  knockback: 15
   cleanAmount: 0
   areaOfEffect: 0
   hitMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 3456
   hitEffects: {fileID: 1319334646391704565, guid: b6546b5f4322b6745b220968f6f59cad, type: 3}
   healAmount: 50
   passiveHealScale: 0.25

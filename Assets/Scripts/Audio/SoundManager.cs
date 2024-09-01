@@ -6,10 +6,22 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [Header("Background Music")]
+    [SerializeField, Range(0f, 1f)] float volumeScale = 0.5f;
     [SerializeField] AudioSource bgSource;
     [SerializeField] AudioClip[] clips;
 
     AudioSource[] sfxSources;
+
+    private float _volume = 1f;
+    public float volume
+    {
+        get { return _volume; }
+        set
+        {
+            _volume = Mathf.Clamp01(value);
+            bgSource.volume = _volume * volumeScale;
+        }
+    }
 
     private static SoundManager _instance;
     public static SoundManager Instance
@@ -17,10 +29,11 @@ public class SoundManager : MonoBehaviour
         get
         {
             if (_instance == null)
-                throw new NullReferenceException("There is no Game Manager in the scene!");
+                throw new NullReferenceException("There is no Sound Manager in the scene!");
             return _instance;
         }
     }
+    public static bool hasInstance => _instance != null;
 
     void Awake()
     {
@@ -76,6 +89,7 @@ public class SoundManager : MonoBehaviour
 
         availableSource.clip = clip;
         availableSource.loop = loop;
+        availableSource.volume = volume;
         availableSource.Play();
         return true;
     }
@@ -107,6 +121,7 @@ public class SoundManager : MonoBehaviour
         
         // play audio
         availableSource.loop = false;
+        availableSource.volume = volume;
         availableSource.PlayOneShot(clip);
     }
 
