@@ -115,8 +115,15 @@ namespace Player.BinCleaning
             int index = Array.IndexOf(controller.CharacterManager.character_instances, activeCharacterData);
             // if original character is self, do not switch back, instead increment and switch to next character
             if (activeCharacterData == currentCharacterData)
-                // increment index by 1, if last item, reset index to 0
-                index = index >= (controller.CharacterManager.character_instances.Length - 1) ? 0 : index + 1;
+            {
+                // search for available character to clean bin
+                for (int i = 0; i < controller.CharacterManager.character_instances.Length; i++)
+                {
+                    if (controller.CharacterManager.character_instances[i].IsCleaning) continue;
+                    index = i;
+                    break;
+                }
+            }
             // check if an index is found
             if (index < 0) return;
             // switch to next character in array
