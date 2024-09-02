@@ -15,9 +15,14 @@ MonoBehaviour:
   data:
     levelName: The Rise of Pilotras
     levelCode: BO - 3
-    levelDescription: An amalgamation of waste has come together and threatens the
+    levelDescription: 'An amalgamation of waste has come together and threatens the
       safety of the public in this parking lot! By recycling properly and teamwork,
       you can take him down!
+
+
+      Recycling correctly will deal massive damage
+      to the boss, and will eventually topple him over, allowing you to deal a lot
+      of damage. Make sure to bring a damaging character and a cleaner!'
     levelImage: {fileID: 21300000, guid: 53d89bd181fa188439300abcb3dfdd07, type: 3}
     maxScore: 10
     teamPreset: []
