@@ -20,6 +20,24 @@ namespace UI
 
         PlayerCharacter[] characterInstance => PlayerController.Instance.CharacterManager.character_instances;
         PlayerCharacterSO[] characterInfo => GameManager.Instance.selectedCharacters;
+        PlayerCharacterSO currentCharacter;
+
+        void Update()
+        {
+            // allow using number keys to swithc profile
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                ShowCharacter(characterProfiles[0]);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                ShowCharacter(characterProfiles[1]);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                ShowCharacter(characterProfiles[2]);
+            }
+        }
 
         #region Button Handlers
         /// <summary>
@@ -43,6 +61,11 @@ namespace UI
 
         public void ShowCharacter(CharacterSelectProfile ctx)
         {
+            // do not set data if profile is deactivated
+            if (!ctx.gameObject.activeSelf) return;
+            // do not set if current set character is the same as the character to set
+            if (currentCharacter != null && currentCharacter == ctx.currentCharacter) return;
+
             if (characterProfiles == null)
             {
                 Debug.LogWarning("Character profiles array is not set in editor mode, try testing from level selection scene. (PauseDetailsMenu.cs)");
@@ -59,6 +82,7 @@ namespace UI
             characterName.text = ctx.currentCharacter.characterName;
             characterDesc.text = ctx.currentCharacter.characterDesc;
             characterDesc.transform.position = new Vector2(characterDesc.transform.position.x, 0f);
+            currentCharacter = ctx.currentCharacter;
         }
         #endregion
 
@@ -73,25 +97,23 @@ namespace UI
 
             for (int i = 0; i < characterProfiles.Length; i++)
             {
-                if (i >= characterInfo.Length)
+                if (characterProfiles.Length < characterInfo.Length)
                 {
                     Debug.LogWarning("There are not enough character profiles set! Loading of character data is aborted! (PauseDetailsMenu.cs)");
                     return;
                 }
 
-                characterProfiles[i].SetCharacter(characterInfo[i]);
-                characterProfiles[i].HideBorder();
-
                 if (i >= characterInstance.Length)
                 {
                     characterProfiles[i].gameObject.SetActive(false);
+                    continue;
                 }
-                else 
-                {
-                    characterProfiles[i].gameObject.SetActive(true);
-                    characterProfiles[i].SetSelection(characterInstance[i].Enabled);
-                    if (characterInstance[i].Enabled) ShowCharacter(characterProfiles[i]);
-                }
+
+                characterProfiles[i].gameObject.SetActive(true);
+                characterProfiles[i].HideBorder();
+                characterProfiles[i].SetCharacter(characterInfo[i]);
+                characterProfiles[i].SetSelection(characterInstance[i].Enabled);
+                if (characterInstance[i].Enabled) ShowCharacter(characterProfiles[i]);
             }
         }
         #endregion
