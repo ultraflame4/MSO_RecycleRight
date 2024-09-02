@@ -32,6 +32,9 @@ namespace NPC.Contaminants.States
             }
             dest = GeneralBinSingleton.instance.transform.position;
             navigation.enabled = false;
+            character.nameText.gameObject.SetActive(false);
+            (character as ContaminantNPC).healthbar.gameObject.transform.parent.gameObject.SetActive(false);
+            character.animator.speed = 0;
             character.GetComponent<Collider2D>().enabled = false;
         }
 
@@ -50,6 +53,7 @@ namespace NPC.Contaminants.States
             transform.position += dir * Mathf.Clamp01(dist) * .15f;
             if (dist < 0.24f)
             {
+                SoundManager.Instance?.PlayOneShot(character.enterGeneralWaste);
                 GameObject.Destroy(transform.gameObject);
             }
         }

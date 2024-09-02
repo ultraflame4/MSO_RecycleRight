@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: clean_prefab
       value: 
       objectReference: {fileID: 1564597524434622808, guid: c7e1d65aa430fdc469413f324039d823, type: 3}
+    - target: {fileID: 3481361625278285539, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      propertyPath: attract_pests
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288516772591241683, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
       propertyPath: m_text
       value: Soda Can
@@ -112,8 +116,62 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 206d156332815184e86e6d168d8ad0fa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4470070128566506984, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6991750651239364505, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2796566138810904039}
   m_SourcePrefab: {fileID: 100100000, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+--- !u!1 &3052286528121432579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6991750651239364505, guid: 2cbfc3940c505ca4ea35624766e562b9, type: 3}
+  m_PrefabInstance: {fileID: 5430310086001630618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2796566138810904039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052286528121432579}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008886218, y: 0.21326947}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4087665, y: 2.1729822}
+  m_EdgeRadius: 0
