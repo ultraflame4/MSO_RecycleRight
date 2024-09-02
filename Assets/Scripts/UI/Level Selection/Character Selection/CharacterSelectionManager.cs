@@ -200,11 +200,12 @@ namespace UI.LevelSelection.CharacterSelection
 
         void HandleQuickSelect(CharacterSelectProfile profile)
         {
-            if (hologramMenu != null && hologramMenu.CharacterInfo.selectedCharacter == profile.currentCharacter)
-            {
-                hologramMenu.CharacterInfo?.SetCharacter(null);
-                return;
-            }
+            // remove viewing details feature in quick select as it is unintuitive
+            // if (hologramMenu != null && hologramMenu.CharacterInfo.selectedCharacter == profile.currentCharacter)
+            // {
+            //     hologramMenu.CharacterInfo?.SetCharacter(null);
+            //     return;
+            // }
 
             if (party.Contains(profile.currentCharacter))
             {
