@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dfd5b67f9c007c4dafe2d8b7540c6c7
+guid: d17b836b5280ad546b1c3914336aceb0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638581026592584859
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Selected Character Sprite_Frame_0
+  - name: Asan Swaying hip to the beat_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.3846154, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 128
-    spriteID: 9fda3ef6d75882c43ace9457ed63f218
+      width: 52
+      height: 64
+    spriteID: bf3bcb7fd8e08af49ab6b52e7e0b50e3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Selected Character Sprite_Frame_1
+  - name: Asan Swaying hip to the beat_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.43478262, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 140
-      width: 64
-      height: 128
-    spriteID: 706c05da75ab34b4b896aca92fa96bed
+      x: 64
+      y: 150
+      width: 46
+      height: 64
+    spriteID: a304a7f5691e3ad4d8de60c7b425b726
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 140}
-  - name: Selected Character Sprite_Frame_2
+    uvTransform: {x: 64, y: 150}
+  - name: Asan Swaying hip to the beat_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5227273, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 276
-      width: 64
-      height: 128
-    spriteID: 4a64ae5545fd3fa40a50d0623d2e02ad
+      x: 124
+      y: 76
+      width: 44
+      height: 64
+    spriteID: 52fa717fd370f2d48b4c40c0018c46eb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,19 +180,99 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 276}
-  - name: Selected Character Sprite_Frame_3
+    uvTransform: {x: 124, y: 76}
+  - name: Asan Swaying hip to the beat_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.59615386, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
+      x: 4
+      y: 76
+      width: 52
+      height: 64
+    spriteID: 6d4d83a3d1d5d0f498cdc6eedb013dcf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: Asan Swaying hip to the beat_Frame_4
+    originalName: 
+    pivot: {x: 0.5744681, y: 0.015151516}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 76
+      width: 47
+      height: 66
+    spriteID: 9b7154005bb7290438c32f3ab7d77fa3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 76}
+  - name: Asan Swaying hip to the beat_Frame_5
+    originalName: 
+    pivot: {x: 0.59615386, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 52
+      height: 64
+    spriteID: e25f6ba278af1154b9f9fad0098da5ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 148}
+  - name: Asan Swaying hip to the beat_Frame_6
+    originalName: 
+    pivot: {x: 0.5227273, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 148
+      width: 44
+      height: 64
+    spriteID: 37a7b07d386593f498580564c9618d61
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 148}
+  - name: Asan Swaying hip to the beat_Frame_7
+    originalName: 
+    pivot: {x: 0.43478262, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 124
       y: 4
-      width: 64
-      height: 128
-    spriteID: bfbbc2bce9671ed4ebd1a910408bb4fe
+      width: 46
+      height: 64
+    spriteID: cf04038d1702d3648ad9f364b580455f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,19 +280,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 4}
-  - name: Selected Character Sprite_Frame_4
+    uvTransform: {x: 124, y: 4}
+  - name: Asan Swaying hip to the beat_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.3846154, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 140
-      width: 64
-      height: 128
-    spriteID: 551032ca18bf2094c9297fd9008db213
+      x: 64
+      y: 4
+      width: 52
+      height: 64
+    spriteID: 270bf32cda8a0c545bf151f660474c0f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -220,160 +300,92 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 140}
-  - name: Selected Character Sprite_Frame_5
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 76
-      y: 276
-      width: 64
-      height: 128
-    spriteID: 12ae93f146a87ea4ea86d969add7b03d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 76, y: 276}
+    uvTransform: {x: 64, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1287265905
-    name: Selected Character Sprite
+    guid: 41303822
+    name: Asan Swaying hip to the beat
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Selected Character Sprite_Frame_0
+    - name: Asan Swaying hip to the beat_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
+        x: 12
         y: 0
-        width: 64
-        height: 128
-      spriteId: 9fda3ef6d75882c43ace9457ed63f218
-    - name: Selected Character Sprite_Frame_1
+        width: 52
+        height: 64
+      spriteId: bf3bcb7fd8e08af49ab6b52e7e0b50e3
+    - name: Asan Swaying hip to the beat_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
+        x: 12
         y: 0
-        width: 64
-        height: 128
-      spriteId: 706c05da75ab34b4b896aca92fa96bed
-    - name: Selected Character Sprite_Frame_2
+        width: 46
+        height: 64
+      spriteId: a304a7f5691e3ad4d8de60c7b425b726
+    - name: Asan Swaying hip to the beat_Frame_2
       frameIndex: 2
       cellRect:
-        x: 0
+        x: 9
         y: 0
-        width: 64
-        height: 128
-      spriteId: 4a64ae5545fd3fa40a50d0623d2e02ad
-    - name: Selected Character Sprite_Frame_3
+        width: 44
+        height: 64
+      spriteId: 52fa717fd370f2d48b4c40c0018c46eb
+    - name: Asan Swaying hip to the beat_Frame_3
       frameIndex: 3
       cellRect:
-        x: 0
+        x: 1
         y: 0
-        width: 64
-        height: 128
-      spriteId: bfbbc2bce9671ed4ebd1a910408bb4fe
-    - name: Selected Character Sprite_Frame_4
+        width: 52
+        height: 64
+      spriteId: 6d4d83a3d1d5d0f498cdc6eedb013dcf
+    - name: Asan Swaying hip to the beat_Frame_4
       frameIndex: 4
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 128
-      spriteId: 551032ca18bf2094c9297fd9008db213
-    - name: Selected Character Sprite_Frame_5
+        x: 5
+        y: -1
+        width: 47
+        height: 66
+      spriteId: 9b7154005bb7290438c32f3ab7d77fa3
+    - name: Asan Swaying hip to the beat_Frame_5
       frameIndex: 5
       cellRect:
-        x: 0
+        x: 1
         y: 0
-        width: 64
-        height: 128
-      spriteId: 12ae93f146a87ea4ea86d969add7b03d
+        width: 52
+        height: 64
+      spriteId: e25f6ba278af1154b9f9fad0098da5ff
+    - name: Asan Swaying hip to the beat_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 9
+        y: 0
+        width: 44
+        height: 64
+      spriteId: 37a7b07d386593f498580564c9618d61
+    - name: Asan Swaying hip to the beat_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 12
+        y: 0
+        width: 46
+        height: 64
+      spriteId: cf04038d1702d3648ad9f364b580455f
+    - name: Asan Swaying hip to the beat_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 12
+        y: 0
+        width: 52
+        height: 64
+      spriteId: 270bf32cda8a0c545bf151f660474c0f
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: iPhone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Windows Store Apps
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 128}
+  canvasSize: {x: 64, y: 64}
