@@ -52,16 +52,10 @@ namespace UI
         // Update is called once per frame
         void Update()
         {
+            // check if level has ended
             CheckEnded();
-
             // detect showing details menu
-            if (Input.GetKeyDown(detailsKey))
-            {
-                if (!Paused) TogglePause();
-                detailsMenu?.Activate();
-                return;
-            }
-
+            if (HandleCharacterDetails()) return;
             // detect pausing game
             if (!canPause || !Input.GetKeyDown(pauseKey)) return;
             TogglePause();
@@ -108,6 +102,31 @@ namespace UI
             canPause = false;
             if (!Paused) return;
             TogglePause();
+        }
+
+        /// <summary>
+        /// Handle showing character details menu
+        /// </summary>
+        /// <returns>Boolean representing whether or not pause behaviour should be checked in this frame</returns>
+        bool HandleCharacterDetails()
+        {
+            if (!Input.GetKeyDown(detailsKey)) return false;
+
+            // pause and activate menu 
+            // if not paused, immidiately exit pause when pressing hotkey
+            if (!Paused || (Paused && detailsMenu.gameObject.activeSelf)) 
+            {
+                TogglePause();
+
+                if (!Paused) 
+                {
+                    detailsMenu?.Deactivate();
+                    return true;
+                }
+            }
+
+            detailsMenu?.Activate();
+            return true;
         }
     }
 }

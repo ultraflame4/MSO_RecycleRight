@@ -1,8 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UI.LevelSelection.CharacterSelection;
+using Entity.Data;
+using Player;
 
 namespace UI
 {
@@ -11,25 +12,16 @@ namespace UI
         [Header("Menu Management")]
         [SerializeField] GameObject defaultPauseMenu;
 
-        [Header("Character Details View")]
+        [Header("Character View")]
         [SerializeField] Image profileImage;
         [SerializeField] TextMeshProUGUI characterName;
         [SerializeField] TextMeshProUGUI characterDesc;
+        [SerializeField] CharacterSelectProfile[] characterProfiles;
 
-        [Header("Character Select Profile")]
-        [SerializeField] Transform profileParent;
-        [SerializeField] GameObject profilePrefab;
-
-        List<ProfileObject> profileObjects = new List<ProfileObject>();
-        class ProfileObject
-        {
-            public CharacterSelectProfile profile;
-            public Button button;
-        }
-
+        PlayerCharacter[] characterInstance => PlayerController.Instance.CharacterManager.character_instances;
         PlayerCharacterSO[] characterInfo => GameManager.Instance.selectedCharacters;
 
-        #region Handle Active
+        #region Button Handlers
         /// <summary>
         /// Show pause details menu
         /// </summary>
@@ -48,47 +40,58 @@ namespace UI
             gameObject.SetActive(false);
             defaultPauseMenu.SetActive(true);
         }
-        #endregion
 
-        #region Button Handlers
         public void ShowCharacter(CharacterSelectProfile ctx)
         {
+            if (characterProfiles == null)
+            {
+                Debug.LogWarning("Character profiles array is not set in editor mode, try testing from level selection scene. (PauseDetailsMenu.cs)");
+                return;
+            }
 
+            foreach (CharacterSelectProfile profile in characterProfiles)
+            {
+                profile.SetSelection(profile == ctx);
+            }
+
+            // set data
+            profileImage.sprite = ctx.currentCharacter.characterSprite;
+            characterName.text = ctx.currentCharacter.characterName;
+            characterDesc.text = ctx.currentCharacter.characterDesc;
+            characterDesc.transform.position = new Vector2(characterDesc.transform.position.x, 0f);
         }
         #endregion
 
         #region Private Methods
         void LoadProfileObjects()
         {
-            foreach (ProfileObject profileObject in profileObjects)
+            if (characterProfiles == null)
             {
-                profileObject.profile?.gameObject.SetActive(false);
+                Debug.LogWarning("Character profiles array is not set in editor mode, try testing from level selection scene. (PauseDetailsMenu.cs)");
+                return;
             }
 
-            for (int i = 0; i < characterInfo.Length; i++)
+            for (int i = 0; i < characterProfiles.Length; i++)
             {
-                CharacterSelectProfile selectedProfile;
-                
-                if (i >= profileObjects.Count)
+                if (i >= characterInfo.Length)
                 {
-                    GameObject newObject = Instantiate(profilePrefab, profileParent);
-                    ProfileObject newProfile = new ProfileObject 
-                    {
-                        profile = newObject.GetComponent<CharacterSelectProfile>(),
-                        button = newObject.GetComponent<Button>()
-                    };
-                    profileObjects.Add(newProfile);
-                    selectedProfile = profileObjects[^1].profile;
+                    Debug.LogWarning("There are not enough character profiles set! Loading of character data is aborted! (PauseDetailsMenu.cs)");
+                    return;
+                }
+
+                characterProfiles[i].SetCharacter(characterInfo[i]);
+                characterProfiles[i].HideBorder();
+
+                if (i >= characterInstance.Length)
+                {
+                    characterProfiles[i].gameObject.SetActive(false);
                 }
                 else 
                 {
-                    selectedProfile = profileObjects[i].profile;
+                    characterProfiles[i].gameObject.SetActive(true);
+                    characterProfiles[i].SetSelection(characterInstance[i].Enabled);
+                    if (characterInstance[i].Enabled) ShowCharacter(characterProfiles[i]);
                 }
-
-                if (selectedProfile == null) continue;
-                selectedProfile.gameObject.SetActive(true);
-                selectedProfile.SetCharacter(characterInfo[i]);
-                selectedProfile.HideBorder();
             }
         }
         #endregion
