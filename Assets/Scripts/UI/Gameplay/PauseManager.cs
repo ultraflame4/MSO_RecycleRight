@@ -7,8 +7,14 @@ namespace UI
 {
     public class PauseManager : MonoBehaviour
     {
+        [Header("Pause Menu")]
         [SerializeField] KeyCode pauseKey = KeyCode.Escape;
         [SerializeField] AudioClip pauseSFX;
+
+        [Header("Character Details")]
+        [SerializeField] KeyCode detailsKey = KeyCode.C;
+        [SerializeField] PauseDetailsMenu detailsMenu;
+
         private GameObject pauseMenu;
 
         public bool Paused { get; private set; } = false;
