@@ -247,10 +247,11 @@ namespace UI.LevelSelection.CharacterSelection
                 if (!profile.gameObject.activeSelf) continue;
                 profile.HideBorder();
 
-                if (toggleQuickSelect != null && toggleQuickSelect.activated)
-                    profile.SetSelection(profile.currentCharacter == hologramMenu.CharacterInfo.selectedCharacter);
-                else
-                    profile.SetSelection(false);
+                // remove viewing details feature in quick select as it is unintuitive
+                // if (toggleQuickSelect != null && toggleQuickSelect.activated)
+                //     profile.SetSelection(profile.currentCharacter == hologramMenu.CharacterInfo.selectedCharacter);
+                // else
+                //     profile.SetSelection(false);
 
                 if (!party.Contains(profile.currentCharacter)) continue;
 
