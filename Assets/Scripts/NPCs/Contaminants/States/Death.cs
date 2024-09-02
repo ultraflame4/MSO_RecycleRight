@@ -53,6 +53,7 @@ namespace NPC.Contaminants.States
             transform.position += dir * Mathf.Clamp01(dist) * .15f;
             if (dist < 0.24f)
             {
+                SoundManager.Instance?.PlayOneShot(character.enterGeneralWaste);
                 GameObject.Destroy(transform.gameObject);
             }
         }
