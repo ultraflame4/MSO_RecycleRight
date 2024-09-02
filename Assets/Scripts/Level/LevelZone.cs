@@ -171,7 +171,7 @@ namespace Level
             var top_left = new Vector2(-boundSize.x, boundSize.y) / 2;
             var bottom_left = new Vector2(-boundSize.x, -boundSize.y) / 2;
             var bottom_right = new Vector2(boundSize.x, -boundSize.y) / 2;
-
+            edgeCollider.edgeRadius = 0.1f;
             edgeCollider.SetPoints(new List<Vector2>(){
                 top_right,top_left,bottom_left,bottom_right,top_right
             });
