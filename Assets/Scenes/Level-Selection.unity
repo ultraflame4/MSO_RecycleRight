@@ -1358,6 +1358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: btnDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 3623843991278891482, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7323052842091746584, guid: 5a4ef01734c20ad4bb486f25c86605a0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3288,7 +3292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Select
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb386f6bc876bf1478c06c4ffee0d7fb, type: 2}
   m_sharedMaterial: {fileID: 5807939526964537196, guid: cb386f6bc876bf1478c06c4ffee0d7fb, type: 2}
@@ -8238,8 +8242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.5, y: -190}
-  m_SizeDelta: {x: -95, y: 250}
+  m_AnchoredPosition: {x: 9.999998, y: -200}
+  m_SizeDelta: {x: -100, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453567329
 MonoBehaviour:

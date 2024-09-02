@@ -992,6 +992,8 @@ MonoBehaviour:
   _animator: {fileID: 8032888024164147659}
   spriteRenderer: {fileID: 7100357504067239762}
   nameText: {fileID: 4288516772591241683}
+  enterBin: {fileID: 8300000, guid: 37d8e41955ed72f4da6aaef84591de07, type: 3}
+  enterGeneralWaste: {fileID: 8300000, guid: b0f052827a8ead74883912b7c78a8475, type: 3}
   healthbar: {fileID: 5208754194471477544}
   grimeController: {fileID: 2116439068003672345}
   cleaningParticlesEffect: {fileID: 8979242770268671790, guid: 5f1a70d438fd38c48abce7a0718fa7a7, type: 3}

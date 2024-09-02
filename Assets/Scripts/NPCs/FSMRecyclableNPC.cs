@@ -32,12 +32,17 @@ namespace NPC
         }
         public SpriteRenderer spriteRenderer;
         public TextMeshProUGUI nameText;
+        public AudioClip enterBin;
+        public AudioClip enterGeneralWaste;
 
         protected virtual void SpawnRecyclable() { }
 
         public void OnEnterBin(RecyclingBin bin)
         {
             if (bin.binState != BinState.CLEAN) return;
+
+            // play sound effect
+            SoundManager.Instance?.PlayOneShot(enterBin);
 
             if (cause_infestation)
             {
