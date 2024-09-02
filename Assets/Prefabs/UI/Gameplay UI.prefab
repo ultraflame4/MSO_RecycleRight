@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 1543273508515421688}
   - component: {fileID: 7181274757543810914}
   - component: {fileID: 2222400522656842551}
+  - component: {fileID: 3741243576117492691}
   m_Layer: 5
   m_Name: Character Details
   m_TagString: Untagged
@@ -737,6 +738,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3741243576117492691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855071920021695767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08ed0435013b2147b47c6bb3cda1b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPauseMenu: {fileID: 4700324171588969888}
 --- !u!1 &1101540153967068598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseKey: 27
   pauseSFX: {fileID: 8300000, guid: 6201c768c32d5b8468f7a2825f7e044d, type: 3}
+  detailsKey: 99
+  detailsMenu: {fileID: 0}
 --- !u!1 &1448884201986436025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,7 +3559,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7655096682080100373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 192991296285446701}
+        m_TargetAssemblyTypeName: UISoundEffectsManager, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8731428049027468940
 GameObject:
   m_ObjectHideFlags: 0

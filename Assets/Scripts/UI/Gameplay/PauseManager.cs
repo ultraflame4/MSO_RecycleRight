@@ -53,6 +53,16 @@ namespace UI
         void Update()
         {
             CheckEnded();
+
+            // detect showing details menu
+            if (Input.GetKeyDown(detailsKey))
+            {
+                if (!Paused) TogglePause();
+                detailsMenu?.Activate();
+                return;
+            }
+
+            // detect pausing game
             if (!canPause || !Input.GetKeyDown(pauseKey)) return;
             TogglePause();
         }
@@ -64,6 +74,7 @@ namespace UI
             SoundManager.Instance?.PlayOneShot(pauseSFX);
             Time.timeScale = Paused ? 0f : 1f;
             pauseMenu?.SetActive(Paused);
+            detailsMenu?.Deactivate();
         }
 
         public void RestartLevel()
