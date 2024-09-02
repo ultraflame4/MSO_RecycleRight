@@ -32,6 +32,9 @@ namespace NPC.Contaminants.States
             }
             dest = GeneralBinSingleton.instance.transform.position;
             navigation.enabled = false;
+            character.nameText.gameObject.SetActive(false);
+            (character as ContaminantNPC).healthbar.gameObject.transform.parent.gameObject.SetActive(false);
+            character.animator.speed = 0;
             character.GetComponent<Collider2D>().enabled = false;
         }
 
