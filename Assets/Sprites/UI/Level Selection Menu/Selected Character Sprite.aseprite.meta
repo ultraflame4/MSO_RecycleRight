@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Selected Character Sprite_Frame_2
     originalName: 
-    pivot: {x: 0.45945948, y: 0.37142858}
+    pivot: {x: 0.45945948, y: 0.3768116}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -171,7 +171,7 @@ ScriptedImporter:
       x: 4
       y: 136
       width: 37
-      height: 70
+      height: 69
     spriteID: 4a64ae5545fd3fa40a50d0623d2e02ad
     spriteBone: []
     spriteOutline: []
@@ -272,7 +272,7 @@ ScriptedImporter:
         x: 15
         y: 38
         width: 37
-        height: 70
+        height: 69
       spriteId: 4a64ae5545fd3fa40a50d0623d2e02ad
     - name: Selected Character Sprite_Frame_3
       frameIndex: 3
