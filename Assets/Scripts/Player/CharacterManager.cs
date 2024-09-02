@@ -74,6 +74,9 @@ namespace Player
 
         private void Update()
         {
+            // do not run if game is paused
+            if (Time.timeScale <= 0f) return;
+
             // todo: move all input handling to a separate input manager class.
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
