@@ -384,7 +384,7 @@ MonoBehaviour:
   showBox: 1
   keys: 
   mouseButtons: 
-  duration: 12
+  duration: 14
 --- !u!1001 &196433223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49471,7 +49471,7 @@ MonoBehaviour:
   showBox: 1
   keys: 
   mouseButtons: 
-  duration: 10
+  duration: 12
 --- !u!1 &1458551751
 GameObject:
   m_ObjectHideFlags: 0
