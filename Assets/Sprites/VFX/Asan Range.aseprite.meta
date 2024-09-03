@@ -141,6 +141,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Asan Range_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 72
+      height: 48
+    spriteID: 067b374d51295634786aff81453783d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 60}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,7 +170,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Asan Range
+    - name: Asan Range_Frame_0
       frameIndex: 0
       cellRect:
         x: 4
@@ -158,6 +178,14 @@ ScriptedImporter:
         width: 72
         height: 48
       spriteId: 074501de6bef76a42b6b405901b708b7
+    - name: Asan Range_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 4
+        y: 0
+        width: 72
+        height: 48
+      spriteId: 067b374d51295634786aff81453783d4
     linkedCells: []
     parentIndex: -1
   platformSettings:
