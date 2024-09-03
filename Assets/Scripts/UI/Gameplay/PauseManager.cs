@@ -58,7 +58,13 @@ namespace UI
             if (HandleCharacterDetails()) return;
             // detect pausing game
             if (!canPause || !Input.GetKeyDown(pauseKey)) return;
-            TogglePause();
+
+            // if details menu is open, close the menu instead of unpausing
+            if (detailsMenu.gameObject.activeSelf) 
+                detailsMenu.Deactivate();
+            // toggle open/close pause menu
+            else
+                TogglePause();
         }
 
         // menu button methods
