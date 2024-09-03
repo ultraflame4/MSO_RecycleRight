@@ -14,9 +14,13 @@ namespace UI
 
         [Header("Character View")]
         [SerializeField] Image profileImage;
-        [SerializeField] TextMeshProUGUI characterName;
-        [SerializeField] TextMeshProUGUI characterDesc;
+        [SerializeField] TextMeshProUGUI characterName, characterDesc;
         [SerializeField] CharacterSelectProfile[] characterProfiles;
+
+        [Header("Character Tags")]
+        [SerializeField] TextMeshProUGUI attackType;
+        [SerializeField] TextMeshProUGUI attackTarget;
+        [SerializeField] TextMeshProUGUI role1, role2, role3;
 
         PlayerCharacter[] characterInstance => PlayerController.Instance.CharacterManager.character_instances;
         PlayerCharacterSO[] characterInfo => GameManager.Instance.selectedCharacters;
@@ -82,6 +86,13 @@ namespace UI
             characterName.text = ctx.currentCharacter.characterName;
             characterDesc.text = ctx.currentCharacter.characterDesc;
             characterDesc.transform.position = new Vector2(characterDesc.transform.position.x, 0f);
+
+            attackType.text = ctx.currentCharacter.attackType.ToString();
+            attackTarget.text = ctx.currentCharacter.attackTarget.ToString().Replace("_", "-");
+            SetCharacterRole(ctx.currentCharacter.role1, role1);
+            SetCharacterRole(ctx.currentCharacter.role2, role2);
+            SetCharacterRole(ctx.currentCharacter.role3, role3);
+
             currentCharacter = ctx.currentCharacter;
         }
         #endregion
@@ -115,6 +126,14 @@ namespace UI
                 characterProfiles[i].SetSelection(characterInstance[i].Enabled);
                 if (characterInstance[i].Enabled) ShowCharacter(characterProfiles[i]);
             }
+        }
+
+        void SetCharacterRole(CharacterRoles role, TextMeshProUGUI targetUI)
+        {
+            // if role is none, set toe string to blank
+            // replace underscore with space
+            string roleString = role == CharacterRoles.NONE ? "" : role.ToString().Replace("_", " ");
+            targetUI.text = roleString;
         }
         #endregion
     }
