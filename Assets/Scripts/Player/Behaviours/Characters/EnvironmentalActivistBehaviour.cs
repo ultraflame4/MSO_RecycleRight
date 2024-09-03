@@ -81,7 +81,6 @@ namespace Player.Behaviours
 
             // get hit enemies
             Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range, hitMask);
-            if (hits.Length <= 0) return;
             // reset attack close boolean
             attackClose = false;
 
