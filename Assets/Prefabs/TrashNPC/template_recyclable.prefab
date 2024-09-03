@@ -586,6 +586,8 @@ MonoBehaviour:
   _animator: {fileID: 3787632505832760229}
   spriteRenderer: {fileID: 7167511950734399430}
   nameText: {fileID: 6530925854829422535}
+  enterBin: {fileID: 8300000, guid: 37d8e41955ed72f4da6aaef84591de07, type: 3}
+  enterGeneralWaste: {fileID: 8300000, guid: b0f052827a8ead74883912b7c78a8475, type: 3}
   _recyclableType: 0
   contaminant_prefab: {fileID: 2242677056016477077, guid: 41a68a82e731ffc4aba1bea1d1628633, type: 3}
   sightRange: 3

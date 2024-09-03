@@ -7,8 +7,14 @@ namespace UI
 {
     public class PauseManager : MonoBehaviour
     {
+        [Header("Pause Menu")]
         [SerializeField] KeyCode pauseKey = KeyCode.Escape;
         [SerializeField] AudioClip pauseSFX;
+
+        [Header("Character Details")]
+        [SerializeField] KeyCode detailsKey = KeyCode.C;
+        [SerializeField] PauseDetailsMenu detailsMenu;
+
         private GameObject pauseMenu;
 
         public bool Paused { get; private set; } = false;
@@ -46,9 +52,19 @@ namespace UI
         // Update is called once per frame
         void Update()
         {
+            // check if level has ended
             CheckEnded();
+            // detect showing details menu
+            if (HandleCharacterDetails()) return;
+            // detect pausing game
             if (!canPause || !Input.GetKeyDown(pauseKey)) return;
-            TogglePause();
+
+            // if details menu is open, close the menu instead of unpausing
+            if (detailsMenu.gameObject.activeSelf) 
+                detailsMenu.Deactivate();
+            // toggle open/close pause menu
+            else
+                TogglePause();
         }
 
         // menu button methods
@@ -58,6 +74,7 @@ namespace UI
             SoundManager.Instance?.PlayOneShot(pauseSFX);
             Time.timeScale = Paused ? 0f : 1f;
             pauseMenu?.SetActive(Paused);
+            detailsMenu?.Deactivate();
         }
 
         public void RestartLevel()
@@ -91,6 +108,31 @@ namespace UI
             canPause = false;
             if (!Paused) return;
             TogglePause();
+        }
+
+        /// <summary>
+        /// Handle showing character details menu
+        /// </summary>
+        /// <returns>Boolean representing whether or not pause behaviour should be checked in this frame</returns>
+        bool HandleCharacterDetails()
+        {
+            if (!Input.GetKeyDown(detailsKey)) return false;
+
+            // pause and activate menu 
+            // if not paused, immidiately exit pause when pressing hotkey
+            if (!Paused || (Paused && detailsMenu.gameObject.activeSelf)) 
+            {
+                TogglePause();
+
+                if (!Paused) 
+                {
+                    detailsMenu?.Deactivate();
+                    return true;
+                }
+            }
+
+            detailsMenu?.Activate();
+            return true;
         }
     }
 }

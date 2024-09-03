@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace NPC.Contaminants.States
 {
-    public class DetectTarget  : NPC.States.RandomWalk
+    public class DetectTarget : NPC.States.RandomWalk
     {
         protected ContaminantNPC npc;
         public DetectTarget(ContaminantNPC npc) : base(npc, npc)
@@ -21,7 +21,7 @@ namespace NPC.Contaminants.States
             base.PhysicsUpdate();
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, npc.sightRange);
             // todo in future remove any check and just check for enemy layer
-            bool nearbyTarget = colliders.Any(x=>x.GetComponent<NPC.Recyclable.RecyclableNPC>() != null);
+            bool nearbyTarget = colliders.Any(x => x.GetComponent<NPC.Recyclable.RecyclableNPC>() != null);
             if (nearbyTarget)
             {
                 npc.SwitchState(npc.state_ChaseRecyclable);
@@ -30,12 +30,21 @@ namespace NPC.Contaminants.States
 
             if (npc.playerInSight)
             {
-                npc.SwitchState(npc.state_ChasePlayer);
+                // Check if current state is already chasing bin
+                if (npc.currentState != npc.state_ChasePlayer)
+                {
+                    npc.SwitchState(npc.state_ChasePlayer);
+                }
                 return;
             }
-            bool nearbyBin = colliders.Any(x=>x.GetComponent<RecyclingBin>());
-            if (nearbyBin){
-                npc.SwitchState(npc.state_ChaseBin);
+            bool nearbyBin = colliders.Any(x => x.GetComponent<RecyclingBin>());
+            if (nearbyBin)
+            {
+                // Check if current state is already chasing bin
+                if (npc.currentState != npc.state_ChaseBin)
+                {
+                    npc.SwitchState(npc.state_ChaseBin);
+                }
                 return;
             }
         }
@@ -43,7 +52,7 @@ namespace NPC.Contaminants.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-        
+
         }
     }
 }

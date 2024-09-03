@@ -26,12 +26,13 @@ namespace Bosses.Pilotras.FSM
             character.data.damageTakenScale = character.behaviourData.topple_damage_multiplier;
             // offset collider
             collider.offset = character.behaviourData.collider_offset;
+            // wait and play topple over reverse animation before exiting state
+            character.StartCoroutine(WaitForSeconds(duration - 1.3f, () => character.anim?.Play("Topple Over (Reverse)")));
         }
 
         public override void Exit()
         {
             base.Exit();
-            character.anim?.Play("Topple Over (Reverse)");
             // revert damage scale back to original
             character.data.damageTakenScale = originalDamageScale;
             // revert colldier offset to original offset

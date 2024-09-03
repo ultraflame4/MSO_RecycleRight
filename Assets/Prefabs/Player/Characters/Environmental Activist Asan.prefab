@@ -118,12 +118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CooldownElasped: 0
-  attackDamage: 10
-  damageDropoffRange: 0.32
+  attackDamage: 25
+  damageDropoffRange: 0.25
+  minDropoffScale: 0.3
   attackStunDuration: 0.5
   range: 5.5
   angle: 0.65
-  knockback: 5
+  knockback: 10
   cleanAmount: 0.6
   hitMask:
     serializedVersion: 2
@@ -131,5 +132,6 @@ MonoBehaviour:
   attackRangeIndicator: {fileID: 4567356070770474032, guid: 4bbe5576d9ba3f049a4f8ab74c1bb28b, type: 3}
   cooldownDecrease: 2
   attackSFX: {fileID: 8300000, guid: 44d92a5eeda6af8498bc065c15ee22dc, type: 3}
+  attackCloseSFX: {fileID: 8300000, guid: b1dc271f44c0f4342a741cef8f4ffbf5, type: 3}
   skillSFX: {fileID: 8300000, guid: 4f4fb903da8a1764a9a1e10738f255cd, type: 3}
   skillVFX: {fileID: 1518537369648128330, guid: 74c50de98233c9e4696714b9d1006377, type: 3}

@@ -11,7 +11,7 @@ public class ContaminantAnimationEvents : MonoBehaviour {
     public void TriggerAttackEnd()
     {
         contaminantNPC.state_AttackPlayer.EndAttack();
-        contaminantNPC.state_AttackRecyclable.TriggerHit();
+        contaminantNPC.state_AttackRecyclable.EndAttack();
     }
     public void TriggerEnd()
     {

@@ -80,16 +80,14 @@ namespace Player.Behaviours
             hit = grabbed ? hit : Physics2D.OverlapCircle(character.pointer.position, grabRange, hitMask);
             // update grab animation boolean
             anim.SetBool("Grabbed", grabbed);
-            // check if something is hit
-            if (!grabbed) return;
-
-            // apply grab damage to hit enemy
-            hit.GetComponent<IDamagable>()?.Damage(grabDamage);
-            // spawn grab vfx
-            SpawnVFX(grabEffect);
             // play grab sfx
             SoundManager.Instance?.PlayOneShot(grabSFX);
-
+            // check if something is hit
+            if (!grabbed) return;
+            // spawn grab vfx
+            SpawnVFX(grabEffect);
+            // apply grab damage to hit enemy
+            hit.GetComponent<IDamagable>()?.Damage(grabDamage);
             // check if grabbed object can be grabbed
             IAmNotMovableByWilson movable = hit.GetComponent<IAmNotMovableByWilson>();
             // handle not grabbing object

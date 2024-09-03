@@ -43,6 +43,7 @@ namespace Level
         public bool debug_drawLevelZone = true;
         public bool debug_drawBufferZone = true;
         public bool debug_drawPlayerStartPos = true;
+        const float edge_diameter = 2f;
 
         private void Awake()
         {
@@ -167,11 +168,11 @@ namespace Level
                 }
             }
             var boundSize = size;
-            var top_right = boundSize / 2;
-            var top_left = new Vector2(-boundSize.x, boundSize.y) / 2;
-            var bottom_left = new Vector2(-boundSize.x, -boundSize.y) / 2;
-            var bottom_right = new Vector2(boundSize.x, -boundSize.y) / 2;
-
+            var top_right = new Vector2(boundSize.x + edge_diameter, boundSize.y + edge_diameter) / 2;
+            var top_left = new Vector2(-boundSize.x - edge_diameter, boundSize.y + edge_diameter) / 2;
+            var bottom_left = new Vector2(-boundSize.x - edge_diameter, -boundSize.y - edge_diameter) / 2;
+            var bottom_right = new Vector2(boundSize.x + edge_diameter, -boundSize.y - edge_diameter) / 2;
+            edgeCollider.edgeRadius = edge_diameter / 2;
             edgeCollider.SetPoints(new List<Vector2>(){
                 top_right,top_left,bottom_left,bottom_right,top_right
             });

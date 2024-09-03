@@ -40,7 +40,7 @@ namespace NPC.Contaminants.States
                 // Navigation component may be disabled!
                 if (navigation != null && navigation.enabled)
                 {
-                    navigation.SetDestination(nearest.transform);
+                    navigation.SetDestination(nearest.transform.position);
                 }
                 return;
             }

@@ -15,8 +15,14 @@ MonoBehaviour:
   data:
     levelName: Boxes and Blocks
     levelCode: LV - 2
-    levelDescription: Cardboard Boxes are everywhere in this HDB Block! Help fold
+    levelDescription: 'Cardboard Boxes are everywhere in this HDB Block! Help fold
       boxes to clear paths while managing the recyclables to keep this HDB Block
       clean!
+
+
+      Unfolded boxes can block pathways and cause an inconvenience.
+      Attack the boxes to fold them, and then recycle them in the appropriate paper
+      bin.'
     levelImage: {fileID: 21300000, guid: be6552665fa93f34f88c2213a135eae7, type: 3}
     maxScore: 20
+    teamPreset: []
