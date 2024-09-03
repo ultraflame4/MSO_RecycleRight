@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,6 +17,7 @@ namespace UI
         [SerializeField] Image profileImage;
         [SerializeField] TextMeshProUGUI characterName, characterDesc;
         [SerializeField] CharacterSelectProfile[] characterProfiles;
+        Button[] characterProfileButtons;
 
         [Header("Character Tags")]
         [SerializeField] TextMeshProUGUI attackType;
@@ -26,20 +28,25 @@ namespace UI
         PlayerCharacterSO[] characterInfo => GameManager.Instance.selectedCharacters;
         PlayerCharacterSO currentCharacter;
 
+        void Start()
+        {
+            characterProfileButtons = characterProfiles.Select(x => x.GetComponent<Button>()).ToArray();
+        }
+
         void Update()
         {
             // allow using number keys to swithc profile
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                ShowCharacter(characterProfiles[0]);
+                characterProfileButtons[0].onClick.Invoke();
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                ShowCharacter(characterProfiles[1]);
+                characterProfileButtons[1].onClick.Invoke();
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                ShowCharacter(characterProfiles[2]);
+                characterProfileButtons[2].onClick.Invoke();
             }
         }
 
