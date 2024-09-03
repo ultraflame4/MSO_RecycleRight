@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: ServiceWorkerData
   m_EditorClassIdentifier: 
   characterName: Service Worker Seraphine
-  characterDesc: 'Passive: Heals the most injured ally.
+  characterDesc: 'Passive: Heals the most injured ally for a little HP.
 
 
-    Skill: Heals all allies
-    in the party for 50HP.
+    Skill:
+    Heals all allies in the party for a large amount of HP.
 
 
-    Seraphine has been a service worker for the better
-    part of her young life. Her upbeat and optimistic attitude serves to drive her
-    to help other people around her. Eager to support the other volunteers in the
-    recycling right movement, she helps to ensure everyone is in tip top shape.'
+    Seraphine has been
+    a service worker for the better part of her young life. Her upbeat and optimistic
+    attitude serves to drive her to help other people around her. Eager to support
+    the other volunteers in the recycling right movement, she helps to ensure everyone
+    is in tip top shape.'
   characterSprite: {fileID: -6550637313826903203, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 120
   movementSpeed: 350

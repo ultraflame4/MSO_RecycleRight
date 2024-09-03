@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: WasteCollectorData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSO
   characterName: Waste Collector Wilson
-  characterDesc: "Passive: Attacks are modified to a 2-hit grab and throw combo.
-    \n\nSkill: Summons an army of garbage trucks that disposes of everything in the
-    current zone. \n\nHaving been a garbage collector for most of his life, he has
-    become extremely adept at the proper disposal of waste. Wanting to use his skills
-    to help the planet, he offered to join the recycling movement in hopes of putting
-    his waste disposal skills to good use."
+  characterDesc: "Passive: Attacks are modified to a pick up and throw combo.\n\nSkill:
+    Summons an army of garbage trucks that disposes of everything in the current
+    zone. Does not earn points. \n\nHaving been a garbage collector for most of his
+    life, he has become extremely adept at the proper disposal of waste. Wanting
+    to use his skills to help the planet, he offered to join the recycling movement
+    in hopes of putting his waste disposal skills to good use."
   characterSprite: {fileID: -4739837699357375595, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 120
   movementSpeed: 350
