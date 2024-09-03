@@ -26,6 +26,7 @@ namespace Player.Behaviours
 
         [Header("Effects")]
         [SerializeField] AudioClip attackSFX;
+        [SerializeField] AudioClip attackCloseSFX;
         [SerializeField] AudioClip skillSFX;
         [Tooltip("VFX to spawn when skill is used"), FormerlySerializedAs("skillVFXForContaminant")]
         [SerializeField] GameObject skillVFX;
@@ -33,6 +34,7 @@ namespace Player.Behaviours
         GameObject indicatorPrefab;
         SpriteRenderer pointerSprite;
         bool replaceIndicator = true;
+        bool attackClose = false;
         float lastScore, currScore, dropoffScale, distance;
         int scoreDifference;
 
@@ -80,8 +82,8 @@ namespace Player.Behaviours
             // get hit enemies
             Collider2D[] hits = Physics2D.OverlapCircleAll(character.transform.position, range, hitMask);
             if (hits.Length <= 0) return;
-            // play sfx
-            SoundManager.Instance?.PlayOneShot(attackSFX);
+            // reset attack close boolean
+            attackClose = false;
 
             // filter based on angle
             hits = hits
@@ -103,6 +105,8 @@ namespace Player.Behaviours
                 // calculate dropoff
                 distance = Vector3.Distance(hit.transform.position, character.transform.position);
                 dropoffScale = distance <= (range * damageDropoffRange) ? 2f : Mathf.Clamp(minDropoffScale, 1f, 1f - (distance / range));
+                // check if there is a close ranged attack
+                if (!attackClose) attackClose = dropoffScale > 1f;
 
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
@@ -117,6 +121,11 @@ namespace Player.Behaviours
                 rb.AddForce((character.pointer.position - character.transform.position).normalized *
                     knockback * dropoffScale, ForceMode2D.Impulse);
             }
+
+            // play sfx depending on if an enemy is hit in close range
+            SoundManager.Instance?.PlayOneShot((attackClose ? attackCloseSFX : attackSFX));
+            // shake camera if hit a close ranged attack
+            if (attackClose) LevelManager.Instance?.camera?.ShakeCamera(0.15f);
         }
 
         public override void TriggerSkill()
