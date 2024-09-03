@@ -119,11 +119,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CooldownElasped: 0
   attackDamage: 25
-  damageDropoffRange: 0.32
+  damageDropoffRange: 0.25
+  minDropoffScale: 0.3
   attackStunDuration: 0.5
   range: 5.5
   angle: 0.65
-  knockback: 15
+  knockback: 7
   cleanAmount: 0.6
   hitMask:
     serializedVersion: 2

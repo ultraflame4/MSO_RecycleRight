@@ -12,6 +12,7 @@ namespace Player.Behaviours
         [Header("Attack")]
         [SerializeField] float attackDamage = 5f;
         [SerializeField, Range(0f, 1f)] float damageDropoffRange = 0.25f;
+        [SerializeField, Range(0f, 1f)] float minDropoffScale = 0.3f;
         [SerializeField] float attackStunDuration = .5f;
         [SerializeField] float range = 2.5f;
         [SerializeField, Range(0f, 1f)] float angle = 0.45f;
@@ -28,8 +29,6 @@ namespace Player.Behaviours
         [SerializeField] AudioClip skillSFX;
         [Tooltip("VFX to spawn when skill is used"), FormerlySerializedAs("skillVFXForContaminant")]
         [SerializeField] GameObject skillVFX;
-        // [Tooltip("VFX to spawn when asan skill is used")]
-        // [SerializeField] GameObject skillVFX;
 
         GameObject indicatorPrefab;
         SpriteRenderer pointerSprite;
@@ -103,7 +102,7 @@ namespace Player.Behaviours
 
                 // calculate dropoff
                 distance = Vector3.Distance(hit.transform.position, character.transform.position);
-                dropoffScale = distance <= (range * damageDropoffRange) ? 2f : Mathf.Clamp01(1f - (distance / range));
+                dropoffScale = distance <= (range * damageDropoffRange) ? 2f : Mathf.Clamp(minDropoffScale, 1f, 1f - (distance / range));
 
                 // attempt to get reference to contaminant fsm
                 ContaminantNPC contaminant = hit.GetComponent<ContaminantNPC>();
@@ -114,7 +113,7 @@ namespace Player.Behaviours
                 hit.GetComponent<IStunnable>()?.Stun(attackStunDuration * dropoffScale);
                 // try add knockback by getting rigidbody and adding force in hit direction
                 Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
-                if (rb == null) return;
+                if (rb == null) continue;
                 rb.AddForce((character.pointer.position - character.transform.position).normalized *
                     knockback * dropoffScale, ForceMode2D.Impulse);
             }

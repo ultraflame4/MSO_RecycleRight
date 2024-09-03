@@ -34,6 +34,6 @@ MonoBehaviour:
   attackType: 1
   attackTarget: 1
   role1: 3
-  role2: 2
-  role3: 1
+  role2: 1
+  role3: 4
   prefab: {fileID: 5137057441427609284, guid: 5b16f2def832224448a1264c34d1acca, type: 3}
