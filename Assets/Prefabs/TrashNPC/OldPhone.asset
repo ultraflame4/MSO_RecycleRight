@@ -21,8 +21,8 @@ MonoBehaviour:
     movementSpeed: 50
     sightRange: 3
   recyclableConfig:
-    recyclableType: 0
-    recyclablePrefab: {fileID: 2908701193862515147, guid: 3c10479c73eff34409d9c4ccaebcc17d, type: 3}
+    recyclableType: 3
+    recyclablePrefab: {fileID: 8097417969370782324, guid: 3c10479c73eff34409d9c4ccaebcc17d, type: 3}
   contaminantConfig:
     nameOverride: 
     contaminantPrefab: {fileID: 0}
