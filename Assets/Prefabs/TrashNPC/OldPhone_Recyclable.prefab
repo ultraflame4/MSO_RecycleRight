@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 166044831057001499, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
+      propertyPath: npcData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3fd7596c79121f746856e8c3ac7d3a1c, type: 2}
+    - target: {fileID: 166044831057001499, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
+      propertyPath: contaminant_prefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 516012215689930344, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -91,6 +99,10 @@ PrefabInstance:
     - target: {fileID: 5245962997113776087, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931782800690280916, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
+      propertyPath: m_text
+      value: Knockia
       objectReference: {fileID: 0}
     - target: {fileID: 8202214878067815596, guid: 2b068fbcf70445c4284c490ed25008fc, type: 3}
       propertyPath: m_Name
