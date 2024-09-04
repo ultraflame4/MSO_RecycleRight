@@ -81,6 +81,7 @@ namespace Player.Behaviours
             PlayerCharacter selectedCharacter = characters
                 .Where(x => x.Health > 0f)
                 .OrderBy(x => x.Health)
+                .OrderBy(x => x.Health / x.maxHealth)
                 .ToArray()[0];
             // do not heal if character is at max health
             if (selectedCharacter.Health >= selectedCharacter.maxHealth) return;
