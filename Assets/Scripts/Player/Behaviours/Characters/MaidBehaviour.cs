@@ -188,6 +188,8 @@ namespace Player.Behaviours
         #region Handle Ending
         void EndSkill()
         {
+            // stop all coroutines before ending skill
+            StopAllCoroutines();
             // reset skill active to false
             skillActive = false;
             // reset pullable type
