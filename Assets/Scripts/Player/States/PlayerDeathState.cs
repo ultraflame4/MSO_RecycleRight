@@ -39,7 +39,6 @@ namespace Player.FSM
                 duration += Time.deltaTime;
                 yield return duration;
             }
-            coroutine = null;
             HandleDeathDurationEnd();
         }
 
@@ -108,6 +107,9 @@ namespace Player.FSM
 
         void ExitState(int characterIndex)
         {
+            // reset coroutine
+            if (coroutine != null) character.StopCoroutine(coroutine);
+            coroutine = null;
             // reset animation to idle before switching characters
             character.anim?.Play("Idle");
             // allow switching characters, switch to new character, and exit death state
