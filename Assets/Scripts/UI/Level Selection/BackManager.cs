@@ -14,14 +14,15 @@ namespace UI.LevelSelection
         [Header("Pages")]
         [SerializeField] GameObject levelDetailsMenu;
         [SerializeField] GameObject characterSelectMenu;
+        [SerializeField] GameObject exitSceneBackground;
 
         // Update is called once per frame
         void Update()
         {
             // check if back key has been pressed, if so, trigger corresponding button OnClick
             if (!Input.GetKeyDown(backKey)) return;
-            // do not check for back button press if character select is open
-            if (characterSelectMenu.activeInHierarchy) return;
+            // do not check for back button press if character select is open or when exiting scene
+            if (characterSelectMenu.activeInHierarchy || exitSceneBackground.activeInHierarchy) return;
 
             // check which OnClick even can be invoked
             if (levelDetailsMenu.activeInHierarchy)
