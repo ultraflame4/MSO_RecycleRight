@@ -21,7 +21,7 @@ namespace Player.FSM
             // ensure only one death coroutine is running
             if (coroutine != null) return;
             // start coroutine to wait for death duration
-            coroutine = fsm.StartCoroutine(WaitForDeath());
+            coroutine = character.StartCoroutine(WaitForDeath());
             // play death animation (hit animation)
             character.anim?.Play("On Hit");
         }
@@ -67,9 +67,7 @@ namespace Player.FSM
             if (index >= 0)
             {
                 ResetAlpha();
-                character.CharacterManager.CanSwitchCharacters = true;
-                character.CharacterManager.SwitchCharacter(index);
-                fsm.SwitchState(character.DefaultState);
+                ExitState(index);
                 return;
             }
             
@@ -97,9 +95,7 @@ namespace Player.FSM
             ResetAlpha();
             character.PointerManager.gameObject.SetActive(true);
             character.CharacterManager.CharacterChanged -= CharacterAvailable;
-            character.CharacterManager.CanSwitchCharacters = true;
-            character.CharacterManager.SwitchCharacter(Array.IndexOf(character.CharacterManager.character_instances, curr));
-            fsm.SwitchState(character.DefaultState);
+            ExitState(Array.IndexOf(character.CharacterManager.character_instances, curr));
         }
 
         void ResetAlpha()
@@ -108,6 +104,16 @@ namespace Player.FSM
             Color newColor = character.Data.renderer.color;
             newColor.a = 1f;
             character.Data.renderer.color = newColor;
+        }
+
+        void ExitState(int characterIndex)
+        {
+            // reset animation to idle before switching characters
+            character.anim?.Play("Idle");
+            // allow switching characters, switch to new character, and exit death state
+            character.CharacterManager.CanSwitchCharacters = true;
+            character.CharacterManager.SwitchCharacter(characterIndex);
+            fsm.SwitchState(character.DefaultState);
         }
     }
 }
