@@ -157,6 +157,7 @@ namespace UI.LevelSelection.CharacterSelection
         /// <param name="index">Index to select</param>
         public void SelectSlot(int index)
         {
+            if (hologramMenu.pageState == HologramMenuManager.PageState.CHARACTER_INFO) return;
             selectedIndex = index;
         }
         #endregion
