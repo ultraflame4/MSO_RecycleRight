@@ -187,7 +187,7 @@ namespace UI.LevelSelection.CharacterSelection
             {
                 int index = party.FindIndex(x => x == profile.currentCharacter);
                 party.Remove(profile.currentCharacter);
-                if (party.Count <= 0 || selectedIndex < 0 || index == selectedIndex) return;
+                if (party.Count <= 0 || selectedIndex < 0 || index <= selectedIndex) return;
 
                 if (selectedIndex >= party.Count)
                     party.Add(profile.currentCharacter);
