@@ -9183,6 +9183,7 @@ MonoBehaviour:
   btnLevelDetailsBack: {fileID: 636134003}
   levelDetailsMenu: {fileID: 1032228277}
   characterSelectMenu: {fileID: 563652084}
+  skyBackground: {fileID: 84987099}
 --- !u!1001 &1740739285
 PrefabInstance:
   m_ObjectHideFlags: 0

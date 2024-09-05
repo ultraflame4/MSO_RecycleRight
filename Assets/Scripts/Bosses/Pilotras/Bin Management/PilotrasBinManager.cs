@@ -97,7 +97,7 @@ namespace Bosses.Pilotras.Bin
             foreach (RecyclingBin bin in selectedBins)
             {
                 // disable bin script when lifting up bin
-                bin.enabled = false;
+                // bin.enabled = false;
                 // start coroutines to lift bin
                 binDrop.coroutineManager.StartCoroutine(character.Throw(character.behaviourData.bin_drop_speed, bin.gameObject, 
                     new Vector2(bin.transform.position.x, character.yPosTop)));

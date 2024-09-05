@@ -37,7 +37,7 @@ namespace Player.Behaviours
 
         // variables to handle skill
         Collider2D[] hits;
-        Coroutine tick;
+        Coroutine coroutine_tick, coroutine_hold_sfx, coroutine_select_type, coroutine_end_skill;
         Rigidbody2D rb;
         GameObject skill_vfx_prefab;
         AudioSource skill_hold_source;
@@ -87,9 +87,9 @@ namespace Player.Behaviours
             // shake camera
             LevelManager.Instance?.camera?.ShakeCamera(1f);
             // start coroutine to tick damage
-            tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
+            coroutine_tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
             // start coroutine to count skill duration, skill duration is calculated by subtracting time from skill duration that the skill is not active
-            StartCoroutine(CountDuration(data.skillDuration - (data.skillTriggerTimeFrame * data.skillDuration), EndSkill));
+            coroutine_end_skill = StartCoroutine(CountDuration(data.skillDuration - (data.skillTriggerTimeFrame * data.skillDuration), EndSkill));
         }
         #endregion
         
@@ -103,12 +103,12 @@ namespace Player.Behaviours
             // play skill sfx
             SoundManager.Instance?.PlayOneShot(skillStartSFX);
             // wait for length of skill start sfx before playing hold sfx (slightly less to blend sfx)
-            StartCoroutine(CountDuration(skillStartSFX.length - skillAudioBlendAmount, () => 
+            coroutine_hold_sfx = StartCoroutine(CountDuration(skillStartSFX.length - skillAudioBlendAmount, () => 
                 SoundManager.Instance?.Play(skillHoldSFX, out skill_hold_source, true)));
             // show selected type text
             selectedTypeText?.gameObject.SetActive(true);
             // select recyclable type
-            StartCoroutine(DelaySelectRecyclableType(data.skillDuration * data.skillTriggerTimeFrame));
+            coroutine_select_type = StartCoroutine(DelaySelectRecyclableType(data.skillDuration * data.skillTriggerTimeFrame));
         }
 
         void SelectRecyclableType()
@@ -181,26 +181,27 @@ namespace Player.Behaviours
                 hit.GetComponent<IStunnable>()?.Stun(tickStunDuration);
             }
             // start another coroutine to tick again
-            tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
+            coroutine_tick = StartCoroutine(CountDuration(tickSpeed, TickDamage));
         }
         #endregion
 
         #region Handle Ending
         void EndSkill()
         {
+            // stop all coroutines before ending skill
+            coroutine_hold_sfx = ResetCoroutine(coroutine_hold_sfx);
+            coroutine_select_type = ResetCoroutine(coroutine_select_type);
+            coroutine_end_skill = ResetCoroutine(coroutine_end_skill);
+            coroutine_tick = ResetCoroutine(coroutine_tick);
             // reset skill active to false
             skillActive = false;
             // reset pullable type
             pullableType = null;
-            // hide selected type text
-            selectedTypeText?.gameObject.SetActive(false);
             // handle resetting effects
             HandleVFX();
             HandleSFX();
-            // stop damage tick
-            if (tick == null) return;
-            StopCoroutine(tick);
-            tick = null;
+            // hide selected type text
+            selectedTypeText?.gameObject.SetActive(false);
         }
 
         void HandleVFX()
@@ -223,6 +224,12 @@ namespace Player.Behaviours
                     skill_hold_source = null;
                 }
             ));
+        }
+
+        Coroutine ResetCoroutine(Coroutine coroutine)
+        {
+            if (coroutine != null) StopCoroutine(coroutine);
+            return null;
         }
         #endregion
 

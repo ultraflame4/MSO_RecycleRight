@@ -182,6 +182,8 @@ namespace Level.Bins
         public void CompleteClean()
         {
             binState = BinState.CLEAN;
+            pending_infestation = false;
+            infestation_percent = 0;
             Score = 0;
             if (spriteR != null) spriteR.sprite = cleanedSprite;
             // Renable text
