@@ -64,6 +64,7 @@ public class LevelSelectHall : MonoBehaviour
     {
         trainDoorsAnim.SetBool("zoom_out", false);
         // gameObject.SetActive(false);
+        trainDoorsAnim.ResetTrigger("closeDoors");
         trainDoorsAnim.SetTrigger("openDoors");
         animator.SetBool("Active", false);
         // SoundManager.Instance?.PlayOneShot(trainHallExitSFX);
