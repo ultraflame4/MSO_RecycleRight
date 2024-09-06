@@ -73,6 +73,9 @@ namespace UI.LevelSelection.CharacterSelection
             gameObject.SetActive(true);
             canvasGroup.alpha = 0;
             SetHologramActive(false);
+            // ensure character slot is reset
+            ResetLocalParty();
+            UpdateCharacterSelectSlots();
 
             if (skipTransition)
             {
