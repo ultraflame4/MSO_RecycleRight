@@ -73,6 +73,9 @@ namespace UI.LevelSelection.CharacterSelection
             gameObject.SetActive(true);
             canvasGroup.alpha = 0;
             SetHologramActive(false);
+            // ensure character slot is reset
+            ResetLocalParty();
+            UpdateCharacterSelectSlots();
 
             if (skipTransition)
             {
@@ -157,6 +160,7 @@ namespace UI.LevelSelection.CharacterSelection
         /// <param name="index">Index to select</param>
         public void SelectSlot(int index)
         {
+            if (hologramMenu.pageState == HologramMenuManager.PageState.CHARACTER_INFO) return;
             selectedIndex = index;
         }
         #endregion
@@ -186,7 +190,7 @@ namespace UI.LevelSelection.CharacterSelection
             {
                 int index = party.FindIndex(x => x == profile.currentCharacter);
                 party.Remove(profile.currentCharacter);
-                if (party.Count <= 0 || selectedIndex < 0 || index == selectedIndex) return;
+                if (party.Count <= 0 || selectedIndex < 0 || index <= selectedIndex) return;
 
                 if (selectedIndex >= party.Count)
                     party.Add(profile.currentCharacter);
