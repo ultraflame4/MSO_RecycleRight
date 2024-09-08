@@ -18,7 +18,7 @@ MonoBehaviour:
     allies in the party for the next 10s. \n\nVincent is a happy and determined office
     worker. Stuck in a dead end job, he is eager to try and make a change in the
     world. Having seen the new recycling movement, he offered to volunteer in hopes
-    of steer  the world in a better direction."
+    of steering the world in a better direction."
   characterSprite: {fileID: 3635251773814090647, guid: 7c9b691d163f5d741894afb9cc049dbf, type: 3}
   maxHealth: 100
   movementSpeed: 400
