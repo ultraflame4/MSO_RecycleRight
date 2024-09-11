@@ -9730,7 +9730,7 @@ MonoBehaviour:
   <levelInfo>k__BackingField: {fileID: 1763705686}
   levelEnd: {fileID: 1483692589}
   boss: {fileID: 1519737337020142534}
-  minCompletionTime: 5
+  minCompletionTime: 2.5
 --- !u!1 &1828818306
 GameObject:
   m_ObjectHideFlags: 0
