@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
-      value: 30.000002
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
@@ -213,14 +213,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491729246197995376, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[10].second.m_AnimationSpeed
-      value: 30.000002
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
@@ -241,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
-      value: 30.000002
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555723960008371861, guid: a9fce7a00e1098843a2528213204b641, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
@@ -9647,9 +9655,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1763705688}
-  - component: {fileID: 1763705687}
-  - component: {fileID: 1763705686}
   - component: {fileID: 1763705689}
+  - component: {fileID: 1763705686}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -9671,34 +9678,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info: {fileID: 11400000, guid: 50ee45331902fa341b18a2053e090774, type: 2}
   data:
-    levelName: Return of Pilotras
+    levelName: The Rise of Pilotras
     levelCode: BO - 3
-    levelDescription: 
-    levelImage: {fileID: 0}
-    maxScore: 0
+    levelDescription: 'An amalgamation of waste has come together and threatens the
+      safety of the public in this parking lot! By recycling properly and teamwork,
+      you can take him down!
+
+
+      Recycling correctly will deal massive damage
+      to the boss, and will eventually topple him over, allowing you to deal a lot
+      of damage. Make sure to bring a damaging character and a cleaner!'
+    levelImage: {fileID: 21300000, guid: 53d89bd181fa188439300abcb3dfdd07, type: 3}
+    maxScore: 10
     teamPreset: []
---- !u!114 &1763705687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763705685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d55ad80143592544597c891d3a55bfd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <zones>k__BackingField:
-  - {fileID: 843036383}
-  <current_zone_index>k__BackingField: 0
-  zoneChangeDelay: 2.5
-  binTag: Bin
-  autoChangeZone: 0
-  <camera>k__BackingField: {fileID: 1515659083}
-  debug_move_to_current_zone: 0
-  <levelInfo>k__BackingField: {fileID: 1763705686}
-  levelEnd: {fileID: 1483692589}
 --- !u!4 &1763705688
 Transform:
   m_ObjectHideFlags: 0
@@ -9727,7 +9719,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92304337a0b56be4e8f766de8ed7e11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <zones>k__BackingField:
+  - {fileID: 843036383}
+  <current_zone_index>k__BackingField: 0
+  zoneChangeDelay: 2.5
+  binTag: Bin
+  autoChangeZone: 0
+  <camera>k__BackingField: {fileID: 1515659083}
+  debug_move_to_current_zone: 0
+  <levelInfo>k__BackingField: {fileID: 1763705686}
+  levelEnd: {fileID: 1483692589}
   boss: {fileID: 1519737337020142534}
+  minCompletionTime: 5
 --- !u!1 &1828818306
 GameObject:
   m_ObjectHideFlags: 0

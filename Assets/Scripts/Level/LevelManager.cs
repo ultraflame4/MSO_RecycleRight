@@ -71,7 +71,7 @@ namespace Level
 
         public event Action<LevelZone> ZoneChanged;
 
-        public void Start()
+        public virtual void Start()
         {
             zones = transform.GetComponentsInChildren<LevelZone>();
             ChangeZone(0);
@@ -142,7 +142,7 @@ namespace Level
             current_zone.ActivateZone();
         }
 
-        public float GetCurrentScore()
+        public virtual float GetCurrentScore()
         {
             return zones.Sum(x => x.bins.Sum(y => y.Score));
         }
