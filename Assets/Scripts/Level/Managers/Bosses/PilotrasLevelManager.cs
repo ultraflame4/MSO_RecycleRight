@@ -5,8 +5,12 @@ namespace Level.Tutorial
 {
     public class PilotrasLevelManager : MonoBehaviour
     {
+        [Header("Pilotras Level")]
+        [Tooltip("Reference to Pilotras controller.")]
         [SerializeField] PilotrasController boss;
-
+        [Tooltip("Minimum time before score starts decreasing in minutes.")]
+        [SerializeField] float minCompletionTime = 5f;
+        
         void Start()
         {
             if (boss == null)
