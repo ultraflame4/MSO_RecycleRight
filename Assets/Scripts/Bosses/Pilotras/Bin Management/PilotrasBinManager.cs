@@ -52,15 +52,18 @@ namespace Bosses.Pilotras.Bin
                 return;
             }
 
+            // removed storing of bin points, make boss stage harder
             // store bin score depending on if the bin got contaminated
-            if (bin.binState != BinState.CLEAN)
-                character.data.binScore[bin.recyclableType] += bin.Score;
-            else 
-                character.data.binScore[bin.recyclableType] = bin.Score;
+            // if (bin.binState != BinState.CLEAN)
+            //     character.data.binScore[bin.recyclableType] += bin.Score;
+            // else 
+            //     character.data.binScore[bin.recyclableType] = bin.Score;
             
+            // only reset clean when bin is not clean
+            if (bin.binState == BinState.CLEAN) return;
             // reset bin score
             bin.CompleteClean();
-            bin.Score = character.data.binScore[bin.recyclableType];
+            // bin.Score = character.data.binScore[bin.recyclableType];
         }
 
         public void DropBin()
