@@ -153,106 +153,6 @@ ScriptedImporter:
     uvTransform: {x: 38, y: 143}
   - name: Soda Can_Frame_1
     originalName: 
-    pivot: {x: 0.47368422, y: -0.04}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 215
-      width: 19
-      height: 25
-    spriteID: 84273808b8113f5439f155720bb713c3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 215}
-  - name: Soda Can_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.04}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 113
-      width: 22
-      height: 25
-    spriteID: 078a1f5d0f6f9684585504b7bdb64f89
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 113}
-  - name: Soda Can_Frame_3
-    originalName: 
-    pivot: {x: 0.45454547, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 78
-      width: 22
-      height: 27
-    spriteID: ae869843efd056841967454f04c99917
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 78}
-  - name: Soda Can_Frame_4
-    originalName: 
-    pivot: {x: 0.45000002, y: -0.04}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 182
-      width: 20
-      height: 25
-    spriteID: 875502c96934f4243b6dc86db883886e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 182}
-  - name: Soda Can_Frame_5
-    originalName: 
-    pivot: {x: 0.44444445, y: -0.04}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 38
-      y: 40
-      width: 18
-      height: 25
-    spriteID: 03a30d47bfba01847907ad4066e48912
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 38, y: 40}
-  - name: Soda Can_Frame_6
-    originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,7 +162,7 @@ ScriptedImporter:
       y: 176
       width: 16
       height: 25
-    spriteID: df0c8feaa26eae147839a0ffee380feb
+    spriteID: 84273808b8113f5439f155720bb713c3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -271,7 +171,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 176}
-  - name: Soda Can_Frame_7
+  - name: Soda Can_Frame_2
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -282,7 +182,7 @@ ScriptedImporter:
       y: 209
       width: 16
       height: 25
-    spriteID: 9f5bf00fef2c8d742b8fe249ed650d14
+    spriteID: 078a1f5d0f6f9684585504b7bdb64f89
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -291,7 +191,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 209}
-  - name: Soda Can_Frame_8
+  - name: Soda Can_Frame_3
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -302,7 +202,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 25
-    spriteID: 5af5ab7b84c17ef4ab353f19119d4085
+    spriteID: ae869843efd056841967454f04c99917
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -311,7 +211,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 4}
-  - name: Soda Can_Frame_9
+  - name: Soda Can_Frame_4
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -322,7 +222,7 @@ ScriptedImporter:
       y: 37
       width: 16
       height: 25
-    spriteID: 04c2703697423d840b5f48c59d6bb254
+    spriteID: 875502c96934f4243b6dc86db883886e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -331,7 +231,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 37}
-  - name: Soda Can_Frame_10
+  - name: Soda Can_Frame_5
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -342,7 +242,7 @@ ScriptedImporter:
       y: 70
       width: 16
       height: 25
-    spriteID: 5ac926cb6d2472244bc9e1e37d5c1d88
+    spriteID: 03a30d47bfba01847907ad4066e48912
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -351,7 +251,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 70}
-  - name: Soda Can_Frame_11
+  - name: Soda Can_Frame_6
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -362,7 +262,7 @@ ScriptedImporter:
       y: 103
       width: 16
       height: 25
-    spriteID: 7066efffcaf6cad449a2e3584e1a73f9
+    spriteID: df0c8feaa26eae147839a0ffee380feb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -371,7 +271,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 103}
-  - name: Soda Can_Frame_12
+  - name: Soda Can_Frame_7
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -382,7 +282,7 @@ ScriptedImporter:
       y: 136
       width: 16
       height: 25
-    spriteID: b88db55648ec1c945aeee3bc2189e91e
+    spriteID: 9f5bf00fef2c8d742b8fe249ed650d14
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -391,7 +291,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 136}
-  - name: Soda Can_Frame_13
+  - name: Soda Can_Frame_8
     originalName: 
     pivot: {x: 0.5, y: -0.04}
     alignment: 9
@@ -402,7 +302,7 @@ ScriptedImporter:
       y: 169
       width: 16
       height: 25
-    spriteID: 78021726524194d44ba0109c4dd734dc
+    spriteID: 5af5ab7b84c17ef4ab353f19119d4085
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -411,7 +311,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 73, y: 169}
-  - name: Soda Can_Frame_14
+  - name: Soda Can_Frame_9
     originalName: 
     pivot: {x: 0.5, y: -0.03846154}
     alignment: 9
@@ -422,7 +322,7 @@ ScriptedImporter:
       y: 109
       width: 16
       height: 26
-    spriteID: 4c55a58981937b1448d9a7bd3f3dfc24
+    spriteID: 04c2703697423d840b5f48c59d6bb254
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -431,7 +331,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 109}
-  - name: Soda Can_Frame_15
+  - name: Soda Can_Frame_10
     originalName: 
     pivot: {x: 0.5, y: -0.035714287}
     alignment: 9
@@ -442,7 +342,7 @@ ScriptedImporter:
       y: 73
       width: 16
       height: 28
-    spriteID: 865c242decf162c40ab787c67cc06959
+    spriteID: 5ac926cb6d2472244bc9e1e37d5c1d88
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -451,7 +351,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 73}
-  - name: Soda Can_Frame_16
+  - name: Soda Can_Frame_11
     originalName: 
     pivot: {x: 0.47368422, y: -0.035714287}
     alignment: 9
@@ -462,7 +362,7 @@ ScriptedImporter:
       y: 146
       width: 19
       height: 28
-    spriteID: eac3959acd89fd84f8fee5597aaeb6e1
+    spriteID: 7066efffcaf6cad449a2e3584e1a73f9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -471,7 +371,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 146}
-  - name: Soda Can_Frame_17
+  - name: Soda Can_Frame_12
     originalName: 
     pivot: {x: 0.52, y: -0.035714287}
     alignment: 9
@@ -482,7 +382,7 @@ ScriptedImporter:
       y: 42
       width: 25
       height: 28
-    spriteID: a68b45605517b764f855af1eeb6985d0
+    spriteID: b88db55648ec1c945aeee3bc2189e91e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -491,7 +391,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 42}
-  - name: Soda Can_Frame_18
+  - name: Soda Can_Frame_13
     originalName: 
     pivot: {x: 0.5185185, y: -0.035714287}
     alignment: 9
@@ -502,7 +402,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 28
-    spriteID: 8c00ab50bbfaaa042a6b9ff0f966727d
+    spriteID: 78021726524194d44ba0109c4dd734dc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -511,7 +411,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 38, y: 4}
-  - name: Soda Can_Frame_19
+  - name: Soda Can_Frame_14
     originalName: 
     pivot: {x: 0.53846157, y: -0.033333335}
     alignment: 9
@@ -522,7 +422,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 30
-    spriteID: 5dcfe5b3c1438354c9cac8353ca6cc4c
+    spriteID: 4c55a58981937b1448d9a7bd3f3dfc24
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -531,6 +431,106 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Soda Can_Frame_15
+    originalName: 
+    pivot: {x: 0.47368422, y: -0.04}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 215
+      width: 19
+      height: 25
+    spriteID: 865c242decf162c40ab787c67cc06959
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 215}
+  - name: Soda Can_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: -0.04}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 113
+      width: 22
+      height: 25
+    spriteID: eac3959acd89fd84f8fee5597aaeb6e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 113}
+  - name: Soda Can_Frame_17
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 78
+      width: 22
+      height: 27
+    spriteID: a68b45605517b764f855af1eeb6985d0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 78}
+  - name: Soda Can_Frame_18
+    originalName: 
+    pivot: {x: 0.45000002, y: -0.04}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 182
+      width: 20
+      height: 25
+    spriteID: 8c00ab50bbfaaa042a6b9ff0f966727d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 182}
+  - name: Soda Can_Frame_19
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.04}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 40
+      width: 18
+      height: 25
+    spriteID: 5dcfe5b3c1438354c9cac8353ca6cc4c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 40}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -548,46 +548,6 @@ ScriptedImporter:
         width: 16
         height: 25
       spriteId: 8c62d18442e268b44aa45efda995be71
-    - name: Soda Can_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 7
-        y: 1
-        width: 19
-        height: 25
-      spriteId: 84273808b8113f5439f155720bb713c3
-    - name: Soda Can_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 5
-        y: 1
-        width: 22
-        height: 25
-      spriteId: 078a1f5d0f6f9684585504b7bdb64f89
-    - name: Soda Can_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 6
-        y: 1
-        width: 22
-        height: 27
-      spriteId: ae869843efd056841967454f04c99917
-    - name: Soda Can_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 7
-        y: 1
-        width: 20
-        height: 25
-      spriteId: 875502c96934f4243b6dc86db883886e
-    - name: Soda Can_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 8
-        y: 1
-        width: 18
-        height: 25
-      spriteId: 03a30d47bfba01847907ad4066e48912
     - name: Soda Can_Frame_6
       frameIndex: 6
       cellRect:
@@ -595,7 +555,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: df0c8feaa26eae147839a0ffee380feb
+      spriteId: 84273808b8113f5439f155720bb713c3
     - name: Soda Can_Frame_7
       frameIndex: 7
       cellRect:
@@ -603,7 +563,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: 9f5bf00fef2c8d742b8fe249ed650d14
+      spriteId: 078a1f5d0f6f9684585504b7bdb64f89
     - name: Soda Can_Frame_8
       frameIndex: 8
       cellRect:
@@ -611,7 +571,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: 5af5ab7b84c17ef4ab353f19119d4085
+      spriteId: ae869843efd056841967454f04c99917
     - name: Soda Can_Frame_9
       frameIndex: 9
       cellRect:
@@ -619,7 +579,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: 04c2703697423d840b5f48c59d6bb254
+      spriteId: 875502c96934f4243b6dc86db883886e
     - name: Soda Can_Frame_10
       frameIndex: 10
       cellRect:
@@ -627,7 +587,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: 5ac926cb6d2472244bc9e1e37d5c1d88
+      spriteId: 03a30d47bfba01847907ad4066e48912
     - name: Soda Can_Frame_11
       frameIndex: 11
       cellRect:
@@ -635,7 +595,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: 7066efffcaf6cad449a2e3584e1a73f9
+      spriteId: df0c8feaa26eae147839a0ffee380feb
     - name: Soda Can_Frame_12
       frameIndex: 12
       cellRect:
@@ -643,7 +603,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: b88db55648ec1c945aeee3bc2189e91e
+      spriteId: 9f5bf00fef2c8d742b8fe249ed650d14
     - name: Soda Can_Frame_13
       frameIndex: 13
       cellRect:
@@ -651,7 +611,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 25
-      spriteId: 78021726524194d44ba0109c4dd734dc
+      spriteId: 5af5ab7b84c17ef4ab353f19119d4085
     - name: Soda Can_Frame_14
       frameIndex: 14
       cellRect:
@@ -659,7 +619,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 26
-      spriteId: 4c55a58981937b1448d9a7bd3f3dfc24
+      spriteId: 04c2703697423d840b5f48c59d6bb254
     - name: Soda Can_Frame_15
       frameIndex: 15
       cellRect:
@@ -667,7 +627,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 28
-      spriteId: 865c242decf162c40ab787c67cc06959
+      spriteId: 5ac926cb6d2472244bc9e1e37d5c1d88
     - name: Soda Can_Frame_16
       frameIndex: 16
       cellRect:
@@ -675,7 +635,7 @@ ScriptedImporter:
         y: 1
         width: 19
         height: 28
-      spriteId: eac3959acd89fd84f8fee5597aaeb6e1
+      spriteId: 7066efffcaf6cad449a2e3584e1a73f9
     - name: Soda Can_Frame_17
       frameIndex: 17
       cellRect:
@@ -683,7 +643,7 @@ ScriptedImporter:
         y: 1
         width: 25
         height: 28
-      spriteId: a68b45605517b764f855af1eeb6985d0
+      spriteId: b88db55648ec1c945aeee3bc2189e91e
     - name: Soda Can_Frame_18
       frameIndex: 18
       cellRect:
@@ -691,7 +651,7 @@ ScriptedImporter:
         y: 1
         width: 27
         height: 28
-      spriteId: 8c00ab50bbfaaa042a6b9ff0f966727d
+      spriteId: 78021726524194d44ba0109c4dd734dc
     - name: Soda Can_Frame_19
       frameIndex: 19
       cellRect:
@@ -699,6 +659,46 @@ ScriptedImporter:
         y: 1
         width: 26
         height: 30
+      spriteId: 4c55a58981937b1448d9a7bd3f3dfc24
+    - name: Soda Can_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 7
+        y: 1
+        width: 19
+        height: 25
+      spriteId: 865c242decf162c40ab787c67cc06959
+    - name: Soda Can_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 5
+        y: 1
+        width: 22
+        height: 25
+      spriteId: eac3959acd89fd84f8fee5597aaeb6e1
+    - name: Soda Can_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 6
+        y: 1
+        width: 22
+        height: 27
+      spriteId: a68b45605517b764f855af1eeb6985d0
+    - name: Soda Can_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 7
+        y: 1
+        width: 20
+        height: 25
+      spriteId: 8c00ab50bbfaaa042a6b9ff0f966727d
+    - name: Soda Can_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 25
       spriteId: 5dcfe5b3c1438354c9cac8353ca6cc4c
     linkedCells: []
     parentIndex: -1
